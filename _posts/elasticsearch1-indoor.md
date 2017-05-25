@@ -121,6 +121,18 @@ example : 查询集群中 文档数量
 curl -u name:pass -X DELETE http://ip:9200/your_index
 ```
 
+```
+GET /coupon_seeker/coupon_seeker/_search?q=source:dianping
+
+curl -u name:pass -XGET 'http://192.168.181.xxx:9200/coupon_seeker/coupon_seeker/_search?q=source:dianping
+```
+
+有条件的精确匹配删除命令
+
+```
+curl -u name:pass -XDELETE 'http://192.168.181.xxx:9200/coupon_seeker/coupon_seeker/_query?pretty=true' -d '{"query":{"match":{source:"dianping"}}}'
+```
+
 ## 4. 文档 
 
 **面向文档**

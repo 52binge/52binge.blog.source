@@ -9,15 +9,15 @@ date: 2016-07-16 16:59:48
 <p style="font-style:italic;color:cornflowerblue;">Libin Chan 正在输入 <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
-> `2016.10.16` Team Outing @满陇桂雨
+> `2017.04.14` 春暖花开，鸟语花香~
 > <div class="tweetimg">
-<img src="/images/tw/tw-2016-10-16-taizi-bar.jpg" width="300" height="300"/img></div>
+<img src="/images/tw/tw_2017-04-14_taizi_m3.png" width="300" height="300"/img></div>
 
 > `2016.09.04` The people live and work in peace and contentment, treat each othe with sincerity.
 > <div class="tweetimg">
 <img src="/images/tw/tw-2016-09-04-phuket-sea.jpeg" width="300" height="300"/img></div>
 
-> `2016.08.07` 西溪湿地，使人身心轻松的环境，非常适合散步，很不错 [me][10].
+> `2016.08.07` 西溪湿地，使人身心轻松的环境，非常适合散步，很不错 me.
 
 ***
 
@@ -107,7 +107,6 @@ date: 2016-07-16 16:59:48
 > <div class="tweetimg">
 <img src="/images/tw/tw-suzhou-hanshansi-160103.jpg" width="300" height="300"/img></div>
 
-[10]: /images/tw/tw-xixi.jpg
 [9]: /images/tw/tw-2016-08-30-nz.jpg
 [8]: /images/tw/tw-2016-09-04-phuket-sea.jpeg
 [7]: /images/tw/tw-2016-09-02-Grand-Palace-of-Bangkok.jpeg
