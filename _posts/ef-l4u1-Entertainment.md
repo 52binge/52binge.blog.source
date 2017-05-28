@@ -1,5 +1,5 @@
 ---
-title: L4 Entertainment
+title: l4u1 Entertainment
 date: 2017-05-24 07:06:16
 tags: ef-english
 categories: English
@@ -26,10 +26,10 @@ img {
 
 Dialog |
 ------- | -------
-S: Hey, Joe. What are we going to do  tonight? |
+S: Hey, Joe. `What are we going to do` tonight? |
 J: I know! Let's go to that play downtown. |
 S: Nah, it's too far. |
-J: Well, what else is going on? |
+J: Well, `what else is going on`? |
 S: Well, there's a new movie at the theater. It's 'The Big Cheese' with May Jackson. |
 J: Or we could go to the football game. |
 S: I do not enjoy watching football games. |
@@ -37,14 +37,14 @@ J: Oh, yeah. So the movie sounds good. |
 S: Great! |
 
 
-### 2. gerunds & infinitives
+### 1.1 gerunds & infinitives
 
 - Frank enjoys cooking dinner for Lilei
-- Blair plans to eat out.
-- We're planning to go to the soccer game. ['sɒkə]
+- Blair `plans to eat` out.
+- We're `planning to go to` the soccer game. ['sɒkə]
 - I need to get some money for the concert.
-- Bluce Lee kept playing his guitar until midnight
-- We're thinking about going to a concert.
+- Bluce Lee `kept playing` his guitar until midnight
+- We're `thinking about` going to a concert.
 
 gerunds & infinitives | sentence
 ------- | -------
@@ -55,21 +55,16 @@ love | June loves eating in restaurants.
 begin | It began to snow.
 - | It began snowing.
 
-### 3. know how / good at
+### 1.2 know how / good at
 
 - I don't know how to swim. 
-
-
-- Lilei is really good at chess.
-
-
 - I'm terrible at driving.
 
-### 4. describing options
+### 1.3 describing options
 
 - What do you want to do?  
 - What are we going to do tonight?
-- What's going on?	发生什么事了?  
+- What's going on?	 
 
 
 - There are some great movies and plays going on this week.
@@ -94,45 +89,47 @@ begin | It began to snow.
 
 Dialog |
 ------- | -------
-M: Hi, Could you do me a favor? |
-F: Sure, What do you need? |
-M: wedding anniversary |
-F: wow, 20 years, Congratulations |
-M: Thanks, Could you help me find something interesting ? |
-F: Sure. No problem. |
-M: oh |
-F: concert hall, the hottest nightclub in town, at the Blue Banana |
-M: classical |
-F: Here is a play,  Main Street Theater on Saturday |
+[TODD] Hi, Could you `do me a favor`? |
+[SALLY] Sure, What do you need? |
+[TODD] Well, Angela and I want to do `something special` this weekend. It’s our 20th `wedding anniversary`. |
+[SALLY] Wow! Twenty years together, Congratulations. |
+[TODD] Thanks, Could you help me `find something interesting` ? |
+[SALLY] Springdale.com has all the events listed for the city. |
+[SALLY] It covers the concert hall, the auditorium ... , You really should check it out. |
+[TODD] That's a good idea. |
+[SALLY] There's an incredible same band at the Blue Banana. |
+[SALLY] That’s the `hottest nightclub` in town right now. Do you and Angela like to dance? |
+[TODD] Yes! But, Like a classical concert. Beethoven. Or Mozart. |
+[SALLY] Here is a play,  How about Shakespeare? It's 'Hamlet'. |
+[SALLY] It's in the Main Street `Theater`[ˈθi:ətər] on Saturday. |
+[TODD] Angela loves plays. Thank you so much! |
 
-### 2. Prepositions of time and place
+### 1.1 Prepositions of time and place
 
-#### 2.1 Use on for smaller areas, and for days and dates.
+**`on` for smaller areas, and for days and dates.**
 
-- I live `on` Main Street.
-- The lecture is `on` Monday.	
-- My birthday is `on` April 17th.
+- I live on Main Street.
+- The lecture is on Monday.	
+- My birthday is on April 17th.
 
-#### 2.2 Use at for addresses
+**`at` for addresses**
 
-- His house is `at` 465 Pine Street.
-- The lecture is `at` the auditorium.
-- `At` night, I like to read.
+- His house is at 465 Pine Street.
+- The lecture is at the auditorium.
+- At night, I like to read.
 
-#### 2.3 Use in
+**`in`**
 
-- My brother is coming `in` February.
-- I lived `in` France for one year.
+- My brother is coming in February.
+- I lived in France for one year.
 
-### 3. Asking for help
+### 1.2 Asking for help
 
 - Could you do me a favor? 
 - I'm sorry, but I'm really busy right now.
-
-
 - The party will start at 10 in the morning and continue until 7 in the evening
 
-### 4. Writing
+### 1.3 Writing
 
 This Saturday night, there is going to be a english lecture, 'two minutes'. June is going to talk about "the important of time". The lecture starts at 8 p.m. It's at the Auditorium. Admission is free. I like learning english, so I am thinking about going.
 
