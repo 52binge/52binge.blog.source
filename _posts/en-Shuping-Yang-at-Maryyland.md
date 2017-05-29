@@ -29,7 +29,7 @@ mathjax: true
 > The air was so sweet and fresh, and utterly luxurious.
 > 
 >  
-> I was surprised by this. Igrew up in a city in China, where I had to wear a face mask every time I went outside, otherwise, I might get sick.
+> I was surprised by this. I grew up in a city in China, where I had to wear a face mask every time I went outside, otherwise, I might get sick.
 > 
 >  
 > However, the moment Iinhaled and exhaled outside the airport，I felt free.
@@ -38,7 +38,7 @@ mathjax: true
 > No more fog on my glasses, no more difficult breathing, no more suppression.
 > 
 >  
-> Every breath was a delight.As I stand here today, I cannot help, but recall that feeling of freedom. 
+> Every breath was a delight. As I stand here today, I cannot help, but recall that feeling of freedom. 
 > 
 
 &nbsp;

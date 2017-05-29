@@ -13,10 +13,6 @@ date: 2016-07-16 16:59:48
 > <div class="tweetimg">
 <img src="/images/tw/en-Shuping-Yang.png" width="300" height="800"/img></div>
 
-> `2017.04.14` 春暖花开，鸟语花香~
-> <div class="tweetimg">
-<img src="/images/tw/tw_2017-04-14_taizi_m3.png" width="300" height="300"/img></div>
-
 > `2016.09.04` The people live and work in peace and contentment, treat each othe with sincerity.
 > <div class="tweetimg">
 <img src="/images/tw/tw-2016-09-04-phuket-sea.jpeg" width="300" height="300"/img></div>
@@ -75,12 +71,6 @@ date: 2016-07-16 16:59:48
 
 ***
 
-> `2016.04.22` 支付宝做的真不错，但如果内部不尊重人权，那还要去么?
-> <div class="tweetimg">
-<img src="/images/tw/tw-zhifubao0422.jpg" width="300" height="300"/img></div>
-
-***
-
 > `2016.04.10` 四月份的小南湖、太子湾真的很美 ! 三月西湖四月天，说的没错。
 > <div class="tweetimg">
 <img src="/images/tw/tw-taiziwan160410.jpg" width="300" height="300"/img></div>
@@ -102,6 +92,8 @@ date: 2016-07-16 16:59:48
 ***
 
 > `2016.01.18` 子瑜拿旗不应该被打压，是那么一小撮人非要哗众取宠的扮小丑，还是背后的环境泯灭了人性与良知，只有秉持互相尊重，平等相待的原则，才能更有利的解决问题。
+> <div class="tweetimg">
+<img src="/images/tw/tw-taiwan-ziyu.jpg" width="300" height="800"/img></div>
 
 ***
 
