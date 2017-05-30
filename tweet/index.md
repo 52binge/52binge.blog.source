@@ -13,6 +13,10 @@ date: 2016-07-16 16:59:48
 > <div class="tweetimg">
 <img src="/images/tw/en-Shuping-Yang.png" width="300" height="800"/img></div>
 
+> `2017.05.20` Qianjiang New Town's Light Show
+> <div class="tweetimg">
+<img src="/images/tw/tw-me-sister.jpeg" width="300" height="800"/img></div>
+
 > `2016.09.04` The people live and work in peace and contentment, treat each othe with sincerity.
 > <div class="tweetimg">
 <img src="/images/tw/tw-2016-09-04-phuket-sea.jpeg" width="300" height="300"/img></div>
@@ -51,12 +55,6 @@ date: 2016-07-16 16:59:48
 
 ***
 
-> `2016.06.10` 感谢 Andy 带我玩转上海，上海是不错，但是生活氛围与归属感还得是 little 杭州。
-> <div class="tweetimg">
-<img src="/images/tw/tw-shanghaime160610.jpg" width="300" height="300"/img></div>
-
-***
-
 > `2016.05.20` 15亿华人，唯一自由的地方。
 > <!--<div class="tweetimg">
 <img src="/images/tw/tw-taiwan-inaugural-speech.jpg" width="280" height="300"/img></div>-->
@@ -81,7 +79,7 @@ date: 2016-07-16 16:59:48
 
 ***
 
-> `2016.03.06` 逮噶后, 大家说唯美么?
+> `2016.03.06` 夕阳西下...
 > <div class="tweetimg">
 <img src="/images/tw/tw-2016-03-06-west-wake.jpg" width="300" height="300"/img></div>
 
@@ -98,8 +96,7 @@ date: 2016-07-16 16:59:48
 ***
 
 > `2016.01.02` 江南真的是风景如画，小桥流水人家，名不虚传。
-> <div class="tweetimg">
-<img src="/images/tw/tw-suzhou-hanshansi-160103.jpg" width="300" height="300"/img></div>
+
 
 [10]: /images/tw/en-Shuping-Yang.png
 [9]: /images/tw/tw-2016-08-30-nz.jpg

@@ -16,7 +16,7 @@ mathjax: true
 
 > **Good afternoon faculty, students, parents and friends.**
 
-> I am truly honored andgrateful to speak at the commencement for the University of Maryland, Class of 2017. 
+> I am truly honored and grateful to speak at the commencement for the University of Maryland, Class of 2017. 
 > 
 >  
 > People often ask me: Why did you come to the University of Maryland?

@@ -19,6 +19,8 @@ date: 2016-03-26 16:46:48
 
 - [第05章 : Neural Networks II][5]
 
+- [第06章 : Advice for Applying Machine Learning][6]
+
 ### NEXT ⋯⋯
 
 > notes：next ...
@@ -29,4 +31,5 @@ date: 2016-03-26 16:46:48
 [3]: /2016/10/24/ml-coursera-ng-w3-LR/
 [4]: /2017/02/07/ml-coursera-ng-w4-NN-02/
 [5]: /2017/02/13/ml-coursera-ng-w4-NN-03/
-
+[6]: /2017/05/24/ml-coursera-ng-w6-Advice-for-Applying-Machine-Learning/
+[7]: /2017/05/29/ml-coursera-ng-w6-Machine-Learning-System-Design/
