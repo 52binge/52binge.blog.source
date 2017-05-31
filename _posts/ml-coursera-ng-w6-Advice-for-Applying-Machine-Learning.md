@@ -25,7 +25,7 @@ mathjax: true
 
 ## 1. Evaluating a Hypothesis
 
-Once we have done some trouble shooting for errors in our predictions by:
+Once we have done some **trouble shooting** for errors in our predictions by:
 
 - Getting more training examples
 - Trying smaller sets of features
@@ -59,7 +59,7 @@ $$
 
 This gives us the proportion of the test data that was misclassified.
 
-> inaccurate[ɪn'ækjərət]、procedure [prə'sidʒɚ]
+> inaccurate[ɪn'ækjərət]、procedure [prə'sidʒɚ] 比例
 > remaining [ri'men..]、 Misclassification ['mis,klæsifi'keiʃən]
 > validation [,vælə'deʃən] 确认，批准
 

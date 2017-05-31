@@ -51,7 +51,7 @@ p + p {
 
 ### Contact me
 
-- 你可以通过这些方式找到我: <a class="article-myEmail" href="mailto:robby.values@gmail.com">  Email</a> <!--<a class="article-myFacebook" href="https://www.facebook.com/"> Facebook</a>--> <a class="article-myTwitter" href="https://twitter.com/blairchan3">  Twitter</a> <!--<a class="article-myInstagram" href="https://www.instagram.com/"> Instagram</a>--> <a class="article-myGithub" href="https://github.com/blairchan"> Github</a> <a class="article-myKaggle" href="https://www.kaggle.com/blairchan"> Kaggle</a> <a class="article-mySegmentfault" href="https://segmentfault.com/u/binge"> Segmentfault</a>
+- 你可以通过这些方式找到我: <a class="article-myEmail" href="mailto:robby.values@gmail.com">  Email</a> <!--<a class="article-myFacebook" href="https://www.facebook.com/"> Facebook</a>--> <a class="article-myTwitter" href="https://twitter.com/blairchan10">  Twitter</a> <!--<a class="article-myInstagram" href="https://www.instagram.com/"> Instagram</a>--> <a class="article-myGithub" href="https://github.com/blairchan"> Github</a> <a class="article-myKaggle" href="https://www.kaggle.com/blairchan"> Kaggle</a> <a class="article-mySegmentfault" href="https://segmentfault.com/u/blair"> Segmentfault</a>
 
 - 你可以持续关注本博文章, 并可通过 [DISQUS](https://disqus.com/) 发表评论
 
