@@ -1,5 +1,5 @@
 ---
-title: l4u1 Entertainment
+title: EF Entertainment
 date: 2017-05-24 07:06:16
 tags: ef-english
 categories: English

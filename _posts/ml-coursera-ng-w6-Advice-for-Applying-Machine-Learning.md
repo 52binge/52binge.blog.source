@@ -1,5 +1,5 @@
 ---
-title: Coursera Week 6 - Advice for Applying Machine Learning *
+title: Coursera 6 - Advice for Applying Machine Learning *
 toc: true
 date: 2017-05-24 22:08:21
 categories: machine-learning
