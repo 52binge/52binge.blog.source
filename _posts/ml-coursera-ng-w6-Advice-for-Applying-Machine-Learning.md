@@ -73,9 +73,9 @@ Given many models with different polynomial degrees, we can use a systematic app
 
 One way to break down our dataset into the three sets is:
 
-- Training set: 60%
-- Cross validation set: 20%
-- Test set: 20%
+- <font color="blue"> Training set: 60%</font>
+- <font color="blue"> Cross validation set: 20%</font>
+- <font color="blue"> Test set: 20%</font>
 
 We can now calculate three separate error values for the three different sets using the following method:
 
@@ -83,7 +83,7 @@ We can now calculate three separate error values for the three different sets us
 2. Find the polynomial degree d with the least error using the cross validation set.
 3. Estimate the generalization error using the test set with $J\_{test}(\Theta^{(d)})$, (d = theta from polynomial with lower error);
 
-This way, the degree of the polynomial d has not been trained using the test set.
+> This way, the degree of the polynomial d has not been trained using the test set.
 
 ## 3. Diagnosing Bias vs. Variance
 
@@ -115,7 +115,7 @@ In the figure above, we see that as λ increases, our fit becomes more rigid. On
 1. Create a list of lambdas (i.e. λ∈{0,0.01,0.02,0.04,0.08,0.16,0.32,0.64,1.28,2.56,5.12,10.24});
 2. Create a set of models with different degrees or any other variants.
 3. Iterate through the λs and for each λ go through all the models to learn some Θ.
-4. Compute the cross validation error using the learned Θ (computed with λ) on the $J\_{CV}(\Theta)$ without regularization or λ = 0.
+4. Compute the cross validation error using the learned Θ (computed with λ) on the $J\_{CV}(\Theta)$ **without** regularization or λ = 0. `？？`
 5. Select the best combo that produces the lowest error on the cross validation set.
 6. Using the best combo Θ and λ, apply it on $J\_{test}(\Theta)$ to see if it has a good generalization of the problem.
 
@@ -136,6 +136,8 @@ If a learning algorithm is suffering from high bias, getting more training data 
 
 ![][3]
 
+me : 随着train sets的增加，高偏差会降低，因为更容易找到合适的 Hypothesis 去拟合数据。所以CV error下降。
+
 **Experiencing high variance:**
 
 **Low training set size:** $J\_{train}(\Theta)$ will be low and $J\_{CV}(\Theta)$ will be high.
@@ -146,11 +148,14 @@ If a learning algorithm is suffering from high variance, getting more training d
 
 ![][4]
 
+me : 随着 train sets 的增加，overfiting 越来越不容易。造成 CV error 下降。
+
 > plateau out / leveling off 达到平稳状态
+> `test error will be CV error on picture.`
 
 ## 6. Deciding What to Do Next Revisited
 
-`Our decision process can be broken down as follows`:
+**Our decision process can be broken down as follows*:
 
 Function | Result
 ------- | -------
