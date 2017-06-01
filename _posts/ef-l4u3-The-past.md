@@ -13,28 +13,30 @@ img {
         width: 550px;
         margin-left: 120px !important;
 }
+audio {
+        display: block !important;
+        width: 550px;
+        margin-left: 120px !important;
+}
+
 </style>
 
 ## 1. Asking about someone's day
 
-- I went for a run
-- I did the dishes ['diʃiz]
-- I ironed my clothes  ['aɪən]
-- The day before yesterday
-
-![][1]
-
 desc |
 ------- | -------
-I had a great day. |
-Yesterday, What a bad day. |
-I had a job interview. |
-I washed my clothes. |
+I had a great day. I got up. I went for a run |
+I did the dishes. I ironed my clothes  |
+Yesterday, What a bad day. I had a job interview. |
+I washed my clothes. I cleaned my apartment. |
 
 
+> iron['aɪən] n. 铁器;熨斗;脚镣 adj. 铁制的;坚强的;顽强的; vt. 熨烫;用铁铸成 vi. 熨衣;
+> 
+> dish [dɪʃ] 盘;餐具
 > eat - ate、drink - drank、let - let 
 
-### 1.2 Dialog
+## 1.1 dialog about todd
 
 Dialog |
 ------- | -------
@@ -43,34 +45,27 @@ TODD: Fine, Jenny! I just got back from Tokyo two days ago. |
 JENNY: Business trip? |
 TODD: Yeah. |
 JENNY: How was it? |
-TODD: It was good, but Tokyo's so busy! |
-JENNY: Yeah. |
-TODD: Oh, and I was in Kyoto last week. |
-JENNY: Uh-huh? And how was that? |
+TODD: It was good, but Tokyo's so busy!  and I was in Kyoto last week. |
+JENNY: How was that? |
 TODD: It was incredible! So how are you? |
-JENNY: I'm good. I was in Chicago the day before yesterday. |
-TODD: Really? |
-JENNY: Yeah, I had  dinner with Mark and Paula. |
+JENNY: I'm good. I was in Chicago the day before yesterday. I had  dinner with Mark and Paula. |
 TODD: How are they doing? |
 JENNY: They're fine. Oh, you know they had a baby, right? |
-TODD: No, I didn't know. |
-JENNY: Yeah, it was last year. |
-TODD: Wow. I should call them. |
-JENNY: Good idea. |  
 
-### 1.3 Description questions
+> Kyoto [kiˈoto, ˈkjo-] 京都
+
+### 1.2 description questions
  
 - What was it like?
 - What was the wedding like?
 - What did he look like?
 
 
-- Did you go to Paris?
 - How did you like Beijing?
 - How was your vacation?
 
 
-- They did not like London.
+- Did you go to Paris?
 - We did not meet John yesterday.
 - Frank wasn't happy in Los Angeles.
 
@@ -84,6 +79,9 @@ JENNY: Good idea. |
 - shut - shut
 
 ![][2]
+<audio src="/voices/ef/l4u3-talking-about-your-weekend.m4a" controls="controls">
+Your browser does not support the audio tag.
+</audio>
 
 Dialog |
 ------- | -------
@@ -172,6 +170,10 @@ JESSICA: Yeah! |
 - Corporation  [ˌkɔ:rpəˈreɪʃn] 
 
 ![][3]
+
+<audio src="/voices/ef/l4u3-telling-a-story.m4a" controls="controls">
+Your browser does not support the audio tag.
+</audio>
 
 Dialog |
 ------- | -------
