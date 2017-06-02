@@ -25,7 +25,7 @@ mathjax: true
 
 ## 1. Building a Spam Classifier
 
-### 1.1 Prioritizing What to Work On
+### 1.1 prioritize what to work on
 
 System Design Example:
 
@@ -41,7 +41,7 @@ So how could you spend your time to improve the accuracy of this classifier?
 
 It is difficult to tell which of the options will be most helpful.
 
-### 1.2 Error Analysis
+### 1.2 error analysis
 
 The recommended approach to solving machine learning problems is to:
 
@@ -57,14 +57,26 @@ It is very important to get error results as a single, numerical value. Otherwis
 
 ## 2. Handling Skewed Data
 
-**Error metrics for skewed classes**
+### 2.1 error for skewed classes
 
 ![][3]
+
+So for the problem of skewed classes precision recall gives us more direct insight into how the learning algorithm is doing and this is often a much better way to evaluate our learning algorithms
+
+### 2.2 precision and recall
+
+![][4]
+
+## 3. Using Large Data Sets
+
+![][5]
 
 ## Reference article
 
 [1]: /images/ml/ml-ng-w6-02-01.png
 [2]: /images/ml/ml-ng-w6-02-02.png
 [3]: /images/ml/ml-ng-w6-02-03.png
+[4]: /images/ml/ml-ng-w6-02-04.png
+[5]: /images/ml/ml-ng-w6-02-05.png
 
 
