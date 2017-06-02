@@ -21,6 +21,8 @@ date: 2016-03-26 16:46:48
 
 - [第06章 : Advice for Applying Machine Learning][6]
 
+- [第06章 : Machine Learning System Design][7]
+
 ### NEXT ⋯⋯
 
 > notes：next ...
