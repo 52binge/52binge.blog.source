@@ -1,10 +1,10 @@
 ---
-title: Python Basic Learning
+title: Python Basic Learning I
 toc: true
 date: 2017-05-31 11:00:21
 categories: python
 tags: [python]
-description: 廖雪峰的 Python 教程
+description: 廖雪峰的 Python 教程 - str、list、tuple、dict、set 等
 mathjax: true
 list_number: true
 ---

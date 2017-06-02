@@ -42,7 +42,7 @@ The new procedure using these two sets is then:
 1. Learn $\Theta$ and minimize $J_{train}(\Theta)$ using the training set
 2. Compute the test set error $J\_{test}(\Theta)$
 
-### The test set error
+**The test set error**
 
 1. For linear regression: $J\_{test}(\Theta) = \dfrac{1}{2m\_{test}} \sum\_{i=1}^{m\_{test}}(h\_\Theta(x^{(i)}\_{test}) - y^{(i)}\_{test})^2$
 2. For classification ~ Misclassification error (aka 0/1 misclassification error):
@@ -104,7 +104,7 @@ The is summarized in the figure below:
 
 ![][1]
 
-## 4. Regularization and Bias/Variance
+## 4. Regularization Bias/Variance
 
 Note: [The regularization term below and through out the video should be $\frac \lambda {2m} \sum\_{j=1}^n \theta\_j ^2$ and NOT $\frac \lambda {2m} \sum\_{j=1}^m \theta\_j ^2$]
 
@@ -153,7 +153,7 @@ me : 随着 train sets 的增加，overfiting 越来越不容易。造成 CV err
 > plateau out / leveling off 达到平稳状态
 > `test error will be CV error on picture.`
 
-## 6. Deciding What to Do Next Revisited
+## 6. What to Do Next Revisited
 
 **Our decision process can be broken down as follows*:
 
@@ -167,7 +167,7 @@ Adding features | Fixes high bias
 Adding polynomial features | Fixes high bias
 Decreasing λ | Fixes high bias
 
-### Diagnosing Neural Networks
+### 6.1 Diagnosing NN
 
 - A neural network with fewer parameters is **prone to underfitting**. It is also **computationally cheaper**.
 
@@ -175,7 +175,7 @@ Decreasing λ | Fixes high bias
 
 In this case you can use regularization (increase λ) to address the overfitting.
 
-### Model Complexity Effects
+### 6.2 Model Complexity Effects
 
 - Lower-order polynomials (low model complexity) have high bias and low variance. In this case, the model fits poorly consistently.
 
@@ -185,7 +185,10 @@ In this case you can use regularization (increase λ) to address the overfitting
 
 ## Reference article
 
+- [coursera 6 @ng][6]
+
 [1]: /images/ml/ml-ng-w6-01-01.png
 [2]: /images/ml/ml-ng-w6-01-02.png
 [3]: /images/ml/ml-ng-w6-01-03.png
 [4]: /images/ml/ml-ng-w6-01-04.png
+[6]: https://www.coursera.org/learn/machine-learning/home/week/6

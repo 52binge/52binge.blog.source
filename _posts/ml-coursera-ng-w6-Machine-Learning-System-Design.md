@@ -57,8 +57,14 @@ It is very important to get error results as a single, numerical value. Otherwis
 
 ## 2. Handling Skewed Data
 
+**Error metrics for skewed classes**
+
+![][3]
+
 ## Reference article
 
 [1]: /images/ml/ml-ng-w6-02-01.png
 [2]: /images/ml/ml-ng-w6-02-02.png
+[3]: /images/ml/ml-ng-w6-02-03.png
+
 
