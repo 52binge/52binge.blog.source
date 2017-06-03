@@ -104,7 +104,7 @@ Dialog |
 [EMMA] I got to the station at 3:30. |
 
 
-### 2. In the past
+### 2.1 In the past
 
 - I read a good novel last week.
 - He cooked dinner.
@@ -114,7 +114,7 @@ Dialog |
 - I went jogging.
 - brought a gift
 
-### 3. General questions
+### 2.2 General questions
 
 - How was your weekend?
 - How is your mom feeling?     
@@ -123,7 +123,7 @@ Dialog |
 - A: Hey, there was a great movie on last night.
 - B: Really? What was it? 
 
-### 4. Changing a topic
+### 2.3 Changing a topic
 
 By the way |
 ------- | -------
@@ -192,7 +192,7 @@ Dialog |
 [HARRY] She? A female guard? |
 [SALLY] Uh-huh. |
 
-### 2. crime story
+### 3.1 crime story
 
 - break into
 - murder  [ˈmɜ:rdə(r)]
@@ -211,7 +211,7 @@ Sarah
 
 > Chicago、London
 
-### 3. somewhere / thing / one
+### 3.2 somewhere / thing / one
 
 - John lives somewhere in Tokyo. I don't know his address.
 
@@ -229,6 +229,9 @@ Sarah
 - campfire
 
 ![][4]
+<audio src="/voices/ef/l4u3-listening-to-a-story.m4a" controls="controls">
+Your browser does not support the audio tag.
+</audio>
 
 Dialog |
 ------- | -------
@@ -256,7 +259,7 @@ Dialog |
 [SALLY] Don’t worry, Jake. It’s very safe. |
 
 
-### 2. Hiking sentence
+### 4.1 Hiking sentence
 
 - A: What did you do on the weekend?
 - B: I played badminton.
@@ -280,7 +283,7 @@ Dialog |
 > How far did you walk?	
 > How difficult was the hike?
 
-### 3. Connect the matching
+### 4.2 Connect the matching
 
 questions | answer
 ------- | -------
@@ -290,7 +293,7 @@ How long was your trip? | We hiked for two weeks.
 How did you get home? | I walked
 Where did you eat lunch | I ate at the mountain
 
-### 4. Hiking Dialog
+### 4.3 Hiking Dialog
 
 Dialog |
 ------- | -------
