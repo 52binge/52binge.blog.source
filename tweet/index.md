@@ -39,16 +39,6 @@ date: 2016-07-16 16:59:48
 
 ***
 
-> `2016.07.01` 一直觉得以下的格言，对于看透一个人的本质有重大的指导意义。(by yinwang)
-> &nbsp;
-> Men are four:
-> He who knows not and knows not he knows not, he is a fool-shun him;
-> He who knows not and knows he knows not, he is simple—teach him;
-> He who knows and knows not he knows, he is asleep-wake him;
-> He who knows and knows he knows, he is wise—follow him!
-
-***
-
 > `2016.06.27` 真心觉得中国教育公平性与教育改革早已经迫在眉睫。
 >  &nbsp;&nbsp; [梁建章 -- 我为什么主张必须合并初高中？][4]
 > 
