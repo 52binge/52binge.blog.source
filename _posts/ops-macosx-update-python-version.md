@@ -79,6 +79,9 @@ Python 3.5.2
 ## 5. Refence article
 
 - [老毕码农](http://blog.csdn.net/wirelessqa/article/details/23261723)
+- [mac pycharm 切换PYTHON版本][1]
+
+[1]: http://www.jianshu.com/p/1a002847265e
 
 
 
