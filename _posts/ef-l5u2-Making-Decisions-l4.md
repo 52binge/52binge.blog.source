@@ -39,7 +39,7 @@ Dialog |
 [SIMON] Of course, we did. |
 [SIMON] That’s us at the Munich beer festival! |
 
-## 2. Expressions
+## 2. expressions
 
 Dialog |
 ------- | -------
@@ -54,7 +54,7 @@ MOM: And **you'd better** get a good jacket. |
 JOHNNY: Mom, I'm going to be OK. |
 MOM: I'm sorry. I just love you, and I worry. |
 
-## 3. Writing
+## 3. writing
 
 Using commas
 
