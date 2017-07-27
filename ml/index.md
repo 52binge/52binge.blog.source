@@ -1,13 +1,23 @@
 ---
-title: machine learning
+title: Natural Language Processing
 date: 2016-03-26 16:46:48
 ---
 
 大家好，欢迎来到本站
 
-本站致力于整理个人的学习笔记，这样在日后看起来，也算是自己在追求大道上的一点回忆。博主水平非常有限，期望能与 [machine learning](https://en.wikipedia.org/wiki/Machine_learning) 感兴趣的朋友一起学习、交流、探讨与分享
+本站致力于整理个人的学习笔记，这样在日后看起来，也算是自己在追求大道上的一点回忆。博主水平非常有限，期望能与 [nlp](https://en.wikipedia.org/wiki/Natural_language_processing)、[mahine learning](https://en.wikipedia.org/wiki/Machine_learning) 感兴趣的朋友一起学习、交流、探讨与分享
 
-## **machine learning**
+
+## natural language processing
+
+- [第01章 : Python正则表达式][N1]  
+
+- [第02章 : Jieba 中文处理][N2]
+
+[N1]: /nlp/py-re.html
+[N2]: /nlp/jieba-chinese-process.html
+
+## machine learning
 
 - [第01章 : Machine Learning Introduce][1]
 

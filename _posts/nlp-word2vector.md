@@ -177,6 +177,11 @@ John also likes to watch football games.
 
 ![][9]
 
+存在缺点
+
+![][10]
+
+
 [2]: /images/ml/nlp-word2vector-2.png
 [3]: /images/ml/nlp-word2vector-3.png
 [4]: /images/ml/nlp-word2vector-4.png
