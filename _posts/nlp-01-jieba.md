@@ -15,6 +15,10 @@ img {
 }
 </style>
 
+[Github-ipynb][g1]
+
+[g1]: https://github.com/blairchan/NLP/blob/master/jieba-learning-Notes.ipynb
+
 
 词汇是我们对句子和文章理解的基础，因此需要一个工具去把完整的文本中分解成粒度更细的词
 

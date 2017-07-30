@@ -10,7 +10,7 @@ date: 2016-03-26 16:46:48
 
 ## natural language processing
 
-- [第01章 : Python正则表达式][n1]  
+- [第01章 : Python 字符串处理-正则表达式][n1]  
 
 - [第02章 : Jieba 中文处理][n2]
 
@@ -34,7 +34,7 @@ date: 2016-03-26 16:46:48
 
 - [第13章 : 从 Word2Vector 到 Fasttext 的新发展][0]
 
-[n1]: /nlp/py-re.html
+[n1]: /2017/07/30/nlp-01-string-operation-re/
 [n2]: /2017/07/29/nlp-01-jieba/
 
 ## machine learning
