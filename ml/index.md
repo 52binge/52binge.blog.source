@@ -5,17 +5,37 @@ date: 2016-03-26 16:46:48
 
 大家好，欢迎来到本站
 
-本站致力于整理个人的学习笔记，这样在日后看起来，也算是自己在追求大道上的一点回忆。博主水平非常有限，期望能与 [nlp](https://en.wikipedia.org/wiki/Natural_language_processing)、[mahine learning](https://en.wikipedia.org/wiki/Machine_learning) 感兴趣的朋友一起学习、交流、探讨与分享
+本站致力于整理个人的学习笔记，这样在日后看起来，也算是追求大道上的一点回忆。博主水平非常有限，期望能与 [nlp](https://en.wikipedia.org/wiki/Natural_language_processing)、[mahine learning](https://en.wikipedia.org/wiki/Machine_learning) 感兴趣的朋友一起学习、交流、探讨与分享
 
 
 ## natural language processing
 
-- [第01章 : Python正则表达式][N1]  
+- [第01章 : Python正则表达式][n1]  
 
-- [第02章 : Jieba 中文处理][N2]
+- [第02章 : Jieba 中文处理][n2]
 
-[N1]: /nlp/py-re.html
-[N2]: /nlp/jieba-chinese-process.html
+- [第03章 : 从语言模型到朴素贝叶斯][0]
+
+- [第04章 : LDA主题模型][0]
+
+- [第05章 : 基于统计的翻译系统][0]
+
+- [第06章 : HMM 隐马尔科夫模型][0]
+
+- [第07章 : 深度学习与NLP应用][0]
+
+- [第08章 : 词向量相关应用][0]
+
+- [第09章 : 条件随机场相关应用][0]
+
+- [第11章 : Word2Vector 理论基础][0]
+
+- [第12章 : Word2Vector 实战案例][0]
+
+- [第13章 : 从 Word2Vector 到 Fasttext 的新发展][0]
+
+[n1]: /nlp/py-re.html
+[n2]: /2017/07/29/nlp-01-jieba/
 
 ## machine learning
 
@@ -37,7 +57,7 @@ date: 2016-03-26 16:46:48
 
 > notes：next ...
 
-[0]: /
+[0]: /ml
 [1]: /2016/09/20/ml-coursera-ng-w1-01-introduce/
 [2]: /2016/10/08/ml-coursera-ng-w2-01-Linear-Regression/
 [3]: /2016/10/24/ml-coursera-ng-w3-LR/
