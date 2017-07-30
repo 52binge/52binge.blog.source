@@ -7,7 +7,6 @@ date: 2016-03-26 16:46:48
 
 本站致力于整理个人的学习笔记，这样在日后看起来，也算是追求大道上的一点回忆。博主水平非常有限，期望能与 [nlp](https://en.wikipedia.org/wiki/Natural_language_processing)、[mahine learning](https://en.wikipedia.org/wiki/Machine_learning) 感兴趣的朋友一起学习、交流、探讨与分享
 
-
 ## natural language processing
 
 - [第01章 : Python 字符串处理-正则表达式][n1]  
@@ -37,6 +36,8 @@ date: 2016-03-26 16:46:48
 [n1]: /2017/07/30/nlp-01-string-operation-re/
 [n2]: /2017/07/29/nlp-01-jieba/
 
+[f1]: http://www.52nlp.cn/
+
 ## machine learning
 
 - [第01章 : Machine Learning Introduce][1]
@@ -53,10 +54,6 @@ date: 2016-03-26 16:46:48
 
 - [第06章 : Machine Learning System Design][7]
 
-### NEXT ⋯⋯
-
-> notes：next ...
-
 [0]: /ml
 [1]: /2016/09/20/ml-coursera-ng-w1-01-introduce/
 [2]: /2016/10/08/ml-coursera-ng-w2-01-Linear-Regression/
@@ -65,3 +62,7 @@ date: 2016-03-26 16:46:48
 [5]: /2017/02/13/ml-coursera-ng-w4-NN-03/
 [6]: /2017/05/24/ml-coursera-ng-w6-Advice-for-Applying-Machine-Learning/
 [7]: /2017/05/29/ml-coursera-ng-w6-Machine-Learning-System-Design/
+
+## next ⋯⋯
+
+> notes：next ... [52nlp][f1]
