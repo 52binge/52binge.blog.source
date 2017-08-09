@@ -118,7 +118,7 @@ print('/'.join(jieba.cut('如果放到旧字典中将出错。', HMM=False)))
 
 ## 2. 关键词提取
 
-### 2.1 基于 TF-IDF 算法的关键词抽取
+### 2.1 TF-IDF 算法的关键词抽取
 
 import jieba.analyse  
 jieba.analyse.extract_tags(sentence, topK=20, withWeight=False, allowPOS=())
@@ -150,7 +150,7 @@ print "  ".join(analyse.extract_tags(lines, topK=20, withWeight=False, allowPOS=
 长老  呆子  徒弟  怎么  不知  老孙  国王  一个
 ```
 
-### 关于TF-IDF 算法的关键词抽取补充
+### 2.2 TF-IDF 关键词抽取补充
 
 关键词提取所使用逆向文件频率（**IDF**）文本语料库可以切换成自定义语料库的路径
 
@@ -174,7 +174,7 @@ print "  ".join(analyse.extract_tags(lines, topK=20, withWeight=False, allowPOS=
 [4]: https://github.com/fxsjy/jieba/blob/master/test/extract_tags_stop_words.py
 [5]: https://github.com/fxsjy/jieba/blob/master/test/extract_tags_with_weight.py
 
-### 基于 TextRank 算法的关键词抽取
+### 2.3 TextRank 的关键词抽取
 
 - jieba.analyse.textrank(sentence, topK=20, withWeight=False, allowPOS=('ns', 'n', 'vn', 'v')) 直接使用，接口相同，注意默认过滤词性。
 - jieba.analyse.TextRank() 新建自定义 TextRank 实例
