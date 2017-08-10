@@ -35,7 +35,7 @@ date: 2016-03-26 16:46:48
 
 [n1]: /2017/07/30/nlp-01-string-operation-re/
 [n2]: /2017/07/29/nlp-01-jieba/
-[n3]: /2017/08/09/nlp-bayes/
+[n3]: /2017/08/10/nlp-bayes-1/
 
 [f1]: http://www.52nlp.cn/
 
