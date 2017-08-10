@@ -1,5 +1,5 @@
 ---
-title: 朴素贝叶斯
+title: Naive Bayes
 toc: true
 date: 2017-08-10 07:08:21
 categories: NLP
