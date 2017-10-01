@@ -31,6 +31,13 @@ Python对函数式编程提供部分支持。由于Python允许使用变量，�
 
 Higher-order function
 
+
+## 2. 模块
+
+> Python内置的模块 和 来自第三方的模块。
+
+> 每一个包目录下面都会有一个__init__.py的文件，这个文件是必须存在的，否则，Python就把这个目录当成普通目录，而不是一个包。
+
 ## Reference article
 
 - [廖雪峰的官方网站 liaoxuefeng][2]
