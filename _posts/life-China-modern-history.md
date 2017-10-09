@@ -2,7 +2,7 @@
 title: biggest bandit spy
 date: 2017-01-21 07:54:16
 tags: spy
-categories: society
+categories: life
 toc: true
 description: China modern history  - biggest bandit spy
 ---

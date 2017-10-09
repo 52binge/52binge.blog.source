@@ -22,15 +22,6 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-<style>
-img {
-        display: block !important;
-        width: 600px;
-        margin-left: 100px !important;
-}
-</style>
-
-
 ## 1. NLP 常见任务
 
 1. 自动摘要
@@ -40,6 +31,8 @@ img {
 5. 分词 (中文、日文等)
 6. 主题识别
 7. 文本分类
+
+<!-- more -->
 
 > 指代消解   ->   小明放学了, 妈妈去接`他`
 > 机器翻译   ->   小心地滑、干货 => Slide carefully

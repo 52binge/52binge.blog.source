@@ -1,0 +1,215 @@
+---
+title: Macos High Sierra 10.13 Environment Install
+toc: true
+date: 2017-10-03 07:08:21
+categories: devops
+tags: macos
+description: new macos high sierra install env
+---
+
+Enable Dragging With Three Finger : 
+ 
+> System Preferences -> Accessibility -> Mouse & Trackpad -> Trackpad Options.
+
+<!-- more -->
+
+## 1. Common Soft
+
+ 1. Chrome
+ 2. NeteaseMusic
+ 3. Yuntipub
+ 4. CleanMyMac 3
+ 5. Baiduyun & Aira2GUI
+ 6. Evernote
+ 7. Microsoft\_Office\_2016\_15.38.17090200\_Installer.pkg
+
+> Google Chrome is up to date
+> Version 61.0.3163.100 (Official Build) (64-bit)
+>
+> 百度云破解限速 (Aria2GUI + chrome plugin)
+> 
+> Evernote 国际版与国内版分开管理的.
+
+## 2. Dev Tools
+
+### 2.1 general dev tool
+
+ 1. Macdown
+ 2. Alfred
+ 3. Atom
+ 4. SubLime Text
+ 5. [Homebrew][1]
+ 6. Iterm2
+ 7. Oh-my-zsh
+ 8. [PyCharm & IDEA][3]
+ 9. GNU\_Octave\_3.8.0-6.dmg
+
+> brew (install 过程会自动需要 Xcode 被安装)
+> brew install wget tree 
+> 
+> wget https://bootstrap.pypa.io/get-pip.py <br>
+> sudo python get-pip.py
+
+### 2.2 Iterm & Zsh
+
+Iterm2 Change Font
+
+> Iterm2 -> Preference -> Profiles -> Text -> Change Font -> 15pt Courier New
+
+Reference Article
+
+> [Iterm2-color-schemes][i2]   
+> [Iterm-colors][i1]  
+> [Zsh astro theme][i3]    
+> [使用 Zsh 的十大优点][i4].    
+> [oh-my-zsh配置你的zsh提高shell逼格终极选择][i5].       
+> [打造高效个性Terminal（一）之 iTerm][i6].    
+> [打造高效个性Terminal（二）之 zsh][i7]
+
+[i1]: https://github.com/bahlo/iterm-colors
+[i2]: http://iterm2colorschemes.com/
+[i3]: https://github.com/iplaces/astro-zsh-theme
+[i4]: http://blog.csdn.net/rapheler/article/details/51505003
+[i5]: http://yijiebuyi.com/blog/b9b5e1ebb719f22475c38c4819ab8151.html
+[i6]: http://huang-jerryc.com/2016/08/11/%E6%89%93%E9%80%A0%E9%AB%98%E6%95%88%E4%B8%AA%E6%80%A7Terminal%EF%BC%88%E4%B8%80%EF%BC%89%E4%B9%8B%20iTerm/
+[i7]: [https://segmentfault.com/a/1190000006248107]
+
+---
+
+### 2.3 ssh config
+
+1. ssh-keygen -t rsa -C "your-company-email-full-address"
+2. ~/.ssh/id_rsa.pub 粘贴到运维平台
+
+> mac iterm2 ssh 跳转失败, 解决办法 :
+> 
+> (1) 新建并编辑 .ssh/config, 并复制以下内容到 config文件中
+>
+> ```
+Host * 
+ForwardAgent yes 
+PasswordAuthentication yes 
+StrictHostKeyChecking no 
+HashKnownHosts yes 
+Compression yes 
+```
+
+> (2) cd ～/.ssh, 并在 terminal 中执行 ssh-add
+
+### 2.4 navicat for MySQL
+
+![rds-general][s2]
+
+> Encoding 设置为 utf-8 则，查询数据库，汉字乱码，改为 Auto 解决。
+
+![ssh-rds][s1]
+
+[s1]: /images/ops/ops-ssh-rds.png
+[s2]: /images/ops/ops-ssh-general.png
+
+## 3. Python
+
+ 1. [Python pip][2] `sudo python get-pip.py`
+ 2. jieba
+ 3. matplotlib
+
+> sudo pip install jieba matplotlib 
+
+## 4. Java
+
+ 1. [JDK][4]
+ 2. Maven
+ 3. Tomcat
+ 4. Scala
+ 5. Spark
+
+```
+➜  software pwd
+/usr/local/xsoft/software
+➜  software ll
+total 0
+lrwxr-xr-x  apache-maven -> /usr/local/xsoft/deploy/apache-maven-3.3.9
+lrwxr-xr-x  apache-tomcat -> /usr/local/xsoft/deploy/apache-tomcat-7.0.59
+lrwxr-xr-x  scala -> /usr/local/xsoft/deploy/scala-2.11.7
+lrwxr-xr-x  spark -> /usr/local/xsoft/deploy/spark-1.6.3-bin-hadoop2.6
+➜  software
+```
+
+## 5. Blog
+
+ 1. [hexo][5]
+ 2. Install Node.js
+
+```
+$ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+```
+> Once nvm is installed, restart the terminal and run the following command to install Node.js:
+
+```
+$ nvm install v4.1.0
+$ npm install -g hexo-cli
+```
+
+> v4.1.0 更合适 hexo
+
+## 6. IPython Notebook
+
+### 1. install ipython
+
+```bash
+sudo pip install ipython
+```
+
+> 之后启动 terminal, 输入 ipython，如果找不到命令, 则 pip show ipython 如果存在 ipython , 
+> 
+> 则 python -m IPython 试试。有，没问题，则在 zshrc 中，添加一个 alias 别名即可。
+> 
+> ```zshrc
+alias ipython='python -m IPython'
+```
+
+### 2. install notebook
+
+```bash
+sudo pip install --ignore-installed six
+sudo pip install target-gsheet tap-fixerio
+sudo pip install notebook
+```
+
+> sudo pip install notebook, 在 macos High Sierra 10.13 报错，则
+> 
+> sudo pip install --ignore-installed six
+sudo pip install target-gsheet tap-fixerio
+> 
+> 之后再 sudo pip install notebook 解决。
+
+---
+
+NSNavRecentPlaces 内部自动生成的配置，别乱改。
+
+> defaults write -g NSNavRecentPlaces '("~/Desktop", "/usr/local/xsoft/software")';
+
+
+## 7. Reference
+
+ * [Homebrew][1]
+ * [Get-pip][2]
+ * [IntelliJ、Pycharm激活][3]
+ * [Mac OSX 安裝JDK][4]
+ * [Hexo Doc][5]
+ * [Mac 上完整卸载Node.js][7]
+ * [Mac OSX 完整卸载Node.js][8]
+ * [node版本管理工具nvm-Mac下安装及使用][9]
+ * [XClient.info Mac App][10]
+ * [Stackoverflow python on MacOS 10.10 - command not found][11]
+
+[1]: https://brew.sh/
+[2]: https://bootstrap.pypa.io/get-pip.py
+[3]: https://feiyang.li/2017/02/26/jetbrains/index.html
+[4]: http://blog.tibame.com/?p=2068
+[5]: https://hexo.io/docs/
+[7]: http://www.jianshu.com/p/3e0206dd23ac
+[8]: http://10176523.cn/archives/50
+[9]: https://segmentfault.com/a/1190000004404505
+[10]: http://xclient.info/
+[11]: https://stackoverflow.com/questions/32856194/ipython-on-macos-10-10-command-not-found

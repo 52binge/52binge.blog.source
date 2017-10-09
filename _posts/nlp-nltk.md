@@ -7,17 +7,11 @@ tags: nltk
 description: python nltk
 ---
 
-<style>
-img {
-        display: block !important;
-        width: 600px;
-        margin-left: 100px !important;
-}
-</style>
-
 > NLTK 是一个有肉有血的
 
 > 斯坦佛 CoreNLP (英文、中文、西班牙语)
+
+<!-- more -->
 
 ## 1. NLTK
 

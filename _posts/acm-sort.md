@@ -3,7 +3,7 @@ title: Sort algorithms
 toc: true
 date: 2016-10-27 10:28:21
 categories: icpc
-tags: sort
+tags: acm
 description: data structure - six kinds of sorting algorithms
 mathjax: true
 ---

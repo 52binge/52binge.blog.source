@@ -7,14 +7,6 @@ tags: jieba
 description: NLP 基础技能 -- Jieba 中文分词与处理
 ---
 
-<style>
-img {
-        display: block !important;
-        width: 600px;
-        margin-left: 100px !important;
-}
-</style>
-
 [Github-ipynb][g1]
 
 [g1]: https://github.com/blairchan/NLP/blob/master/jieba-learning-Notes.ipynb
@@ -23,6 +15,8 @@ img {
 词汇是我们对句子和文章理解的基础，因此需要一个工具去把完整的文本中分解成粒度更细的词
 
 **jieba** 就是这样一个非常好用的中文工具，是以分词起家的，但是功能比分词要强大很多。
+
+<!-- more -->
 
 ## 1. 基本分词函数与用法
 

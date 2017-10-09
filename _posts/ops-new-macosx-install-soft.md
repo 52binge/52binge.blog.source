@@ -1,5 +1,5 @@
 ---
-title: New Mac Install Soft
+title: New Mac Install Brew Iterm Zsh
 toc: true
 date: 2017-03-22 16:43:21
 categories: devops
@@ -16,7 +16,7 @@ Mac 下面的包管理工具，通过 Github 托管适合 Mac 的编译配置以
 Mac 自带ruby 所以安装起来很方便，同时它也会自动把git也给你装上。
 
 ```bash
-ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 > 安装过程可能会有点慢，完成之后，建议执行一下自检，brew doctor
@@ -112,9 +112,11 @@ brew cask uninstall qq  #卸载 QQ
 - 软件更新速度快，一般都是最新版本 Store上很久很久才会更新版本；
 - 命令安装感觉比打开Store方便，另外Store在国内的速度也是XXOO。
 
+> homebrew-cask 你可以先不安装
+
 ## 4. iterm2
 
-...
+ https://www.iterm2.com/
 
 ## 5. SimpleHTTPServer
 

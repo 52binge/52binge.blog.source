@@ -1,7 +1,7 @@
 ---
 title: Coursera 7 - Optimization Objective
 toc: true
-date: 2017-06-11 16:08:21
+date: 2017-10-02 16:08:21
 categories: machine-learning
 tags: machine-learning
 description: coursera week 7 - optimization objective
@@ -22,6 +22,9 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
+From LR model to SVM model
+
+<!-- more -->
 
 ## 1. Support Vector Machines
 

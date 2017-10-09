@@ -12,6 +12,7 @@ list_number: true
 
 该模块定义的函数和类为应用程序和库实现了一个灵活的事件日志系统。
 
+<!-- more -->
 
 [1]: http://python.usyiyi.cn/translate/python_278/library/logging.html
 [2]: http://www.jianshu.com/p/feb86c06c4f4

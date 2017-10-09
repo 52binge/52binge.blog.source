@@ -7,14 +7,6 @@ tags: python-re
 description: Python 字符串处理 之 正则表达式
 ---
 
-<style>
-img {
-        display: block !important;
-        width: 600px;
-        margin-left: 100px !important;
-}
-</style>
-
 [Github-ipynb][g1]
 
 [g1]: https://github.com/blairchan/NLP/blob/master/string_operation.ipynb
@@ -23,6 +15,8 @@ img {
 ### 字符串操作
 
 我们一起回归一下python字符串的相关操作，这是非常基础的知识，但却是使用频度非常高的一些功能。
+
+<!-- more -->
 
 #### 1.1 去空格及特殊符号
 

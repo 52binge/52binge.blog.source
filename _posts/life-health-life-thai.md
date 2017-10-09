@@ -3,7 +3,7 @@
 title: Thailand 我见 (not finish)
 date: 2016-08-27 19:54:16
 tags: [thai]
-categories: society
+categories: life
 toc: true
 list_number: false
 description: This is a brief introduction about Thai trip

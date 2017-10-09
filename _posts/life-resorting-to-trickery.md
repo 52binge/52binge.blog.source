@@ -2,7 +2,7 @@
 title: Chinese Society's Common Trick
 date: 2016-12-04 22:15:16
 tags: foolish-people
-categories: society
+categories: life
 toc: true
 description: gyms、private hospitals、beauty salons、marriage institutions、housing agencies trick 
 ---

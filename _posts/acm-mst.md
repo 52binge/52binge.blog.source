@@ -3,7 +3,7 @@ title: Minimum Spanning Tree
 toc: true
 date: 2016-10-27 10:28:21
 categories: icpc
-tags: MST
+tags: acm
 description: data structure - minimal spanning tree
 mathjax: true
 ---

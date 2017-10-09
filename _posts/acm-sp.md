@@ -3,7 +3,7 @@ title: Shortest Path
 toc: true
 date: 2016-10-27 15:28:21
 categories: icpc
-tags: mst
+tags: acm
 description: data structure - shortest path
 mathjax: true
 ---

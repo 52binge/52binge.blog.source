@@ -3,7 +3,7 @@
 title: 晚上老是做梦怎么办
 date: 2016-08-07 06:24:16
 tags: health
-categories: society
+categories: life
 toc: true
 list_number: false
 description: 晚上老是做梦会严重影响我们的睡眠质量，而且第二天的工作也不能正常进行。那么我们该怎么办呢？

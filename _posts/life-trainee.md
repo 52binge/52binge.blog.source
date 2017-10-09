@@ -3,7 +3,7 @@
 title: Qunar Trainee Summary
 date: 2014-05-07 06:24:16
 tags: health
-categories: society
+categories: life
 toc: true
 list_number: false
 description: school life

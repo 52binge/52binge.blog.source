@@ -1,5 +1,5 @@
 ---
-title: 朴素贝叶斯用于新闻分类
+title: Naive Bayes For News Classification
 toc: true
 date: 2017-08-23 07:08:21
 categories: NLP
@@ -22,13 +22,13 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-<style>
-img {
-        display: block !important;
-        width: 400px;
-        margin-left: 200px !important;
-}
-</style>
+朴素贝叶斯，适用于新闻分类问题
+
+$$
+p(x)p(y|x) = p(y)p(x|y)
+$$
+
+<!-- more -->
 
 ## 1. 贝叶斯理论简单回顾
 

@@ -1,12 +1,16 @@
 ---
-title: 一些二手书希望转卖
+title: 转卖一些计算机相关的二手书籍
 toc: true
 date: 2017-08-02 16:07:21
-categories: spark
+categories: life
 tags: books
 description: some books for sold
 mathjax: true
 ---
+
+如下是我打算转卖的一些二手书，很多都比较新, 参考价如下:
+
+<!-- more -->
 
 书名 | 新度 | 原价 | 现价
 ------- | ------- | ------- | -------

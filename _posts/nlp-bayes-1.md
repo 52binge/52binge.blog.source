@@ -22,17 +22,11 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-<style>
-img {
-        display: block !important;
-        width: 400px;
-        margin-left: 200px !important;
-}
-</style>
-
 ## 1. 引言
 
 贝叶斯方法是一个历史悠久，有着坚实的理论基础的方法，同时处理很多问题时直接而又高效，很多高级 NLP 模型也可以从它演化而来。因此，学习贝叶斯方法，是研究 NLP 问题的一个非常好的切入口。
+
+<!--more-->
 
 ## 2. 贝叶斯公式
 

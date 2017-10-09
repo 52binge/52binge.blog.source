@@ -3,7 +3,7 @@
 title: Guitar Learning
 date: 2017-06-25 20:24:16
 tags: Guitar
-categories: society
+categories: life
 toc: true
 list_number: false
 description: play music to guitar
@@ -15,6 +15,8 @@ description: play music to guitar
 从细到粗1-6弦的标准音分别是：1E 2B 3G 4D 5A 6E，
 
 要将每根弦都对应到正确的字母到中间变绿才是标准音哟~
+
+<!--more-->
 
 [调音操作][1]
 

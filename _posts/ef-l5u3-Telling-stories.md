@@ -28,6 +28,8 @@ audio {
 Your browser does not support the audio tag.
 </audio>
 
+<!--more-->
+
 Dialog |
 ------- | -------
 [KATE] So did I tell you I met this guy? |
