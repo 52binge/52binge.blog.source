@@ -1,5 +1,5 @@
 ---
-title: Macos High Sierra 10.13 Environment Install
+title: Macos High Sierra 10.13 Work Environment Install
 toc: true
 date: 2017-10-03 07:08:21
 categories: devops
@@ -50,13 +50,44 @@ Enable Dragging With Three Finger :
 > wget https://bootstrap.pypa.io/get-pip.py <br>
 > sudo python get-pip.py
 
-### 2.2 Iterm & Zsh
+### 2.2 iterm & zsh
 
-Iterm2 Change Font
+**Iterm2 Change Font**
 
-> Iterm2 -> Preference -> Profiles -> Text -> Change Font -> 15pt Courier New
+> Iterm2 -> Preference -> Profiles -> Text -> Change Font -> 17pt Courier New Bold
 
-Reference Article
+**Iterm2 Hide scrollbars And title bar**
+
+> Preference -> Appearance 
+> 
+> 取消 show per-pane title bar with split panes.  
+> 勾选 Hide scrollbars
+
+**Iterm2 Color Presets**
+
+> Iterm2 -> Preference -> Profiles -> Color -> Color Presets -> your_theme
+> 
+> maybe Atom, Brogrammer, Darkside 
+> 
+> [Zsh astro theme][i3]
+
+**oh-my-zsh 自带 git 插件，里面的针对git 的别名设置见**:
+
+> ➜ >vim .oh-my-zsh/plugins/git/git.plugin.zsh
+
+**oh-my-zsh autojump plugin install**
+
+1. brew install autojump
+2. vim .zshrc
+
+```
+plugins=(git autojump)
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+```
+
+then, source ~/.zshrc
+
+**Reference Article**
 
 > [Iterm2-color-schemes][i2]   
 > [Iterm-colors][i1]  
@@ -64,7 +95,8 @@ Reference Article
 > [使用 Zsh 的十大优点][i4].    
 > [oh-my-zsh配置你的zsh提高shell逼格终极选择][i5].       
 > [打造高效个性Terminal（一）之 iTerm][i6].    
-> [打造高效个性Terminal（二）之 zsh][i7]
+> [打造高效个性Terminal（二）之 zsh][i7].   
+> [Mac下的效率工具autojump][i8]
 
 [i1]: https://github.com/bahlo/iterm-colors
 [i2]: http://iterm2colorschemes.com/
@@ -72,7 +104,8 @@ Reference Article
 [i4]: http://blog.csdn.net/rapheler/article/details/51505003
 [i5]: http://yijiebuyi.com/blog/b9b5e1ebb719f22475c38c4819ab8151.html
 [i6]: http://huang-jerryc.com/2016/08/11/%E6%89%93%E9%80%A0%E9%AB%98%E6%95%88%E4%B8%AA%E6%80%A7Terminal%EF%BC%88%E4%B8%80%EF%BC%89%E4%B9%8B%20iTerm/
-[i7]: [https://segmentfault.com/a/1190000006248107]
+[i7]: https://segmentfault.com/a/1190000006248107
+[i8]: http://www.barretlee.com/blog/2015/03/30/autojump-in-mac/
 
 ---
 
