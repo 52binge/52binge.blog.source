@@ -1,37 +1,21 @@
 ---
-date: 2016-07-16 20:53:48
+date: 2017-10-08 20:53:48
 ---
 
-<!--
 <style>
-a {
-        border: none;
-}
-img {
-        display: inline !important;
-        width: 250px;
-        margin-right: 0 10px !important;
-}
 p + p {
         display: inline;
 }
 </style>
--->
 
-<style>
-a {
-        border: none;
-}
-img {
+<!--img {
         display: block !important;
-        width: 250px;
         margin-left: 100px !important;
-}
+}-->
 
-p + p {
-        display: inline;
-}
-</style>
+<!--a {
+        border: none;
+}-->
 
 ## About
 
@@ -47,7 +31,7 @@ p + p {
 
 ### Recent me
 
-![][1]
+<img src="/images/tech-logos/2016-10-03-6.png" width="250"  style="margin-left:100px;" /img>
 
 ### Contact me
 
@@ -57,13 +41,13 @@ p + p {
 
 ### ChangeLog
 
+- 2017-10-08 : blairos 首页版面改造
 - 2016-07-29 : 增加 Tweet 推文系统
 - 2016-07-23 : 开始深度定制 blairos
 - 2016-03-22 : 基于 Hexo 建立博客
 
 
-
-Copyright © 2016 [www.iequa.com](/) 自我驱动
+Copyright © 2016 [www.iequa.com](/) 自我驱动, 把控情绪
 
 [1]: /images/tech-logos/2016-10-03-6.png
 
