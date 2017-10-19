@@ -1,7 +1,7 @@
 ---
 title: 中国人起名学问
 date: 2016-08-13 07:54:16
-tags: China_named
+tags: Chinese's name
 categories: life
 toc: true
 description: 中国人起名字的学问 - 自我研究

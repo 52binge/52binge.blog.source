@@ -148,6 +148,20 @@ Compression yes
 
 > sudo pip install jieba matplotlib 
 
+**pip list warning**
+
+> DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+
+~ vim ~/.pip/pip.conf
+
+```bash
+# add
+[list]
+format=columns
+# wq
+```
+
+
 ## 4. Java
 
  1. [JDK][4]

@@ -19,12 +19,19 @@ ZSH_THEME="astro"
 ###       blair custom config @2017.10.11       ###
 ###################################################
 
-alias x='ssh libin@192.168.181.196'
-alias x8='ssh libin@192.168.181.198'
-alias x0='ssh libin@192.168.181.190'
+alias x='ssh libin@192.168.***.196'
+alias x8='ssh libin@192.168.***.198'
+alias x0='ssh libin@192.168.***.190'
 
-alias x2='ssh loguser@192.168.184.2'
-alias x43='ssh loguser@120.55.99.43'
+alias x2='ssh loguser@192.168.***.2'
+alias x43='ssh loguser@120.**.**.43'
+
+alias ip='ipconfig getifaddr en0'
+alias ip0='ipconfig getifaddr en0'
+alias ip1='ipconfig getifaddr en1'
+
+alias sd='ssh-add'
+#lsof -i:9001
 
 ### hexo
 alias hx='source ~/.nvm/nvm.sh'
