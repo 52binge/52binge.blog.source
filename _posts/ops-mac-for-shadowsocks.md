@@ -82,14 +82,17 @@ source ~/.zshrc
 
 ```
 ➜ hp curl ip.cn
-当前 IP：97.64.19.14 来自：美国
+当前 IP：97.64.**.** 来自：美国
 ```
 
 ## reference article
 
 - [技术小黑屋][1]
 - [Mac+shadowsocks+polipo快捷实现终端科学上网][2]
+- [VPS-install-shadowsocks-proxy][3]
 
 [1]: http://droidyue.com/blog/2016/04/04/set-shadowsocks-proxy-for-terminal/
 [2]: https://segmentfault.com/a/1190000008449046
-[3]: /images/ops/ops-vpn-shadowsocks.png
+[3]: http://blog.liujiangbei.com/14532622130324.html
+
+[img1]: /images/ops/ops-vpn-shadowsocks.png

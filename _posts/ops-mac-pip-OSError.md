@@ -2,7 +2,7 @@
 title: Mac OSX pip OSError [Errno 1] Operation not permitted
 toc: true
 date: 2017-10-17 17:21:21
-categories: ops
+categories: devops
 tags: gensim
 mathjax: true
 ---
