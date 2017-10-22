@@ -1,70 +1,35 @@
 ---
-title: Python 数据分析与挖掘实战 环境搭建
+title: Python Data Mining and Analysis environment
 toc: true
 date: 2016-08-02 16:43:21
-categories: machine-learning
+categories: [python]
 tags: [machine-learning, python]
-description: python data mining and data analysis Introduction for chap 1，Reading notes
 mathjax: true
 ---
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$'], ['\[','\]'] ],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
+这是用 Python 进行数据分析挖掘的一小部分，包括 高维数组、数值计算、机器学习、神经网络 和 语言模型等。
 
-**data mining model steps**
-
-1. 挖掘目标
-2. 数据取样
-3. 数据探索
-4. 数据预处理
-5. 挖掘建模
-6. 模型评价
+<!--more-->
 
 ## 1. Python data analysis intro
 
 [Python](http://www.python.org)
 
 - 优雅的语法和动态类型
-- 拥有高级数据结构
-- OO
+- 拥有高级数据结构、OO
 - Functional Programming
-- 解释性
-- 胶水语言，开发效率高
+- 解释性、胶水语言，开发效率高
 - 库丰富, NumPy, SciPy, Matplotlib, Pandas
-- 适合于 Scientific Computing、Mathematical Modeling、data mining 等
+- 适合于 Scientific Computing、Mathematical Modeling、Data mining ...
 
-**Python添加第三方库** [Pandas](http://pandas.pydata.org/)
-
-- lib's import and add
-- import future feature
-- add third lib
-
-***lib's import and add***
-
-```python
-import math as m
-m.sin(1)
-```
-
-***import `future` feature***
+**import `future` feature**
 
 ```
 from __futrue__ import print_function
 from __futrue__ import division
 ```
 
-***add third lib***
+**install third package**
 
 > 三种方式  
 > 1. 下载源代码自行安装 : 安装灵活， 但需要自行解决上级依赖问题。  
@@ -175,7 +140,6 @@ print("hello world 3.0 !")
 
 Pandas 是 Python 下最强大的数据分析 Tool，没有之一。Pandas 构建在 Numpy 之上。  
 
-&nbsp;
 **Pandas Function**
 
 1. 类SQL，CRUD
@@ -244,6 +208,3 @@ sudo python setup.py install
 
 > topic modelling for humans！NLP
 
-## 3. brief summary
-
-主要对 Python 进行介绍。由于 Python 包含多个领域的扩展库，而且扩展库的功能也相当丰富，本章只介绍和数据分析及数据挖掘相关的一小部分，包括 高维数组，数值计算，可视化，机器学习，神经网络 和 语言模型等。

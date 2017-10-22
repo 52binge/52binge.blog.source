@@ -4,9 +4,12 @@ toc: true
 date: 2013-01-17 18:04:21
 categories: icpc
 tags: acm
-description: union-find sets poj 1703 find them, catch them 帮派之争
 mathjax: true
 ---
+
+union-find sets poj 1703 find them, catch them 帮派之争
+
+<!--more-->
 
 ## [Find them, Catch them][1]
 

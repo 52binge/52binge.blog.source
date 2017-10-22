@@ -4,8 +4,11 @@ toc: true
 date: 2013-01-17 18:06:21
 categories: icpc
 tags: acm
-description: trie tree poj 2001 shortest prefixes
 ---
+
+trie tree poj 2001 shortest prefixes
+
+<!--more-->
 
 ## [POJ 2001 Shortest Prefixes][1]
 

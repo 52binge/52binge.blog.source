@@ -4,14 +4,13 @@ toc: true
 date: 2016-02-15 15:07:21
 categories: hadoop
 tags: hive
-description: 关于 Hive 的介绍, 简单介绍 Hive 的工作流、架构组件 等。
 mathjax: true
 ---
 
-**focus on :**
-
  1. 初步了解 Hadoop 生态圈
  2. 初步了解 Hive 架构图
+
+<!--more-->
 
 ## 1. Hive Introduce
 

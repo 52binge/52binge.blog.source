@@ -5,8 +5,11 @@ tags: [centos]
 categories: devops
 toc: true
 list_number: false
-description: install ifconfig、vim、wget、git、netcat ...
 ---
+
+ifconfig、vim、wget、git、netcat ...
+
+<!--more-->
 
 ## 1. install ifconfig ##
 

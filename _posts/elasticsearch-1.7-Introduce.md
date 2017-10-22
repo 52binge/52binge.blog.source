@@ -4,9 +4,12 @@ date: 2016-06-04 15:59:16
 tags: elasticsearch
 categories: elastic
 toc: true
-description: Elasticsearch * Reference1.7 Brief Introduce.
 list_number: false
 ---
+
+Elasticsearch Reference 1.7 Brief Introduce.
+
+<!--more-->
 
 ## Getting Started
 

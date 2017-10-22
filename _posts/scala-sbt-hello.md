@@ -6,14 +6,13 @@ tags: [scala, sbt]
 categories: scala
 toc: true
 list_number: false
-description: This is a brief introduction about SBT and how to use it.
 ---
-
-**focus on :**
 
  1. 什么是 SBT ?
  2. SBT 项目工程目录
  3. SBT 编译打包 Scala HelloWorld
+
+<!--more-->
 
 ## 1. SBT, What?
 

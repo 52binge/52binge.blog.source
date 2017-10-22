@@ -5,10 +5,11 @@ categories: database
 tags: [kettle]
 toc: true
 list_number: false
-description: Kettle 的使用介绍
 ---
 
-**ETL 简介**
+Kettle 的使用初步介绍
+
+<!--more-->
 
   1. ETL 是数据抽取（Extract）、清洗（Cleaning）、转换（Transform）、装载（Load）的过程。
   2. ETL 是构建 **DW** 的重要一环，用户从数据源抽取出数据，经 数据清洗,按照预定义好的 DW模型，将数据加载到 DW 中去。

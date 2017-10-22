@@ -4,9 +4,12 @@ toc: true
 date: 2016-02-01 10:07:21
 categories: [spark]
 tags: [spark]
-description: 介绍 Spark 的历史，介绍 Spark 的安装与部署，介绍 Spark 的代码架构 等
 mathjax: true
 ---
+
+介绍 Spark 的历史，介绍 Spark 的安装与部署，介绍 Spark 的代码架构 等
+
+<!--more-->
 
 Spark 发源于 美国加州大学伯克利分校 AMPLap 大数据分析平台  
 Spark 立足于内存计算、从多迭代批量处理出发  

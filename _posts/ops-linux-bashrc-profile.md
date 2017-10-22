@@ -1,13 +1,15 @@
 ---
-title: linux etc/profile and zshrc 等环境配置简介
+title: Linux, profile / bashrc Brief Introduce
 date: 2014-05-18 07:54:16
 tags: [bashrc]
 categories: devops
 toc: true
 list_number: true
-description: linux /etc/profile、.zshrc 等环境配置简介
 ---
 
+/etc/profile、/etc/bashrc、~/.bash_profile、~/.bashrc 
+
+<!--more-->
 
 config file | desc
 ------- | -------
@@ -40,12 +42,8 @@ bashrc 和 profile 的区别 |
 > ~/.bash_profile 是交互式、login 方式进入 bash 运行的 
 > ~/.bashrc 是交互式 non-login 方式进入 bash 运行的 
 
-## 3. mac osx zsh
+## 3. reference article
 
-Mac OSX, 使用 zsh, 发现 /etc/profile 不会被执行。
+[blog.chinaunix.net/][1]
 
-~/.zshrc 与 /etc/zshenv 这两个文件，都是每次启动新的 terminal 都会被执行
-
-## 4. quote article
-
-> 整理自网络文章汇总。 如 ： http://blog.chinaunix.net/uid-26435987-id-3400127.html
+[1]: http://blog.chinaunix.net/uid-26435987-id-3400127.html

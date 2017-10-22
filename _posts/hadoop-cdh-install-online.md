@@ -5,8 +5,11 @@ tags: [cdh]
 categories: hadoop
 toc: true
 list_number: false
-description: 介绍了 CDH 集群的搭建与安装，其中 Server 安装步骤非常准确, Agent 需要进一步验证.
 ---
+
+介绍了 CDH 集群的搭建与安装，其中 Server 安装步骤非常准确, Agent 需要进一步验证.
+
+<!--more-->
 
 标签： Cloudera-Manager CDH Hadoop 部署 集群
 

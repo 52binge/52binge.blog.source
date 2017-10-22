@@ -8,9 +8,9 @@ description: 这是关于 Elasticsearch 入门 的一些基本内容.
 list_number: false
 ---
 
-## 1. Elasticsearch 前言 
-
 Elasticsearch 是一个基于Apache Lucene(TM)的开源搜索引擎、`实时分布式搜索`和`分析引擎`。
+
+<!--more-->
 
 > Lucene 是 成熟的`全文索引与信息检索(IR)库`，采用Java实现。信息检索式指文档搜索、文档内信息搜索或者文档相关的元数据搜索等操作。。
 >
@@ -31,7 +31,7 @@ Elasticsearch 是一个基于Apache Lucene(TM)的开源搜索引擎、`实时分
 - [Github][3]
 ...
 
-## 2. 概念
+## 1. 概念
 
 Elasticsearch 是 开源搜索引擎.
 
@@ -72,9 +72,9 @@ cluster.name: elasticsearch_your-company-name
 node.name: "node196"
 ```
 
-## 3. API
+## 2. API
 
-### 3.1 Java API
+### 2.1 Java API
 
 **节点客户端(node client)**
 
@@ -88,7 +88,7 @@ node.name: "node196"
 
 [more_info_Java-API][5]
 
-### 3.2 RESTful API
+### 2.2 RESTful API
 
 - 基于 HTTP 协议，以 JSON 为数据交互格式的 RESTful API
 
@@ -133,7 +133,7 @@ curl -u name:pass -XGET 'http://192.168.181.xxx:9200/coupon_seeker/coupon_seeker
 curl -u name:pass -XDELETE 'http://192.168.181.xxx:9200/coupon_seeker/coupon_seeker/_query?pretty=true' -d '{"query":{"match":{source:"dianping"}}}'
 ```
 
-## 4. 文档 
+## 3. 文档 
 
 **面向文档**
 
@@ -232,7 +232,7 @@ PUT /megacorp/employee/1
 ```
 ![图片描述][6]
 
-### 5.1 检索文档
+### 4.1 检索文档
 
 ```
 GET /megacorp/employee/1
@@ -255,7 +255,7 @@ GET /megacorp/employee/1
 }
 ```
 
-### 5.2 简单搜索
+### 4.2 简单搜索
 
 ```
 GET /megacorp/employee/_search
@@ -299,7 +299,7 @@ GET /megacorp/employee/_search?q=last_name:Smith
 }
 ```
 
-### 5.3 使用DSL语句查询
+### 4.3 使用DSL语句查询
 
  DSL(Domain Specific Language特定领域语言) 
 
@@ -316,7 +316,7 @@ GET /megacorp/employee/_search
 }
 ```
 
-### 5.4 更复杂的搜索
+### 4.4 更复杂的搜索
 
 **filter range**
 
@@ -338,7 +338,7 @@ GET /megacorp/employee/_search
     }
 }
 
-### 5.5 全文搜索
+### 4.5 全文搜索
 
 一种传统数据库难以实现的功能
 
@@ -389,7 +389,7 @@ Result :
 }
 ```
 
-### 5.6 短语搜索 -- phrases
+### 4.6 短语搜索 -- phrases
 
 想要确切的匹配若干个单词或者短语(phrases), 例如  我们想要查询同时包含"rock"和"climbing"（并且是相邻的）的员工记录。
 
@@ -422,7 +422,7 @@ GET /megacorp/employee/_search
 }
 ```
 
-## 6. aggregations
+## 5. aggregations
 
 聚合相当于 group by
 
@@ -482,7 +482,7 @@ GET /megacorp/employee/_search
 
  为了保持简短，还有很多的特性未提及——像 推荐、定位、渗透、模糊 以及 部分匹配等。但这也突出了构建高级搜索功能是多么的容易。无需配置，只需要添加数据然后开始搜索！
 
-## 7. 分布式的特性
+## 6. 分布式的特性
 
 Elasticsearch 你不需要知道任何关于分布式系统、分片、集群发现或者其他大量的分布式概念。所有的教程你即可以运行在你的笔记本上，也可以运行在拥有100个节点的集群上，其工作方式是一样的。
 

@@ -4,7 +4,6 @@ toc: true
 date: 2016-06-22 10:07:21
 categories: machine-learning
 tags: bayes
-description: bayes model -- 这是一个 民间学术“屌丝” 在死后才 逆袭 的故事
 mathjax: true
 ---
 
@@ -21,6 +20,10 @@ mathjax: true
 </script>
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
+
+> 一个 民间学术“屌丝” 在死后才 逆袭 的故事
+
+<!--more-->
 
 **Content List**
 
@@ -123,9 +126,5 @@ $$
 > $P(w|c)$ 表示在试图拼写 $c$ 的情况下，出现拼写错误 $w$ 的概率。 简化为 "编辑距离"
 
 [google_spell-correct](http://norvig.com/spell-correct.html)
-
-## 4. Naive Bayes Learning and classification
-
-## 5. Parameter estimation of Naive Bayes Method
 
 

@@ -6,9 +6,11 @@ tags: [java]
 categories: java
 toc: true
 list_number: false
-description: This is a introduction about Java SE and how to use it.
 ---
 
+This is a introduction about Java SE and how to use it.
+
+<!--more-->
 
  - Java data type
  - OO

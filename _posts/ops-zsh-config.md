@@ -6,7 +6,7 @@ categories: devops
 tags: zshrc
 ---
 
-About my custom config .zprofile and .zshrc
+ `~/.zprofile` and `~/.zshrc` custom config
 
 <!-- more -->
 
@@ -95,8 +95,8 @@ alias dg='cd ~/ghome/blog && hexo clean && sh dp.sh'
 
 # pyenv
 alias pyenv_install_python_pre='source $MS/custom-machine/pyenv-install.sh'
-alias py2='pyenv_init && pyenv activate vpy2 && python -V'
-alias py3='pyenv_init && pyenv activate vpy3 && python -V'
+alias py2='pyenv_init && pyenv activate vpy2 && clear && python -V'
+alias py3='pyenv_init && pyenv activate vpy3 && clear && python -V'
 alias pyde='pyenv deactivate'
 alias pys='pyenv activate vpy3 && pyenv global system && pyde && python -V'
 

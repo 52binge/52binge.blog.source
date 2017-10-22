@@ -4,7 +4,6 @@ toc: true
 date: 2016-08-24 11:43:21
 categories: machine-learning
 tags: [decision-tree]
-description: classification and regression tree
 mathjax: true
 list_number: true
 ---
@@ -23,14 +22,9 @@ list_number: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-**Data Mining**
+Classification and Regression Tree
 
-- 挖掘目标
-- 数据取样
-- 数据探索
-- 数据预处理
-- `挖掘建模`
-- 模型评价
+<!--more-->
 
 ## 1. CART Introduce
 

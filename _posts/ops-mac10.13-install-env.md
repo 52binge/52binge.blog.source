@@ -17,11 +17,8 @@ Enable Dragging With Three Finger :
 
  1. Chrome
  2. NeteaseMusic
- 3. Yuntipub
- 4. CleanMyMac 3
- 5. Baiduyun & Aira2GUI
- 6. Evernote
- 7. Microsoft\_Office\_2016\_15.38.17090200\_Installer.pkg
+ 3. Baiduyun & Aira2GUI
+ 4. Microsoft\_Office\_2016\_15.38.17090200\_Installer.pkg
 
 > Google Chrome is up to date
 > Version 61.0.3163.100 (Official Build) (64-bit)
@@ -140,29 +137,7 @@ Compression yes
 [s1]: /images/ops/ops-ssh-rds.png
 [s2]: /images/ops/ops-ssh-general.png
 
-## 3. Python
-
- 1. [Python pip][2] `sudo python get-pip.py`
- 2. jieba
- 3. matplotlib
-
-> sudo pip install jieba matplotlib 
-
-**pip list warning**
-
-> DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
-
-~ vim ~/.pip/pip.conf
-
-```bash
-# add
-[list]
-format=columns
-# wq
-```
-
-
-## 4. Java
+## 3. Java
 
  1. [JDK][4]
  2. Maven
@@ -182,7 +157,7 @@ lrwxr-xr-x  spark -> /usr/local/xsoft/deploy/spark-1.6.3-bin-hadoop2.6
 ➜  software
 ```
 
-## 5. Blog
+## 4. Blog
 
  1. [hexo][5]
  2. Install Node.js
@@ -199,45 +174,69 @@ $ npm install -g hexo-cli
 
 > v4.1.0 更合适 hexo
 
-## 6. IPython Notebook
+## 5. Python
 
-### 1. install ipython
+### 5.1 this mac install pip
+
+[Python pip][2] , `sudo python get-pip.py`
+
+> then, terminal input `pip list`.
+> 
+> If exist warning:
+> 
+> DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+>
+> solve this warning:
+>
+> ~.vim ~/.pip/pip.conf
+> [list]  
+> format=columns  
+
+### 5.2 pyenv install package
+
+**First, you need to install python `pyenv` environment**
+
+```py
+Python 3.6.3
+(vpy3)
+➜
+
+pip install numpy
+pip install scipy
+pip install matplotlib
+pip install pandas
+
+pip install xlrd
+pip install xlwt
+pip install StatsModels
+pip install scikit-learn
+
+pip install jieba
+pip install --upgrade gensim
+```
+
+**ipython**
+
+```
+pip install ipython
+```
+
+> 然后, 如 terminall input `ipython` 不存在, 则 pip show ipython,  python -m IPython 试试. 
+
+**notebook**
 
 ```bash
-sudo pip install ipython
+#pip install --ignore-installed six
+#pip install target-gsheet tap-fixerio
+pip install notebook
 ```
 
-> 之后启动 terminal, 输入 ipython，如果找不到命令, 则 pip show ipython 如果存在 ipython , 
-> 
-> 则 python -m IPython 试试。有，没问题，则在 zshrc 中，添加一个 alias 别名即可。
-> 
-> ```zshrc
-alias ipython='python -m IPython'
-```
+> pip install notebook, 如 macos High Sierra 10.13 报错，则  
+> pip install --ignore-installed six  
+> pip install target-gsheet tap-fixerio  
+> then, pip install notebook
 
-### 2. install notebook
-
-```bash
-sudo pip install --ignore-installed six
-sudo pip install target-gsheet tap-fixerio
-sudo pip install notebook
-```
-
-> sudo pip install notebook, 在 macos High Sierra 10.13 报错，则
-> 
-> sudo pip install --ignore-installed six
-sudo pip install target-gsheet tap-fixerio
-> 
-> 之后再 sudo pip install notebook 解决。
-
----
-
-NSNavRecentPlaces 内部自动生成的配置，别乱改。
-
-> defaults write -g NSNavRecentPlaces '("~/Desktop", "/usr/local/xsoft/software")';
-
-
-## 7. Reference
+## 8. Reference
 
  * [Homebrew][1]
  * [Get-pip][2]
@@ -249,7 +248,13 @@ NSNavRecentPlaces 内部自动生成的配置，别乱改。
  * [node版本管理工具nvm-Mac下安装及使用][9]
  * [XClient.info Mac App][10]
  * [Stackoverflow python on MacOS 10.10 - command not found][11]
+ * [Blair python install data mining env][12]
 
+Macos NSNavRecentPlaces 内部自动生成的配置，别乱改。
+
+> defaults write -g NSNavRecentPlaces '("~/Desktop", "/usr/local/xsoft/software")';
+ 
+ 
 [1]: https://brew.sh/
 [2]: https://bootstrap.pypa.io/get-pip.py
 [3]: https://feiyang.li/2017/02/26/jetbrains/index.html
@@ -260,3 +265,4 @@ NSNavRecentPlaces 内部自动生成的配置，别乱改。
 [9]: https://segmentfault.com/a/1190000004404505
 [10]: http://xclient.info/
 [11]: https://stackoverflow.com/questions/32856194/ipython-on-macos-10-10-command-not-found
+[12]: /2016/08/02/ml-python-env/

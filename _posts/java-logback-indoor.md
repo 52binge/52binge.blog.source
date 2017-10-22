@@ -5,8 +5,11 @@ tags: logback
 categories: java
 toc: true
 list_number: false
-description: Logback 一个开源日志组件, SLF4J 这个简单的日志前端接口（Façade）来替代 Jakarta Commons-Logging 。
 ---
+
+Logback 一个开源日志组件, SLF4J 这个简单的日志前端接口（Façade）来替代 Jakarta Commons-Logging 。
+
+<!--more-->
 
 Logback 一个开源日志组件。
 Logback 当前分成三个模块：logback-core  logback- classic  和  logback-access。

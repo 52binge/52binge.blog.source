@@ -4,8 +4,11 @@ toc: true
 date: 2013-01-17 15:22:21
 categories: icpc
 tags: acm
-description: kmp hdu 1711 number sequence
 ---
+
+kmp hdu 1711 number sequence
+
+<!--more-->
 
 ### <font color=#2561c2>Description</font>
 

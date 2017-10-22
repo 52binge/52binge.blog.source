@@ -4,9 +4,11 @@ toc: true
 date: 2013-01-17 15:28:21
 categories: icpc
 tags: acm
-description: union-find sets hdu 1856 more is better
-mathjax: true
 ---
+
+union-find sets hdu 1856 more is better
+
+<!--more-->
 
 **[More is better](http://acm.hdu.edu.cn/showproblem.php?pid=1856)**
 

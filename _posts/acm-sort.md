@@ -1,14 +1,15 @@
 ---
-title: Sort algorithms
+title: Six Kinds of Sort algorithms
 toc: true
 date: 2016-10-27 10:28:21
 categories: icpc
 tags: acm
-description: data structure - six kinds of sorting algorithms
 mathjax: true
 ---
 
 > input ： 8, 5, 4, 9, 2, 3, 6
+
+<!--more-->
 
 ## 1. heapSort
 

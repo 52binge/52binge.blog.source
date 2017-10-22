@@ -5,16 +5,14 @@ tags: [ipython]
 categories: devops
 toc: true
 list_number: true
-description: centos7 minimal install ipython-nodebook
 ---
 
-1. IPython notebook 目前已经成为用 Python 做教学、计算、科研的一个重要工具。
-2. IPython Notebook 使用浏览器作为界面，向后台的 IPython 服务器发送请求，并显示结果。
-3. 在浏览器的界面中使用单元(Cell)保存各种信息。Cell 有多种类型，经常使用的有表示格式化文本的 Markdown单元，和表示代码的 Code单元。
+> IPython notebook 目前已经成为用 Python 做教学、计算、科研的一个重要工具。
 
----
+<!--more-->
 
-本文主要介绍在 centos7 minimal 上安装 ipython-nodebook 流程
+- IPython Notebook 使用浏览器作为界面，向后台的 IPython 服务器发送请求，并显示结果。
+- IPython Notebook 在浏览器的界面中使用单元(Cell)保存各种信息。Cell 有多种类型，经常使用的有表示格式化文本的 Markdown单元，和表示代码的 Code单元。
 
 ## 1. install ifconfig ##
 

@@ -4,7 +4,6 @@ toc: true
 date: 2016-05-17 15:07:21
 categories: math
 tags: math
-description: 点到平面的距离
 mathjax: true
 ---
 
@@ -22,11 +21,11 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-[维基百科_Vector](https://zh.wikipedia.org/wiki/%E5%90%91%E9%87%8F)
+平面的一般式方程, 向量的模（长度）, 向量的数量积, 点到平面的距离
 
-- 平面的一般式方程
-- 向量的模（长度）
-- 向量的数量积
+<!--more-->
+
+[维基百科_Vector](https://zh.wikipedia.org/wiki/%E5%90%91%E9%87%8F)
 
 ## 1. 平面的一般式方程
 
