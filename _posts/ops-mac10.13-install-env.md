@@ -180,8 +180,8 @@ $ npm install -g hexo-cli
 
 [Python pip][2] , `sudo python get-pip.py`
 
-> then, terminal input `pip list`.
-> 
+then, terminal input `pip list`.
+
 > If exist warning:
 > 
 > DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
