@@ -1,12 +1,12 @@
 ---
-title: Linux 10 Basic Commands
+title: Linux File Operation Command
 toc: true
 date: 2017-10-23 22:04:21
 categories: devops
-tags: cmd
+tags: linux
 ---
 
-ls, cd, pwd, mkdir, rm, rmdir, mv, cp, touch, cat
+ls, cd, pwd, mkdir, rm, rmdir, mv, cp, touch, cat, nl, more, less, head, tail
 
 <!-- more -->
 
@@ -239,3 +239,11 @@ touch -r log.log log2012.log
 
 > tac (反向列示). 
 > tac log.txt
+
+## Reference
+
+- [每日一linux命令][r1]
+- [每天一个linux命令目录][r2]
+
+[r1]: http://www.cnblogs.com/peida/tag/每日一linux命令/
+[r2]: http://www.cnblogs.com/peida/archive/2012/12/05/2803591.html
