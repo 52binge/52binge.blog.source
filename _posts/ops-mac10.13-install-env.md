@@ -215,6 +215,8 @@ pip install jieba
 pip install --upgrade gensim
 ```
 
+> pip install elasticsearch==1.9
+
 **ipython**
 
 ```

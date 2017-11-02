@@ -1,5 +1,5 @@
 ---
-title: Linux File Operation Command
+title: Linux File Basic Cmd
 toc: true
 date: 2017-10-23 22:04:21
 categories: devops
@@ -239,6 +239,182 @@ touch -r log.log log2012.log
 
 > tac (反向列示). 
 > tac log.txt
+
+## 11. nl
+
+nl命令在linux系统中用来计算文件中行号。nl 可以将输出的文件内容自动的加上行号！
+
+命令参数：
+
+```
+-b  ：指定行号指定的方式，主要有两种：
+-b a ：表示不论是否为空行，也同样列出行号(类似 cat -n)；
+-b t ：如果有空行，空的那一行不要列出行号(默认值)；
+-n  ：列出行号表示的方法，主要有三种：
+-n ln ：行号在萤幕的最左方显示；
+-n rn ：行号在自己栏位的最右方显示，且不加 0 ；
+-n rz ：行号在自己栏位的最右方显示，且加 0 ；
+-w  ：行号栏位的占用的位数。
+-p 在逻辑定界符处不重新开始计算。 
+```
+
+```bash
+[root@localhost test]# nl log2012.log 
+     1  2012-01
+     2  2012-02
+       
+       
+     3  ======[root@localhost test]#
+```
+
+```
+[root@localhost test]# nl -b a log2012.log 
+     1  2012-01
+     2  2012-02
+     3
+     4
+     5  ======[root@localhost test]#
+```
+
+```bash
+[root@localhost test]# nl -b a -n rz log2014.log 
+000001  2014-01
+000002  2014-02
+000003  2014-03
+000004  2014-04
+000005  2014-05
+000006  2014-06
+000007  2014-07
+000008  2014-08
+000009  2014-09
+000010  2014-10
+000011  2014-11
+000012  2014-12
+000013  =======
+[root@localhost test]# nl -b a -n rz -w 3 log2014.log 
+001     2014-01
+002     2014-02
+003     2014-03
+004     2014-04
+005     2014-05
+006     2014-06
+007     2014-07
+008     2014-08
+009     2014-09
+010     2014-10
+011     2014-11
+012     2014-12
+013     =======
+```
+
+> 说明： nl -b a -n rz 命令行号默认为六位，要调整位数可以加上参数 -w 3 调整为3位。
+
+## 12. more
+
+命令参数：
+
+```
++n       从笫n行开始显示
+-n       定义屏幕大小为n行
+```
+
+```
+[root@localhost test]# cat log2012.log 
+2012-01
+2012-02
+2012-03
+2012-04-day1
+2012-04-day2
+2012-04-day3
+======[root@localhost test]# more +3 log2012.log 
+2012-03
+2012-04-day1
+2012-04-day2
+2012-04-day3
+======[root@localhost test]#
+```
+
+设定每屏显示行数   more -5 log2012.log. 
+
+```bash
+[root@localhost test]# more -5 log2012.log 
+2012-01
+2012-02
+2012-03
+2012-04-day1
+2012-04-day2
+```
+
+列一个目录下的文件，由于内容太多，我们应该学会用more来分页显示。这得和管道 | 结合起来
+   
+```bash
+ls -l  | more -5
+```
+
+## 13. less
+
+less 工具也是对文件或其它输出进行分页显示的工具，应该说是linux正统查看文件内容的工具，功能极其强大。
+
+less 的用法比起 more 更加的有弹性。在 more 的时候，我们并没有办法向前面翻， 只能往后面看，但若使用了 less 时，就可以使用 [pageup] [pagedown] 等按键的功能来往前往后翻看文件，更容易用来查看一个文件的内容！
+
+在 less 里头可以拥有更多的搜索功能，不止可以向下搜，也可以向上搜。
+
+```bash
+less log2013.log
+
+ps -ef |less
+
+history | less
+```
+
+输出文件除了最后n行的全部内容
+
+```bash
+head -n -6 log2014.log
+```
+
+## 14. head
+
+```
+[root@localhost test]# head -n 5 log2014.log 
+2014-01
+2014-02
+2014-03
+2014-04
+2014-05[root@localhost test]#
+```
+
+显示文件前n个字节  head -c 20 log2014.log
+
+
+```bash
+[root@localhost test]# head -c 20 log2014.log
+2014-01
+2014-02
+2014
+[root@localhost test]#
+```
+
+输出文件除了最后n行的全部内容
+
+```
+head -n -6 log2014.log
+```
+
+## 15. tail
+
+显示文件末尾内容. tail -n 5 log2014.log
+
+```bash
+[root@localhost test]# tail -n 5 log2014.log 
+2014-09
+2014-10
+2014-11
+2014-12
+==============================[root@localhost test]#
+```
+
+循环查看文件内容 tail -f test.log
 
 ## Reference
 

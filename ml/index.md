@@ -23,9 +23,9 @@ date: 2016-03-26 16:46:48
 
 - [第07章 : 深度学习与NLP应用][0]
 
-- [第08章 : 词向量相关应用][0]
+- [第08章 : 词向量相关应用][n8]
 
-- [第09章 : 条件随机场相关应用][0]
+- [第09章 : CRF 条件随机场相关应用][0]
 
 - [第11章 : Word2Vector 理论基础][0]
 
@@ -37,6 +37,7 @@ date: 2016-03-26 16:46:48
 [n2]: /2017/07/29/nlp-01-jieba/
 [n3]: /2017/08/10/nlp-bayes-1/
 [n4]: /2017/09/22/nlp-LDA/
+[n8]: /2017/07/12/nlp-word-vector
 
 [f1]: http://www.52nlp.cn/
 
@@ -52,9 +53,11 @@ date: 2016-03-26 16:46:48
 
 - [第05章 : Neural Networks II][5]
 
-- [第06章 : Advice for Applying Machine Learning][6]
+- [第06章 : Advice for Applying Machine Learning][6-1]
 
-- [第06章 : Machine Learning System Design][7]
+- [第06章 : Machine Learning System Design][6-2]
+
+- [第07章 : Support Vector Machines][7]
 
 [0]: /ml
 [1]: /2016/09/20/ml-coursera-ng-w1-01-introduce/
@@ -62,8 +65,9 @@ date: 2016-03-26 16:46:48
 [3]: /2016/10/24/ml-coursera-ng-w3-LR/
 [4]: /2017/02/07/ml-coursera-ng-w4-NN-02/
 [5]: /2017/02/13/ml-coursera-ng-w4-NN-03/
-[6]: /2017/05/24/ml-coursera-ng-w6-Advice-for-Applying-Machine-Learning/
-[7]: /2017/05/29/ml-coursera-ng-w6-Machine-Learning-System-Design/
+[6-1]: /2017/05/24/ml-coursera-ng-w6-Advice-for-Applying-Machine-Learning/
+[6-2]: /2017/05/29/ml-coursera-ng-w6-Machine-Learning-System-Design/
+[7]: /2017/10/13/ml-coursera-ng-w7-svm/
 
 ## next ⋯⋯
 

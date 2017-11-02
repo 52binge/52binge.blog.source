@@ -53,6 +53,7 @@ alias ipython='python -m IPython'
 ### Pyenv ###
 export PATH="/Users/blair/.pyenv/bin:$PATH"
 alias pyenv_init='eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)"'
+pyenv_init
 #export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 ### Node.js ###

@@ -21,7 +21,7 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-From `Logistic Regression` model to `Support Vector Machines`
+From `Logistic Regression` to `Support Vector Machines`
 
 <!-- more -->
 
