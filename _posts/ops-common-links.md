@@ -79,6 +79,13 @@ Here are some useful links
 
 [m1]: https://www.zhihu.com/question/20021861
 
+## blog
+
+- [鼓励工程师写blog][b1]
+
+[b1]: https://dotblogs.com.tw/hatelove/2017/03/26/why-engineers-should-keep-blogging
+
+
 
 
 
