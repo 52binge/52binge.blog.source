@@ -1,5 +1,5 @@
 ---
-title: Natural Language Processing
+title: Machine Learning & Deep Learning
 date: 2016-03-26 16:46:48
 ---
 
@@ -7,7 +7,7 @@ date: 2016-03-26 16:46:48
 
 本站致力于整理个人的学习笔记，这样在日后看起来，也算是追求大道上的一点回忆。博主水平非常有限，期望能与 [mahine learning](https://en.wikipedia.org/wiki/Machine_learning) 感兴趣的朋友一起学习、交流、探讨与分享
 
-## Machine Learning & Deep Learning
+## machine learning
 
 - [第01章 : Machine Learning Introduce][1]
 
@@ -34,6 +34,8 @@ date: 2016-03-26 16:46:48
 [6-1]: /2017/05/24/ml-coursera-ng-w6-Advice-for-Applying-Machine-Learning/
 [6-2]: /2017/05/29/ml-coursera-ng-w6-Machine-Learning-System-Design/
 [7]: /2017/10/13/ml-coursera-ng-w7-svm/
+
+## deep learning
 
 ## next ⋯⋯
 
