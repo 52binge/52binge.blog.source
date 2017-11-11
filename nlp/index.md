@@ -36,7 +36,7 @@ date: 2016-03-26 16:46:48
 - [第13章 : 条件随机场、文法分析及其他][0]
 
 [m1]: /2017/11/08/nlp-word2vector-pre-knowledge-1/
-[m2]: /2017/11/08/nlp-word2vector-pre-knowledge-2/
+[m2]: /2017/11/11/nlp-word2vector-pre-knowledge-2/
 
 ## natural language processing
 
@@ -73,6 +73,36 @@ date: 2016-03-26 16:46:48
 
 [f1]: http://www.52nlp.cn/
 
+## machine learning
+
+- [第01章 : Machine Learning Introduce][1]
+
+- [第02章 : Linear Regression][2]
+
+- [第03章 : Logistic Regression][3]
+
+- [第04章 : Neural Networks I][4]
+
+- [第05章 : Neural Networks II][5]
+
+- [第06章 : Advice for Applying Machine Learning][6-1]
+
+- [第06章 : Machine Learning System Design][6-2]
+
+- [第07章 : Support Vector Machines][7]
+
+[0]: /ml
+[1]: /2016/09/20/ml-coursera-ng-w1-01-introduce/
+[2]: /2016/10/08/ml-coursera-ng-w2-01-Linear-Regression/
+[3]: /2016/10/24/ml-coursera-ng-w3-LR/
+[4]: /2017/02/07/ml-coursera-ng-w4-NN-02/
+[5]: /2017/02/13/ml-coursera-ng-w4-NN-03/
+[6-1]: /2017/05/24/ml-coursera-ng-w6-Advice-for-Applying-Machine-Learning/
+[6-2]: /2017/05/29/ml-coursera-ng-w6-Machine-Learning-System-Design/
+[7]: /2017/10/13/ml-coursera-ng-w7-svm/
+
+## deep learning
+
 ## next ⋯⋯
 
-> notes：next ... [52nlp][f1]
+> notes：next ...
