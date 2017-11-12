@@ -5,11 +5,11 @@ date: 2017-06-25 20:24:16
 tags: Guitar
 categories: life
 toc: true
-list_number: false
-description: play music to guitar
 ---
- 
-## 1. Guitar 调音操作 
+
+Tuning and changing strings of guitar<!--more-->
+
+## Guitar 调音操作 
 将调音器夹琴头空白位置，短按开关键将模式调节到G字母再进行调试~
 
 从细到粗1-6弦的标准音分别是：1E 2B 3G 4D 5A 6E，
@@ -28,7 +28,7 @@ description: play music to guitar
 
 > 注意先从最粗的6弦开始，最后调1弦，调音过程需要耐心多一点，力度小一点.
 
-## 2. 换弦操作方法
+## 换弦操作方法
 
 注意视频里面提到的撬弦器是没有赠送的，您可以使用钥匙或者小勺子放在固弦锥下方轻轻往上撬一下即可取出固弦锥.
 

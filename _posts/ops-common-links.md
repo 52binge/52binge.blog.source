@@ -34,11 +34,32 @@ Here are some useful links
 - [www.wisevpn.net][v2]
 - [www.banwago.com][v3]
 - [www.godaddy.com][v4]
+- [搬瓦工中文网][v5]
+- [搬瓦工购买页面][v6]
+- [搬瓦工VPS续费的那些事][v7]
 
 [v1]: https://www.yuntionly.com/
 [v2]: https://www.wisevpn.net/
 [v3]: https://www.banwago.com/797.html
 [v4]: https://www.godaddy.com/
+[v5]: https://www.cnbanwagong.com/4.html
+[v6]: https://bwh1.net/
+[v7]: http://ulis.me/archives/5909
+
+> ssh 登录搬瓦工机器
+> 
+> 1. stop server @Main controls
+> 2. Root password modification
+> 3. start Server
+> 4. Root shell - interactive
+> 5. vi /etc/ssh/sshd_config, add 
+> ```
+  PermitRootLogin yes
+  Port 22
+  ```
+> 6. /etc/init.d/sshd restart
+> 7. ssh root@ip
+
 
 ## python
 

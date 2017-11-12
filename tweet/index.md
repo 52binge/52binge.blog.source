@@ -9,6 +9,10 @@ date: 2016-07-16 16:59:48
 <p style="font-style:italic;color:cornflowerblue;">Blair Chan 正在输入 <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
+> `2017.10.31` My Work Team is Worth Being Remembered
+> <div class="tweetimg">
+<img src="/images/tw/tw-2017-10-31-2.png" width="300" height="800"/img></div>
+
 > `2017.05.28` Shuping Yang's University of Maryland speech
 > <div class="tweetimg">
 <img src="/images/tw/en-Shuping-Yang.png" width="300" height="800"/img></div>
@@ -87,7 +91,6 @@ date: 2016-07-16 16:59:48
 
 > `2016.01.02` 江南真的是风景如画，小桥流水人家，名不虚传。
 
-
 [10]: /images/tw/en-Shuping-Yang.png
 [9]: /images/tw/tw-2016-08-30-nz.jpg
 [8]: /images/tw/tw-2016-09-04-phuket-sea.jpeg
@@ -98,3 +101,9 @@ date: 2016-07-16 16:59:48
 [3]: /images/tw/tw-family160330.jpg
 [2]: /images/tw/tw-bluesky.jpg
 [1]: /images/tw/tw-baidujingjia.jpg
+
+<!--
+`2017.10.30` Young Time is Worth Being Remembered 
+<div class="tweetimg">
+<img src="/images/tw/tw-2017-10-30.png" width="300" height="800"/img></div>
+-->

@@ -1,5 +1,5 @@
 ---
-title: 第 2 章 ：自然语言处理 -- 从规则到统计
+title: 自然语言处理 -- 从规则到统计
 toc: true
 date: 2017-11-11 10:08:21
 categories: NLP

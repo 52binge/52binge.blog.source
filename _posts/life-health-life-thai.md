@@ -1,23 +1,18 @@
 
 ---
-title: Thailand 我见 (not finish)
-date: 2016-08-27 19:54:16
-tags: [thai]
+title: Travel Note For Thai
+date: 2016-10-27 19:54:16
+tags: [thailand]
 categories: life
 toc: true
-list_number: false
-description: This is a brief introduction about Thai trip
 ---
 
-Some feeling of trips for Thailand 
+提起泰王国，给我最深的印象就是可以让我感受到，到底什么是 [人之初、性本善][1]。 我想这难以用文字来表达。<!--more-->
+真是的 幸福国度、微笑国度，名不虚传。在我看来，那里的百姓是安居乐业，非常幸福。贫富差距不大，资源分配相对合理，小城市和[徐峥《泰囧》][2]清迈的大城市基础设施相差不大，去过一次真的很想在以后来这里安度晚年，感觉真的非常不错。我觉得去任何一个地方人文环境才是最重要的，其他的景色、景点是次要的，因为普通人都需要入世，需要沟通与交流。
 
-<!--more-->
+我分别在 15年10月 和 16年9月 去泰国旅行，到过曼谷、巴蜀府、华欣、普吉岛 等地。非常感谢在那段异国他乡的时光里曾给予我帮助的朋友。
 
-提起泰王国，给我最深的印象就是可以让我感受到，到底什么是 [人之初、性本善][1]。我想这难以用文字和语言来表达，真是的 幸福国度、微笑国度，名不虚传。在我看来，那里的百姓是安居乐业，非常幸福。贫富差距不大，资源分配相对合理，小城市和[徐峥《泰囧》][2]清迈的大城市基础设施相差不大，去过一次真的很想在以后晚年的时候，来这里养老，感觉真的非常不错。我觉得去任何一个地方 人文环境，才是最重要的，其他的景色，景点是次要的，因为普通人都需要入世，需要沟通与交流。人最怕的不是贫穷，而是孤独。
-
-15年10月末我曾去过泰国，到过曼谷、巴蜀府、华欣等地。非常感谢在那段异国他乡的时光里曾给予我帮助的朋友。
-
-<img src="/images/thai01.jpg" width="800" height="550"/img>
+<img src="/images/life/life-thai-01.jpg" width="800" height="550"/img>
 
 
 ## 曼谷
@@ -30,7 +25,7 @@ Some feeling of trips for Thailand
 
 芭提雅近年来热度极高的海滩度假、旅游、养老圣地，享有“东方夏威夷”之誉，芭提雅具有最负盛名的人妖表演，缤纷无休的夜文化，吸引着全世界的游客。
 
-> 据说 18年轻轨修建完成，从曼谷到芭堤雅只需要20多分钟。
+> 据说2018年轻轨修建完成，从曼谷到芭堤雅只需要20多分钟。
 
 ## 华欣
 
@@ -39,14 +34,11 @@ Some feeling of trips for Thailand
 ## 普吉岛
 
 海滩日光浴 享慵懒慢时光
-
 游海岛 潜入大海的心里去
-
 泛舟泰国“小桂林”攀牙湾 
-
 浮潜设备
 
 [1]: https://zh.wikipedia.org/wiki/三字经
 [2]: https://zh.wikipedia.org/wiki/人再囧途之泰囧
 [3]: http://www.17u.com/destination/guide_show_3144_11.html
-[11]: /images/life-thai-01.jpg
+[11]: /images/life/life-thai-01.jpg
