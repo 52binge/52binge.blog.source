@@ -31,5 +31,10 @@ mathjax: true
 ## Reference
 
 - 《数学之美》 读书笔记 
+- [word2vec前世今生][3]
 
 [info-1]: /images/nlp/nlp-info-1.jpg
+
+[1]: https://www.jiqizhixin.com/articles/2017-08-31-2
+[2]: http://blog.codinglabs.org/articles/pca-tutorial.html
+[3]: https://whiskytina.github.io/word2vec.html
