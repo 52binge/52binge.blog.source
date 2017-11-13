@@ -23,9 +23,9 @@ p + p {
 
 ### Who am I
 
-<a class="article-myself" href="/"> Blair Chan</a> 90 后, 程序猿一枚, 目前在 China HangZhou 
+<a class="article-myself" href="/"> Blair Chan</a> 90s, program engineer, live in Hangzhou, China
 
-<a class="article-myself" href="/tweet"> Libin Chan</a> 主要关注 Java、NLP、RS、Python 等开源项目
+<a class="article-myself" href="/tweet"> Libin Chan</a> focus on `Java`、`NLP`、`RS`、`Python` open source field
 
 <!--<a class="article-myself" href="/">  Libin Chan</a>-->
 
@@ -35,19 +35,19 @@ p + p {
 
 ### Contact me
 
-- 你可以通过这些方式找到我: <a class="article-myEmail" href="mailto:blair.values@gmail.com">  Email</a> <!--<a class="article-myFacebook" href="https://www.facebook.com/"> Facebook</a>--> <a class="article-myTwitter" href="https://twitter.com/blairchan10">  Twitter</a> <!--<a class="article-myInstagram" href="https://www.instagram.com/"> Instagram</a>--> <a class="article-myGithub" href="https://github.com/blair101"> Github</a> <a class="article-myKaggle" href="https://www.kaggle.com/blairchan"> Kaggle</a> <a class="article-mySegmentfault" href="https://www.stackoverflow.com"> Stackoverflow</a>
-
-- 你可以持续关注本博文章, 并可通过 [DISQUS](https://disqus.com/) 发表评论
+- You can find me in these ways: <a class="article-myEmail" href="mailto:blair.values@gmail.com">  Email</a> <!--<a class="article-myFacebook" href="https://www.facebook.com/"> Facebook</a>--> <a class="article-myTwitter" href="https://twitter.com/blair101v">  Twitter</a> <!--<a class="article-myInstagram" href="https://www.instagram.com/"> Instagram</a>--> <a class="article-myGithub" href="https://github.com/blair101"> Github</a> <a class="article-myKaggle" href="https://www.kaggle.com/blairchan"> Kaggle</a> <a class="article-mySegmentfault" href="https://www.stackoverflow.com"> Stackoverflow</a>
+- You can continue to fellow this blog and comment by [DISQUS](https://disqus.com/)
 
 ### ChangeLog
 
-- 2017-10-08 : blairos 首页版面改造
-- 2016-07-29 : 增加 Tweet 推文系统
-- 2016-07-23 : 开始深度定制 blairos
-- 2016-03-22 : 基于 Hexo 建立博客
+- 2017-10-08 : blairos home page improve
+- 2016-07-29 : this blog add [tweet][tw] system
+- 2016-07-23 : blairos deep custom-made
+- 2016-03-22 : build blog by hexo framework
 
 
-Copyright © 2016 [www.iequa.com](/) 自我驱动
+Copyright © 2016 [www.iequa.com](/) selfboot
 
 [1]: /images/tech-logos/2016-10-03-6.png
+[tw]: /tweet
 
