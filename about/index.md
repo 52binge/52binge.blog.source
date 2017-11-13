@@ -25,7 +25,7 @@ p + p {
 
 <a class="article-myself" href="/"> Blair Chan</a> 90s, program engineer, live in Hangzhou, China
 
-<a class="article-myself" href="/tweet"> Libin Chan</a> focus on `Java`、`NLP`、`RS`、`Python` open source field
+<a class="article-myself" href="/tweet"> Libin Chan</a> focus on `Java`、`NLP`、`RS`、`Python` and other fields
 
 <!--<a class="article-myself" href="/">  Libin Chan</a>-->
 
