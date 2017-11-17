@@ -23,9 +23,9 @@ p + p {
 
 ### Who am I
 
-<a class="article-myself" href="/"> Blair Chan</a> 90s, program engineer, live in Hangzhou, China
+<a class="article-myself" href="/"> Blair Chan</a> 90s, a program engineer, a GTD practitioner, live in Hangzhou, China.
 
-<a class="article-myself" href="/tweet"> Libin Chan</a> focus on `Java`、`NLP`、`RS`、`Python` and other fields
+<a class="article-myself" href="/tweet"> Libin Chan</a> focus on `Java`、`NLP`、`RS`、`Python` and other fields.
 
 <!--<a class="article-myself" href="/">  Libin Chan</a>-->
 

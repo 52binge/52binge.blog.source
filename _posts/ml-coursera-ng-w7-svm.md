@@ -47,7 +47,21 @@ $
 J(\theta) = - \frac{1}{m} \displaystyle \sum\_{i=1}^m [y^{(i)}\log (h\_\theta (x^{(i)})) + (1 - y^{(i)})\log (1 - h\_\theta(x^{(i)}))]
 $
 
+$
+J(\theta) = \mathop{min}\limits\_{\_\theta} \frac{1}{m} \left[ \displaystyle \sum\_{i=1}^m y^{(i)}\ \left(-\log h\_\theta (x^{(i)}) \right) + (1 - y^{(i)}) \left( - \log (1 - h\_\theta(x^{(i)})) \right) \right]+ \frac{\lambda}{2m} \displaystyle \sum\_{j=1}^n \theta\_j^2
+$
+
+> $cost\_1(\theta^T x^{i}) = -\log h\_\theta (x^{(i)})$， $cost\_0(\theta^T x^{i}) = - \log (1 - h\_\theta(x^{(i)}))$
+
+$
+J(\theta) = \mathop{min}\limits\_{\_\theta} \frac{1}{m} \left[ \displaystyle \sum\_{i=1}^m y^{(i)}\ \left(cost\_1(\theta^T x^{i}) \right) + (1 - y^{(i)}) \left( cost\_0(\theta^T x^{i}) \right) \right]+ \frac{\lambda}{2m} \displaystyle \sum\_{j=1}^n \theta\_j^2
+$
+
 ### 1.1 Optimization Objective
+
+$
+\mathop{min}\limits\_{b\_*}
+$
 
 ### 1.2 Large Margin Intuition
 
