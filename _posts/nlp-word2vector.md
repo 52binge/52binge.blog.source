@@ -21,8 +21,10 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-2013年，Google开源了一款用于词向量计算的工具—`word2vec`，它包括了一组用于word embedding的模型，这些模型通常都是用浅层（两层）神经网络训练词向量。
+2013年，Google开源了用于词向量计算的工具—`word2vec`，也称 Word Embedding，Word2Vec 是一个可以将语言中字词转为向量形式表达 (Vector Representations) ，模型通常都是用浅层（两层）神经网络训练词向量。
 <!-- more -->
+
+
 Word2vec的模型以大规模语料库作为输入，然后生成一个向量空间（通常为几百维）。词典中的每个词都对应了向量空间中的一个独一的向量，而且语料库中拥有共同上下文的词映射到向量空间中的距离会更近。
 
 > Information Retrieval

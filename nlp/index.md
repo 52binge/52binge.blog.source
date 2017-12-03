@@ -5,7 +5,21 @@ date: 2016-03-26 16:46:48
 
 大家好，欢迎来到本站
 
-本站致力于整理个人的学习笔记，这样在日后看起来，也算是追求大道上的一点回忆。博主水平非常有限，期望能与 [nlp](https://en.wikipedia.org/wiki/Natural_language_processing) 感兴趣的朋友一起学习、交流、探讨与分享
+本站致力于整理个人的学习笔记，这样在日后看起来，也算是追求大道上的一点回忆。博主水平非常有限，期望能与 [NLP](https://en.wikipedia.org/wiki/Natural_language_processing) 感兴趣的朋友一起学习、交流、探讨与分享
+
+## TensorFlow
+
+- [第01章 : TensorFlow 基础][0]  
+
+- [第02章 : TensorFlow 和其他深度学习框架的对比][0]  
+
+- [第03章 : TensorFlow 编译及安装][0] 
+
+- [第04章 : TensorFlow 多层感知机][0] 
+
+- [第05章 : TensorFlow Word2Vec][0] 
+
+> TensorFlow 实现卷积、循环、全连接 神经网络
 
 ## nlp pre knowledge
 
