@@ -9,70 +9,63 @@ date: 2016-03-26 16:46:48
 
 ## TensorFlow
 
-- [第01章 : TensorFlow 基础][0]  
+- [第01篇 : TensorFlow 基础][0]  
 
-- [第02章 : TensorFlow 和其他深度学习框架的对比][0]  
+- [第02篇 : TensorFlow 和其他深度学习框架的对比][0]  
 
-- [第03章 : TensorFlow 编译及安装][0] 
+- [第03篇 : TensorFlow 编译及安装][0] 
 
-- [第04章 : TensorFlow 多层感知机][0] 
+- [第04篇 : TensorFlow 多层感知机][0] 
 
-- [第05章 : TensorFlow Word2Vec][0] 
+- [第05篇 : TensorFlow Word2Vec][0] 
 
 > TensorFlow 实现卷积、循环、全连接 神经网络
 
-## nlp pre knowledge
+## Deep Learning NLU
 
-- [第01章 : 文字和语言 vs 数字和信息][m1]  
+- [第01篇 : Google大脑和人工神经网络][0]
 
-- [第02章 : NLP 简介 & 统计语言模型][m2]
+- [第02篇 : 深度学习与NLP应用][0]
 
-- [第03章 : HMM 隐含马尔科夫模型][m3]
+- [第03篇 : 词向量相关应用][n8]
 
-- [第04章 : 信息的度量和作用][0]
+- [第04篇 : Word2Vector 理论基础][0]
 
-- [第05章 : 余弦定理和新闻的分类][0]
+- [第05篇 : Word2Vector 实战案例][0]
 
-- [第06章 : 矩阵运算和文本处理中的两个分类问题][0]
+- [第06篇 : 从 Word2Vector 到 Fasttext 的新发展][0]
 
-- [第07章 : 数学模型的重要性与最大熵模型][0]
+## Natural Language Processing
 
-- [第08章 : 马尔科夫链的扩展 -- 贝叶斯网络][0]
+- [第01篇 : Python 字符串处理-正则表达式][n1]  
 
-- [第09章 : 条件随机场、文法分析及其他][0]
+- [第02篇 : Jieba 中文处理][n2]
 
-- [第10章 : Google大脑和人工神经网络][0]
+- [第03篇 : 文字和语言 vs 数字和信息][m1]  
+
+- [第04篇 : NLP 简介 & 统计语言模型][m2]
+
+- [第05篇 : HMM 隐含马尔科夫模型][m3]
+
+- [第06篇 : 从语言模型到朴素贝叶斯][n3]
+
+- [第07篇 : 信息的度量和作用][0]
+
+- [第08篇 : 余弦定理和新闻的分类][0]
+
+- [第09篇 : 矩阵运算和文本处理中的两个分类问题][0]
+
+- [第10篇 : LDA主题模型][n4]
+
+- [第11篇 : 数学模型的重要性与最大熵模型][0]
+
+- [第12篇 : 马尔科夫链的扩展 -- 贝叶斯网络][0]
+
+- [第13篇 : 条件随机场、文法分析及其他][0]
 
 [m1]: /2017/11/08/nlp-pre-word-language-number-info-history/
 [m2]: /2017/11/13/nlp-pre-statistics-language-model/
 [m3]: /2017/11/14/nlp-pre-hidden-markov-model/
-
-## natural language processing
-
-- [第01章 : Python 字符串处理-正则表达式][n1]  
-
-- [第02章 : Jieba 中文处理][n2]
-
-- [第03章 : 从语言模型到朴素贝叶斯][n3]
-
-- [第04章 : LDA主题模型][n4]
-
-- [第05章 : 基于统计的翻译系统][0]
-
-- [第06章 : HMM 隐马尔科夫模型][0]
-
-- [第07章 : 深度学习与NLP应用][0]
-
-- [第08章 : 词向量相关应用][n8]
-
-- [第09章 : CRF 条件随机场相关应用][0]
-
-- [第11章 : Word2Vector 理论基础][0]
-
-- [第12章 : Word2Vector 实战案例][0]
-
-- [第13章 : 从 Word2Vector 到 Fasttext 的新发展][0]
-
 [0]: /
 [n1]: /2017/07/30/nlp-01-string-operation-re/
 [n2]: /2017/07/29/nlp-01-jieba/
@@ -82,23 +75,23 @@ date: 2016-03-26 16:46:48
 
 [f1]: http://www.52nlp.cn/
 
-## machine learning
+## Machine Learning
 
-- [第01章 : Machine Learning Introduce][1]
+- [第01篇 : Machine Learning Introduce][1]
 
-- [第02章 : Linear Regression][2]
+- [第02篇 : Linear Regression][2]
 
-- [第03章 : Logistic Regression][3]
+- [第03篇 : Logistic Regression][3]
 
-- [第04章 : Neural Networks I][4]
+- [第04篇 : Neural Networks I][4]
 
-- [第05章 : Neural Networks II][5]
+- [第05篇 : Neural Networks II][5]
 
-- [第06章 : Advice for Applying Machine Learning][6-1]
+- [第06篇 : Advice for Applying Machine Learning][6-1]
 
-- [第06章 : Machine Learning System Design][6-2]
+- [第06篇 : Machine Learning System Design][6-2]
 
-- [第07章 : Support Vector Machines][7]
+- [第07篇 : Support Vector Machines][7]
 
 [0]: /nlp
 [1]: /2016/09/20/ml-coursera-ng-w1-01-introduce/
@@ -110,7 +103,6 @@ date: 2016-03-26 16:46:48
 [6-2]: /2017/05/29/ml-coursera-ng-w6-Machine-Learning-System-Design/
 [7]: /2017/10/13/ml-coursera-ng-w7-svm/
 
-## deep learning
 
 ## next ⋯⋯
 

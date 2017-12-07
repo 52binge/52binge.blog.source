@@ -1,5 +1,5 @@
 ---
-title: 杨帅完美发音班(1) - 10.9 (not finish)
+title: 杨帅完美发音班(1) - 10.9
 toc: true
 date: 2017-12-03 21:55:21
 categories: English
@@ -71,3 +71,46 @@ garage [ˈgærɑ:ʒ]、[gəˈrɑ:ʒ]
 ```
 /ai/ /æ/ /ɛ/
 ```
+
+**/ai/ = /a:/-/i/**
+
+- 字母组合: 主要 ***i，ie，y，igh，uy***
+
+> ***t<font color=#c7254e>i</font>me，wh<font color=#c7254e>i</font>te，d<font color=#c7254e>ie</font>，t<font color=#c7254e>ie</font>d
+> dry，why，July
+> h<font color=blue>igh</font>t，n<font color=blue>igh</font>t、r<font color=blue>igh</font>t
+> bu<font color=#c7254e>y</font>，gu<font color=#c7254e>y</font>
+> k<font color=#c7254e>i</font>nd，m<font color=#c7254e>i</font>nd，w<font color=#c7254e>i</font>nd
+> all kinds of，spring to mind，wind down，unwind***
+
+word | phonetic symbol | sentence
+------- | ------- | -------
+die | [dai] | I don't want to die.
+died | [daid] | My dog died yesterday.
+dying | [ˈdaɪɪŋ] | The man is dying.
+dead | [ded]，[dɛd] | Her cat is dead.
+
+### 长短音的区分
+
+- 长音: `tense`(紧张音) -- 长元紧张音 - beach
+- 短音: `lax` (放松音) -- 短元放松音 - bitch
+
+
+**/i:/** 不放松音 , 字母组合: 主要 ***ee，ea，e，ie，ei***
+
+> ***w<font color=#c7254e>ee</font>k，w<font color=#c7254e>ea</font>k，tr<font color=#c7254e>ee</font>，m<font color=#c7254e>ee</font>t，thr<font color=#c7254e>ee</font>，s<font color=#c7254e>ee</font>，s<font color=#c7254e>ee</font>k，m<font color=#c7254e>ea</font>t，l<font color=#c7254e>ea</font>ve，<font color=#c7254e>ea</font>t，b<font color=#c7254e>ea</font>t
+> l<font color=#c7254e>ea</font>d，<font color=#c7254e>ea</font>ch，coll<font color=#c7254e>ea</font>gue，t<font color=#c7254e>ea</font>m，r<font color=#c7254e>ea</font>d，sp<font color=#c7254e>ea</font>k，pl<font color=#c7254e>ea</font>se，p<font color=#c7254e>ie</font>ce，rec<font color=#c7254e>ei</font>ve
+> extr<font color=#c7254e>e</font>mely，m<font color=#c7254e>e</font>dia***
+
+**/ei/** 一定要饱满 , 字母组合: 主要 ***ay，a***
+
+> ***tree. tray <font color=#c7254e>[trei]</font>
+> see. say <font color=#c7254e>[sei]</font>
+> week. wake <font color=#c7254e>[weik]</font>
+> piece. pace <font color=#c7254e>[peis]</font>***
+
+**/i/ 是 /i:/** 的放松不用力音 , 字母组合: 主要 ***i，y***
+
+> ***sit，it，is，live，did，this，kid，list，six
+> fix，fit，click，if，big，give，gift，trip
+> still，miss，finish，habit，m<font color=#c7254e>y</font>stery [ˈmɪstəri]，coll<font color=#c7254e>e</font>ge [ˈkɑ:lɪdʒ] ***

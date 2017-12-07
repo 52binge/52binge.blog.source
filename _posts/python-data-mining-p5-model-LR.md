@@ -23,17 +23,9 @@ list_number: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-**data mining steps**
+Logistic 回归模型属于概率型非线性回归，分为 二分类 和 多分类 的回归模型。
 
-1. 挖掘目标
-2. 数据取样
-3. 数据探索
-4. 数据预处理
-5. `挖掘建模`
-6. 模型评价
-
-> Logistic 回归模型属于概率型非线性回归，分为 二分类 和 多分类 的回归模型。
-
+<!--more-->
 
 ## 1. Logistic Function
 
