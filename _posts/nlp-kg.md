@@ -2,7 +2,7 @@
 title: Knowledge Graph
 toc: true
 date: 2017-10-30 21:08:21
-categories: NLP
+categories: nlp
 tags: KG
 description: word2vec 
 mathjax: true

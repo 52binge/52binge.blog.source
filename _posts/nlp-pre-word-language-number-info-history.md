@@ -2,7 +2,7 @@
 title: 文字和语言 vs 数字和信息
 toc: true
 date: 2017-11-08 10:08:21
-categories: NLP
+categories: nlp
 tags: word2vec
 ---
 

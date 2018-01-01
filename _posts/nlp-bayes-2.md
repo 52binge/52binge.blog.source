@@ -2,7 +2,7 @@
 title: Naive Bayes For News Classification
 toc: true
 date: 2017-08-23 07:08:21
-categories: NLP
+categories: nlp
 tags: python-re
 description: Naive Bayes
 mathjax: true

@@ -2,7 +2,7 @@
 title: Naive Bayes
 toc: true
 date: 2017-08-10 07:08:21
-categories: NLP
+categories: nlp
 tags: python-re
 description: Naive Bayes
 mathjax: true

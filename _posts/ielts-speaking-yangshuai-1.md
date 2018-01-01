@@ -1,5 +1,5 @@
 ---
-title: 杨帅完美发音班(1) - 10.9
+title: 杨帅完美发音班(1)
 toc: true
 date: 2017-12-03 21:55:21
 categories: English
@@ -10,11 +10,11 @@ tags: IELTS
 
 but you're old...
 
-<!--more-->
-
 0 ~ 6 years 可以通过耳朵识别 140 个不同的音, 也可以马上模仿
 
 6 岁之后，这种能力逐渐下降...， 所以你天天听剑桥英语，或者你去外国10几年，还是中式发音
+
+<!--more-->
 
 ## 1. 理论 + 模仿
 
@@ -113,4 +113,4 @@ dead | [ded]，[dɛd] | Her cat is dead.
 
 > ***sit，it，is，live，did，this，kid，list，six
 > fix，fit，click，if，big，give，gift，trip
-> still，miss，finish，habit，m<font color=#c7254e>y</font>stery [ˈmɪstəri]，coll<font color=#c7254e>e</font>ge [ˈkɑ:lɪdʒ] ***
+> still，miss，finish，habit，m<font color=#c7254e>y</font>stery [ˈmɪstəri]，coll<font color=#c7254e>e</font>ge [ˈkɑ:lɪdʒ]***

@@ -2,7 +2,7 @@
 title: Word2vec Learning Note
 toc: true
 date: 2017-11-16 10:08:21
-categories: NLP
+categories: nlp
 tags: word2vec
 mathjax: true
 ---

@@ -2,7 +2,7 @@
 title: Jieba 中文处理
 toc: true
 date: 2017-07-29 18:08:21
-categories: NLP
+categories: nlp
 tags: jieba
 description: NLP 基础技能 -- Jieba 中文分词与处理
 ---

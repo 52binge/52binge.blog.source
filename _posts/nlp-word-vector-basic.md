@@ -2,7 +2,7 @@
 title: 词向量到word2vec与相关应用
 toc: true
 date: 2017-07-12 21:08:21
-categories: NLP
+categories: nlp
 tags: nlp
 description: word2vec 
 mathjax: true

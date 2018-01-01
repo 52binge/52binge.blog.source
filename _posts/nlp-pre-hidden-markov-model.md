@@ -2,7 +2,7 @@
 title: Hidden Markov Model
 toc: true
 date: 2017-11-14 16:08:21
-categories: NLP
+categories: nlp
 tags: HMM
 mathjax: true
 ---

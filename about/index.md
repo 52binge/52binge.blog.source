@@ -25,7 +25,7 @@ p + p {
 
 <a class="article-myself" href="/"> Blair Chan</a> 90s, a program engineer, a GTD practitioner, live in Hangzhou, China.
 
-<a class="article-myself" href="/tweet"> Libin Chan</a> focus on `Java`、`NLP`、`RS`、`Python` and other fields.
+<a class="article-myself" href="/tweet"> Libin Chan</a> focus on `Python`、`Data Mining`、`NLP`、`RS`、`Java` and other fields.
 
 <!--<a class="article-myself" href="/">  Libin Chan</a>-->
 
@@ -35,7 +35,7 @@ p + p {
 
 ### Contact me
 
-- You can find me in these ways: <a class="article-myEmail" href="mailto:blair.values@gmail.com">  Email</a> <!--<a class="article-myFacebook" href="https://www.facebook.com/"> Facebook</a>--> <a class="article-myTwitter" href="https://twitter.com/blair101v">  Twitter</a> <!--<a class="article-myInstagram" href="https://www.instagram.com/"> Instagram</a>--> <a class="article-myGithub" href="https://github.com/blair101"> Github</a> <a class="article-myKaggle" href="https://www.kaggle.com/blairchan"> Kaggle</a> <a class="article-mySegmentfault" href="https://www.stackoverflow.com"> Stackoverflow</a>
+- You can find me in these ways: <a class="article-myEmail" href="mailto:blair.values@gmail.com">  Email</a> <!--<a class="article-myFacebook" href="https://www.facebook.com/"> Facebook</a>--> <a class="article-myTwitter" href="https://twitter.com/blair101v">  Twitter</a> <a class="article-myInstagram" href="https://www.instagram.com/blair101v/"> Instagram</a> <a class="article-myGithub" href="https://github.com/blair101"> Github</a> <a class="article-myKaggle" href="https://www.kaggle.com/blairchan"> Kaggle</a> <!--<a class="article-mySegmentfault" href="https://www.stackoverflow.com"> Stackoverflow</a>-->
 - You can continue to fellow this blog and comment by [DISQUS](https://disqus.com/)
 
 ### ChangeLog

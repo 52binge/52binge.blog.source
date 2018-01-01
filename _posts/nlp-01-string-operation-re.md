@@ -2,7 +2,7 @@
 title: Python 字符串处理-正则表达式
 toc: true
 date: 2017-07-30 18:08:21
-categories: NLP
+categories: nlp
 tags: python-re
 description: Python 字符串处理 之 正则表达式
 ---

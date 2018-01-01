@@ -2,7 +2,7 @@
 title: NLP 简介 & 统计语言模型
 toc: true
 date: 2017-11-13 10:08:21
-categories: NLP
+categories: nlp
 tags: word2vec
 mathjax: true
 ---

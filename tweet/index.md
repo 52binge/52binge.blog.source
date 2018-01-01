@@ -9,7 +9,7 @@ date: 2016-07-16 16:59:48
 <p style="font-style:italic;color:cornflowerblue;">Blair Chan 正在输入 <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
-> `2017.10.31` My Work Team is Worth Being Remembered
+> `2017.10.31` My Work Team is Worth Being Called
 > <div class="tweetimg">
 <img src="/images/tw/tw-2017-10-31.jpeg" width="300" height="800"/img></div>
 
@@ -33,15 +33,15 @@ date: 2016-07-16 16:59:48
 
 ***
 
+<!--
 > `2016.07.30` 非常的累和憔悴，最近的大半个月时间里，用了几乎所有的空余时间来开发我的 blog 风，每个颜色、间距、字体、图标等都是我的心血，虽然还有一些功能没有dev完, 但终于可以和大家见面了 。逮噶后~
 > <div class="tweetimg">
 <img src="/images/tw/tw-maidanglaome.jpg" width="300" height="300"/img></div>
+-->
 
-***
-
-> `2016.07.15` 关于南海仲裁问题，又有媒体刻意煽动民族主义情绪，使得天朝同胞哗众取宠的去抵制 麦当劳、肯德基、甚至iphone，真的是 very foolish 的做法。中美关系其实如高晓松所讲坚不可摧， 中俄关系实质就是没什么关系。
-
-***
+<!--
+> `2016.07.15` 关于南海仲裁问题，又有媒体刻意煽动民族主义情绪，使得天朝同胞哗众取宠的去抵制 麦当劳、肯德基、甚至iphone，真的是愚蠢的做法。中美关系其实如高晓松所讲坚不可摧， 中俄关系实质就是没什么关系。
+-->
 
 > `2016.07.08` 从什么时候开始，蓝天☁白云已经是一种非常奢侈的享受 ？
 > <div class="tweetimg">
@@ -55,11 +55,10 @@ date: 2016-07-16 16:59:48
 
 ***
 
-> `2016.05.20` 15亿华人，唯一自由的地方。
+<!--
+> `2016.05.20` 唯一自由的地方。
 > <!--<div class="tweetimg">
 <img src="/images/tw/tw-taiwan-inaugural-speech.jpg" width="280" height="300"/img></div>-->
-
-***
 
 > `2016.05.08` 为什么直播软件在中国人气这么高，甚至有一些人会花几千元甚至上万元送主播礼物？这是潮流的发展必然趋势，还是中国的特色？
 
@@ -93,9 +92,9 @@ date: 2016-07-16 16:59:48
 > <div class="tweetimg">
 <img src="/images/tw/tw-taiwan-ziyu.jpg" width="300" height="800"/img></div>
 
-***
-
+<!--
 > `2016.01.02` 江南真的是风景如画，小桥流水人家，名不虚传。
+-->
 
 [10]: /images/tw/en-Shuping-Yang.png
 [9]: /images/tw/tw-2016-08-30-nz.jpg

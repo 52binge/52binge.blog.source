@@ -2,7 +2,7 @@
 title: NLP 原理与基础
 toc: true
 date: 2017-06-29 21:08:21
-categories: NLP
+categories: nlp
 tags: nltk
 description: python nltk
 ---
