@@ -122,6 +122,37 @@ date: 2016-03-26 16:46:48
 
 - [4.16 : 次坐标轴 *][0]
 
+## Scikit-Learn
+
+[Why Sklearn][sklearn0]
+
+- [5.1 : Sklearn Choosing The Right Estimator][sklearn1]
+
+- [5.2 : Sklearn General Learning Model][sklearn2]
+
+- [5.3 : Sklearn DataSets][sklearn3]
+
+- [5.4 : Sklearn Common Attributes and Functions][sklearn4]
+
+### 高级使用
+
+- [5.5 : 正规化 Normalization *][0]
+
+- [5.6 : 交叉验证 1 Cross-validation *][0]
+
+- [5.7 : 交叉验证 2 Cross-validation *][0]
+
+- [5.8 : 交叉验证 3 Cross-validation *][0]
+
+- [5.9 : 保存模型 *][0]
+
+[sklearn0]: /2018/01/03/py-sklearn-0-why/
+[sklearn1]: /2018/01/03/py-sklearn-1-choosing-estimator/
+[sklearn2]: /py-sklearn-2-general-learning-model/
+[sklearn3]: /2018/01/03/py-sklearn-3-database/
+[sklearn4]: /2018/01/05/py-sklearn-4-common-attributes/
+
+
 ## Machine Learning Coursera
 
 - [第01篇 : Machine Learning Introduce][1]
@@ -148,28 +179,6 @@ date: 2016-03-26 16:46:48
 [6-1]: /2017/05/24/ml-coursera-ng-w6-Advice-for-Applying-Machine-Learning/
 [6-2]: /2017/05/29/ml-coursera-ng-w6-Machine-Learning-System-Design/
 [7]: /2017/10/13/ml-coursera-ng-w7-svm/
-
-## Scikit-Learn
-
-- [5.0 : Why Sklearn *][0]
-
-- [5.1 : 选择学习方法 *][0]
-
-- [5.2 : 通用学习模式 *][0]
-
-- [5.3 : sklearn 强大数据库 *][0]
-
-- [5.4 : sklearn 常用属性与功能 *][0]
-
-- [5.5 : 正规化 Normalization *][0]
-
-- [5.6 : 交叉验证 1 Cross-validation *][0]
-
-- [5.7 : 交叉验证 2 Cross-validation *][0]
-
-- [5.8 : 交叉验证 3 Cross-validation *][0]
-
-- [5.9 : 保存模型 *][0]
 
 ## TensorFlow
 

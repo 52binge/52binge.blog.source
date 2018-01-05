@@ -2,14 +2,18 @@
 date: 2016-07-16 16:59:48
 ---
 
-<br>
+[Blair's Instagram][ins]&nbsp; 、&nbsp;[Music][wangyiyun]
+<img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
+
+[ins]: https://www.instagram.com/blair101v/
+[wangyiyun]: https://music.163.com/#/my/m/music/playlist?id=942623425
 
 ## Tweet
 
-<p style="font-style:italic;color:cornflowerblue;">Blair Chan 正在输入 <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
+<p style="font-style:italic;color:cornflowerblue;">Blair Chan Is Inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
-> `2017.10.31` My Work Team is Worth Being Called
+> `2017.10.31` My work team
 > <div class="tweetimg">
 <img src="/images/tw/tw-2017-10-31.jpeg" width="300" height="800"/img></div>
 
