@@ -3,7 +3,7 @@ title: Sklearn DataSets
 toc: true
 date: 2018-01-03 18:05:21
 categories: python
-tags: Matplotlib
+tags: Sklearn
 ---
 
 Sklearn 中的 [data sets][4]，很多而且有用，可以用来学习算法模型

@@ -3,7 +3,7 @@ title: Sklearn Choosing The Right Estimator
 toc: true
 date: 2018-01-03 13:22:21
 categories: python
-tags: Matplotlib
+tags: Sklearn
 ---
 
 Sciki-learn 选择学习方法，选择模型 [流程图][4]

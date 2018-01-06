@@ -11,147 +11,40 @@ date: 2016-03-26 16:46:48
 
 ## Python
 
-- [1.1 : Python 环境][py0]
+- [Python](/python_language)
 
-- [1.2 : Python 基础][py1]
+- [Numpy & Pandas](/python_numpy_pandas)
 
-- [1.3 : Python 函数][py2]
-
-- [1.4 : Python 函数式编程][py3]
-
-- ...
-
-[py0]: /2017/10/18/ops-pyenv-install/
-[py1]: /2017/05/31/python-basic-learning-I/
-[py2]: /2017/06/02/python-basic-learning-II/
-[py3]: /2017/06/05/python-basic-learning-III/
-
-## Numpy & Pandas
-
-&nbsp;&nbsp;任何关于数据分析的模块都少不了它们两个
-
-### Numpy
-
-- [2.1 : Numpy Attribute][numpy1]
-
-- [2.2 : Numpy Array][numpy2]
-
-- [2.3 : Numpy Basic Operation 1][numpy3]
-
-- [2.4 : Numpy Basic Operation 2][numpy4]
-
-- [2.5 : Numpy Index][numpy5]
-
-- [2.6 : Numpy Array Merge][numpy6]
-
-- [2.7 : Numpy Array Split][numpy7]
-
-- [2.8 : Numpy Copy & Deep Copy][numpy8]
-
-[numpy1]: /2017/12/21/py-numpy-1-attribute/
-[numpy2]: /2017/12/22/py-numpy-2-array/
-[numpy3]: /2017/12/25/py-numpy-3-basic-operation-1/
-[numpy4]: /2017/12/25/py-numpy-4-basic-operation-2/
-[numpy5]: /2017/12/26/py-numpy-5-Index/
-[numpy6]: /2017/12/26/py-numpy-6-Array-Merge/
-[numpy7]: /2017/12/27/py-numpy-7-Split/
-[numpy8]: /2017/12/27/py-numpy-8-copy-deep-copy/
-
-### Pandas
-
-- [3.1 : Pandas Basic Intro][pandas1]
-
-- [3.2 : Pandas Select Data][pandas2]
-
-- [3.3 : Pandas Set Value -- loc/iloc][pandas3]
-
-- [3.4 : Pandas Deal NaN Data][pandas4]
-
-- [3.5 : Pandas Import & Output][pandas5]
-
-- [3.6 : Pandas Concat、Join][pandas6]
-
-- [3.7 : Pandas Merge][pandas7]
-
-- [3.8 : Pandas Matplotlib Intro][pandas8]
-
-[pandas1]: /2017/12/27/py-pandas-1-intro/
-[pandas2]: /2017/12/28/py-pandas-2-select-data/
-[pandas3]: /2017/12/30/py-pandas-3-set-value/
-[pandas4]: /2017/12/30/py-pandas-4-deal-NaN-value/
-[pandas5]: /2017/12/30/py-pandas-5-import-output/
-[pandas6]: /2017/12/31/py-pandas-6-concat-join-append/
-[pandas7]: /2017/12/31/py-pandas-7-merge/
-[pandas8]: /2017/12/31/py-pandas-8-matplotlib/
-
-- [为什么用 Numpy 还是慢, 你用对了吗? *][0]
-
-## Matplotlib 简介
-
-&nbsp;[Matplotlib 是一个非常强大的 Python 画图工具][matplotlib1]
-
-### &nbsp;基本使用
-
-- [4.1 : Matplotlib Basic Use][matplotlib2]
-
-- [4.2 : Matplotlib Figure][matplotlib3]
-
-[matplotlib1]: /2018/01/01/py-matplotlib-1-why/
-[matplotlib2]: /2018/01/01/py-matplotlib-2-basic-use/
-[matplotlib3]: /2018/01/01/py-matplotlib-3-figure-image/
-
-### &nbsp;画图种类
-
-- [4.8 : Scatter 散点图 *][0]
-
-- [4.9 : Bar 柱状图 *][0]
-
-- [4.10 : Contours 等高线图 *][0]
-
-- [4.11 : Image 图片 *][0]
-
-- [4.12 : 3D 数据 *][0]
-
-### &nbsp;多图合并显示
-
-- [4.13 : Subplot 多合一显示 *][0]
-
-- [4.14 : Subplot 分格显示 *][0]
-
-- [4.15 : 图中图 *][0]
-
-- [4.16 : 次坐标轴 *][0]
+- [Matplotlib](/python_matplotlib)
 
 ## Scikit-Learn
 
-[Why Sklearn][sklearn0]
+&nbsp;&nbsp;机器学习领域当中最知名的 python 模块之一 [sklearn_why][sklearn0] 
 
-- [5.1 : Sklearn Choosing The Right Estimator][sklearn1]
+- [1.1 : Sklearn Choosing The Right Estimator][sklearn1]
 
-- [5.2 : Sklearn General Learning Model][sklearn2]
+- [1.2 : Sklearn General Learning Model][sklearn2]
 
-- [5.3 : Sklearn DataSets][sklearn3]
+- [1.3 : Sklearn DataSets][sklearn3]
 
-- [5.4 : Sklearn Common Attributes and Functions][sklearn4]
+- [1.4 : Sklearn Common Attributes and Functions][sklearn4]
 
-### 高级使用
+- [1.5 : Normalization][sklearn5]
 
-- [5.5 : 正规化 Normalization *][0]
+- [1.6 : Neural Networks Evaluation *][0] 
 
-- [5.6 : 交叉验证 1 Cross-validation *][0]
+- [1.7 : Cross-validation 1 *][0]
 
-- [5.7 : 交叉验证 2 Cross-validation *][0]
+- [1.8 : Cross-validation 2 *][0]
 
-- [5.8 : 交叉验证 3 Cross-validation *][0]
-
-- [5.9 : 保存模型 *][0]
+- [1.9 : 保存模型 *][0]
 
 [sklearn0]: /2018/01/03/py-sklearn-0-why/
 [sklearn1]: /2018/01/03/py-sklearn-1-choosing-estimator/
-[sklearn2]: /py-sklearn-2-general-learning-model/
+[sklearn2]: /2018/01/05/py-sklearn-2-general-learning-model/
 [sklearn3]: /2018/01/03/py-sklearn-3-database/
 [sklearn4]: /2018/01/05/py-sklearn-4-common-attributes/
-
+[sklearn5]: /2018/01/06/py-sklearn-5-normalization/
 
 ## Machine Learning Coursera
 
@@ -196,17 +89,7 @@ date: 2016-03-26 16:46:48
 
 ## Deep Learning
 
-- [第01篇 : Google大脑和人工神经网络 *][0]
-
-- [第02篇 : 深度学习与NLP应用 *][0]
-
-- [第03篇 : 词向量相关应用][n8]
-
-- [第04篇 : Word2Vector 理论基础 *][0]
-
-- [第05篇 : Word2Vector 实战案例 *][0]
-
-- [第06篇 : 从 Word2Vector 到 Fasttext 的新发展 *][0]
+&nbsp;&nbsp;高阶内容
 
 ## Natural Language Processing
 
@@ -236,6 +119,18 @@ date: 2016-03-26 16:46:48
 
 - [第13篇 : 条件随机场、文法分析及其他 *][0]
 
+- [第14篇 : Google大脑和人工神经网络 *][0]
+
+- [第15篇 : 深度学习与NLP应用 *][0]
+
+- [第16篇 : 词向量相关应用][n8]
+
+- [第17篇 : Word2Vector 理论基础 *][0]
+
+- [第18篇 : Word2Vector 实战案例 *][0]
+
+- [第19篇 : 从 Word2Vector 到 Fasttext 的新发展 *][0]
+
 [m1]: /2017/11/08/nlp-pre-word-language-number-info-history/
 [m2]: /2017/11/13/nlp-pre-statistics-language-model/
 [m3]: /2017/11/14/nlp-pre-hidden-markov-model/
@@ -249,10 +144,6 @@ date: 2016-03-26 16:46:48
 [n8]: /2017/07/12/nlp-word-vector-basic/
 
 [f1]: http://www.52nlp.cn/
-
-- [upright person][person]
-
-[person]: /2017/12/27/life-be-an-upright-person/
 
 ## next ⋯⋯
 

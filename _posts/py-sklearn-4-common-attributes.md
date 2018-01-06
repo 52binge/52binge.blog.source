@@ -3,7 +3,7 @@ title: Sklearn Common Attributes and Functions
 toc: true
 date: 2018-01-05 14:15:21
 categories: python
-tags: Matplotlib
+tags: Sklearn
 ---
 
 今天来看 `Model` 的属性和功能, 这里以 `LinearRegressor` 为例，所以先导入包，数据，还有模型
