@@ -19,7 +19,11 @@ p + p {
 
 ## About
 
----
+[Blair's Instagram][ins]&nbsp; 、&nbsp;[Netease Music][wangyiyun]
+<img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
+
+[ins]: https://www.instagram.com/blair101v/
+[wangyiyun]: https://music.163.com/#/my/m/music/playlist?id=942623425
 
 ### Who am I
 

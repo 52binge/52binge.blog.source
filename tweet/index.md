@@ -2,12 +2,6 @@
 date: 2016-07-16 16:59:48
 ---
 
-[Blair's Instagram][ins]&nbsp; 、&nbsp;[Music][wangyiyun]
-<img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
-
-[ins]: https://www.instagram.com/blair101v/
-[wangyiyun]: https://music.163.com/#/my/m/music/playlist?id=942623425
-
 ## Tweet
 
 <p style="font-style:italic;color:cornflowerblue;">Blair Chan Is Inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
@@ -15,7 +9,7 @@ date: 2016-07-16 16:59:48
 
 > `2017.10.31` My work team
 > <div class="tweetimg">
-<img src="/images/tw/tw-2017-10-31.jpeg" width="300" height="800"/img></div>
+<img src="/images/tw/tw-our-five-team.jpg" width="300" height="800"/img></div>
 
 ---
 
