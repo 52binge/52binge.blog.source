@@ -31,13 +31,13 @@ date: 2016-03-26 16:46:48
 
 - [1.5 : Normalization][sklearn5]
 
-- [1.6 : Neural Networks Evaluation *][0] 
+- [1.6 : Cross-validation 1][sklearn6]
 
-- [1.7 : Cross-validation 1 *][0]
+- [1.7 : Cross-validation 2][sklearn7]
 
-- [1.8 : Cross-validation 2 *][0]
+- [1.8 : Cross-validation 3][sklearn8]
 
-- [1.9 : 保存模型 *][0]
+- [1.9 : Sklearn Save Model][sklearn9]
 
 [sklearn0]: /2018/01/03/py-sklearn-0-why/
 [sklearn1]: /2018/01/03/py-sklearn-1-choosing-estimator/
@@ -45,6 +45,10 @@ date: 2016-03-26 16:46:48
 [sklearn3]: /2018/01/03/py-sklearn-3-database/
 [sklearn4]: /2018/01/05/py-sklearn-4-common-attributes/
 [sklearn5]: /2018/01/06/py-sklearn-5-normalization/
+[sklearn6]: /2018/01/08/py-sklearn-6-cross-validation-1/
+[sklearn7]: /2018/01/09/py-sklearn-6-cross-validation-2/
+[sklearn8]: /2018/01/09/py-sklearn-6-cross-validation-3/
+[sklearn9]: /2018/01/10/py-sklearn-7-save-model/
 
 ## Machine Learning Coursera
 
