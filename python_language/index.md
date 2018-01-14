@@ -5,21 +5,21 @@ date: 2018-01-06 16:46:48
 
 Python Learning Notes 
 
-## Python Intro
+## Python
 
-- [1.1 : Python 环境][py0]
+- [1.0 : Python Pyenv][py0.0] & [Anaconda3][py0.1]
 
-- [1.2 : input & output][0]
+- [1.1 : Python Data Analysis Lib Introduce][py1]
 
-- [1.3 : Python 数据类型][0]
+- [1.2 : Python Output、Variable、dataType、If、While/For、Py Head][py2]
 
-## Python Basic
+- [1.3 : Python String-Encoding and Str][py3]
 
-- [2.1 : Python 基础][py1]
+## Python 2
 
-- [2.2 : Python 函数][py2]
+- [2.1 : Python List、Tuple、Dict、 Set][py4]
 
-- [2.4 : 元组, 列表, 字典][0]
+- [2.1 : Python 函数 & 函数参数][0]
 
 - [2.5 : 全局 & 局部 变量][0]
 
@@ -28,10 +28,6 @@ Python Learning Notes
 - [2.7 : 文件读取 2][0]
 
 - [2.8 : 模块][0]
-
-[条件判断 True 和 False 的注意点][0]
-
-整数和浮点数也能进行 Boolean 数据操作, 具体规则，如果该值等于 0 或者 0.0 将会返回 False 其余的返回 True
 
 ## Class
 
@@ -72,10 +68,13 @@ Python Learning Notes
 - [morvanzhou while](https://morvanzhou.github.io/tutorials/python-basic/basic/03-1-while/)
 
 
-[py0]: /2017/10/18/ops-pyenv-install/
-[py1]: /2017/05/31/python-basic-learning-I/
-[py2]: /2017/06/02/python-basic-learning-II/
-[py3]: /2017/06/05/python-basic-learning-III/
+[py0.0]: /2017/10/18/ops-pyenv-install/
+[py0.1]: /2017/12/07/ops-pyenv-Anaconda3-note/
+
+[py1]: /2016/08/02/py-language-1-data-analysis-environment/
+[py2]: /2017/05/31/py-language-2-Output-Variable-dataType-If-While:For-PyHead/
+[py3]: /2017/05/31/py-language-3-str-&-character-encoding/
+[py4]: /2017/05/31/py-language-4-collection-type/
 
 [0]: /python_language
 

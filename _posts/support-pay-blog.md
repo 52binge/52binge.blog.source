@@ -1,5 +1,5 @@
 ---
-title: 博文的自愿付费方式
+title: 博文的赞助方式
 toc: true
 date: 2017-11-05 20:05:21
 categories: life

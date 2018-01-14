@@ -6,8 +6,6 @@ categories: devops
 tags: Anaconda3
 ---
 
-Pyenv + IPython + Jupyter Notebook + Anaconda3
-
 pyenv install anaconda3-5.0.0 无法下载包的情况下使用的，因为网速实在太慢了T T
 
 <!-- more -->

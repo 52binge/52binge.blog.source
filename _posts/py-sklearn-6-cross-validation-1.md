@@ -130,3 +130,4 @@ plt.show()
 
 [img1]: /images/python/sklearn-6-cross-validation-1-output_6_0.png
 [img2]: /images/python/sklearn-6-cross-validation-1-output_8_1.png
+
