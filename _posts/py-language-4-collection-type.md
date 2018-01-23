@@ -181,6 +181,8 @@ dict | list
 
 set和dict类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在set中，没有重复的key。
 
+### set init
+
 要创建一个set，需要提供一个list作为输入集合：
 
 ```py
@@ -190,6 +192,8 @@ set([1, 2, 3])
 ```
 
 > 注意，传入的参数`[1, 2, 3]`是一个list，而显示的`set([1, 2, 3])`只是告诉你这个set内部有1，2，3这3个元素，显示的[]不表示这是一个list。
+
+### add、remove
 
 ```py
 >>> s = set([1, 1, 2, 2, 3, 3])
@@ -206,6 +210,8 @@ set([1, 2, 3, 4])
 set([1, 2, 3])
 ```
 
+### set & and |
+
 set可以看成数学意义上的无序和无重复元素的集合，因此，两个set可以做数学意义上的交集、并集等操作：
 
 ```py
@@ -219,9 +225,23 @@ set([1, 2, 3, 4])
 
 > set和dict的唯一区别仅在于没有存储对应的value，set的原理和dict一样.
 
-### 进阶内容
+### difference、intersection
 
-议不可变对象
+我们还能进行一些筛选操作, 比如对比另一个东西, 看看原来的 set 里有没有和他不同的 (difference). 或者对比另一个东西, 看看 set 里有没有相同的 (intersection).
+
+```sql
+print(unique_char)
+# {'b', 'c', 'a'}
+
+unique_char = set(char_list)
+print(unique_char.difference({'a', 'e', 'i'}))
+# {'b', 'd', 'c'}
+
+print(unique_char.intersection({'a', 'e', 'i'}))
+# {'a'}
+```
+
+## 议不可变对象
 
 ```py
 >>> a = ['c', 'b', 'a']
@@ -244,6 +264,6 @@ set([1, 2, 3, 4])
 
 ## Reference article
 
-- [廖雪峰的官方网站 liaoxuefeng][1]
+- [廖雪峰的官方网站][1]
 
 [1]: http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/001386819196283586a37629844456ca7e5a7faa9b94ee8000

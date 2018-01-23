@@ -79,6 +79,8 @@ date: 2016-03-26 16:46:48
 
 ## TensorFlow
 
+&nbsp;&nbsp;深度学习领域当中最知名的库之一: [tensorflow_why][t1]
+
 - [第01篇 : TensorFlow 基础 *][0]  
 
 - [第02篇 : TensorFlow 和其他深度学习框架的对比 *][0]  
@@ -90,6 +92,8 @@ date: 2016-03-26 16:46:48
 - [第05篇 : TensorFlow Word2Vec *][0] 
 
 > TensorFlow 实现卷积、循环、全连接 神经网络
+
+[t1]: /2018/01/22/tensorflow-1-why/
 
 ## Deep Learning
 

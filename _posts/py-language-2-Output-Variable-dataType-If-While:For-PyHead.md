@@ -50,6 +50,24 @@ print(a,b,c)
 
     11 12 13
 
+### global var
+
+那如何在外部也能调用一个在局部里修改了的全局变量呢. 首先我们在外部定义一个全局变量 `a=None`, 然后再 `fun()` 中声明 这个 `a` 是来自外部的 `a`. 声明方式就是 `global a`. 然后对这个外部的 `a` 修改后, 修改的效果会被施加到外部的 `a` 上. 所以我们将能看到运行完 `fun()`, `a` 的值从 `None` 变成了 `20`.
+
+```python
+APPLY = 100 # 全局变量
+a = None
+def fun():
+    global a    # 使用之前在全局里定义的 a
+    a = 20      # 现在的 a 是全局变量了
+    return a+100
+
+print(APPLE)    # 100
+print('a past:', a)  # None
+fun()
+print('a now:', a)   # 20
+```
+
 ## dataType
 
 序号 | data type | example value

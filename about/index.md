@@ -24,6 +24,11 @@ p + p {
 
 [ins]: https://www.instagram.com/blair101v/
 [wangyiyun]: https://music.163.com/#/my/m/music/playlist?id=942623425
+[finance_blockchain]: /2018/01/22/py-finance-blockchain-coin/
+
+<br>
+
+[Blockchain Coin][finance_blockchain]
 
 ### Who am I
 

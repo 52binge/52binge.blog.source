@@ -3,10 +3,6 @@ title: Numpy & Pandas
 date: 2018-01-06 16:46:48
 ---
 
-Numpy & Pandas Learning Notes 
-
-## Numpy & Pandas
-
 &nbsp;&nbsp;任何关于数据分析的模块都少不了它们两个
 
 ### Numpy

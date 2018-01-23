@@ -3,21 +3,31 @@ title: Matplotlib
 date: 2018-01-06 16:46:48
 ---
 
-Matplotlib Learning Notes 
-
-## Matplotlib 
-
-&nbsp;[Matplotlib 是一个非常强大的 Python 画图工具][matplotlib1]
+&nbsp;&nbsp; Matplotlib 是一个非常强大的 Python 画图工具
 
 ### &nbsp;基本使用
 
-- [4.1 : Matplotlib Basic Use][matplotlib2]
+- [4.1 : Matplotlib Why ?][matplotlib1]
 
-- [4.2 : Matplotlib Figure][matplotlib3]
+- [4.2 : Matplotlib Basic Use][matplotlib2]
+
+- [4.3 : Matplotlib Figure][matplotlib3]
+
+- [4.4 : Matplotlib Coordinate axis][matplotlib4]
+
+- [4.5 : Matplotlib Legend][matplotlib5]
+
+- [4.6 : Matplotlib Annotation][matplotlib6]
+
+- [4.7 : Matplotlib Tick][matplotlib7]
 
 [matplotlib1]: /2018/01/01/py-matplotlib-1-why/
 [matplotlib2]: /2018/01/01/py-matplotlib-2-basic-use/
 [matplotlib3]: /2018/01/01/py-matplotlib-3-figure-image/
+[matplotlib4]: /2018/01/23/py-matplotlib-3-figure-image/
+[matplotlib5]: /2018/01/23/py-matplotlib-3-figure-image/
+[matplotlib6]: /2018/01/23/py-matplotlib-3-figure-image/
+[matplotlib7]: /2018/01/23/py-matplotlib-3-figure-image/
 
 ### &nbsp;画图种类
 
