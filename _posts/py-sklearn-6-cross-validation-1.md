@@ -6,7 +6,7 @@ categories: python
 tags: Sklearn
 ---
 
-Sklearn 中的 `Cross-validation` 对于我们选择正确的 `Model` 和 Model 的参数是非常有帮助的， 有了它我们能直观的看出不同 Model 或者参数对结构准确度的影响。
+Sklearn 中的 `Cross-validation` 对于我们选择正确的 `Model` 和 `Model 的参数`是非常有用， 有了它我们能直观的看出不同 Model 或者参数对结构准确度的影响。
 
 <!-- more -->
 

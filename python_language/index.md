@@ -35,21 +35,17 @@ Python 开发了很多明星网站，例如 YouTube、Instagram、Douban.
 
 - [4.1 : Slice、Iteration、List generation、Generator][py4.1]
 
-- [4.2 : Python 函数式编程 *][0]
+- [4.2 : zip lambda map][py4.2]
 
-- [4.3 : try 错误处理 *][0]
+- [4.3 : try … except … as … ][py4.3]
 
-- [4.4 : zip lambda map *][0]
+- [4.4 : copy & deepcopy][py4.4]
 
-- [4.5 : copy & deepcopy *][0]
-
-- [4.6 : pickle 保存数据][py4.6]
+- [4.5 : pickle][py4.5]
 
 ## Project
 
 - [结构化你的工程][py.p1]
-
-- [领券离线计算 (not finish)][0]
 
 [py0.0]: /2017/10/18/ops-pyenv-install/
 [py0.1]: /2017/12/07/ops-pyenv-Anaconda3-note/
@@ -64,9 +60,11 @@ Python 开发了很多明星网站，例如 YouTube、Instagram、Douban.
 
 [py3.1]: /2017/06/05/py-language-8-class/
 
-[py4.1]: /2017/06/03/py-language-6-advanced/
-
-[py4.6]: /2018/01/19/py-language-pickle/
+[py4.1]: /2017/06/03/py-language-10-advanced/
+[py4.2]: /2018/01/24/py-language-11-zip-lambda-map/
+[py4.3]: /2018/01/24/py-language-12-try-exception/
+[py4.4]: /2018/01/24/py-language-13-copy/
+[py4.5]: /2018/01/19/py-language-14-pickle/
 
 [py.p1]: /2017/11/04/py-language-structure-project/
 
