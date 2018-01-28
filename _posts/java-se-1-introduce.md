@@ -1,14 +1,13 @@
 
 ---
-title: Java SE Basic Introduce
+title: Java SE Introduce
 date: 2013-02-02 07:54:16
 tags: [java]
 categories: java
 toc: true
-list_number: false
 ---
 
-This is a introduction about Java SE and how to use it.
+Java是一种广泛使用的计算机编程语言，拥有跨平台、面向对象、泛型编程的特性.
 
 <!--more-->
 
@@ -59,7 +58,7 @@ This is a introduction about Java SE and how to use it.
  - Software Development Kit (软件开发包)  开发需要 JDK  
  - Java Runtime Environment  用户只需 JRE  
 
-``/etc/profile`` or  ``.zshrc``
+``/etc/profile`` or  ``~/.zshrc`` or  ``~/.zprofile``
 
 ```      
 ### JAVA ###

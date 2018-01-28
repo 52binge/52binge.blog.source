@@ -3,11 +3,9 @@ title: Data Mining
 date: 2016-03-26 16:46:48
 ---
 
-大家好，欢迎来到本站
+我開始整理我在計算機領域的算法相關學習筆記，學習算法類知識真的需要下很大很大的功夫，灰常灰常博大精深~~
 
-本站致力于整理个人的学习笔记，这样在日后看起来，也算是追求大道上的一点回忆。  
-
-博主水平非常有限，期望能与 [Data Mining](https://zh.wikipedia.org/zh-hans/数据挖掘)、[NLP](https://en.wikipedia.org/wiki/Natural_language_processing) 感兴趣的朋友一起学习、交流、探讨与分享
+博主水平灰常灰常有限，期望能與對 [Data Mining](https://zh.wikipedia.org/zh-hans/数据挖掘)、[NLP](https://en.wikipedia.org/wiki/Natural_language_processing) 感興趣的朋友一起學習、交流、探討與分享~~
 
 ## Python
 
