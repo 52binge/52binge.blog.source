@@ -75,24 +75,6 @@ date: 2016-03-26 16:46:48
 [6-2]: /2017/05/29/ml-coursera-ng-w6-Machine-Learning-System-Design/
 [7]: /2017/10/13/ml-coursera-ng-w7-svm/
 
-## TensorFlow
-
-&nbsp;&nbsp;深度学习领域当中最知名的库之一: [tensorflow_why][t1]
-
-- [第01篇 : TensorFlow 基础 *][0]  
-
-- [第02篇 : TensorFlow 和其他深度学习框架的对比 *][0]  
-
-- [第03篇 : TensorFlow 编译及安装 *][0] 
-
-- [第04篇 : TensorFlow 多层感知机 *][0] 
-
-- [第05篇 : TensorFlow Word2Vec *][0] 
-
-> TensorFlow 实现卷积、循环、全连接 神经网络
-
-[t1]: /2018/01/22/tensorflow-1-why/
-
 ## Deep Learning
 
 &nbsp;&nbsp;高阶内容

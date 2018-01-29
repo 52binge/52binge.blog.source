@@ -9,15 +9,25 @@ date: 2016-03-26 16:46:48
 
 ## Java
 
-- [Java *][j1]
+- [Java][j1]
 
-- [JDBC][0]
-
-- [Reflex][0]
-
-- [Spring][0]
+- [Spring MVC_demo][j3]
 
 [j1]: /java_language
+[j2]: /java_jdbc
+[j3]: https://github.com/blair101/language/tree/master/java/springMVC_demo
+
+## TensorFlow
+
+- [TensorFlow Why ?][t1]
+
+- [TensorFlow Basic * no][0]  
+
+- [TensorFlow Softmax Regression * no][0] 
+
+- [TensorFlow Word2Vec * no][0] 
+
+[t1]: /2018/01/22/tensorflow-1-why/
 
 ## Hadoop & Hive
 
@@ -34,15 +44,6 @@ date: 2016-03-26 16:46:48
 [hive1]: /2016/02/15/hadoop-hive-brief/
 [hive1_for_github]: https://github.com/blair101/bigdata/tree/master/hive/hive-dev-demo
 
-## Spark
-
-- [Spark Introduce and Install][spark1]
-
-- [Spark 编程入门][spark2]
-
-[spark1]: /2016/02/01/spark-introduce-and-install/
-[spark2]: /2016/04/25/spark-machine-learning-p1/
-
 ## Elastic
 
 - [Elasticsearch * 入门][elastic1]
@@ -52,6 +53,15 @@ date: 2016-03-26 16:46:48
 [elastic1]: /2016/05/17/elasticsearch1-indoor/
 [elastic2]: /2016/05/17/elasticsearch-install-plugins/
 [elastic3]: /2016/06/04/elasticsearch-1.7-Introduce/
+
+## Spark
+
+- [Spark Introduce][spark1]
+
+- [Spark 编程入门][spark2]
+
+[spark1]: /2016/02/01/spark-introduce-and-install/
+[spark2]: /2016/04/25/spark-machine-learning-p1/
 
 ## next ⋯⋯
 
