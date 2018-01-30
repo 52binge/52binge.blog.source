@@ -7,16 +7,6 @@ date: 2016-03-26 16:46:48
 
 博主水平非常非常有限，期望能與您一起學習、交流、探討與分享~~
 
-## Java
-
-- [Java][j1]
-
-- [Spring MVC_demo][j3]
-
-[j1]: /java_language
-[j2]: /java_jdbc
-[j3]: https://github.com/blair101/language/tree/master/java/springMVC_demo
-
 ## TensorFlow
 
 - [TensorFlow Why ?][t1]
@@ -31,18 +21,38 @@ date: 2016-03-26 16:46:48
 
 ## Hadoop & Hive
 
-- [Hadoop Introduce][0]
+- [MapReduce for Python][h1]
 
-- [MapReduce for Python][0]
+- [Bigdata Offline Dev Solution][h3]
 
-- [Bigdata Offline Dev Solution *][0]
+- [Hive Introduce][h2]
 
-- [Hive Introduce][0]
+- [Hive UDF、UDAF][0] 转载
 
-- [Hive UDF、UDAF][0]
+[h1]: /2018/01/30/hadoop-mr-for-python/
+[h2]: /2016/02/15/hadoop-hive-brief/
+[h3]: /2018/01/30/hadoop-hive-bigdata-offline-demo/
+[h4]: http://blog.csdn.net/liuj2511981/article/details/8523084
 
-[hive1]: /2016/02/15/hadoop-hive-brief/
-[hive1_for_github]: https://github.com/blair101/bigdata/tree/master/hive/hive-dev-demo
+## Spark
+
+- [Spark Introduce][spark1]
+
+- [Spark First Program][spark2]
+
+[spark1]: /2016/02/01/spark-introduce-and-install/
+[spark2]: /2016/04/25/spark-machine-learning-p1/
+
+
+## Java
+
+- [Java][j1]
+
+- [Spring MVC_demo][j3]
+
+[j1]: /java_language
+[j2]: /java_jdbc
+[j3]: https://github.com/blair101/language/tree/master/java/springMVC_demo
 
 ## Elastic
 
@@ -53,15 +63,6 @@ date: 2016-03-26 16:46:48
 [elastic1]: /2016/05/17/elasticsearch1-indoor/
 [elastic2]: /2016/05/17/elasticsearch-install-plugins/
 [elastic3]: /2016/06/04/elasticsearch-1.7-Introduce/
-
-## Spark
-
-- [Spark Introduce][spark1]
-
-- [Spark 编程入门][spark2]
-
-[spark1]: /2016/02/01/spark-introduce-and-install/
-[spark2]: /2016/04/25/spark-machine-learning-p1/
 
 ## next ⋯⋯
 

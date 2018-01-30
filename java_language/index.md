@@ -34,7 +34,13 @@ Java是一种广泛使用的计算机编程语言，拥有跨平台、面向对�
 [java2.2]: /2013/02/02/java-se-2.2-notes-app/
 [java2.3]: /2013/11/24/java-se-2.3-notes-oo/
 
-以下很多是我之前 csdn blog 的链接，并没有整理迁移过来
+<div class="limg0">
+<img src="/images/java/java_logo.jpg" width="300" />
+</div>
+
+以下很多是我 `2013`年 `csdn_blog` 的鏈接，並沒有整理遷移來本博.
+
+[java_logo]: /images/java/java_logo.jpg
 
 ## OO
 
