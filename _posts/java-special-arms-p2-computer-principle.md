@@ -5,9 +5,11 @@ date: 2016-09-13 16:54:16
 tags: [java]
 categories: java
 toc: true
-list_number: false
-description: Java特种兵 - Java程序员需要知道的计算机原理，Reading Notes
 ---
+
+Java特种兵 - Java程序员需要知道的计算机原理，Reading Notes
+
+<!-- more -->
 
 ## 1. 计算机原理
 

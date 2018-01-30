@@ -48,23 +48,17 @@ date: 2016-03-26 16:46:48
 
 - [Java][j1]
 
-- [Spring MVC_demo][j3]
+- [Spring MVC_demo][j2]
 
 [j1]: /java_language
-[j2]: /java_jdbc
-[j3]: https://github.com/blair101/language/tree/master/java/springMVC_demo
+[j2]: /2016/09/11/java-springMVC-mybatis-demo/
 
 ## Elastic
 
-- [Elasticsearch * 入门][elastic1]
-
-- [Elasticsearch * Reference1.7 Introduce][elastic3]
+- [Elasticsearch Learning][elastic1]
 
 [elastic1]: /2016/05/17/elasticsearch1-indoor/
 [elastic2]: /2016/05/17/elasticsearch-install-plugins/
-[elastic3]: /2016/06/04/elasticsearch-1.7-Introduce/
-
-## next ⋯⋯
 
 > notes：next ...
 

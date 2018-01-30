@@ -4,8 +4,6 @@ toc: true
 date: 2016-11-17 10:28:21
 categories: machine-learning
 tags: Neural Networks
-description: coursera week 4 - ml neural networks representation
-mathjax: true
 ---
 
 <script type="text/x-mathjax-config">
@@ -22,6 +20,10 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
+
+coursera week 4 - ml neural networks representation
+
+<!-- more -->
 
 ## 1. Non-linear Hypotheses
 

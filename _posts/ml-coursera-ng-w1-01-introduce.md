@@ -4,7 +4,6 @@ toc: true
 date: 2016-09-20 10:22:21
 categories: machine-learning
 tags: machine-learning
-description: coursera machine learning - welcome to machine-learning
 mathjax: true
 ---
 
@@ -21,6 +20,10 @@ mathjax: true
 </script>
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
+
+welcome to machine-learning
+
+<!-- more -->
 
 ## Machine Learning
 

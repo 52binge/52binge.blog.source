@@ -201,12 +201,11 @@ Elasticsearch -> Indices   -> Types  -> Documents -> Fields
 ```
 
 Elasticsearch | Relational DB
-: ------- | : -------
+------- | -------
 Indices | Databases
 Types | Tables
 Documents | Rows
 Fields | Columns
-
 
 
 **Elasticsearch**
@@ -230,7 +229,6 @@ PUT /megacorp/employee/1
     "interests": [ "sports", "music" ]
 }
 ```
-![图片描述][6]
 
 ### 4.1 检索文档
 
@@ -500,4 +498,3 @@ Elasticsearch 致力于隐藏分布式系统的复杂性。以下这些操作都
 [3]: https://github.com/libean
 [4]: http://es.xiaoleilu.com/010_Intro/10_Installing_ES.html
 [5]: https://www.elastic.co/guide/index.html
-[6]: https://segmentfault.com/img/bVvQp0

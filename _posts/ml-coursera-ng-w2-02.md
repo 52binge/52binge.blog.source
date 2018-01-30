@@ -4,7 +4,6 @@ toc: true
 date: 2016-10-12 10:28:21
 categories: machine-learning
 tags: machine-learning
-description: coursera week 2 - octave learning
 mathjax: true
 ---
 
@@ -23,6 +22,8 @@ mathjax: true
 </script>
 
 Octave Tutorial, Octave Learning
+
+<!-- more -->
 
 ## 1. var
 

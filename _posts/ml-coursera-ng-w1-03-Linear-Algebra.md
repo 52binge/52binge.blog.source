@@ -4,7 +4,6 @@ toc: true
 date: 2016-09-30 14:22:21
 categories: machine-learning
 tags: machine-learning
-description: coursera week 1 - matrices and vectors
 mathjax: true
 ---
 
@@ -22,8 +21,11 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-## 1. Matrix Elements
+coursera week 1 - `matrices` and `vectors`
 
+<!-- more -->
+
+## 1. Matrix Elements
 
 $$ 
 A =   

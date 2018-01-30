@@ -4,7 +4,6 @@ toc: true
 date: 2016-10-24 10:28:21
 categories: machine-learning
 tags: machine-learning
-description: coursera week 3 - ML:Logistic Regression
 mathjax: true
 ---
 
@@ -22,6 +21,9 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
+coursera week 3 - ML:Logistic Regression
+
+<!-- more -->
 
 ## 1. Classification
 

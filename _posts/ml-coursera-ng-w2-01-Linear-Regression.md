@@ -4,7 +4,6 @@ toc: true
 date: 2016-10-08 12:28:21
 categories: machine-learning
 tags: machine-learning
-description: coursera week 2 - linear regression with multiple variables 1
 mathjax: true
 ---
 
@@ -21,6 +20,10 @@ mathjax: true
 </script>
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
+
+coursera week 2 - linear regression with multiple variables 1
+
+<!-- more -->
 
 ## 1. Multiple Features
 

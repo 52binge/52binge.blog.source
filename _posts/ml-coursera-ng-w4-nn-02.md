@@ -4,7 +4,6 @@ toc: true
 date: 2017-02-07 10:28:21
 categories: machine-learning
 tags: Neural Networks
-description: coursera week 4 - neural networks representation
 mathjax: true
 ---
 
@@ -21,6 +20,10 @@ mathjax: true
 </script>
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
+
+coursera week 4 - neural networks representation
+
+<!-- more -->
 
 ![NN][2]
 

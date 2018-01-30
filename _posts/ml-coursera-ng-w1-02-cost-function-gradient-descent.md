@@ -4,7 +4,6 @@ toc: true
 date: 2016-09-28 17:22:21
 categories: machine-learning
 tags: machine-learning
-description: coursera week 1 - gradient descent
 mathjax: true
 ---
 
@@ -21,6 +20,10 @@ mathjax: true
 </script>
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
+
+coursera week 1 - gradient descent
+
+<!-- more -->
 
 ## 1. Linear Regression
 

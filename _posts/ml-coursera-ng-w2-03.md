@@ -4,7 +4,6 @@ toc: true
 date: 2016-10-21 10:28:21
 categories: machine-learning
 tags: machine-learning
-description: coursera week 2 - ML:Octave Tutorial
 mathjax: true
 ---
 
@@ -23,6 +22,8 @@ mathjax: true
 </script>
 
 ML:Octave Tutorial
+
+<!-- more -->
 
 ## 1. Basic Operations
 
