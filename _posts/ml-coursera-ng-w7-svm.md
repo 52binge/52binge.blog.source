@@ -97,6 +97,12 @@ $
 
 ### 3.1 Using An SVM
 
+## Reference
+
+- [零基础学SVM—Support Vector Machine(一)][z1]
+
+[z1]: https://zhuanlan.zhihu.com/p/24638007
+
 [0]: /images/ml/ml-ng-w7-svm-0.png
 [0]: /images/ml/ml-ng-w3-02.png
 [1]: /images/ml/ml-ng-w7-svm-1.png

@@ -20,7 +20,7 @@ tags: zshrc
 MS=/usr/local/xsoft/software
 
 ### JAVA ###
-JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk/Contents/Home
+JAVA_HOME=/Library/Java/JavaVirtualMachines/Contents/Home
 JAVA_BIN=$JAVA_HOME/bin
 PATH=$JAVA_HOME/bin:$PATH
 CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/jre/lib/dt.jar:$JAVA_HOME/jre/lib/tools.jar
@@ -31,8 +31,8 @@ M2_HOME=/usr/local/xsoft/software/apache-maven
 MAVEN_HOME=$M2_HOME
 M3_HOME=$M2_HOME
 PATH=$M3_HOME/bin:$PATH
+#MAVEN_OPTS="-Xms128m -Xmx512m"
 export MAVEN_HOME M2_HOME PATH
-#MAVEN_OPTS=-Xms128m -Xmx512m
 
 ### Tomcat ###
 CATALINA_HOME=/usr/local/xsoft/software/apache-tomcat

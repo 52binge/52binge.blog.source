@@ -1,5 +1,5 @@
 ---
-title: Knowledge Graph
+title: Knowledge Graph Brief
 toc: true
 date: 2017-10-30 21:08:21
 categories: nlp

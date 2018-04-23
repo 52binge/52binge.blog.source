@@ -1,11 +1,14 @@
 ---
-title: biggest bandit spy
+title: China Biggest Bandit Spy
 date: 2017-01-21 07:54:16
 tags: spy
 categories: life
 toc: true
-description: China modern history  - biggest bandit spy
 ---
+
+Chinese biggest bandit spy
+
+<!-- more -->
 
 ## 1. biggest bandit spy
 

@@ -23,16 +23,6 @@ list_number: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-**Data Mining**
-
-- 挖掘目标
-- 数据取样
-- 数据探索
-- 数据预处理
-- `挖掘建模`
-- 模型评价
-
-分类问题 : 决策树算法、朴素贝叶斯、支持向量机、BP神经网络、懒惰学习算法、随机森林与自适应增强算法、分类模型选择和结果评价
 
 ## 1. Classification Introduce
 
@@ -78,7 +68,7 @@ ID | 阴晴(F)	| 温度(F)	| 湿度(F)	| 刮风(F)	| 是否玩（C）
 
 利用ID3算法中的 Info Gain Feature Selection，递归的学习一棵决策树，得到树结构如下
 
-<img src="/images/model-dt02.png" width="560" height="400"/img>
+<img src="/images/ml/model-dt-02.png" width="560" height="400"/img>
 
 > 决策树（decision tree）是一个树结构（可以是二叉树或非二叉树）。其每个非叶节点表示一个Feature属性上的测试，每个分支代表这个Feature属性在某个值域上的输出，而每个叶节点存放一个 Category 。使用 DT 进行决策的过程就是从 root 开始，测试待分类项中相应的 Feature 属性，并按照其值选择输出分支，直到到达叶子节点，将叶子节点存放的 Category 作为决策结果。
 
@@ -108,7 +98,7 @@ Feature Selection，如何量化最优Feature? `->` 导致 DT Algorithm 出现�
 
   输出 : T(D, F)
 
-<img src="/images/model-dt-03.png" width="760" height="400"/img>
+<img src="/images/ml/model-dt-03.png" width="760" height="400"/img>
 
 决策树学习过程中递归的每一步，在选择最优特征后，根据特征取值切割当前节点的数据集，得到若干数据子集。  
 算法的时间复杂度是O(k*|D|*log(|D|))，k为属性个数，|D|为记录集D的记录数。
@@ -223,7 +213,7 @@ $$
 > 
 显然，Feature “阴晴” 的 info gain 最大，于是把它作为划分特征。基于“阴晴”对根节点进行划分的结果，如图4.5所示（决策树学习过程部分）。决策树学习算法对子节点进一步划分，重复上面的计算步骤。
 
-<img src="/images/model-dt02.png" width="560" height="400"/img>
+<img src="/images/ml/model-dt-02.png" width="560" height="400"/img>
 
 ### 4.2 Gain ratio
 
@@ -240,7 +230,7 @@ $$
 $$
 IG\_{ratio}(F) = \frac {IG(F)} {SplitInfo(F)} \qquad (exp.4.2.2)
 $$
-> 在这里，特征 “阴晴”的 Gain ratio 为 $IG_{ratio}( “阴晴”)=\frac{0.247}{1.577} = 0.157$。减少信息增益方法对取值数较多的特征的影响。
+> 在这里，特征 “阴晴”的 Gain ratio 为 $IG_{ratio}( “阴晴”)=\frac{0.247}{1.577} = 0.157$。减少信息增益方法对取值数较多的特征的影响。(可以减少过拟合，这等于是对 某特征取值过多的一个惩罚)
 
 ```py
 >>> -(math.log((5.0/14.0), 2) * (5.0/14.0) * 2 + (4.0/14.0) * (math.log((4.0/14.0), 2)))
@@ -264,7 +254,11 @@ $$
 - 《机器学习导论》
 - 《统计学习方法》
 - 《数据挖掘－实用机器学习技术》
+- [决策树ID3优缺点 csdn][c1]
+- [决策树ID3、C4.5、CART算法：信息熵，区别，剪枝理论总结][c2]
 
+[c1]: http://blog.csdn.net/blueloveyyt/article/details/45013403
+[c2]: http://blog.csdn.net/ljp812184246/article/details/47402639
 
 [1]: /images/model-dt-01.jpg
 [2]: /images/model-dt-02.png

@@ -4,13 +4,11 @@ toc: true
 date: 2017-01-20 15:28:21
 categories: [database]
 tags: Greenplum
-description: automation programmed pull data by datax -> ext -> ods
-mathjax: true
 ---
 
-## Preface
+[code : github ext_ods_table][github1]
 
-[code : github ext_ods_table][13]
+<!-- more -->
 
 ```bash
 运行本模块之前 :
@@ -91,24 +89,15 @@ echo_ex "import shop end"
 exit 0
 ```
 
-## 5. Code Deploy
-
-> /data0/dm/online/ext_ods_table  
->
-> 注意： 版本控制中，涉及的敏感 库地址，用户名，密码 等 不上传。
-
-## 6. Frnd Link
-
-1. [pull data detail flow][11]
-2. [scheduling-framework][12]
+## Reference
 
 [0]: /images/db/greenplum-ods-flow.png
+
 [1]: https://zh.wikipedia.org/zh-hans/Unix_shell
 [2]: https://github.com/alibaba/DataX/
 [3]: https://en.wikipedia.org/wiki/PostgreSQL
 [4]: http://dbaplus.cn/news-21-341-1.html
 [5]: http://www.greenplumdba.com/gpfdist
 [6]: http://www.pentaho.com/
-[11]: https://github.com/blairchan/bigdata/tree/master/greenplum/ext_ods_table/doc
-[12]: https://github.com/blairchan/bigdata/blob/master/greenplum/ext_ods_table/doc/scheduling-framework.md
-[13]: https://github.com/blairchan/bigdata/tree/master/greenplum/ext_ods_table
+
+[github1]: https://github.com/blair101/language/tree/master/greenplum

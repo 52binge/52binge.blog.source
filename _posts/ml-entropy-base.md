@@ -4,7 +4,6 @@ date: 2016-09-12 16:06:16
 categories: machine-learning
 tags: [entropy]
 toc: true
-description: maximum entropy model
 ---
 
 <script type="text/x-mathjax-config">

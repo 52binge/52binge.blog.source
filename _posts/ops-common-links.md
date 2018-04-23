@@ -10,6 +10,12 @@ Here are some useful links
 
 <!-- more -->
 
+## Machine Learning Coursera
+
+- [daniellaah.github.io][r1]
+
+[r1]: http://daniellaah.github.io/
+
 ## NLP
 
 - [sense2vec][n1]

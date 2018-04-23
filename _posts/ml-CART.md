@@ -122,6 +122,8 @@ ID | 阴晴(F)	| 温度(F)	| 湿度(F)	| 刮风(F)	| 是否玩（C）
 13	| overcast |	hot |	normal |false | 是
 14	| rainy |	mild |	high |	true |	否
 
+<img src="/images/ml/model-dt-02.png" width="560" height="400"/img>
+
 在实际操作中，通过遍历所有特征（如果是连续值，需做离散化）及其取值，选择 $Min_{gini-index}$ 所对应的特征和特征值。
 
 这里仍然以天气数据为例，给出特征**阴晴**的 Gini index 计算过程。

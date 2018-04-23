@@ -1,11 +1,11 @@
 ---
-title: Data Mining
+title: Algorithm
 date: 2016-03-26 16:46:48
 ---
 
-我開始整理我在計算機領域的算法相關學習筆記，學習算法類知識真的需要下很大很大的功夫，灰常灰常博大精深~~
+我開始整理算法相關学习笔记，学习算法类知识真的需要下很大很大的功夫，灰常博大精深~~
 
-博主水平灰常灰常有限，期望能與對 [Data Mining](https://zh.wikipedia.org/zh-hans/数据挖掘)、[NLP](https://en.wikipedia.org/wiki/Natural_language_processing) 感興趣的朋友一起學習、交流、探討與分享~~
+博主水平灰常灰常有限，期望能與對 [Data Mining](https://zh.wikipedia.org/zh-hans/数据挖掘)、[NLP](https://en.wikipedia.org/wiki/Natural_language_processing) 感兴趣的朋友一起学习、交流、探讨与分享~~
 
 ## Machine Learning Coursera
 
@@ -25,11 +25,9 @@ date: 2016-03-26 16:46:48
 
 - [1.7 : Support Vector Machines][7]
 
-- [1.8 : Unsupervised Learning][8]
+- [1.8 : Recommendation System * not][0]
 
-- [1.9 : Anomaly Detection * not finish][0]
-
-- [1.10: Large Scale Machine Learning * not finish][0]
+- [1.9: Large Scale Machine Learning * not][0]
 
 - [Summary and Thank You *][0]
 
@@ -43,92 +41,91 @@ date: 2016-03-26 16:46:48
 [7]: /2017/10/13/ml-coursera-ng-w7-svm/
 [8]: /2018/01/24/ml-coursera-ng-w8-clustering-1/
 
-## Python
+## Tree Based Family
 
-- [Python](/python_language)
+- [2.1 : Decision Tree & RF，  整理中...][0] 
 
-- [Numpy & Pandas](/python_numpy_pandas)
+## Friends Good Article
 
-- [Matplotlib](/python_matplotlib)
+- [从白富美相亲看特征预处理与选择(上)][hb1] 
 
-## Scikit-Learn
+- [从白富美相亲看特征预处理与选择(下)][hb2] 
 
-&nbsp;&nbsp;机器学习领域当中最知名的 python 模块之一 [sklearn_why][sklearn0] 
+[hb1]: https://blog.csdn.net/han_xiaoyang/article/details/50481967
+[hb2]: https://blog.csdn.net/han_xiaoyang/article/details/50503115
 
-- [1.1 : Sklearn Choosing The Right Estimator][sklearn1]
+## Recommender Systems
 
-- [1.2 : Sklearn General Learning Model][sklearn2]
+- [3.1 : Recommendation System Introduction][r1] 
 
-- [1.3 : Sklearn DataSets][sklearn3]
+- [3.2 : Recommendation System CF][r2] 
 
-- [1.4 : Sklearn Common Attributes and Functions][sklearn4]
+- [3.3 : Recommendation System ALS][r3] 
 
-- [1.5 : Normalization][sklearn5]
-
-- [1.6 : Cross-validation 1][sklearn6]
-
-- [1.7 : Cross-validation 2][sklearn7]
-
-- [1.8 : Cross-validation 3][sklearn8]
-
-- [1.9 : Sklearn Save Model][sklearn9]
-
-[sklearn0]: /2018/01/03/py-sklearn-0-why/
-[sklearn1]: /2018/01/03/py-sklearn-1-choosing-estimator/
-[sklearn2]: /2018/01/05/py-sklearn-2-general-learning-model/
-[sklearn3]: /2018/01/03/py-sklearn-3-database/
-[sklearn4]: /2018/01/05/py-sklearn-4-common-attributes/
-[sklearn5]: /2018/01/06/py-sklearn-5-normalization/
-[sklearn6]: /2018/01/08/py-sklearn-6-cross-validation-1/
-[sklearn7]: /2018/01/09/py-sklearn-6-cross-validation-2/
-[sklearn8]: /2018/01/09/py-sklearn-6-cross-validation-3/
-[sklearn9]: /2018/01/10/py-sklearn-7-save-model/
+[r1]: /2016/11/22/recommendation-what/
+[r2]: /2017/02/28/recommendation-six-mouth-CF/
+[r3]: /2017/03/24/recommendation-six-mouth-ALS/
 
 ## Natural Language Processing
 
-- [第01篇 : Python 字符串处理-正则表达式][n1]  
+- [4.1 : Python 字符串处理-正则表达式][n1]  
 
-- [第02篇 : Jieba 中文处理][n2]
+- [4.2 : Jieba 中文处理][n2]
 
-- [第03篇 : 文字和语言 vs 数字和信息][m1]  
+- [4.3 : 文字和语言 vs 数字和信息][m1]  
 
-- [第04篇 : NLP 简介 & 统计语言模型][m2]
+- [4.4 : NLP 简介 & 统计语言模型][m2]
 
-- [第05篇 : HMM 隐含马尔科夫模型][m3]
+- [4.5 : 从语言模型到朴素贝叶斯][n3]
 
-- [第06篇 : 从语言模型到朴素贝叶斯][n3]
+- [4.6 : LDA Topic Model][n4]
 
-- [第07篇 : LDA主题模型][n4]
+- [4.7 : Word Embedding 1 Introduce][n8]
 
-- [第08篇 : 信息的度量和作用 *][0]
+- [4.8 : Word Embedding 2 Theory * not finish][0]
 
-- [第09篇 : 余弦定理和新闻的分类 *][0]
+- [4.9 : Word Embedding 3 Action * not finish][0]
 
-- [第10篇 : 矩阵运算和文本处理中的两个分类问题 *][0]
+> 余弦定理和新闻的分类 & 矩阵运算和文本处理中的两个分类问题
 
-- [第11篇 : 数学模型的重要性与最大熵模型 *][0]
+## Friends Link
 
-- [第12篇 : 马尔科夫链的扩展 -- 贝叶斯网络 *][0]
+- [deeplearning.ai][d1]
 
-- [第13篇 : 条件随机场、文法分析及其他 *][0]
+- [163 deeplearning NG][ng1]
 
-- [第14篇 : Google大脑和人工神经网络 *][0]
+- [daniellaah][d2]
 
-- [第15篇 : 深度学习与NLP应用 *][0]
+- [寒小阳][h1]
 
-- [第16篇 : 词向量相关应用][n8]
+- [机器学习之分类性能度量指标 : ROC曲线、AUC值、正确率、召回率][j1]
 
-- [第17篇 : Word2Vector 理论基础 *][0]
+- [机器学习--模型的稳定性][c1]
 
-- [第18篇 : Word2Vector 实战案例 *][0]
+- [斯坦福大学Andrew Ng教授主讲的《机器学习》公开课观后感 CSDN][h2]
 
-- [第19篇 : 从 Word2Vector 到 Fasttext 的新发展 *][0]
+[h1]: http://blog.csdn.net/han_xiaoyang/article/category/5877239
+[h2]: https://blog.csdn.net/l18930738887/article/details/50204621
+[j1]: https://www.jianshu.com/p/c61ae11cc5f6
+[c1]: https://blog.csdn.net/zhouwenyuan1015/article/details/78228818
+[z1]: https://www.zhihu.com/question/37405102
+
+## dmlc
+
+- [dmlc][dmlc]
+
+[d1]: https://www.deeplearning.ai/
+[d2]: http://daniellaah.github.io/
+
+[ng1]: https://mooc.study.163.com/learn/2001281002?tid=2001392029#/learn/content?type=detail&id=2001701005
+
 
 [m1]: /2017/11/08/nlp-pre-word-language-number-info-history/
 [m2]: /2017/11/13/nlp-pre-statistics-language-model/
 [m3]: /2017/11/14/nlp-pre-hidden-markov-model/
 
 [0]: /nlp
+[dmlc]: http://dmlc.ml/
 
 [n1]: /2017/07/30/nlp-01-string-operation-re/
 [n2]: /2017/07/29/nlp-01-jieba/
@@ -137,6 +134,7 @@ date: 2016-03-26 16:46:48
 [n8]: /2017/07/12/nlp-word-vector-basic/
 
 [f1]: http://www.52nlp.cn/
+
 
 ## next ⋯⋯
 
