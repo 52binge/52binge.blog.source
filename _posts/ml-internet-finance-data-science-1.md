@@ -1,5 +1,5 @@
 ---
-title: 互联网金融风控中的数据科学 (part1)
+title: 互联网金融风控中的数据科学 (part1) ： 金融科技企业面临的欺诈⻛险 
 toc: true
 date: 2018-04-20 13:28:21
 categories: finance
@@ -64,6 +64,10 @@ APR 可以划分人群，APR 不同级别，贷前贷后的审核，催收的制
 
 **做金融最大的本质就是在控制风险，在风险可控的情况下获得最大的利润**.
 
+## 个人对个人的信用贷款
+
+<img src="/images/finance/finance-5.jpg" width="800" />
+
 ## 急速信任-自动化信用评估
 
 <img src="/images/finance/finance-6.jpg" width="800" />
@@ -95,11 +99,13 @@ APR 可以划分人群，APR 不同级别，贷前贷后的审核，催收的制
 ## Reference
 
 - [宜人贷数据科学家王婷: 金融反欺诈场景下的Spark实践][yirendai]
+- [大咖说 王婷][daka]
 
 [w1]: http://www.wdzj.com/pingji.html
 [fico]: https://xueqiu.com/k?q=FICO#/
 
 [yirendai]: https://myslide.cn/slides/3199
+[daka]: http://www.itdks.com/dakalive/detail/442
 
 [img1]: /images/finance/finance-1.jpg
 [img2]: /images/finance/finance-2.jpg
