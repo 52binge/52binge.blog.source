@@ -1,7 +1,7 @@
 ---
 title: 人工智能 机器学习、 计算机语言发展史、 技术职位 介绍
 toc: true
-date: 2018-04-15 21:17:21
+date: 2016-04-15 21:17:21
 categories: devops
 tags: machine-learning
 ---
