@@ -31,7 +31,7 @@ tags: ITFIN
 <img src="/images/finance/finance-3.jpg" width="800" />
 
 > 
-> 网贷之家 : http://www.wdzj.com/pingji.htmls
+> 网贷之家 : http://www.wdzj.com/pingji.html
 > 
 > 现在消亡的 P2P 公司逐渐消亡的也很多，之前 3000 多家，行业大洗牌之后，现在 2000 多家...
 >
