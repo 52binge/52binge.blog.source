@@ -163,5 +163,9 @@ lending club 要求 foc 是个特定的评分方法
 
 ## Reference
 
+- [金融反欺诈场景下的Spark实践][yirendai]
+
+[yirendai]: https://myslide.cn/slides/3199
+
 [img1]: /images/finance/finance-1.jpg
 
