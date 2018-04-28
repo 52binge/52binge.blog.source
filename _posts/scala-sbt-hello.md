@@ -3,7 +3,7 @@
 title: SBT Hello
 date: 2016-03-16 07:54:16
 tags: [scala, sbt]
-categories: scala
+categories: spark
 toc: true
 list_number: false
 ---
