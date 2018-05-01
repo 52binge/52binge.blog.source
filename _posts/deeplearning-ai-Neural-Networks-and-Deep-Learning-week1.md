@@ -1,5 +1,5 @@
 ---
-title: deeplearning.ai 第一周 深度学习概论
+title: deeplearning.ai Neural Networks and Deep Learning (week1)
 toc: true
 date: 2018-05-01 19:55:21
 categories: deeplearning
@@ -7,11 +7,9 @@ tags: deeplearning.ai
 mathjax: true
 ---
 
-1. 欢迎来到深度学习
-2. 什么是神经网络?
-3. 用神经网络进行监督学习.
-4. 为什么深度学习会兴起?
-5. 关于课程 & 课程资源
+1. Introduction to Deep Learning
+2. What is a Neural Network ?
+3. Why is Deep Learning taking off ?
 
 <!-- more -->
 
@@ -25,13 +23,13 @@ mathjax: true
 <img src="/images/deeplearning/deeplearning-ai-w1-6.jpg" width="720" />
 </div>
 
-## 2. What is a Neural Network?
+## 2. What is a Neural Network ?
 
 ### Housing Price Prediction
 
 <img src="/images/deeplearning/deeplearning-ai-w1-3-housing.jpg" width="720" />
 
-## 3. Why is Deep Learning taking off
+## 3. Why is Deep Learning taking off ?
 
 <img src="/images/deeplearning/deeplearning-ai-w1-4.jpg" width="720" />
 
