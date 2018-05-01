@@ -2,7 +2,7 @@
 title: 互联网金融风控中的数据科学 (part3) ： Lending Club 的数据试验（正在整理）
 toc: true
 date: 2018-04-23 13:28:21
-categories: finance
+categories: datascience
 tags: ITFIN
 mathjax: true
 ---

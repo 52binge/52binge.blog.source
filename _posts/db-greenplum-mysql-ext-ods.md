@@ -2,7 +2,7 @@
 title: Greenplum ods
 toc: true
 date: 2017-01-20 15:28:21
-categories: [database]
+categories: [devops]
 tags: Greenplum
 ---
 

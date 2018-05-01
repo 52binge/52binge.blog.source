@@ -2,7 +2,7 @@
 title: Greenplum dev Flow
 toc: true
 date: 2017-01-12 15:28:21
-categories: [database]
+categories: [devops]
 tags: Greenplum
 description: greenplum manual dev steps
 mathjax: true

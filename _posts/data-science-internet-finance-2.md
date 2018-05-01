@@ -2,7 +2,7 @@
 title: 互联网金融风控中的数据科学 (part2)  ： 模型策略
 toc: true
 date: 2018-04-21 18:28:21
-categories: finance
+categories: datascience
 tags: ITFIN
 mathjax: true
 ---

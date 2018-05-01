@@ -2,7 +2,7 @@
 title: Greenplum 学习笔记
 toc: true
 date: 2017-01-04 15:28:21
-categories: [database]
+categories: [devops]
 tags: Greenplum
 description: greenplum short introduce
 mathjax: true
