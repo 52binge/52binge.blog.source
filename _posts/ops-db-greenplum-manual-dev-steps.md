@@ -223,5 +223,5 @@ select * from mds_dm_e_coupon_profile order by id limit 20;
 
 ![][2]
 
-[1]: /images/db/greenplum-flow.png
-[2]: /images/db/greenplum-man-1.png
+[1]: /images/ops/greenplum-flow.png
+[2]: /images/ops/greenplum-man-1.png

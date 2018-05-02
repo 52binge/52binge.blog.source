@@ -199,13 +199,13 @@ date | 4 | 表示日期 |
 - [JD阅读 : Greenplum企业级应用实战][4]
 - [聊聊Greenplum的那些事][5]
 
-[1.1]: /images/db/greenplum-1.1.png
-[1.2]: /images/db/greenplum-1.2.png
-[1.3]: /images/db/greenplum-1.4.png
+[1.1]: /images/ops/greenplum-1.1.png
+[1.2]: /images/ops/greenplum-1.2.png
+[1.3]: /images/ops/greenplum-1.4.png
 [4]: https://cread.jd.com/read/startRead.action?bookId=30189846&readType=1
 [5]: http://dbaplus.cn/news-21-341-1.html
 [6]: https://en.wikipedia.org/wiki/Hash_join
-[2.1]: /images/db/greenplum-2.1.png
-[2.2]: /images/db/greenplum-2.2.png
-[2.3]: /images/db/greenplum-2.3.png
+[2.1]: /images/ops/greenplum-2.1.png
+[2.2]: /images/ops/greenplum-2.2.png
+[2.3]: /images/ops/greenplum-2.3.png
 [7]: http://www.postgres.cn/docs/9.3/

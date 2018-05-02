@@ -13,11 +13,11 @@ mathjax: true
 
 ## 反欺诈建模中的数据科学
 
-<img src="/images/finance/finance-8.jpg" width="850" />
+<img src="/images/datascience/finance-8.jpg" width="850" />
 
 ## 反欺诈也是一种机器学习过程
 
-<img src="/images/finance/finance-9.jpg" width="850" />
+<img src="/images/datascience/finance-9.jpg" width="850" />
 
 > 对于做互联网金融一般情况是 正负样本 是极度不平衡的(最高可以达到 100 : 1), 这样的情况对于 SVM 这种分类器是不合适的，所以在做金融的**评分卡模型** 或 **欺诈模型** 也好，这样对特征的处理 和 样本的非平衡处理是比较高的.
 > 
@@ -51,31 +51,31 @@ mathjax: true
 
 ## 模型策略
 
-<img src="/images/finance/finance-10.jpg" width="800" />
+<img src="/images/datascience/finance-10.jpg" width="800" />
 
 ### Linear Regression
 
-<img src="/images/finance/finance-11.jpg" width="800" />
+<img src="/images/datascience/finance-11.jpg" width="800" />
 
 ### Logistic Regression
 
-<img src="/images/finance/finance-12.jpg" width="800" />
+<img src="/images/datascience/finance-12.jpg" width="800" />
 
 ### Decision Tree
 
-<img src="/images/finance/finance-13.jpg" width="850" />
+<img src="/images/datascience/finance-13.jpg" width="850" />
 
 ### Random Forest
 
-<img src="/images/finance/finance-14.png" width="850" />
+<img src="/images/datascience/finance-14.png" width="850" />
 
 ### Gradient Boosting Regression Tree
 
-<img src="/images/finance/finance-15.png" width="850" />
+<img src="/images/datascience/finance-15.png" width="850" />
 
 > ---
 
-<img src="/images/finance/finance-16.png" width="850" />
+<img src="/images/datascience/finance-16.png" width="850" />
 
 ## 结果评估-混淆矩阵
 
@@ -83,7 +83,7 @@ mathjax: true
 - Recall: 评估坏用户的召回率
 - F-Measure: 组合判断
 
-<img src="/images/finance/finance-17.png" width="830" />
+<img src="/images/datascience/finance-17.png" width="830" />
 
 ## Reference
 
@@ -93,12 +93,12 @@ mathjax: true
 [yirendai]: https://myslide.cn/slides/3199
 [daka]: http://www.itdks.com/dakalive/detail/442
 
-[img10]: /images/finance/finance-10.jpg
-[img11]: /images/finance/finance-11.jpg
-[img12]: /images/finance/finance-12.jpg
-[img13]: /images/finance/finance-13.jpg
-[img14]: /images/finance/finance-14.jpg
-[img15]: /images/finance/finance-15.jpg
-[img16]: /images/finance/finance-16.jpg
+[img10]: /images/datascience/finance-10.jpg
+[img11]: /images/datascience/finance-11.jpg
+[img12]: /images/datascience/finance-12.jpg
+[img13]: /images/datascience/finance-13.jpg
+[img14]: /images/datascience/finance-14.jpg
+[img15]: /images/datascience/finance-15.jpg
+[img16]: /images/datascience/finance-16.jpg
 
 

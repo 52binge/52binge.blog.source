@@ -2,7 +2,7 @@
 title: Elasticsearch * 入门
 date: 2016-05-17 15:59:16
 tags: elasticsearch
-categories: elastic
+categories: hadoop
 toc: true
 description: 这是关于 Elasticsearch 入门 的一些基本内容.
 list_number: false

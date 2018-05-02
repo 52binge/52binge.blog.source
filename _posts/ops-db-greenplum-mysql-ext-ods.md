@@ -91,7 +91,7 @@ exit 0
 
 ## Reference
 
-[0]: /images/db/greenplum-ods-flow.png
+[0]: /images/ops/greenplum-ods-flow.png
 
 [1]: https://zh.wikipedia.org/zh-hans/Unix_shell
 [2]: https://github.com/alibaba/DataX/

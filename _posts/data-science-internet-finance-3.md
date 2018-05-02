@@ -77,7 +77,7 @@ Lending Club 2016年Q3数据：https://www.lendingclub.com/info/download-data.ac
 
 参考：http://kldavenport.com/lending-club-data-analysis-revisted-with-python/
 
-<img src="/images/finance/finance-18.jpg" width="900" />
+<img src="/images/datascience/finance-18.jpg" width="900" />
 
 看下数据，其实我也不能完全了解这些所有字段的含义
 
@@ -101,7 +101,7 @@ Lending Club 2016年Q3数据：https://www.lendingclub.com/info/download-data.ac
 
 > 我们初步做特征筛选..., 我们在看的时候，可以分片分片的看这 122 个列...
 
-<img src="/images/finance/finance-19.jpg" width="850" />
+<img src="/images/datascience/finance-19.jpg" width="850" />
 
 > id 和 member_id 不作为特征，可以直接去掉, int_rate 带 % 的可以直接去掉 %， 变为 float 的
 
@@ -172,5 +172,5 @@ lending club 要求 foc 是个特定的评分方法
 
 [yirendai]: https://myslide.cn/slides/3199
 
-[img1]: /images/finance/finance-1.jpg
+[img1]: /images/datascience/finance-1.jpg
 
