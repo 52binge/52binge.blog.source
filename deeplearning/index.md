@@ -7,6 +7,7 @@ date: 2016-03-26 16:46:48
 
 博主水平灰常灰常有限，期望能與對 [Deep Learning](https://en.wikipedia.org/wiki/Deep_learning) 、[Machine Learning](https://en.wikipedia.org/wiki/Machine_learning) 感兴趣的朋友一起学习、交流、探讨与分享~~
 
+<!--
 ## Deep Learning AI
 
 ### 1. 深度学习概论
@@ -38,7 +39,7 @@ date: 2016-03-26 16:46:48
 - [...][0]
 
 [dl1]: /2018/05/01/deeplearning-ai-Neural-Networks-and-Deep-Learning-week1/
-
+-->
 ## Machine Learning Coursera
 
 - [1.1 : Machine Learning Introduce][1]

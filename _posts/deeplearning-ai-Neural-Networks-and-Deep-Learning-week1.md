@@ -1,7 +1,7 @@
 ---
 title: deeplearning.ai Neural Networks and Deep Learning (week1)
 toc: true
-date: 2018-05-01 19:55:21
+date: 2017-12-01 19:55:21
 categories: deeplearning
 tags: deeplearning.ai
 mathjax: true
