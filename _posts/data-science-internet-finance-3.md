@@ -77,7 +77,7 @@ Lending Club 2016年Q3数据：https://www.lendingclub.com/info/download-data.ac
 
 参考：http://kldavenport.com/lending-club-data-analysis-revisted-with-python/
 
-<img src="/images/datascience/finance-18.jpg" width="900" />
+<img src="/images/datascience/finance-LC-18.jpg" width="900" />
 
 看下数据，其实我也不能完全了解这些所有字段的含义
 
@@ -101,11 +101,31 @@ Lending Club 2016年Q3数据：https://www.lendingclub.com/info/download-data.ac
 
 > 我们初步做特征筛选..., 我们在看的时候，可以分片分片的看这 122 个列...
 
-<img src="/images/datascience/finance-19.jpg" width="850" />
+### 2.1 特征分析 part1
+
+<img src="/images/datascience/finance-LC-19.jpg" width="850" />
 
 > id 和 member_id 不作为特征，可以直接去掉, int_rate 带 % 的可以直接去掉 %， 变为 float 的
 
 **Loan Amount Requested Verus the Funded Amount**
+
+<img src="/images/datascience/finance-LC-20.png" width="850" />
+
+### 2.2 特征分析 part2
+
+```python
+df.ix[:5,8:15]
+
+print(df.emp_title.value_counts().head())
+print(df.emp_title.value_counts().tail())
+df.emp_title.unique().shape 
+# 37421 emp_title， 太多了，可信度不高，我们也无法做 emp_title 非数值型变量的 one-hot enconding
+```
+
+```
+df.drop(['emp_title'],1, inplace=True)
+```
+
 
 employment title
 
@@ -172,5 +192,7 @@ lending club 要求 foc 是个特定的评分方法
 
 [yirendai]: https://myslide.cn/slides/3199
 
-[img1]: /images/datascience/finance-1.jpg
+[img1]: /images/datascience/finance-LC-19.jpg
+[img2]: /images/datascience/finance-LC-20.png
+
 
