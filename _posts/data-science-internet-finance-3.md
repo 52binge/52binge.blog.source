@@ -203,3 +203,4 @@ lending club 要求 FICO 是个特定的评分方法，是一个固定的评分�
 [img2]: /images/datascience/finance-LC-20.png
 
 
+[z1]: https://www.zhihu.com/question/54626685

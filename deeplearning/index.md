@@ -137,11 +137,14 @@ date: 2016-03-26 16:46:48
 
 - [斯坦福大学Andrew Ng教授主讲的《机器学习》公开课观后感 CSDN][h2]
 
+- [机器学习算法中GBDT与Adaboost的区别与联系是什么？][z2]
+
 [h1]: http://blog.csdn.net/han_xiaoyang/article/category/5877239
 [h2]: https://blog.csdn.net/l18930738887/article/details/50204621
 [j1]: https://www.jianshu.com/p/c61ae11cc5f6
 [c1]: https://blog.csdn.net/zhouwenyuan1015/article/details/78228818
 [z1]: https://www.zhihu.com/question/37405102
+[z2]: https://www.zhihu.com/question/54626685
 
 ## dmlc
 
