@@ -131,12 +131,16 @@ employment title
 
 -----
 
+- [LC code][g1]
+
+## 3. 总结
+
 删不删除变量，需要看模型，LR 需要删除，GBRT 不用删除也可以.
 
 
 LR 做评分卡模型，变量 一定是强变量，20个左右，不会几百个，有个变量可以训练处系数
 
-分数映射，拉到 300 ~ 900 分，可以做一个评分卡，600分 可能是好用户:坏用户，可能是 50:1
+出来 0 ~ 1 概率，拉一下橡皮筋， 分数映射，拉到 300 ~ 900 分，可以做一个评分卡，600分 可能是好用户:坏用户，可能是 50:1
 
 评分卡的阶梯可能是增加。
 
@@ -144,9 +148,9 @@ LR 做评分卡模型，变量 一定是强变量，20个左右，不会几百�
 
 550 25:1
 
-评分卡分的映射和模型是没有关系的，是样本里人群的好坏是有关系的
+评分卡分的映射和模型是没有关系的，是样本里人群的好坏是有关系的，所以模型的参数做映射，是不需要重新训练的。
 
-lending club 要求 foc 是个特定的评分方法
+lending club 要求 FICO 是个特定的评分方法，是一个固定的评分方法。
 
 比如 芝麻信用都是用自己的模型，自己算出来的
 
@@ -190,7 +194,10 @@ lending club 要求 foc 是个特定的评分方法
 
 - [金融反欺诈场景下的Spark实践][yirendai]
 
+
 [yirendai]: https://myslide.cn/slides/3199
+
+[g1]: https://github.com/blair101/datascience/blob/master/LC/LC.ipynb
 
 [img1]: /images/datascience/finance-LC-19.jpg
 [img2]: /images/datascience/finance-LC-20.png
