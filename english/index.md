@@ -56,6 +56,11 @@ date: 2018-01-29 16:20:48
 
 [l1]: /2018/01/28/english-listening-cindy-duoyi/
 
+## Firends Link
+
+-[我是許i啾．Ｗ][blog1]
+
+[bolg1]: http://imichuyeah.blogspot.com/2013/11/how-i-met-your-mother-s01e02-purple.html
 
 [0]: /ielts
 
