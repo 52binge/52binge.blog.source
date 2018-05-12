@@ -79,6 +79,14 @@ Bagging 策略过程 😄 :
 
 **Bagging 代表算法 - Random Forest**
 
+1.训练样本选择方面的Random：
+
+Bootstrap方法随机选择子样本
+
+2.特征选择方面的Random：
+
+属性集中随机选择k个属性，每个树节点分裂时，从这随机的k个属性，选择最优的(如何选择最优又有各种最大增益的方法，不在本文讨论范围内)。
+
 ## Reference article
 
 - [Bagging（Bootstrap aggregating）、随机森林（random forests）、AdaBoost][l1]
