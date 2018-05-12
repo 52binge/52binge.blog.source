@@ -50,8 +50,6 @@ Boosting方法基于这样一种思想：
 > 
 > 就是 "三个臭皮匠顶个诸葛亮" …😄😄😄
 
-从历史说起 :
-
 ### 1.1 概率可学习性 (PAC)
 
 PAC理论是由2010年图灵奖的得主Valiant和Kearns提出的一套理论体系，主要讨论什么时候，一个问题是可以被学习的。
@@ -76,7 +74,7 @@ Valiant和 Kearns提出PAC学习模型中弱学习算法和强学习算法的等
 > 
 > 1996，Schapire提出一种新的名叫AdaBoost的算法证明了上述猜想。AdaBoost把多个不同的决策树用一种**非随机的方式组合**起来，表现出惊人的性能。同时，Schapire证明强可学习与弱可学习是等价的，也就是说，**在PAC学习的框架下，一个概念是强可学习的充分必要条件是这个概念是弱可学习的**。
 
-结论 : **强可学习⇔弱可学习**
+Summary : `强可学习⇔弱可学习`
 
 ### 1.2 从Ensemble到Boosting
 
@@ -91,12 +89,9 @@ Boosting 提升算法简史
 
 ## Reference article
 
-- [52caml][l1]
-
 - [机器学习选讲：AdaBoost方法详解][l4]
-
+- [52caml][l1]
 - [统计学习方法][l2]
-
 - [Scikit-Learn 中文文档 概率校准 - 监督学习][l3]
 
 [l1]: http://www.52caml.com/head_first_ml/ml-chapter6-boosting-family/
