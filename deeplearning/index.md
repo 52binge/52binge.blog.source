@@ -123,6 +123,8 @@ date: 2016-03-26 16:46:48
 
 ## Friends Link
 
+- [技术人员的发展之路][coolshell1]
+
 - [deeplearning.ai][d1]
 
 - [163 deeplearning NG][ng1]
@@ -145,6 +147,8 @@ date: 2016-03-26 16:46:48
 [c1]: https://blog.csdn.net/zhouwenyuan1015/article/details/78228818
 [z1]: https://www.zhihu.com/question/37405102
 [z2]: https://www.zhihu.com/question/54626685
+
+[coolshell1]: https://coolshell.cn/articles/17583.html
 
 ## dmlc
 
