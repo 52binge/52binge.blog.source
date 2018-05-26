@@ -64,10 +64,14 @@
 
 ...
 
-<br>
+## next..
 
-> next..
+- [SpringMVC demo][s1]
 
+- [Csdn Java 分类，旧版学生笔记][c1]
+
+[s1]: https://github.com/blair101/language/tree/master/java/springMVC_demo
+[c1]: https://blog.csdn.net/robbyo/article/category/1328994/14
 
 [1]: https://github.com/blair101/baby/tree/master/cron-lingquan-offline-part
 [2]: https://github.com/blair101/bigdata/tree/master/bigdata-offline-demo
