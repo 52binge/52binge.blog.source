@@ -3,7 +3,7 @@
 
 这是一款基于地理位置，为城市生活人群提供优惠卡券的聚合平台APP.
 
-[lingquan-offline-part 更多项目详情请点击...][1]   (为了更好的互相了解，暂时放上git,后会移除)
+[lingquan-offline-part 更多项目详情请点击...][1]   (为了更好的互相了解，暂时放上git,会迅速移除)
 
 ## 2. 离线分析调度框架
 
@@ -27,8 +27,35 @@
          1) 支持接收不同来源的数据。
          2) 支持访问 redis 集群策略可配，读数据负载均衡
          3) 某机器或实例出故障，易于维护
-(3). 提供第三方数据cookie-mapping, 用户推荐商品, 10种用户行为数据 的接入接口
+(3). 提供第三方数据用户推荐商品, 10种用户行为数据 的接入接口
 ```
+
+```
+host.txt 集群节点实例配置
+
+## REDIS1 DMP_INFO ##
+REDIS1#pool1:10.**.*.**:6382$10.**.*.**:6382|pool2:10.**.***.**:6382$10.**.*.**:6382|pool3:10.**.**.**:6382$10.**.*.**:6382
+...
+...
+
+## REDIS3  ##
+REDIS3#pool1:172.**.***.**:6571$1|pool2:172.**.***.**:6571$1
+REDIS3#pool1:172.**.***.**:6572$2|pool2:172.**.***.**:6572$2
+...
+
+regionToRedis region选择集群
+
+DMP_INFO=REDIS1
+CROSS_INFO=REDIS3
+3RD_INFO=REDIS3
+
+strategy.properties 策略配置
+
+REDIS1=read:random|pool2,pool3#write:pool1
+REDIS3=read:order|pool2,pool1#write:pool1
+```
+
+[Coder 更多项目详情请点击...][redis_part] (为了更好的互相了解，暂时放上git,后会迅速移除)
 
 ### 3.1 用户行为数据接收与挖掘
 
@@ -76,3 +103,5 @@
 [1]: https://github.com/blair101/baby/tree/master/cron-lingquan-offline-part
 [2]: https://github.com/blair101/bigdata/tree/master/bigdata-offline-demo
 [4]: /user_profile_content_interest/
+
+[redis_part]: https://github.com/blair101/baby/tree/master/redis
