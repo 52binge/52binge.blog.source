@@ -30,7 +30,7 @@ p + p {
 
 <a class="article-myself" href="/"> Blair Chan</a> 90s, a program engineer, a GTD practitioner, live in Hangzhou, China.
 
-<a class="article-myself" href="/tweet"> Libin Chan</a> focus on `Python`、 `Data Mining`、 `Deep Learning`、 `NLP` and other fields.
+<a class="article-myself" href="/tweet"> Libin Chan</a> focus on `Java`、`Python`、 `Machine Learning`、 `Deep Learning`、 `NLP` and other fields.
 
 <!--<a class="article-myself" href="/">  Libin Chan</a>-->
 
