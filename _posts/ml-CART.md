@@ -58,15 +58,19 @@ CART | 回归树： 最小二乘<br>分类树： 基尼指数 Gini index | Breim
 
 `build decision tree`时通常采用自上而下的方法，在每一步选择一个最好的属性来分裂。 "最好" 的定义是使得子节点中的训练集尽量的纯。不同的算法使用不同的指标来定义"最好"。
 
-***CART*** 是在给定输入随机变量 $X$ 条件下求得输出随机变量 $Y$ 的条件概率分布的学习方法。
+**CART** 是在给定输入随机变量 $X$ 条件下求得输出随机变量 $Y$ 的条件概率分布的学习方法。
 
-> 可以看出CART算法在叶节点表示上不同于ID3、C4.5方法，后二者叶节点对应数据子集通过“多数表决”的方式来确定一个类别（固定一个值）；而CART算法的叶节点对应类别的概率分布。
+> 可以看出CART算法在叶节点表示上不同于ID3、C4.5方法，后二者叶节点对应数据子集通过“多数表决”的方式来确定一个类别（固定一个值）；而CART算法的叶节点对应类别的概率分布。如此看来，我们可以很容易地用 CART 来学习一个 `multi-label` 的分类任务。
 
-CART算法也主要由两步组成：
+**CART** 算法也主要由两步组成:
 
 - 决策树的生成：基于训练数据集生成一棵二分决策树；
 - 决策树的剪枝：用验证集对已生成的二叉决策树进行剪枝，剪枝的标准为损失函数最小化。
 
+由于分类树与回归树在递归地构建二叉决策树的过程中，选择特征划分的准则不同。
+
+- 二叉分类树构建过程中采用`基尼指数（Gini Index）`为特征选择标准；
+- 二叉回归树采用`平方误差最小化`作为特征选择标准。
 
 ## 2. 二叉分类树
 
@@ -157,6 +161,7 @@ $$
 - [CART-文库PPT][6]
 - [CART-Veyron][7]
 - [52caml][8]
+- [决策树算法原理下][9]
 
 [0]: /images/ml-cart-00.png
 [1]: /images/ml-cart-01.png
@@ -168,3 +173,4 @@ $$
 [6]: http://wenku.baidu.com/link?url=aHNTy791blu36AysYKLXxRLkU4XlzxPNoyOEpZaRtCOM83C8mAUmNKWktm_lKF65WuCAUvyBKZnG_Jw91NzYhD8EfmDCpXEkX-PjwVqSKYC
 [7]: http://wenku.baidu.com/link?url=aHNTy791blu36AysYKLXxRLkU4XlzxPNoyOEpZaRtCOM83C8mAUmNKWktm_lKF65WuCAUvyBKZnG_Jw91NzYhD8EfmDCpXEkX-PjwVqSKYC
 [8]: http://www.52caml.com/
+[9]: https://www.cnblogs.com/pinard/p/6053344.html

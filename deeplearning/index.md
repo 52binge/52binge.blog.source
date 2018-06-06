@@ -131,6 +131,8 @@ date: 2016-03-26 16:46:48
 
 - [daniellaah][d2]
 
+- [刘建平Pinard,棒棒的][pinard]
+
 - [寒小阳][h1]
 
 - [机器学习之分类性能度量指标 : ROC曲线、AUC值、正确率、召回率][j1]
@@ -149,6 +151,8 @@ date: 2016-03-26 16:46:48
 [z2]: https://www.zhihu.com/question/54626685
 
 [coolshell1]: https://coolshell.cn/articles/17583.html
+
+[pinard]: http://www.cnblogs.com/pinard/
 
 ## dmlc
 
