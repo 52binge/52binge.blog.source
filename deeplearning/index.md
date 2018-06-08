@@ -74,11 +74,19 @@ date: 2016-03-26 16:46:48
 [7]: /2017/10/13/ml-coursera-ng-w7-svm/
 [8]: /2018/01/24/ml-coursera-ng-w8-clustering-1/
 
-## Tree Based Family
+## Friends Link
 
-- [2.1 : Decision Tree & RF，  整理中...][0] 
+some good friends' good articles.
 
-## Friends Good Article
+### Tree Based Family
+
+- [决策树算法原理(上)][tree1]
+
+- [决策树算法原理(下)][tree2]
+
+[tree1]: http://www.cnblogs.com/pinard/p/6050306.html
+[tree2]: http://www.cnblogs.com/pinard/p/6053344.html
+
 
 - [从白富美相亲看特征预处理与选择(上)][hb1] 
 
@@ -93,11 +101,9 @@ date: 2016-03-26 16:46:48
 
 - [3.2 : Recommendation System CF][r2] 
 
-- [3.3 : Recommendation System ALS][r3] 
 
 [r1]: /2016/11/22/recommendation-what/
 [r2]: /2017/02/28/recommendation-six-mouth-CF/
-[r3]: /2017/03/24/recommendation-six-mouth-ALS/
 
 ## Natural Language Processing
 
