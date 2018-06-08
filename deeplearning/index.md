@@ -78,32 +78,40 @@ date: 2016-03-26 16:46:48
 
 some good friends' good articles.
 
-### Tree Based Family
+### Base Family
 
 - [决策树算法原理(上)][tree1]
 
 - [决策树算法原理(下)][tree2]
 
-[tree1]: http://www.cnblogs.com/pinard/p/6050306.html
-[tree2]: http://www.cnblogs.com/pinard/p/6053344.html
-
-
 - [从白富美相亲看特征预处理与选择(上)][hb1] 
 
 - [从白富美相亲看特征预处理与选择(下)][hb2] 
 
+- [支持向量机原理][svm]
+
+[tree1]: http://www.cnblogs.com/pinard/p/6050306.html
+[tree2]: http://www.cnblogs.com/pinard/p/6053344.html
 [hb1]: https://blog.csdn.net/han_xiaoyang/article/details/50481967
 [hb2]: https://blog.csdn.net/han_xiaoyang/article/details/50503115
 
-## Recommender Systems
+[svm]: http://www.cnblogs.com/pinard/p/6113120.html
 
-- [3.1 : Recommendation System Introduction][r1] 
+### Recommender Systems
 
-- [3.2 : Recommendation System CF][r2] 
 
+- [Recommendation System Introduction][r1] 
+
+- [Recommendation System CF][r2] 
+
+- [协同过滤推荐算法总结][r3]
+
+- [矩阵分解在协同过滤推荐算法中的应用][r3]
 
 [r1]: /2016/11/22/recommendation-what/
 [r2]: /2017/02/28/recommendation-six-mouth-CF/
+[r3]: http://www.cnblogs.com/pinard/p/6349233.html
+[r4]: http://www.cnblogs.com/pinard/p/6351319.html
 
 ## Natural Language Processing
 
@@ -140,8 +148,6 @@ some good friends' good articles.
 - [刘建平Pinard,棒棒的][pinard]
 
 - [寒小阳][h1]
-
-- [机器学习之分类性能度量指标 : ROC曲线、AUC值、正确率、召回率][j1]
 
 - [机器学习--模型的稳定性][c1]
 
