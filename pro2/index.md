@@ -54,6 +54,34 @@ REDIS3=read:order|pool2,pool1#write:pool1
 4. 将接收数据处理为下游需要的格式，抓发到消息队列
 5. 为支持离线的数据挖掘，将数据写入日志，并实时发送至HDFS.
 
+### config
+
+a)	修改配置bin/catalina.sh，添加java配置
+
+```xml
+i.	JAVA_OPTS='-Xms40000m -Xmx40000m -Xmn10000m 
+-XX:+UseConcMarkSweepGC -XX:+UseParNewGC -verbose:gc -XX:+PrintGCDetails 
+-XX:+PrintGCTimeStamps -XX:+DisableExplicitGC -XX:+CMSParallelRemarkEnabled 
+
+-Dsun.rmi.dgc.server.gcInterval=86400000 
+-Dsun.rmi.dgc.client.gcInterval=86400000  
+-XX:+ExplicitGCInvokesConcurrent -XX:+CMSScavengeBeforeRemark -XX:+CMSClassUnloadingEnabled 
+-XX:CMSInitiatingOccupancyFraction=60 -XX:+UseCMSInitiatingOccupancyOnly'
+```
+
+b)	修改配置conf/server.xml，connectors配置，添加
+
+```xml
+i.	<Connector port="8080" protocol="HTTP/1.1"
+ii.	               connectionTimeout="20000"
+iii.	               redirectPort="8443" 
+iv.	               acceptCount="5000" maxThreads="4000"/>
+```
+
+### 推荐商品接收接口
+
+> pc uv 3500W+ , wap uv 4500W+, weibo uv 1.6~1.8亿
+> 200个并发做接口压测，qps是3000+，均延时65ms。延时主要耗在域名解析上，内网压测qps是3万+，均延时10ms
 
 ## next..
 
