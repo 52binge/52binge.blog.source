@@ -22,8 +22,8 @@ v2.0 需要解决的问题 :
 
 ```
                 "shop_id",...
-                "shop_name_show",...
-                "shop_name": {
+                "shop_name_show",...(用于展示)
+                "shop_name": { (用于搜索)
                     "type": "string",
                     "fields": {
                         "raw": {
@@ -92,7 +92,7 @@ mapping = {
 ......
 ```
 
-> coupon_id , `coupon_name_show`, `coupon_name`, coupon_store, coupon_condition , coupon_source, coupon_desc, coupon_type, coupon_sold, shop_count, level1_code_list
+> coupon_id , `coupon_name_show`, `coupon_name`, coupon_store, coupon_condition , coupon_source, coupon_desc, coupon_type, coupon_sold, shop_count, level1_code_list, ...
 
 **business center**
 
@@ -103,7 +103,7 @@ business center |amap name |  address | geo
 嘉里中心 | 杭州嘉里中心 | 杭州市下城区延安路353号 |
 ... | ... | ...
 
-**landmark**、**landmark_shop_coupon**、**shopping**
+**landmark**、**landmark_shop_coupon**、**shopping**、...
 
 <img src="/images/pro/lq5.jpeg" width="200" />
 
