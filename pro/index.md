@@ -7,8 +7,6 @@
 
 主要流程分为4大模块：数据源获取、网页规范化、特征计算，兴趣策略融合 .
 
-[user_profile_content_interest 更多项目详情请点击...][4]
-
 ![][img1]
 
 ## 2. dmp 项目
@@ -66,6 +64,36 @@ REDIS3=read:order|pool2,pool1#write:pool1
 3. 根据接收的数据类型，更新数据对接状态
 4. 将接收数据处理为下游需要的格式，抓发到消息队列
 5. 为支持离线的数据挖掘，将数据写入日志，并实时发送至HDFS.
+
+### config
+
+a)	修改配置bin/catalina.sh，添加java配置
+
+```xml
+i.	JAVA_OPTS='-Xms40000m -Xmx40000m -Xmn10000m 
+-XX:+UseConcMarkSweepGC -XX:+UseParNewGC -verbose:gc -XX:+PrintGCDetails 
+-XX:+PrintGCTimeStamps -XX:+DisableExplicitGC -XX:+CMSParallelRemarkEnabled 
+
+-Dsun.rmi.dgc.server.gcInterval=86400000 
+-Dsun.rmi.dgc.client.gcInterval=86400000  
+-XX:+ExplicitGCInvokesConcurrent -XX:+CMSScavengeBeforeRemark -XX:+CMSClassUnloadingEnabled 
+-XX:CMSInitiatingOccupancyFraction=60 -XX:+UseCMSInitiatingOccupancyOnly'
+```
+
+b)	修改配置conf/server.xml，connectors配置，添加
+
+```xml
+i.	<Connector port="8080" protocol="HTTP/1.1"
+ii.	               connectionTimeout="20000"
+iii.	               redirectPort="8443" 
+iv.	               acceptCount="5000" maxThreads="4000"/>
+```
+
+### 推荐商品接收接口
+
+> pc uv 3500W+ , wap uv 4500W+, weibo uv 1.6~1.8亿
+> 200个并发做接口压测，qps是3000+，均延时65ms。延时主要耗在域名解析上，内网压测qps是3万+，均延时10ms
+
 
 ## 3. 离线分析调度框架
 
@@ -171,14 +199,109 @@ v2.0 需要解决的问题 :
 
 [lingquan-offline-part 更多项目详情请点击...][1]   (为了更好的互相了解，脱敏后暂时放上git,会迅速移除)
 
+**多店合一、同店比价** (标记连锁品牌、策略非连锁品牌)
+
+<div class="limg1">
+<img src="/images/pro/lq6.jpeg" width="100" />
+</div>
+
+**shop**
+
+```
+                "shop_id",...
+                "shop_name_show",...(用于展示)
+                "shop_name": { (用于搜索)
+                    "type": "string",
+                    "fields": {
+                        "raw": {
+                            "type": "string",
+                            "index": "not_analyzed"
+                        }
+                    }
+                },
+                "shop_position": {
+                    "geohash": True,
+                    "geohash_precision": 7,
+                    "type": "geo_point",
+                    "geohash_prefix": True
+                },
+                "coupon_list": {
+                    "type": "nested",
+                    "properties": {
+                        "unique_coupon_id": {
+                            "index": "not_analyzed",
+                            "type": "string"
+                        },
+                        "coupon_name": {
+                            "type": "string",
+                            "fields": {
+                                "raw": {
+                                    "type": "string",
+                                    "index": "not_analyzed"
+                                }
+                            }
+                        },
+                        "coupon_source": {
+                            "type": "integer"
+                        },
+                        "status": {
+                            "type": "integer"
+                        }
+                    }
+                },
+...
+```
+
+> shop_business_center , shop_address, shop_open_hours, shop_power_count,  level1_code , level2_code , shop_review_count, shop_avg_price, coupon_count, shop_source, status
+
+**coupon**
+
+```
+mapping = {
+        index_type_name: {
+            "properties": {
+                ...
+                "shop_list": {
+                    "type": "nested",
+                    "properties":
+                        {
+                            "unique_shop_id": {'index': 'not_analyzed', "type": "string"},
+                            "shop_address": {"type": "string"},
+                            "shop_position":
+                                {
+                                    "geohash": True,
+                                    "geohash_precision": 7,
+                                    "type": "geo_point",
+                                    "geohash_prefix": True
+                                }
+                        }
+                }
+......
+```
+
+> coupon_id , `coupon_name_show`, `coupon_name`, coupon_store, coupon_condition , coupon_source, coupon_desc, coupon_type, coupon_sold, shop_count, level1_code_list, ...
+
+**business center**
+
+business center |amap name |  address | geo
+------- | ------- | ------- | -------  
+湖滨银泰 | 杭州湖滨银泰in77A区 | 杭州市上城区东坡路7号 |
+杭州来福士 | 杭州来福士 | 杭州市江干区钱江新城富春路与新业路交汇处往北200米 |
+嘉里中心 | 杭州嘉里中心 | 杭州市下城区延安路353号 |
+... | ... | ...
+
+**landmark**、**landmark_shop_coupon**、**shopping**、...
+
+<img src="/images/pro/lq5_1.jpg" width="200" />
+
 
 ## 5. 推荐系统
 
-基于用户在APP上产生的行为信息，基于过去6个月的行为记录(点击、下单、支付、分享)，构造用户的行为评分矩阵， 进而挖掘出用户的偏好，经过一些策略融合与候选集重排序，为用户提供其可能 感兴趣的商户卡券推荐列表。
+基于用户在APP上产生的行为信息，基于过去6个月的行为记录(点击、下单、支付、分享)，并结合时间衰减构造用户的行为评分矩阵， 进而挖掘出用户的偏好，经过一些策略融合与候选集重排序，为用户提供其可能 感兴趣的商户卡券推荐列表。
 
-采用基于隐因子模型的CF，中间权重值采用频次 限制处理后，RMSE 为 0.92 左右，非用户兴趣内商户权重调整，融合最近商圈或者明显地标的 热销券. 
+采用基于隐因子模型 FunkSVD 的CF，中间权重值采用频次 限制处理后，非用户兴趣内商户权重调整，融合最近商圈或者明显地标的 热销券. 对于新用户采用商圈内热销券和城市内热销券进行补充.
 
-> 后可再融合负反馈的数据与用户区域行为等追踪 等做更丰富的个性化推荐
+> 后可再融合负反馈的数据与用户区域行为等追踪，搜索数据等,采用其他模型方法等尝试做更丰富的个性化推荐
 
 <img src="/images/recommendation/rs-demo.png" width="600" />
 
