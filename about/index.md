@@ -36,7 +36,9 @@ p + p {
 
 ### Recent me
 
-<img src="/images/tech-logos/2016-10-03-6.png" width="250"  style="margin-left:100px;" /img>
+<!-- <img src="/images/tech-logos/2016-10-03-6.png" width="250"  style="margin-left:100px;" /img> -->
+
+<img src="/images/tech-logos/2016-10-03-6.png" width="250" /img>
 
 ### Contact me
 
