@@ -39,7 +39,7 @@ Neural Networks and Deep Learning 第二周 Neural Networks Basic 的学习笔�
 
 这次Andrew出的系列课程在符号上有所改动(和机器学习课程中的行列有所区别, 主要是为了后面代码实现方便), 如下图所示.
 
-<img src="/images/deeplearning/C1W2-3.jpg" width="700" />
+<img src="/images/deeplearning/C1W2-3_1.jpg" width="700" />
 
 更多关于本系列课程的符号点[这里][2]同样地, 参数也有所变化(bias 单独拿出来作为$b$, 而不是添加 $\theta\_0$)
 
