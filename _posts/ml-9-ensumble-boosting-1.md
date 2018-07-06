@@ -59,7 +59,7 @@ bootstraping 的思想和步骤如下：
 
 了解 boosting 和 bagging 之前，先了解一下什么是 ensemble，一句话，三个臭皮匠顶个诸葛亮，一箭易折十箭难折，千里之堤溃于蚁穴 …😄😄😄 ，在分类的表现上就是，多个弱分类器组合变成强分类器。
 
-<img src="/images/ml/ml-ensemble-1.png" width="500" />
+<img src="/images/ml/ensumble/ml-ensemble-1.png" width="500" />
 
 > 假设各弱分类器间具有一定差异性（如不同的算法，或相同算法不同参数配置），这会导致生成的分类决策边界不同，也就是说它们在决策时会犯不同的错误。将它们结合后能得到更合理的边界，减少整体错误，实现更好的分类效果。
 
@@ -75,7 +75,7 @@ Bagging 策略过程 😄 :
 4. 将数据放在这m个分类器上，最后根据这m个分类器的投票结果，决定数据属于哪一类.
 5. 投票机制 (多数服从少数, 民主政治) 看到底分到哪一类(分类问题)
 
-<img src="/images/ml/ml-ensemble-2-bagging.jpeg" width="600" />
+<img src="/images/ml/ensumble/ml-ensemble-2-bagging.jpeg" width="600" />
 
 **Bagging 代表算法 - Random Forest**
 
@@ -102,7 +102,7 @@ Bagging 策略过程 😄 :
 
 **Random Forest 构造流程**
 
-<img src="/images/ml/ml-ensemble-3-bagging.jpeg" width="600" />
+<img src="/images/ml/ensumble/ml-ensemble-3-bagging.jpeg" width="600" />
 
 > 1. 用 Random(训练样本用Bootstrap方法，选择分离叶子节点用上面的2)的方式构造一棵决策树(CART)
 > 2. 用1的方法构造很多决策树, 不剪枝, 许多决策树构成一片森林，决策树之间没有联系
@@ -131,7 +131,7 @@ Bagging 策略过程 😄 :
 [l1]: https://www.jianshu.com/p/708dff71df3a
 [l2]: https://blog.csdn.net/xlinsist/article/details/51475345
 
-[img1]: /images/ml/ml-ensemble-1.png
-[img2]: /images/ml/ml-ensemble-2-bagging.jpeg
+[img1]: /images/ml/ensumble/ml-ensemble-1.png
+[img2]: /images/ml/ensumble/ml-ensemble-2-bagging.jpeg
 
 

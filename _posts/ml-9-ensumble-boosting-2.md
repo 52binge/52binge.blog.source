@@ -33,7 +33,7 @@ mathjax: true
 Adaboost 在处理二类分类问题时，随着弱分类器的个数增加，训练误差与测试误差的曲线图。
 
 <div class="limg1">
-<img src="/images/ml/ml_boosting_adaboost_binary_classification.png" width="400" />
+<img src="/images/ml/ensumble/ml_boosting_adaboost_binary_classification.png" width="400" />
 </div>
 
 从图中可以看出，Adaboost算法随着模型复杂度的增加，测试误差（红色点线）基本保持稳定，并没有出现过拟合的现象。
@@ -110,23 +110,23 @@ AdaBoost算法的巧妙之处就在于它将这些学习思路自然并且有效
 
 **看图形来过一遍Adaboost算法**
 
-<img src="/images/ml/ml-ensumble-4-adaboost.jpeg" width="600" />
+<img src="/images/ml/ensumble/ml-ensumble-4-adaboost.jpeg" width="600" />
 
 > 算法开始前，需要将每个样本的权重初始化为 1/m, 这样一开始每个样本都是等概率的分布，每个分类器都会公正对待.
 
-<img src="/images/ml/ml-ensumble-5-adaboost.jpeg" width="600" />
+<img src="/images/ml/ensumble/ml-ensumble-5-adaboost.jpeg" width="600" />
 
 > Round1，因为样本权重都一样，所以分类器开始划分，根据自己分类器的情况，只和分类器有关。划分之后发现分错了三个"+"号，那么这些分错的样本，在给下一个分类器的时候权重就得到提高,也就是会影响到下次取训练样本的分布，就是提醒下一个分类器，“诶！你注意点这几个小子，我上次栽在他们手里了！”
 
-<img src="/images/ml/ml-ensumble-6-adaboost.jpeg" width="600" />
+<img src="/images/ml/ensumble/ml-ensumble-6-adaboost.jpeg" width="600" />
 
 > Round2,第二代分类器信誓旦旦的对上一代分类器说"我知道了，大哥！我一定睁大眼睛好好分着三个玩意！"ok，这次三个上次分错的都被分出来了，但是并不是全部正确，这次又栽倒在左下角三个"-"上了，然后临死前，第二代分类器对下一代分类器说"这次我和上一代分类器已经把他们摸得差不多了，你再稍微注意下左下角那三个小子，也别忘了上面那三个(一代错分的那三个"+")！"
 
-<img src="/images/ml/ml-ensumble-7-adaboost.jpeg" width="600" />
+<img src="/images/ml/ensumble/ml-ensumble-7-adaboost.jpeg" width="600" />
 
 > Round3:有了上面两位大哥的提醒，第三代分类器表示，我差不多都知道上次大哥们都错哪了，我只要小心这几个，应该没什么问题！只要把他们弄错的我给整对了，然后把我们收集的信息一对，这不就行了么！ok，第三代分类器不负众望，成功分对上面两代分类器重点关注的对象，至于分错的那几个小的，以前大哥们都分对了，我们坐下来核对一下就行了！
 
-<img src="/images/ml/ml-ensumble-8-adaboost.jpeg" width="600" />
+<img src="/images/ml/ensumble/ml-ensumble-8-adaboost.jpeg" width="600" />
 
 > 最后，三个分类器坐下来，各自谈了谈心得，分配了下权重，然后一个诸葛亮就诞生啦！这也就是 "三个臭皮匠顶个诸葛亮的故事" …😄😄😄, 是不是道理很简单！至于权重如何计算，暂不在本文讨论.
 
@@ -168,11 +168,11 @@ AdaBoost算法的巧妙之处就在于它将这些学习思路自然并且有效
 [k1]: http://statweb.stanford.edu/~tibs/sta306bfiles/cvwrong.pdf
 
 
-[img1]: /images/ml/ml_boosting_adaboost_binary_classification.png
-[img4]: /images/ml/ml-ensumble-4-adaboost.jpeg
-[img5]: /images/ml/ml-ensumble-5-adaboost.jpeg
-[img6]: /images/ml/ml-ensumble-6-adaboost.jpeg
-[img7]: /images/ml/ml-ensumble-7-adaboost.jpeg
-[img8]: /images/ml/ml-ensumble-8-adaboost.jpeg
+[img1]: /images/ml/ensumble/ml_boosting_adaboost_binary_classification.png
+[img4]: /images/ml/ensumble/ml-ensumble-4-adaboost.jpeg
+[img5]: /images/ml/ensumble/ml-ensumble-5-adaboost.jpeg
+[img6]: /images/ml/ensumble/ml-ensumble-6-adaboost.jpeg
+[img7]: /images/ml/ensumble/ml-ensumble-7-adaboost.jpeg
+[img8]: /images/ml/ensumble/ml-ensumble-8-adaboost.jpeg
 
 

@@ -1,10 +1,9 @@
 ---
-title: Decision Tree Model
+title: Decision Tree (part1)
 toc: true
 date: 2016-08-16 16:43:21
 categories: machine-learning
 tags: [decision-tree]
-description: decision tree learning
 mathjax: true
 list_number: true
 ---
@@ -68,7 +67,7 @@ ID | 阴晴(F)	| 温度(F)	| 湿度(F)	| 刮风(F)	| 是否玩（C）
 
 利用ID3算法中的 Info Gain Feature Selection，递归的学习一棵决策树，得到树结构如下
 
-<img src="/images/ml/model-dt-02.png" width="560" height="400"/img>
+<img src="/images/ml/decision-tree/decision-tree-2.png" width="560" height="400"/img>
 
 > 决策树（decision tree）是一个树结构（可以是二叉树或非二叉树）。其每个非叶节点表示一个Feature属性上的测试，每个分支代表这个Feature属性在某个值域上的输出，而每个叶节点存放一个 Category 。使用 DT 进行决策的过程就是从 root 开始，测试待分类项中相应的 Feature 属性，并按照其值选择输出分支，直到到达叶子节点，将叶子节点存放的 Category 作为决策结果。
 
@@ -98,7 +97,7 @@ Feature Selection，如何量化最优Feature? `->` 导致 DT Algorithm 出现�
 
   输出 : T(D, F)
 
-<img src="/images/ml/model-dt-03.png" width="760" height="400"/img>
+<img src="/images/ml/decision-tree/decision-tree-3.png" width="760" height="400"/img>
 
 决策树学习过程中递归的每一步，在选择最优特征后，根据特征取值切割当前节点的数据集，得到若干数据子集。  
 算法的时间复杂度是O(k*|D|*log(|D|))，k为属性个数，|D|为记录集D的记录数。
@@ -213,7 +212,7 @@ $$
 > 
 显然，Feature “阴晴” 的 info gain 最大，于是把它作为划分特征。基于“阴晴”对根节点进行划分的结果，如图4.5所示（决策树学习过程部分）。决策树学习算法对子节点进一步划分，重复上面的计算步骤。
 
-<img src="/images/ml/model-dt-02.png" width="560" height="400"/img>
+<img src="/images/ml/decision-tree/decision-tree-2.png" width="560" height="400"/img>
 
 ### 4.2 Gain ratio
 
@@ -238,32 +237,18 @@ $$
 >>>
 ```
 
-基尼指数（Gini Index）是 `CART` 中分类树的特征选择方法. 接下来重点介绍
-
-## 5. CART
-
-分类与回归树（Classification And Regression Tree, 简称 CART）模型在Tree-Based家族中是应用最广泛的学习方法之一.
-
-更多请参见本博文章 [CART][4]
-
 ## Reference article
 
-- [逗比算法工程师][9]
-- [算法杂货铺][10]
-- [52caml][11]
-- 《机器学习导论》
-- 《统计学习方法》
-- 《数据挖掘－实用机器学习技术》
-- [决策树ID3优缺点 csdn][c1]
+- [逗比算法工程师][9]、[算法杂货铺][10]、[52caml][11]
 - [决策树ID3、C4.5、CART算法：信息熵，区别，剪枝理论总结][c2]
+- 《机器学习导论》《统计学习方法》
 
 [c1]: http://blog.csdn.net/blueloveyyt/article/details/45013403
 [c2]: http://blog.csdn.net/ljp812184246/article/details/47402639
 
-[1]: /images/model-dt-01.jpg
-[2]: /images/model-dt-02.png
+[1]: /images/ml/decision-tree/decision-tree-1.jpg
+[2]: /images/ml/decision-tree/decision-tree-2.png
 [3]: /2016/08/18/ml-entropy-base/
-[4]: /2016/08/24/ml-CART/
 
 [5]: https://en.wikipedia.org/wiki/Heuristic_(computer_science)
 [6]: https://en.wikipedia.org/wiki/Greedy_algorithm
