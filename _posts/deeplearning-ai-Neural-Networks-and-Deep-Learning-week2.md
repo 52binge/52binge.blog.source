@@ -29,11 +29,11 @@ Logistic Regression 可以看成是一种只有输入层和输出层(没有隐�
 
 <!-- more -->
 
-## 1. 基本概念回顾
+## 1. Notation
 
 更多关于本系列课程的符号点[这里][1]同样地, 参数也有所变化($bias$ 单独拿出来作为$b$, 而不是添加 $\theta\_0$
 
-### 1.2 Logistic Regression
+## 2. Logistic Regression
 
 <img src="/images/deeplearning/C1W2-4_1.jpg" width="750" />
 
@@ -42,32 +42,37 @@ Logistic Regression 可以看成是一种只有输入层和输出层(没有隐�
 
 <img src="/images/deeplearning/C1W2-6_1.jpg" width="750" />
 
-### 1.3 Logistic Regression Cost Function
+## 3. Logistic Regression Cost Function
 
 <img src="/images/deeplearning/C1W2-8_1.jpg" width="750" />
 
-### 1.4 Gradient Descent
+## 4. Gradient Descent
 
 <img src="/images/deeplearning/C1W2-9_1.jpg" width="750" />
 
 <img src="/images/deeplearning/C1W2-10_1.jpg" width="750" />
 
-### 1.5 Derivatives
+## 5. Derivatives
 
 <img src="/images/deeplearning/C1W2-11_1.png" width="750" />
 
 <img src="/images/deeplearning/C1W2-12_1.png" width="750" />
 
-### 1.7 Computation Graph
+## 7. Computation Graph
 
 <img src="/images/deeplearning/C1W2-13_1.jpg" width="750" />
 
-### 1.8 Computation Graph Derivatives
+## 8. Computation Graph Derivatives
 
 <img src="/images/deeplearning/C1W2-14_1.png" width="750" />
 
+## 9. Logistic regression recap
 
-### 1.9 Logistic 回归中的梯度下降
+有了计算图的概念之后, 我们将其运用到Logistic Regression上. 下面标注了计算图的表达.
+
+<img src="/images/deeplearning/C1W2-15_1.jpg" width="750" />
+
+有了上面的图之后, 我们现在来计算反向传播.
 
 ## 2 计算图与前向反向传播
 
