@@ -54,24 +54,24 @@ ROC 关注两个指标，
 
 <img src="/images/ml/model/ROC.png" width="780" />
 
+> ROC曲线，如果为 y=x 表示模型的预测能力与随机结果没有差别.
+
 ## AUC
 
 AUC（Area Under Curve）被定义为ROC曲线下的面积，显然这个面积的数值不会大于 1.
 
-> The AUC value is equivalent to the probability that a randomly chosen positive example is ranked higher than a randomly chosen negative example.
-> 
-> 翻译过来就是，随机挑选一个正样本以及一个负样本，分类器判定正样本的值高于负样本的概率就是 AUC 值
+由于ROC曲线一般都处于 $y=x$ 这条直线的上方，所以 AUC 的取值范围在 0.5~1 之间.
  
-简单说：AUC值越大的分类器，正确率越高3。
-
-，完美分类器，采用这个预测模型时，不管设定什么阈值都能得出完美预测。绝大多数预测的场合，不存在完美分类器。
-，优于随机猜测。这个分类器（模型）妥善设定阈值的话，能有预测价值。
-，跟随机猜测一样（例：丢铜板），模型没有预测价值。
-，比随机猜测还差；但只要总是反预测而行，就优于随机猜测，因此不存在  的情况。
+简单说：AUC值越大的分类器，正确率越高.
 
 <img src="/images/ml/model/AUC.png" width="780" />
 
-> 既然已经这么多评价标准，为什么还要使用ROC和AUC呢？因为ROC曲线有个很好的特性：当测试集中的正负样本的分布变化的时候，ROC曲线能够保持不变。在实际的数据集中经常会出现类不平衡（class imbalance）现象，即负样本比正样本多很多（或者相反）
+AUC值为ROC曲线所覆盖的区域面积，显然，AUC越大，分类器分类效果越好。
+　　
+> - AUC = 1，是完美分类器，采用这个预测模型时，不管设定什么阈值都能得出完美预测。绝大多数预测的场合，不存在完美分类器。
+> - 0.5 < AUC < 1，优于随机猜测。这个分类器（模型）妥善设定阈值的话，能有预测价值。
+> - AUC = 0.5，跟随机猜测一样（例：丢铜板），模型没有预测价值。
+> - AUC < 0.5，比随机猜测还差；但只要总是反预测而行，就优于随机猜测
 
 [img1]: /images/ml/model/Precision_Recall.png
 [img2]: /images/ml/model/ROC.png
@@ -80,6 +80,10 @@ AUC（Area Under Curve）被定义为ROC曲线下的面积，显然这个面积�
 ## Reference article
 
 - [模型评估准确率、召回率、ROC曲线、AUC总结][1]
+- [ROC、AUC、K-S][2]
+- [关于模型检验的ROC值和KS值的异同_ROC曲线和KS值][3]
 
 
 [1]: https://blog.csdn.net/qq_36330643/article/details/79522537
+[2]: https://zhuanlan.zhihu.com/p/25993786
+[3]: http://cda.pinggu.org/view/21012.html

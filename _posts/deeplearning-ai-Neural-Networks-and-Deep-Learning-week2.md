@@ -68,7 +68,7 @@ Logistic Regression 可以看成是一种只有输入层和输出层(没有隐�
 
 ## 9. Logistic regression recap
 
-有了计算图的概念之后, 我们将其运用到Logistic Regression上. 下面标注了计算图的表达.
+有了计算图的概念之后, 我们将其运用到 Logistic Regression 上. 下面标注了计算图的表达.
 
 <img src="/images/deeplearning/C1W2-15_1.jpg" width="750" />
 
