@@ -349,15 +349,15 @@ $
 
 [Kaggle_Titanic](https://www.kaggle.com/c/titanic)
 
-[1]: /images/ml/ml-ng-w3-01.png
-[2]: /images/ml/ml-ng-w3-02.png
-[3]: /images/ml/ml-ng-w3-03.png
-[4]: /images/ml/ml-ng-w3-04.png
-[5]: /images/ml/ml-ng-w3-05.png
-[6]: /images/ml/ml-ng-w3-06.png
-[7]: /images/ml/ml-ng-w3-07.png
-[8]: /images/ml/ml-ng-w3-08.png
-[9]: /images/ml/ml-ng-w3-09.png
-[10]: /images/ml/ml-ng-w3-10.png
-[12]: /images/ml/ml-ng-w3-12.png
+[1]: /images/ml/coursera/ml-ng-w3-01.png
+[2]: /images/ml/coursera/ml-ng-w3-02.png
+[3]: /images/ml/coursera/ml-ng-w3-03.png
+[4]: /images/ml/coursera/ml-ng-w3-04.png
+[5]: /images/ml/coursera/ml-ng-w3-05.png
+[6]: /images/ml/coursera/ml-ng-w3-06.png
+[7]: /images/ml/coursera/ml-ng-w3-07.png
+[8]: /images/ml/coursera/ml-ng-w3-08.png
+[9]: /images/ml/coursera/ml-ng-w3-09.png
+[10]: /images/ml/coursera/ml-ng-w3-10.png
+[12]: /images/ml/coursera/ml-ng-w3-12.png
 

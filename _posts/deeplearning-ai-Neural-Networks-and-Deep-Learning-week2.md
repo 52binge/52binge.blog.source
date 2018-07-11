@@ -1,11 +1,7 @@
 ---
 title: deeplearning.ai Neural Networks and Deep Learning (week2)
 toc: true
-<<<<<<< HEAD
-date: 2018-07-06 23:55:21
-=======
 date: 2018-07-07 09:55:21
->>>>>>> a2904abdc85800fc248aa768ad6841c2ccb2a322
 categories: deeplearning
 tags: deeplearning.ai
 mathjax: true
@@ -25,14 +21,13 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-<<<<<<< HEAD
-Neural Networks and Deep Learning 第二周 Neural Networks Basic 的学习笔记. 
+本周我们将要学习 Logistic Regression, 它是神经网络的基础. 
 
-本周我们将要学习Logistic Regression, 它是神经网络的基础. 
+Logistic Regression 可以看成是一种只有输入层和输出层(没有隐藏层)的神经网络. 
+
+我们将使用 **Python** 来实现一个这样的模型, 并将其应用在 **cat** 和 **non-cat** 的图像识别上.
 
 <!-- more -->
-
-**Logistic Regression** 可以看成是一种只有输入层和输出层(没有隐藏层)的神经网络. 在学习完本周的内容后, 我们将使用Python来实现一个这样的模型, 并将其应用在cat和non-cat的图像识别上.
 
 ## Binary Classification
 
@@ -47,20 +42,6 @@ Neural Networks and Deep Learning 第二周 Neural Networks Basic 的学习笔�
 <img src="/images/deeplearning/C1W2-3_1.jpg" width="700" />
 
 更多关于本系列课程的符号点[这里][2]同样地, 参数也有所变化(bias 单独拿出来作为$b$, 而不是添加 $\theta\_0$)
-
-## Reference
-
-- [Andrew Ng - deeplearning.ai][1]
-- [网易云课堂 - 第一周深度学习概论][2]
-
-[1]: https://www.deeplearning.ai/
-[2]: http://7xrrje.com1.z0.glb.clouddn.com/deeplearningnotation.pdf
-=======
-本周我们将要学习 Logistic Regression, 它是神经网络的基础. 
-
-Logistic Regression 可以看成是一种只有输入层和输出层(没有隐藏层)的神经网络. 
-
-我们将使用 **Python** 来实现一个这样的模型, 并将其应用在 **cat** 和 **non-cat** 的图像识别上.
 
 <!-- more -->
 
@@ -95,25 +76,36 @@ Logistic Regression 可以看成是一种只有输入层和输出层(没有隐�
 
 ## 7. Computation Graph
 
+神经网络中, forward propagation 用来计算输出, backward propagation 用来计算梯度, 得到梯度后就可更新对应的参数了. 
+
 <img src="/images/deeplearning/C1W2-13_1.jpg" width="750" />
 
+如上图所示通过前向传播, 我们得到 $J = 33$. 
+
+> 这里说明一下, 在后面代码实现中, 这些导数都可以用 $dvar$ 来表示, 例如 dw1, db1 等等.
+
 ## 8. Computation Graph Derivatives
+
+反向传播本质上就是通过链式法则不断求出前面各个变量的导数的过程.
 
 <img src="/images/deeplearning/C1W2-14_1.png" width="750" />
 
 ## 9. Logistic regression recap
 
-有了计算图的概念之后, 我们将其运用到 Logistic Regression 上. 下面标注了计算图的表达.
+有了计算图的概念之后, 我们将其运用到 Logistic Regression 上. 
 
-<img src="/images/deeplearning/C1W2-15_1.jpg" width="750" />
+<img src="/images/deeplearning/C1W2-16_1.png" width="700" />
+
+上面的式子可以用下面的计算图来表达:
+
+<img src="/images/deeplearning/C1W2-16_2.png" width="700" />
 
 有了上面的图之后, 我们现在来计算反向传播.
 
-## 2 计算图与前向反向传播
-
 ## Reference
 
-[img4]: /images/deeplearning/C1W2-4.jpg
+- [网易云课堂 - 第一周深度学习概论][2]
 
 [1]: http://7xrrje.com1.z0.glb.clouddn.com/deeplearningnotation.pdf
->>>>>>> a2904abdc85800fc248aa768ad6841c2ccb2a322
+[2]: http://7xrrje.com1.z0.glb.clouddn.com/deeplearningnotation.pdf
+

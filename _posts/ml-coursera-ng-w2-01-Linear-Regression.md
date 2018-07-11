@@ -266,13 +266,13 @@ What $X^T X$ is non-invertible? （singular / degenerate）
 
 ![non-invertible][10]
 
-[1]: /images/ml/ml-ng-w2-01.png
-[2]: /images/ml/ml-ng-w2-02.png
-[3]: /images/ml/ml-ng-w2-03.png
-[4]: /images/ml/ml-ng-w2-04.png
-[5]: /images/ml/ml-ng-w2-05.png
-[6]: /images/ml/ml-ng-w2-06.png
-[7]: /images/ml/ml-ng-w2-07.png
-[8]: /images/ml/ml-ng-w2-08.png
-[9]: /images/ml/ml-ng-w2-09.png
-[10]: /images/ml/ml-ng-w2-10.png
+[1]: /images/ml/coursera/ml-ng-w2-01.png
+[2]: /images/ml/coursera/ml-ng-w2-02.png
+[3]: /images/ml/coursera/ml-ng-w2-03.png
+[4]: /images/ml/coursera/ml-ng-w2-04.png
+[5]: /images/ml/coursera/ml-ng-w2-05.png
+[6]: /images/ml/coursera/ml-ng-w2-06.png
+[7]: /images/ml/coursera/ml-ng-w2-07.png
+[8]: /images/ml/coursera/ml-ng-w2-08.png
+[9]: /images/ml/coursera/ml-ng-w2-09.png
+[10]: /images/ml/coursera/ml-ng-w2-10.png
