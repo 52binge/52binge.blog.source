@@ -1,5 +1,5 @@
 ---
-title: l1、l2正则化小记 (待完善)
+title: l1、l2正则化小记 (not finish)
 toc: true
 date: 2018-07-11 10:43:21
 categories: machine-learning
@@ -99,6 +99,8 @@ $$
 - 周志华《机器学习》
 - [懒死骆驼][1]
 - [机器学习中的范数规则化之（一）L0、L1与L2范数][2]
+- [机器学习算法系列（28）：L1、L2正则化][3]
 
 [1]: http://izhaoyi.top/2017/09/15/l1-l2/
 [2]: https://blog.csdn.net/zouxy09/article/details/24971995
+[3]: https://plushunter.github.io/2017/07/22/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97%EF%BC%8828%EF%BC%89%EF%BC%9AL1%E3%80%81L2%E6%AD%A3%E5%88%99%E5%8C%96/

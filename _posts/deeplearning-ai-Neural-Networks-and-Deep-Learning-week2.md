@@ -102,10 +102,51 @@ Logistic Regression 可以看成是一种只有输入层和输出层(没有隐�
 
 有了上面的图之后, 我们现在来计算反向传播.
 
+首先我们来计算 $\frac{dL}{da}$:
+
+$$
+\begin{align} \frac{dL}{da} & = - (\frac{y}{a} - \frac{(1-y)}{(1-a)}) \end{align}
+$$
+
+通过链式法则, 计算 $\frac{dL}{dz}$:
+
+$$
+\begin{align} \frac{dL}{dz} & = \frac{dL}{da}\frac{da}{dz} \\\\ \\\\ & = - (\frac{y}{a} - \frac{(1-y)}{(1-a)})\sigma(z)(1-\sigma(z)) \\\\ \\\\ & = - (\frac{y}{a} - \frac{(1-y)}{(1-a)})a(1-a)) \\\\ \\\\ & = -y(1-a) + (1-y)a \\\\ \\\\ & = a - y \end{align}
+$$
+
+最后计算 $\frac{dL}{dw1}, \frac{dL}{dw2}, \frac{dL}{db}$:
+
+$$
+\frac{dL}{dw\_1} = \frac{dL}{dz}\frac{dz}{dw\_1} = (a - y)x\_1
+$$
+
+$$
+\frac{dL}{dw\_2} = \frac{dL}{dz}\frac{dz}{dw\_2} = (a - y)x\_2
+$$
+
+$$
+\frac{dL}{db} = \frac{dL}{dz}\frac{dz}{db} = a - y
+$$
+
+怎么样? 是不是很简单呢? 这里我们所有的计算都是针对一个训练样本的. 当然我们不可能只有一个样本, 那么对于整个训练集, 我们应该怎么做呢? 其实很简单, 我们只需要将 $J(w, b)$ 拆开来写就很清晰.
+
+$$
+J(w, b) = \frac{1}{m}(L(a^{(1)}, y^{(1)}) + L(a^{(2)}, y^{(2)}) + … + L(a^{(m)}, y^{m)}))
+$$
+
+<img src="/images/deeplearning/C1W2-17_1.jpg" width="750" />
+
+对于每一个样本都有一个对应的 $dz^{(i)}$, 而对于 $dw, db$ 来说是对于所有求平均.
+
+<img src="/images/deeplearning/C1W2-18_1.png" width="750" />
+
+
 ## Reference
 
-- [网易云课堂 - 第一周深度学习概论][2]
+- [网易云课堂 - deeplearning][3]
+- [deeplearning.ai 专项课程一第二周][2]
 
 [1]: http://7xrrje.com1.z0.glb.clouddn.com/deeplearningnotation.pdf
-[2]: http://7xrrje.com1.z0.glb.clouddn.com/deeplearningnotation.pdf
+[2]: http://daniellaah.github.io/2017/deeplearning-ai-Neural-Networks-and-Deep-Learning-week2.html
+[3]: https://study.163.com/my#/smarts
 
