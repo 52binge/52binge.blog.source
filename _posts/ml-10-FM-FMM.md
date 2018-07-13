@@ -36,6 +36,7 @@ list_number: true
 - [分解机(Factorization Machines)推荐算法原理][4]
 - [机器学习算法系列（26）：因子分解机（FM）与场感知分解机（FFM）][5]
 - [Free Will][6]
+- [美团技术团队 - 深入FFM原理与实践][7]
 
 [1]: https://blog.csdn.net/wyisfish/article/details/79998959
 [2]: https://www.zhihu.com/question/27043630?from=profile_question_card
@@ -43,3 +44,4 @@ list_number: true
 [4]: https://www.cnblogs.com/pinard/p/6370127.html
 [5]: https://plushunter.github.io/2017/07/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97%EF%BC%8826%EF%BC%89%EF%BC%9A%E5%9B%A0%E5%AD%90%E5%88%86%E8%A7%A3%E6%9C%BA%EF%BC%88FM%EF%BC%89%E4%B8%8E%E5%9C%BA%E6%84%9F%E7%9F%A5%E5%88%86%E8%A7%A3%E6%9C%BA%EF%BC%88FFM%EF%BC%89/
 [6]: https://plushunter.github.io/tech-stack/
+[7]: https://tech.meituan.com/deep_understanding_of_ffm_principles_and_practices.html
