@@ -294,11 +294,11 @@ class LogisticRegression():
 
 ## 本周内容回顾
 
-- 了解了深度学习系列课程中使用到的各种符号,
-- 回顾了Logistic Regression,
-- 掌握了loss和cost的区别与联系,
-- 重新认识了前向反向传播, 即计算图,
-- 学习了深度学习中必要的求导知识,
+- 了解了深度学习系列课程中使用到的各种符号.
+- 回顾了Logistic Regression.
+- 掌握了loss和cost的区别与联系.
+- 重新认识了前向反向传播, 即计算图.
+- 学习了深度学习中必要的求导知识.
 - 熟悉了Numpy, Jupyter Notebook的使用
 - 掌握了使用Python以神经网络的方式实现Logistic Regression模型, 并使用强大的Numpy来向量化.
 
@@ -307,9 +307,11 @@ class LogisticRegression():
 - [网易云课堂 - deeplearning][3]
 - [deeplearning.ai 专项课程一第二周][2]
 - [向量点乘（内积）和叉乘（外积、向量积）概念及几何意义解读][4]
+- [CPU会被GPU替代吗？SIMD和SIMT谁更好？][6]
 
 [1]: http://7xrrje.com1.z0.glb.clouddn.com/deeplearningnotation.pdf
 [2]: http://daniellaah.github.io/2017/deeplearning-ai-Neural-Networks-and-Deep-Learning-week2.html
 [3]: https://study.163.com/my#/smarts
 [4]: https://blog.csdn.net/dcrmg/article/details/52416832
 [5]: https://github.com/daniellaah/deeplearning.ai-step-by-step-guide/tree/master/01-Neural-Networks-and-Deep-Learning/week2
+[6]: https://zhuanlan.zhihu.com/p/31914064
