@@ -200,6 +200,8 @@ For loop:363.94405364990234ms
 > 接下来我们看一下梯度的向量化. 前面我们知道 $dz^{(1)}, dz^{(2)}, …, dz^{(m)}$, 这样得到 $dZ$ .
 
 > $A$、$Y$ 的向量化前面已知了，这样关于 $z$ 的梯度如下所示. 有了 $dZ$之后 $db$ 就很简单了, 它是所有 $dZ$ 中元素的均值. 在python中的代码表示为 `np.mean(dZ)` 或者 `1/m * np.sum(a)`. $dW$ 通过观察向量的维度得到. $X$ 为 $(n, m)$, $dZ$ 为 $(1, m)$, 而 $dW$ 的维度和 $W$ 的维度一样为 $(n,1)$, 这样就得到了 $dW=\frac{1}{m}XdZ^T$.
+>
+> db 是一个均值？
 
 <img src="/images/deeplearning/C1W2-21_1.png" width="750" />
 
@@ -292,6 +294,16 @@ class LogisticRegression():
 
 本周课程剩下部分四个视频分别讲解Broadcasting, Numpy Vector, Jupyter Notebook以及Logistic Regression的概率解释. 如果对于Numpy以及Jupyter Notebook不熟悉的同学需要好好看看这三个视频
 
+**Python Broadcasting example:**
+
+<img src="/images/deeplearning/C1W2-23_1.png" width="500" />
+
+> Notes: 多使用 reshape 来保证你用的向量或矩阵是正确的，不要害怕使用 reshape.
+
+<img src="/images/deeplearning/C1W2-24_1.png" width="400" />
+
+> Notes: 多使用 assert(a.shape == (5,1)) 
+> 
 ## 本周内容回顾
 
 - 了解了深度学习系列课程中使用到的各种符号.
@@ -308,6 +320,7 @@ class LogisticRegression():
 - [deeplearning.ai 专项课程一第二周][2]
 - [向量点乘（内积）和叉乘（外积、向量积）概念及几何意义解读][4]
 - [CPU会被GPU替代吗？SIMD和SIMT谁更好？][6]
+- [刘建平Pinard - 梯度下降（Gradient Descent）小结][7]
 
 [1]: http://7xrrje.com1.z0.glb.clouddn.com/deeplearningnotation.pdf
 [2]: http://daniellaah.github.io/2017/deeplearning-ai-Neural-Networks-and-Deep-Learning-week2.html
@@ -315,3 +328,4 @@ class LogisticRegression():
 [4]: https://blog.csdn.net/dcrmg/article/details/52416832
 [5]: https://github.com/daniellaah/deeplearning.ai-step-by-step-guide/tree/master/01-Neural-Networks-and-Deep-Learning/week2
 [6]: https://zhuanlan.zhihu.com/p/31914064
+[7]: https://www.cnblogs.com/pinard/p/5970503.html
