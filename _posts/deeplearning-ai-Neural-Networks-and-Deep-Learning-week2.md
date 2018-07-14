@@ -29,12 +29,12 @@ Logistic Regression 可以看成是一种只有输入层和输出层(没有隐�
 
 <!-- more -->
 
-## Binary Classification
-
-<img src="/images/deeplearning/C1W2-1.jpg" width="750" />
+<!--## Binary Classification
+-->
+<!--<img src="/images/deeplearning/C1W2-1.jpg" width="750" />
 
 <img src="/images/deeplearning/C1W2-2.jpg" width="750" />
-
+-->
 ## 一. 基本概念回顾
 
 这次Andrew出的系列课程在符号上有所改动(和机器学习课程中的行列有所区别, 主要是为了后面代码实现方便), 如下图所示.
