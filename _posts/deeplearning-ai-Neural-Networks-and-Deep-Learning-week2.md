@@ -1,5 +1,5 @@
 ---
-title: deeplearning.ai Neural Networks and Deep Learning (week2)
+title: Neural Networks and Deep Learning (week2)
 toc: true
 date: 2018-07-07 09:55:21
 categories: deeplearning
@@ -321,6 +321,7 @@ class LogisticRegression():
 - [向量点乘（内积）和叉乘（外积、向量积）概念及几何意义解读][4]
 - [CPU会被GPU替代吗？SIMD和SIMT谁更好？][6]
 - [刘建平Pinard - 梯度下降（Gradient Descent）小结][7]
+- [Github 01-Neural-Networks-and-Deep-Learning/week2][5]
 
 [1]: http://7xrrje.com1.z0.glb.clouddn.com/deeplearningnotation.pdf
 [2]: http://daniellaah.github.io/2017/deeplearning-ai-Neural-Networks-and-Deep-Learning-week2.html
