@@ -101,6 +101,30 @@ mathjax: true
 
 <img src="/images/deeplearning/C1W3-14.png" width="750" />
 
+$$
+dz^{\[2\]} = \frac{dL}{dz}= \frac{dL}{da^{\[2\]}}\frac{da^{\[2\]}}{dz^{\[2\]}}=a^{\[2\]}-y
+$$
+
+$$
+dW^{\[2\]}=\frac{dL}{dW^{\[2\]}}=\frac{dL}{dz^{\[2\]}}\frac{dz^{\[2\]}}{dW^{\[2\]}}=dz^{\[2\]}a^{\[1\]}
+$$
+
+$$
+db^{\[2\]}=\frac{dL}{db^{\[2\]}}=\frac{dL}{dz^{\[2\]}}\frac{dz^{\[2\]}}{db^{\[2\]}}=dz^{\[2\]}
+$$
+
+$$
+dz^{\[1\]} = \frac{dL}{dz^{\[2\]}}\frac{dz^{\[2\]}}{da^{\[1\]}}\frac{da^{\[1\]}}{dz^{\[1\]}}=W^{\[2\]T}dz^{\[2\]}*g^{\[1\]’}(z^{\[1\]})
+$$
+
+$$
+dW^{\[1\]}=\frac{dL}{dW^{\[1\]}}=\frac{dL}{dz^{\[1\]}}\frac{dz^{\[1\]}}{dW^{\[1\]}}=dz^{\[1\]}x^T
+$$
+
+$$
+db^{\[1\]}=\frac{dL}{db^{\[1\]}}=\frac{dL}{dz^{\[1\]}}\frac{dz^{\[1\]}}{db^{\[1\]}}=dz^{\[1\]}
+$$
+
 下图右边为在m个训练样本上的向量化表达:
 
 <img src="/images/deeplearning/C1W3-15_1.png" width="750" />
