@@ -3,55 +3,28 @@ title: Deep Learning
 date: 2018-07-03 16:46:48
 ---
 
-
-
 开始 [Deep Learning](https://en.wikipedia.org/wiki/Deep_learning) 新坑, 希望与感兴趣的朋友一起学习、交流、探讨与分享~~
 
-## 1. 神经网络和深度学习
+## 1. Neural Networks and Deep Learning
 
-#### 1. 深度学习概论
+- [1.1 Neural Networks and Deep Learning (week1)][c1w1]
 
-- [1.1 : Deep Learning AI][dl1]
+- [1.2 Neural Networks and Deep Learning (week2)][c1w2]
 
-#### 2. 神经网络基础
+- [1.3 Neural Networks and Deep Learning (week3)][c1w3]
 
-- [2.1. : 二分分类 *][0]
 
-- [2.2. : Logistic 回归 *][0]
+[c1w1]: /2017/12/01/deeplearning-ai-Neural-Networks-and-Deep-Learning-week1/
+[c1w2]: /2018/07/07/deeplearning-ai-Neural-Networks-and-Deep-Learning-week2/
+[c1w3]: /2018/07/14/deeplearning-ai-Neural-Networks-and-Deep-Learning-week3/
 
-- [...][0]
+## 2. Improving Deep Neural Networks 
 
-#### 3. 浅层神经网络
+## 3. Structured Machine Learning Projects 
 
-- [3.1 : 神经网络概览 *][0]
+## 4. Convolutional Neural Networks
 
-- [3.2 : 神经网络表示 *][0] 
-
-- [...][0]
-
-#### 4. 深层神经网络
-
-- [4.1 : 深层神经网络 *][0]
-
-- [4.2 : 深层网络前向传播 *][0] 
-
-- [...][0]
-
-[dl1]: /2018/05/01/deeplearning-ai-Neural-Networks-and-Deep-Learning-week1/
-
-## 2. 改善深层神经网络: 超参数调试、正则化以及优化
-
-...
-
-## 3. 结构化机器学习项目
-
-...
-
-## 4. 卷积神经网络
-
-...
-
-## 5. 序列模型
+## 5. Sequence Models
 
 ...
 
