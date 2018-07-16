@@ -41,7 +41,13 @@ mathjax: true
 
 ## 5. 使用Python实现深度神经网络
 
-## Reference
+## 6. 本周内容回顾
+
+- 深度神经网络中的前向/反向传播
+- 参数与超参数
+- 使用Python实现深度神经网络
+
+## 7. Reference
 
 - [网易云课堂 - deeplearning][1]
 - [deeplearning.ai 专项课程一第四周][2]
