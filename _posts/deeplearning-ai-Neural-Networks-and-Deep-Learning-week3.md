@@ -89,11 +89,21 @@ mathjax: true
 
 <img src="/images/deeplearning/C1W3-10_1.png" width="750" />
 
+> derivative of **`sigmoid`** activation function
+
 <img src="/images/deeplearning/C1W3-11_1.png" width="750" />
+
+> derivative of **`tanh`** activation function
 
 <img src="/images/deeplearning/C1W3-12_1.png" width="750" />
 
+> derivative of **`ReLU and Leaky ReLU`** activation function
+
 为什么需要激活函数? 如果没有激活函数, 那么不论多少层的神经网络都只相当于一个LR. 证明如下:
+
+> **it turns out that if you use a linear activation function or alternatively if you don't have an activation function, then no matter how many layers your neural network has, always doing just computing a linear activation function, so you might as well not have any hidden layers.**
+> 
+> so unless you throw a non-linearity in there, then you're not computing more interesting functions.
 
 <img src="/images/deeplearning/C1W3-13_1.png" width="750" />
 
@@ -111,7 +121,11 @@ mathjax: true
 > 
 > 虽然 z < 0, 的时候，斜率为0， 但在实践中，有足够多的隐藏单元 令 z > 0, 对大多数训练样本来说是很快的.
 
-## 4. 神经网络中的反向传播
+Notes:
+
+> so the one place you might use as linear activation function, others usually in the output layer.
+
+## 4. 神经网络中的反向传播 back propagation
 
 > 反向传播最主要的就是计算梯度, 在上一周的内容中, 我们已经知道了LR梯度的计算. 
 >
@@ -131,7 +145,7 @@ $$
 db^{\[2\]}=\frac{dL}{db^{\[2\]}}=\frac{dL}{dz^{\[2\]}}\frac{dz^{\[2\]}}{db^{\[2\]}}=dz^{\[2\]}
 $$
 
-反向传播...
+> **backward propagation :**
 
 $$
 dz^{\[1\]} = \frac{dL}{dz^{\[2\]}}\frac{dz^{\[2\]}}{da^{\[1\]}}\frac{da^{\[1\]}}{dz^{\[1\]}}=W^{\[2\]T}dz^{\[2\]}*g^{\[1\]’}(z^{\[1\]})
@@ -145,9 +159,17 @@ $$
 db^{\[1\]}=\frac{dL}{db^{\[1\]}}=\frac{dL}{dz^{\[1\]}}\frac{dz^{\[1\]}}{db^{\[1\]}}=dz^{\[1\]}
 $$
 
+> Notes: $\frac{dL}{dz^{\[2\]}} = dz^{\[2\]}$ ， $\frac{dz^{\[2\]}}{da^{\[1\]}} = W^{\[2\]}$ ， $\frac{da^{\[1\]}}{dz^{\[1\]}}=g^{\[1\]’}(z^{\[1\]})$
+
 下图右边为在$m$个训练样本上的向量化表达:
 
 <img src="/images/deeplearning/C1W3-15_1.png" width="750" />
+
+> Notes: 
+>
+> - $n^\[0\]$ = input features
+> - $n^\[1\]$ = hidden units
+> - $n^\[2\]$ = output units
 
 ## 5. 神经网络中的参数初始化
 
