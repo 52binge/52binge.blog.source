@@ -285,7 +285,8 @@ class LogisticRegression():
         threshold_func = np.vectorize(lambda x: 1 if x > threshold else 0)
         Y_prediction = threshold_func(pred_prob)
         return Y_prediction
-
+	
+     // 分类准确率分数是指所有分类正确的百分比, 分类准确率这一衡量分类器的标准比较容易理解
     def accuracy_score(self, X, Y):
         pred = self.predict(X)
         return len(Y[pred == Y]) / Y.shape[1]

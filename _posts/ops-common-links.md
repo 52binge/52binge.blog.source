@@ -34,11 +34,13 @@ Here are some useful links
 - [ali wuchong][f2]
 - [Poll的笔记][f3]
 - [阮一峰的网络日志][f4]
+- [ICML 学霸 David Abel][f5]
 
 [f1]: https://blog.fazero.me/
 [f2]: http://wuchong.me/
 [f3]: http://www.cnblogs.com/maybe2030/
 [f4]: http://www.ruanyifeng.com/blog/
+[f5]: https://david-abel.github.io/
 
 ## vps
 

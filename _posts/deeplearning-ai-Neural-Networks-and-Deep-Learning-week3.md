@@ -67,7 +67,7 @@ mathjax: true
 - $z.shape : (n\_L, 1)$
 - $a.shape : (n\_L, 1)$
 
-那么如果有 $m$ 个训练样本这些变量的维度又是怎样的呢. 我们思考哪些变量的维度会随着样本数的变化二变化. $w$ 是参数显然它的维度是不会变的. 而输入每一个样本都会有一个 $z$ 和 $a$, 还记得 $X$ 的形式吗? 同样地, $Z$ 就是将每个样本算出来的 $z$ 横向叠加(A同理). 具体计算过程如下图:
+那么如果有 $m$ 个训练样本这些变量的维度又是怎样的呢. 我们思考哪些变量的维度会随着样本数的变化而变化. $w$ 是参数显然它的维度是不会变的. 而输入每一个样本都会有一个 $z$ 和 $a$, 还记得 $X$ 的形式吗? 同样地, $Z$ 就是将每个样本算出来的 $z$ 横向叠加(A同理). 具体计算过程如下图:
 
 <img src="/images/deeplearning/C1W3-6_1.png" width="750" />
 
@@ -79,7 +79,9 @@ mathjax: true
 
 四中常用的激活函数: Sigmoid, Tanh, ReLU, Leaky ReLU.
 
-其中sigmoid我们已经见过了, 它的输出可以看成一个概率值, 往往用在输出层. 对于中间层来说, 往往是ReLU的效果最好.
+其中sigmoid我们已经见过了, 它的输出可以看成一个概率值, 往往用在输出层. **对于中间层来说, 往往是`ReLU`的效果最好.**
+
+> Tanh 数据平均值为 0，具有数据中心化的效果，几乎在任何场合都优于 Sigmoid
 
 <img src="/images/deeplearning/C1W3-9_1.png" width="750" />
 
@@ -94,6 +96,20 @@ mathjax: true
 为什么需要激活函数? 如果没有激活函数, 那么不论多少层的神经网络都只相当于一个LR. 证明如下:
 
 <img src="/images/deeplearning/C1W3-13_1.png" width="750" />
+
+> 你可以在隐藏层用 tanh，输出层用 sigmoid，说明不同层的激活函数可以不一样。
+> 
+> 现实情况是 : **the tanh is pretty much stricly superior. never use sigmoid**
+
+**ReLU** (rectified linear unit)
+
+> tanh 和 sigmoid 都有一个缺点，就是 z 非常大或者非常小，函数的斜率(导数梯度)就会非常小, 梯度下降很慢.
+> 
+> **the slope of the function you know ends up being close to zero, and so this can slow down gradient descent**
+> 
+> **ReLU (rectified linear unit) is well**, z = 0 的时候，你可以给导数赋值为 0 or 1，虽然这个点是不可微的. 但**实现**没有影响.
+> 
+> 虽然 z < 0, 的时候，斜率为0， 但在实践中，有足够多的隐藏单元 令 z > 0, 对大多数训练样本来说是很快的.
 
 ## 4. 神经网络中的反向传播
 
