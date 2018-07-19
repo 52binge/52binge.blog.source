@@ -173,13 +173,21 @@ $$
 
 ## 5. 神经网络中的参数初始化
 
-在LR中我们的参数 $w$ 初始化为0, 如果在神经网络中也是用相同的初始化, 那么一个隐藏层的每个节点都是相同的, 不论迭代多少次. 这显然是不合理的, 所以我们应该随机地初始化 $w$ 从而解决这个sysmetry breaking problem.
+在LR中我们的参数 $w$ 初始化为0, 如果在神经网络中也是用相同的初始化, 那么一个隐藏层的每个节点都是相同的, 不论迭代多少次. 这显然是不合理的, 所以我们应该随机地初始化 $w$ 从而解决这个 sysmmetry breaking problem. 破坏对称问题
 
 <img src="/images/deeplearning/C1W3-16_1.png" width="750" />
 
-具体初始化代码可参见下图, 其中乘以0.01是为了让参数较小, 加速梯度下降(如激活函数为tanh时, 若参数较大则 $z$ 也较大, 此时的梯度接近于0, 更新缓慢).
+> 具体初始化代码可参见下图, 其中乘以0.01是为了让参数$w$较小, 加速梯度下降 
+>
+> 如激活函数为tanh时, 若参数较大则 $z$ 也较大, 此时的梯度接近于0, 更新缓慢. 如不是 tanh or sigmoid 则问题不大.
+> 
+> this is a relatively shallow neural network without too many hidden layers, so 0.01 maybe work ok.
+> 
+> finally it turns out that sometimes there can be better constants than 0.01.
 
 <img src="/images/deeplearning/C1W3-17_1.png" width="750" />
+
+> $b$ 并没有这个 sysmmetry breaking problem, 所以可以 $np.zeros((2, 1))$
 
 ## 6. 用Python搭建简单神经网络
 
