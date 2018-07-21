@@ -1,7 +1,7 @@
 ---
-title: Improving Deep Neural Networks (week1)
+title: Improving Deep Neural Networks (week3)
 toc: true
-date: 2018-07-19 20:00:21
+date: 2018-07-23 20:00:21
 categories: deeplearning
 tags: deeplearning.ai
 mathjax: true
