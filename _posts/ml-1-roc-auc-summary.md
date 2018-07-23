@@ -82,8 +82,12 @@ AUC值为ROC曲线所覆盖的区域面积，显然，AUC越大，分类器分�
 - [模型评估准确率、召回率、ROC曲线、AUC总结][1]
 - [ROC、AUC、K-S][2]
 - [关于模型检验的ROC值和KS值的异同_ROC曲线和KS值][3]
+- [（原创）sklearn中 F1-micro 与 F1-macro区别和计算原理][4]
+- [分类问题的几个评价指标（Precision、Recall、F1-Score、Micro-F1、Macro-F1）][5]
 
 
 [1]: https://blog.csdn.net/qq_36330643/article/details/79522537
 [2]: https://zhuanlan.zhihu.com/p/25993786
 [3]: http://cda.pinggu.org/view/21012.html
+[4]: https://www.cnblogs.com/techengin/p/8962024.html
+[5]: https://blog.csdn.net/sinat_28576553/article/details/80258619 

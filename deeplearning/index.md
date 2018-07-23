@@ -22,11 +22,15 @@ date: 2018-07-03 16:46:48
 
 ## 2. Improving Deep Neural Networks 
 
-- [2.1 深度学习的实用层面 -（训练集划分、偏差/方差、L1 L2 Dropout、梯度消失-梯度爆炸、权重初始化、梯度检验）][0]
+- [2.1 Deep Learning -（训练集划分、偏差/方差、L1 L2 Dropout、梯度消失-梯度爆炸、权重初始化、梯度检验）][c2w1]
 
-- [2.2 优化算法 - （mini-batch、指数加权平均-偏差修正、Momentum、RMSprop、Adam、学习率衰减、局部最优）][0]
+- [2.2 Optimization -（mini-batch、指数加权平均-偏差修正、Momentum、RMSprop、Adam、学习率衰减、局部最优）][c2w2]
 
-- [2.3 超参数调试、Batch 正则化 - （超参数的选择、正则化网络的激活函数、Batch Norm、Softmax、TensorFlow）][0]
+- [2.3 超参数调试、Batch 正则化 - （超参数的选择、正则化网络的激活函数、Batch Norm、Softmax、TensorFlow）][c2w3]
+
+[c2w1]: /2018/07/21/deeplearning-ai-Improving-Deep-Neural-Networks-week2/
+[c2w2]: /2018/07/21/deeplearning-ai-Improving-Deep-Neural-Networks-week2/
+[c2w3]: /2018/07/21/deeplearning-ai-Improving-Deep-Neural-Networks-week2/
 
 ## 3. Structured Machine Learning Projects 
 
@@ -61,9 +65,11 @@ date: 2018-07-03 16:46:48
 - [这是一份优美的信息图，吴恩达点赞的][1]
 - [Deeplearning.ai课程笔记--汇总][2]
 - [完结撒花！吴恩达DeepLearning.ai《深度学习》课程笔记目录总集][3]
+- [吴恩达Coursera深度学习课程 DeepLearning.ai 提炼笔记（2-2）-- 优化算法][4]
 
 [1]: https://juejin.im/post/5aa0e3d45188255587231bae
 [2]: https://blog.csdn.net/zwqjoy/article/details/80022385
 [3]: https://blog.csdn.net/koala_tree/article/details/79913655
+[4]: https://blog.csdn.net/koala_tree/article/details/78199611
 
 > notes：next ...

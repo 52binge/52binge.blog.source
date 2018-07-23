@@ -21,19 +21,18 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-在第一门课Neural Networks and Deep Learning中, 我们主要学习了深度神经网络中的前向反向传播.
-
-这次我们要学习专项课程中第二门课 `Improving Deep Neural Networks`
-
-<!-- more -->
+这次我们要学习专项课程中第二门课 Improving Deep Neural Networks
 
 学完这门课之后，你将会:
 
-> - 理解业界构建深度神经网络应用最有效的做法。
 > - 能够高效地使用神经网络**通用**的技巧，包括 `初始化、L2和dropout正则化、Batch归一化、梯度检验`。
-> - 能够实现并应用各种**优化**算法，例如 `mini-batch、Momentum、RMSprop和Adam，并检查它们的收敛程度`。
+> - 能够实现并应用各种**优化**算法，例如 `Mini-batch、Momentum、RMSprop、Adam，并检查它们的收敛程度`。
 > - 理解深度学习时代关于如何 **构建训练/开发/测试集** 以及 **偏差/方差分析** 最新最有效的方法.
 > - 能够用TensorFlow实现一个神经网络
+
+这门课将会详尽地介绍深度学习的基本原理，而不仅仅只进行理论概述.
+
+<!-- more -->
 
 本周主要内容包括:
  

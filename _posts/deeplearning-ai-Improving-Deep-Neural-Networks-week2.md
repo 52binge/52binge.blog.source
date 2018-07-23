@@ -1,5 +1,5 @@
 ---
-title: Improving Deep Neural Networks (week2) - 优化算法
+title: Improving Deep Neural Networks (week2) - Optimization Algorithm
 toc: true
 date: 2018-07-21 10:00:21
 categories: deeplearning
@@ -21,9 +21,9 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-这次我们要学习专项课程中第二门课 `Improving Deep Neural Networks`
+Mini-batch、指数加权平均-偏差修正、Momentum、RMSprop、Adam、学习率衰减、局部最优
 
-**优化算法**
+这节课每一节的知识点都很重要，所以本次笔记几乎涵盖了全部小视频课程的记录
 
 <!-- more -->
 
@@ -36,15 +36,146 @@ mathjax: true
 > 
 > 样本集比较小，就没必要使用 mini-batch.
 > 
-> Notes: 经验值 ： 如果 m <= 2000, 可以使用 batch， 不然样本数目 m 较大，一般 mini-batch 大小设置为 64 or 128 or 256 or 512..
+> **经验值** ： 如果 m <= 2000, 可以使用 batch， 不然样本数目 m 较大，一般 mini-batch 大小设置为 64 or 128 or.. or 512..
+
+**算法初步**
+
+> 对整个训练集进行梯度下降法的时候，我们必须处理整个训练数据集，然后才能进行一步梯度下降，即每一步梯度下降法需要对整个训练集进行一次处理，如果训练数据集很大的时候，如有500万或5000万的训练数据，处理速度就会比较慢。
+>
+> 但是如果每次处理训练数据的一部分即进行梯度下降法，则我们的算法速度会执行的更快。而处理的这些一小部分训练子集即称为Mini-batch。
+
+<img src="/images/deeplearning/C2W2-1_1.png" width="700" />
+
+**算法核心**
+
+<img src="/images/deeplearning/C2W2-2_1.png" width="700" />
+
+> 对于普通的梯度下降法，一个epoch只能进行一次梯度下降；而对于Mini-batch梯度下降法，一个epoch可以进行Mini-batch的个数次梯度下降。
+
+### 不同size大小的比较
+
+普通的batch梯度下降法和Mini-batch梯度下降法代价函数的变化趋势，如下图所示：
+
+<img src="/images/deeplearning/C2W2-3_1.png" width="700" />
+
+**Batch梯度下降:**
+
+> - 对所有m个训练样本执行一次梯度下降，每一次迭代时间较长；
+> - Cost function 总是向减小的方向下降。
+
+**随机梯度下降:**
+
+> -对每一个训练样本执行一次梯度下降，但是丢失了向量化带来的计算加速；
+> - Cost function总体的趋势向最小值的方向下降，但是无法到达全局最小值点，呈现波动的形式。
+>
+> 杰哥？
+
+**Mini-batch梯度下降:**
+
+> - 选一个 $1<size<m$ 的合适的size进行Mini-batch梯度下降，可以实现快速学习，也应用了向量化带来的好处
+> - Cost function 的下降处于前两者之间
+
+<img src="/images/deeplearning/C2W2-4_1.png" width="700" />
+
+### Mini-batch 大小的选择
+
+> - 如果训练样本的大小比较小时，如 $m⩽2000$ 时 —— 选择batch梯度下降法；
+> - 如果训练样本的大小比较大时，典型的大小为：$2^{6}、2^{7}、\cdots、2^{10}$
+> - Mini-batch的大小要符合 CPU/GPU 内存.
 
 ## 2. Exponentially weighted averages
 
+指数加权平均的关键函数： 
 
+$$
+v\_{t} = \beta v\_{t-1}+(1-\beta)\theta\_{t}
+$$
+
+下图是一个关于天数和温度的散点图：
+
+<img src="/images/deeplearning/C2W2-5_1.png" width="700" />
+
+> - 当β=0.9时，指数加权平均最后的结果如下图中**红色**线所示；
+> - 当β=0.98时，指数加权平均最后的结果如下图中**绿色**线所示；
+> - 当β=0.5时，指数加权平均最后的结果如下图中**黄色**线所示；
+
+<img src="/images/deeplearning/C2W2-6_1.png" width="700" />
 
 >  The most common value for $\beta$ is 0.9.
 
+### 理解指数加权平均
+
+例子，当β=0.9时： 
+
+$$
+v\_{100} = 0.9v\_{99}+0.1\theta\_{100} \\\\ v\_{99} = 0.9v\_{98}+0.1\theta\_{99} \\\\ v\_{98} = 0.9v\_{97}+0.1\theta\_{98} \\\\
+\ldots
+$$
+
+展开：
+
+$$
+v\_{100}=0.1\theta\_{100}+0.9(0.1\theta\_{99}+0.9(0.1\theta\_{98}+0.9v\_{97})) \\\\ v\_{100}=0.1\theta\_{100}+0.1\times0.9\theta\_{99}+0.1\times(0.9)^{2}\theta\_{98}+0.1\times(0.9)^{3}\theta\_{97}+\cdots
+$$
+
+上式中所有$θ$前面的系数相加起来为1或者接近于1，称之为偏差修正.
+
+> 总体来说存在，$(1-\varepsilon)^{1/\varepsilon}=\dfrac{1}{e}$, 在我们的例子中，$1-\varepsilon=\beta=0.9$, 即 $0.9^{10}\approx 0.35\approx\dfrac{1}{e}$ . 相当于大约10天后，系数的峰值（这里是0.1）下降到原来的 $\dfrac{1}{e}$，只关注了过去10天的天气.
+
+### 指数加权平均实现
+
+$$
+v\_{0} =0 \\\\
+v\_{1}= \beta v\_{0}+(1-\beta)\theta\_{1} \\\\
+v\_{2}= \beta v\_{1}+(1-\beta)\theta\_{2} \\\\
+v\_{3}= \beta v\_{2}+(1-\beta)\theta\_{3} \\\\
+\ldots
+$$
+
+> 因为，在计算当前时刻的平均值，只需要前一天的平均值和当前时刻的值，所以在数据量非常大的情况下，指数加权平均在节约计算成本的方面是一种非常有效的方式，可以很大程度上减少计算机资源存储和内存的占用。
+
+### 指数加权平均的偏差修正 Bias correction
+
+在我们执行指数加权平均的公式时，当β=0.98时，得到的并不是图中的绿色曲线，而是下图中的紫色曲线，其起点比较低。
+
+<img src="/images/deeplearning/C2W2-7.png" width="650" />
+
+**原因**： 
+
+> $$
+v\_{0}=0\\\\v\_{1}=0.98v\_{0}+0.02\theta\_{1}=0.02\theta\_{1}\\\\v\_{2}=0.98v\_{1}+0.02\theta\_{2}=0.98\times0.02\theta\_{1}+0.02\theta\_{2}=0.0196\theta\_{1}+0.02\theta\_{2}
+$$
+
+> 如果第一天的值为如40，则得到的v1=0.02×40=0.8，则得到的值要远小于实际值，后面几天的情况也会由于初值引起的影响，均低于实际均值.
+
+**偏差修正**： 
+
+> 使用 $\dfrac{v\_{t}}{1-\beta^{t}}$
+
+> - 当t=2时：
+
+> $$
+1-\beta^{t}=1-(0.98)^{2}=0.0396
+$$
+
+> $$
+\dfrac{v\_{2}}{0.0396}=\dfrac{0.0196\theta\_{1}+0.02\theta\_{2}}{0.0396}
+$$
+
+>偏差修正得到了绿色的曲线，在开始的时候，能够得到比紫色曲线更好的计算平均的效果。随着t逐渐增大，$\beta^{t}$接近于0，所以后面绿色的曲线和紫色的曲线逐渐重合了。
+>
+> 虽然存在这种问题，但是在实际过程中，一般会忽略前期均值偏差的影响
+
 ## 3. Momentum
+
+动量梯度下降的基本思想就是`计算梯度的指数加权平均数`，并利用该梯度来更新权重
+
+在我们优化 Cost function 的时候，以下图所示的函数图为例：
+
+
+在利用梯度下降法来最小化该函数的时候，每一次迭代所更新的代价函数值如图中蓝色线所示在上下波动，而这种幅度比较大波动，减缓了梯度下降的速度，而且我们只能使用一个较小的学习率来进行迭代.
+
+如果用较大的学习率，结果可能会如紫色线一样偏离函数的范围，所以为了避免这种情况，只能用较小的学习率.
 
 ## 4. RMSprop
 
