@@ -13,8 +13,10 @@ Here are some useful links
 ## Machine Learning Coursera
 
 - [daniellaah.github.io][r1]
+- [deeplearning.ai深度学习课程字幕翻译项目][r2]
 
 [r1]: http://daniellaah.github.io/
+[r2]: https://www.ctolib.com/Yukong-Deeplearning-ai-Solutions.html
 
 ## NLP
 

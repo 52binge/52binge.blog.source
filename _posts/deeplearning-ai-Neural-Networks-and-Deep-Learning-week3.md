@@ -1,5 +1,5 @@
 ---
-title: Neural Networks and Deep Learning (week3)
+title: Neural Networks and Deep Learning (week3) - 浅层神经网络
 toc: true
 date: 2018-07-14 14:55:21
 categories: deeplearning
