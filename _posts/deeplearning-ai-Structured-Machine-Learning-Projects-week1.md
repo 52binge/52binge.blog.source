@@ -1,5 +1,5 @@
 ---
-title: Structured Machine Learning Projects (week1) - ML 策略
+title: Structured Machine Learning Projects (week1) - ML Strategy
 toc: true
 date: 2018-07-23 20:00:21
 categories: deeplearning
@@ -34,48 +34,56 @@ mathjax: true
 
 <!-- more -->
 
-## 1. 为什么是ML策略
+## 1. Why ML Strategy?
 
-> And when I train a neural network，I tend not to use early shopping.
-> 
-> 因为 Early Stropping，这个按钮能同时影响两件事情. 就像一个按钮同时影响电视机的宽度和高度. 如果你有更多的正交化(Orthogonalization)的手段，用这些手段调网络会简单不少.
+<img src="/images/deeplearning/C3W1-1_1.png" width="700" />
+
+> 如上图示，假如我们在构建一个喵咪分类器，数据集就是上面几个图，训练之后准确率达到90%。虽然看起来挺高的，但是这显然并不具一般性，因为数据集太少了。那么此时可以想到的ML策略有哪些呢？总结如上图中 **`Ideas`**.
 
 ## 2. Orthogonalization
 
+> Orthogonalization [ɔ:θɒɡənəlaɪ'zeɪʃn] 正交化
+
 <img src="/images/deeplearning/C3W1-2_1.png" width="600" />
-
-Orthogonalization or orthogonality is a system design property that assures that modifying an instruction
-or a component of an algorithm will not create or propagate side effects to other components of the
-system. It becomes easier to verify the algorithms independently from one another, it reduces testing and
-development time.
-When a supervised learning system is design, these are the 4 assumptions that needs to be true and
-orthogonal.
-1. Fit training set well in cost function
-- If it doesn’t fit well, the use of a bigger neural network or switching to a better optimization
-algorithm might help.
-2. Fit development set well on cost function
-- If it doesn’t fit well, regularization or using bigger training set might help.
-3. Fit test set well on cost function
-- If it doesn’t fit well, the use of a bigger development set might help
-4. Performs well in real world
-- If it doesn’t perform well, the development test set is not set correctly or the cost function is
-not evaluating the right thing
-
+ 
 > And when I train a neural network，I tend not to use early shopping.
 > 
 > 因为 Early Stropping，这个按钮能同时影响两件事情. 就像一个按钮同时影响电视机的宽度和高度. 如果你有更多的正交化(Orthogonalization)的手段，用这些手段调网络会简单不少.
+When a supervised learning system is design, these are the 4 assumptions that needs to be true and orthogonal.
+
+<img src="/images/deeplearning/C3W1-3_1.png" width="600" />
+
+No. | strategy | solutions
+:-------:  | :-------:  | :-------:
+1. | Fit training set well in cost function | If it doesn’t fit well, the use of a bigger neural network or switching to a better optimization algorithm might help.
+2. | Fit development set well on cost function | If it doesn’t fit well, regularization or using bigger training set might help.
+3. | Fit test set well on cost function | If it doesn’t fit well, the use of a bigger development set might help
+4. | Performs well in real world | If it doesn’t perform well, the development test set is not set correctly or the cost function is not evaluating the right thing
 
 ## 3. Single number evaluation metric
 
 <img src="/images/deeplearning/C3W1-4_1.png" width="600" />
 
+> 大致的思想就是首先按照单一数字评估指标对模型进行评价和优化。以精确率和召回率为例，这二者一般来说是一个不可兼得的指标，所以为了更好的衡量模型的好坏，引入F1算法来综合精确率和召回率对模型进行评估.
+
+<img src="/images/deeplearning/C3W1-6_1.png" width="700" />
+
+[Ref: sklearn中 F1-micro 与 F1-macro区别和计算原理][F1]
+
+<img src="/images/deeplearning/C3W1-7_1.png" width="700" />
+
+
+[F1]: https://www.cnblogs.com/techengin/p/8962024.html
+
 ## 4. Satisficing and optimizing metrics
 
 It's not always easy into a single real number evaluation metric
 
-<img src="/images/deeplearning/C3W1-4_1.png" width="600" />
+<img src="/images/deeplearning/C3W1-9_1.png" width="750" />
 
-满足和优化指标是很重要的
+> So more generally, if you have N metrics that you care about, it's sometimes reasonable to pick one of them to be optimizing. So you want to do as well as is possible on that one. And then N minus 1 to be satisficing.
+> 
+> 满足和优化指标是很重要的
 
 ## 5. Train/dev/test distributions
 

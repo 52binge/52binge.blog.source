@@ -18,6 +18,12 @@ Here are some useful links
 [r1]: http://daniellaah.github.io/
 [r2]: https://www.ctolib.com/Yukong-Deeplearning-ai-Solutions.html
 
+## Recommend
+
+- [推荐系统经典论文文献及业界应用][recom1]
+
+[recom1]: https://blog.csdn.net/bvl10101111/article/details/78822739
+
 ## NLP
 
 - [sense2vec][n1]
