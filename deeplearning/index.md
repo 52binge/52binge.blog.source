@@ -11,9 +11,9 @@ date: 2018-07-03 16:46:48
 
 - [1.2 Neural Networks Basics - （logistic 回归损失函数、导数、计算图、m个样本的梯度下降、向量化）][c1w2]
 
-- [1.3 Shallow neural networks - （NN Representation、多样本向量化解释、Activation functions、随机初始化）][c1w3]
+- [1.3 Shallow Neural Networks - （NN Representation、多样本向量化解释、Activation functions、随机初始化）][c1w3]
 
-- [1.4 Deep neural networks - （深网的前向传播、核对矩阵维数、深层表示、前向反向传播、参数VS超参数）][c1w4]
+- [1.4 Deep Neural Networks - （深网的前向传播、核对矩阵维数、深层表示、前向反向传播、参数VS超参数）][c1w4]
 
 [c1w1]: /2017/12/01/deeplearning-ai-Neural-Networks-and-Deep-Learning-week1/
 [c1w2]: /2018/07/07/deeplearning-ai-Neural-Networks-and-Deep-Learning-week2/
@@ -34,9 +34,11 @@ date: 2018-07-03 16:46:48
 
 ## 3. Structured Machine Learning Projects 
 
-- [3.1 Structured Machine Learning Projects (week1)][0]
+- [3.1 ML Strategy 1 - (正交化、Satisficing and optimizing metrics、Train/dev/test 改变、可避免偏差、人的表现)][c3w1]
 
-- [3.2 Structured Machine Learning Projects (week2)][0]
+- [3.2 ML Strategy 2 - (误差分析、标注错误数据、定位数据不匹配偏差与方差、迁移学习、多任务学习、端到端学习)][0]
+
+[c3w1]: /2018/07/23/deeplearning-ai-Structured-Machine-Learning-Projects-week1/
 
 ## 4. Convolutional Neural Networks
 
@@ -58,6 +60,8 @@ date: 2018-07-03 16:46:48
 
 ## next ⋯⋯
 
+> notes：next ...
+
 [0]: /
 
 ## Reference
@@ -66,10 +70,11 @@ date: 2018-07-03 16:46:48
 - [Deeplearning.ai课程笔记--汇总][2]
 - [完结撒花！吴恩达DeepLearning.ai《深度学习》课程笔记目录总集][3]
 - [吴恩达Coursera深度学习课程 DeepLearning.ai 提炼笔记（2-2）-- 优化算法][4]
+- [DeepLearning.ai学习笔记 By 互道晚安，王者峡谷见][5]
 
 [1]: https://juejin.im/post/5aa0e3d45188255587231bae
 [2]: https://blog.csdn.net/zwqjoy/article/details/80022385
 [3]: https://blog.csdn.net/koala_tree/article/details/79913655
 [4]: https://blog.csdn.net/koala_tree/article/details/78199611
+[5]: http://www.cnblogs.com/marsggbo/p/7625565.html
 
-> notes：next ...

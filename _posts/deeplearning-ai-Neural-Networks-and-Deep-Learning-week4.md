@@ -1,5 +1,5 @@
 ---
-title: Neural Networks and Deep Learning (week4)
+title: Neural Networks and Deep Learning (week4) - Deep Neural Networks
 toc: true
 date: 2018-07-15 20:00:21
 categories: deeplearning
