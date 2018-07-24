@@ -1,5 +1,5 @@
 ---
-title: Structured Machine Learning Projects (week1) - ML Strategy
+title: Structured Machine Learning Projects (week1) - ML Strategy (not finish)
 toc: true
 date: 2018-07-23 20:00:21
 categories: deeplearning
@@ -62,16 +62,16 @@ No. | strategy | solutions
 
 ## 3. Single number evaluation metric
 
-<img src="/images/deeplearning/C3W1-4_1.png" width="600" />
+<img src="/images/deeplearning/C3W1-4_1.png" width="700" />
 
 > 大致的思想就是首先按照单一数字评估指标对模型进行评价和优化。以精确率和召回率为例，这二者一般来说是一个不可兼得的指标，所以为了更好的衡量模型的好坏，引入F1算法来综合精确率和召回率对模型进行评估.
 
-<img src="/images/deeplearning/C3W1-6_1.png" width="700" />
-
-[Ref: sklearn中 F1-micro 与 F1-macro区别和计算原理][F1]
+<!--<img src="/images/deeplearning/C3W1-6_1.png" width="700" />
+-->
 
 <img src="/images/deeplearning/C3W1-7_1.png" width="700" />
 
+[Ref: sklearn中 F1-micro 与 F1-macro区别和计算原理][F1]
 
 [F1]: https://www.cnblogs.com/techengin/p/8962024.html
 
@@ -87,6 +87,14 @@ It's not always easy into a single real number evaluation metric
 
 ## 5. Train/dev/test distributions
 
+假设我们有一系列的数据分别来自上面各个国家和地区。现在我们需要将这些数据划分为开发集和测试集， 一般的方法是我们随机选择几个国家的作为开发集，剩下的作为测试集，就如上图所示.
+
+看起来没毛病是不是？但是毛病大大的！！！因为开发集和测试集不服从同一分布.
+
+**所以为了实现服从同一分布，我们可以这样做:**
+
+> 首先将所有国家和地区的数据打散，混合, 按照一定的比例将上面混合打散后的数据划分为开发集和测试集
+
 ## 6. Size of dev and test sets
 
 ## 7. When to change dev/test sets and metrics
@@ -96,12 +104,12 @@ It's not always easy into a single real number evaluation metric
 ## 8. Reference
 
 - [网易云课堂 - deeplearning][1]
-- [deeplearning.ai 专项课程二第一周][2]
-- [Coursera - Deep Learning Specialization][3]
 - [DeepLearning.ai学习笔记汇总][4]
+- [DeepLearning.ai学习笔记（三）结构化机器学习项目--week1 机器学习策略][5]
 
 [1]: https://study.163.com/my#/smarts
 [2]: https://daniellaah.github.io/2017/deeplearning-ai-Improving-Deep-Neural-Networks-week1.html
 [3]: https://www.coursera.org/specializations/deep-learning
 [4]: http://www.cnblogs.com/marsggbo/p/7470989.html
+[5]: http://www.cnblogs.com/marsggbo/p/7681619.html
 

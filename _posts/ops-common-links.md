@@ -14,9 +14,11 @@ Here are some useful links
 
 - [daniellaah.github.io][r1]
 - [deeplearning.ai深度学习课程字幕翻译项目][r2]
+- [互道晚安，王者峡谷见 机器学习 & 深度学习 NG 笔记][r3]
 
 [r1]: http://daniellaah.github.io/
 [r2]: https://www.ctolib.com/Yukong-Deeplearning-ai-Solutions.html
+[r3]: https://www.cnblogs.com/marsggbo/
 
 ## Recommend
 
@@ -45,12 +47,14 @@ Here are some useful links
 - [Poll的笔记][f3]
 - [阮一峰的网络日志][f4]
 - [ICML 学霸 David Abel][f5]
+- [酷壳][f6]
 
 [f1]: https://blog.fazero.me/
 [f2]: http://wuchong.me/
 [f3]: http://www.cnblogs.com/maybe2030/
 [f4]: http://www.ruanyifeng.com/blog/
 [f5]: https://david-abel.github.io/
+[f6]: https://coolshell.cn
 
 ## vps
 
@@ -127,8 +131,10 @@ Here are some useful links
 ## blog
 
 - [鼓励工程师写blog][b1]
+- [技术人员的发展之路][b2]
 
 [b1]: https://dotblogs.com.tw/hatelove/2017/03/26/why-engineers-should-keep-blogging
+[b2]: https://coolshell.cn/articles/17583.html
 
 
 
