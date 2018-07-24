@@ -1,7 +1,7 @@
 ---
 title: Structured Machine Learning Projects (week1) - ML Strategy 1 (not finish)
 toc: true
-date: 2018-07-23 20:00:21
+date: 2018-07-24 19:00:21
 categories: deeplearning
 tags: deeplearning.ai
 mathjax: true
