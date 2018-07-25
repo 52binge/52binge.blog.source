@@ -108,6 +108,12 @@ epoch
 
 为了理解后面会提到的各种优化算法，我们需要用到指数加权平均，在统计学中也叫做指数加权移动平均.
 
+指数加权平均的关键函数： 
+
+$$
+v\_{t} = \beta v\_{t-1}+(1-\beta)\theta\_{t}
+$$
+
 首先我们假设有一年的温度数据，如下图所示
 
 <img src="/images/deeplearning/C2W2-5_0.jpg" width="500" />
@@ -124,24 +130,27 @@ $$
 
 > 上面的 $θ\_t$ 表示第 $t$ 天的温度，β 是可调节的参数，$V\_t$ 表示 $\frac{1}{1-β}$ 天的每日温度
 
-下图是一个关于天数和温度的散点图：
-
+<!--下图是一个关于天数和温度的散点图：
 <img src="/images/deeplearning/C2W2-5_1.png" width="600" />
+-->
 
-指数加权平均的关键函数： 
+### 当 β=0.9、0.98、0.5 的情况
 
-$$
-v\_{t} = \beta v\_{t-1}+(1-\beta)\theta\_{t}
-$$
+当β=0.9时，指数加权平均最后的结果如下图中**红色**线所示；
 
+<img src="/images/deeplearning/C2W2-5_2.jpg" width="600" />
 
-> - 当β=0.9时，指数加权平均最后的结果如下图中**红色**线所示；
-> - 当β=0.98时，指数加权平均最后的结果如下图中**绿色**线所示；
-> - 当β=0.5时，指数加权平均最后的结果如下图中**黄色**线所示；
+当β=0.98时，指数加权平均最后的结果如下图中**绿色**线所示, 绿线相比较红线要平滑一些，是因为对过去温度的权重更大，所以当天天气温度的影响降低，在温度变化时，适应得更缓慢一些；
 
-<img src="/images/deeplearning/C2W2-6_1.png" width="700" />
+<img src="/images/deeplearning/C2W2-5_3.jpg" width="600" />
 
->  The most common value for $\beta$ is 0.9.
+当β=0.5时，指数加权平均最后的结果如下图中**黄色**线所示；
+
+<img src="/images/deeplearning/C2W2-5_4.jpg" width="600" />
+
+<!--<img src="/images/deeplearning/C2W2-6_1.png" width="700" />
+-->
+>  Notes: The most common value for $\beta$ is 0.9.
 
 ### 理解指数加权平均
 
