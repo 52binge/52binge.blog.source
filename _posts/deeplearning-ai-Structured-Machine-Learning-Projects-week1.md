@@ -87,21 +87,104 @@ It's not always easy into a single real number evaluation metric
 
 ## 5. Train/dev/test distributions
 
-假设我们有一系列的数据分别来自上面各个国家和地区。现在我们需要将这些数据划分为开发集和测试集， 一般的方法是我们随机选择几个国家的作为开发集，剩下的作为测试集，就如上图所示.
+<img src="/images/deeplearning/C3W1-10_1.png" width="700" />
 
-看起来没毛病是不是？但是毛病大大的！！！因为开发集和测试集不服从同一分布.
+**Training, development and test distributions**
+
+> Setting up the training, development and test sets have a huge impact on productivity. It is important to
+choose the development and test sets from the same distribution and it must be taken randomly from all
+the data.
+
+**Guideline**
+
+> Choose a development set and test set to reflect data you expect to get in the future and consider important to do well.
 
 **所以为了实现服从同一分布，我们可以这样做:**
 
-> 首先将所有国家和地区的数据打散，混合, 按照一定的比例将上面混合打散后的数据划分为开发集和测试集
+> 首先将所有国家和地区的数据打散，混合, 按照一定的比例将上面混合打散后的数据划分为 **development and test sets**
 
 ## 6. Size of dev and test sets
 
+<img src="/images/deeplearning/C3W1-11_1.png" width="750" />
+
 ## 7. When to change dev/test sets and metrics
 
-- 改善深层神经网络：超参数调试、正则化
+**举个🌰:** 假设现在一个公司在做一个喵咪图片推送服务（即给用户推送喵咪的照片），部署的有两个算法:
 
-## 8. Reference
+> - 算法A: 喵咪图片识别误差是3%，但是可能会一不小心就给用户发了一些少儿不宜的图片
+> - 算法B：误差是5%，但是不会给用户推送不健康的图片
+>
+> 所以对于技术人员来说可能希望准确性高一些的算法A，而用户可能会非常在意你给他推送了某些不想看的东西, 也许更喜欢算法B。所以总的来说就是根据实际需要来 改变开发/测试集合指标.
+
+<img src="/images/deeplearning/C3W1-12_1.png" width="750" />
+
+## 8. Why human-level performance?
+
+<img src="/images/deeplearning/C3W1-14_1.png" width="750" />
+
+> 如图示：
+>
+> - 蓝色虚线：表示人类识别的准确率
+> - 紫色曲线：表示机器学习不断训练过程中准确率的变化
+> - 绿色虚线：表示最高的准确率，即100%
+>
+> 其中紫色曲线在末尾收敛后与绿色虚线之间的差距称为贝叶斯优化误差(Bayse Optima Error)
+
+<!--<img src="/images/deeplearning/C3W1-13_1.png" width="750" />-->
+
+因此在实际操作过程中，我们可以以人类准确率为指标来评判我们训练的模型好坏程度
+
+<img src="/images/deeplearning/C3W1-15_1.png" width="750" />
+
+## 9. Avoidable bias
+
+<img src="/images/deeplearning/C3W1-16_1.png" width="750" />
+
+> Humans error 与 Training Error 之间的差距我们成为 Avoidable bias
+> Training Error 与 Dev Error 之间的差距我们成为 Variance
+
+## 10. Understanding human-level performance
+
+<img src="/images/deeplearning/C3W1-18_1.png" width="750" />
+
+> **解释说明 Example 1**:
+> 
+> 假如一个医院需要对一个医学影像进行分类识别，普通人，普通医生，有经验的医生和一群有经验的医生识别错误率分别为3%，1%，0.7%，0.5%。上一节中提到过Human Error，那此时的该如何确定Human Error呢？你可能会说取平均值，只能说Too Naive！当然是取最好的结果啦，也就是由一群经验丰富的医生组成的团体得到的结果作为Human Error。另外贝叶斯误差一定小于0.5%。
+
+<img src="/images/deeplearning/C3W1-19_1.png" width="750" />
+
+> **解释说明 Example 2**:
+>
+> 还是以医学影像分类识别为例，假如现在分成了三种情况：
+
+> Scenario A
+> 让三类人群来划分后得到的误差分别为1%，0.7%，0.5%，而训练集和测试集误差分别为5%，6%。很显然此时的Avoidable Bias=4%~4.5%，Variance=1%，bias明显大于variance，所以此时应该将重心放到减小bias上去。
+
+> Scenario Bayse
+> 同理此情况下的Avoidable Bias=0%~0.5%，Variance=4%，所以需要减小variance。
+
+> Scenario C
+> Avoidable Bias=0.2%，Variance=0.1%，二者相差无几，但是此时训练的模型准确率还是不及人类，所以没办法咱们还得继续优化，都说枪打出头鸟，所以继续优化bias~
+
+## 11. Surpassing human-level performance
+
+<img src="/images/deeplearning/C3W1-20_1.png" width="750" />
+
+> **Scenario A**
+> 
+> - Avoidable Bias=0.1%，Variance=0.2%，所以此时应该将重心放到减小Variance上去
+
+> **Scenario B**
+> 
+> - Avoidable Bias=-0.2%，Variance=0.1%.乍一看可能会有点不知所措，而且训练集准确度也超过了人的最好成绩，不知道应该选择优化哪一项了，或者说这是不是就说明可以不用再优化了呢？
+> 
+> （还是可以继续优化的。不可否认在图像识别方面人类的确其优于机器的方面，但是在其他方面，如在线广告推送，贷款申请评测等方面机器人要远远比人类优秀，所以如果是在上面课件中提到的一些领域，即使机器准确度超过了人类，也还有很大的优化空间。具体怎么优化。。。以后再探索。。。）
+
+## 12. Improving your model performance
+
+<img src="/images/deeplearning/C3W1-21_1.png" width="750" />
+
+## 13. Reference
 
 - [网易云课堂 - deeplearning][1]
 - [DeepLearning.ai学习笔记汇总][4]
