@@ -1,5 +1,5 @@
 ---
-title: Structured Machine Learning Projects (week2) - ML Strategy 2 (not finish)
+title: Structured Machine Learning Projects (week2) - ML Strategy 2
 toc: true
 date: 2018-07-25 19:00:21
 categories: deeplearning
@@ -217,7 +217,7 @@ Image	| Dog	| Great cats(大型猫科动物，如狮子) | Blurry(图片模糊) 
 
 首先以现在广泛使用的人脸识别技术解释一下什么是端到端的深度学习.
 
-### 9.1 What is end-to-end learning?
+**What is end-to-end learning?**
 
 > 假如咱们走进一个摄像头，最开始离得较远的时候摄像头捕捉到的是我们的全身，此时系统不会将这种照片喂给模型，而是通过算法找到人脸的位置，然后切割放大，最后喂给模型进行识别.
 
@@ -229,8 +229,6 @@ Image	| Dog	| Great cats(大型猫科动物，如狮子) | Blurry(图片模糊) 
 > 2. 将人脸图像切割放大，并喂给模型
 >
 > Notes: 简单地说端到端的深度学习其实就有点像将问题细分化，流水线化，每个步骤各司其职，下一层依赖上一层
-
-### 9.2 Whether to use end-to-end learning
 
 ## 10. Reference
 
