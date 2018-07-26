@@ -228,7 +228,9 @@ Image	| Dog	| Great cats(大型猫科动物，如狮子) | Blurry(图片模糊) 
 > 1. 找人脸位置
 > 2. 将人脸图像切割放大，并喂给模型
 >
-> Notes: 简单地说端到端的深度学习其实就有点像将问题细分化，流水线化，每个步骤各司其职，下一层依赖上一层
+> Notes: 端到端的深度学习其实就不是像将问题细分化，流水线化，每个步骤各司其职，下一层依赖上一层
+> 
+> And you need a large data set before the end-to-end approach really shines. （你需要大量的数据，端到端的深度学习，才能发挥耀眼的光芒.）
 
 ## 10. Reference
 
