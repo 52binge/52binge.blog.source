@@ -1,5 +1,5 @@
 ---
-title: Structured Machine Learning Projects (week1) - ML Strategy 1 (not finish)
+title: Structured Machine Learning Projects (week1) - ML Strategy 1
 toc: true
 date: 2018-07-24 19:00:21
 categories: deeplearning
