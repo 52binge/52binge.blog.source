@@ -38,7 +38,7 @@ date: 2018-07-03 16:46:48
 
 - [3.2 ML Strategy 2 - (误差分析、标注错误数据、定位数据不匹配偏差与方差、迁移学习、多任务学习、端到端学习)][c3w2]
 
-[c3w1]: /2018/07/23/deeplearning-ai-Structured-Machine-Learning-Projects-week1/
+[c3w1]: /2018/07/24/deeplearning-ai-Structured-Machine-Learning-Projects-week1/
 [c3w2]: /2018/07/25/deeplearning-ai-Structured-Machine-Learning-Projects-week2/
 
 ## 4. Convolutional Neural Networks
