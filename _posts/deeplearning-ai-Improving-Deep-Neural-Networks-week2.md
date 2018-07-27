@@ -357,7 +357,15 @@ Adaptive Moment Estimation
 
 ## 6. Learning rate decay
 
+之前算法中提到的学习率α都是一个常数，这样有可能会一个问题，就是刚开始收敛速度刚刚好，可是在后面收敛过程中学习率偏大，导致不能完全收敛，而是在最低点来回波动。所以为了解决这个问题，需要让学习率能够随着迭代次数的增加进行衰减，常见的计算公式有如下几种:
 
+$$
+α = \frac {1} {1+decay\_rate*epoch\_num} α_0
+$$
+
+> 对我而言，学习率衰减并不是我尝试的要点, 设置一个固定的 α， 然后好好调整，会有很大影响， 学习率衰减的确大有裨益, 有时候它可以加快训练, 但这并不是我会率先尝试的内容. 下周我们会重点介绍 如何管理和高效搜索 超参数.
+> 
+> For me，I would say that learning rate decay usually lower down on the list of things I try. learning rate decay does help. Sometimes it can really help speed up training. it is a little bit lower down my list in terms of the thingsI would try.
 
 ## 7. 本周内容回顾
 
@@ -369,10 +377,12 @@ Adaptive Moment Estimation
 - [深度学习笔记：优化方法总结(BGD,SGD,Momentum,AdaGrad,RMSProp,Adam)][2]
 - [Deep Learning 之 最优化方法][3]
 - [深度学习优化算法解析(Momentum, RMSProp, Adam)][4]
+- [][5]
 
 [1]: https://study.163.com/my#/smarts
 [2]: https://blog.csdn.net/u014595019/article/details/52989301
 [3]: https://blog.csdn.net/BVL10101111/article/details/72614711
 [4]: https://blog.csdn.net/willduan1/article/details/78070086
+[5]: http://www.cnblogs.com/marsggbo/
 
 
