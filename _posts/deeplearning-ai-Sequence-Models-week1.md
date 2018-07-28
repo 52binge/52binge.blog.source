@@ -39,7 +39,23 @@ mathjax: true
 
 <img src="/images/deeplearning/C5W1-1_1.png" width="700" />
 
+## 2. Notation
 
+为了后面方便说明，先将会用到的数学符号进行介绍.
+
+以下图为例，假如我们需要定位一句话中人名出现的位置.
+
+> - 红色框中的为输入、输出值。可以看到人名输出用1表示，反之用0表示；
+> - 绿色框中的 $x^{< t \>}$,$y^{< t \>}$ 表示对应红色框中的输入输出值的数学表示，注意从1开始.
+> - 灰色框中的 $T\_x,T\_y$ 分别表示输入输出序列的长度，在该例中，$T\_x=9,T\_y=9$
+> 
+> - 黄色框中 $X^{(i)< t \>}$ 上的表示第i个输入样本的第t个输入值，$T\_x^{ (i) }$ 则表示第i个输入样本的长度。输出y也同理.
+
+<img src="/images/deeplearning/C5W1-2_1.png" width="700" />
+
+## 3. Recurrent Neural Network Model
+
+## 4. Backpropagation through time
 
 ## 13. Reference
 
