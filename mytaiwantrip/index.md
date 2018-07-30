@@ -39,7 +39,7 @@ date: 2018-07-22 22:46:48
 
 ### 台湾图览
 
-<img src="/images/trip/tw-tu-1.jpg" width="500" />
+<img src="/images/trip/tw10.jpeg" width="500" />
 
 ### 行程总概 (花东线)
 
