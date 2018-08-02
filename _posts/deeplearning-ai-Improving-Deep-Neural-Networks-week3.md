@@ -293,10 +293,13 @@ Andrew Ng 演示了 TensorFlow 使用方法.
 - [deeplearning.ai 专项课程二第一周][2]
 - [Coursera - Deep Learning Specialization][3]
 - [DeepLearning.ai学习笔记汇总][4]
+- [TensorFlow-Examples][5]
+- [吴恩达老师的深度学习课程笔记及资源][6]
 
 [1]: https://study.163.com/my#/smarts
 [2]: https://daniellaah.github.io/2017/deeplearning-ai-Improving-Deep-Neural-Networks-week1.html
 [3]: https://www.coursera.org/specializations/deep-learning
 [4]: http://www.cnblogs.com/marsggbo/p/7470989.html
 [5]: https://github.com/aymericdamien/TensorFlow-Examples
+[6]: https://github.com/fengdu78/deeplearning_ai_books
 

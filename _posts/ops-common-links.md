@@ -10,15 +10,17 @@ Here are some useful links
 
 <!-- more -->
 
-## Machine Learning Coursera
+## Deep Learning Coursera
 
 - [daniellaah.github.io][r1]
 - [deeplearning.ai深度学习课程字幕翻译项目][r2]
 - [互道晚安，王者峡谷见 机器学习 & 深度学习 NG 笔记][r3]
+- [deeplearning.ai（吴恩达老师的深度学习课程笔记及资源）][r4]
 
 [r1]: http://daniellaah.github.io/
 [r2]: https://www.ctolib.com/Yukong-Deeplearning-ai-Solutions.html
 [r3]: https://www.cnblogs.com/marsggbo/
+[r4]: https://github.com/fengdu78/deeplearning_ai_books
 
 ## Recommend
 
