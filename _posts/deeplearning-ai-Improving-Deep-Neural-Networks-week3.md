@@ -21,7 +21,11 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-这次我们要学习专项课程中第二门课 `Improving Deep Neural Networks`
+Hyperparameter Tuning process、Normalizing Activations in a network
+
+Fitting Batch Norm into a neural network、Why does Batch Norm work?、Batch Norm at test time
+
+Softmax regression、TensorFlow
 
 <!-- more -->
 
@@ -251,9 +255,21 @@ $$
 > 
 > 注意：测试集的均值和方差生成的方式不一定非得是上面提到的指数加权平均，也可以是简单粗暴的计算所有训练集的均值和方差，视频中Andrew Ng说这也是可行的.
 
-## Softmax 回归
+## 8. Softmax regression
 
-## 8. 深度学习框架 & TensorFlow
+<img src="/images/deeplearning/C2W3-9_1.png" width="750" />
+
+假设第$l$层有 $z^{\[l\]}=w^{\[l\]}a^{\[l-1\]}+b^{\[l\]}$,激活函数为 $a^{\[l\]}=\frac{e^{z^{\[l\]}}}{\sum\_{j=1}^{n\_l}e^{z^{\[l\]}\_j}}$
+
+该节视频中 Andrew Ng 并没有很详细的介绍softmax的原理和公式推导，感兴趣的可以戳如下链接进行进一步了解：
+
+- [ufldl:Softmax回归][y8]
+- [softmax公式推导&算法实现][y9]
+
+[y8]: http://ufldl.stanford.edu/wiki/index.php/Softmax回归
+[y9]: https://zhuanlan.zhihu.com/p/21485970
+
+## 10. 深度学习框架 & TensorFlow
 
 ## 7. 本周内容回顾
 

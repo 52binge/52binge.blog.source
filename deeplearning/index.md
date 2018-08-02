@@ -26,9 +26,9 @@ date: 2018-07-03 16:46:48
 
 - [2.2 Optimization -（mini-batch、指数加权平均-偏差修正、Momentum、RMSprop、Adam、学习率衰减、局部最优）][c2w2]
 
-- [2.3 超参数调试、Batch 正则化 - （超参数的选择、正则化网络的激活函数、Batch Norm、Softmax、TensorFlow）][c2w3]
+- [2.3 超参数调试、Batch 正则化 - （Hyperparameter、Normalizing Activations、Batch Norm [Fitting NN]、Softmax）][c2w3]
 
-[c2w1]: /2018/07/21/deeplearning-ai-Improving-Deep-Neural-Networks-week2/
+[c2w1]: /2018/07/19/deeplearning-ai-Improving-Deep-Neural-Networks-week1/
 [c2w2]: /2018/07/21/deeplearning-ai-Improving-Deep-Neural-Networks-week2/
 [c2w3]: /2018/07/21/deeplearning-ai-Improving-Deep-Neural-Networks-week2/
 
