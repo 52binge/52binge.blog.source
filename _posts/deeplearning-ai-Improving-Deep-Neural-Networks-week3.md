@@ -253,7 +253,7 @@ $$
 >
 > 上个式子 $z^{(i)}\_{norm}$ 中的，$μ$, $σ^2$ 是类似加权平均出来的值.
 > 
-> 注意：测试集的均值和方差生成的方式不一定非得是上面提到的指数加权平均，也可以是简单粗暴的计算所有训练集的均值和方差，视频中Andrew Ng说这也是可行的.
+> 注意：测试集的均值和方差生成的方式不一定非得是上面提到的指数加权平均，也可以是简单粗暴的计算所有训练集的均值和方差，视频中 Andrew Ng 说这也是可行的.
 
 ## 8. Softmax regression
 
@@ -269,13 +269,25 @@ $$
 [y8]: http://ufldl.stanford.edu/wiki/index.php/Softmax回归
 [y9]: https://zhuanlan.zhihu.com/p/21485970
 
-## 10. 深度学习框架 & TensorFlow
+## 9. Trying a softmax classifier
 
-## 7. 本周内容回顾
+> [转载: 具体实践项目可参见softmax分类算法原理(用python实现)][soft1]
+> 
+> 上面的转载实现 softmax 需要再仔细研究.
 
-- 改善深层神经网络：超参数调试、正则化
+[soft1]: http://www.cnblogs.com/marsggbo/p/7467347.html
 
-## 8. Reference
+## 10. Deep learning frameworks
+
+<img src="/images/deeplearning/C2W3-9_1.png" width="750" />
+
+## 11. TensorFlow Example
+ 
+Andrew Ng 演示了 TensorFlow 使用方法.
+
+> 我推荐一个比较好的TensorFlow的练手项目：[TensorFlow Example][5]
+
+## 12. Reference
 
 - [网易云课堂 - deeplearning][1]
 - [deeplearning.ai 专项课程二第一周][2]
@@ -286,4 +298,5 @@ $$
 [2]: https://daniellaah.github.io/2017/deeplearning-ai-Improving-Deep-Neural-Networks-week1.html
 [3]: https://www.coursera.org/specializations/deep-learning
 [4]: http://www.cnblogs.com/marsggbo/p/7470989.html
+[5]: https://github.com/aymericdamien/TensorFlow-Examples
 
