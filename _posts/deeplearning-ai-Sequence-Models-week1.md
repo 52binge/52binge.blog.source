@@ -62,7 +62,35 @@ mathjax: true
 
 ## 3. Recurrent Neural Network Model
 
+循环神经网络模型
+
 ## 4. Backpropagation through time
+
+通过时间的反向传播
+
+## 5. Different types of RNNs
+
+不同类型的循环神经网络
+
+## 6. Language model and sequence generation
+
+语言模型和序列生成
+
+## 7. Sampling novel sequences
+
+对新序列采样
+
+## 8. Vanishing gradients with RNNs
+
+循环神经网络的梯度消失
+
+## 9. GRU - Gated Recurrent Unit
+
+## 10. LSTM（long short term memory）unit
+
+## 11. Bidirectional RNN
+
+## 12. Deep RNNs
 
 ## 13. Reference
 
