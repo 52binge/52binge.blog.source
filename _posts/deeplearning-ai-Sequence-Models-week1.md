@@ -248,11 +248,68 @@ $$
 
 ## 5. Different types of RNNs
 
-本节主要介绍了其他更多类型的RNN结构，下图参考大数据文摘
+**RNN的不同应用领域:**
+
+序列模型对输入与输出的长度没有要求，在常见的例子中，机器翻译就是多个输入与多个输出，简称“多对多”， 语音识别可视为“单对多”， 它的反例是音乐生成-“单对多”。课程中介绍了多种可能的RNN模式，我们用下面一张图概括：
+
+<img src="/images/deeplearning/C5W1-27_1.png" width="800" />
+
+RNN 不同的结构给了我们更多的可能性.
 
 ## 6. Language model and sequence generation
 
 语言模型和序列生成
+
+### 6.1 什么是语言模型
+
+凡事开头举个🌰，一切都好说：
+
+假设一个语音识别系统听一句话得到了如下两种选择，作为正常人肯定会选择第二种。但是机器才如何做判断呢？
+
+<img src="/images/deeplearning/C5W1-28_1.png" width="600" />
+
+此时就需要通过语言模型来预测每句话的概率：
+
+<img src="/images/deeplearning/C5W1-29_1.png" width="600" />
+
+### 6.2 如何使用 RNN构建语言模型
+
+1. 首先我们需要一个很大的语料库(**Corpus**)
+2. 将每个单词字符化(**Tokenize**，**即使用One-shot编码**)得到词典,，假设有10000个单词
+3. 还需要添加两个特殊的单词
+> -  end of sentence. 终止符，表示句子结束.
+>  <img src="/images/deeplearning/C5W1-30_1.png" width="600" />
+> - UNknown, 之前的笔记已介绍过
+>  <img src="/images/deeplearning/C5W1-31_1.png" width="600" />
+
+### 6.3 构建语言模型示例
+
+假设要对这句话进行建模：**Cats average 15 hours of sleep a day. <EOS>**
+
+**1.初始化**
+
+> 这一步比较特殊，即 $x^{<1>}$ 和 $a^{<0>}$ 都需要初始化为 $\vec{0}$ .
+> 此时 $\hat{y}^{<1>}$ 将会对第一个字可能出现的每一个可能进行概率的判断,即 $\hat{y}^{<1>}=[p(a),…,p(cats),…]$.
+>
+> 当然在最开始的时候没有任何的依据，可能得到的是完全不相干的字，因为只是根据初始的值和激活函数做出的取样
+>
+> <img src="/images/deeplearning/C5W1-32_1.png" width="600" />
+
+**2.将真实值作为输入值:**
+
+> 之所以将真实值作为输入值很好理解,如果我们一直传错误的值，将永远也无法得到字与字之间的关系
+
+如下图示，将 $y^{<1>}$ 所表示的真实值Cats作为输入，即 $x^{<2>}=y^{<1>}$ 得到 $\hat{y}^{<2>}$
+
+此时的 $\hat{y}^{<2>}=[p(a|cats),…,p(average|cats),…]$
+
+同理有 $\hat{y}^{<3>}=[p(a|cats\, average),…,p(average|cats\,average),…]$
+
+另外输入值满足： $x^{<{t}>}=y^{<{t-1}>}$
+
+<img src="/images/deeplearning/C5W1-33_1.png" width="700" />
+
+**3.计算出损失值:**
 
 ## 7. Sampling novel sequences
 
