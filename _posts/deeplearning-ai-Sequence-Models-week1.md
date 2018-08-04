@@ -33,7 +33,7 @@ mathjax: true
 
 ## 1. Why sequence models?
 
-为什么要学习序列模型呢? 序列模型, 普遍称为RNN(递归神经网络 - Recurrent Neural Network), 做为深度学习中 非常重要的一环，有着比普通神经网络更广的宽度与更多的可能性，其应用领域包括但不限于“语音识别”， “自然 语言处理”， “DNA序列分析”，“机器翻译”， “视频动作分析”，等等等等... 有这样一种说法，也许并不严谨，但是有 助于我们理解RNN，大意是这样的:
+为什么要学习序列模型呢? 序列模型, 普遍称为RNN(递归神经网络 - Recurrent Neural Network), 做为深度学习中 非常重要的一环，有着比普通神经网络更广的宽度与更多的可能性，其应用领域包括但不限于“语音识别”， “NLP”， “DNA序列分析”，“Machine Translation”， “视频动作分析”，等等... 有这样一种说法，也许并不严谨，但有助于我们理解RNN，大意是这样的:
 
 > 普通神经网络处理的是一维的数据，CNN处理的是二维的数据，RNN处理的是三维的数据
 > 
@@ -57,6 +57,7 @@ mathjax: true
 
 > - 红色框中的为输入、输出值。可以看到人名输出用1表示，反之用0表示；
 > - 绿色框中的 $x^{< t \>}$,$y^{< t \>}$ 表示对应红色框中的输入输出值的数学表示，注意从1开始.
+> 
 > - 灰色框中的 $T\_x,T\_y$ 分别表示输入输出序列的长度，在该例中，$T\_x=9,T\_y=9$
 > 
 > - 黄色框中 $X^{(i)< t \>}$ 上的表示**第$i$个输入样本的第$t$个输入值**，$T\_x^{ (i) }$ 则表示第i个输入样本的长度。输出y也同理.
@@ -131,9 +132,20 @@ RNN 在正向传播的过程中可以看到 `a` 的值随着时间的推移被�
 > 
 > $y^{<{t}>}=g\_2(W\_{ya}a^{<{t}>}+b\_y)$
 >
-> 激活函数：**$g\_1$** 一般为 **`tanh`函数** 或者是 **`Relu`函数**，**$g\_2$** 一般是 **`Sigmod`函数**.
+> 激活函数：**$g\_1$** 一般为 **`tanh`函数** (或者是 **`Relu`函数**)，**$g\_2$** 一般是 **`Sigmod`函数**.
 >
 > 注意: 参数的下标是有顺序含义的，如 $W\_{ax}$ 下标的第一个参数表示要计算的量的类型，即要计算 $a$ 矢量，第二个参数表示要进行乘法运算的数据类型，即需要与 $x$ 矢量做运算。如 $W\_{ax} x^{t}\rightarrow{a}$
+
+<img src="/images/deeplearning/C5W1-19_1.png" width="750" />
+
+**Tx** ， **Ty** 是时间单位, 这里统称为“时刻”，在这例子中对应不同时刻是输入的第几个单词， **x** 是“输入值”，例子中是当前时刻的单词（以独热编码的形式）， **y** 是“输出值”**0**或者**1**， **a** 称为激活值用于将前一个单元的输出结果传递到下一个单元， **Wax** **Way** **Waa** 是不同的“权重矩阵”也就是我们神经网络update的值。每一个单元有两个输入，$a^{<{T\_x-1}>}$ 和 **x** ，有两个输出 $a^{<{T\_x}>}$ 和 **y** . 图中没有出现的g是“激活函数”。
+
+符号 | 名字
+:-------:  | :-------:
+$x$ | 输入值
+$a$ | 激活值
+$T\_x$, $T\_y$ | $x$,$y$ 时刻
+Wax, Way, Waa | 权重矩阵
 
 ### 3.3 Simplified RNN notation
 
@@ -152,7 +164,7 @@ $$
 
 <img src="/images/deeplearning/C5W1-12_1.png" width="750" />
 
-> 注意，公式中使用了两个矩阵进行化简，分别是 $W\_a$ 和 $[a^{<t-1>},x^{<t>}]^T$ (使用转置符号更易理解),下面分别进行说明：
+> 注意，公式中使用了两个矩阵进行化简，分别是 $W\_a$ 和 $[a^{<{t-1}>},x^{<{t}>}]^T$ (使用转置符号更易理解),下面分别进行说明：
 
 $W\_a = [ W\_{aa}, W\_{ax} ]$, 假设 $W\_{aa}$ 是 (100,100) 的矩阵，$W\_{ax}$ 是 (100,10000) 的矩阵,那么 $W$ 则是 (100,10100) 的矩阵.
 
@@ -174,25 +186,65 @@ $[a^{<{t-1}>},x^{<{t}>}]^T$ 是下图示意:
 
 <img src="/images/deeplearning/C5W1-17_1.png" width="750" />
 
+再回顾下干净的前向传播概览图:
+
+<img src="/images/deeplearning/C5W1-20_1.png" width="750" />
+
 ## 4. Backpropagation through time
 
-下面将会对**反向传播**进行详细的介绍，跟着下面一张一张的图片走起来 😄😄:
+RNN 的反向传播通常都由类似 Tensorflow、Torch 之类的库或者框架帮你完成，不过感官上和普通神经网络类似，算梯度值然后更新权重矩阵.
+
+但是下面这里依然会对**反向传播**进行详细的介绍，跟着下面一张一张的图片走起来 😄😄:
 
 ### 4.1 整体感受
 
 首先再回顾一下 RNN 的整体结构:
 
-<img src="/images/deeplearning/C5W1-18_1.png" width="750" />
+<img src="/images/deeplearning/C5W1-20_1.png" width="750" />
 
-> 要进行反向传播，首先需要前向传播，传播方向如蓝色箭头所示，其次再按照红色箭头进行反向传播
+要进行反向传播，首先需要前向传播，传播方向如蓝色箭头所示，其次再按照红色箭头进行反向传播
+
+<img src="/images/deeplearning/C5W1-18_1.png" width="750" />
 
 ### 4.2 前向传播
 
+首先给出所有输入数据，即从 $x^{<1>}$ 到 $x^{<{T\_x}>}$, $T\_x$ 表示输入数据的数量.
+
+<img src="/images/deeplearning/C5W1-21_1.png" width="650" />
+
+初始化参数 $W\_a$, $b\_a$，将输入数据输入网络得到对应的 $a^{<{t}>}$
+
+<img src="/images/deeplearning/C5W1-22_1.png" width="650" />
+
+再通过与初始化参数 $W\_y$, $b\_y$ 得到 $y^{<{t}>}$
+
+<img src="/images/deeplearning/C5W1-23_1.png" width="650" />
+
 ### 4.3 损失函数定义
+
+要进行反向传播，必须得有损失函数嘛，所以我们将损失函数定义如下：
+
+**每个节点的损失函数:**
+
+$$
+L^{<{t}>}(\hat{y}^{<{t}>},y^{<{t}>})=y^{<{t}>}log(y^{<{t}>})-(1-y^{<{t}>})log(1-\hat{y}^{<{t}>})
+$$
+
+**整个网络的损失函数:**
+
+$$
+L(\hat{y}^{<{t}>},y^{<{t}>)}) = \sum\_{t=1}^{T\_y}L^{<{t}>}(\hat{y}^{<{t}>},y^{<{t}>})
+$$
+
+<img src="/images/deeplearning/C5W1-24_1.png" width="750" />
 
 ### 4.4 反向传播
 
+<img src="/images/deeplearning/C5W1-25_1.png" width="750" />
+
 ### 4.5 整个流程图
+
+<img src="/images/deeplearning/C5W1-26_1.png" width="750" />
 
 ## 5. Different types of RNNs
 
@@ -228,7 +280,7 @@ $[a^{<{t-1}>},x^{<{t}>}]^T$ 是下图示意:
 [1]: https://study.163.com/my#/smarts
 [2]: https://daniellaah.github.io/2017/deeplearning-ai-Improving-Deep-Neural-Networks-week1.html
 [3]: https://www.coursera.org/specializations/deep-learning
-[4]: http://www.cnblogs.com/marsggbo/p/7470989.html
+[4]: http://www.cnblogs.com/marsggbo/tag/DeepLearning/
 [6]: https://github.com/theBigDataDigest/Andrew-Ng-deeplearning-part-5-Course-notes-in-Chinese/blob/master/Andrew-Ng-deeplearning.ai-part-5-Course%20notes.pdf
 [7]: https://kulbear.github.io/pdf/sequence-models.pdf
 
