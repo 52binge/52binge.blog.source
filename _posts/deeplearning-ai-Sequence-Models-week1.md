@@ -368,6 +368,22 @@ GRU（Gated Recurrent Unit）是一种用来解决梯度值过小的方法，首
 
 ## 11. Bidirectional RNN
 
+前面介绍的都是单向的RNN结构，在处理某些问题上得到的效果不尽人意
+
+如下面两句话，我们要从中标出人名：
+
+> `He` said, "Teddy Roosevelt was a great President".
+> `He` said, "Teddy bears are on sale".
+
+1. 第一句中的 Teddy Roosevelt 是人名
+2. 第二句中的 Teddy bears 是泰迪熊，同样都是单词 **Teddy** 对应的输出在第一句中应该是1，第二句中应该是0
+
+像这样的例子如果想让我们的序列模型明白就需要借助不同的结构比如 - 双向递归神经网络(Bidirectional RNN).
+该神经网络首先从正面理解一遍这句话，再从反方向理解一遍.
+
+双向递归神经网络结构如下：
+
+
 ## 12. Deep RNNs
 
 ## 13. Reference
