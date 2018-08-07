@@ -301,13 +301,13 @@ RNN 不同的结构给了我们更多的可能性.
 >
 > 当然在最开始的时候没有任何的依据，可能得到的是完全不相干的字，因为只是根据初始的值和激活函数做出的取样
 >
-> <img src="/images/deeplearning/C5W1-32_1.png" width="600" />
+> <img src="/images/deeplearning/C5W1-32_1.png" width="500" />
 
 **2.将真实值作为输入值:**
 
 > 之所以将真实值作为输入值很好理解,如果我们一直传错误的值，将永远也无法得到字与字之间的关系
 
-如下图示，将 $y^{<1>}$ 所表示的真实值Cats作为输入，即 $x^{<2>}=y^{<1>}$ 得到 $\hat{y}^{<2>}$
+如下图示，将 $y^{<1>}$ 所表示的真实值 Cats 作为输入，即 $x^{<2>}=y^{<1>}$ 得到 $\hat{y}^{<2>}$
 
 此时的 $\hat{y}^{<2>}=[p(a|cats),…,p(average|cats),…]$
 
@@ -315,7 +315,7 @@ RNN 不同的结构给了我们更多的可能性.
 
 另外输入值满足： $x^{<{t}>}=y^{<{t-1}>}$
 
-<img src="/images/deeplearning/C5W1-33_1.png" width="700" />
+<img src="/images/deeplearning/C5W1-33_1.png" width="600" />
 
 **3.计算出损失值:**
 
@@ -333,7 +333,7 @@ RNN 不同的结构给了我们更多的可能性.
 
 上述步骤具体如图示：
 
-<img src="/images/deeplearning/C5W1-35_1.png" width="750" />
+<img src="/images/deeplearning/C5W1-35_1.png" width="700" />
 
 下图给出了采样之后得到的效果：
 
@@ -437,13 +437,13 @@ $$
 
 **GRU 结构示意图**
 
-<img src="/images/deeplearning/C5W1-40_1.png" width="650" />
+<img src="/images/deeplearning/C5W1-40_1.png" width="550" />
 
 ### 9.3 完整版GRU
 
 上简化了的GRU，在完整版中还存在另一个符号 ，这符号的意义是控制 $\tilde{c}$ 和 $c^{<{t-1}>}$ 之间的联系强弱，完整版公式如下：
 
-<img src="/images/deeplearning/C5W1-41_1.png" width="650" />
+<img src="/images/deeplearning/C5W1-41_1.png" width="550" />
 
 > 注意，完整公式中多出了一个 $\Gamma\_r$, 这个符号的作用是控制 $\tilde{c}^{<{t}>}$ 和 $c^{<{t}>}$ 之间联系的强弱.
 
@@ -461,7 +461,7 @@ GRU只有两个门，而LSTM有三个门，分别是更新门 $\Gamma\_u$ (是�
 
 下图是LSTM的结构示意图：
 
-<img src="/images/deeplearning/C5W1-44_1.png" width="750" />
+<img src="/images/deeplearning/C5W1-44_1.png" width="700" />
 
 ## 11. Bidirectional RNN
 
