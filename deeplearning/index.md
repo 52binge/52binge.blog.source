@@ -53,11 +53,13 @@ date: 2018-07-03 16:46:48
 
 ## 5. Sequence Models
 
-- [5.1 Sequence Models (week1)][0]
+- [5.1 Sequence Models - (Notation、RNN、Vanishing gradients、GRU、LSTM、BRNN、Deep RNNs][6]
 
 - [5.2 Sequence Models (week2)][0]
 
 - [5.3 Sequence Models (week3)][0]
+
+[6]: /2018/07/26/deeplearning-ai-Sequence-Models-week1/
 
 ## next ⋯⋯
 
@@ -78,4 +80,5 @@ date: 2018-07-03 16:46:48
 [3]: https://blog.csdn.net/koala_tree/article/details/79913655
 [4]: https://blog.csdn.net/koala_tree/article/details/78199611
 [5]: http://www.cnblogs.com/marsggbo/p/7625565.html
+
 
