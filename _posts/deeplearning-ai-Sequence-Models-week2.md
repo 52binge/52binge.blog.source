@@ -1,5 +1,5 @@
 ---
-title: Sequence Models (week2) - Natural Language Processing - Word Embeddings
+title: Sequence Models (week2) - NLP - Word Embeddings
 toc: true
 date: 2018-08-02 16:00:21
 categories: deeplearning
@@ -94,8 +94,6 @@ No. | sencentce | replace word | target
 
 ## 3. Properties of Word Embeddings
 
-词嵌入的特性
-
 **假设有如下的问题：**
 
 ```
@@ -103,6 +101,28 @@ No. | sencentce | replace word | target
 ```
 
 这个问题被称作词汇的类比问题，通过研究词嵌的特征可以解决这样的问题.
+
+<img src="/images/deeplearning/C5W2-3_1.png" width="750" />
+
+数学的表达式为：
+
+$$
+e\_{man} - e\_{woman} \, \approx \, e\_{king}-e\_w
+$$
+
+$e\_w$ 是什么呢？ 在高纬度空间中（300D）
+
+$$
+argmax\_w \;\, Similarity(e\_w, e\_{king}-e\_{man}+e\_{woman})
+$$
+
+这个公式相当于在算两个向量(vector)的cos相似度
+
+$$
+Similarity(u,v) = \frac {u^Tv} {||u||\_2||v||\_2}
+$$
+
+> 当然也可以用其他距离公式, 但是多数是用这个余弦相似度.
 
 ## 4. Embedding Matrix
 

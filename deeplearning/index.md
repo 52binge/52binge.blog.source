@@ -53,9 +53,9 @@ date: 2018-07-03 16:46:48
 
 ## 5. Sequence Models
 
-- [5.1 Sequence Models - (Notation、RNN、Vanishing gradients、GRU、LSTM、BRNN、Deep RNNs][6]
+- [5.1 Recurrent Sequence Models - (Notation、RNN、Vanishing gradients、GRU、LSTM、BRNN、Deep RNNs][6]
 
-- [5.2 Sequence Models (week2)][0]
+- [5.2 NLP & Word Embeddings - (Matrix、Word2Vec、Negative Sampling、GloVe、Debiasing Word Embeddings)][0]
 
 - [5.3 Sequence Models (week3)][0]
 
