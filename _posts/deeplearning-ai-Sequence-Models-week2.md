@@ -148,14 +148,90 @@ $$
 >
 > “I want a glass of orange `juice`”
 
-
 <img src="/images/deeplearning/C5W2-5_1.png" width="750" />
 
+在这个训练模式中，是通过全部的单词去预测最后一个单词然后反向传播更新词嵌表 $E$
 
+> 假设要预测的单词为 $W$，词嵌表仍然为 $E$，需要注意的是训练词嵌表和预测 $W$ 是两个不同的任务。
+>
+> 如果任务是预测 $W$，最佳方案是使用 $W$ 前面 $n$ 个单词构建语境。
+>
+> 如果任务是训练 $E$，除了使用 $W$ 前全部单词还可以通过：前后各4个单词、前面单独的一个词、前面语境中随机的一个词（这个方式也叫做 Skip Gram 算法），这些方法都能提供很好的结果。
 
 ## 6. Word2Vec
 
+视频中一直没有给 Word2Vec 下一个明确的定义，我们再次下一个非正式定义便于理解:
+
+“**word2vec**” 是指将词语 word 变成向量vector 的过程，这一过程通常通过浅层的神经网络完成，例如 CBOW 或者skip gram，这一过程同样可以视为构建词嵌表 $E$ 的过程”。
+
+### 6.1 Skip-grams
+
+这里着重介绍了**skip gram model**，这是一个用一个随机词预测其他词的方法。比如下面这句话中
+
+> “I want a glass of orange juice.”
+
+我们可以选 **orange**作为随机词 c(**Context**)，通过设置窗口值例如前后 5 个单词以监督学习的方式去预测其中的词t(**Target**) 例如 “juice, glass, a, of” 但需要注意的是，这个过程仍然是为了搭建（更新）词嵌表 $E$ 而不是为了真正
+的去预测，所以如果预测效果不好并不用担心，表达式：
+
+$$
+O\_{c}\rightarrow E \rightarrow e\_{c} \rightarrow \underset{Softmax}{Output} \rightarrow \hat{y}
+$$
+
+**Softmax**公式为(假设输出节点数为10000)：
+
+$$
+p(t|c)=\frac{e^{θ\_t^Te\_c}}{\sum\_{j=1}^{10000}e^{θ\_j^Te\_c}}
+$$
+
+> $θ\_t$ 表示与$t$有关的参数
+
+损失函数：
+
+$$
+l(\hat{y},y)=\sum\_{i=1}^{10000}y\_ilog\hat{y\_i}
+$$
+
+<img src="/images/deeplearning/C5W2-6_1.png" width="750" />
+
+在skip gram中有一个不足是 **softmax** 作为激活函数需要的运算量太大，在上限为10000个单词的词库中就已经比较慢了。一种补救的办法是用一个它的变种 “**Hierachical Softmax** (分层的Softmax)”，通过类似二叉树的方法提高训练的效率
+
+例如一些常见的单词，如**the**、**of**等就可以在很浅的层次得到，而像**durian**这种少用的单词则在较深的层次得到
+
+<img src="/images/deeplearning/C5W2-7_1.png" width="750" />
+
 ## 7. Negative Sampling 负采样
+
+对于skip gram model而言，还要解决的一个问题是如何取样（选择）有效的随机词 $c$ 和目标词 $t$ 呢？如果真的按照自然随机分布的方式去选择，可能会大量重复的选择到出现次数频率很高的单词比如说 “the, of, a, it, I, ...” 重复的训练这样的单词没有特别大的意义.
+
+如何有效的去训练选定的词如 orange 呢？在设置训练集时可以通过“负取样”的方法, 下表中第一行是通过和上面一样的窗口法得到的“正”（1）结果，其他三行是从字典中随机得到的词语，结果为“负”（0）。通过这样的负取样法可以更有效地去训练 skip gram model.
+
+context | word | target?
+:-------:  | :-------: | :-------:
+orange | juice | 1
+orange | king | 0
+orange | book | 0
+orange | the | 0
+
+<img src="/images/deeplearning/C5W2-8_1.png" width="700" />
+
+负取样的个数 **k** 由数据量的大小而定，上述例子中为3. 实际中数据量大则 k = 2 ~ 5，数据量小则可以相对大一些 k = 5 ~ 20
+
+> 通过负取样，我们的神经网络训练从 **softmax** 预测每个词出现的频率变成了经典 binary logistic regression 问题，概率公式用 **sigmoid** 代替 **softmax** 从而大大提高了速度.
+
+$$
+x\_1=(orange, juice) \rightarrow y\_1=1 \\\\
+x\_2=(orange, king) \rightarrow y\_2=0 \\\\
+... \\\\
+P(y=1|c,t)=\sigma(\theta\_t^Te\_c)
+$$
+
+最后我们通过一个并没有被理论验证但是实际效果很好的方式来确定每个被负选样选中的概率为：
+
+$$
+P(w\_i)=\frac{f(w\_i^{\frac{3}{4}})} {\sum\_{j=1}^{10000}f(w\_j^{\frac{3}{4}})}
+$$
+
+<img src="/images/deeplearning/C5W2-9_1.png" width="750" />
 
 ## 8. GloVe Word Vectors
 
@@ -163,21 +239,23 @@ GloVe 词向量
 
 ## 9. Sentiment Classification
 
-情绪分类
+
 
 ## 10. Debiasing Word Embeddings
 
-词嵌入除偏
+> So word embeddings can reflect the gender, ethnicity, age, sexual, orientation, and other biases of the text used to train the model. One that I'm especially passionate about is bias relating to socioeconomic status. I think that every person, whether you come from a wealthy family, or a low income family, or anywhere in between, I think everyone should have a great opportunities.
 
 ## 13. Reference
 
 - [网易云课堂 - deeplearning][1]
 - [DeepLearning.ai学习笔记汇总][4]
-- [DeepLearning.ai学习笔记（三）结构化机器学习项目--week1 机器学习策略][5]
+- [deeplearning.ai深度学习课程字幕翻译项目][5]
+- [seq2seq学习笔记][6]
 
 [1]: https://study.163.com/my#/smarts
 [2]: https://daniellaah.github.io/2017/deeplearning-ai-Improving-Deep-Neural-Networks-week1.html
 [3]: https://www.coursera.org/specializations/deep-learning
 [4]: http://www.cnblogs.com/marsggbo/p/7470989.html
-[5]: http://www.cnblogs.com/marsggbo/p/7681619.html
+[5]: https://www.ctolib.com/Yukong-Deeplearning-ai-Solutions.html
+[6]: https://blog.csdn.net/Jerr__y/article/details/53749693
 
