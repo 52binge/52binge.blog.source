@@ -235,11 +235,13 @@ $$
 
 ## 8. GloVe Word Vectors
 
-GloVe 词向量
+GloVe(Global vectors for word representation)虽然不像Word2Vec模型那样流行，但是它也有自身的优点，即简单
 
 ## 9. Sentiment Classification
 
+平时上淘宝我们都会对买的东西给出文字评价和对应的星级评价，如下图示。
 
+商家可以通过对这些数据来构建一个情绪分类器，从而可以在一些社交平台上如微博、QQ等大家的文字评论然后对应输出相应的星级等级，这样就可以更容易知道自家店是蒸蒸日上还是日落西山了，2333。
 
 ## 10. Debiasing Word Embeddings
 

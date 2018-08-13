@@ -94,7 +94,7 @@ $V\_{Paris}$ - $V\_{France}$ + $V\_{German}$ = $V\_{Berlin}$
 
 **Linguists**
 
-<img src="/images/ml/nlp-word2vector-3.png" width="520" height="400" align="middle" /img>
+<img src="/images/ml/nlp/nlp-word2vector-3.png" width="520" height="400" align="middle" /img>
 
 ### 3.1 离散表示 One-hot
 
@@ -155,24 +155,24 @@ Binary weighting
 John likes to watch movies. Mary likes too. 
 John also likes to watch football games.
 
-<img src="/images/ml/nlp-word2vector-4.png" width="620" height="400" align="middle" /img>
+<img src="/images/ml/nlp/nlp-word2vector-4.png" width="620" height="400" align="middle" /img>
 
 ### 3.4 语言模型 词组合出现的概率
 
 一句话(词组合)出现的概率
 
-<img src="/images/ml/nlp-word2vector-5.png" width="620" height="400" align="middle" /img>
+<img src="/images/ml/nlp/nlp-word2vector-5.png" width="620" height="400" align="middle" /img>
 
 > 简化计算 : $P(too | Mark, likes) \approx P(too | likes)$, 可参见 吴军 《数学之美》 解释
 
 ### 3.5 离散表示 的缺点
 
-<img src="/images/ml/nlp-word2vector-6.png" width="620" height="400" align="middle" /img>
+<img src="/images/ml/nlp/nlp-word2vector-6.png" width="620" height="400" align="middle" /img>
 
 
 ### 3.6 分布式表示 提出
 
-<img src="/images/ml/nlp-word2vector-7.png" width="620" height="400" align="middle" /img>
+<img src="/images/ml/nlp/nlp-word2vector-7.png" width="620" height="400" align="middle" /img>
 
 > Distributed representation :  
 > 
@@ -184,19 +184,19 @@ John also likes to watch football games.
 
 ## 4. 共现矩阵 (Cocurrence matrix)
 
-<img src="/images/ml/nlp-word2vector-8.png" width="620" height="400" align="middle" /img>
+<img src="/images/ml/nlp/nlp-word2vector-8.png" width="620" height="400" align="middle" /img>
 
 > 共现 : 共同出现
 
 ### 4.1 Word - Word
 
-<img src="/images/ml/nlp-word2vector-9.png" width="620" height="400" align="middle" /img>
+<img src="/images/ml/nlp/nlp-word2vector-9.png" width="620" height="400" align="middle" /img>
 
 > 左右窗 length 为 1， 得到的矩阵如上
 
 存在缺点
 
-<img src="/images/ml/nlp-word2vector-10.png" width="620" height="400" align="middle" /img>
+<img src="/images/ml/nlp/nlp-word2vector-10.png" width="620" height="400" align="middle" /img>
 
 > 模型欠稳定，可以考虑下 LR 的各个参数等，变化太大，对模型求解有影响
 
@@ -233,8 +233,6 @@ U, s, Vh = la.svd(X, full_matrices=False)
 - 难以为词典中新加入的词分配词向量    
 - 与其他深度学习模型框架差异大
 
-> Jerya , 不懂 O(n^3) 如何得到的
-
 ### 4.2 NNLM
 
 ### 4.3 Word2Vec: CBOW
@@ -260,14 +258,14 @@ U, s, Vh = la.svd(X, full_matrices=False)
 > gensim 用 python 训练 word2vec 最好用的库
 > 它的功能不至于 word2vec
 
-[2]: /images/ml/nlp-word2vector-2.png
-[3]: /images/ml/nlp-word2vector-3.png
-[4]: /images/ml/nlp-word2vector-4.png
-[5]: /images/ml/nlp-word2vector-5.png
-[6]: /images/ml/nlp-word2vector-6.png
-[7]: /images/ml/nlp-word2vector-7.png
-[8]: /images/ml/nlp-word2vector-8.png
-[9]: /images/ml/nlp-word2vector-9.png
-[10]: /images/ml/nlp-word2vector-10.png
-[11]: /images/ml/nlp-word2vector-11.png
+[2]: /images/ml/nlp/nlp-word2vector-2.png
+[3]: /images/ml/nlp/nlp-word2vector-3.png
+[4]: /images/ml/nlp/nlp-word2vector-4.png
+[5]: /images/ml/nlp/nlp-word2vector-5.png
+[6]: /images/ml/nlp/nlp-word2vector-6.png
+[7]: /images/ml/nlp/nlp-word2vector-7.png
+[8]: /images/ml/nlp/nlp-word2vector-8.png
+[9]: /images/ml/nlp/nlp-word2vector-9.png
+[10]: /images/ml/nlp/nlp-word2vector-10.png
+[11]: /images/ml/nlp/nlp-word2vector-11.png
 
