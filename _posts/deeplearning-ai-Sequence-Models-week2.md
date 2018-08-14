@@ -45,7 +45,7 @@ mathjax: true
 > 能否通过构建 “apple” 与 “orange” 的联系让它不需要重学就能进行判断呢？
 > 所以下面给出了一种改进的表示方法，称之为“词嵌入(**Word Embedding**)”
 
-### 词汇的特性
+### 1.1 词汇的特性
 
 单词与单词之间是有很多共性的，或在某一特性上相近，比如“苹果”和“橙子”都是水果；或者在某一特性上相反，比如“父亲”在性别上是男性，“母亲”在性别上是女性，通过构建他们其中的联系可以将在一个单词学习到的内容应用到其他的单词上来提高模型的学习的效率，这里用一个简化的表格说明:
 
@@ -235,17 +235,56 @@ $$
 
 ## 8. GloVe Word Vectors
 
-GloVe(Global vectors for word representation)虽然不像Word2Vec模型那样流行，但是它也有自身的优点，即简单
+GloVe(Global vectors for word representation)虽不像Word2Vec模型那样流行，但是它也有自身的优点，即简单.
 
 ## 9. Sentiment Classification
 
 平时上淘宝我们都会对买的东西给出文字评价和对应的星级评价，如下图示。
 
-商家可以通过对这些数据来构建一个情绪分类器，从而可以在一些社交平台上如微博、QQ等大家的文字评论然后对应输出相应的星级等级，这样就可以更容易知道自家店是蒸蒸日上还是日落西山了，2333。
+商家可以通过对这些数据来构建一个情绪分类器，从而可以在一些社交平台上如微博、QQ等大家的文字评论然后对应输出相应的星级等级，这样就可以更容易知道自家店是蒸蒸日上还是日落西山了,hehehe。
+
+<img src="/images/deeplearning/C5W2-10_1.png" width="750" />
+
+可以看到下图中的模型先将评语中各个单词通过 词嵌表(数据量一般比较大，例如有100Billion的单词数) 转化成对应的特征向量，然后对所有的单词向量做求和或者做平均，然后构建Softmax分类器，最后输出星级评级。
+
+<img src="/images/deeplearning/C5W2-11_1.png" width="750" />
+
+但是上面的模型存在一个问题，一般而言如果评语中有像"good、excellent"这样的单词，一般都是星级评分较高的评语，但是该模型对下面这句评语就显得无能为力了：
+
+“**Completely lacking in good taste, good service, and good ambience**.”
+
+该评语中出现大量的good，如果直接做求和或者平均运算，经过分类器得到的输出很大概率上是高星级评分的，但这显然与该评语的本意不符.
+
+<img src="/images/deeplearning/C5W2-12_1.png" width="750" />
+
+之所以上面的模型存在那样的缺点，就是因为它没有把单词的时序考虑进去，所以我们可以使用RNN构建模型来解决这种问题。RNN模型如下图示：
+
+<img src="/images/deeplearning/C5W2-13_1.png" width="750" />
+
+另外使用RNN模型还有另一个好处，假设测试集中的评语是这样的
+
+“Completely absent of good taste, good service, and good ambience.”
+
+该评语只是将**lacking in**替换成了**absent of**，而且我们即使假设**absent**并没有出现在训练集中，但是因为词嵌表很庞大，所以词嵌表中包含**absent**，所以算法依旧可以知道**absent**和**lacking**有相似之处，最后输出的结果也依然可以保持正确。
+
+<img src="/images/deeplearning/C5W2-14_1.png" width="750" />
 
 ## 10. Debiasing Word Embeddings
 
+现如今机器学习已经被用到了很多领域，例如银行贷款决策，简历筛选。但是因为机器是向人们学习，所以好的坏的都会学到，例如他也会学到一些偏见或者歧视
+
+> 当说到Man：程序员的时候，算法得出Woman：家庭主妇，这显然存在偏见。
+> 
+> 又如Man：Doctor，算法认为Woman：Nurse。这显然也存在其实和偏见。
+
+上面提到的例子都是性别上的歧视，词嵌入也会反映出年龄歧视、性取向歧视以及种族歧视等等。
+
+人类在这方面已经做的不对了，所以机器应当做出相应的调整来减少歧视.
+
 > So word embeddings can reflect the gender, ethnicity, age, sexual, orientation, and other biases of the text used to train the model. One that I'm especially passionate about is bias relating to socioeconomic status. I think that every person, whether you come from a wealthy family, or a low income family, or anywhere in between, I think everyone should have a great opportunities.
+
+<img src="/images/deeplearning/C5W2-15_1.png" width="750" />
+
 
 ## 13. Reference
 
