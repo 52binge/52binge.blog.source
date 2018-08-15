@@ -22,7 +22,6 @@ mathjax: true
 </script>
 
 - 能够将序列模型应用到自然语言问题中，包括文字合成。
-- 能够将序列模型应用到音频应用，包括语音识别和音乐合成。
 
 <!-- more -->
 
@@ -271,22 +270,65 @@ GloVe(Global vectors for word representation)虽不像Word2Vec模型那样流行
 
 ## 10. Debiasing Word Embeddings
 
-现如今机器学习已经被用到了很多领域，例如银行贷款决策，简历筛选。但是因为机器是向人们学习，所以好的坏的都会学到，例如他也会学到一些偏见或者歧视
+现如今机器学习已经被用到了很多领域，例如银行贷款决策，简历筛选。但是因为机器是向人们学习，所以好的坏的都会学到. 因为 **RNN** 通常是通过大量的网络数据文本集进行训练得到的，所以很多时候文本集中的偏见会反映在词嵌以及最终 的结果中，例如
 
 > 当说到Man：程序员的时候，算法得出Woman：家庭主妇，这显然存在偏见。
 > 
 > 又如Man：Doctor，算法认为Woman：Nurse。这显然也存在其实和偏见。
 
-上面提到的例子都是性别上的歧视，词嵌入也会反映出年龄歧视、性取向歧视以及种族歧视等等。
+这种带有偏见的结果是应该尽力避免的，这类偏见大量存在于网络数据文本中，包括 性别偏见，种族偏见，年龄偏见，等等... 人类在这方面已经做的不对了，所以机器应当做出相应的调整来减少歧视.  
 
-人类在这方面已经做的不对了，所以机器应当做出相应的调整来减少歧视.
+**给词嵌去偏见主要分三步**(在词嵌的高维空间中完成):
+
+1. 找到偏见的方向(确定偏见的x，y轴)
+2. 将非定义化的词平移到x=0(父亲，母亲这类词就是定义化的词，本身就带有了性别的暗示) 
+3. 使定义化的词据离移动的词距离相等
 
 > So word embeddings can reflect the gender, ethnicity, age, sexual, orientation, and other biases of the text used to train the model. One that I'm especially passionate about is bias relating to socioeconomic status. I think that every person, whether you come from a wealthy family, or a low income family, or anywhere in between, I think everyone should have a great opportunities.
 
 <img src="/images/deeplearning/C5W2-15_1.png" width="750" />
 
+下面将主要从性别歧视上来举例说明如何让机器学习消除偏见。
 
-## 13. Reference
+下图展示了一些单词，你可以在心里先想想你看到这些单词的第一时间认为他们所对应的性别是什么吧~~~
+
+<img src="/images/deeplearning/C5W2-16_1.png" width="450" />
+
+### 1. 识别偏见方向
+
+因为该例子是以消除性别歧视为目的，所以我们需要计算出图中这些单词之间的距离的平均值，进而作为偏见方向(bias direction)
+
+$$
+e\_{he}-e\_{she} \\\\
+e\_{boy}-e\_{girl} \\\\
+e\_{grandmother}-e\_{grandfather}
+$$
+
+将上面所求做平均运算，得到的向量方向即为偏见方向
+
+为方便理解，已在图中画出偏见方向，其余299D(除gender以外的其他单词特征)向量与偏见方向正交，也在下图中画出.
+
+<img src="/images/deeplearning/C5W2-17_1.png" width="700" />
+
+### 2. 词性中和
+
+像“ **boy, girl** ”这类词在性别词性上是很明确的，而且不存在歧视，所以无需中和(Neutralize).
+
+而图中的 **babysister、doctor** 则需要中和，具体方法就是将该词像非偏见方向投影得到一个新的坐标.
+
+<img src="/images/deeplearning/C5W2-18_1.png" width="700" />
+
+### 3. 单词对等距离化
+
+如下图示，虽然 **babysister** 中和化，但是它还是离 **grandmother** 更近，所以依旧带有偏见
+
+<img src="/images/deeplearning/C5W2-19_1.png" width="700" />
+
+所以我们还需要将grandmother、grandfather这类与性别有关的对应词等距分布在非偏见方向的两侧(红色剪头表示移动方向，红色点表示移动后的新坐标)，如下图示。
+
+<img src="/images/deeplearning/C5W2-20_1.png" width="700" />
+
+## 11. Reference
 
 - [网易云课堂 - deeplearning][1]
 - [DeepLearning.ai学习笔记汇总][4]
