@@ -101,6 +101,10 @@ $$
 
 ## 3. Beam Search
 
+Beam Search是greedy search的加强版本，首先要预设一个值 beam width，这里等于3(如果等于1就是greedy
+search)。然后在每一步保存最佳的3个结果进行下一步的选择，以此直到遇到句子的终结符
+
+
 ## 12. Reference
 
 - [网易云课堂 - deeplearning][1]
