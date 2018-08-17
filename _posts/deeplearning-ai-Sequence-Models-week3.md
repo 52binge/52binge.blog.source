@@ -75,7 +75,7 @@ $$
 >
 > 与语言模型不同的是，机器模型在输出部分不再使用softmax随机分布的形式进行取样，因为很容易得到一个不准确的翻译，取而代之的是使用 `Beam Search` 做最优化的选择。这个方法会在后下一小节介绍，在此之前先介绍一下**贪婪搜索(Greedy Search)**及其弊端，这样才能更好地了解Beam Search的优点。
 
-### Greedy Search
+### 2.1 Greedy Search
 
 得到最好的翻译结果，转换成数学公式就是:
 
@@ -101,11 +101,155 @@ $$
 
 ## 3. Beam Search
 
-Beam Search是greedy search的加强版本，首先要预设一个值 beam width，这里等于3(如果等于1就是greedy
-search)。然后在每一步保存最佳的3个结果进行下一步的选择，以此直到遇到句子的终结符
+**Beam Search** 是greedy search的加强版本，首先要预设一个值 beam width，这里等于 `3` (如果等于**1**就是**greedy search**)。然后在每一步保存最佳的3个结果进行下一步的选择，以此直到遇到句子的终结符.
+
+### 3.1 步骤一
+
+如下图示，因为beam width=3，所以根据输入的需要翻译的句子选出 3 个 $y^{<1>}$最可能的输出值，即选出$P(y^{<1>}|x)$最大的前3个值。假设分别是"in","jane","september"
+
+<img src="/images/deeplearning/C5W3-6.png" width="700" />
+
+### 3.2 步骤二
+
+以"**in**"为例进行说明，其他同理.
+
+如下图示，在给定被翻译句子 $x$ 和确定 $y^{<1>}$ = "**in**" 的条件下，下一个输出值的条件概率是 $P(y^{<2>}|x,"in")$。此时需要从 10000 种可能中找出条件概率最高的前 3 个.
+
+又由公式 $P(y^{<1>},y^{<2>}|x)=P(y^{<1>}|x) P(y^{<2>}|x, y^{<1>})$, 我们此时已经得到了给定输入数据，前两个输出值的输出概率比较大的组合了.
+
+<img src="/images/deeplearning/C5W3-7.png" width="700" />
+
+另外 2 个单词也做同样的计算
+
+<img src="/images/deeplearning/C5W3-8.png" width="700" />
+
+此时我们得到了 9 组 $P(y^{<1>},y^{<2>}|x)$, 此时我们再从这 9组 中选出概率值最高的前 3 个。如下图示，假设是这3个：
+
+- "in september"
+- "jane is"
+- "jane visits"
+
+<img src="/images/deeplearning/C5W3-9.png" width="600" />
+
+### 3.3 步骤三
+
+继续步骤2的过程，根据 $P(y^{<3>}|x,y^{<1>},y^{<2>})$ 选出 $P(y^{<1>},y^{<2>},y^{<3>}|x)$ 最大的前3个组合.
+
+后面重复上述步骤得出结果.
+
+### 3.4 总结
+
+总结一下上面的步骤就是：
 
 
-## 12. Reference
+> - (1). 经过 encoder 以后，decoder 给出最有可能的三个开头词依次为 “in”, "jane", "september" 
+> $$P(y^{<1>}|x)$$
+
+> - (2). 经过将第一步得到的值输入到第二步中，最有可能的三个翻译为 “in september”, "jane is", "jane visits" 
+> 
+> $$P(y^{<2>}|x,y^{<1>})$$
+>
+> (这里，september开头的句子由于概率没有其他的可能性大，已经失去了作为开头词资格)
+
+> - (3). 继续这个过程... 
+> 
+> $$P(y^{<3>}|x,y^{<1>},y^{<2>})$$
+
+<img src="/images/deeplearning/C5W3-10.png" width="700" />
+
+## 4. Refinements to beam search
+
+$$
+P(y^{<1>},….,P(y^{T\_y})|x)=P(y^{<1>}|x)P(y^{<2>}|x,y^{<1>})…P(y^{<{T\_y}>}|x,y^{<1>},…y^{<{T\_y-1}>})
+$$
+
+所以要满足 $argmax P(y^{<1>},….,P(y^{T\_y})|x)$, 也就等同于要满足
+
+$$
+argmax \prod\_{t=1}^{T\_y}P(y^{<{t}>}|x,y^{<1>},…y^{<{t-1}>})
+$$
+
+但是上面的公式存在一个问题，因为概率都是小于1的，累乘之后会越来越小，可能小到计算机无法精确存储，所以可以将其转变成 log 形式（因为 log 是单调递增的，所以对最终结果不会有影响），其公式如下：
+
+$$
+argmax \sum\_{t=1}^{T\_y}logP(y^{<{t}>}|x,y^{<1>},…y^{<{t-1}>})
+$$
+
+> But！！！上述公式仍然存在bug，观察可以知道，概率值都是小于1的，那么log之后都是负数，所以为了使得最后的值最大，那么只要保证翻译的句子越短，那么值就越大，所以如果使用这个公式，那么最后翻译的句子通常都是比较短的句子，这显然不行。
+
+所以我们可以通过归一化的方式来纠正，即保证平均到每个单词都能得到最大值。其公式如下：
+
+$$
+argmax \frac{1}{T\_y}\sum\_{t=1}^{T\_y}logP(y^{<{t}>}|x,y^{<1>},…y^{<{t-1}>})
+$$
+
+通过归一化的确能很好的解决上述问题，但是在实际运用中，会额外添加一个参数 $α$, 其大小介于 0 和 1 之间，公式如下:
+
+$$
+argmax \frac{1}{T\_y^α}\sum\_{t=1}^{T\_y}logP(y^{<{t}>}|x,y^{<1>},…y^{<{t-1}>})
+$$
+
+<img src="/images/deeplearning/C5W3-11_1.png" width="700" />
+
+## 5. Error analysis on beam search
+
+仔细想想 **beam search**，我们会发现其实它是近似搜索，也就是说可能使用这种方法最终得到的结果并不是最好的。当然也有可能是因为使用的 **RNN** 模型有缺陷导致结果不是最好的。
+
+**所以我们如何判断误差是出在哪个地方呢？**
+
+> 还是以翻译这句话为例：“**简在9月访问中国**”。
+>
+> - 假设按照人类的习惯翻译成英文是“Jane visits China in September.”,该结果用 $y^\*$ 表示。
+> - 假设通过算法得出的翻译结果是：“Jane visited China in September.”,该结果用 $\hat{y}$ 表示。
+>
+> 要判断误差出在哪，只需要比较 $P(y^\*|x)$ 和 $P(\hat{y}|x)$ 的大小即可.
+ 
+下面分两种情况讨论：
+
+<img src="/images/deeplearning/C5W3-12_1.png" width="750" />
+
+两种情况：
+
+(1). $
+P(y^*|x)>P(\hat{y}|x)
+$
+
+上面的不等式的含义是 beam search 最后选出的结果不如人类，也就是 beam search 并没有选出最好的结果，所以问题出在 beam search
+
+(2). $
+P(y^*|x)≤P(\hat{y}|x)
+$
+
+上面不等式表示 beam search 最后选出的结果要比人类的更好，也就是说 beam search 已经选出了最好的结果，但是模型对各个组合的预测概率值并不符合人类的预期，所以 RNN模型 at fault.
+
+> 上面已经介绍了误差分析的方式，但时仅凭一次误差分析就判定谁该背锅肯定也不行，所以还需要进行多次误差分析多次。
+>
+> 如下图示已经进行了多次的误差分析，每次分析之后都判定了锅该谁背，最后计算出beam search和模型背锅的比例，根据比例作出相应的调整。
+>
+> 例如:
+> 
+> - 如果 beam search 更高，可以相应调整 beam width.
+> - 如果模型背锅比例更高，那么可以考虑增加正则化，增加数据等操作.
+
+<img src="/images/deeplearning/C5W3-13_1.png" width="750" />
+
+
+## 6. Bleu score (optional)
+
+主要介绍了如何给机器翻译结果打分，因为是选修内容
+
+## 7. Attention model intuition
+
+
+## 8. Attention model 
+
+## 9. Speech recognition 
+
+## 10. Trigger word detection
+
+## 11. Summary and thank you
+
+## Reference
 
 - [网易云课堂 - deeplearning][1]
 - [DeepLearning.ai学习笔记汇总][4]
