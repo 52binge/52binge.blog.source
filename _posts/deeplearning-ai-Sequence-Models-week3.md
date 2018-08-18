@@ -107,7 +107,7 @@ $$
 
 如下图示，因为beam width=3，所以根据输入的需要翻译的句子选出 3 个 $y^{<1>}$最可能的输出值，即选出$P(y^{<1>}|x)$最大的前3个值。假设分别是"in","jane","september"
 
-<img src="/images/deeplearning/C5W3-6.png" width="700" />
+<img src="/images/deeplearning/C5W3-6_1.png" width="700" />
 
 ### 3.2 步骤二
 
@@ -117,11 +117,11 @@ $$
 
 又由公式 $P(y^{<1>},y^{<2>}|x)=P(y^{<1>}|x) P(y^{<2>}|x, y^{<1>})$, 我们此时已经得到了给定输入数据，前两个输出值的输出概率比较大的组合了.
 
-<img src="/images/deeplearning/C5W3-7.png" width="700" />
+<img src="/images/deeplearning/C5W3-7_1.png" width="700" />
 
 另外 2 个单词也做同样的计算
 
-<img src="/images/deeplearning/C5W3-8.png" width="700" />
+<img src="/images/deeplearning/C5W3-8_1.png" width="700" />
 
 此时我们得到了 9 组 $P(y^{<1>},y^{<2>}|x)$, 此时我们再从这 9组 中选出概率值最高的前 3 个。如下图示，假设是这3个：
 
@@ -129,7 +129,7 @@ $$
 - "jane is"
 - "jane visits"
 
-<img src="/images/deeplearning/C5W3-9.png" width="600" />
+<img src="/images/deeplearning/C5W3-9_1.png" width="550" />
 
 ### 3.3 步骤三
 
@@ -155,7 +155,7 @@ $$
 > 
 > $$P(y^{<3>}|x,y^{<1>},y^{<2>})$$
 
-<img src="/images/deeplearning/C5W3-10.png" width="700" />
+<img src="/images/deeplearning/C5W3-10_1.png" width="750" />
 
 ## 4. Refinements to beam search
 
