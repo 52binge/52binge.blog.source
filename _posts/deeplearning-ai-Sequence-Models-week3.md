@@ -288,11 +288,83 @@ $
 
 ## 8. Attention model 
 
+特别要区分 $a$ (字母a) 和 $α$ (alpha)。前者表示特征节点，后者表示注意力权重。
+
+### 8.1 参数介绍
+
+如下图示，注意力模型采用双向RNN结构，所以每个节点有两个值，用 $\overrightarrow{a}^{<{t'}>},\overleftarrow{a}^{<{t'}>}$ 表示，为了使公式更简化，令 $a^{<{t'}>}=(\overrightarrow{a}^{<{t'}>},\overleftarrow{a}^{<{t'}>})$ 。其中 $t'$ 表示输入数据的索引。
+
+<img src="/images/deeplearning/C5W3-19_1.png" width="750" />
+
+上一节已经介绍了注意力权重 $α^{<{t,t'}>}$，以第一个节点为例，它的权重值可以用 $α^{<{1,t'}>}$ 表示，且所有权重值满足 $\sum{α^{<{1,t'}>}}=1$
+
+所有权重与对应节点的线性之和用 $c^{<{t'}>}$ 表示（为方便书写，用 $c$ 表示）,$c$ 表示 context，即上下文变量.
+
+还是以第一个节点为例，c的计算公式如下：
+
+$$
+c^{<1>}=\sum\_{t'}α^{<{1,t'}>}a^{<{t'}>}
+$$
+
+<img src="/images/deeplearning/C5W3-20_1.png" width="750" />
+
+### 8.2 注意力权值计算公式
+
+$$
+\alpha^{<{t,t'}>}=\frac{exp(e^{<{t,t'}>})}{\sum\_{t''=1}^{T\_x}{exp(e^{t,t''})}}
+$$
+
+上面公式中的 $e^{<{t,t'}>}$ 计算图如下：
+
+其中 $s^{<{t-1}>}$ 表示上一个状态的值, $a^{<{t'}>}$ 表示第 $t'$ 个特征节点.
+
+<img src="/images/deeplearning/C5W3-21_1.png" width="500" />
+
+> **Andrew Ng** 并没有详细的介绍上面的网络，只是一笔带过，说反向传播和梯度下降会自动学习，emmm。。那就这样吧。
+>
+> 结合下图可以独自参考一下上面的公式是什么意思.
+
+<img src="/images/deeplearning/C5W3-22_1.png" width="600" />
+
+### 8.3 舶来品
+
+下面的笔记是《大数据文摘》的笔记，感觉他写的清楚一些:
+
+
+
 ## 9. Speech recognition 
+
+一般语音识别过程是如下图示的，即首先将原音频 (黑白的，纵轴表示振幅) 转化成纵轴为频率的音谱图，并且通过人工预先设定的音素(phonemes)再来识别.
+
+<img src="/images/deeplearning/C5W3-25_1.png" width="750" />
+
+而引入注意力机制后的模型就表现优秀得多了
+
+<img src="/images/deeplearning/C5W3-26_1.png" width="750" />
+
+CTC(connectionist temporal classiﬁcation)是之前较为常用的方法。
+
+具体原理如下：
+
+假设每秒音频可以提取出100个特征值，那么假设10秒的音频就有1000个特征值，那么输出值也有1000个，但是说出的话并没有这么多啊，那该怎么处理呢？
+
+方法很简单，只需要把“_”进行压缩即可，注意需要将 "_"和空额区分开来，因为空格也是占一个字符的。
+
+<img src="/images/deeplearning/C5W3-27_1.png" width="750" />
 
 ## 10. Trigger word detection
 
+<img src="/images/deeplearning/C5W3-28_1.png" width="700" />
+
+假设下图式训练集中的一段音频，其中包含了两次唤醒词:
+
+<img src="/images/deeplearning/C5W3-29_1.png" width="750" />
+
+搭建一个attention model，在听到唤醒词之前一直输出的是 0，在听到唤醒词以后输出 1，但因为一个唤醒词会持续半秒左右所以我们也不仅仅只输出一次 1，而是将输出的 1 持续一段时间，通过这样的方式训练出的 RNN 就可以很 有效的检测到唤醒词了。
+
 ## 11. Summary and thank you
+
+终于学完了。虽然并不能说明什么~~~233333
 
 ## Reference
 

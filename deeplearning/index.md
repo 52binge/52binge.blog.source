@@ -55,11 +55,13 @@ date: 2018-07-03 16:46:48
 
 - [5.1 Recurrent Sequence Models - (Notation、RNN、Vanishing gradients、GRU、LSTM、BRNN、Deep RNNs][6]
 
-- [5.2 NLP & Word Embeddings - (Matrix、Word2Vec、Negative Sampling、GloVe、Debiasing Word Embeddings)][0]
+- [5.2 NLP & Word Embeddings - (Matrix、Word2Vec、Negative Sampling、GloVe、Debiasing Word Embeddings)][7]
 
-- [5.3 Sequence Models (week3)][0]
+- [5.3 Sequence Models & Attention - (Greedy Search、Beam Search、Error analysis on beam search、Attention)][8]
 
 [6]: /2018/07/26/deeplearning-ai-Sequence-Models-week1/
+[7]: /2018/08/02/deeplearning-ai-Sequence-Models-week2/
+[8]: /2018/08/14/deeplearning-ai-Sequence-Models-week3/
 
 ## next ⋯⋯
 
