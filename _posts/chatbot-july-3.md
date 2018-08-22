@@ -1,5 +1,5 @@
 ---
-title: 机器学习构建聊天机器人 3
+title: Chatbot 聊天机器人
 toc: true
 date: 2018-08-16 14:00:21
 categories: deeplearning
@@ -50,7 +50,33 @@ ChatterBot是一个基于机器学习的聊天机器人引擎，构建在python�
 trainer='chatterbot.trainers.ListTrainer' 给我的训练是一个列表
 
 
+## Chatbot的深度学习 4
 
+预测一句话
+
+我爱北京天安门
+
+到了每个位置，都是预测下一个词, softmax 4W个词的 哪一个，概率向量.
+
+$X\_t$ 是时间t处的输入 (截止当前位置，捕获的所有捕获的信息)
+
+$O\_t$ 是概率向量
+
+双向RNN，就是 从前往后 和 从后往前 都能捕捉到信息.
+
+深层双向RNN，
+
+沿着时间轴做一个损失值，和标准答案之间的差距
+
+BPTT 沿着时间轴的反向传播。
+
+图片信息只在第一次灌入就好了
+
+### LSTM
+
+Understanding LSTM Networks, colah, 2015
+
+传送带
 
 ## 12. Reference
 
