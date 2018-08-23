@@ -39,12 +39,14 @@ Here are some useful links
 - [gensim][n3]
 - [自然语言理解-从规则到深度学习][n4]
 - [Free Will][n5]
+- [www.wildml.com][n6]
 
 [n1]: https://github.com/explosion/sense2vec
 [n2]: https://www.zybuluo.com/hanxiaoyang/note/472184
 [n3]: https://radimrehurek.com/gensim/
 [n4]: https://yq.aliyun.com/articles/158691
 [n5]: https://plushunter.github.io/
+[n6]: http://www.wildml.com/
 
 ## Friends
 
