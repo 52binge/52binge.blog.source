@@ -78,6 +78,17 @@ Understanding LSTM Networks, colah, 2015
 
 传送带
 
+### 看图说话
+
+loss
+
+CNN 这边是直接取的一个神经网络
+
+> 不要陷入细节
+
+来看看Tensorflow的实现
+   
+
 ## 12. Reference
 
 - [网易云课堂 - deeplearning][1]
