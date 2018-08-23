@@ -122,7 +122,15 @@ Same 卷积 | 保持原图像矩阵的大小。满足 (n+2p-f+1) = n ,即 $p=\fr
 > 有时可能需要检测横向边缘和纵向边缘，或者其他特征，所以我们可以使用多个过滤器。
 > 上图则使用了两个过滤器，得到的特征矩阵大小为 4 \* 4 \* 2.
 
-## 11. Summary 
+## 7. One layer of a convolutional network
+
+## 8. A simple convolution network example
+
+## 9. Pooling layers
+
+## 10. Convolutional neural network example
+
+## 11. Why Convolutions ?
 
 ## Reference
 
