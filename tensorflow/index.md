@@ -9,9 +9,9 @@ TensorFlow 是一款神经网络的Python外部的结构包, 也是一个采用�
 
 ## 1. TensorFlow 简介
 
-- [1.1 TensorFlow Why][t1]
+- [1.1 TensorFlow Why ?][t1]
 
-- [1.2 神经网络在干嘛][t2]  
+- [1.2 神经网络在干嘛 ?][t2]  
 
 [t1]: /2018/01/22/tensorflow-1-why/
 [t2]: /2018/08/24/tensorflow-2-NN-what-do/
@@ -20,7 +20,7 @@ TensorFlow 是一款神经网络的Python外部的结构包, 也是一个采用�
 
 - [2.1 处理结构][t21]
 
-- [2.2 例子2][0]
+- [2.2 例子2][t22]
 
 - [2.3 Session 会话控制][0]
 
@@ -33,6 +33,7 @@ TensorFlow 是一款神经网络的Python外部的结构包, 也是一个采用�
 - [2.7 激励函数 Activation Function][0]
 
 [t21]: /2018/08/24/tensorflow-2-1-structure/
+[t22]: /2018/08/24/tensorflow-2-2-example2/
 
 ## 3. 建造我们第一个神经网络
 
