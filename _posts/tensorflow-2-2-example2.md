@@ -6,7 +6,7 @@ categories: python
 tags: tensorflow
 ---
 
-Tensorflow 是非常重视结构的, 我们得建立好了神经网络的结构, 才能将数字放进去, 运行这个结构.
+Tensorflow 是非常重视结构的, 我们建立好了神经网络的结构, 才能将数字放进去, 运行这个结构.
 
 <!-- more -->
 
@@ -46,7 +46,9 @@ loss = tf.reduce_mean(tf.square(y-y_data))
 
 ## 4. 传播误差
 
-反向传递误差的工作就教给optimizer了, 我们使用的误差传递方法是梯度下降法: Gradient Descent 让后我们使用 optimizer 来进行参数的更新.
+反向传递误差的工作就教给 `optimizer` 了, 我们使用的误差传递方法是梯度下降法: Gradient Descent 
+
+然后我们使用 `optimizer` 来进行参数的更新.
 
 ```python
 optimizer = tf.train.GradientDescentOptimizer(0.5)
@@ -55,10 +57,11 @@ train = optimizer.minimize(loss)
 
 ## 5. 训练
 
-到目前为止, 我们只是建立了神经网络的结构, 还没有使用这个结构. 在使用这个结构之前, 我们必须先初始化所有之前定义的 `Variable`, 所以这一步是很重要的!
+到目前为止, 我们只是建立了神经网络的结构, 还没有使用这个结构. 
+
+在使用这个结构之前, 我们必须先初始化所有之前定义的 `Variable`,  所以这一步是很重要的!
 
 ```python
-# init = tf.initialize_all_variables() # tf 马上就要废弃这种写法
 init = tf.global_variables_initializer()  # 替换成这样就好
 ```
 
