@@ -3,7 +3,7 @@ title: TensorFlow Why?
 toc: true
 date: 2018-01-22 13:17:21
 categories: python
-tags: TensorFlow
+tags: tensorflow
 ---
 
 TensorFlow 最初由Google大脑的研究员和工程师开发出来，用于机器学习和神经网络方面的研究，`2015.10`宣布开源.

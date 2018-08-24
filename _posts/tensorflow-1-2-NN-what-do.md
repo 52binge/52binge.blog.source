@@ -1,9 +1,9 @@
 ---
-title: 神经网络在干嘛
+title: Tensorflow 神经网络在干嘛
 toc: true
 date: 2018-08-24 10:17:21
 categories: python
-tags: TensorFlow
+tags: tensorflow
 ---
 
 机器学习 其实就是让电脑不断的尝试模拟已知的数据. 

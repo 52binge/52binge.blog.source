@@ -18,7 +18,7 @@ TensorFlow 是一款神经网络的Python外部的结构包, 也是一个采用�
 
 ## 2. Tensorflow 基础构架
 
-- [2.1 处理结构][0]
+- [2.1 处理结构][t21]
 
 - [2.2 例子2][0]
 
@@ -31,6 +31,8 @@ TensorFlow 是一款神经网络的Python外部的结构包, 也是一个采用�
 - [2.6 什么是激励函数 (Activation Function)][0]
 
 - [2.7 激励函数 Activation Function][0]
+
+[t21]: /2018/08/24/tensorflow-2-1-structure/
 
 ## 3. 建造我们第一个神经网络
 
