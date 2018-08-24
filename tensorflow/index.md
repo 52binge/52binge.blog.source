@@ -9,11 +9,12 @@ TensorFlow 是一款神经网络的Python外部的结构包, 也是一个采用�
 
 ## 1. TensorFlow 简介
 
-- [1.1 TensorFlow Why ?][t1]
+- [1.1 TensorFlow Why][t1]
 
-- [1.2 TensorFlow Basic * no][0]  
+- [1.2 神经网络在干嘛][t2]  
 
 [t1]: /2018/01/22/tensorflow-1-why/
+[t2]: /2018/08/24/tensorflow-2-NN-what-do/
 
 ## 2. Tensorflow 基础构架
 
