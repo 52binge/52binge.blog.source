@@ -43,13 +43,18 @@ date: 2018-07-03 16:46:48
 
 ## 4. Convolutional Neural Networks
 
-- [4.1 Convolutional Neural Networks (week1)][0]
+- [4.1 Convolutional Neural Networks (week1)][c4w1]
 
-- [4.2 Convolutional Neural Networks (week2)][0]
+- [4.2 Convolutional Neural Networks (week2)][c4w2]
 
-- [4.3 Convolutional Neural Networks (week3)][0]
+- [4.3 Convolutional Neural Networks (week3)][c4w3]
 
-- [4.4 Convolutional Neural Networks (week4)][0]
+- [4.4 Convolutional Neural Networks (week4)][c4w4]
+
+[c4w1]: /2018/08/21/deeplearning-ai-Convolutional-Neural-Networks-week1/
+[c4w2]: /2018/08/24/deeplearning-ai-Convolutional-Neural-Networks-week2/
+[c4w3]: 0
+[c4w4]: 0
 
 ## 5. Sequence Models
 
