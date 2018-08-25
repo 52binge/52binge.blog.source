@@ -149,6 +149,8 @@ Stride | $s \* s$ | 步长
 
 如图示得到 **$4 \* 4$** 的矩阵后还需要加上一个偏差 **$b\_n$** (Python 广播机制)，之后还要进行非线性转换，即用 ReLU 函数.
 
+<img src="/images/deeplearning/C4W1-10_2.png" width="700" />
+
 因此假如在某一卷积层中使用了 10 个 **$3 \* 3$** 的 **Filter** 过滤器，那么一共有 $(3\*3+1)\*10=280$ 个参数.
 
 <img src="/images/deeplearning/C4W1-11_1.png" width="700" />
@@ -157,16 +159,16 @@ Stride | $s \* s$ | 步长
 
 Title | Formula | desc 
 :-------:  | :-------: | :-------: 
+**输入矩阵** | $n\_H^{l-1} \* n\_W^{l-1} \* n\_c^{l-1}$ | $height \* width \* channels = 6 \* 6 \* 3$
 过滤器大小 | $f^{[l]}$ |
-填充 padding | $p^{[l]}$ |
-步长 stride | $s^l$ |
-激活函数 | $a^{l}$ = $n\_H^{l} \* n\_W^{l} \* n\_c^{l}$ |
-权重 weight | $f^{l} \* f^{l} \* n\_c^{[l-1]} \* n\_c^{[l]}$ |
+Padding | $p^{[l]}$ |
+Stride | $s^l$ | 步长
+Each Filter is | $f^{l} \* f^{l} \* n\_c^{[l-1]}$ | $3 \* 3 \* 3$  ,  $n\_c^{[l-1]} = 3$ <br><br> 每一卷积层的过滤器的通道的大小 = 输入层的通道大小 $n\_c^{[l-1]}$
+Activations 激活函数 | $a^{l}$ = $n\_H^{l} \* n\_W^{l} \* n\_c^{l}$ | $A^{l}$ = $m \* n\_H^{l} \* n\_W^{l} \* n\_c^{l}$，($m$个例子)
+权重 weight | $f^{l} \* f^{l} \* n\_c^{[l-1]} \* n\_c^{[l]}$ | $Filter \* 过滤器个数$ <br><br> 过滤器的个数 = 输出层的通道的大小 $n\_c^{l}$
 偏差 bias | $1 \* 1 \* 1 \* n\_c^{[l]}$ |
-输入矩阵 | $n\_H^{l-1} \* n\_W^{l-1} \* n\_c^{l-1}$ | height \* width \* channels
-| | 每一卷积层的过滤器的通道的大小 = 输入层的通道大小
-输出矩阵 | $n\_H^{l} \* n\_W^{l} \* n\_c^{l}$ | height \* width \* channels
-| | 输出层的通道的大小 $n\_c^{l}$ = 过滤器的个数
+| |
+**输出矩阵** | $n\_H^{l} \* n\_W^{l} \* n\_c^{l}$ | $height \* width \* channels$
 Output | $n\_{H/W}^{[l]}=[\frac{n\_{H/W}^{[l-1]}+2p^{[l]}-f^{[l]}}{s^{[l]}}+1]$ | 输出层与输入层计算公式
 
 ## 8. A simple convolution network example
