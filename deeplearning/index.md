@@ -3,7 +3,7 @@ title: Deep Learning
 date: 2018-07-03 16:46:48
 ---
 
-开始 [Deep Learning](https://en.wikipedia.org/wiki/Deep_learning) 新坑, 希望与感兴趣的朋友一起学习、交流、探讨与分享~~
+整理 [Deep Learning](https://en.wikipedia.org/wiki/Deep_learning) Learning Notes, 希望与感兴趣的朋友一起学习、交流、探讨与分享~~
 
 ## 1. Neural Networks and Deep Learning
 

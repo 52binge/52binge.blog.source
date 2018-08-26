@@ -189,6 +189,8 @@ Output | $n\_{H/W}^{[l]}=[\frac{n\_{H/W}^{[l-1]}+2p^{[l]}-f^{[l]}}{s^{[l]}}+1]$ 
 
 使用池化层来缩减模型的大小，提高计算速度，同时提高提取特征的鲁棒性.
 
+<img src="/images/deeplearning/C4W1-13_1.png" width="700" />
+
 **<font color="wathet">最大池化的直观理解</font>:**
 
 你可以把上面 $4 \* 4$ 输入看做是某些特征的集合 (也许不是)，也就是神经网络中某一层的反激活值，数字大意味着可能提取了某些特定特征. 左上象限具有这个特征，可能是一个垂直边缘. or maybe an eye， 显然左上象限具有这个特征.
@@ -198,6 +200,8 @@ Output | $n\_{H/W}^{[l]}=[\frac{n\_{H/W}^{[l-1]}+2p^{[l]}-f^{[l]}}{s^{[l]}}+1]$ 
 > `Max Pooling` 的超级参数 $f=2 / 3$，$s=2$ 是最常用的，效果相当于高度和宽度缩减一半. `Max Pooling` 很少用 padding， by far, is $p = 0$，Average Pooling 这个用的不多，这个也会加入更多的计算量.
 
 ## 10. Convolutional neural network example
+
+池化层没有权重和参数，所以不做层数的统计.
 
 ## 11. Why Convolutions ?
 
