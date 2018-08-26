@@ -143,7 +143,7 @@ Stride | $s \* s$ | 步长
 > 
 > **Filter** 数字组合参数的选择不同，你可以得到不同的特征检测器.
 
-## 7. One Layer A Convolutional Network
+## 7. One Layer of CNN Example
 
 <img src="/images/deeplearning/C4W1-10_1.png" width="700" />
 
@@ -199,11 +199,20 @@ Output | $n\_{H/W}^{[l]}=[\frac{n\_{H/W}^{[l-1]}+2p^{[l]}-f^{[l]}}{s^{[l]}}+1]$ 
 
 > `Max Pooling` 的超级参数 $f=2 / 3$，$s=2$ 是最常用的，效果相当于高度和宽度缩减一半. `Max Pooling` 很少用 padding， by far, is $p = 0$，Average Pooling 这个用的不多，这个也会加入更多的计算量.
 
-## 10. Convolutional neural network example
+## 10. A CNN Example
 
-池化层没有权重和参数，所以不做层数的统计.
+在 Andrew Ng 的课件中将 Conv layer 和 Pooling layer 合并在一起视为一层，因为池化层没有参数 (因为池化层的过滤器的无参数，有超参数，而且其大小可以事先确定好)。 但是在其他文献中有可能会把池化层算成单独的层，所以视情况而定。
+
+<img src="/images/deeplearning/C4W1-14_1.png" width="750" />
+
+<img src="/images/deeplearning/C4W1-15.jpg" width="750" />
+
+> 池化层参数个数为 0，卷积层参数个数一般多，**fully connected layer** 全连接层 参数很多.
 
 ## 11. Why Convolutions ?
+
+卷积 相比于 FC全连接 的好处最直观的就是使用的参数更少，参数共享和稀疏连接 ：
+
 
 ## Reference
 
