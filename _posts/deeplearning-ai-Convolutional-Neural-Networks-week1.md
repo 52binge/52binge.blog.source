@@ -128,7 +128,7 @@ Stride | $s \* s$ | 步长
 >
 > ⌈⌉: 向上取整符号 ⌈59/60⌉ = 1
 
-## 6. Convolutions over volumes
+## 6. Convolutions Over Volumes
 
 这一节用立体卷积来解释
 
@@ -143,7 +143,7 @@ Stride | $s \* s$ | 步长
 > 
 > **Filter** 数字组合参数的选择不同，你可以得到不同的特征检测器.
 
-## 7. One layer of a convolutional network
+## 7. One Layer A Convolutional Network
 
 <img src="/images/deeplearning/C4W1-10_1.png" width="700" />
 
@@ -171,12 +171,31 @@ Activations 激活函数 | $a^{l}$ = $n\_H^{l} \* n\_W^{l} \* n\_c^{l}$ | $A^{l}
 **输出矩阵** | $n\_H^{l} \* n\_W^{l} \* n\_c^{l}$ | $height \* width \* channels$
 Output | $n\_{H/W}^{[l]}=[\frac{n\_{H/W}^{[l-1]}+2p^{[l]}-f^{[l]}}{s^{[l]}}+1]$ | 输出层与输入层计算公式
 
-## 8. A simple convolution network example
+## 8. A Simple Convolution Network
 
-## 9. Pooling layers
+<img src="/images/deeplearning/C4W1-12_1.png" width="750" />
 
+上图简单介绍了卷积网络的计算过程，需要再介绍的一点是最后一层的全连接层，即将 $7 \* 7 \* 40$ 的输出矩阵展开，得到 $1960$ 个节点，然后再采用 **Softmax** 来进行预测.
 
-最大池化很少用 padding
+> 一般的 **CNN** 中，每一层矩阵的 **height** 和 **width** 是逐渐减小的，而 **channel** 则是增加的 ($n\_c$ 在增加，$n\_H$ 和 $n\_W$ 在减少).
+
+**CNN 中常见的 3 种类型的 layer：**
+
+1. Convolution (Conv 卷积层)
+2. Pooling (Pool 池化层)
+3. Fully connected (FC 全连接层)
+
+## 9. Pooling Layers
+
+使用池化层来缩减模型的大小，提高计算速度，同时提高提取特征的鲁棒性.
+
+**<font color="wathet">最大池化的直观理解</font>:**
+
+你可以把上面 $4 \* 4$ 输入看做是某些特征的集合 (也许不是)，也就是神经网络中某一层的反激活值，数字大意味着可能提取了某些特定特征. 左上象限具有这个特征，可能是一个垂直边缘. or maybe an eye， 显然左上象限具有这个特征.
+
+最大化操作的功能就是只要在任何一个象限内提取到某个特征，它就会保留在最大池化的输出里. 最大化操作的实际作用就是：如果在 **Filter** 中提取到某个特征 那么保留其最大值. 如果没有提取到这个特征，比如说 右上象限 中，那么其最大值也还是很小. 
+
+> `Max Pooling` 的超级参数 $f=2 / 3$，$s=2$ 是最常用的，效果相当于高度和宽度缩减一半. `Max Pooling` 很少用 padding， by far, is $p = 0$，Average Pooling 这个用的不多，这个也会加入更多的计算量.
 
 ## 10. Convolutional neural network example
 
@@ -186,6 +205,8 @@ Output | $n\_{H/W}^{[l]}=[\frac{n\_{H/W}^{[l-1]}+2p^{[l]}-f^{[l]}}{s^{[l]}}+1]$ 
 
 - [网易云课堂 - deeplearning][1]
 - [DeepLearning.ai学习笔记汇总][2]
+- [CNN入门讲解：卷积层是如何提取特征的？][3]
 
 [1]: https://study.163.com/my#/smarts
 [2]: http://www.cnblogs.com/marsggbo/p/7470989.html
+[3]: https://zhuanlan.zhihu.com/p/31657315
