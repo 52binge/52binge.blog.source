@@ -19,7 +19,8 @@ p + p {
 
 ## About
 
-[Blair's Instagram][ins]&nbsp; 、&nbsp;[Netease Music][wangyiyun]
+[Blair’s Instagram][ins]&nbsp; 、&nbsp;[Netease Music][wangyiyun]
+
 <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 
 [ins]: https://www.instagram.com/blair101v/
@@ -30,7 +31,7 @@ p + p {
 
 <a class="article-myself" href="/"> Blair Chan</a> 90s, a program engineer, a GTD practitioner, live in Hangzhou, China.
 
-<a class="article-myself" href="/tweet"> Libin Chan</a> focus on `Java`、`Python`、 `Machine Learning`、 `Deep Learning`、 `NLP` and other fields.
+<a class="article-myself" href="/tweet"> Libin Chan</a> focus on Python、 Deep Learning、 NLP、Computer Vision and other fields.
 
 <!--<a class="article-myself" href="/">  Libin Chan</a>-->
 
