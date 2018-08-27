@@ -22,8 +22,6 @@ list_number: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-理解角度: 
-
 - 奥卡姆剃刀: 在所有可能选择的模型中，我们应该选择能够很好的解释已知数据并且十分简单的模型
 - 贝叶斯估计: 规则化项对应于模型的先验概率
 - 结构风险最小化: 规则化项是结构风险最小化策略的实现，即在经验风险上加一个正则化项或惩罚项
