@@ -5,13 +5,19 @@
 
 ### 1. Neural Networks and Deep Learning
 
-- [1.1 Introduction to Deep Learning  - （Supervised Learning with Neural Networks）][c1w1]
+- [Introduction to Deep Learning][c1w1]
 
-- [1.2 Neural Networks Basics - （logistic 回归损失函数、导数、计算图、m个样本的梯度下降、向量化）][c1w2]
+- [Neural Networks Basics][c1w2]
 
-- [1.3 Shallow Neural Networks - （NN Representation、多样本向量化解释、Activation functions、随机初始化）][c1w3]
+ logistic 回归损失函数、导数、计算图、m个样本的梯度下降、向量化
 
-- [1.4 Deep Neural Networks - （深网的前向传播、核对矩阵维数、深层表示、前向反向传播、参数VS超参数）][c1w4]
+- [Shallow Neural Networks][c1w3]
+
+ NN Representation、多样本向量化解释、Activation functions、随机初始化
+
+- [Deep Neural Networks][c1w4]
+
+深网的前向传播、核对矩阵维数、深层表示、前向反向传播、参数VS超参数
 
 [c1w1]: /2017/12/01/deeplearning-ai-Neural-Networks-and-Deep-Learning-week1/
 [c1w2]: /2018/07/07/deeplearning-ai-Neural-Networks-and-Deep-Learning-week2/
