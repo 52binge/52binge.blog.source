@@ -21,7 +21,7 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-- 能够将序列模型应用到自然语言问题中，包括文字合成。
+能够将序列模型应用到自然语言问题中，包括文字合成。
 
 <!-- more -->
 

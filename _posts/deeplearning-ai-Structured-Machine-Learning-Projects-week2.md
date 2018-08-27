@@ -21,8 +21,9 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-- 如何进行 误差分析、标注错误数据、定位数据不匹配偏差与方差
-- 知道如何应用端到端学习、迁移学习以及多任务学习
+如何进行 误差分析、标注错误数据、定位数据不匹配偏差与方差
+
+知道如何应用端到端学习、迁移学习以及多任务学习
 
 <!-- more -->
 

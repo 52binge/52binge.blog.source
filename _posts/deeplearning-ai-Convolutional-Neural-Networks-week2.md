@@ -21,8 +21,7 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
--	理解如何搭建一个神经网络，包括最新的变体，例如残余网络。
--	知道如何将卷积网络应用到视觉检测和识别任务。
+理解如何搭建一个神经网络，包括最新的变体，例如残余网络。
 
 <!-- more -->
 
