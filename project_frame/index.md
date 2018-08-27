@@ -1,5 +1,4 @@
 ---
-title: Project Frame
 date: 2016-03-26 16:46:48
 ---
 
@@ -7,7 +6,7 @@ date: 2016-03-26 16:46:48
 
 博主水平非常非常有限，期望能与您一起学习、交流、探讨與分享~~
 
-## Python
+### Python
 
 - [Python](/python_language)
 
@@ -15,7 +14,7 @@ date: 2016-03-26 16:46:48
 
 - [Matplotlib](/python_matplotlib)
 
-## Scikit-Learn
+### Scikit-Learn
 
 &nbsp;&nbsp;机器学习领域当中最知名的 python 模块之一 [sklearn_why][sklearn0] 
 
@@ -48,7 +47,7 @@ date: 2016-03-26 16:46:48
 [sklearn8]: /2018/01/09/py-sklearn-6-cross-validation-3/
 [sklearn9]: /2018/01/10/py-sklearn-7-save-model/
 
-## TensorFlow
+### TensorFlow
 
 - [TensorFlow Why ?][t1]
 
@@ -60,7 +59,7 @@ date: 2016-03-26 16:46:48
 
 [t1]: /2018/01/22/tensorflow-1-why/
 
-## Hadoop & Hive
+### Hadoop & Hive
 
 - [MapReduce for Python][h1]
 
@@ -75,7 +74,7 @@ date: 2016-03-26 16:46:48
 [h3]: /2018/01/30/hadoop-hive-bigdata-offline-demo/
 [h4]: /2018/02/01/hadoop-hive-udf-udaf/
 
-## Spark
+### Spark
 
 - [Spark Introduce][spark1]
 
@@ -85,7 +84,7 @@ date: 2016-03-26 16:46:48
 [spark2]: /2016/04/25/spark-machine-learning-p1/
 
 
-## Java
+### Java
 
 - [Java][j1]
 
@@ -94,7 +93,7 @@ date: 2016-03-26 16:46:48
 [j1]: /java_language
 [j2]: /2016/09/11/java-springMVC-mybatis-demo/
 
-## Elastic
+### Elastic
 
 - [Elasticsearch Learning][elastic1]
 

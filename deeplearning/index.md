@@ -1,11 +1,9 @@
----
-title: Deep Learning
-date: 2018-07-03 16:46:48
----
 
-整理 [Deep Learning](https://en.wikipedia.org/wiki/Deep_learning) Learning Notes, 希望与感兴趣的朋友一起学习、交流、探讨与分享~~
+我開始整理 Deep Learning 相關学习笔记，学习算法类知识真的需要下很大很大的功夫，灰常博大精深~~
 
-## 1. Neural Networks and Deep Learning
+博主水平灰常灰常有限，期望能與對、Machine Learning 感兴趣的朋友一起学习、交流、探讨与分享~~
+
+### 1. Neural Networks and Deep Learning
 
 - [1.1 Introduction to Deep Learning  - （Supervised Learning with Neural Networks）][c1w1]
 
@@ -20,7 +18,7 @@ date: 2018-07-03 16:46:48
 [c1w3]: /2018/07/14/deeplearning-ai-Neural-Networks-and-Deep-Learning-week3/
 [c1w4]: /2018/07/15/deeplearning-ai-Neural-Networks-and-Deep-Learning-week4/
 
-## 2. Improving Deep Neural Networks 
+### 2. Improving Deep Neural Networks 
 
 - [2.1 Deep Learning -（训练集划分、偏差/方差、L1 L2 Dropout、梯度消失-梯度爆炸、权重初始化、梯度检验）][c2w1]
 
@@ -32,7 +30,7 @@ date: 2018-07-03 16:46:48
 [c2w2]: /2018/07/21/deeplearning-ai-Improving-Deep-Neural-Networks-week2/
 [c2w3]: /2018/07/21/deeplearning-ai-Improving-Deep-Neural-Networks-week2/
 
-## 3. Structured Machine Learning Projects 
+### 3. Structured Machine Learning Projects 
 
 - [3.1 ML Strategy 1 - (正交化、Satisficing and optimizing metrics、Train/dev/test 改变、可避免偏差、人的表现)][c3w1]
 
@@ -41,7 +39,7 @@ date: 2018-07-03 16:46:48
 [c3w1]: /2018/07/24/deeplearning-ai-Structured-Machine-Learning-Projects-week1/
 [c3w2]: /2018/07/25/deeplearning-ai-Structured-Machine-Learning-Projects-week2/
 
-## 4. Convolutional Neural Networks
+### 4. Convolutional Neural Networks
 
 - [4.1 Convolutional Neural Networks (week1)][c4w1]
 
@@ -56,7 +54,7 @@ date: 2018-07-03 16:46:48
 [c4w3]: 0
 [c4w4]: 0
 
-## 5. Sequence Models
+### 5. Sequence Models
 
 - [5.1 Recurrent Sequence Models - (Notation、RNN、Vanishing gradients、GRU、LSTM、BRNN、Deep RNNs][6]
 
@@ -68,13 +66,13 @@ date: 2018-07-03 16:46:48
 [7]: /2018/08/02/deeplearning-ai-Sequence-Models-week2/
 [8]: /2018/08/14/deeplearning-ai-Sequence-Models-week3/
 
-## next ⋯⋯
+### next ⋯⋯
 
 > notes：next ...
 
 [0]: /
 
-## Reference
+### Reference
 
 - [这是一份优美的信息图，吴恩达点赞的][1]
 - [Deeplearning.ai课程笔记--汇总][2]

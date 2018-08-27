@@ -1,12 +1,8 @@
----
-title: Machine Learning
-date: 2016-03-26 16:46:48
----
-
 我開始整理AI算法相關学习笔记，学习算法类知识真的需要下很大很大的功夫，灰常博大精深~~
 
 博主水平灰常灰常有限，期望能與對、[Machine Learning](https://en.wikipedia.org/wiki/Machine_learning) 感兴趣的朋友一起学习、交流、探讨与分享~~
 
+## Machine Learning
 
 [1. Machine Learning Introduce][0]
 

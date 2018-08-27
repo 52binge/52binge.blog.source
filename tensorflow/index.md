@@ -1,22 +1,21 @@
 ---
-title: TensorFlow Learning
-date: 2018-08-23 16:46:48
+date: 2018-07-16 16:59:48
 ---
 
 TensorFlow 最初由Google大脑的研究员和工程师开发出来，用于机器学习和神经网络方面的研究，2015.10宣布开源.
 
 TensorFlow 是一款神经网络的Python外部的结构包, 也是一个采用数据流图来进行数值计算的开源软件库.
 
-## 1. TensorFlow 简介
+### 1. TensorFlow 简介
 
 - [1.1 TensorFlow Why ?][t1]
 
 - [1.2 神经网络在干嘛 ?][t2]  
 
-[t1]: /2018/01/22/tensorflow-1-why/
-[t2]: /2018/08/24/tensorflow-2-NN-what-do/
+[t1]: /2018/01/22/tensorflow-1-1-why/
+[t2]: /2018/08/24/tensorflow-1-2-NN-what-do/
 
-## 2. Tensorflow 基础构架
+### 2. Tensorflow 基础构架
 
 - [2.1 处理结构][t21]
 
@@ -35,7 +34,7 @@ TensorFlow 是一款神经网络的Python外部的结构包, 也是一个采用�
 [t21]: /2018/08/24/tensorflow-2-1-structure/
 [t22]: /2018/08/24/tensorflow-2-2-example2/
 
-## 3. 建造我们第一个神经网络
+### 3. 建造我们第一个神经网络
 
 - [3.1 例子3 添加层 def add_layer()][0]
 
@@ -47,7 +46,7 @@ TensorFlow 是一款神经网络的Python外部的结构包, 也是一个采用�
 
 - [3.5 优化器 optimizer][0]
 
-## 4. 可视化好助手 Tensorboard
+### 4. 可视化好助手 Tensorboard
 
 - [4.1 Tensorboard 可视化好帮手 1][0]
 
@@ -58,11 +57,11 @@ TensorFlow 是一款神经网络的Python外部的结构包, 也是一个采用�
 如果说 Tensorflow 或者 Theano 神经网络方面的巨人. 那 Keras 就是站在巨人肩膀上的人. 
 Keras 是一个兼容 Theano 和 Tensorflow 的神经网络高级包, 用他来组件一个神经网络更加快速, 几条语句就搞定了. 
 
-## 5. Keras 简介
+### 5. Keras 简介
 
 - [5.1 Keras Why ?][0]
 
-## 6. 如何用 Keras 搭建各种神经网络
+### 6. 如何用 Keras 搭建各种神经网络
 
 - [6.1 Regressor 回归][0]
 
