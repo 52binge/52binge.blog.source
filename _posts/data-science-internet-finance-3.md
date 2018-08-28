@@ -68,7 +68,6 @@ Lending Club 创立于 2016年， 主要做一个提供 P2P 贷款的平台中�
 
 > Lending Club 2016 的借贷数据，Q3，Q4 可以一起做一下，半年的数据做训练是更好的.
 
-
 ### 1. Data
 
 Lending Club 2016年Q3数据：https://www.lendingclub.com/info/download-data.action
