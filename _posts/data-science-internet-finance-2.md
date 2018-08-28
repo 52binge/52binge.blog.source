@@ -7,11 +7,9 @@ tags: ITFIN
 mathjax: true
 ---
 
-反欺诈也是一种机器学习过程
+反欺诈也是一种机器学习过程， 反欺诈建模中的数据科学
 
 <!-- more -->
-
-## 反欺诈建模中的数据科学
 
 <img src="/images/datascience/finance-8.jpg" width="850" />
 
@@ -53,23 +51,23 @@ mathjax: true
 
 <img src="/images/datascience/finance-10.jpg" width="800" />
 
-### Linear Regression
+### 1. Linear Regression
 
 <img src="/images/datascience/finance-11.jpg" width="800" />
 
-### Logistic Regression
+### 2 Logistic Regression
 
 <img src="/images/datascience/finance-12.jpg" width="800" />
 
-### Decision Tree
+### 3. Decision Tree
 
 <img src="/images/datascience/finance-13.jpg" width="850" />
 
-### Random Forest
+### 4. Random Forest
 
 <img src="/images/datascience/finance-14.png" width="850" />
 
-### Gradient Boosting Regression Tree
+### 5. Gradient Boosting RT
 
 <img src="/images/datascience/finance-15.png" width="850" />
 
