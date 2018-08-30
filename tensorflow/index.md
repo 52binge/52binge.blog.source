@@ -2,6 +2,8 @@
 date: 2018-07-16 16:59:48
 ---
 
+## TensorFlow
+
 TensorFlow 最初由Google大脑的研究员和工程师开发出来，用于机器学习和神经网络方面的研究，2015.10宣布开源.
 
 TensorFlow 是一款神经网络的Python外部的结构包, 也是一个采用数据流图来进行数值计算的开源软件库.
@@ -87,3 +89,48 @@ Keras 是一个兼容 Theano 和 Tensorflow 的神经网络高级包, 用他来�
 
 [0]: /tensorflow
 [k1]: https://keras.io/zh/
+
+## Python
+
+Python 哲学就是简单优雅，尽量写容易看明白的代码，尽量写少的代码.
+
+Python 数据分析模块: Numpy & Pandas, 及强大的画图工具 Matplotlib
+
+- [Python](/python_language)
+
+- [Numpy & Pandas](/python_numpy_pandas)
+
+- [Matplotlib](/python_matplotlib)
+
+## Scikit-Learn
+
+Sklearn 机器学习领域当中最知名的 Python 模块之一 [why][sklearn0] 
+
+- [1.1 : Sklearn Choosing The Right Estimator][sklearn1]
+
+- [1.2 : Sklearn General Learning Model][sklearn2]
+
+- [1.3 : Sklearn DataSets][sklearn3]
+
+- [1.4 : Sklearn Common Attributes and Functions][sklearn4]
+
+- [1.5 : Normalization][sklearn5]
+
+- [1.6 : Cross-validation 1][sklearn6]
+
+- [1.7 : Cross-validation 2][sklearn7]
+
+- [1.8 : Cross-validation 3][sklearn8]
+
+- [1.9 : Sklearn Save Model][sklearn9]
+
+[sklearn0]: /2018/01/03/py-sklearn-0-why/
+[sklearn1]: /2018/01/03/py-sklearn-1-choosing-estimator/
+[sklearn2]: /2018/01/05/py-sklearn-2-general-learning-model/
+[sklearn3]: /2018/01/03/py-sklearn-3-database/
+[sklearn4]: /2018/01/05/py-sklearn-4-common-attributes/
+[sklearn5]: /2018/01/06/py-sklearn-5-normalization/
+[sklearn6]: /2018/01/08/py-sklearn-6-cross-validation-1/
+[sklearn7]: /2018/01/09/py-sklearn-6-cross-validation-2/
+[sklearn8]: /2018/01/09/py-sklearn-6-cross-validation-3/
+[sklearn9]: /2018/01/10/py-sklearn-7-save-model/
