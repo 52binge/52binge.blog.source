@@ -41,7 +41,7 @@ mathjax: true
 
 该网络 1980s 提出，主要针对灰度图像训练的，用于识别手写数字。
 
-<img src="/images/deeplearning/C4W1-19_1.png" width="750" />
+<img src="/images/deeplearning/C4W2-1_1.png" width="750" />
 
 > 1. 当时很少用到 Padding，所以看到随着网络层次增加，图像的高度和宽度都是逐渐减小的，深度则不断增加.
 > 2. 当时人们会更倾向于使用 Average Pooling，但是现在则更推荐使用 Max Pooling.
@@ -53,7 +53,7 @@ mathjax: true
 
 AlexNet 其实和 LetNet-5 有很多相似的地方，如大致的网络结构。不同的地方主要有如下：
 
-<img src="/images/deeplearning/C4W1-20_1.png" width="750" />
+<img src="/images/deeplearning/C4W2-2_1.png" width="750" />
 
 - 激活函数使用的是 **Relu**，最后一层使用的是 **Softmax**
 - 参数更多，有6000万个参数，而 LeNet-5 只有6万个左右
@@ -67,7 +67,7 @@ AlexNet 其实和 LetNet-5 有很多相似的地方，如大致的网络结构�
 
 ### 2.3 VGG-16
 
-<img src="/images/deeplearning/C4W1-21_1.png" width="750" />
+<img src="/images/deeplearning/C4W2-3_1.png" width="750" />
 
 这个网络太牛了，因为它有将近 1.38亿个参数，即使放到现在也是一个很大的网络，但是这个网络的结构并不复杂。下面主要介绍一下上图网络。
 
@@ -87,17 +87,17 @@ ResNets 发明者是 何恺明、张翔宇、任少卿、孙剑
 
 首先介绍组成残差网络的单元：残差块(**Residual Block**)，如下图示：
 
-<img src="/images/deeplearning/C4W1-22.png" width="550" />
+<img src="/images/deeplearning/C4W2-4.png" width="550" />
 
 残差块是由两层网络节点组成的, $a^{[l]}$ 经过线性变化，再通过Relu激活函数后得到 $a^{[l+1]}$， $a^{[l+2]}$ 也同理，具体过程如下图示：
 
-<img src="/images/deeplearning/C4W1-23_1.png" width="750" />
+<img src="/images/deeplearning/C4W2-5_1.png" width="750" />
 
 特别注意上图中的**紫色线**连接，$a^{[{l}]}$ 通过这条线直接将数据传递给 $a^{[l+2]}$， 所以 $a^{[l+2]}=g(z^{[l+1]}+a^{[l]})$ ，这条紫色线也叫作**short cut**(或skip connection)
 
 ### 3.2 残差网络
 
-<img src="/images/deeplearning/C4W1-24_1.png" width="750" />
+<img src="/images/deeplearning/C4W2-6_1.png" width="750" />
 
 如图示，残差网络每两层网络节点组成一个残差块，这也就是其与普通网络(Plain Network)的差别。
 
@@ -111,7 +111,7 @@ ResNets 发明者是 何恺明、张翔宇、任少卿、孙剑
 
 为了直观解释残差网络为什么有用，假设我们已经通过一个很大的神经网络得到了 $a^{[l]}$。 而现在我们又需要添加两层网络进去，我们看看如果添加的是残差块会有什么效果。如下图示：
 
-<img src="/images/deeplearning/C4W1-25.jpg" width="650" />
+<img src="/images/deeplearning/C4W2-7.jpg" width="650" />
 
 由 **残差块Residual Block** 的特点我们知道 $a^{[l+2]}=g(z^{[l+1]}+a^{[l]})=g(W^{[l+1]}a^{[l]}+b^{[l+1]}+a^{[l]})$
 
@@ -124,6 +124,44 @@ ResNets 发明者是 何恺明、张翔宇、任少卿、孙剑
 > 普通网络 和 ResNets 常用的结构是 Conv -> Conv -> Conv -> Pool -> Conv -> Conv -> Conv -> Pool 依次重复之.. 直到有一个通过 Softmax 进行预测的全连接层.
 
 ## 5. in Network and 1×1 convolutions
+
+$1 \* 1$ 卷积乍看起来好像很没用，如下图上，​但是如果这个 $1 \* 1$ 的卷积有深度呢？​
+
+<img src="/images/deeplearning/C4W2-8.png" width="750" />
+
+说个更加直观的理解就是使用 $1\*1$ 卷积可以很方便的减少深度，而不改变高度和宽度，如下图所示：
+
+<img src="/images/deeplearning/C4W2-9.png" width="700" />
+
+只需要用 32 个 ($1\*1\*192$) 的 Filter 即可, 如果不用 $1 \* 1$ 卷积，例如采用 $2\*2$ 卷积,要想实现只改变深度，那么还需要使用 padding，相比起来更加麻烦了.
+
+## 6. Inception network motivation
+
+<img src="/images/deeplearning/C4W2-10.jpg" width="700" />
+
+如上图示，我们使用了各种过滤器，也是用了 Max Pooling。但是这些并不需要人工的选择其个数，这些都可以通过学习来确定下来。所以这种方法很好的帮助我们选择何种 **Filter** 的问题，这也就是 **Inception**网络。
+
+### 6.1 计算成本
+
+注意随之而来的计算成本，尤其是 $5\*5$ 的 Filter，下面以这个 Filter 举例进行说明：
+
+<img src="/images/deeplearning/C4W2-11.jpg" width="700" />
+
+如上图示，使用 32 个 $5\*5\*192$ 的 **Filter**，对 $(28,28,192)$ 进行 Same卷积 运算得到 $(28,28,32)$ 的输出矩阵，该卷积需要执行的乘法运算有多少次呢？
+
+输出矩阵中的一个数据是经过 $5\*5\*192$ 次乘法得到的，那么总共的乘法运算次数则是 $5\*5\*192\*28\*28\*32=1.2$ 亿
+
+### 6.2 瓶颈层(Bottleneck layer)
+
+上面运算次数多大1.2亿次，运算量相当大，因此有另一种网络结构对此进行优化，且可以达到同样效果，即采用 1 \* 1 卷积
+
+<img src="/images/deeplearning/C4W2-12.png" width="700" />
+
+如图示进行了两次卷积，我们计算一下总共的乘法次数。
+
+第一次卷积：28 \* 28 \* 16 \* 192 = 2.4 million
+第二次卷积：28 \* 28 \* 32 \* 5 \* 5 \* 16 = 10 million
+总共乘法次数是 12.4 million，这与上面直接用 5 \* 5 Filter 的运算次数整整少了十倍。
 
 ## Reference
 
