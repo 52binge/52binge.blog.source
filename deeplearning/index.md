@@ -5,7 +5,9 @@
 
 ## 1. Neural Networks and Deep Learning
 
-- [Introduction to Deep Learning][c1w1]
+### [Week 1 : Introduction to Deep Learning][c1w1]
+
+学习驱动神经网络兴起的主要技术趋势，了解现今深度学习在哪里应用、如何应用。
 
 - [Neural Networks Basics][c1w2]
 
@@ -23,22 +25,6 @@
 [c1w2]: /2018/07/07/deeplearning-ai-Neural-Networks-and-Deep-Learning-week2/
 [c1w3]: /2018/07/14/deeplearning-ai-Neural-Networks-and-Deep-Learning-week3/
 [c1w4]: /2018/07/15/deeplearning-ai-Neural-Networks-and-Deep-Learning-week4/
-
-### 第一周  深度学习概论：
-
-学习驱动神经网络兴起的主要技术趋势，了解现今深度学习在哪里应用、如何应用。
-
-1.1  欢迎来到深度学习工程师微专业
-
-1.2  什么是神经网络？
-
-1.3  用神经网络进行监督学习
-
-1.4  为什么深度学习会兴起？
-
-1.5  关于这门课
-
-1.6  课程资源
 
 ### 第二周  神经网络基础：
 
