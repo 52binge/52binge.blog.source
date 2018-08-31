@@ -197,7 +197,7 @@ Practical advice for using ConvNets
 
 ## 10. Data augmentation
 
-### 10.1 Common augmentation methods
+### 10.1 Common augmentation
 
 - 旋转(rotation)
 - 修剪(shearing)
