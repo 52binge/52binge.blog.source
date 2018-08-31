@@ -147,9 +147,9 @@ $1 \* 1$ 卷积乍看起来好像很没用，如下图上，​但是如果这�
 
 <img src="/images/deeplearning/C4W2-11.jpg" width="700" />
 
-如上图示，使用 32 个 $5\*5\*192$ 的 **Filter**，对 $(28,28,192)$ 进行 Same卷积 运算得到 $(28,28,32)$ 的输出矩阵，该卷积需要执行的乘法运算有多少次呢？
+如上图示，使用 32 个 $(5\*5\*192)$ 的 **Filter**，对 $(28,28,192)$ 进行 Same卷积 运算得到 $(28,28,32)$ 的输出矩阵，该卷积需要执行的乘法运算有多少次呢？
 
-输出矩阵中的一个数据是经过 $5\*5\*192$ 次乘法得到的，那么总共的乘法运算次数则是 $5\*5\*192\*28\*28\*32=1.2$ 亿
+输出矩阵中的一个数据是经过 $(5\*5\*192)$ 次乘法得到的，那么总共的乘法运算次数则是 $(5\*5\*192\*28\*28\*32=1.2)$ 亿
 
 ### 6.2 瓶颈层(Bottleneck layer)
 
@@ -163,6 +163,69 @@ $1 \* 1$ 卷积乍看起来好像很没用，如下图上，​但是如果这�
 第二次卷积：28 \* 28 \* 32 \* 5 \* 5 \* 16 = 10 million
 总共乘法次数是 12.4 million，这与上面直接用 5 \* 5 Filter 的运算次数整整少了十倍。
 
+## 7. Inception network
+
+<img src="/images/deeplearning/C4W2-12_1.png" width="750" />
+
+<img src="/images/deeplearning/C4W2-13_1.png" width="750" />
+
+> 为了可以防止过拟合，还有个特别的 inception network，是一个 Google 员工开发的叫做 GoogLeNet，这个名字是为了向 LeNet 致敬. 这样非常好，深度学习的研究人员如何重视协作，深度学习工作者对彼此的工作成果，都有一种强烈的敬意.
+
+## 8. Using open-source impl
+
+Practical advice for using ConvNets
+
+## 9. Transfer Learning
+
+简单说就是在他人的基础上实现自己想要的模型，举个🌰，假如我们现在需要识别家里养的两只猫，分别叫 **小花** 和 **小白**，但是我们只有比较少的图片。幸运的是网上已经有一个已经训练好的模型，是用来区分1000个不同事物的(包括猫)，其网络模型如下：
+
+<img src="/images/deeplearning/C4W2-15.png" width="750" />
+
+我们的需求是最后结果有三种：是 **小花**，or **小白**，or **都不是**。​所以需要对 **softmax** 做如下图修改.
+
+由于数据较少，所以可以对他人的模型的前面的结构中的参数进行冻结，即 **权重 weight** 和 **偏差 bias** 不做改动。
+
+<img src="/images/deeplearning/C4W2-16.png" width="750" />
+
+​当然，如果我们有一定量的数据，那么 **freeze** 的范围也可以随之减少，即拿来训练的层次可以增多
+​
+​<img src="/images/deeplearning/C4W2-17.png" width="750" />
+
+> you find that for a lot of computer vision applications, you just do much better if you download someone else's open source weights and use that as initialization for your problem.
+> 
+> I think that computer vision is one where transfer learning is something that you should almost always do. （unless you actually have a very very large data set..）
+
+## 10. Data augmentation
+
+### 10.1 Common augmentation methods
+
+- 旋转(rotation)
+- 修剪(shearing)
+- 局部变形(local warping)
+- 镜像(mirroring)
+
+​<img src="/images/deeplearning/C4W2-18.jpg" width="750" />
+
+> 以上介绍的方法，同时使用并没有什么坏处，但是在实践中，因为太复杂了，所以使用的很少。
+>
+> 更经常使用的方法可能下面要介绍的 **Color shifting** 。
+
+### 10.2 Color shifting
+
+我们都知道图像是由 **RGB** 三种颜色构成的，所以该数据扩充方法常采用 **PCA color augmentation**，即假如一个图片的 **R** 和 **G** 成分较多，那么该算法则 **R,G** 的值会减少很多，而 B 的值变化会少一些，所以使得总体的颜色保持一致.
+
+​<img src="/images/deeplearning/C4W2-19_2.png" width="750" />
+
+> 如果你看不懂这些，那么没关系，可以看看 AlexNet 论文中的细节，你也能找到 PCA 颜色增强的开源实现方法.
+
+## 11. The state of CV
+
+​<img src="/images/deeplearning/C4W2-21_1.png" width="750" />
+
+​<img src="/images/deeplearning/C4W2-22_1.png" width="750" />
+
+​<img src="/images/deeplearning/C4W2-23_1.png" width="750" />
+​
 ## Reference
 
 - [网易云课堂 - deeplearning][1]
