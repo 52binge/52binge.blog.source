@@ -31,7 +31,7 @@ p + p {
 
 <a class="article-myself" href="/"> Blair Chan</a> 90s, a program engineer, a GTD practitioner, live in Hangzhou, China.
 
-<a class="article-myself" href="/tweet"> Libin Chan</a> focus on Python、 Deep Learning、 NLP、Computer Vision and other fields.
+<a class="article-myself" href="/tweet"> Libin Chan</a> focus on Python、ComputerVision、 DeepLearning、NLP、RS and other fields.
 
 <!--<a class="article-myself" href="/">  Libin Chan</a>-->
 
@@ -52,7 +52,6 @@ p + p {
 - 2016-07-29 : this blog add [tweet][tw] system
 - 2016-07-23 : blairos deep custom-made
 - 2016-03-22 : build blog by hexo framework
-
 
 Copyright © 2016 [www.iequa.com](/) selfboot
 
