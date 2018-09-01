@@ -18,6 +18,8 @@ Here are some useful links
 - [deeplearning.ai（吴恩达老师的深度学习课程笔记及资源）][r4]
 - [大数据文摘 deeplearning.ai Sequence Models 中文笔记][r6]
 - [Sequence Models 英文版笔记][r7]
+- [寒小阳 - 深度学习与自然语言处理][r8]
+- [寒小阳主页][r9]
 
 [r1]: http://daniellaah.github.io/
 [r2]: https://www.ctolib.com/Yukong-Deeplearning-ai-Solutions.html
@@ -25,6 +27,8 @@ Here are some useful links
 [r4]: https://github.com/fengdu78/deeplearning_ai_books
 [r6]: https://github.com/theBigDataDigest/Andrew-Ng-deeplearning-part-5-Course-notes-in-Chinese/blob/master/Andrew-Ng-deeplearning.ai-part-5-Course%20notes.pdf
 [r7]: https://kulbear.github.io/pdf/sequence-models.pdf
+[r8]: https://blog.csdn.net/column/details/dl-nlp.html
+[r9]: https://blog.csdn.net/han_xiaoyang/article/category/5877239
 
 ## Recommend
 
