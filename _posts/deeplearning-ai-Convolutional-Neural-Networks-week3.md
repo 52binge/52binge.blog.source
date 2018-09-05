@@ -196,7 +196,7 @@ $$
 
 ## 6. Intersection Over Union
 
-前面说到了实现目标定位时可能存在滑动窗口与真实边框存在出入，如下图示：
+前面说到了实现目标定位时可能存在 **滑动窗口** 与 **真实边框** 存在出入，如下图示：
 
 <img src="/images/deeplearning/C4W3-20.jpg" width="340" />
 
