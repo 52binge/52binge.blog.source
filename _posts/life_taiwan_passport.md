@@ -1,23 +1,15 @@
 ---
-title: 如何拿台湾护照？
+title: 如何拿灣灣護照？
+toc: true
 date: 2018-09-05 10:26:48
+categories: life
+tags: Taiwan
+mathjax: true
 ---
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
+网上关于大陆居民换台湾护照众说纷纭, 现我整理下网路上的文章，记录下通过什么途径可以拿到台湾护照？
 
-网上关于大陆居民换台湾护照众说纷纭，除了结婚和亲属这条线外，有的说海外大陆居民可以在一定时间后申请，请问这条规定是否仍有效，具体如何实施？有没有其他的途径可以拿到台湾护照？
+<!-- more -->
 
 **中华民国(台湾) 护照条例施行细则第18条说到:**
 
