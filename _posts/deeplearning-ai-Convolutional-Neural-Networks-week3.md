@@ -164,7 +164,7 @@ $b\_\*$ **用于标识所识别食物的位置**
 
 <img src="/images/deeplearning/C4W3-15.png" width="400" />
 
-为了解决这个问题，就有了**YOLO(you only look once)**算法，即只需要计算一次便可确定需要识别物体的位置的大小。
+为了解决这个问题，就有了 **YOLO (you only look once)** 算法，即只需要计算一次便可确定需要识别物体的位置的大小。
 
 **原理如下：**
 
@@ -194,8 +194,25 @@ $$
 
 <img src="/images/deeplearning/C4W3-19_1.png" width="750" />
 
-
 ## 6. Intersection Over Union
+
+> 交并比 Intersection Over Union
+
+前面说到了实现目标定位时可能存在滑动窗口与真实边框存在出入，如下图示：
+
+红色框是车身边界，紫色框是滑动窗口，那么此窗口返回的值是有车还是无车呢？
+
+<img src="/images/deeplearning/C4W3-20.jpg" width="340" />
+
+为了解决上面的问题引入了交并比(IoU)，也就是两个框之间的交集与并集之比，依据这个值可以评价定位算法是否精准。
+
+示意图如下，黄色区域表示紫色框和红色框的交集，绿色区域表示紫色框和红色框的并集，交并比(IoU)就等于黄色区域大小比上绿色区域大小。
+
+如果 $IoU\geq0.5$，则表示紫色框中有车辆，反之没有。
+
+当然 0.5 这个阈值是人为设定的，没有深入的科学探究，所以如果希望结果更加精确，也可以用 0.6 或 0.7 设为阈值，但是不建议用小于 0.5 的阈值。
+
+<img src="/images/deeplearning/C4W3-21_1.png" width="750" />
 
 ## 7. Non-max Suppression
 
