@@ -52,6 +52,10 @@ ImageNet 竞赛 2015年 151层 CNN 获胜， MS 深度残差网络.
 
 - [网易云课堂 - deeplearning][1]
 - [DeepLearning.ai学习笔记汇总][2]
+- [斯坦福CS231N课程学习笔记（一）.课程简介与准备][3]
+- [李飞飞CS231n2017课程双语字幕版上线 !（附课程链接）][4]
 
 [1]: https://study.163.com/my#/smarts
 [2]: http://www.cnblogs.com/marsggbo/p/7470989.html
+[3]: https://zhuanlan.zhihu.com/p/21353567
+[4]: https://blog.csdn.net/tMb8Z9Vdm66wH68VX1/article/details/78537000

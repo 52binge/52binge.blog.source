@@ -20,6 +20,7 @@ Here are some useful links
 - [Sequence Models 英文版笔记][r7]
 - [寒小阳 - 深度学习与自然语言处理][r8]
 - [寒小阳主页][r9]
+- [Bolei Zhou @Assistant Professor CUHK][r10]
 
 [r1]: http://daniellaah.github.io/
 [r2]: https://www.ctolib.com/Yukong-Deeplearning-ai-Solutions.html
@@ -29,6 +30,7 @@ Here are some useful links
 [r7]: https://kulbear.github.io/pdf/sequence-models.pdf
 [r8]: https://blog.csdn.net/column/details/dl-nlp.html
 [r9]: https://blog.csdn.net/han_xiaoyang/article/category/5877239
+[r10]: http://people.csail.mit.edu/bzhou/
 
 ## Recommend
 
