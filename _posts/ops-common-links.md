@@ -21,6 +21,7 @@ Here are some useful links
 - [寒小阳 - 深度学习与自然语言处理][r8]
 - [寒小阳主页][r9]
 - [Bolei Zhou @Assistant Professor CUHK][r10]
+- [计算机视觉和自然语言处理，哪个更具有发展前景呢，还是各有千秋呢？][r11]
 
 [r1]: http://daniellaah.github.io/
 [r2]: https://www.ctolib.com/Yukong-Deeplearning-ai-Solutions.html
@@ -31,6 +32,7 @@ Here are some useful links
 [r8]: https://blog.csdn.net/column/details/dl-nlp.html
 [r9]: https://blog.csdn.net/han_xiaoyang/article/category/5877239
 [r10]: http://people.csail.mit.edu/bzhou/
+[r11]: https://www.zhihu.com/question/49432647/answer/144958145
 
 ## Recommend
 
