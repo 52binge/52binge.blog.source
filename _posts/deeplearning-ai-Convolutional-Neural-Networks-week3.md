@@ -236,37 +236,43 @@ $$
 
 ## 7. Non-max Suppression
 
+> **非极大值抑制可以确保你对每个对象只检测一次**。
+
 算法大致思路
 
 前面 Bounding Box 一节中介绍到将图片划分成若干等分，例如 3\*3，那么一共就有9块，如下图示，我们可以很清楚的看到第二行第一块和第三块都有车，所以可以标出一个中心点坐标 $(b\_x,b\_y)$，这样我们就能通过最终的输出结果知道这两个框中有车。
 
-<img src="/images/deeplearning/C4W3-22_1.png" width="750" />
+<img src="/images/deeplearning/C4W3-22_1.png" width="550" />
 
 但是如果我们划分的数量变多之后呢？如下图示划分成了 19\*19，图中标出的 3 个黄框和 3 个绿框最终结果都会都会返回[$P\_x=1,b\_x=,b\_y=……$]，但是最后我们该信谁的呢？是这三个框真的有车，而且还不是同一辆车？还是只是同一辆车？所以就有了非极大值抑制来解决这个问题。
 
-<img src="/images/deeplearning/C4W3-23_1.png" width="750" />
+<img src="/images/deeplearning/C4W3-23_1.png" width="550" />
 
-其思路大致如下(为了方便说明和理解，我们不使用 19\*19 的方框)：
+> Non-max Suppression 做的就是清理这些检测结果，这样一辆车只检测一次，而不是每辆车都出发多次检测。
 
-首先每个框会对是否有目标返回一个 $P\_c$ 的概率值(也可以是 $P\_c\*C\_1\*C\_2\*C\_3$ 的概率之积)，如下图示：
+其思路大致如下 (为了方便说明和理解，我们不使用 19\*19 的方框)：
 
-<img src="/images/deeplearning/C4W3-24_1.png" width="750" />
+首先每个框会对是否有目标返回一个 $P\_c$ 的概率值 (也可以是 $P\_c\*C\_1\*C\_2\*C\_3$ 的概率之积)，如下图示：
+
+<img src="/images/deeplearning/C4W3-24.png" width="550" />
 
 然后找到 $P\_c$ 最大的一个框，显然 0.9 的框有车的概率最大，所以该边框颜色高亮
 
-<img src="/images/deeplearning/C4W3-25_1.png" width="750" />
+<img src="/images/deeplearning/C4W3-25.jpg" width="550" />
 
-然后算法遍历其他边框，找出与上一个边框的交并比大于 0.5 的边框，很显然右边的剩余两个边框符合条件，所以这两个边框变暗
+**然后算法遍历其他边框，找出与上一个边框的交并比大于 0.5 的边框**，很显然右边剩余两个边框符合条件，所以这两个边框变暗
 
-<img src="/images/deeplearning/C4W3-26_1.png" width="750" />
+<img src="/images/deeplearning/C4W3-26.jpg" width="550" />
 
 左边的车同理，不加赘述
 
-<img src="/images/deeplearning/C4W3-27_1.png" width="750" />
+<img src="/images/deeplearning/C4W3-27.jpg" width="550" />
 
-下面结合一个例子总结一下**非极大值抑制**算法的实现步骤：
+下面结合一个例子总结一下 **非极大值抑制** 算法的实现步骤：
 
-> 注：在这里假设只需要识别定位车辆即可，所以输出格式为 $P\_c,b\_x,b\_y,b\_h,b\_w$
+在这里假设只需要识别定位车辆即可，所以输出格式为 $P\_c,b\_x,b\_y,b\_h,b\_w$
+
+<img src="/images/deeplearning/C4W3-28.png" width="750" />
 
 这个例子中将图像划分成 19\*19 方格，假设每个方格都已经计算出 $P\_c$ 的概率值
 
@@ -275,8 +281,6 @@ $$
 >
 > - 从剩下的方格中选取 $P\_c$ 最大的一个作为预测值输出，假设这个方格为 $A$
 > - 将与 $A$ 方格交并比大于 0.5 的剔除
-
-<img src="/images/deeplearning/C4W3-28_1.png" width="750" />
 
 ## 8. Anchor Boxes
 
