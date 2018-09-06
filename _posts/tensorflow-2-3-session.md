@@ -23,11 +23,11 @@ sess = tf.Session()
 sess.run(result) # array([ 3.,  5.], dtype=float32)
 ```
 
-> 要输出相加得到的结果，不能简单地直接输出 result，而需要先生成一个 Session，并通过这个 Session 来计算结果。到此就实现了一个非常简单的 TensorFlow 模型。
+> 要输出相加得到的结果，不能简单地直接输出 result，而需要先生成一个 Session，并通过这个 Session 来计算结果。
 
-举个🌰: 
+🌰🌰🌰
 
-这次需要加载 Tensorflow ，然后建立两个 `matrix` , 输出两个 `matrix` 矩阵相乘的结果。
+  这次需要加载 Tensorflow ，然后建立两个 `matrix` , 输出两个 `matrix` 矩阵相乘的结果。
 
 ```python
 import tensorflow as tf
