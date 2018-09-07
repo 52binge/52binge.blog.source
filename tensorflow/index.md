@@ -27,11 +27,11 @@ TensorFlow 是一款神经网络的Python外部的结构包, 也是一个采用�
 
 - [2.4 Variable 变量][t2.4]
 
-- [2.5 Placeholder 传入值][t2.2]
+- [2.5 Placeholder 传入值][t2.5]
 
-- [2.6 什么是激励函数 (Activation Function)][0]
+- [2.6 什么是激励函数 (Activation Function)][t2.6]
 
-- [2.7 激励函数 Activation Function][0]
+- [2.7 激励函数 Activation Function][t2.7]
 
 [t2.1]: /2018/08/24/tensorflow-2-1-structure/
 [t2.2]: /2018/08/24/tensorflow-2-2-example2/
