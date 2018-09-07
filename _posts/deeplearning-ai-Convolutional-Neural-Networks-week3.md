@@ -320,6 +320,8 @@ Anchor Boxes 思路是对于不同物体事先采用不同的框，例如人相�
 
 <img src="/images/deeplearning/C4W3-32_1.png" width="750" />
 
+> 如果两个对象所在一个格子，且两个对象圈出来的框也是一样的，这种情况非常非常少见，我们用其他方法来特殊处理.
+
 ## 9. YOLO Algorithm
 
 ## 10. (Optional) Region Proposals
