@@ -35,5 +35,5 @@ TensorFlow 架构具有良好的可扩展性，对OP的扩展支持，Kernel特�
 [1]: https://www.tensorflow.org/
 [2]: https://www.tensorflow.org/get_started/
 
-[img1]: /images/python/tensorflow-1-why.gif
+[img1]: /images/tensorflow/tf-1-why.gif
 

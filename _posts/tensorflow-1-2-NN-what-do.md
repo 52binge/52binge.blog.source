@@ -16,11 +16,11 @@ tags: tensorflow
 
 本例中蓝色离散点是我们的数据点, 红线是通过神经网络算法拟合出来的曲线
 
-<img src="/images/python/tensorflow-1.2_1.png" width="500" />
+<img src="/images/tensorflow/tf-1.2_1.png" width="500" />
 
 它是对我们数据点的一个近似表达. 可以看出, 在开始阶段, 红线的表达能力不强, 误差很大. 不过通过不断的学习, 预测误差将会被降低. 所以学习到后来. 红线也能近似表达出数据的样子.
 
-<img src="/images/python/tensorflow-1.2_2.png" width="500" />
+<img src="/images/tensorflow/tf-1.2_2.png" width="500" />
 
 ## 拟合参数
 
@@ -35,6 +35,6 @@ tags: tensorflow
 [2]: https://www.tensorflow.org/get_started/
 [3]: https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/
 
-[img1]: /images/python/tensorflow-1.2_1.png
-[img2]: /images/python/tensorflow-1.2_2.png
+[img1]: /images/tensorflow/tf-1.2_1.png
+[img2]: /images/tensorflow/tf-1.2_2.png
 

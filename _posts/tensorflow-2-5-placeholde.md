@@ -6,56 +6,37 @@ categories: python
 tags: tensorflow
 ---
 
-在 Tensorflow 中使用 Variable。 在 Tensorflow 中，定义了某字符串是变量，它才是变量，这一点是与 Python 所不同的。
+placeholder 是 Tensorflow 中的占位符，暂时储存变量.
 
 <!-- more -->
 
-定义语法： `state = tf.Variable()`
+Tensorflow 如果想要从外部传入data, 那就需要用到 `tf.placeholder()`, 然后以这种形式传输数据 `sess.run(**, feed_dict={input: **})`.
+
+举个🌰:
 
 ```python
 import tensorflow as tf
 
-state = tf.Variable(0, name='counter')
+#在 Tensorflow 中需要定义 placeholder 的 type ，一般为 float32 形式
+input1 = tf.placeholder(tf.float32)
+input2 = tf.placeholder(tf.float32)
 
-# 定义常量 one
-one = tf.constant(1)
-
-# 定义加法步骤 (注: 此步并没有直接计算)
-new_value = tf.add(state, one)
-
-# 将 State 更新成 new_value
-update = tf.assign(state, new_value)
+# mul = multiply 是将input1和input2 做乘法运算，并输出为 output 
+ouput = tf.multiply(input1, input2)
 ```
 
-如果你在 Tensorflow 中设定了变量，那么初始化变量是最重要的！！所以定义了变量以后, 一定要定义 `init = tf.initialize_all_variables() `.
-
-到这里变量还是没有被激活，需要再在 `sess` 里, `sess.run(init)` , 激活 `init` 这一步.
+接下来, 传值的工作交给了 `sess.run()` , 需要传入的值放在了 `feed_dict={}` 并一一对应每一个 `input`. `placeholder` 与 `feed_dict={}` 是绑定在一起出现的。
 
 ```python
-# 如果定义 Variable, 就一定要 initialize
-# init = tf.initialize_all_variables() # tf 马上就要废弃这种写法
-init = tf.global_variables_initializer()  # 替换成这样就好
- 
-# 使用 Session
 with tf.Session() as sess:
-    sess.run(init)
-    print(sess.run(new_value))
-    for i in range(3):
-        sess.run(update) # 相当于运行了一遍 tf.assign(state, new_value+100)， 因为这是 update
-        print(sess.run(state))
-    print("Sess Hello !")
+    print(sess.run(ouput, feed_dict={input1: [7.], input2: [2.]}))
+# [ 14.]
 ```
-
-> 注意：直接 print(state) 不起作用！！
->
-> 一定要把 `sess` 的指针指向 `state` 再进行 `print` 才能得到想要的结果！
-
 
 ## Reference
 
 - [tensorflow.org][1]
 - [莫烦Python][2]
-- [新版可视化教学代码][3]
 
 [1]: https://www.tensorflow.org/
 [2]: https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/

@@ -86,6 +86,6 @@ for step in range(201):
 [2]: https://www.tensorflow.org/get_started/
 [3]: https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/
 
-[img1]: /images/python/tensorflow-1-why.gif
+[img1]: /images/tensorflow/tf-1-why.gif
 
 
