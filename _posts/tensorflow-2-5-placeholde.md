@@ -1,7 +1,7 @@
 ---
-title: Variable 变量
+title: Placeholder 传入值
 toc: true
-date: 2018-09-07 10:07:21
+date: 2018-09-07 11:45:21
 categories: python
 tags: tensorflow
 ---
