@@ -331,16 +331,16 @@ Anchor Boxes 思路是对于不同物体事先采用不同的框，例如人相�
 <img src="/images/deeplearning/C4W3-35_1.png" width="750" />
 
 > YOLO Algorithm, that also encompasses many of the best ideas across the entire computer vision literature the relate to object detection.
-> 
+
 > YOLO 计算机视觉对象检测领域文献中最精妙的思路。
 
 ## 10. Region Proposals (Optional)
-​
-<img src="/images/deeplearning/C4W3-36_1.png" width="750" />
 
-​​​候选区域，这些目前工作其实用的很少，但是还是非常有意义的，所以我作为可选视频可学习.
-​​​
-​​吴大大认为 YOLO 这种只看一次的算法，长远而言是CV领域更有希望的方向.
+​​​​候选区域，这些目前工作其实用的很少，但是还是非常有意义的，所以我作为可选视频可学习. 
+​​​​
+<img src="/images/deeplearning/C4W3-36_1.png" width="750" />
+ 
+吴大大认为 YOLO 这种只看一次的算法，长远而言是CV领域更有希望的方向.
 ​​
 ## Reference
 
