@@ -336,12 +336,12 @@ Anchor Boxes 思路是对于不同物体事先采用不同的框，例如人相�
 
 ## 10. Region Proposals (Optional)
 
-​​​​候选区域，这些目前工作其实用的很少，但是还是非常有意义的，所以我作为可选视频可学习. 
-​​​​
-<img src="/images/deeplearning/C4W3-36_1.png" width="750" />
+候选区域，这些目前工作其实用的很少，但是还是非常有意义的，所以我作为可选视频可学习.​​​​
  
-吴大大认为 YOLO 这种只看一次的算法，长远而言是CV领域更有希望的方向.
-​​
+<img src="/images/deeplearning/C4W3-36_1.png" width="750" /> 
+
+吴大大认为 YOLO 这种只看一次的算法，长远而言是CV领域更有希望的方向
+
 ## Reference
 
 - [网易云课堂 - deeplearning][1]
