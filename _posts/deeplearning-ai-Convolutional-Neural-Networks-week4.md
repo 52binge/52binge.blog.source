@@ -1,5 +1,5 @@
 ---
-title: Convolutional Neural Networks (week4) - Face recognition & Neural style transfer
+title: CNN (week4) - Face recognition & Neural style transfer
 toc: true
 date: 2018-09-08 15:00:21
 categories: deeplearning
@@ -21,7 +21,7 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-能够在图像、视频以及其他2D或3D数据上应用这些算法。
+能够在图像、视频以及其他 2D 或 3D 数据上应用这些算法。
 
 <!-- more -->
 
@@ -131,17 +131,21 @@ L(A,P,N)=max(||f(A)−f(P)||2−||f(A)−f(N)||2+α,0)
 
 通过以上内容，我们可以确定下图中的网络的参数了，那么现在开始进行面部验证了。
 
-上面的是测试图，下面的是数据库中的一张照片。
+**上面的是测试图，下面的是数据库中的一张照片**
 
-和之前一样假设f(x(i))有128个节点，之后这两个数据作为输入数据输入到后面的逻辑回归模型中去，即
+和之前一样假设 $f(x^{(i)})$ 有 128个节点，之后这两个数据作为输入数据输入到后面的逻辑回归模型中去，即
 
-ŷ =σ(∑128k=1wi|f(x(i))k−f(x(j))k|+bi)
+$$
+\hat{y} = σ(\sum\_{k=1}^{128}w\_i|f(x^{(i)})\_k-f(x^{(j)})\_k|+b\_i)
+$$
 
-若ŷ =1,为同一人。反之，不是。
+若 $\hat{y}=1$, 为同一人。反之，不是。
 
 如下图示，绿色下划线部分可以用其他公式替换，即有
 
-ŷ =σ(∑128k=1wi(f(x(i))k−f(x(j))k)2f(x(i))k+f(x(j))k+bi)
+$$
+\hat{y}=σ(\sum\_{k=1}^{128}w\_i \frac{(f(x^{(i)})\_k-f(x^{(j)})\_k)^2}{f(x^{(i)})\_k+f(x^{(j)})\_k}+b\_i)
+$$
 
 <img src="/images/deeplearning/C4W4-12_1.png" width="750" />
 
