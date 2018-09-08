@@ -159,26 +159,81 @@ $$
 
 ## 7. What are deep ConvNets learning?
 
+<img src="/images/deeplearning/C4W4-15_1.png" width="750" />
+
+> 第一层只能看到小部分卷积神经.
+> 
+> 你选择一个隐藏单元，发现有9个图片，最大化了单元激活，你可能找到类似这样的图片浅层区域.
+
+<img src="/images/deeplearning/C4W4-16_1.png" width="750" />
+
 ## 8. Cost Function
 
 如下图示：
 
-左上角的包含Content的图片简称为C，右上角包含Style的简称S，二者融合后得到的图片简称为G。
+<img src="/images/deeplearning/C4W4-17_1.png" width="750" />
 
-我们都知道计算问题必须是有限的，所以融合的标准是什么？也就是说Content的保留程度和Style的运用程度如何取舍呢？
+左上角的包含 Content 的图片简称为 C，右上角包含 Style 的简称 S，二者融合后得到的图片简称为 G。
+
+我们知道计算问题须是有限的，所以融合的标准是什么？也就是说 Content 的保留程度和 Style 的运用程度如何取舍呢？
 
 此时引入损失函数，并对其进行最优化，这样便可得到最优解。
 
-J(G)=αJContent(C,G)+βJStyle(S,G)
+$$
+J(G)=αJ\_{Content}(C,G)+βJ\_{Style}(S,G)
+$$
 
-JContent(C,G)表示图像C和图像G之间的差异，JStyle(S,G)同理。
+> $J(G)$ 定义用来生成图像的好坏，$J\_{Content}(C,G)$ 表示 图像$C$ 和 图像$G$ 之间的差异，$J\_{Style}(S,G)$ 同理。
+
+**计算过程示例**：
+
+> 随机初始化图像 $G$，假设为 100\*100\*3 （maybe 500\*500\*3） (如下图右边四个图像最上面那个所示)
+> 
+> 使用梯度下降不断优化 $J(G)$。 (优化过程如下图右边下面3个图像所示)
+
+<img src="/images/deeplearning/C4W4-18_1.png" width="750" />
+
+> 下面一小节将具体介绍 **Cost Function** 的计算。
 
 ## 9. Content Cost Function
 
+首先假设我们使用 **第 $l$ 层** 隐藏层 来计算 $J\_{Content}(C,G)$，注意这里的 **$l$** 一般取在中间层，而不是最前面的层，或者最后层
+
+> 原因如下：
+>
+> - 假如取**第1层**，那么得到的 $G$ 图像 将会与 图像$C$ 像素级别的相似，这显然不行。
+> - 假如取很深层，那么该层已经提取出了比较重要的特征，例如 图像$C$ 中有一条狗，那么得到的 图像$G$ 会过度的保留这个特征。
+
+- 然后使用预先训练好的卷积神经网络，如 VGG网络。这样我们就可以得到 图像$C$ 和 图像$G$ 在第$l$层的激活函数值，分别记为 $a^{[l][C]},a^{[l][G]}$
+- 内容损失函数 $J\_{Content}(C,G) = \frac{1}{2} || a^{[l][C]} - a^{[l][G]} ||^2$
+
+<img src="/images/deeplearning/C4W4-19_1.png" width="750" />
+
 ## 10. Style Cost Function
 
+<img src="/images/deeplearning/C4W4-19_1.png" width="750" />
+
+<!--<img src="/images/deeplearning/C4W4-19_1.png" width="750" />
+
+<img src="/images/deeplearning/C4W4-19_1.png" width="750" />
+
+<img src="/images/deeplearning/C4W4-19_1.png" width="750" />
+
+<img src="/images/deeplearning/C4W4-19_1.png" width="750" />
+-->
+
 ## 11. 1D and 3D Generalizations
-​
+
+1D generalizations of models
+
+<img src="/images/deeplearning/C4W4-25_1.png" width="750" />
+
+3D generalizations of models
+
+<img src="/images/deeplearning/C4W4-26_1.png" width="750" />
+
+> 医学图像 与 视频检测 都是 3D 的.
+
 ## Reference
 
 - [网易云课堂 - deeplearning][1]
