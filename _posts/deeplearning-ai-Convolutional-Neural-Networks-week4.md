@@ -29,13 +29,15 @@ mathjax: true
 
 这一节中的人脸识别技术的演示的确很NB..., 演技不错，😄
 
+<img src="/images/deeplearning/C4W4-1_1.png" width="750" />
+
 ## 2. One Shot Learning
 
 作为老板希望与时俱进，所以想使用人脸识别技术来实现打卡。
 
 假如我们公司只有4个员工，按照之前的思路我们训练的神经网络模型应该如下：
 
-<img src="/images/deeplearning/C4W4-1_1.png" width="750" />
+<img src="/images/deeplearning/C4W4-2_1.png" width="750" />
 
 如图示，输入一张图像，经过CNN，最后再通过Softmax输出5个可能值的大小(4个员工中的一个，或者都不是，所以一一共5种可能性)。
 
@@ -43,7 +45,7 @@ mathjax: true
 
 这显然有问题，所以有人提出了一次学习(one-shot)，更具体地说是通过一个函数来求出输入图像与数据库中的图像的差异度，用 $d(img1,img2)$ 表示。
 
-<img src="/images/deeplearning/C4W4-2_1.png" width="750" />
+<img src="/images/deeplearning/C4W4-3_1.png" width="750" />
 
 如上图示，如果两个图像之间的差异度不大于某一个阈值 **τ**，那么则认为两张图像是同一个人。反之，亦然。
 
@@ -51,15 +53,121 @@ mathjax: true
 
 ## 3. Siamese Network
 
+注意：下图中两个网络参数是一样的。
+
+先看上面的网络。记输入图像为x(1)，经过卷积层，池化层和全连接层后得到了箭头所指位置的数据(一般后面还会接上softmax层，但在这里暂时不用管)，假设有128个节点，该层用f(x(1))表示，可以理解为输入x(1)的编码。
+
+那么下一个网络同理，不再赘述。
+
+因此上一节中所说的差异度函数即为
+
+d(x(1),x(2))=||f(x(1))−f(x(2))||2
+
+<img src="/images/deeplearning/C4W4-4_1.png" width="750" />
+
+问题看起来好像解决了，但总感觉还漏了点什么。。。
+
+没错！！！
+你没错！！！
+神经网络的参数咋确定啊？也就是说f(x(i))的参数怎么计算呢？
+
+首先我们可以很明确的是如果两个图像是同一个人，那么所得到的参数应该使得||f(x(1))−f(x(2))||2的值较小，反之较大。(如下图示)
+
+<img src="/images/deeplearning/C4W4-5_1.png" width="750" />
+
 ## 4. Triplet Loss
+
+### 4.1 Learning Objective
+
+这里首先介绍一个三元组，即 (Anchor, Positive, Negative)，简写为(A,P,N)
+
+Anchor: 可以理解为用于识别的图像
+Positive： 表示是这个人
+Negative： 表示不是同一个人
+
+由上一节中的思路，我们可以得到如下不等式：
+
+d(A,P)≦d(A,N),即||f(A)−f(P)||2−||f(A)−f(N)||2≦0 (如下图示)
+
+<img src="/images/deeplearning/C4W4-6_1.png" width="750" />
+
+但是这样存在一个问题，即如果神经网络什么都没学到，返回的值是0，也就是说如果f(x)=0⃗ 的话，那么这个不等式是始终成立的。(如下图示)
+
+<img src="/images/deeplearning/C4W4-7_1.png" width="750" />
+
+为了避免上述特殊情况，而且左边值必须小于0，所以在右边减去一个变量α，但是按照惯例是加上一个值，所以将α加在左边。
+
+<img src="/images/deeplearning/C4W4-8_1.png" width="750" />
+
+<img src="/images/deeplearning/C4W4-9_1.png" width="750" />
+
+综上，所得到的参数需要满足如下不等式
+
+||f(A)−f(P)||2−||f(A)−f(N)||2+α≦0
+
+### 4.2 Lost function
+
+介绍完三元组后，我们可以对单个图像定义如下的损失函数(如下图示)
+
+L(A,P,N)=max(||f(A)−f(P)||2−||f(A)−f(N)||2+α,0)
+
+解释一下为什么用max函数，因为如果只要满足||f(A)−f(P)||2−||f(A)−f(N)||2+α≦0，我们就认为已经正确识别出了图像中的人，所以对于该图像的损失值是0.
+
+<img src="/images/deeplearning/C4W4-10_1.png" width="750" />
+
+所以总的损失函数是 : J=∑L(A(i),P(i),N(i))
+
+要注意的是使用这种方法要保证每一个人不止有一张图像，否则无法训练。另外要注意与前面的One-shot区分开来，这里是在训练模型，所以训练集的数量要多一些，每个人要有多张照片。而One-shot是进行测试了，所以只需一张用于输入的照片即可。
+
+### 4.3 Choosing the triplets(A,P,N)
+
+还有一个很重要的问题就是如何选择三元组(A,P,N)。因为实际上要满足不等式d(A,P)+α≦d(A,N)是比较简单的,即只要将Negative选择的比较极端便可，比如anchor是一个小女孩，而Negative选择一个老大爷。
+
+所以还应该尽量满足d(A,N)≈d(A,N)
+
+<img src="/images/deeplearning/C4W4-11_1.png" width="750" />
 
 ## 5. Face Verification and Binary Classification
 
+通过以上内容，我们可以确定下图中的网络的参数了，那么现在开始进行面部验证了。
+
+上面的是测试图，下面的是数据库中的一张照片。
+
+和之前一样假设f(x(i))有128个节点，之后这两个数据作为输入数据输入到后面的逻辑回归模型中去，即
+
+ŷ =σ(∑128k=1wi|f(x(i))k−f(x(j))k|+bi)
+
+若ŷ =1,为同一人。反之，不是。
+
+如下图示，绿色下划线部分可以用其他公式替换，即有
+
+ŷ =σ(∑128k=1wi(f(x(i))k−f(x(j))k)2f(x(i))k+f(x(j))k+bi)
+
+<img src="/images/deeplearning/C4W4-12_1.png" width="750" />
+
+当然数据库中的图像不用每次来一张需要验证的图像都重新计算，其实可以提前计算好，将结果保存起来，这样就可以加快运算的速度了。
+
+<img src="/images/deeplearning/C4W4-13_1.png" width="750" />
+
 ## 6. What is neural style transfer?
+
+<img src="/images/deeplearning/C4W4-14_1.png" width="750" />
 
 ## 7. What are deep ConvNets learning?
 
 ## 8. Cost Function
+
+如下图示：
+
+左上角的包含Content的图片简称为C，右上角包含Style的简称S，二者融合后得到的图片简称为G。
+
+我们都知道计算问题必须是有限的，所以融合的标准是什么？也就是说Content的保留程度和Style的运用程度如何取舍呢？
+
+此时引入损失函数，并对其进行最优化，这样便可得到最优解。
+
+J(G)=αJContent(C,G)+βJStyle(S,G)
+
+JContent(C,G)表示图像C和图像G之间的差异，JStyle(S,G)同理。
 
 ## 9. Content Cost Function
 
