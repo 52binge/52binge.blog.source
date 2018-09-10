@@ -1,16 +1,16 @@
 
 我開始整理 Deep Learning 相關学习笔记，学习算法类知识真的需要下很大很大的功夫，灰常博大精深~~
 
-博主水平灰常灰常有限，期望能與對、Machine Learning 感兴趣的朋友一起学习、交流、探讨与分享~~
+博主水平灰常灰常有限，期望能與對、Deep Learning 感兴趣的朋友一起学习、交流、探讨与分享~~
 
 ## 1. Neural Networks and Deep Learning
 
-No. | Title | Detailed content
+Part1 | Neural Networks | <font color="#0085a1">**Neural Networks and Deep Learning**</font>
 :-------: | :-------: | :-------:
-1. | [Introduction to Deep Learning][c1w1]  | 了解现今深度学习在哪里应用、如何应用
-2. | [Neural Networks Basics][c1w2] | logistic 损失函数、导数、计算图、m个样本的梯度下降、向量化
-3. | [Shallow Neural Networks][c1w3] | NN Representation、多样本向量化解释、Activation functions、随机初始化
-4. | [Deep Neural Networks][c1w4] | 深网的前向传播、核对矩阵维数、深层表示、前向反向传播、参数VS超参数
+1 | [Introduction to Deep Learning][c1w1]  | 了解现今深度学习在哪里应用、如何应用
+2 | [Neural Networks Basics][c1w2] | logistic 损失函数、导数、计算图、m个样本的梯度下降、向量化
+3 | [Shallow Neural Networks][c1w3] | NN Representation、多样本向量化解释、Activation functions、随机初始化
+4 | [Deep Neural Networks][c1w4] | 深网的前向传播、核对矩阵维数、深层表示、前向反向传播、参数VS超参数
 
 [c1w1]: /2017/12/01/deeplearning-ai-Neural-Networks-and-Deep-Learning-week1/
 [c1w2]: /2018/07/07/deeplearning-ai-Neural-Networks-and-Deep-Learning-week2/
@@ -19,177 +19,25 @@ No. | Title | Detailed content
 
 ## 2. Improving Deep Neural Networks 
 
-- [2.1 Deep Learning -（训练集划分、偏差/方差、L1 L2 Dropout、梯度消失-梯度爆炸、权重初始化、梯度检验）][c2w1]
-
-- [2.2 Optimization -（mini-batch、指数加权平均-偏差修正、Momentum、RMSprop、Adam、学习率衰减、局部最优）][c2w2]
-
-- [2.3 超参数调试、Batch 正则化 - （Hyperparameter、Normalizing Activations、Batch Norm [Fitting NN]、Softmax）][c2w3]
+No. | Title | Detailed content
+:-------: | :-------: | :-------:
+1 | [Deep Learning Action][c2w1]  | 训练集划分、偏差/方差、L1 L2 Dropout、梯度消失-梯度爆炸、权重初始化、梯度检验
+2 | [Optimization][c2w2] | mini-batch、指数加权平均-偏差修正、Momentum、RMSprop、Adam、学习率衰减、局部优
+3 | [超参数调试、Batch][c2w3] | Hyperparameter、Normalizing Activations、Batch Norm [Fitting NN]、Softmax
 
 [c2w1]: /2018/07/19/deeplearning-ai-Improving-Deep-Neural-Networks-week1/
 [c2w2]: /2018/07/21/deeplearning-ai-Improving-Deep-Neural-Networks-week2/
 [c2w3]: /2018/07/21/deeplearning-ai-Improving-Deep-Neural-Networks-week2/
 
-### 第一周  深度学习的实用层面
-
-1.1  训练/开发/测试集
-
-1.2  偏差/方差
-
-1.3  机器学习基础
-
-1.4  正则化
-
-1.5  为什么正则化可以减少过拟合？
-
-1.6  Dropout 正则化
-
-1.7  理解 Dropout
-
-1.8  其他正则化方法
-
-1.9  正则化输入
-
-1.10  梯度消失与梯度爆炸
-
-1.11  神经网络的权重初始化
-
-1.12  梯度的数值逼近
-
-1.13  梯度检验
-
-1.14  关于梯度检验实现的注记
-
-### 第二周  优化算法
-
-2.1  Mini-batch 梯度下降法
-
-2.2  理解 mini-batch 梯度下降法
-
-2.3  指数加权平均
-
-2.4  理解指数加权平均
-
-2.5  指数加权平均的偏差修正
-
-2.6  动量梯度下降法
-
-2.7  RMSprop
-
-2.8  Adam 优化算法
-
-2.9  学习率衰减
-
-2.10  局部最优的问题
-
-### 第三周  超参数调试、Batch正则化
-
-3.1  调试处理
-
-3.2  为超参数选择合适的范围
-
-3.3  超参数训练的实践：Pandas VS Caviar
-
-3.4  正则化网络的激活函数
-
-3.5  将 Batch Norm 拟合进神经网络
-
-3.6  Batch Norm 为什么奏效？
-
-3.7  测试时的 Batch Norm
-
-3.8  Softmax 回归
-
-3.9  训练一个 Softmax 分类器
-
-3.10  深度学习框架
-
-3.11  TensorFlow
-
 ## 3. Structured Machine Learning Projects 
 
-- [3.1 ML Strategy 1 - (正交化、Satisficing and optimizing metrics、Train/dev/test 改变、可避免偏差、人的表现)][c3w1]
-
-- [3.2 ML Strategy 2 - (误差分析、标注错误数据、定位数据不匹配偏差与方差、迁移学习、多任务学习、端到端学习)][c3w2]
+No. | Title | Detailed content
+:-------: | :-------: | :-------:
+1 | [ML Strategy 1][c3w1] | 正交化、Satisficing and optimizing metrics、Train/dev/test 改变、可避免偏差、人的表现
+2 | [ML Strategy 2][c3w2] | 误差分析、标注错误数据、定位数据不匹配偏差与方差、迁移学习、多任务学习、端到端学习
 
 [c3w1]: /2018/07/24/deeplearning-ai-Structured-Machine-Learning-Projects-week1/
 [c3w2]: /2018/07/25/deeplearning-ai-Structured-Machine-Learning-Projects-week2/
-
-### 第一周  深度学习的实用层面
-
-1.1  训练/开发/测试集
-
-1.2  偏差/方差
-
-1.3  机器学习基础
-
-1.4  正则化
-
-1.5  为什么正则化可以减少过拟合？
-
-1.6  Dropout 正则化
-
-1.7  理解 Dropout
-
-1.8  其他正则化方法
-
-1.9  正则化输入
-
-1.10  梯度消失与梯度爆炸
-
-1.11  神经网络的权重初始化
-
-1.12  梯度的数值逼近
-
-1.13  梯度检验
-
-1.14  关于梯度检验实现的注记
-
-### 第二周  优化算法
-
-2.1  Mini-batch 梯度下降法
-
-2.2  理解 mini-batch 梯度下降法
-
-2.3  指数加权平均
-
-2.4  理解指数加权平均
-
-2.5  指数加权平均的偏差修正
-
-2.6  动量梯度下降法
-
-2.7  RMSprop
-
-2.8  Adam 优化算法
-
-2.9  学习率衰减
-
-2.10  局部最优的问题
-
-### 第三周  超参数调试、Batch正则化和程序框架
-
-3.1  调试处理
-
-3.2  为超参数选择合适的范围
-
-3.3  超参数训练的实践：Pandas VS Caviar
-
-3.4  正则化网络的激活函数
-
-3.5  将 Batch Norm 拟合进神经网络
-
-3.6  Batch Norm 为什么奏效？
-
-3.7  测试时的 Batch Norm
-
-3.8  Softmax 回归
-
-3.9  训练一个 Softmax 分类器
-
-3.10  深度学习框架
-
-3.11  TensorFlow
-
 
 ## 4. Convolutional Neural Networks
 
