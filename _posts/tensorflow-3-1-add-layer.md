@@ -6,7 +6,7 @@ categories: python
 tags: tensorflow
 ---
 
-在 Tensorflow 里定义一个 **添加层的函数** 可以很容易的 **添加神经层**,为之后的添加省下不少时间.
+在 Tensorflow 里定义一个 **添加层的函数** 可以很容易的 **添加神经层**, 为之后的添加省下不少时间.
 
 <!-- more -->
 
