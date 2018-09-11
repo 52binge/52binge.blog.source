@@ -1,3 +1,4 @@
+# deep learning
 
 我開始整理 Deep Learning 相關学习笔记，学习算法类知识真的需要下很大很大的功夫，灰常博大精深~~
 
@@ -5,7 +6,7 @@
 
 ## 1. Neural Networks and Deep Learning
 
-Part1 | Neural Networks | <font color="#0085a1">**Neural Networks and Deep Learning**</font>
+No. | <font color="#0085a1">**Neural Networks**</font> | <font color="#0085a1">**Neural Networks and Deep Learning**</font>
 :-------: | :-------: | :-------:
 1 | [Introduction to Deep Learning][c1w1]  | 了解现今深度学习在哪里应用、如何应用
 2 | [Neural Networks Basics][c1w2] | logistic 损失函数、导数、计算图、m个样本的梯度下降、向量化
@@ -19,7 +20,7 @@ Part1 | Neural Networks | <font color="#0085a1">**Neural Networks and Deep Learn
 
 ## 2. Improving Deep Neural Networks 
 
-No. | Title | Detailed content
+No. | <font color="#0085a1">**Improving**</font> | <font color="#0085a1">**Improving Deep Neural Networks**</font> 
 :-------: | :-------: | :-------:
 5 | [Deep Learning Action][c2w1]  | 训练集划分、偏差/方差、L1 L2 Dropout、梯度消失-梯度爆炸、权重初始化、梯度检验
 6 | [Optimization][c2w2] | mini-batch、指数加权平均-偏差修正、Momentum、RMSprop、Adam、学习率衰减、局部优
@@ -29,9 +30,9 @@ No. | Title | Detailed content
 [c2w2]: /2018/07/21/deeplearning-ai-Improving-Deep-Neural-Networks-week2/
 [c2w3]: /2018/07/21/deeplearning-ai-Improving-Deep-Neural-Networks-week2/
 
-## 3. Structured Machine Learning Projects 
+## 3. Structured Machine Learning 
 
-No. | Title | Structured Machine Learning Projects 
+No. | <font color="#0085a1">**Structured**</font> | <font color="#0085a1">**Structured Machine Learning Projects**</font> 
 :-------: | :-------: | :-------:
 8 | [ML Strategy 1][c3w1] | 正交化、Satisficing and optimizing metrics、Train/dev/test 改变、可避免偏差、人的表现
 9 | [ML Strategy 2][c3w2] | 误差分析、标注错误数据、定位数据不匹配偏差与方差、迁移学习、多任务学习、端到端学习
@@ -41,12 +42,12 @@ No. | Title | Structured Machine Learning Projects
 
 ## 4. Convolutional Neural Networks
 
-No. | Title | CNN
+No. | <font color="#0085a1">**CNN**</font> | <font color="#0085a1">**Convolutional Neural Networks**</font>
 :-------: | :-------: | :-------:
-8 | [CNN Basic][c4w1] | Edge detection、Padding、Strided convolutions、Convolutions Over Volumes、Pooling
-9 | [Deep CNN][c4w2] | Classic Nets、ResNets、1×1 convolutions、Inception、Transfer Learning、Data augmentation
-10 | [Object detection][c4w3] | Object Localization、Landmark Detection、Object Detection、Sliding Windows、Bounding Box Predictions、Intersection Over Union、Non-max Suppression、Anchor Boxes、YOLO
-11 | [Face recognition <br> Neural style transfer ][c4w4] | One-Shot、Siamese、Triplet Loss、Face Verification and Binary Classification、 neural style transfer?、deep ConvNets learning?、Cost Function
+10 | [CV & Convolutional Neural Networks][c4w1] | Edge detection、Padding、Strided convolutions、Convolutions Over Volumes、Pooling
+11 | [&nbsp;&nbsp;Deep CNN&nbsp;&nbsp;][c4w2] | Classic Nets、ResNets、1×1 convolutions、Inception、Transfer Learning、Data augmentation
+12 | [Object detection][c4w3] | Object Localization、Landmark Detection、Sliding Windows、Bounding Box Predictions、Intersection Over Union、Non-max Suppression、Anchor Boxes、YOLO
+13 | [Face recognition][c4w4] | One-Shot、Siamese、Triplet Loss、Face Verification、deep ConvNets learning?
 
 > LeNet-5、AlexNet、VGG、ResNet (有152层)、Inception。 目标定位、特征点检测、Bounding Box预测、Anchor Boxes
 
@@ -55,36 +56,21 @@ No. | Title | CNN
 [c4w3]: /2018/09/01/deeplearning-ai-Convolutional-Neural-Networks-week3/
 [c4w4]: /2018/09/08/deeplearning-ai-Convolutional-Neural-Networks-week4/
 
-### 5. Sequence Models
+## 5. Sequence Models
 
-Part5 | Sequence Models | <font color="#0085a1">**Sequence Models**</font>
+No. | <font color="#0085a1">**Sequence Models**</font> | <font color="#0085a1">**Sequence Models**</font>
 :-------: | :-------: | :-------:
-12 | [Recurrent Sequence Models][6] | Notation、RNN、Vanishing gradients、GRU、LSTM、BRNN、Deep RNNs
-13 | [NLP & Word Embeddings][7] | Matrix、Word2Vec、Negative Sampling、GloVe、Debiasing Word Embeddings
-14 | [Sequence Models & Attention][8] | Greedy Search、Beam Search、Error analysis on beam search、Attention
+14 | [Recurrent Sequence Models][6] | Notation、RNN、Vanishing gradients、GRU、LSTM、BRNN、Deep RNNs
+15 | [NLP & Word Embeddings][7] | Matrix、Word2Vec、Negative Sampling、GloVe、Debiasing Word Embeddings
+16 | [Sequence Models & Attention][8] | Greedy Search、Beam Search、Error analysis on beam search、Attention
 
 [6]: /2018/07/26/deeplearning-ai-Sequence-Models-week1/
 [7]: /2018/08/02/deeplearning-ai-Sequence-Models-week2/
 [8]: /2018/08/14/deeplearning-ai-Sequence-Models-week3/
 
-### next ⋯⋯
+## next ⋯⋯
 
 > notes：next ...
 
-[0]: /
-
-### Reference
-
-- [这是一份优美的信息图，吴恩达点赞的][1]
-- [Deeplearning.ai课程笔记--汇总][2]
-- [完结撒花！吴恩达DeepLearning.ai《深度学习》课程笔记目录总集][3]
-- [吴恩达Coursera深度学习课程 DeepLearning.ai 提炼笔记（2-2）-- 优化算法][4]
-- [DeepLearning.ai学习笔记 By 互道晚安，王者峡谷见][5]
-
-[1]: https://juejin.im/post/5aa0e3d45188255587231bae
-[2]: https://blog.csdn.net/zwqjoy/article/details/80022385
-[3]: https://blog.csdn.net/koala_tree/article/details/79913655
-[4]: https://blog.csdn.net/koala_tree/article/details/78199611
-[5]: http://www.cnblogs.com/marsggbo/p/7625565.html
 
 
