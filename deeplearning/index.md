@@ -68,9 +68,12 @@ No. | <font color="#0085a1">**Sequence Models**</font> | <font color="#0085a1">*
 [7]: /2018/08/02/deeplearning-ai-Sequence-Models-week2/
 [8]: /2018/08/14/deeplearning-ai-Sequence-Models-week3/
 
-## next ⋯⋯
+## Friends Link
 
-> notes：next ...
+- [深度学习与自然语言处理 CS244d Notes][h1]
+- [怎样找到一份深度学习的工作][h2]
 
+[h1]: https://blog.csdn.net/column/details/dl-nlp.html
+[h2]: https://blog.csdn.net/han_xiaoyang/article/details/52777661
 
 
