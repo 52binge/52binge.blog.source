@@ -44,7 +44,7 @@ No. | <font color="#0085a1">**Structured**</font> | <font color="#0085a1">**Stru
 
 No. | <font color="#0085a1">**CNN**</font> | <font color="#0085a1">**Convolutional Neural Networks**</font>
 :-------: | :-------: | :-------:
-10 | [CV & Convolutional Neural Networks][c4w1] | Edge detection、Padding、Strided convolutions、Convolutions Over Volumes、Pooling
+10 | [Convolutional Neural Networks][c4w1] | Edge detection、Padding、Strided convolutions、Convolutions Over Volumes、Pooling
 11 | [&nbsp;&nbsp;Deep CNN&nbsp;&nbsp;][c4w2] | Classic Nets、ResNets、1×1 convolutions、Inception、Transfer Learning、Data augmentation
 12 | [Object detection][c4w3] | Object Localization、Landmark Detection、Sliding Windows、Bounding Box Predictions、Intersection Over Union、Non-max Suppression、Anchor Boxes、YOLO
 13 | [Face recognition][c4w4] | One-Shot、Siamese、Triplet Loss、Face Verification、deep ConvNets learning?
