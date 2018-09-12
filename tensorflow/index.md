@@ -49,13 +49,12 @@ TensorFlow 是一款神经网络的Python外部的结构包, 也是一个采用�
 
 - [3.3 例子3 结果可视化][t3.3]
 
-- [3.4 加速神经网络训练 (Speed Up Training)][0]
-
-- [3.5 优化器 optimizer][0]
+- [3.4 加速神经网络训练 (Speed Up Training & Optimizer)][t3.4]
 
 [t3.1]: /2018/09/09/tensorflow-3-1-add-layer/
 [t3.2]: /2018/09/11/tensorflow-3-2-create-NN/
 [t3.3]: /2018/09/11/tensorflow-3-3-visualize-result/
+[t3.4]: /2018/09/12/tensorflow-3-4-A-speed-up-learning/
 
 ### 4. 可视化好助手 Tensorboard
 

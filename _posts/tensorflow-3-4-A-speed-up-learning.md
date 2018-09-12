@@ -10,6 +10,16 @@ tags: tensorflow
 
 <!-- more -->
 
+学习资料:
+
+- cs231n 各种 Optimizer 的对比 [链接][op1] (英文)
+- Tensorflow 的可用 Optimizer [链接][op2]
+- Improving DNN (week2) Optimization Algorithm [链接][op3]
+
+[op1]: http://cs231n.github.io/neural-networks-3/
+[op2]: https://www.tensorflow.org/api_guides/python/train
+[op3]: /2018/07/21/deeplearning-ai-Improving-Deep-Neural-Networks-week2/#3-Momentum
+
 包括以下几种模式:
 
 > - Stochastic Gradient Descent (SGD)
@@ -22,7 +32,7 @@ tags: tensorflow
 
 越复杂的神经网络 , 越多的数据 , 我们需要在训练神经网络的过程上花费的时间也就越多. 原因很简单, 就是因为计算量太大了. 可是往往有时候为了解决复杂的问题, 复杂的结构和大数据又是不能避免的, 所以我们需要寻找一些方法, 让神经网络聪明起来, 快起来.
 
-## Stochastic Gradient Descent (SGD) 
+## 1. Stochastic Gradient Descent (SGD) 
 
 <img src="/images/tensorflow/tf-3.4-speedup2.png" width="600" />
 
@@ -34,7 +44,7 @@ tags: tensorflow
 
 没问题, 事实证明, SGD 并不是最快速的训练方法, 红色的线是 SGD, 但它到达学习目标的时间是在这些方法中最长的一种. 我们还有很多其他的途径来加速训练.
 
-## Momentum 更新方法
+## 2. Momentum 更新方法
 
 <img src="/images/tensorflow/tf-3.4-speedup4.png" width="650" />
 
@@ -42,21 +52,21 @@ tags: tensorflow
 
 <img src="/images/tensorflow/tf-3.4-speedup5.png" width="650" />
 
-所以我们把这个人从平地上放到了一个斜坡上, 只要他往下坡的方向走一点点, 由于向下的惯性, 他不自觉地就一直往下走, 走的弯路也变少了. 这就是 Momentum 参数更新. 另外一种加速方法叫AdaGrad.
+所以我们把这个人从平地上放到了一个斜坡上, 只要他**`往下坡的方向走一点点, 由于向下的惯性`**, 他不自觉地就一直往下走, 走的弯路也变少了. 这就是 Momentum 参数更新. 另外一种加速方法叫 **AdaGrad**.
 
-## AdaGrad 更新方法
+## 3. AdaGrad 更新方法
 
 <img src="/images/tensorflow/tf-3.4-speedup6.png" width="650" />
 
 这种方法是在学习率上面动手脚, 使得每一个参数更新都会有自己与众不同的学习率, 他的作用和 momentum 类似, 不过不是给喝醉酒的人安排另一个下坡, 而是给他一双不好走路的鞋子, 使得他一摇晃着走路就脚疼, 鞋子成为了走弯路的阻力, 逼着他往前直着走. 他的数学形式是这样的. 接下来又有什么方法呢? 如果把下坡和不好走路的鞋子合并起来, 是不是更好呢? 没错, 这样我们就有了 RMSProp 更新方法.
 
-## RMSProp 更新方法
+## 4. RMSProp 更新方法
 
 <img src="/images/tensorflow/tf-3.4-speedup7.png" width="650" />
 
 有了 momentum 的惯性原则 , 加上 adagrad 的对错误方向的阻力, 我们就能合并成这样. 让 RMSProp同时具备他们两种方法的优势. 不过细心的同学们肯定看出来了, 似乎在 RMSProp 中少了些什么. 原来是我们还没把 Momentum合并完全, RMSProp 还缺少了 momentum 中的 这一部分. 所以, 我们在 Adam 方法中补上了这种想法.
 
-## Adam 更新方法
+## 5. Adam 更新方法
 
 <img src="/images/tensorflow/tf-3.4-speedup8.png" width="650" />
 
@@ -66,10 +76,15 @@ tags: tensorflow
 
 - [tensorflow.org][1]
 - [莫烦Python][2]
-- [Python入门：matplotlib 中 ion() 和 ioff() 的使用][3]
 
 [1]: https://www.tensorflow.org/
 [2]: https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/
-[3]: https://blog.csdn.net/M_Z_G_Y/article/details/80309446
 
 [img1]: /images/tensorflow/tf-3.4-speedup1.png
+[img2]: /images/tensorflow/tf-3.4-speedup2.png
+[img3]: /images/tensorflow/tf-3.4-speedup3.png
+[img4]: /images/tensorflow/tf-3.4-speedup4.png
+[img5]: /images/tensorflow/tf-3.4-speedup5.png
+[img6]: /images/tensorflow/tf-3.4-speedup6.png
+[img7]: /images/tensorflow/tf-3.4-speedup7.png
+[img8]: /images/tensorflow/tf-3.4-speedup8.png
