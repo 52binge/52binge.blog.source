@@ -82,11 +82,11 @@ No. | <font color="#0085a1">**Sequence Models**</font> | <font color="#0085a1">*
 
 No. | <font color="#0085a1">**Machine Learning Coursera**</font> | <font color="#0085a1">**Machine Learning Toc Content**</font>
 :-------: | :-------: | :-------:
-1. | [Machine Learning Introduce][1.1] | 
-2. | [Linear Regression Cost Function & Gradient descent][1.2] | 
-3. | [Linear Algebra Matrices And Vectors][1.3] |
-4. | [Linear Regression with Multiple Variables][2] |
-5. | [Logistic Regression][3] |
+1. | [Machine Learning Introduce][1.1] | Supervised learning、Regression & Classification、Unsupervised learning
+2. | [Linear Regression Cost Function <br> Gradient descent][1.2] | Linear Regression、Cost Function、Gradient Descent (Batch)
+3. | [Linear Algebra Matrices And Vectors][1.3] |  Linear Algebra Matrices And Vectors
+4. | [Linear Regression with Multiple Variables][2] | Multiple Features、Gradient Desc、Polynomial Regression、Normal Equation
+5. | [Logistic Regression][3] | Classification、Cost Function & Gradient Desc、Optimization、Regularization
 6. | [Advice for Applying Machine Learning][6.1] |
 8. | [Large Scale Machine Learning * not][0] |
 
