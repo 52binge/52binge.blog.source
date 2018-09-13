@@ -89,8 +89,8 @@ No. | <font color="#0085a1">**Machine Learning Coursera**</font> | <font color="
 5. | [Logistic Regression][3] | Classification、Cost Function & Gradient Desc、Optimization、Regularization
 6. | [Advice for Applying Machine Learning][6.1] | Model Selection、Bias and Variance -> Regularization、Learning Curves
 8. | [Large Scale Machine Learning * not][0] |
-9. | 模型评估 |
-10. | Ensumble |
+9. | 模型评估 | 模型评估
+10. | Ensumble | Ensumble
 
 [1.1]: /2016/09/20/ml-coursera-ng-w1-01-introduce/
 [1.2]: /2016/09/28/ml-coursera-ng-w1-02-cost-function-gradient-descent/
