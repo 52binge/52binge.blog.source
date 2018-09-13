@@ -21,7 +21,7 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-coursera week 1 - gradient descent
+Linear Regression Cost Function & Gradient descent
 
 <!-- more -->
 
@@ -33,8 +33,8 @@ coursera week 1 - gradient descent
 
 > Choose $\theta\_0，\theta\_1$ so that $h_{\theta} (x) $ is close to $y$ for our training examples ${(x, y)}$
 
-ml | fmt
-------- | -------
+Title | fmt
+:-------: | :-------:
 Hypothesis | $h\_{\theta}  (x) = \theta\_0 + \theta\_1 x$
 Parameters | $\theta\_0 、\theta\_1$
 Cost Function | $J(\theta\_0，\theta\_1) = {\frac {1} {2m}} \sum\_{i=1}^m (h_{\theta} (x^{i}) - (y^{i}))^2$

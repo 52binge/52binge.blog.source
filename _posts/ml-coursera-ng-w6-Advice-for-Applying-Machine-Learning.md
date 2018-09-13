@@ -4,7 +4,6 @@ toc: true
 date: 2017-05-24 22:08:21
 categories: machine-learning
 tags: machine-learning
-description: coursera week 6 - advice for applying machine learning * machine learning system design
 mathjax: true
 ---
 
@@ -22,6 +21,7 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
+Evaluating a Hypothesis -> Model Selection、Diagnosing Bias vs Variance -> Regularization、Learning Curves
 
 ## 1. Evaluating a Hypothesis
 
@@ -158,7 +158,7 @@ me : 随着 train sets 的增加，overfiting 越来越不容易。造成 CV err
 **Our decision process can be broken down as follows*:
 
 Function | Result
-------- | -------
+:-------: | :-------:
 Getting more training examples | Fixes high variance
 Trying smaller sets of features | Fixes high variance
 Increasing λ | Fixes high variance

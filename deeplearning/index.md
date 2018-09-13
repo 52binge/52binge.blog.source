@@ -87,8 +87,10 @@ No. | <font color="#0085a1">**Machine Learning Coursera**</font> | <font color="
 3. | [Linear Algebra Matrices And Vectors][1.3] |  Linear Algebra Matrices And Vectors
 4. | [Linear Regression with Multiple Variables][2] | Multiple Features、Gradient Desc、Polynomial Regression、Normal Equation
 5. | [Logistic Regression][3] | Classification、Cost Function & Gradient Desc、Optimization、Regularization
-6. | [Advice for Applying Machine Learning][6.1] |
+6. | [Advice for Applying Machine Learning][6.1] | Model Selection、Bias and Variance -> Regularization、Learning Curves
 8. | [Large Scale Machine Learning * not][0] |
+9. | 模型评估 |
+10. | Ensumble |
 
 [1.1]: /2016/09/20/ml-coursera-ng-w1-01-introduce/
 [1.2]: /2016/09/28/ml-coursera-ng-w1-02-cost-function-gradient-descent/
@@ -105,5 +107,6 @@ No. | <font color="#0085a1">**Machine Learning Coursera**</font> | <font color="
 
 [7]: /2017/10/13/ml-coursera-ng-w7-svm/
 [8]: /2018/01/24/ml-coursera-ng-w8-clustering-1/
+
 
 

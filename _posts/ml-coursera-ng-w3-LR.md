@@ -21,19 +21,17 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-coursera week 3 - ML:Logistic Regression
+Logistic Regression
 
 <!-- more -->
 
 ## 1. Classification
 
-Email: Spam / Not Spam
-Online Transactions: Fraudulent (Yes/No)? 
-Tumor: Malignant / Benign ?  
+> 1. Email: Spam / Not Spam
+> 2. Online Transactions: Fraudulent (Yes/No)? 
+> 3. Tumor: Malignant / Benign ?  &emsp;&emsp;&emsp; ['tju:mə(r)]  [mə'lɪgnənt] / [bɪ'naɪn]
 
-$ y \in {0, 1}$
-
-> ['tju:mə(r)]  [mə'lɪgnənt] / [bɪ'naɪn]
+> $ y \in {0, 1}$
 
 ## 2. Binary Classification
 
@@ -43,10 +41,10 @@ y∈{0,1}
 
 > Where 0 is usually taken as the "negative class" and 1 as the "positive class", but you are free to assign any representation to it.
 
-Hypothesis Representation | 
-------- | -------
-$ 0 \leq h\_\theta (x) \leq 1 $ |
-$ \begin{align} & h\_\theta (x) =  g ( \theta^T x ) \newline \newline& z = \theta^T x \newline& g(z) = \dfrac{1}{1 + e^{-z}} \end{align} $ |
+**Hypothesis Representation**  
+
+> $$ 0 \leq h\_\theta (x) \leq 1 $$
+> $$ \begin{align} & h\_\theta (x) =  g ( \theta^T x ) \newline \newline& z = \theta^T x \newline& g(z) = \dfrac{1}{1 + e^{-z}} \end{align} $$
 
 > "Sigmoid Function," also called the "Logistic Function":
 
@@ -64,18 +62,18 @@ Our probability that our prediction is 0 is just the complement of our probabili
 
 ## 3. Decision Boundary
 
-$
+$$
 \begin{align}
 & h\_\theta(x) \geq 0.5 \rightarrow y = 1 \newline& h\_\theta(x) < 0.5 \rightarrow y = 0 \newline\end{align} 
-$
+$$
 
-logistic function | 
-------- | -------
+<font color="#0085a1">**Logistic Function**</font> | 
+:-------: | -------
 $ \begin{align} & g(z) \geq 0.5 \newline& when \; z \geq 0 \end{align} $ |
 $ \begin{align} z=0,  e^{0}=1 \Rightarrow  g(z)=1/2\newline z \to \infty, e^{-\infty} \to 0 \Rightarrow g(z)=1 \newline z \to -\infty, e^{\infty}\to \infty \Rightarrow g(z)=0 \end{align} $ |
 
-g is $\theta^T X$, then that means: | 
-------- | -------
+<font color="#0085a1">g is $\theta^T X$, then that means</font>: | 
+:-------: | -------
 $ h_\theta(x) = g(\theta^T x) \geq 0.5 $ $ when \; \theta^T x \geq 0 $ |
 $ \begin{align} & \theta^T x \geq 0 \Rightarrow y = 1 \newline& \theta^T x < 0 \Rightarrow y = 0 \newline \end{align} $ |
 
@@ -97,7 +95,6 @@ In this case, our decision boundary is a straight vertical line placed on the gr
 **Non-linear decision boundaries**
 
 ![Non-linear decision boundaries][3]
-
 
 ## 4. Cost Function
 
