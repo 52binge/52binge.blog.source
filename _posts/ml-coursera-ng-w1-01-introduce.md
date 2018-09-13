@@ -72,8 +72,8 @@ Field of study that gives computers the ability to learn without being explicitl
 3. 『特征工程(feature engineering)太重要了！在很多Kaggle的场景下，甚至比model本身还要重要』
 4. 『要做模型融合(model ensemble)啊啊啊！』
 
-[1]: /images/ml/ml-ng-w1-01-1.png
-[2]: /images/ml/ml-ng-w1-01-2.png
-[3]: /images/ml/ml-ng-w1-01-3.png
-[4]: /images/ml/ml-ng-w1-01-4.png
+[1]: /images/ml/coursera/ml-ng-w1-01-1.png
+[2]: /images/ml/coursera/ml-ng-w1-01-2.png
+[3]: /images/ml/coursera/ml-ng-w1-01-3.png
+[4]: /images/ml/coursera/ml-ng-w1-01-4.png
 [8]: https://zh.wikipedia.org/zh/GNU_Octave

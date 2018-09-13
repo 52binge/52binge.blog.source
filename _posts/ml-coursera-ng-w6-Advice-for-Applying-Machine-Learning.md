@@ -187,8 +187,8 @@ In this case you can use regularization (increase λ) to address the overfitting
 
 - [coursera 6 @ng][6]
 
-[1]: /images/ml/ml-ng-w6-01-01.png
-[2]: /images/ml/ml-ng-w6-01-02.png
-[3]: /images/ml/ml-ng-w6-01-03.png
-[4]: /images/ml/ml-ng-w6-01-04.png
+[1]: /images/ml/coursera/ml-ng-w6-01-01.png
+[2]: /images/ml/coursera/ml-ng-w6-01-02.png
+[3]: /images/ml/coursera/ml-ng-w6-01-03.png
+[4]: /images/ml/coursera/ml-ng-w6-01-04.png
 [6]: https://www.coursera.org/learn/machine-learning/home/week/6

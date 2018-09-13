@@ -99,19 +99,19 @@ Goal | $minimize J(\theta\_0，\theta\_1)$
 
 > Coursera Learning Notes
 
-[1]: /images/ml/ml-ng-w1-02-1.png
-[2]: /images/ml/ml-ng-w1-02-2.png
-[3]: /images/ml/ml-ng-w1-02-3.png
-[4]: /images/ml/ml-ng-w1-02-4.png
-[5]: /images/ml/ml-ng-w1-02-5.png
+[1]: /images/ml/coursera/ml-ng-w1-02-1.png
+[2]: /images/ml/coursera/ml-ng-w1-02-2.png
+[3]: /images/ml/coursera/ml-ng-w1-02-3.png
+[4]: /images/ml/coursera/ml-ng-w1-02-4.png
+[5]: /images/ml/coursera/ml-ng-w1-02-5.png
 
-[6]: /images/ml/ml-ng-w1-02-6.png
-[7]: /images/ml/ml-ng-w1-02-7.png
-[8]: /images/ml/ml-ng-w1-02-8.png
-[9]: /images/ml/ml-ng-w1-02-9.png
-[10]: /images/ml/ml-ng-w1-02-10.png
-[11]: /images/ml/ml-ng-w1-02-11.png
-[12]: /images/ml/ml-ng-w1-02-12.png
-[13]: /images/ml/ml-ng-w1-02-13.png
-[14]: /images/ml/ml-ng-w1-02-14.png
-[15]: /images/ml/ml-ng-w1-02-15.png
+[6]: /images/ml/coursera/ml-ng-w1-02-6.png
+[7]: /images/ml/coursera/ml-ng-w1-02-7.png
+[8]: /images/ml/coursera/ml-ng-w1-02-8.png
+[9]: /images/ml/coursera/ml-ng-w1-02-9.png
+[10]: /images/ml/coursera/ml-ng-w1-02-10.png
+[11]: /images/ml/coursera/ml-ng-w1-02-11.png
+[12]: /images/ml/coursera/ml-ng-w1-02-12.png
+[13]: /images/ml/coursera/ml-ng-w1-02-13.png
+[14]: /images/ml/coursera/ml-ng-w1-02-14.png
+[15]: /images/ml/coursera/ml-ng-w1-02-15.png

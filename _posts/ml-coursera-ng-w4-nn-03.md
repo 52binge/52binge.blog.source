@@ -76,7 +76,7 @@ To do so, we use the following algorithm:
 
 
 
-[0]: /images/ml/ml-ng-w4-02-02.png
-[1]: /images/ml/ml-ng-w4-02-04-2.png
+[0]: /images/ml/coursera/ml-ng-w4-02-02.png
+[1]: /images/ml/coursera/ml-ng-w4-02-04-2.png
 
 

@@ -293,6 +293,6 @@ $$
 Let $A$ be an $m \times n$ matrix, and let $B = A^T$.
 Then $B$ is an $n \times m$ matrix, and $B\_{ij} = A\_{ji}$
 
-[1]: /images/ml/ml-ng-w1-03-1.png
-[2]: /images/ml/ml-ng-w1-03-2.png
-[3]: /images/ml/ml-ng-w1-03-3.png
+[1]: /images/ml/coursera/ml-ng-w1-03-1.png
+[2]: /images/ml/coursera/ml-ng-w1-03-2.png
+[3]: /images/ml/coursera/ml-ng-w1-03-3.png

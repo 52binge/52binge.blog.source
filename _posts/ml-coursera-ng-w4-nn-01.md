@@ -54,8 +54,8 @@ $$
 
 ## Reference article
 
-[1]: /images/ml/ml-ng-w4-01-01.png
-[2]: /images/ml/ml-ng-w4-01-02.png
-[3]: /images/ml/ml-ng-w4-01-03.png
-[4]: /images/ml/ml-ng-w4-01-04.png
-[5]: /images/ml/ml-ng-w4-01-05.png
+[1]: /images/ml/coursera/ml-ng-w4-01-01.png
+[2]: /images/ml/coursera/ml-ng-w4-01-02.png
+[3]: /images/ml/coursera/ml-ng-w4-01-03.png
+[4]: /images/ml/coursera/ml-ng-w4-01-04.png
+[5]: /images/ml/coursera/ml-ng-w4-01-05.png

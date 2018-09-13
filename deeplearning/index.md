@@ -68,12 +68,42 @@ No. | <font color="#0085a1">**Sequence Models**</font> | <font color="#0085a1">*
 [7]: /2018/08/02/deeplearning-ai-Sequence-Models-week2/
 [8]: /2018/08/14/deeplearning-ai-Sequence-Models-week3/
 
-## Friends Link
+[0]: / 
+
+## Friends link
 
 - [深度学习与自然语言处理 CS244d Notes][h1]
 - [怎样找到一份深度学习的工作][h2]
 
 [h1]: https://blog.csdn.net/column/details/dl-nlp.html
 [h2]: https://blog.csdn.net/han_xiaoyang/article/details/52777661
+
+## Machine learning
+
+No. | <font color="#0085a1">**Machine Learning Coursera**</font> | <font color="#0085a1">**Machine Learning Toc Content**</font>
+:-------: | :-------: | :-------:
+1. | [Machine Learning Introduce][1.1] | 
+2. | [Linear Regression Cost Function & Gradient descent][1.2] | 
+3. | [Linear Algebra Matrices And Vectors][1.3] |
+4. | [Linear Regression with Multiple Variables][2] |
+5. | [Logistic Regression][3] |
+6. | [Advice for Applying Machine Learning][6.1] |
+8. | [Large Scale Machine Learning * not][0] |
+
+[1.1]: /2016/09/20/ml-coursera-ng-w1-01-introduce/
+[1.2]: /2016/09/28/ml-coursera-ng-w1-02-cost-function-gradient-descent/
+[1.3]: /2016/09/30/ml-coursera-ng-w1-03-Linear-Algebra/
+
+[2]: /2016/10/08/ml-coursera-ng-w2-01-Linear-Regression/
+[3]: /2016/10/24/ml-coursera-ng-w3-LR/
+
+[4]: /2017/02/07/ml-coursera-ng-w4-NN-02/
+[5]: /2017/02/13/ml-coursera-ng-w4-NN-03/
+
+[6.1]: /2017/05/24/ml-coursera-ng-w6-Advice-for-Applying-Machine-Learning/
+[6.2]: /2017/05/29/ml-coursera-ng-w6-Machine-Learning-System-Design/
+
+[7]: /2017/10/13/ml-coursera-ng-w7-svm/
+[8]: /2018/01/24/ml-coursera-ng-w8-clustering-1/
 
 

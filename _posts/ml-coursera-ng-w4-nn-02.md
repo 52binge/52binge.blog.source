@@ -207,15 +207,15 @@ In which case our resulting class is the third one down, or $h\_\Theta(x)\_3$, w
 
 
 
-[1]: /images/ml/ml-ng-w4-02-01.jpg
-[2]: /images/ml/ml-ng-w4-02-02.png
-[3]: /images/ml/ml-ng-w4-02-03.png
-[4]: /images/ml/ml-ng-w4-02-04-2.png
-[5]: /images/ml/ml-ng-w4-02-05-1.png
-[6]: /images/ml/ml-ng-w4-02-06.png
-[7]: /images/ml/ml-ng-w4-02-07.png
-[8]: /images/ml/ml-ng-w4-02-08.png
-[9]: /images/ml/ml-ng-w4-02-09.png
-[10]: /images/ml/ml-ng-w4-02-10.png
-[11]: /images/ml/ml-ng-w4-02-11.png
+[1]: /images/ml/coursera/ml-ng-w4-02-01.jpg
+[2]: /images/ml/coursera/ml-ng-w4-02-02.png
+[3]: /images/ml/coursera/ml-ng-w4-02-03.png
+[4]: /images/ml/coursera/ml-ng-w4-02-04-2.png
+[5]: /images/ml/coursera/ml-ng-w4-02-05-1.png
+[6]: /images/ml/coursera/ml-ng-w4-02-06.png
+[7]: /images/ml/coursera/ml-ng-w4-02-07.png
+[8]: /images/ml/coursera/ml-ng-w4-02-08.png
+[9]: /images/ml/coursera/ml-ng-w4-02-09.png
+[10]: /images/ml/coursera/ml-ng-w4-02-10.png
+[11]: /images/ml/coursera/ml-ng-w4-02-11.png
 

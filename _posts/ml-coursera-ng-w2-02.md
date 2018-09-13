@@ -879,6 +879,6 @@ temp =
 > 2. [学习一点][1]
 
 [1]: http://blog.chenming.info/blog/2012/07/15/learn-octave/
-[2]: /images/ml/ml-ng-w2-11.png
-[3]: /images/ml/ml-ng-w2-12.png
-[4]: /images/ml/ml-ng-w2-13.png
+[2]: /images/ml/coursera/ml-ng-w2-11.png
+[3]: /images/ml/coursera/ml-ng-w2-12.png
+[4]: /images/ml/coursera/ml-ng-w2-13.png

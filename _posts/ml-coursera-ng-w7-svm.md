@@ -31,7 +31,7 @@ From `Logistic Regression` to `Support Vector Machines`
 
 $ \begin{align} h\_\theta (x) = g({\theta^T x}) = \dfrac{1}{1 + e^{-\theta^T x}} \end{align}  \; , \; h\_\theta (x) \in [0, 1] $ 
 
-<img src="/images/ml/ml-ng-w3-02.png" width="820" height="500" align="middle" /img>
+<img src="/images/ml/coursera/ml-ng-w3-02.png" width="820" height="500" align="middle" /img>
 
 > $ y = 1 \; when \; h_\theta(x) = g(\theta^T x) \geq 0.5 \; when \; \theta^T x \geq 0 $.   
 
@@ -72,20 +72,20 @@ $
 
 ### 1.2 Large Margin Intuition
 
-<img src="/images/ml/ml-ng-w7-svm-1.png" width="620" height="400" align="middle" /img>
+<img src="/images/ml/coursera/ml-ng-w7-svm-1.png" width="620" height="400" align="middle" /img>
 
-<img src="/images/ml/ml-ng-w7-svm-2.png" width="620" height="400" align="middle" /img>
+<img src="/images/ml/coursera/ml-ng-w7-svm-2.png" width="620" height="400" align="middle" /img>
 
-<img src="/images/ml/ml-ng-w7-svm-3.png" width="620" height="400" align="middle" /img>
+<img src="/images/ml/coursera/ml-ng-w7-svm-3.png" width="620" height="400" align="middle" /img>
 
 
 ### 1.3 Mathematics Behind Large Margin Classification
 
-<img src="/images/ml/ml-ng-w7-svm-4.png" width="620" height="400" align="middle" /img>
+<img src="/images/ml/coursera/ml-ng-w7-svm-4.png" width="620" height="400" align="middle" /img>
 
-<img src="/images/ml/ml-ng-w7-svm-5.png" width="620" height="400" align="middle" /img>
+<img src="/images/ml/coursera/ml-ng-w7-svm-5.png" width="620" height="400" align="middle" /img>
 
-<img src="/images/ml/ml-ng-w7-svm-6.png" width="620" height="400" align="middle" /img>
+<img src="/images/ml/coursera/ml-ng-w7-svm-6.png" width="620" height="400" align="middle" /img>
 
 ## 2. Kernels
 
@@ -103,15 +103,12 @@ $
 
 [z1]: https://zhuanlan.zhihu.com/p/24638007
 
-[0]: /images/ml/ml-ng-w7-svm-0.png
-[0]: /images/ml/ml-ng-w3-02.png
-[1]: /images/ml/ml-ng-w7-svm-1.png
-[2]: /images/ml/ml-ng-w7-svm-2.png
-[3]: /images/ml/ml-ng-w7-svm-3.png
-[4]: /images/ml/ml-ng-w7-svm-4.png
-[5]: /images/ml/ml-ng-w7-svm-5.png
-[6]: /images/ml/ml-ng-w7-svm-6.png
-
-
-
+[0]: /images/ml/coursera/ml-ng-w7-svm-0.png
+[0]: /images/ml/coursera/ml-ng-w3-02.png
+[1]: /images/ml/coursera/ml-ng-w7-svm-1.png
+[2]: /images/ml/coursera/ml-ng-w7-svm-2.png
+[3]: /images/ml/coursera/ml-ng-w7-svm-3.png
+[4]: /images/ml/coursera/ml-ng-w7-svm-4.png
+[5]: /images/ml/coursera/ml-ng-w7-svm-5.png
+[6]: /images/ml/coursera/ml-ng-w7-svm-6.png
 
