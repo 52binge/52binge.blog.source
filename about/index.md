@@ -19,13 +19,13 @@ p + p {
 
 ## About
 
-[Blair’s Instagram][ins]&nbsp; 、&nbsp;[Netease Music][wangyiyun]
+[Blair’s Instagram][ins]&nbsp; 、&nbsp;[Netease Music][wangyiyun]&nbsp;、&nbsp;[Tweet][tweet]
 
 <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 
 [ins]: https://www.instagram.com/blair101v/
 [wangyiyun]: https://music.163.com/#/my/m/music/playlist?id=942623425
-[finance_blockchain]: /2018/01/22/py-finance-blockchain-coin/
+[tweet]: /tweet
 
 ### Who am I
 
