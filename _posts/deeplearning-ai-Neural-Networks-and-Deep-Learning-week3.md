@@ -21,9 +21,9 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-我们要正式地进入神经网络的学习. 当然, 我们先从简单的只有一个隐藏层的神经网络开始. 
+正式进入神经网络的学习. 当然, 我们先从简单的只有一个隐藏层的神经网络开始。
 
-在学习完本周内容之后, 我们将会使用Python实现一个单个隐藏层的神经网络, 并在Planar data上测试.
+在学习完本周内容之后, 我们将会使用 Python 实现一个单个隐藏层的神经网络。
 
 <!-- more -->
 
