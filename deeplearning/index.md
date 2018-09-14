@@ -78,7 +78,7 @@ No. | <font color="#0085a1">**Sequence Models**</font> | <font color="#0085a1">*
 [h1]: https://blog.csdn.net/column/details/dl-nlp.html
 [h2]: https://blog.csdn.net/han_xiaoyang/article/details/52777661
 
-## Machine learning
+## Machine learning Coursera
 
 No. | <font color="#0085a1">**Machine Learning Coursera**</font> | <font color="#0085a1">**Machine Learning Toc Content**</font>
 :-------: | :-------: | :-------:
@@ -89,8 +89,28 @@ No. | <font color="#0085a1">**Machine Learning Coursera**</font> | <font color="
 5. | [Logistic Regression][3] | Classification、Cost Function & Gradient Desc、Optimization、Regularization
 6. | [Advice for Applying Machine Learning][6.1] | Model Selection、Bias and Variance -> Regularization、Learning Curves
 8. | [Large Scale Machine Learning * not][0] |
-9. | 模型评估 | 模型评估
-10. | Ensumble | Ensumble
+
+## Machine learning roc auc
+
+No. | <font color="#0085a1">**Machine Learning Title**</font> | <font color="#0085a1">**Machine Learning Toc Content**</font>
+:-------: | :-------: | :-------:
+11. | [L1、L2 正则化小记][11] | 奥卡姆剃刀、贝叶斯估计、结构风险最小化、L1、L2 范数 
+12. | [模型评估总结][12] | Precision、Recall、ROC、AUC
+ | |
+13. | [Native Bayes 1][14.1] | 条件独立假设、垃圾邮件识别、多项式/伯努利/混合 模型、平滑
+14. | [Native Bayes 2][14.2] | 独立假设、贝叶斯分类器、文本分类
+
+## Machine learning tree model
+
+No. | <font color="#0085a1">**Machine Learning Tree Model**</font> | <font color="#0085a1">**Machine Learning Decision Tree & Ensemble**</font>
+:-------: | :-------: | :-------:
+15. | [Decision Tree 1][15.1] | ID3 Information gain & C4.5 Gain ratio
+16. | [Decision Tree 2][15.2] | **CART** : 回归树： 最小二乘 & 分类树： 基尼指数 Gini index
+17. | [Gradient Boosting][17] | 三个臭皮匠，顶个诸葛亮
+18. | [Xgboost][18] [@陈天奇怪][18.1] | 提供了 Graident Boosting 算法框架，给出了GBDT，GBRT，GBM 具体实现
+19. | [Ensemble 1][19.1] | Bootstraping、Bagging (Random Forest)
+19. | [Ensemble 2][19.2] | 概率可学习性 (PAC)、Boosting算法代表 ：Adaboost(Adaptive Boosting)
+19. | [Ensumble 集成学习小记][19] | Bagging、Boosting、Stacking、Blending
 
 [1.1]: /2016/09/20/ml-coursera-ng-w1-01-introduce/
 [1.2]: /2016/09/28/ml-coursera-ng-w1-02-cost-function-gradient-descent/
@@ -108,5 +128,31 @@ No. | <font color="#0085a1">**Machine Learning Coursera**</font> | <font color="
 [7]: /2017/10/13/ml-coursera-ng-w7-svm/
 [8]: /2018/01/24/ml-coursera-ng-w8-clustering-1/
 
+[11]: /2018/07/11/ml-1-L1-L2/
+[12]: /2018/07/05/ml-1-roc-auc-summary/
 
+[14.1]: /2017/08/10/ml-4-naive-bayes-1/
+[14.2]: /2017/08/23/ml-4-naive-bayes-2/
 
+[15.1]: /2016/08/16/ml-5-decisionTree-part1/
+[15.2]: /2018/06/27/ml-5-decisionTree-part2/
+
+[17]: /2018/06/29/ml-8-gradient-boosting-part1/
+[18]: /2018/07/03/ml-8-xgboost/
+[18.1]: https://weibo.com/u/2397265244?is_all=1
+
+[19.1]: /2018/04/07/ml-9-ensumble-boosting-1/
+[19.2]: /2018/04/11/ml-9-ensumble-boosting-2/
+[19]: /2018/07/03/ml-9-ensumble-part1/
+
+<!--## Internet Finance
+
+No. | <font color="#0085a1">**Internet Finance Title**</font> | <font color="#0085a1">**Internet Finance Part**</font>
+:-------: | :-------: | :-------:
+1. | [金融科技企业面临的欺诈⻛险][if1] | 互联网金融风控中的数据科学 (part1) 
+2. | [模型策略][if2] | 互联网金融风控中的数据科学 (part2) 
+3. | [Lending Club 的数据试验][if3] | 互联网金融风控中的数据科学 (part3)
+
+[if3]: /2018/04/23/data-science-internet-finance-3/
+[if2]: /2018/04/21/data-science-internet-finance-2/
+[if1]: /2018/04/20/data-science-internet-finance-1/-->

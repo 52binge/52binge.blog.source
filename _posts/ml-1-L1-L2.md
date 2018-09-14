@@ -1,5 +1,5 @@
 ---
-title: l1、l2正则化小记 (not finish)
+title: L1、L2 正则化小记 (not finish)
 toc: true
 date: 2018-07-11 10:43:21
 categories: machine-learning
