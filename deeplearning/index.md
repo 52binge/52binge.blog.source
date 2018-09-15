@@ -4,7 +4,7 @@
 
 博主水平灰常灰常有限，期望能與對、Deep Learning 感兴趣的朋友一起学习、交流、探讨与分享~~
 
-## 1. Neural Networks and Deep Learning
+## 1. Neural Networks / Deep Learning
 
 No. | <font color="#0085a1">**Neural Networks**</font> | <font color="#0085a1">**Neural Networks and Deep Learning**</font>
 :-------: | :-------: | :-------:
