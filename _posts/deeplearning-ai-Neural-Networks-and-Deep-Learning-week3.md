@@ -77,7 +77,7 @@ mathjax: true
 
 ## 3. 神经网络中的激活函数
 
-四中常用的激活函数: Sigmoid, Tanh, ReLU, Leaky ReLU.
+四种常用的激活函数: Sigmoid, Tanh, ReLU, Leaky ReLU.
 
 其中 sigmoid 我们已经见过了, 它的输出可以看成一个概率值, 往往用在输出层. **对于中间层来说, 往往是`ReLU`的效果最好.**
 
@@ -111,7 +111,7 @@ mathjax: true
 > 
 > 现实情况是 : **the tanh is pretty much stricly superior. never use sigmoid**
 
-**ReLU** (rectified linear unit)
+**ReLU** (rectified linear unit 矫正线性单元)
 
 > tanh 和 sigmoid 都有一个缺点，就是 z 非常大或者非常小，函数的斜率(导数梯度)就会非常小, 梯度下降很慢.
 > 
@@ -173,7 +173,7 @@ $$
 
 ## 5. 神经网络中的参数初始化
 
-在LR中我们的参数 $w$ 初始化为0, 如果在神经网络中也是用相同的初始化, 那么一个隐藏层的每个节点都是相同的, 不论迭代多少次. 这显然是不合理的, 所以我们应该<font color="red"> **随机地初始化**</font> $w$ 从而解决这个 sysmmetry breaking problem. 破坏对称问题
+在 LR 中我们的参数 $w$ 初始化为 0, 如果在神经网络中也是用相同的初始化, 那么一个隐藏层的每个节点都是相同的, 不论迭代多少次. 这显然是不合理的, 所以我们应该<font color="red"> **随机地初始化**</font> $w$ 从而解决这个 sysmmetry breaking problem. 破坏对称问题
 
 <img src="/images/deeplearning/C1W3-16_1.png" width="750" />
 
