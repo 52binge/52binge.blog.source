@@ -10,8 +10,8 @@ No. | <font color="#0085a1">**Neural Networks**</font> | <font color="#0085a1">*
 :-------: | :-------: | :-------:
 1 | [Introduction to Deep Learning][c1w1]  | 了解现今深度学习在哪里应用、如何应用
 2 | [Neural Networks Basics][c1w2] | logistic 损失函数、导数、计算图、m个样本的梯度下降、向量化
-3 | [Shallow Neural Networks][c1w3] | NN Representation、向量化、[Activation functions][in1]、**Random init**、Python实现NN 
-4 | [Deep Neural Networks][c1w4] | 深网的前向传播、核对矩阵维数、深层表示、前向反向传播、参数VS超参数
+3 | [Shallow Neural Networks][c1w3] | NN Representation、向量化、[Activation functions][in1]、**Random init**、Python 实现 NN 
+4 | [Deep Neural Networks][c1w4] | 深网的前向传播、核对矩阵维数、反向传播、参数VS超参数、Python 实现 NN
 
 > 对于中间层来说, 往往是 ReLU 的效果最好. 
 > 虽然 z < 0, 的时候，斜率为0， 但在实践中，有足够多的隐藏单元 令 z > 0, 对大多数训练样本来说是很快的.
