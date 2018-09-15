@@ -10,7 +10,7 @@ No. | <font color="#0085a1">**Neural Networks**</font> | <font color="#0085a1">*
 :-------: | :-------: | :-------:
 1 | [Introduction to Deep Learning][c1w1]  | 了解现今深度学习在哪里应用、如何应用
 2 | [Neural Networks Basics][c1w2] | logistic 损失函数、导数、计算图、m个样本的梯度下降、向量化
-3 | [Shallow Neural Networks][c1w3] | NN Representation、多样本向量化解释、Activation functions、随机初始化
+3 | [Shallow Neural Networks][c1w3] | NN Representation、向量化、`Activation functions`、**random init**、Python实现NN 
 4 | [Deep Neural Networks][c1w4] | 深网的前向传播、核对矩阵维数、深层表示、前向反向传播、参数VS超参数
 
 [c1w1]: /2017/12/01/deeplearning-ai-Neural-Networks-and-Deep-Learning-week1/

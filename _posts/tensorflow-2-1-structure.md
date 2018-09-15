@@ -14,7 +14,12 @@ Tensorflow 首先要定义神经网络的结构, 然后再把数据放入结构�
 
 <img src="/images/tensorflow/tf-1-why.gif" width="400" />
 
-因为 TensorFlow 是采用数据流图（**data　flow　graphs**）来计算, 所以首先我们得创建一个数据流图, 然后再将我们的数据（数据以张量(**tensor**)的形式存在）放在数据流图中计算. 节点（Nodes）在图中表示数学操作, 图中的线（edges）则表示在节点间相互联系的多维数据数组, 即张量（tensor). 训练模型时 **tensor** 会不断的从数据流图中的一个节点 **flow** 到另一节点, 这就是TensorFlow名字的由来.
+因为 TensorFlow 是采用数据流图（**data　flow　graphs**）来计算, 所以首先我们得创建一个**数据流图**, 然后再将我们的数据（数据以张量(**tensor**)的形式存在）放在数据流图中计算. 
+
+> - Nodes 在图中表示数学操作
+> - Edges 在图中则表示在节点间相互联系的多维数据数组，即张量（tensor）
+
+训练模型时 **tensor** 会不断的从数据流图中的一个节点 **flow** 到另一节点, 这就是 TensorFlow 名字的由来.
 
 ## Tensor 张量意义
 
@@ -29,7 +34,6 @@ Tensorflow 首先要定义神经网络的结构, 然后再把数据放入结构�
 ## Reference
 
 - [tensorflow.org][1]
-- [莫烦Python][3]
 
 [1]: https://www.tensorflow.org/
 [2]: https://www.tensorflow.org/get_started/

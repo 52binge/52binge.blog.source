@@ -6,11 +6,11 @@ categories: python
 tags: tensorflow
 ---
 
-TensorFlow 最初由Google大脑的研究员和工程师开发出来，用于机器学习和神经网络方面的研究，`2015.10`宣布开源.
+TensorFlow 最初由 Google 大脑的研究员和工程师开发出来，用于机器学习和神经网络方面的研究，`2015.10`宣布开源.
 
 <!-- more -->
 
-TensorFlow 是一款神经网络的Python外部的结构包, 也是一个采用数据流图来进行数值计算的开源软件库.
+TensorFlow 是一款神经网络的 Python 外部的结构包, 也是一个采用数据流图来进行数值计算的开源软件库.
 
 
 ![TensorFlow 节点表示某种抽象的计算，边表示节点之间相互联系的张量][img1]
