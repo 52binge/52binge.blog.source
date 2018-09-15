@@ -41,7 +41,7 @@ mathjax: true
 
 ## 2. Intuition about deep representation
 
-关于深度神经网络直观地解释这部分笔记暂略, 请直接观看课程视频内容:Why deep representation?.
+关于深度神经网络直观地解释这部分笔记暂略, 请直接观看课程视频内容: Why deep representation?.
 
 <img src="/images/deeplearning/C1W4-6_1.png" width="750" />
 
@@ -49,7 +49,9 @@ mathjax: true
 
 ## 3. 深度神经网络中的前向/反向传播
 
-在第三周的笔记中详细介绍了神经网络的前向/方向传播, 这里完全套用, 只是多了层数而已. 还不能手推的同学可以仔细研究上周的笔记内容
+在第三周的笔记中详细介绍了神经网络的前向/反向传播, 这里完全套用, 只是多了层数而已. 
+
+> 需要再详细了解手推的同学可以仔细研究上周的笔记内容
 
 <img src="/images/deeplearning/C1W4-8_1.png" width="750" />
 
