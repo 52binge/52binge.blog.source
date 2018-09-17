@@ -21,9 +21,35 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-chatbot
+Open Domain 广域 (什么都能聊)
+Closed Domain 在一个专业的领域能聊
 
 <!-- more -->
+
+机器人第一课
+
+Open Domain 广域 (什么都能聊)
+Closed Domain 在一个专业的领域能聊
+
+Retrieval-Based 人设
+
+Generative-Based 数据驱动、非人设
+
+Generative-AI. SIRI、Baidu助手、很多大厂的玩法，自带全能，目前表现还不是很好.
+
+机器学习第二课
+
+keras.io 火的不能再火了
+
+gensim 这个库是 word2vec 最好的库
+
+Auto-Encoder 业界最古老的，深度学习的算法基础，思维是深度学习的基石. 效果并不是很好. 在降维的领域应用比较多.
+
+- Data-specific (在猫和狗上飞起的，不能用在车上)
+- Lossy
+- Learn from examples
+
+---
 
 关于聊天机器人的思考 1.工程考量
 2.机器学习角度考虑

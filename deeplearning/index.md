@@ -29,7 +29,7 @@ No. | <font color="#0085a1">**Neural Networks**</font> | <font color="#0085a1">*
 
 No. | <font color="#0085a1">**Improving**</font> | <font color="#0085a1">**Improving Deep Neural Networks**</font> 
 :-------: | :-------: | :-------:
-5 | [Deep Learning Action][c2w1]  | 训练集划分、偏差/方差、L1 L2 Dropout、梯度消失-梯度爆炸、权重初始化、梯度检验
+5 | [Deep Learning Action][c2w1]  | Train/Dev/Test、Bias/Variance、L1 L2 Dropout、梯度消失\爆炸、Weight init、Gradient checking
 6 | [Optimization][c2w2] | mini-batch、指数加权平均-偏差修正、Momentum、RMSprop、Adam、学习率衰减、局部优
 7 | [超参数调试、Batch][c2w3] | Hyperparameter、Normalizing Activations、Batch Norm [Fitting NN]、Softmax
 

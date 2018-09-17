@@ -44,7 +44,7 @@ mathjax: true
 
 在学完本周的内容后, 我们会使用Python实现不同的 权重初始化, L2正则, Dropout正则 及 梯度下降.
 
-## 1. 训练集, 验证集与测试集
+## 1. Train/dev/test
 
 在上一周的内容中, 介绍了神经网络中的常用符号以及各种变量的维度. 不清楚的可以回顾上周的笔记内容.
 
@@ -66,7 +66,7 @@ mathjax: true
 
 <img src="/images/deeplearning/C2W1-2_1.png" width="750" />
 
-## 2. 偏差, 方差
+## 2. Bias / Variance
 
 关于偏差与方差相比大家都很熟悉了, 在机器学习的课程中也已经学习到. 下面祭出Andrew经典的图例解释:
 
@@ -91,7 +91,7 @@ mathjax: true
 
 若**模型高偏差, 我们可以增加模型的复杂度**例如使用一个”更大”的网络结构或者训练更久一点. 如**模型高方差, 我们可以想办法获取更多的数据**, 或者使用接下来我们要讲的正则化.
 
-## 3. 正则化
+## 3. Regularization
 
 为什么正则化没有加 $\frac{\lambda}{2m} b^2$:
 
@@ -155,7 +155,7 @@ dropout 也是一种正则化的手段, 在训练时以 1-keep_prob 随机地”
 
 实现代码(未完成)
 
-### 其他正则化
+### Other Regularization
 
 - Data augmentation
 
@@ -215,10 +215,6 @@ Vanishing/Exploding gradients 指的是随着前向传播不断地进行, 激活
 > 在没有 dropout 的情况下，确保你的算法是正确的，然后再打开 dropout.
 > 
 > 现实中 几乎不会出现, 当 w 和 b 接近 0 时，梯度下降的实施是正确的.
-
-## 7. 本周内容回顾
-
-- 改善深层神经网络：超参数调试、正则化
 
 ## 8. Reference
 
