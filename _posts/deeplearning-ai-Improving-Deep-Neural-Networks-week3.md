@@ -1,5 +1,5 @@
 ---
-title: Improving Deep Neural Networks (week3) - 超参数调试、Batch 正则化
+title: Improving DNN (week3) - Hyperparameter、Batch Regularization
 toc: true
 date: 2018-07-23 20:00:21
 categories: deeplearning
@@ -261,10 +261,10 @@ $$
 
 假设第$l$层有 $z^{\[l\]}=w^{\[l\]}a^{\[l-1\]}+b^{\[l\]}$,激活函数为 $a^{\[l\]}=\frac{e^{z^{\[l\]}}}{\sum\_{j=1}^{n\_l}e^{z^{\[l\]}\_j}}$
 
-该节视频中 Andrew Ng 并没有很详细的介绍softmax的原理和公式推导，感兴趣的可以戳如下链接进行进一步了解：
+该节视频中 Andrew Ng 并没有很详细的介绍 softmax 的原理和公式推导，感兴趣的可以戳如下链接进行进一步了解：
 
-- [ufldl:Softmax回归][y8]
-- [softmax公式推导&算法实现][y9]
+- [ufldl: Softmax 回归][y8]
+- [softmax 公式推导&算法实现][y9]
 
 [y8]: http://ufldl.stanford.edu/wiki/index.php/Softmax回归
 [y9]: https://zhuanlan.zhihu.com/p/21485970
