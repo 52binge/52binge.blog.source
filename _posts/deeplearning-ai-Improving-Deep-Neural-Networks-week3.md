@@ -1,5 +1,5 @@
 ---
-title: Improving Deep Neural Networks (week3) - 超参数调试、Batch 正则化 和 程序框架
+title: Improving Deep Neural Networks (week3) - 超参数调试、Batch 正则化
 toc: true
 date: 2018-07-23 20:00:21
 categories: deeplearning
