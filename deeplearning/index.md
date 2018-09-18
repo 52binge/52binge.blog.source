@@ -35,7 +35,7 @@ No. | <font color="#0085a1">**Improving**</font> | <font color="#0085a1">**Impro
 
 [c2w1]: /2018/07/19/deeplearning-ai-Improving-Deep-Neural-Networks-week1/
 [c2w2]: /2018/07/21/deeplearning-ai-Improving-Deep-Neural-Networks-week2/
-[c2w3]: /2018/07/21/deeplearning-ai-Improving-Deep-Neural-Networks-week2/
+[c2w3]: /2018/07/23/deeplearning-ai-Improving-Deep-Neural-Networks-week3/
 
 ## 3. Structured Machine Learning 
 

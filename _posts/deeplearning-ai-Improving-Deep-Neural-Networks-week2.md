@@ -371,11 +371,7 @@ $$
 > 
 > For me，I would say that learning rate decay usually lower down on the list of things I try. learning rate decay does help. Sometimes it can really help speed up training. it is a little bit lower down my list in terms of the thingsI would try.
 
-## 7. 本周内容回顾
-
-- 改善深层神经网络：超参数调试、正则化
-
-## 8. Reference
+## Reference
 
 - [网易云课堂 - deeplearning][1]
 - [深度学习笔记：优化方法总结(BGD,SGD,Momentum,AdaGrad,RMSProp,Adam)][2]
