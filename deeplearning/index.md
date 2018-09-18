@@ -1,8 +1,8 @@
 # deep learning
 
-我開始整理 Deep Learning 相關学习笔记，学习算法类知识真的需要下很大很大的功夫，灰常博大精深~~
+我开始整理 Algorithm 相关学习笔记，学习算法类知识真的需要下很大很大的功夫，灰常博大精深~~
 
-博主水平灰常灰常有限，期望能與對、Deep Learning 感兴趣的朋友一起学习、交流、探讨与分享~~
+博主水平灰常有限，期望能与對、Deep Learning 感兴趣的朋友一起学习、交流、探讨与分享~~
 
 ## 1. Neural Networks / Deep Learning
 
