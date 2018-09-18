@@ -72,10 +72,10 @@ mathjax: true
 
 我们该如何定位模型所处的问题? 如下图所示, 这里举了四中情况下的训练集和验证集误差.
 
-- 当训练误差很小, 但验证误差和训练误差相差很大时为高方差
-- 当训练误差和验证误差接近且都很大时为高偏差
-- 当训练误差很大, 验证误差更大时为高方差, 高偏差
-- 当训练误差和验证误差接近且都很小时为低方差低偏差
+- 当 训练误差很小, 验证误差很大时 为 High Variance
+- 当 训练误差 和 验证误差 接近 且 都很大 时为 High Bias
+- 当 训练误差很大, 验证误差更大时为 High Variance && High Bias
+- 当 训练误差 和 验证误差接近且都很小时为 Low Variance && Low Bias
 
 <img src="/images/deeplearning/C2W1-4_1.png" width="750" />
 
@@ -104,13 +104,13 @@ mathjax: true
 
 ### 3.1 L2 regularization
 
-> L2 正则化下的 Cost Function 如下所示, 只需要添加正则项 **$\frac{\lambda}{2m}\sum\_{l=1}^L||w^{[l]}||^2\_F$**, 其中 F 代表 Frobenius Norm. 在添加了正则项之后, 相应的梯度也要变化, 所以在更新参数的时候需要加上对应的项. 这里注意一点, 我们只对参数 $w$ 正则, 而不对 $b$. 因为对于每一层来说, $w$ 有很高的维度, 而 $b$ 只是一个标量. $w$ 对整个模型的影响远大于 $b$.
+> L2 regularization 下的 Cost Function 如下所示, 只需要添加正则项 **$\frac{\lambda}{2m}\sum\_{l=1}^L||w^{[l]}||^2\_F$**, 其中 F 代表 Frobenius Norm. 在添加了正则项之后, 相应的梯度也要变化, 所以在更新参数的时候需要加上对应的项. 这里注意一点, 我们只对参数 $w$ 正则, 而不对 $b$. 因为对于每一层来说, $w$ 有很高的维度, 而 $b$ 只是一个标量. $w$ 对整个模型的影响远大于 $b$.
 
 <img src="/images/deeplearning/C2W1-7_1.png" width="750" />
 
-下面给出添加正则项为什么能防止过拟合给出直观的解释. 如下图所示:
+下面给出添加 regularization 为什么能防止过拟合给出直观的解释. 如下图所示:
 
-> 当我们的 λ 比较大的时候, 模型就会加大对 w 的惩罚, 这样有些 w 就会变得很小(L2正则也叫权重衰减, **weights decay**). 从下图左边的神经网络来看, 效果就是整个神经网络变得简单了(一些隐藏层甚至w趋向于0), 从而降低了过拟合的风险.
+> 当我们的 λ 比较大的时候, 模型就会加大对 w 的惩罚, 这样有些 w 就会变得很小 (L2 Regularization 也叫权重衰减, **weights decay**). 从下图左边的神经网络来看, 效果就是整个神经网络变得简单了(一些隐藏层甚至 $w$ 趋向于 0), 从而降低了过拟合的风险.
 
 > 那些 隐藏层 并没有被消除，只是影响变得更小了，神经网络变得简单了.
 
@@ -128,7 +128,7 @@ dropout 也是一种正则化的手段, 在训练时以 1-keep_prob 随机地”
 
 <img src="/images/deeplearning/C2W1-10_1.png" width="600" />
 
-> 具体可参考如下实现方式, 在前向传播时将 $a$ 中的某些值置为0, 为了保证大概的大小不受添加dropout影响, 再将处理后的 $a$ 除以 keep_prob.
+> 具体可参考如下实现方式, 在前向传播时将 $a$ 中的某些值置为0, 为了保证大概的大小不受添加 dropout 影响, 再将处理后的 $a$ 除以 keep_prob.
 
 <img src="/images/deeplearning/C2W1-11_1.png" width="750" />
 
@@ -193,11 +193,21 @@ Vanishing/Exploding gradients 指的是随着前向传播不断地进行, 激活
 
 <img src="/images/deeplearning/C2W1-16_1.png" width="750" />
 
+为了直观理解梯度消失和梯度爆炸，我们假设所有激活函数为线性激活函数，即 $g(z)=z$。 并假设前 L−1 个权重矩阵都相等, 即为 $W\_{linear}$，所以可以得到 $y\_{hat}=W\_{linear}^{L-1}W\_{L}X$
+
+假设 $W\_{linear}$ 都等于这个: ![][img2]
+
+那么则有 $y\_{hat}=1.5^{L-1}W\_LX$，很显然当 L 很大时则会出现梯度爆炸。
+
+同理若将权重的值设置为小于1，那么则会出现梯度消失。
+
 > 一个可以减小这种情况发生的方法, 就是用有效的参数初始化 (该方法并不能完全解决这个问题). 但是也是有意义的
 
 <img src="/images/deeplearning/C2W1-17_1.png" width="750" />
 
 > 设置合理的权重，希望你设置的权重矩阵，既不会增长过快，也不会下降过快到 0.
+
+> 想更加了解如何初始化权重可以看下这篇文章 [神经网络权重初始化问题][5]，其中很详细的介绍了权重初始化问题。
 
 ## 6. Gradient checking implementation
 
@@ -226,4 +236,7 @@ Vanishing/Exploding gradients 指的是随着前向传播不断地进行, 激活
 [2]: https://daniellaah.github.io/2017/deeplearning-ai-Improving-Deep-Neural-Networks-week1.html
 [3]: https://www.coursera.org/specializations/deep-learning
 [4]: http://www.cnblogs.com/marsggbo/p/7470989.html
+[5]: http://www.cnblogs.com/marsggbo/p/7462682.html
+
+[img2]: /images/deeplearning/C2W1-16_2.jpg
 
