@@ -151,6 +151,52 @@ M 初始化的时候可以由 radom 是生成. M 之后是可以通过训练做�
  1. 数据预处理 tfrecords （TF可以自动读进去的格式）
  2. 1
 
+## 7月 第5课
+
+
+文本直接放入内存太大了，所以我们直接转成 TF 可以直接读的形式 tfrecords 格式结尾
+
+可以用 TF 自带的东西 load 数据
+
+GPU 资源是很贵的
+
+速度方面 ：
+
+1. 读数据的速度
+2. GPU 的运算速度
+
+> 我们尽快读得快，但是读数据太快了，GPU 处理就跟不上， 然后可以跟队列，TF 完成
+
+看下代码
+
+代码分为几个环节
+
+第一部分
+  
+  scripts/prepare_data.py
+   将我的 train、valid csv 都转换成 tfrecords 的格式
+   
+   最小的词频是 5  不要了，长度超过 160 也不要了.
+   
+   tokenizer 文本分词
+   
+   自带数据转化，因为 TF 自带了很多东西
+   
+   vocab_processor 文本转变向量
+   
+   transform
+   
+   听课到 1:41:00
+   
+第二部分
+
+  models
+
+第三部分
+
+  评价
+  
+
 ## 12. Reference
 
 - [网易云课堂 - deeplearning][1]
