@@ -259,7 +259,7 @@ $$
 
 <img src="/images/deeplearning/C2W3-9_1.png" width="750" />
 
-假设第$l$层有 $z^{\[l\]}=w^{\[l\]}a^{\[l-1\]}+b^{\[l\]}$,激活函数为 $a^{\[l\]}=\frac{e^{z^{\[l\]}}}{\sum\_{j=1}^{n\_l}e^{z^{\[l\]}\_j}}$
+假设第 $l$ 层有 $z^{\[l\]}=w^{\[l\]}a^{\[l-1\]}+b^{\[l\]}$, 激活函数为 $a^{\[l\]}=\frac{e^{z^{\[l\]}}}{\sum\_{j=1}^{n\_l}e^{z^{\[l\]}\_j}}$
 
 该节视频中 Andrew Ng 并没有很详细的介绍 softmax 的原理和公式推导，感兴趣的可以戳如下链接进行进一步了解：
 
@@ -285,7 +285,7 @@ $$
  
 Andrew Ng 演示了 TensorFlow 使用方法.
 
-> 我推荐一个比较好的TensorFlow的练手项目：[TensorFlow Example][5]
+> 我推荐一个比较好的 TensorFlow 的练手项目：[TensorFlow Example][5]
 
 ## 12. Reference
 
