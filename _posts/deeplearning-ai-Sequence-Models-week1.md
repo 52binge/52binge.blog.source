@@ -368,7 +368,7 @@ if (gradient > max) {
 > “The **cat**，which already ate apple，yogurt，banana，..., **was** full.”
 > “The **cats**，which already ate apple，yogurt，banana，..., **were** full.”
 
-重点标出的 **cat(s)** 和 be 动词（**was,were**） 是有很重要的关联的，但是中间隔了一个 which 引导的定语从句，对于前面所介绍的基础的 RNN网络 很难学习到这个信息，尤其是当出现梯度消失时，而且这种情况很容易发生.
+重点标出的 **cat(s)** 和 be 动词（**was, were**） 是有很重要的关联的，但是中间隔了一个 which 引导的定语从句，对于前面所介绍的基础的 RNN网络 很难学习到这个信息，尤其是当出现梯度消失时，而且这种情况很容易发生.
 
 我们知道一旦神经网络层次很多时，反向传播很难影响前面层次的参数。所以为了 **解决梯度消失** 问题，提出了 **GRU**单元，下面一节具体介绍.
 
