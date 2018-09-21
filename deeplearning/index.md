@@ -105,7 +105,7 @@ No. | <font color="#0085a1">**Machine Learning Title**</font> | <font color="#00
 12. | [模型评估总结][12] | Precision、Recall、ROC、AUC
  | |
 13. | [Native Bayes 1][14.1] | 条件独立假设、垃圾邮件识别、多项式/伯努利/混合 模型、平滑
-14. | [Native Bayes 2][14.2] | 独立假设、贝叶斯分类器、文本分类
+14. | [Native Bayes 2][14.2] | 独立假设、贝叶斯分类器
 
 ## Machine learning tree model
 
