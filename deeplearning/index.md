@@ -67,13 +67,13 @@ No. | <font color="#0085a1">**CNN**</font> | <font color="#0085a1">**Convolution
 
 No. | <font color="#0085a1">**Sequence Models**</font> | <font color="#0085a1">**Sequence Models**</font>
 :-------: | :-------: | :-------:
-14 | [Recurrent Sequence Models][6] | Notation、RNN、Vanishing gradients、GRU、LSTM、BRNN、Deep RNNs
-15 | [NLP & Word Embeddings][7] | Matrix、Word2Vec、Negative Sampling、GloVe、Debiasing Word Embeddings
-16 | [Sequence Models & Attention][8] | Greedy Search、Beam Search、Error analysis on beam search、Attention
+14 | [Recurrent Sequence Models][c5w1] | Notation、RNN、Vanishing gradients、GRU、LSTM、BRNN、Deep RNNs
+15 | [NLP & Word Embeddings][c5w2] | Matrix、Word2Vec、Negative Sampling、GloVe、Debiasing Word Embeddings
+16 | [Sequence Models & Attention][c5w3] | Greedy Search、Beam Search、Error analysis on beam search、Attention
 
-[6]: /2018/07/26/deeplearning-ai-Sequence-Models-week1/
-[7]: /2018/08/02/deeplearning-ai-Sequence-Models-week2/
-[8]: /2018/08/14/deeplearning-ai-Sequence-Models-week3/
+[c5w1]: /2018/07/26/deeplearning-ai-Sequence-Models-week1/
+[c5w2]: /2018/08/02/deeplearning-ai-Sequence-Models-week2/
+[c5w3]: /2018/08/14/deeplearning-ai-Sequence-Models-week3/
 
 [0]: / 
 
