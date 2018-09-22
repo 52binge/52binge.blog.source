@@ -450,9 +450,9 @@ $$
 
 ## 10. LSTM（long short term memory）unit
 
-介绍完GRU后，再介绍LSTM会更加容易理解。下图是二者公式对比：
+介绍完 GRU 后，再介绍 LSTM 会更加容易理解。下图是二者公式对比：
 
-GRU只有两个门，而LSTM有三个门，分别是更新门 $\Gamma\_u$ (是否需要更新为 $\tilde{c}^{<{t}>}$，遗忘门 $\Gamma\_f$ (是否需要丢弃上一个时刻的值)，输出门 $\Gamma\_o$ (是否需要输出本时刻的值)
+GRU 只有两个门，而 LSTM 有三个门，分别是更新门 $\Gamma\_u$ (是否需要更新为 $\tilde{c}^{<{t}>}$，遗忘门 $\Gamma\_f$ (是否需要丢弃上一个时刻的值)，输出门 $\Gamma\_o$ (是否需要输出本时刻的值)
 
 <img src="/images/deeplearning/C5W1-42_1.png" width="650" />
 
@@ -460,7 +460,7 @@ GRU只有两个门，而LSTM有三个门，分别是更新门 $\Gamma\_u$ (是�
 
 虽然 LSTM 比 GRU 更复杂，但是它比 GRU 更早提出哦。另外一般而言 LSTM 的表现要更好，但是计算量更大，毕竟多了一个门嘛。而 GRU 实际上是对 LSTM 的简化，它的表现也不错，能够更好地扩展到深层网络。所以二者各有优势。
 
-下图是LSTM的结构示意图：
+下图是 LSTM 的结构示意图：
 
 <img src="/images/deeplearning/C5W1-44_1.png" width="700" />
 
