@@ -33,13 +33,13 @@ mathjax: true
 “I want a glass of orange ________”
 ```
 
-假如我们的RNN的模型通过训练已经学会了短语“orange juice”，并准确的预测了这句话的空格部分，那么如果遇到了另一句话时，比如：
+假如我们的 RNN 的模型通过训练已经学会了短语 “orange juice”，并准确的预测了这句话的空格部分，那么如果遇到了另一句话时，比如：
 
 ```
 “I want a glass of apple _________”
 ```
 
-是否需要从头学习短语“apple juice”呢？能否通过构建“`apple`” 与 “`orange`” 的联系让它不需要重学就能进行判断呢？
+是否需要从头学习短语 “apple juice” 呢？能否通过构建 “`apple`” 与 “`orange`” 的联系让它不需要重学就能进行判断呢？
 
 > 能否通过构建 “apple” 与 “orange” 的联系让它不需要重学就能进行判断呢？
 > 所以下面给出了一种改进的表示方法，称之为“词嵌入(**Word Embedding**)”
