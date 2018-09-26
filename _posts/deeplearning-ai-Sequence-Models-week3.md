@@ -274,7 +274,7 @@ $
 
 <img src="/images/deeplearning/C5W3-16_1.png" width="750" />
 
-注意力模型在此基础上做进一步处理。
+Attention model 在此基础上做进一步处理。
 
 为避免误解，使用另一个符号 $s$ 来表示节点。
 
