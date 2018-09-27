@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "start deploy my blog..."
+git pull
 git status
 git add *
 git status
