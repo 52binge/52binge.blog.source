@@ -2,6 +2,22 @@
 date: 2018-07-16 16:59:48
 ---
 
+## TensorFlow NLP
+
+利用 RNN 来搭建 NLP 方面的一些经典应用，如 ： 语言模型、机器翻译
+
+随着计算能力增强 与 大型语料库的出现，统计学习方法 深度学习 成为 解决自然语言处理问题 的主流
+
+
+### 1. 语言模型的背景知识
+
+语言模型是自然语言处理问题中一类最基本的问题，它有着非常广泛的应用。
+
+### 2. 神经语言模型
+
+### 3. 神经网络机器翻译
+
+
 ## TensorFlow
 
 TensorFlow 最初由Google大脑的研究员和工程师开发出来，用于机器学习和神经网络方面的研究，2015.10宣布开源.
@@ -74,28 +90,6 @@ You have just found [Keras][k1]
 [Keras][k2] 开发重点是支持快速的实验。能够以最小的时延把你的想法转换为实验结果，是做好研究的关键。
 
 如果说 Tensorflow 或者 Theano 神经网络方面的巨人. 那 Keras 就是站在巨人肩膀上的人. 
-
-### 6. 如何用 Keras 搭建各种神经网络
-
-- [6.1 Regressor 回归][0]
-
-- [6.2 Classifier 分类][0]
-
-- [6.3 什么是卷积神经网络 CNN (Convolutional Neural Network)][0]
-
-- [6.4 CNN 卷积神经网络][0]
-
-- [6.5 什么是循环神经网络 RNN (Recurrent Neural Network)][0]
-
-- [6.6 什么是 LSTM 循环神经网络][0]
-
-- [6.7 RNN Classifier 循环神经网络][0]
-
-- [6.8 RNN Regressor 循环神经网络][0]
-
-- [6.9 什么是自编码 (Autoencoder)][0]
-
-- [6.10 Autoencoder 自编码][0]
 
 > notes：next ...
 
