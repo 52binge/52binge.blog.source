@@ -2,27 +2,37 @@
 date: 2018-07-16 16:59:48
 ---
 
-## TensorFlow NLP
+## NLP for tensorFlow
 
-利用 RNN 来搭建 NLP 方面的一些经典应用，如 ： 语言模型、机器翻译
-
-随着计算能力增强 与 大型语料库的出现，统计学习方法 深度学习 成为 解决自然语言处理问题 的主流
-
+利用 RNN 来搭建 NLP 方面的一些经典应用，如 ： Language model、Machine translation
 
 ### 1. 语言模型的背景知识
 
 语言模型是自然语言处理问题中一类最基本的问题，它有着非常广泛的应用。
 
-### 2. 神经语言模型
+- [1.1 Language model 介绍 / 评价方法 perplexity][0]
+
+### 2. NNLM (神经语言模型)
+
+- [2.1 PTB 数据集的预处理][0]
+
+- [2.2 PTB 数据的 batching 方法][0]
+
+- [2.3 RNN 的语言模型 TensorFlow 实现][0]
 
 ### 3. 神经网络机器翻译
 
+- [3.1 机器翻译背景 与 Seq2Seq 模型介绍][0]
+
+- [3.2 机器翻译文本数据的预处理][0]
+
+- [3.3 Seq2Seq 模型 TF 实现][0]
 
 ## TensorFlow
 
-TensorFlow 最初由Google大脑的研究员和工程师开发出来，用于机器学习和神经网络方面的研究，2015.10宣布开源.
+TensorFlow 最初由 Google brain 的研究员和工程师开发出来，用于机器学习和神经网络方面的研究，2015.10 宣布开源.
 
-TensorFlow 是一款神经网络的Python外部的结构包, 也是一个采用数据流图来进行数值计算的开源软件库.
+TensorFlow 是一款神经网络的 Python 外部的结构包, 也是一个采用**数据流图**来进行数值计算的开源软件库.
 
 ### 1. TensorFlow 简介
 
@@ -87,11 +97,7 @@ You have just found [Keras][k1]
 
 [Keras][k1] 是一个用 Python 编写的高级神经网络 API，它能够以 `TensorFlow`, `CNTK`, 或者 `Theano` 作为后端运行。
 
-[Keras][k2] 开发重点是支持快速的实验。能够以最小的时延把你的想法转换为实验结果，是做好研究的关键。
-
-如果说 Tensorflow 或者 Theano 神经网络方面的巨人. 那 Keras 就是站在巨人肩膀上的人. 
-
-> notes：next ...
+[Keras][k2] 开发重点是支持快速的实验。能够以最小的时延把你的想法转换为实验结果，是做好研究的关键。 
 
 [0]: /tensorflow
 [k1]: https://keras.io/zh/
