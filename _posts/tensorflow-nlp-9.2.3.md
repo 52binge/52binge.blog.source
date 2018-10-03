@@ -65,15 +65,38 @@ inputs = tf.nn.embedding_lookup(embedding, input_data)
 
 Softmax层 的作用是将 RNN 的输出 转化为一个单词表中每个单词的输出概率，为此需要两个步骤：
 
+### 2.1 第一步
+
+使用一个线性映射将 RNN 的输出映射为一个维度与词汇表大小相同的向量，这一步的输出叫做 **logits**. 代码如下所示：
+
+```python
+# 首先定义映射用到的参数
+# HIDDEN_SIZE 是 RNN 的隐藏状态维度，VOCAB_SIZE 是词汇表大小
+weight = tf.get_variable("weight", [HIDDEN_ZIZE, VOCAB_SIZE])
+bias = tf.get_variable("bias", [VOCAB_SIZE])
+
+# 计算线性映射
+logits = tf.matmul(output, weight) + bias
+```
+
+> 其中 output 是 RNN 的输出，维度是 [batch_size \* num_steps, **HIDDEN_SIZE**]
+>
+> 经过线性映射后，输出结果是 [batch_size \* num_steps, **VOCAB_SIZE**].
+
+
 ## Reference
 
 - [tensorflow.org][1]
-- [求通俗讲解下tensorflow的embedding_lookup接口的意思？][3]
 - [tf.nn.embedding_lookup函数原理？][4]
+- [求通俗讲解下tensorflow的embedding_lookup接口的意思？][3]
+- [Tomas Mikolov PTB 数据][5]
+- [如何理解深度学习源码里经常出现的logits？][6]
 - [基于循环神经网络的语言模型的介绍与TensorFlow实现(4)：TensorFlow实现RNN-based语言模型][2]
 
 [1]: https://www.tensorflow.org/
 [2]: https://zhuanlan.zhihu.com/p/37886740
 [3]: https://www.zhihu.com/question/48107602/answer/159801895
 [4]: https://www.zhihu.com/question/52250059/answer/146260654
+[5]: http://www.fit.vutbr.cz/~imikolov/rnnlm/
+[6]: https://www.zhihu.com/question/60751553
 
