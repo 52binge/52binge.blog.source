@@ -6,7 +6,7 @@ categories: python
 tags: tensorflow
 ---
 
-我们来实现一个非常简单的两层 FC 全连接网络来完成 MNIST数据 的分类问题
+我们来实现一个非常简单的两层 FC 全连接网络来完成 MNIST数据 的分类
 
 <!-- more --> 
 
