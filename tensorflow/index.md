@@ -59,6 +59,8 @@ TensorFlow 是一款神经网络的 Python 外部的结构包, 也是一个采�
 
 - [2.7 激励函数 Activation Function][t2.7]
 
+- [2.8 TensorFlow 基本用法总结][t2.8]
+
 [t2.1]: /2018/08/24/tensorflow-2-1-structure/
 [t2.2]: /2018/08/24/tensorflow-2-2-example2/
 [t2.3]: /2018/09/06/tensorflow-2-3-session/
@@ -66,6 +68,7 @@ TensorFlow 是一款神经网络的 Python 外部的结构包, 也是一个采�
 [t2.5]: /2018/09/07/tensorflow-2-5-placeholde/
 [t2.6]: /2018/09/07/tensorflow-2-6-A-activation-function/
 [t2.7]: /2018/09/07/tensorflow-2-6-B-activation-function/
+[t2.8]: /2018/09/08/tensorflow-2-8-tensorflow-basic-summary/
 
 ### 3. 建造我们第一个神经网络
 

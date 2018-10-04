@@ -61,5 +61,9 @@ num_batch 其实就是 batch 的数量，这里只画了三个，可以一直接
 ## Reference
 
 - [关于batching多句子切割batch疑问？][1]
+- [[L2]使用LSTM实现语言模型-数据batching][2]
+- [TensorFlow入门（五）多层 LSTM 通俗易懂版][3]
 
 [1]: https://www.zhihu.com/question/278485204/answer/402066718
+[2]: https://zhuanlan.zhihu.com/p/40809517
+[3]: https://blog.csdn.net/jerr__y/article/details/61195257
