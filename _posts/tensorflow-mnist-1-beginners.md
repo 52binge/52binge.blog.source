@@ -1,5 +1,5 @@
 ---
-title: 简单前馈网络实现 mnist 分类
+title: 前馈网络实现 mnist 分类 初步
 toc: true
 date: 2018-10-04 21:10:21
 categories: python
