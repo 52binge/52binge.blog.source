@@ -1,5 +1,5 @@
 ---
-title: 前馈网络实现 mnist 分类 初步
+title: 简单前馈网络实现 mnist 分类
 toc: true
 date: 2018-10-04 21:10:21
 categories: python
@@ -14,7 +14,9 @@ tags: tensorflow
 
 > 这么简单的一个全连接网络，结果测试准确率达到了 0.98。还是非常棒的！！！
 >
-> MNIST 数据集 包含了 60000 张图片来作为训练数据，10000 张图片作为测试数据。每张图片都代表了 0~9 中的一个数字。图片大小都为 28\*28。
+> MNIST 数据集 包含了 60000 张图片来作为训练数据，10000 张图片作为测试数据。每张图片都代表了 0~9 中的一个数字。图片大小都为 28\*28，处理后的每张图片是一个长度为 784 的一维数组，这个数组中的元素对应图片像素矩阵提供给神经网络的输入层，像素矩阵中元素的取值范围 [0, 1]， 它代表了颜色的深浅。其中 0 表示白色背景(background)，1 表示黑色前景(foreground)。
+> 
+> 为了方便使用随机梯度下降， input_data.read_data_sets 函数生成的类还提供了 mnist.train.next.batch 函数，它可以从所有训练数据中读取一小部分作为一个训练 batch。
 
 MNIST 数据下载地址和内容 | 内容
 :-------:|:-------:
@@ -38,7 +40,13 @@ sess = tf.InteractiveSession(config=config)
 ```python
 # 用tensorflow 导入数据
 from tensorflow.examples.tutorials.mnist import input_data
+
+# input_data.read_data_sets 自动将 MNIST 数据集划分为 train、validation、test 三个数据集
 mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
+
+# train 集合有 55000 张图片
+# validation 集合有 5000 张图片
+# test 集合有 10000 张图片，图片来自 MNIST 提供的测试数据集
 ```
 
 ```python

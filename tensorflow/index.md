@@ -36,11 +36,9 @@ date: 2018-07-16 16:59:48
 
 - [4.2 多层 CNNs 实现 mnist 分类][0]
 
-- [4.3 name / variable_scope 1][0]
+- [4.3 name / variable_scope][0]
 
-- [4.4 name / variable_scope 2][0]
-
-- [4.5 多层 LSTM 通俗易懂版][0]
+- [4.4 多层 LSTM 通俗易懂版][0]
 
 [minst1]: /2018/09/12/tensorflow-mnist-1-beginners/
 [0]: /tensorflow
