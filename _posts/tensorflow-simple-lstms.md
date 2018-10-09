@@ -91,7 +91,7 @@ print('training label shape ', mnist.train.labels.shape)
 ## 1. 首先设置好模型用到的各个超参数
 
 ```python
-lr = 1e-3
+lr = 1e-3 # 0.001
 # 在训练和测试的时候，我们想用不同的 batch_size.所以采用占位符的方式
 batch_size = tf.placeholder(tf.int32)  # 注意类型必须为 tf.int32
 # 在 1.0 版本以后请使用 ：
@@ -216,8 +216,10 @@ test accuracy 0.9858
 - [大学之道，在明明德 永永夜 Tensorflow学习之路][1]
 - [tensorflow笔记：多层LSTM代码分析 ][2]
 - [极客学院 MNIST 数据下载][3]
+- [隔壁小王 LSTM 神经网络输入输出究竟是怎样的？][4]
 
 [1]: https://blog.csdn.net/jerr__y/article/category/6747409
 [2]: https://blog.csdn.net/u014595019/article/details/52759104
 [3]: http://wiki.jikexueyuan.com/project/tensorflow-zh/tutorials/mnist_download.html
+[4]: https://www.zhihu.com/question/41949741
 
