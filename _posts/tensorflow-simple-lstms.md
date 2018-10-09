@@ -16,6 +16,16 @@ tags: tensorflow
 
 通过本例，你可以了解到单层 LSTM 的实现，多层 LSTM 的实现。输入输出数据的格式。 RNN 的 dropout layer 的实现。
 
+## MNIST 背景
+
+**准备数据**
+
+MNIST 是在机器学习领域中的一个经典问题。该问题解决的是把 28x28像素 的灰度手写数字图片识别为相应的数字，其中数字的范围从 0到9.
+
+<img src="/images/tensorflow/tf-4.4_5-mnist_digits.png" width="400" />
+
+> MNIST 数据集 包含了 60000 张图片来作为训练数据，10000 张图片作为测试数据。每张图片都代表了 0~9 中的一个数字。图片大小都为 28*28，处理后的每张图片是一个长度为 784 的一维数组，这个数组中的元素对应图片像素矩阵提供给神经网络的输入层，像素矩阵中元素的取值范围 [0, 1]， 它代表了颜色的深浅。其中 0 表示白色背景(background)，1 表示黑色前景(foreground)。
+
 ```python
 # -*- coding:utf-8 -*-
 import tensorflow as tf
@@ -38,7 +48,44 @@ Extracting MNIST_data/train-images-idx3-ubyte.gz
 Extracting MNIST_data/train-labels-idx1-ubyte.gz
 Extracting MNIST_data/t10k-images-idx3-ubyte.gz
 Extracting MNIST_data/t10k-labels-idx1-ubyte.gz
-(55000, 784)
+(55000, 784) # 训练集图片 - 55000 张 * 784维一维数组
+```
+
+执行 input_data.read_data_sets 后自动创建一个目录 MNIST_data，并开始下载数据
+
+```bash
+(anaconda3)
+# ~/ghome/github/TensorFlowExamples [master ✗ (98591d9)] [16:15:03]
+➜ ll
+total 24
+drwxr-xr-x   6 blair  staff   192B Oct  9 16:14 MNIST_data
+-rw-r--r--   1 blair  staff   2.3K Oct  9 16:13 simple-lstms.ipynb
+(anaconda3)
+# ~/ghome/github/TensorFlowExamples [master ✗ (98591d9)] [16:15:06]
+➜ ll MNIST_data
+total 22672
+-rw-r--r--  1 blair  staff   1.6M Oct  9 16:14 t10k-images-idx3-ubyte.gz
+-rw-r--r--  1 blair  staff   4.4K Oct  9 16:14 t10k-labels-idx1-ubyte.gz
+-rw-r--r--  1 blair  staff   9.5M Oct  9 16:14 train-images-idx3-ubyte.gz
+-rw-r--r--  1 blair  staff    28K Oct  9 16:14 train-labels-idx1-ubyte.gz
+(anaconda3)
+# ~/ghome/github/TensorFlowExamples [master ✗ (98591d9)] [16:15:12]
+```
+
+文件 | 内容
+:-------: | :-------:
+train-images-idx3-ubyte.gz	| 训练集图片 - 55000 张 训练图片, 5000 张 验证图片
+train-labels-idx1-ubyte.gz	| 训练集图片对应的数字标签
+t10k-images-idx3-ubyte.gz	| 测试集图片 - 10000 张 图片
+t10k-labels-idx1-ubyte.gz	| 测试集图片对应的数字标签
+
+
+```python
+print('training data shape ', mnist.train.images.shape)
+print('training label shape ', mnist.train.labels.shape)
+
+# training data shape  (55000, 784)
+# training label shape  (55000, 10)
 ```
 
 ## 1. 首先设置好模型用到的各个超参数
@@ -168,7 +215,9 @@ test accuracy 0.9858
 
 - [大学之道，在明明德 永永夜 Tensorflow学习之路][1]
 - [tensorflow笔记：多层LSTM代码分析 ][2]
+- [极客学院 MNIST 数据下载][3]
 
 [1]: https://blog.csdn.net/jerr__y/article/category/6747409
 [2]: https://blog.csdn.net/u014595019/article/details/52759104
+[3]: http://wiki.jikexueyuan.com/project/tensorflow-zh/tutorials/mnist_download.html
 
