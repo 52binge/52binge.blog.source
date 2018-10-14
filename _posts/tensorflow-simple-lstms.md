@@ -223,6 +223,8 @@ test accuracy 0.9858
 - [极客学院 MNIST 数据下载][3]
 - [隔壁小王 LSTM 神经网络输入输出究竟是怎样的？][4]
 - [colab.research.google][5]
+- [zh.gluon.ai 动手学深度学习][6]
+- [discuss.gluon.ai 论坛][7]
 
 [1]: https://blog.csdn.net/jerr__y/article/category/6747409
 [1_1]: https://blog.csdn.net/Jerr__y/article/details/61195257
@@ -230,6 +232,8 @@ test accuracy 0.9858
 [3]: http://wiki.jikexueyuan.com/project/tensorflow-zh/tutorials/mnist_download.html
 [4]: https://www.zhihu.com/question/41949741
 [5]: https://colab.research.google.com
+[6]: https://zh.gluon.ai/
+[7]: http://discuss.gluon.ai/
 
 ```
 roll_jj： 博主你好， outputs, state = tf.nn.dynamic_rnn(mlstm_cell, inputs=X, initial_state=init_state, time_major=False) h_state = outputs[:, -1, :] 这两句话里，outputs的三个维度是什么意思，为什么把中间那个维度去掉就是我们要的输出结果了？(1年前#6楼)收起回复举报回复
