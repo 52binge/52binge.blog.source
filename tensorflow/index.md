@@ -10,17 +10,18 @@ date: 2018-07-16 16:59:48
 
 语言模型是自然语言处理问题中一类最基本的问题，它有着非常广泛的应用。
 
-- [1.1 Language model 介绍 / 评价方法 perplexity][0]
+- [1.1 Language model 介绍 / 评价方法 perplexity *not][0]
 
 ### 2. NNLM (神经语言模型)
 
-- [2.1 PTB 数据集的预处理][0]
+- [2.1 PTB 数据集的预处理 *not][0]
 
 - [2.2 PTB 数据的 batching 方法][9.2.2]
 
-- [2.3 RNN 的语言模型 TensorFlow 实现][0]
+- [2.3 RNN 的语言模型 TensorFlow 实现][9.2.3]
 
 [9.2.2]: /2018/10/01/tensorflow-nlp-9.2.2/
+[9.2.3]: /2018/10/02/tensorflow-nlp-9.2.3/
 
 ### 3. 神经网络机器翻译
 
@@ -36,11 +37,15 @@ date: 2018-07-16 16:59:48
 
 - [4.2 多层 CNNs 实现 mnist 分类][0]
 
-- [4.3 name / variable_scope][0]
+- [4.3 name / variable_scope][minst3]
 
-- [4.4 多层 LSTM 通俗易懂版][0]
+- [4.4 多层 LSTM 通俗易懂版][minst4]
 
 [minst1]: /2018/09/12/tensorflow-mnist-1-beginners/
+[minst2]: 0
+[minst3]: /2018/10/05/tensorflow-name-variable_scope/
+[minst4]: /2018/10/07/tensorflow-simple-lstms/
+
 [0]: /tensorflow
 
 ## TensorFlow

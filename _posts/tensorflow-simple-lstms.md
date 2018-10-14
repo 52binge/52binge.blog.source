@@ -93,10 +93,9 @@ print('training label shape ', mnist.train.labels.shape)
 ```python
 lr = 1e-3 # 0.001
 # 在训练和测试的时候，我们想用不同的 batch_size.所以采用占位符的方式
-batch_size = tf.placeholder(tf.int32)  # 注意类型必须为 tf.int32
-# 在 1.0 版本以后请使用 ：
-# keep_prob = tf.placeholder(tf.float32, [])
-# batch_size = tf.placeholder(tf.int32, [])
+batch_size = tf.placeholder(tf.int32, [])  # 注意类型必须为 tf.int32
+
+keep_prob = tf.placeholder(tf.float32, [])
 
 # 每个时刻的输入特征是28维的，就是每个时刻输入一行，一行有 28 个像素
 input_size = 28
@@ -111,7 +110,6 @@ class_num = 10
 
 _X = tf.placeholder(tf.float32, [None, 784])
 y = tf.placeholder(tf.float32, [None, class_num])
-keep_prob = tf.placeholder(tf.float32)
 ```
 
 ## 2. 开始搭建 LSTM 模型，其实普通 RNNs 模型也一样
@@ -119,7 +117,9 @@ keep_prob = tf.placeholder(tf.float32)
 ```python
 # 把784个点的字符信息还原成 28 * 28 的图片
 # 下面几个步骤是实现 RNN / LSTM 的关键
-####################################################################
+###################################################################
+# tf.reshape(tensor, shape, name=None)  函数的作用是将 tensor 变换为参数shape的形式
+#
 # **步骤1：RNN 的输入shape = (batch_size, timestep_size, input_size) 
 X = tf.reshape(_X, [-1, 28, 28])
 
@@ -146,7 +146,7 @@ init_state = mlstm_cell.zero_state(batch_size, dtype=tf.float32)
 
 # *************** 为了更好的理解 LSTM 工作原理，我们把上面 步骤6 中的函数自己来实现 ***************
 # 通过查看文档你会发现， RNNCell 都提供了一个 __call__()函数（见最后附），我们可以用它来展开实现LSTM按时间步迭代。
-# **步骤6：方法二，按时间步展开计算
+# **步骤6：方法二，按时间步展开计算 (暂时没有运行通过)
 outputs = list()
 state = init_state
 with tf.variable_scope('RNN'):
@@ -162,7 +162,7 @@ h_state = outputs[-1]
 ## 3. 设置 loss function 和 优化器，展开训练并完成测试
 
 ```python
-# 上面 LSTM 部分的输出会是一个 [hidden_size] 的tensor，我们要分类的话，还需要接一个 softmax 层
+# 上面 LSTM 部分的输出会是一个 [hidden_size] 的 tensor，我们要分类的话，还需要接一个 softmax 层
 # 首先定义 softmax 的连接权重矩阵和偏置
 # out_W = tf.placeholder(tf.float32, [hidden_size, class_num], name='out_Weights')
 # out_bias = tf.placeholder(tf.float32, [class_num], name='out_bias')
@@ -217,9 +217,11 @@ test accuracy 0.9858
 - [tensorflow笔记：多层LSTM代码分析 ][2]
 - [极客学院 MNIST 数据下载][3]
 - [隔壁小王 LSTM 神经网络输入输出究竟是怎样的？][4]
+- [colab.research.google][5]
 
 [1]: https://blog.csdn.net/jerr__y/article/category/6747409
 [2]: https://blog.csdn.net/u014595019/article/details/52759104
 [3]: http://wiki.jikexueyuan.com/project/tensorflow-zh/tutorials/mnist_download.html
 [4]: https://www.zhihu.com/question/41949741
+[5]: https://colab.research.google.com
 
