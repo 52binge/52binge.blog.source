@@ -151,7 +151,12 @@ step 5000, training acc 0.998673
 
 ## Reference
 
-[大学之道，在明明德 永永夜 Tensorflow学习之路][1]
+- [大学之道，在明明德 永永夜 Tensorflow学习之路][1]
+- [W3cschool MNIST数据集 來龍去脈講解的清清楚楚][2]
+- [Visual-Information 交叉熵][3]
 
 [1]: https://blog.csdn.net/jerr__y/article/category/6747409
+[2]: https://www.w3cschool.cn/tensorflow_python/tensorflow_python-c1ov28so.html
+[3]: http://colah.github.io/posts/2015-09-Visual-Information/
+[4]: http://colah.github.io/
 
