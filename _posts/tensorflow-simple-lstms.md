@@ -184,13 +184,13 @@ sess.run(tf.global_variables_initializer())
 for i in range(2000):
     _batch_size = 128
     batch = mnist.train.next_batch(_batch_size)
+    sess.run(train_op, feed_dict={_X: batch[0], y: batch[1], keep_prob: 0.5, batch_size: _batch_size})
     if (i+1)%200 == 0:
         train_accuracy = sess.run(accuracy, feed_dict={
             _X:batch[0], y: batch[1], keep_prob: 1.0, batch_size: _batch_size})
         # 已经迭代完成的 epoch 数: mnist.train.epochs_completed
         print "Iter%d, step %d, training accuracy %g" % ( mnist.train.epochs_completed, (i+1), train_accuracy)
-    sess.run(train_op, feed_dict={_X: batch[0], y: batch[1], keep_prob: 0.5, batch_size: _batch_size})
-
+    
 # 计算测试数据的准确率
 print "test accuracy %g"% sess.run(accuracy, feed_dict={
     _X: mnist.test.images, y: mnist.test.labels, keep_prob: 1.0, batch_size:mnist.test.images.shape[0]})
