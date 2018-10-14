@@ -8,6 +8,8 @@ tags: tensorflow
 
 官方给出的例子，用多层 LSTM 来实现 PTBModel 语言模型，比如： [tensorflow笔记：多层LSTM代码分析][2] 感觉这些例子还是太复杂了，所以这里写了个比较简单的版本
 
+声明： 本文部分内容转自 [永永夜 Tensorflow学习之路][1_1]
+
 <!-- more -->
 
 自己做了一个示意图，希望帮助初学者更好地理解 多层RNN. 
@@ -121,7 +123,7 @@ y = tf.placeholder(tf.float32, [None, class_num])
 # tf.reshape(tensor, shape, name=None)  函数的作用是将 tensor 变换为参数shape的形式
 #
 # **步骤1：RNN 的输入shape = (batch_size, timestep_size, input_size) 
-X = tf.reshape(_X, [-1, 28, 28])
+X = tf.reshape(_X, [-1, 28, 28]) 
 
 # **步骤2：定义一层 LSTM_cell，只需要说明 hidden_size, 它会自动匹配输入的 X 的维度
 lstm_cell = rnn.BasicLSTMCell(num_units=hidden_size, forget_bias=1.0, state_is_tuple=True)
@@ -157,6 +159,8 @@ with tf.variable_scope('RNN'):
         (cell_output, state) = mlstm_cell(X[:, timestep, :], state)
         outputs.append(cell_output)
 h_state = outputs[-1]
+
+#  X[:, timestep, :] 就是取第timestep个时刻的特征 x_t 输入 mlstm_cell 中计算，因为每次用 batch_size 个样本来训练，所以相当于（并行）输入 batch_size 个 x_t 到 mlstm_cell 中计算。
 ```
 
 ## 3. 设置 loss function 和 优化器，展开训练并完成测试
@@ -210,6 +214,7 @@ Iter4, step 2000, training accuracy 0.984375
 test accuracy 0.9858
 ```
 
+我们一共只迭代不到 5 个 epoch，在测试集上就已经达到了 0.98 的准确率，可以看出来 LSTM 在做这个字符分类的任务上还是比较有效的，而且我们最后一次性对 10000 张测试图片进行预测，才占了 725 MiB 的显存。而我们在之前的两层 CNNs 网络中，预测 10000 张图片一共用了 8721 MiB 的显存，差了整整 12 倍呀！！ 这主要是因为 RNN/LSTM 网络中，每个时间步所用的权值矩阵都是共享的，可以通过前面介绍的 LSTM 的网络结构分析一下，整个网络的参数非常少。
 
 ## Reference
 
@@ -220,8 +225,20 @@ test accuracy 0.9858
 - [colab.research.google][5]
 
 [1]: https://blog.csdn.net/jerr__y/article/category/6747409
+[1_1]: https://blog.csdn.net/Jerr__y/article/details/61195257
 [2]: https://blog.csdn.net/u014595019/article/details/52759104
 [3]: http://wiki.jikexueyuan.com/project/tensorflow-zh/tutorials/mnist_download.html
 [4]: https://www.zhihu.com/question/41949741
 [5]: https://colab.research.google.com
+
+```
+roll_jj： 博主你好， outputs, state = tf.nn.dynamic_rnn(mlstm_cell, inputs=X, initial_state=init_state, time_major=False) h_state = outputs[:, -1, :] 这两句话里，outputs的三个维度是什么意思，为什么把中间那个维度去掉就是我们要的输出结果了？(1年前#6楼)收起回复举报回复
+Jerr__y
+CQU_HYX回复 roll_jj： 是的(1年前)
+roll_jj
+roll_jj回复 CQU_HYX： 谢谢博主解答。我看官方的那个PTB例子里，没有取[-1]的这个操作，而是用了output = tf.reshape(tf.concat(1, outputs), [-1, size])操作，这是因为预测目标的不同么？(1年前)
+Jerr__y
+CQU_HYX回复 roll_jj： 原文注释上面有说了，outputs.shape = [batch_size, timestep_size, hidden_size]。 因为是分类问题，所有只需要在看完最后一行像素后才输出分类结果。-1 表示取最后一个 timestep 的结果， 而不是说把中间维度去掉
+```
+
 
