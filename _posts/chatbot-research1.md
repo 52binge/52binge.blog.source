@@ -1,7 +1,7 @@
 ---
-title: Chatbot 聊天机器人
+title: Chatbot Research 1
 toc: true
-date: 2018-08-16 14:00:21
+date: 2019-08-11 14:00:21
 categories: deeplearning
 tags: deeplearning.ai
 mathjax: true
@@ -21,8 +21,7 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-Open Domain 广域 (什么都能聊)
-Closed Domain 在一个专业的领域能聊
+chatbot begining
 
 <!-- more -->
 
