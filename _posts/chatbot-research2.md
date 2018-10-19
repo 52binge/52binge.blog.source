@@ -1,7 +1,7 @@
 ---
-title: Chatbot Research 4 - 深度学习知识回顾
+title: Chatbot Research 2 - NLP 的基础知识回顾
 toc: true
-date: 2019-08-14 14:00:21
+date: 2019-08-12 14:00:21
 categories: deeplearning
 tags: deeplearning.ai
 mathjax: true
@@ -21,7 +21,7 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-Deep Learning chatbots paper research
+Machine Learning chatbots research
 
 <!-- more -->
 
