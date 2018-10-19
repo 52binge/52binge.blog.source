@@ -158,8 +158,8 @@ toc: true
 [9]: http://tool.httpcn.com/KangXi/
 [10]: http://www.sheup.com/xingming_dafen.php
 [11]: http://www.7mingzi.com/hanziwuxing-zi-%E9%99%88/
-[12]: /images/society/life-named-xin.png
-[13]: /images/society/life-named-searchword.png
+[12]: /images/life/life-named-xin.png
+[13]: /images/life/life-named-searchword.png
 [14]: http://m.zhouyi.cc/bazi/xys/xiyongsheng.php
 [15]: http://www.fututa.com/
 [16]: http://www.sheup.com/shengchenbazi.php
