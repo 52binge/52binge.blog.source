@@ -21,9 +21,21 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-Deep Learning chatbots paper research
+介绍基于检索式机器人。检索式架构有预定好的语料答复库。
+
+检索式模型的输入是上下文潜在的答复。模型输出对这些答复的打分，可以选择最高分的答案作为回复。
 
 <!-- more -->
+
+> 既然生成式的模型更弹性，也不需要预定义的语料，为何不选择它呢？
+>
+> 生成式模型的问题就是实际使用起来并不能好好工作，至少现在是。因为答复比较自由，容易犯语法错误和不相关、不合逻辑的答案，并且需要大量的数据且很难做优化。
+>
+> 大量的生产系统上还是采用检索模型或者检索模型和生成模型结合的方式。
+> 
+> - 例如 google 的 [smart reply][5]。
+> 
+> 生成模型是研究的热门领域，但是我们还没到应用它的程度。如果你想要做一个聊天机器人，最好还是选用检索式模型
 
 更聪明的聊天机器人
 
@@ -108,9 +120,72 @@ Deep Learning chatbots paper research
 > 定义问题 和 解决问题 很重要
 > 
 > 有一个问题，可以转换为 机器学习 或 深度学习 可以解决的问题，这非常重要。
+
+## 3. 用深度学习来完成
+
+<img src="/images/chatbot/chatbot-5_3.png" width="700" />
   
+> [2016 Google Brain deep-learning-for-chatbots-2-retrieval-based-model-tensorflow, wildml blog][2]
+
+## 4. 数据 - Ubuntu 对话语料库
+
+ubuntu 语料库（UDC），它是目前公开的最大的数据集。
+
+### 4.1 Train sets
+
+<img src="/images/chatbot/chatbot-5_4.png" width="900" />
+
+> 注意: 
+>
+> - 上面的数据集生成脚本已经使用 [NLTK][6] 做了一系列的语料处理包括（[分词][6_1]，[提取词干][6_2]，[词意恢复][6_3]）
+> - 脚本也做了把 名字、地点、组织、URL。系统路径等实体信息用特殊的 token 来替代。
+> 
+> 这些预处理不是严格必要的，但是能改善一些系统的表现。
+> 
+> 语料的上下文平均有86个词语，答复平均有17个词语长。有人做了语料的统计分析：[data analysis][6_4]
+
+### 4.2 Test / Validation sets
+
+- 每个样本，有一个正例和九个负例数据 (也称为干扰数据)。
+- 建模的目标在于给正例的得分尽可能的高，而给负例的得分尽可能的低。(有点类似分类任务)
+- 语料做过分词、stemmed、lemmatized 等文本预处理。 
+- 用 NER(命名实体识别) 将文本中的 **实体**，如姓名、地点、组织、URL等 替换成特殊字符
+
+<img src="/images/chatbot/chatbot-5_5.png" width="900" />
+
+## 5. 评估准则
+
+**Recall@K**
+
+> - 常见的 Kaggle 比赛评判准则
+> - 经模型对候选的 response 排序后，前 k 个候选中 存在正例数据(正确的那个)的占比。
+>    让 K=10，这就得到一个 100% 的召回率，因最多就 10 个备选。如果 K=1，模型只一次机会选中正确答案。
+> - K 值 越大，指标值越高，对模型性能的要求越松。
+
+**9个干扰项目怎么选出来**
+
+> 这个数据集里是随机的方法选择的。
+> 
+> 但是现实世界里你可能数百万的可能答复，并且你并不知道答复是否合理正确。你没能力从数百万的可能的答复里去挑选一个得分最高的正确答复。成本太高了！ google 的 smart reply 用分布式集群技术计算一系列的可能答复去挑选,.
+> 
+> 可能你只有百来个备选答案，可以去评估每一个。
+
+
+
 ## Reference
 
 - [About ChatterBot][1]
+- [2016 Google Brain deep-learning-for-chatbots-2-retrieval-based-model-tensorflow, wildml blog][2]
+- [聊天机器人深度学习应用-part2：基于tensorflow实现检索架构模型][3]
+- [聊天机器人深度学习应用-part1：引言][4]
 
 [1]: https://chatterbot.readthedocs.io/en/stable/
+[2]: http://www.wildml.com/2016/07/deep-learning-for-chatbots-2-retrieval-based-model-tensorflow/
+[3]: https://www.jianshu.com/p/412bcfa67770
+[4]: https://www.jianshu.com/p/4fb194d143cf
+[5]: https://arxiv.org/abs/1606.04870
+[6]: http://www.nltk.org/
+[6_1]: http://www.nltk.org/api/nltk.tokenize.html#module-nltk.tokenize
+[6_2]: http://www.nltk.org/api/nltk.stem.html#module-nltk.stem.snowball
+[6_3]: http://www.nltk.org/api/nltk.stem.html#module-nltk.stem.wordnet
+[6_4]: https://github.com/dennybritz/chatbot-retrieval/blob/master/notebooks/Data%20Exploration.ipynb
