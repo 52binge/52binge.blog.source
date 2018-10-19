@@ -21,7 +21,7 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-Deep Learning chatbots paper research
+Chatbot 更多 Paper 论文和参考资料 (感谢 PaperWeekly)
 
 <!-- more -->
 
