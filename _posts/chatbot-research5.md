@@ -253,7 +253,7 @@ Recall @ (10, 10): 1
 
 显然这比 Random 的模型要好得多，但这还不够。之前的假设并不完美，首先 query 和 response 之间并不一定要是语义上的相近；其次 tfidf模型 忽略了词序这一重要的信息。使用 NN模型 我们能做得更好一些。
 
-### 5.3 LSTM
+## 6. LSTM
 
 建立的 NN模型 为两层 Encoder 的 LSTM模型（Dual Encoder LSTM Network），这种形式的网络被广泛应用 chatbot 中。
 
@@ -276,19 +276,43 @@ Recall @ (10, 10): 1
 > - (5). 损失函数（loss function）。这里使用二元的交叉熵（binary cross-entropy）作为损失函数。我们已知实例的真实 label $y$， 值为 0 或 1； 通过上面的第(4)步可以得到一个概率值 $y'$；因此，交叉熵损失值为 $L = -y \* ln(y') - (1 - y) \* ln(1 - y')$。
 > 
 >   这个公式意义是直观的，即当 $y=1$ 时，$L = -ln(y')$，期望 $y'$ 尽量接近 1 使得损失函数的值越小；反之亦然。
+>
+>
+> 实现过程中使用了 numpy、pandas、TensorFlow 和 TF Learn 等工具。
 
+### 6.1. 数据预处理
+
+### 6.2. 创建输入函数
+
+### 6.3. 定义评测指标
+
+### 6.4. 训练程序样例
+
+### 6.5. 创建模型
+
+### 6.6. 模型的评测
+
+### 6.7. 使用模型进行预测
+
+### 6.8. 总结
 
 ## Reference
 
 - [About ChatterBot][1]
-- [2016 Google Brain deep-learning-for-chatbots-2-retrieval-based-model-tensorflow, wildml blog][2]
-- [聊天机器人深度学习应用-part2：基于tensorflow实现检索架构模型][3]
-- [聊天机器人深度学习应用-part1：引言][4]
+- [2016 Google Brain deep-learning-for-chatbots-part-1-introduction, wildml blog][2_1]
+- [2016 Google Brain deep-learning-for-chatbots-2-retrieval-based-model-tensorflow, wildml blog][2_2]
+- [聊天机器人中的深度学习技术之二：基于检索模型的实现][3]
+- [聊天机器人中的深度学习技术之一：导读][4]
+- [Tensorflow搞一个聊天机器人][10]
+- [Eric，基于多搜索引擎的自动问答机器人][11]
+- [测试人机问答系统智能性的3760个问题][12]
+- [中国版的聊天机器人地图 Chatbots Landscape][13]
 
 [1]: https://chatterbot.readthedocs.io/en/stable/
-[2]: http://www.wildml.com/2016/07/deep-learning-for-chatbots-2-retrieval-based-model-tensorflow/
-[3]: https://www.jianshu.com/p/412bcfa67770
-[4]: https://www.jianshu.com/p/4fb194d143cf
+[2_1]: http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/
+[2_2]: http://www.wildml.com/2016/07/deep-learning-for-chatbots-2-retrieval-based-model-tensorflow/
+[3]: http://www.jeyzhang.com/deep-learning-for-chatbots-2.html
+[4]: http://www.jeyzhang.com/deep-learning-for-chatbots-1.html
 [5]: https://arxiv.org/abs/1606.04870
 [6]: http://www.nltk.org/
 [6_1]: http://www.nltk.org/api/nltk.tokenize.html#module-nltk.tokenize
@@ -299,6 +323,11 @@ Recall @ (10, 10): 1
 [7]: https://www.tensorflow.org/versions/r0.9/tutorials/seq2seq/index.html
 [8]: https://arxiv.org/abs/1510.03753
 [9]: https://arxiv.org/abs/1506.08909
+
+[10]: http://www.cnblogs.com/LittleHann/p/6426610.html
+[11]: https://zhuanlan.zhihu.com/p/27285330
+[12]: https://my.oschina.net/apdplat/blog/401622
+[13]: https://zhuanlan.zhihu.com/p/25749274
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
