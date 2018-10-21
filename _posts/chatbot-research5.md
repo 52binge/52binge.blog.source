@@ -307,6 +307,8 @@ Recall @ (10, 10): 1
 - [Eric，基于多搜索引擎的自动问答机器人][11]
 - [测试人机问答系统智能性的3760个问题][12]
 - [中国版的聊天机器人地图 Chatbots Landscape][13]
+- [条件随机场简介][14]
+- [知识图谱学习系列之二：命名实体识别1（技术及代码）][15]
 
 [1]: https://chatterbot.readthedocs.io/en/stable/
 [2_1]: http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/
@@ -328,6 +330,9 @@ Recall @ (10, 10): 1
 [11]: https://zhuanlan.zhihu.com/p/27285330
 [12]: https://my.oschina.net/apdplat/blog/401622
 [13]: https://zhuanlan.zhihu.com/p/25749274
+
+[14]: https://blog.csdn.net/SunJW_2017/article/details/82494360
+[15]: https://blog.csdn.net/SunJW_2017/article/details/82460284
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
