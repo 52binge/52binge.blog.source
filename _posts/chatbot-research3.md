@@ -150,8 +150,8 @@ print(Levenshtein.distance(texta,textb)) # 1
 - [github ChatterBot][1]
 - [Docs » About ChatterBot][2]
 - [使用chatterbot构建自己的中文chat(闲聊)机器人/][3]
-- [Chatterbot聊天机器人][4]
-- [[聊天机器人]：开源ChatterBot工作原理][5]
+- [自然语言处理 Chatterbot聊天机器人][4]
+- [精品: 开源ChatterBot工作原理][5]
 
 [1]: https://github.com/gunthercox/ChatterBot
 [2]: https://chatterbot.readthedocs.io/en/stable/
