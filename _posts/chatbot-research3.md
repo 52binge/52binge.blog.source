@@ -107,7 +107,7 @@ print(Levenshtein.distance(texta,textb)) # 1
 
 ## 4. Chatterbot 聊天机器人
 
-<img src="/images/chatbot/chatbot-3_2.jpg" width="600" />
+<img src="/images/chatbot/chatbot-3_2.jpg" width="700" />
 
 **每个部分都设计了不同的 "适配器"(Adapter)**  
 
@@ -138,19 +138,23 @@ print(Levenshtein.distance(texta,textb)) # 1
    使得 ChatterBot 可以通过终端进行对话   
 > - Speech recognition
    语音识别输入，详见 chatterbot-voice
+
+## 5. Bayes 分类
+
+**预备知识:场景分类与NB**
+
+<img src="/images/chatbot/chatbot-3_3.png" width="400" />
   
 ## Reference
 
-- [2015 DeepQA][1]
-- [聊天机器人深度学习应用-part2：基于tensorflow实现检索架构模型][5]
-- [聊天机器人深度学习应用-part1：引言][7]
-- [dennybritz/chatbot-retrieval][6]
-- 更多论文和参考资料(感谢PaperWeekly)
+- [github ChatterBot][1]
+- [Docs » About ChatterBot][2]
+- [使用chatterbot构建自己的中文chat(闲聊)机器人/][3]
+- [Chatterbot聊天机器人][4]
+- [[聊天机器人]：开源ChatterBot工作原理][5]
 
-[1]: https://github.com/Conchylicultor/DeepQA
-[1_1]: https://github.com/Conchylicultor/DeepQA/tree/master/chatbot
-[2]: https://nlp.stanford.edu/~bdlijiwei/Myself.html
-[2_1]: https://github.com/jiweil
-[5]: https://www.jianshu.com/p/412bcfa67770
-[6]: https://github.com/dennybritz/chatbot-retrieval/
-[7]: https://www.jianshu.com/p/4fb194d143cf
+[1]: https://github.com/gunthercox/ChatterBot
+[2]: https://chatterbot.readthedocs.io/en/stable/
+[3]: https://blog.xiaoquankong.ai/使用chatterbot构建自己的中文chat(闲聊)机器人/
+[4]: https://www.cnblogs.com/LHWorldBlog/p/9292024.html
+[5]: https://blog.csdn.net/qifengzou/article/details/77126933
