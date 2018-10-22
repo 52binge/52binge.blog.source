@@ -2,26 +2,12 @@
 title: Chatbot Research 2 - NLP基础知识回顾
 toc: true
 date: 2019-08-12 14:00:21
-categories: deeplearning
-tags: deeplearning.ai
+categories: nlp
+tags: NLTK
 mathjax: true
 ---
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
-
-[NLTK](http://pypi.python.org/pypi/nltk) Python上著名的自然语言处理库。 自带语料库，词性分类库，自带分类，分词，等等功能
+[NLTK](http://pypi.python.org/pypi/nltk) Python上著名的自然语言处理库。 自带语料库，词性分类库 等等
 
 <!-- more -->
 
@@ -37,52 +23,7 @@ mathjax: true
 > - 文本相似度
 > - 文本分类
 
-## 1. NLTK
-
-Python上著名的自然语言处理库
-
-> NLTK安装
->
-> pip install -U nltk
-
-测试是否安装成功
-
-```python
->>> python
->>> import nltk
-```
-
-## 2. 安装语料库
-
-## Reference
-
-- [2015 DeepQA][1]
-- [聊天机器人深度学习应用-part2：基于tensorflow实现检索架构模型][5]
-- [聊天机器人深度学习应用-part1：引言][7]
-- [dennybritz/chatbot-retrieval][6]
-- 更多论文和参考资料(感谢PaperWeekly)
-
-[1]: https://github.com/Conchylicultor/DeepQA
-[1_1]: https://github.com/Conchylicultor/DeepQA/tree/master/chatbot
-[2]: https://nlp.stanford.edu/~bdlijiwei/Myself.html
-[2_1]: https://github.com/jiweil
-[5]: https://www.jianshu.com/p/412bcfa67770
-[6]: https://github.com/dennybritz/chatbot-retrieval/
-[7]: https://www.jianshu.com/p/4fb194d143cf
----
-title: NLP 原理与基础
-toc: true
-date: 2017-06-29 21:08:21
-categories: nlp
-tags: nltk
-description: python nltk
----
-
-> NLTK 是一个有肉有血的
-
 > 斯坦佛 CoreNLP (英文、中文、西班牙语)
-
-<!-- more -->
 
 ## 1. NLTK
 
@@ -103,8 +44,15 @@ import nltk
 nltk.download()
 ```
 
+测试是否安装成功
+
+```python
+>>> python
+>>> import nltk
+```
+
 NLTK Modules | Functionality
-------- | -------
+:-------: | :-------:
 nltk.corpus | Corpus
 nltk.tokenize, nltk.stem | Tokenizers, stemmers
 
@@ -235,17 +183,6 @@ NLTK更好地实现Lemma
 ```
 
 ## 6. Part Of Speech
-
-TAG | Meaning
-------- | -------
-CC	| coordinating conjunction
-CD	| cardinal digit
-DT	| determiner
-EX	| existential there (like: "there is" ... think of it like "there exists")
-FW	| foreign word
-IN	| preposition/subordinating conjunction
-JJ	| adjective	'big'
-... | ...
 
 ### 6.1 NLTK 标注 POS Tag
 
@@ -457,3 +394,17 @@ print(corpus.tf_idf('this', 'this is sentence four'))
 [7]: /images/ml/nlp-nltk-2.png
 [8]: /images/ml/nlp-nltk-3.png
 [9]: /images/ml/nlp-nltk-4.png
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>
