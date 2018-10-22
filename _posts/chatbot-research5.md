@@ -310,17 +310,221 @@ def input_fn():
   return batched_features, labels
 ```
 
+因为我们需要在模型训练和评测过程中使用不同的输入函数，为了防止重复书写代码，我们创建一个包装器(wrapper)，名称为create_input_fn，针对不同的mode使用相应的code，如下：
+
+```python
+def create_input_fn(mode, input_files, batch_size, num_epochs=None):
+		def input_fn():
+			# TODO Load and preprocess data here
+			return batched_features, labels
+	return input_fn
+```
+
+完整的code见[udc_inputs.py][udc18]。整体上，这个函数做了如下的事情：
+
+(1) 定义了示例文件中的 feature字段；
+(2) 使用 tf.TFRecordReader 来读取 input_files 中的数据；
+(3) 根据 feature字段 的定义对数据进行解析；
+(4) 提取训练数据的标签；
+(5) 产生批量化的训练数据；
+(6) 返回批量的特征数据及对应标签；
+
 ### 6.3. 定义评测指标
+
+之前已经提到用 **recall@k** 这个指标来评测模型，TensorFlow 中已经实现了许多标准指标（包括 **recall@k**）。为了使用这些指标，需要创建一个字典，key 为指标名称，value 为对应的计算函数。如下
+
+```python
+def create_evaluation_metrics():
+    eval_metrics = {}
+    for k in [1, 2, 5, 10]:
+    eval_metrics["recall_at_%d" % k] = functools.partial(
+        tf.contrib.metrics.streaming_sparse_recall_at_k,
+        k=k
+    )
+    return eval_metrics
+```
+
+如上，我们使用了 [functools.partial](https://docs.python.org/2/library/functools.html#functools.partial) 函数，这个函数的输入参数有两个。不要被streaming_sparse_recall_at_k所困惑，其中的streaming的含义是表示指标的计算是增量式的。
+
+训练和测试所使用的评测方式是不一样的，训练过程中我们对每个case可能作为正确回复的概率进行预测，而测试过程中我们对每组数据（包含10个case，其中1个是正确的，另外9个是生成的负例/噪音数据）中的case进行逐条概率预测，得到例如[0.34, 0.11, 0.22, 0.45, 0.01, 0.02, 0.03, 0.08, 0.33, 0.11]这样格式的输出，这些输出值的和并不要求为1（因为是逐条预测的，有单独的预测概率值，在0到1之间）；而对于这组数据而言，因为数据index=0对应的为正确答案，这里recall@1为0，因为0.34是其中第二大的值，所以recall@2是1（表示这组数据中预测概率值在前二的中有一个是正确的）。
 
 ### 6.4. 训练程序样例
 
+首先，给一个模型训练和测试的程序样例，这之后你可以参照程序中所用到的标准函数，来快速切换和使用其他的网络模型。假设我们有一个函数model_fn，函数的输入参数有batched features，label和mode(train/evaluation)，函数的输出为预测值。程序样例如下：
+
+```python
+estimator = tf.contrib.learn.Estimator(
+model_fn=model_fn,
+model_dir=MODEL_DIR,
+config=tf.contrib.learn.RunConfig())
+
+input_fn_train = udc_inputs.create_input_fn(
+mode=tf.contrib.learn.ModeKeys.TRAIN,
+input_files=[TRAIN_FILE],
+batch_size=hparams.batch_size)
+
+input_fn_eval = udc_inputs.create_input_fn(
+mode=tf.contrib.learn.ModeKeys.EVAL,
+input_files=[VALIDATION_FILE],
+batch_size=hparams.eval_batch_size,
+num_epochs=1)
+
+eval_metrics = udc_metrics.create_evaluation_metrics()
+
+# We need to subclass theis manually for now. The next TF version will
+# have support ValidationMonitors with metrics built-in.
+# It's already on the master branch.
+class EvaluationMonitor(tf.contrib.learn.monitors.EveryN):
+def every_n_step_end(self, step, outputs):
+  self._estimator.evaluate(
+    input_fn=input_fn_eval,
+    metrics=eval_metrics,
+    steps=None)
+
+eval_monitor = EvaluationMonitor(every_n_steps=FLAGS.eval_every)
+estimator.fit(input_fn=input_fn_train, steps=None, monitors=[eval_monitor])
+```
+
+这里创建了一个 **model_fn** 的 **estimator**(评估函数)；
+
+两个输入函数，**input_fn_train** 和 **input_fn_eval**，以及计算评测指标的函数；
+
 ### 6.5. 创建模型
+
+到目前为止，我们创建了模型的 输入、解析、评测和训练 的样例程序。现在我们来写 LSTM 的程序，create_model_fn函数 用以处理不同格式的训练和测试数据；它的输入参数为 model_impl，这个函数表示实际作出预测的模型，这里就是用的LSTM，当然你可以替换成任意的其他模型。程序如下：
+
+```python
+def dual_encoder_model(
+    hparams,
+    mode,
+    context,
+    context_len,
+    utterance,
+    utterance_len,
+    targets):
+
+  # Initialize embedidngs randomly or with pre-trained vectors if available
+  embeddings_W = get_embeddings(hparams)
+
+  # Embed the context and the utterance
+  context_embedded = tf.nn.embedding_lookup(
+      embeddings_W, context, name="embed_context")
+  utterance_embedded = tf.nn.embedding_lookup(
+      embeddings_W, utterance, name="embed_utterance")
+
+
+  # Build the RNN
+  with tf.variable_scope("rnn") as vs:
+    # We use an LSTM Cell
+    cell = tf.nn.rnn_cell.LSTMCell(
+        hparams.rnn_dim,
+        forget_bias=2.0,
+        use_peepholes=True,
+        state_is_tuple=True)
+
+    # Run the utterance and context through the RNN
+    rnn_outputs, rnn_states = tf.nn.dynamic_rnn(
+        cell,
+        tf.concat(0, [context_embedded, utterance_embedded]),
+        sequence_length=tf.concat(0, [context_len, utterance_len]),
+        dtype=tf.float32)
+    encoding_context, encoding_utterance = tf.split(0, 2, rnn_states.h)
+
+  with tf.variable_scope("prediction") as vs:
+    M = tf.get_variable("M",
+      shape=[hparams.rnn_dim, hparams.rnn_dim],
+      initializer=tf.truncated_normal_initializer())
+
+    # "Predict" a  response: c * M
+    generated_response = tf.matmul(encoding_context, M)
+    generated_response = tf.expand_dims(generated_response, 2)
+    encoding_utterance = tf.expand_dims(encoding_utterance, 2)
+
+    # Dot product between generated response and actual response
+    # (c * M) * r
+    logits = tf.batch_matmul(generated_response, encoding_utterance, True)
+    logits = tf.squeeze(logits, [2])
+
+    # Apply sigmoid to convert logits to probabilities
+    probs = tf.sigmoid(logits)
+
+    # Calculate the binary cross-entropy loss
+    losses = tf.nn.sigmoid_cross_entropy_with_logits(logits, tf.to_float(targets))
+
+  # Mean loss across the batch of examples
+  mean_loss = tf.reduce_mean(losses, name="mean_loss")
+  return probs, mean_loss
+```
+
+完整的程序见 [dual_encoder.py](https://github.com/dennybritz/chatbot-retrieval/blob/master/models/dual_encoder.py)。基于这个，我们能够实例化 model函数 在我们之前定义的 [udc_train.py](https://github.com/dennybritz/chatbot-retrieval/blob/master/udc_train.py)，如下：
+
+```python
+model_fn = udc_model.create_model_fn(
+  hparams=hparams,
+  model_impl=dual_encoder_model)
+```
+
+这样我们就可以直接运行 udc_train.py文件，来开始模型的训练和评测了，你可以设定--eval_every参数 来控制模型在验证集上的评测频率。更多的命令行参数信息可见 tf.flags 和 hparams，你也可以运行 python udc_train.py --help 来查看。
+
+运行程序的效果如下：
+
+```bash
+INFO:tensorflow:training step 20200, loss = 0.36895 (0.330 sec/batch).
+INFO:tensorflow:Step 20201: mean_loss:0 = 0.385877
+INFO:tensorflow:training step 20300, loss = 0.25251 (0.338 sec/batch).
+INFO:tensorflow:Step 20301: mean_loss:0 = 0.405653
+...
+INFO:tensorflow:Results after 270 steps (0.248 sec/batch): recall_at_1 = 0.507581018519, recall_at_2 = 0.689699074074, recall_at_5 = 0.913020833333, recall_at_10 = 1.0, loss = 0.5383
+...
+```
 
 ### 6.6. 模型的评测
 
+在训练完模型后，你可以将其应用在 **测试集** 上，使用：
+
+```python
+python udc_test.py --model_dir=$MODEL_DIR_FROM_TRAINING   
+```
+
+例如：
+
+```python
+python udc_test.py --model_dir=~/github/chatbot-retrieval/runs/1467389151
+```
+
+这将得到模型在 **测试集** 上的 recall@k 的结果，注意在使用 udc_test.py文件 时，需要使用与训练时相同的参数。
+
+在训练模型的次数大约 **2w** 次时(在GPU上大约花费1小时)，模型在测试集上得到如下的结果：
+
+```bash
+recall_at_1 = 0.507581018519
+recall_at_2 = 0.689699074074
+recall_at_5 = 0.913020833333
+```
+
+其中，recall@1的值与tfidf模型的差不多，但是recall@2和recall@5的值则比tfidf模型的结果好太多。原论文中的结果依次是0.55,0.72和0.92，可能通过模型调参或者预处理能够达到这个结果。
+
 ### 6.7. 使用模型进行预测
 
+对于新的数据，你可以使用 [udc_predict.py](https://github.com/dennybritz/chatbot-retrieval/blob/master/udc_predict.py) 来进行预测；例如：
+
+```python
+python udc_predict.py --model_dir=./runs/1467576365/
+```
+
+结果如下：
+
+```bash
+Context: Example context
+Response 1: 0.44806
+Response 2: 0.481638
+```
+
+你可以从候选的回复中，选择预测分值最高的那个作为回复。
+
 ### 6.8. 总结
+
+这篇博文中，我们实现了一个基于检索的 NN模型，它能够对候选的回复进行预测和打分，通过输出分值最高（或者满足一定阈值）的候选回复已完成聊天的过程。后续可以尝试其他更好的模型，或者通过调参来取得更好的实验结果。
 
 ## Reference
 
@@ -362,6 +566,8 @@ def input_fn():
 
 [16]: https://github.com/chatbot-tube/ubuntu-ranking-dataset-creator
 [17]: https://github.com/dennybritz/chatbot-retrieval/blob/master/scripts/prepare_data.py
+
+[udc18]: https://github.com/dennybritz/chatbot-retrieval/blob/master/udc_inputs.py
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
