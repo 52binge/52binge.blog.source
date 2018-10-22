@@ -282,7 +282,33 @@ Recall @ (10, 10): 1
 
 ### 6.1. 数据预处理
 
+[数据集][16]的原始格式为csv格式，我们需要先将其转为 TensorFlow 专有的格式，这种格式的好处在于能够直接从输入文件中 load tensors，并让 TensorFlow 来处理洗牌(shuffling)、批量(batching) 和 队列化(queuing) 等操作。预处理中还包括创建一个字典库，将词进行标号，TFRecord 文件将直接存储这些词的标号。
+
+每个实例包括如下几个字段：
+
+- Query：表示为一串词标号的序列，如 [231, 2190, 737, 0, 912]；
+- Query 的长度；
+- Response：同样是一串词标号的序列；
+- Response 的长度；
+- Label；
+- Distractor\_[N]：表示负例干扰数据，仅在验证集和测试集中有，N的取值为0-8；
+- Distractor_[N]的长度；
+
+数据预处理的 [Python脚本][17]，生成了3个文件：train.tfrecords, validation.tfrecords 和 test.tfrecords。你可以尝试自己运行程序，或者直接下载和使用预处理后的数据。
+
 ### 6.2. 创建输入函数
+
+为了使用 TensoFlow内置 的训练和评测模块，我们需要创建一个输入函数：这个函数返回输入数据的batch。
+
+> 因为训练数据和测试数据的格式不同，我们需要创建不同的输入函数。
+>
+> 输入函数需要返回批量(**batch**)的特征和标签值(如果有的话)。类似于如下：
+
+```python
+def input_fn():
+  # TODO Load and preprocess data here
+  return batched_features, labels
+```
 
 ### 6.3. 定义评测指标
 
@@ -333,6 +359,9 @@ Recall @ (10, 10): 1
 
 [14]: https://blog.csdn.net/SunJW_2017/article/details/82494360
 [15]: https://blog.csdn.net/SunJW_2017/article/details/82460284
+
+[16]: https://github.com/chatbot-tube/ubuntu-ranking-dataset-creator
+[17]: https://github.com/dennybritz/chatbot-retrieval/blob/master/scripts/prepare_data.py
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
