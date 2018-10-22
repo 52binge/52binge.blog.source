@@ -1,5 +1,5 @@
 ---
-title: 深入浅出 Entropy Based
+title: 熵 介绍
 date: 2016-09-12 16:06:16
 categories: machine-learning
 tags: [entropy]
@@ -20,6 +20,9 @@ toc: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
+Entropy 熵的基本概念及含义
+
+<!-- more -->
 
 ## 1. Entropy 的含义？
 

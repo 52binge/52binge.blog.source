@@ -1,5 +1,5 @@
 ---
-title: Distance formula of point to plane
+title: 点到平面的距离公式
 toc: true
 date: 2016-05-17 15:07:21
 categories: machine-learning
@@ -55,5 +55,5 @@ Ax +By +Cz + D = 0
 > 如果法向量是单位向量的话，那么分母为1
 
 
-  [1]: /images/math-pointdis.png
-  [2]: /images/math-pointToPlane.jpeg
+  [1]: /images/math/math-pointdis.png
+  [2]: /images/math/math-pointToPlane.jpeg

@@ -15,11 +15,11 @@ tags: word2vec
 
 ## 1. 信息
 
-<img src="/images/nlp/nlp-info-1.jpg" width="480" height="400" align="middle" /img>
+<img src="/images/ml/nlp/history-info-1.jpg" width="480" height="400" align="middle" /img>
 
 > 人类最早利用 voice 进行 通信
 
-<img src="/images/nlp/nlp-info-2.png" width="650" height="100" align="middle" /img>
+<img src="/images/ml/nlp/history-info-2.png" width="650" height="100" align="middle" /img>
 
 > 人类文明的进步，需要表达的信息量越来越多，人类发明的自然语言
 > 
@@ -85,4 +85,4 @@ tags: word2vec
 
 - 《数学之美》 读书笔记 
 
-[info-1]: /images/nlp/nlp-info-1.jpg
+[info-1]: /images/ml/nlp/history-info-1.jpg

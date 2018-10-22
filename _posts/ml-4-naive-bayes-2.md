@@ -1,10 +1,9 @@
 ---
-title: Naive Bayes For News Classification
+title: Naive Bayes * 文本分类
 toc: true
 date: 2017-08-23 07:08:21
-categories: machine-learning
+categories: [nlp]
 tags: Bayes
-description: Naive Bayes
 mathjax: true
 ---
 

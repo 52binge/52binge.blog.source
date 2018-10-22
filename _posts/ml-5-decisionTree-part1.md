@@ -1,5 +1,5 @@
 ---
-title: Decision Tree (part1)
+title: 决策树 * Part1
 toc: true
 date: 2016-08-16 16:43:21
 categories: machine-learning
@@ -22,6 +22,9 @@ list_number: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
+决策树（decision tree）是一个树结构（可以是二叉树或非二叉树）。其每个非叶节点表示一个特征属性上的测试，每个分支代表这个特征属性在某个值。
+
+<!-- more -->
 
 ## 1. Classification Introduce
 

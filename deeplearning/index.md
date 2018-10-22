@@ -119,6 +119,29 @@ No. | <font color="#0085a1">**Machine Learning Tree Model**</font> | <font color
 19. | [Ensemble 2][19.2] | 概率可学习性 (PAC)、Boosting算法代表 ：Adaboost(Adaptive Boosting)
 19. | [Ensumble 集成学习小记][19] | Bagging、Boosting、Stacking、Blending
 
+### NLP 基础知识
+
+- [1.1 文字和语言 vs 数字和信息][n1]
+ 
+- [1.2 Python 字符串处理-正则表达式][n2]
+
+- [1.3 NLP 简介 & 统计语言模型][n3]
+
+- [1.4 Jieba 分词中文处理][n4]
+
+- [1.5 Naive Bayes * 垃圾邮件分类][n5_1]、[Naive Bayes * 文本分类][n5_2]
+
+- [1.6 Word2vec 基础][n6]
+
+[n1]: /2017/11/08/nlp-pre-word-language-number-info-history/
+[n2]: /2017/07/30/nlp-01-string-operation-re/
+[n3]: /2017/11/13/nlp-pre-statistics-language-model/
+[n4]: /2017/07/29/nlp-01-jieba/
+[n5_1]: /2017/08/10/ml-4-naive-bayes-1/
+[n5_2]: /2017/08/23/ml-4-naive-bayes-2/
+[n6]: /2017/07/12/nlp-word-vector-basic/
+[n7]: /2017/11/14/nlp-pre-hidden-markov-model/
+
 [1.1]: /2016/09/20/ml-coursera-ng-w1-01-introduce/
 [1.2]: /2016/09/28/ml-coursera-ng-w1-02-cost-function-gradient-descent/
 [1.3]: /2016/09/30/ml-coursera-ng-w1-03-Linear-Algebra/

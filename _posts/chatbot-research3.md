@@ -21,21 +21,23 @@ mathjax: true
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
 </script>
 
-Machine Learning chatbots research
+Chatterbot 框架
+
+检索与匹配 & 分类与朴素贝叶斯
 
 <!-- more -->
 
-关于聊天机器人的思考 
+**关于聊天机器人的思考** 
 
 1. 工程考量
 2. 机器学习角度考虑
 
-预备知识 
+**预备知识** 
 
 1. 检索与匹配
 2. 分类与朴素贝叶斯
 
-chatterbot 
+**chatterbot** 
 
 1. 架构与使用方法 
 2. 源码分析

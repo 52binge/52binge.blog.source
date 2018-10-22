@@ -1,32 +1,21 @@
 ---
-title: Naive Bayes
+title: Naive Bayes * 垃圾邮件分类
 toc: true
 date: 2017-08-10 07:08:21
-categories: machine-learning
+categories: nlp
 tags: Bayes
-description: Naive Bayes
 mathjax: true
 ---
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
-
-## 1. 引言
-
-贝叶斯方法是一个历史悠久，有着坚实的理论基础的方法，同时处理很多问题时直接而又高效，很多高级 NLP 模型也可以从它演化而来。因此，学习贝叶斯方法，是研究 NLP 问题的一个非常好的切入口。
+贝叶斯方法是一个历史悠久，有着坚实的理论基础的方法，同时处理很多问题时直接而又高效, 很多高级 NLP 模型也可以从它演化而来。因此，学习贝叶斯方法，是研究 NLP 问题的一个非常好的切入口。
 
 <!--more-->
+
+## 1. 贝叶斯
+
+$$
+P(Y|X)=\frac{P(X|Y)P(Y)}{P(X)}
+$$
 
 ## 2. 贝叶斯公式
 
@@ -478,7 +467,7 @@ $$
 
 ## 16. (朴素)贝叶斯方法的常见应用
 
-### 16.1 褒贬分析
+**褒贬分析**
 
 一个比较常见的应用场景是情感褒贬分析。比如你要统计微博上人们对一个新上映电影的褒贬程度评价：好片还是烂片。但是一条一条地看微博是根本看不过来，只能用自动化的方法。我们可以有一个很粗略的思路：
 
@@ -506,20 +495,28 @@ $$
 - **情绪表达的含蓄微妙**：“导演你出来，我保证不打死你。”你让机器怎么判断是褒还是贬？
 - **转折性表达**：“我非常喜欢这些大牌演员，非常崇拜这个导演，非常赞赏这个剧本，非常欣赏他们的预告片，我甚至为了这部影片整整期待了一年，最后进了电影院发现这是个噩梦。” 五个褒义的形容词、副词对一个不那么贬义的词。机器自然判断成褒义，但这句话是妥妥的贬义。
 
-### 16.2 拼写纠错
-
-......
-
-![][6]
-
 ## 17. 内容小结
 
 从前面大家基本可以看出，工程应用不同于学术理论，有许多tricks需要考虑，而理论本质就是翻来倒去折腾贝叶斯公式，都快玩出花来了。
 
-[1]: /images/nlp/nlp-word-bags.jpg
+[1]: /images/ml/nlp/word-bags.jpg
 [0]: http://www.cs.unb.ca/profs/hzhang/publications/FLAIRS04ZhangH.pdf
-[3]: /images/nlp/nlp-bayes-03.jpg
-[4]: /images/nlp/nlp-bayes-04.jpg
-[5]: /images/nlp/nlp-bayes-05.jpg
-[6]: /images/nlp/nlp-bayes-06.jpg
-[7]: /images/nlp/nlp-bayes-07.jpg
+[3]: /images/ml/nlp/bayes-03.jpg
+[4]: /images/ml/nlp/bayes-04.jpg
+[5]: /images/ml/nlp/bayes-05.jpg
+[6]: /images/ml/nlp/bayes-06.jpg
+[7]: /images/ml/nlp/bayes-07.jpg
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>
