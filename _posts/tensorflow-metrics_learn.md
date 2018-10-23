@@ -1,5 +1,5 @@
 ---
-title: 【Tensorflow】tf.metrics
+title: Tensorflow 踩坑记之 tf.metrics
 toc: true
 date: 2018-10-23 16:10:21
 categories: python
