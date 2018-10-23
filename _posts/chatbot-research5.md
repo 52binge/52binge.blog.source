@@ -291,14 +291,14 @@ Recall @ (10, 10): 1
 - Response：同样是一串词标号的序列；
 - Response 的长度；
 - Label；
-- Distractor\_[N]：表示负例干扰数据，仅在验证集和测试集中有，N的取值为0-8；
+- Distractor\_[N]：表示负例干扰数据，仅在验证集和测试集中有，N 的取值为 0-8；
 - Distractor_[N]的长度；
 
 数据预处理的 [Python脚本][17]，生成了3个文件：train.tfrecords, validation.tfrecords 和 test.tfrecords。你可以尝试自己运行程序，或者直接下载和使用预处理后的数据。
 
 ### 6.2. 创建输入函数
 
-为了使用 TensoFlow内置 的训练和评测模块，我们需要创建一个输入函数：这个函数返回输入数据的batch。
+为了使用 TensoFlow内置 的训练和评测模块，我们需要创建一个输入函数：这个函数返回输入数据的 batch。
 
 > 因为训练数据和测试数据的格式不同，我们需要创建不同的输入函数。
 >
@@ -314,10 +314,10 @@ def input_fn():
 
 ```python
 def create_input_fn(mode, input_files, batch_size, num_epochs=None):
-		def input_fn():
-			# TODO Load and preprocess data here
-			return batched_features, labels
-	return input_fn
+    def input_fn():
+	 # TODO Load and preprocess data here
+        return batched_features, labels
+    return input_fn
 ```
 
 完整的code见[udc_inputs.py][udc18]。整体上，这个函数做了如下的事情：
@@ -337,20 +337,20 @@ def create_input_fn(mode, input_files, batch_size, num_epochs=None):
 def create_evaluation_metrics():
     eval_metrics = {}
     for k in [1, 2, 5, 10]:
-    eval_metrics["recall_at_%d" % k] = functools.partial(
-        tf.contrib.metrics.streaming_sparse_recall_at_k,
-        k=k
+        eval_metrics["recall_at_%d" % k] = functools.partial(
+            tf.contrib.metrics.streaming_sparse_recall_at_k,
+            k=k
     )
     return eval_metrics
 ```
 
-如上，我们使用了 [functools.partial](https://docs.python.org/2/library/functools.html#functools.partial) 函数，这个函数的输入参数有两个。不要被streaming_sparse_recall_at_k所困惑，其中的streaming的含义是表示指标的计算是增量式的。
+如上，我们使用了 [functools.partial](https://docs.python.org/2/library/functools.html#functools.partial) 函数，这个函数的输入参数有两个。不要被 streaming_sparse_recall_at_k 所困惑，其中的 streaming 的含义是表示指标的计算是增量式的。
 
-训练和测试所使用的评测方式是不一样的，训练过程中我们对每个case可能作为正确回复的概率进行预测，而测试过程中我们对每组数据（包含10个case，其中1个是正确的，另外9个是生成的负例/噪音数据）中的case进行逐条概率预测，得到例如[0.34, 0.11, 0.22, 0.45, 0.01, 0.02, 0.03, 0.08, 0.33, 0.11]这样格式的输出，这些输出值的和并不要求为1（因为是逐条预测的，有单独的预测概率值，在0到1之间）；而对于这组数据而言，因为数据index=0对应的为正确答案，这里recall@1为0，因为0.34是其中第二大的值，所以recall@2是1（表示这组数据中预测概率值在前二的中有一个是正确的）。
+训练和测试所使用的评测方式是不一样的，训练过程中我们对 每个case 可能作为正确回复的概率进行预测，而测试过程中我们对每组数据（包含10个case，其中1个是正确的，另外9个是生成的负例/噪音数据）中的case进行逐条概率预测，得到例如 [0.34, 0.11, 0.22, 0.45, 0.01, 0.02, 0.03, 0.08, 0.33, 0.11] 这样格式的输出，这些输出值的和并不要求为 1（因为是逐条预测的，有单独的预测概率值，在 0 到 1 之间）； 而对于这组数据而言，因为数据 index=0 对应的为正确答案，这里 recall@1 为 0，因为 0.34 是其中第二大的值，所以 recall@2 是 1（表示这组数据中预测概率值在前二的中有一个是正确的）。
 
 ### 6.4. 训练程序样例
 
-首先，给一个模型训练和测试的程序样例，这之后你可以参照程序中所用到的标准函数，来快速切换和使用其他的网络模型。假设我们有一个函数model_fn，函数的输入参数有batched features，label和mode(train/evaluation)，函数的输出为预测值。程序样例如下：
+首先，给一个模型训练和测试的程序样例，这之后你可以参照程序中所用到的标准函数，来快速切换和使用其他的网络模型。假设我们有一个函数 `model_fn`，函数的输入参数有 `batched features`，`label` 和 `mode`(train/evaluation)，函数的输出为预测值。程序样例如下：
 
 ```python
 estimator = tf.contrib.learn.Estimator(
