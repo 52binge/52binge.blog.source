@@ -2,50 +2,6 @@
 date: 2018-07-16 16:59:48
 ---
 
-## NLP for tensorFlow
-
-利用 RNN 来搭建 NLP 方面的一些经典应用，如 ： Language model、Machine translation
-
-### 1. 语言模型的背景知识
-
-语言模型是自然语言处理问题中一类最基本的问题，它有着非常广泛的应用。
-
-- [1.1 Language model 介绍 / 评价方法 perplexity *not][0]
-
-### 2. NNLM (神经语言模型)
-
-- [2.1 PTB 数据集的预处理 *not][0]
-
-- [2.2 PTB 数据的 batching 方法][9.2.2]
-
-- [2.3 RNN 的语言模型 TensorFlow 实现][9.2.3]
-
-[9.2.2]: /2018/10/01/tensorflow-nlp-9.2.2/
-[9.2.3]: /2018/10/02/tensorflow-nlp-9.2.3/
-
-### 3. 神经网络机器翻译
-
-- [3.1 机器翻译背景 与 Seq2Seq 模型介绍][0]
-
-- [3.2 机器翻译文本数据的预处理][0]
-
-- [3.3 Seq2Seq 模型 TF 实现][0]
-
-### 4. MNIST 数字识别问题
-
-- [4.1 简单前馈网络实现 mnist 分类][minst1]
-
-- [4.2 多层 CNNs 实现 mnist 分类][0]
-
-- [4.3 name / variable_scope][minst3]
-
-- [4.4 多层 LSTM 通俗易懂版][minst4]
-
-[minst1]: /2018/09/12/tensorflow-mnist-1-beginners/
-[minst2]: 0
-[minst3]: /2018/10/05/tensorflow-name-variable_scope/
-[minst4]: /2018/10/07/tensorflow-simple-lstms/
-
 [0]: /tensorflow
 
 ## TensorFlow
@@ -62,7 +18,7 @@ TensorFlow 是一款神经网络的 Python 外部的结构包, 也是一个采�
 
 [t1]: /2018/01/22/tensorflow-1-1-why/
 [t2]: /2018/08/24/tensorflow-1-2-NN-what-do/
-[t3]: /2018/10/04/tensorflow-doc/
+[t3]: /2018/10/23/tensorflow-doc/
 
 ### 2. Tensorflow 基础构架
 
@@ -168,3 +124,45 @@ Sklearn 机器学习领域当中最知名的 Python 模块之一 [why][sklearn0]
 [sklearn7]: /2018/01/09/py-sklearn-6-cross-validation-2/
 [sklearn8]: /2018/01/09/py-sklearn-6-cross-validation-3/
 [sklearn9]: /2018/01/10/py-sklearn-7-save-model/
+
+## Tensorflow NLP 基础知识
+
+### 1. 语言模型的背景知识
+
+语言模型是自然语言处理问题中一类最基本的问题，它有着非常广泛的应用。
+
+- [1.1 Language model 介绍 / 评价方法 perplexity *not][0]
+
+### 2. NNLM (神经语言模型)
+
+- [2.1 PTB 数据集的预处理 *not][0]
+
+- [2.2 PTB 数据的 batching 方法][9.2.2]
+
+- [2.3 RNN 的语言模型 TensorFlow 实现][9.2.3]
+
+[9.2.2]: /2018/10/01/tensorflow-nlp-9.2.2/
+[9.2.3]: /2018/10/02/tensorflow-nlp-9.2.3/
+
+### 3. 神经网络机器翻译
+
+- [3.1 机器翻译背景 与 Seq2Seq 模型介绍][0]
+
+- [3.2 机器翻译文本数据的预处理][0]
+
+- [3.3 Seq2Seq 模型 TF 实现][0]
+
+### 4. MNIST 数字识别问题
+
+- [4.1 简单前馈网络实现 mnist 分类][minst1]
+
+- [4.2 多层 CNNs 实现 mnist 分类][0]
+
+- [4.3 name / variable_scope][minst3]
+
+- [4.4 多层 LSTM 通俗易懂版][minst4]
+
+[minst1]: /2018/09/12/tensorflow-mnist-1-beginners/
+[minst2]: 0
+[minst3]: /2018/10/05/tensorflow-name-variable_scope/
+[minst4]: /2018/10/07/tensorflow-simple-lstms/
