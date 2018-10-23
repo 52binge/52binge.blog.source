@@ -22,7 +22,7 @@ tags: tensorflow
 
 函数模块 : tf
 
-TensorFlow app模块
+TensorFlow [app模块 : 定义通用入口点脚本](https://www.w3cschool.cn/tensorflow_python/tensorflow_python-58lx2coj.html)
 
 TensorFlow contrib模块
 
@@ -36,11 +36,11 @@ TensorFlow 使用之 **tf.initializers**
 
 TensorFlow 使用之 tf.keras
 
-TensorFlow 使用之 **tf.layers**
+TensorFlow 使用之 [tf.layers](https://www.w3cschool.cn/tensorflow_python/tensorflow_python-59ay2s9i.html)
 
 TensorFlow 使用之 **tf.losses**
 
-TensorFlow 使用之 **tf.metrics**
+TensorFlow 使用之 [tf.metrics](https://www.w3cschool.cn/tensorflow_python/tensorflow_python-ke8y2yhg.html)
 
 ### 1.4 TensorFlow 功能函数
 
@@ -60,9 +60,12 @@ TensorFlow函数：tf.ones_initializer
 
 TensorFlow占位符：`tf.placeholder`
 
-TensorFlow函数：`tf.reduce_mean`
+TensorFlow函数： [tf.reduce_mean](https://www.w3cschool.cn/tensorflow_python/tensorflow_python-hckq2htb.html)
 
 TensorFlow函数：`tf.reduce_sum`
+
+> axis = 0， 为纵向
+> axis = 1， 为横向
 
 ### 1.5 TensorFlow 手写数字分类问题
 

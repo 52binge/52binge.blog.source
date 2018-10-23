@@ -68,6 +68,10 @@ TensorFlow 是一款神经网络的 Python 外部的结构包, 也是一个采�
 
 [t4.1]: /2018/09/12/tensorflow-4-1-tensorboard1/
 
+### 5. TensorFlow 的高层封装
+
+- [5.1 TensorFlow-Slim、 TFLearn、 Keras、 Estimator][0]
+
 ## Keras
 
 You have just found [Keras][k1]
