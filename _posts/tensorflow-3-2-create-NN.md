@@ -49,6 +49,8 @@ def add_layer(inputs, in_size, out_size, activation_function=None):
 
 ```python
 x_data = np.linspace(-1,1,300, dtype=np.float32)[:, np.newaxis]
+# numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)
+# 得到 300 个大小的一维数组， 通过 [:, np.newaxis] 行变列，变为 300 行，1 列 的二维 数组
 
 # numpy.random.normal(loc=0.0 均值, scale=1.0 标准差, size=None 形状)
 noise = np.random.normal(0, 0.05, x_data.shape).astype(np.float32)

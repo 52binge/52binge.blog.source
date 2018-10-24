@@ -18,6 +18,10 @@ tags: tensorflow
 
 ### 1.2 Tensorflow 使用指南
 
+TensorFlow [张量变换](https://www.w3cschool.cn/tensorflow_python/tensorflow_python-85v22c69.html)
+
+TensorFlow [Training函数](https://www.w3cschool.cn/tensorflow_python/tensorflow_python-y6p82c6e.html) ： tf.train 提供了一组帮助训练模型的类和函数。
+
 ### 1.3 Tensorflow 函数介绍
 
 函数模块 : tf
@@ -28,7 +32,9 @@ TensorFlow contrib模块
 
 TensorFlow 的 errors模块
 
-estimator 模块
+estimator 模块 [估算器（Estimator）](https://www.w3cschool.cn/tensorflow_python/tensorflow_python-xp3r2dl5.html) ： 用于处理模型的高级工具。
+
+> - TensorFlow的estimator类函数：[tf.estimator.Estimator](https://www.w3cschool.cn/tensorflow_python/tensorflow_python-hd9a2oyb.html)
 
 TensorFlow 的 image模块
 
@@ -36,11 +42,11 @@ TensorFlow 使用之 **tf.initializers**
 
 TensorFlow 使用之 tf.keras
 
-TensorFlow 使用之 [tf.layers](https://www.w3cschool.cn/tensorflow_python/tensorflow_python-59ay2s9i.html)
+TensorFlow [使用之 tf.layers](https://www.w3cschool.cn/tensorflow_python/tensorflow_python-59ay2s9i.html)
 
 TensorFlow 使用之 **tf.losses**
 
-TensorFlow 使用之 [tf.metrics](https://www.w3cschool.cn/tensorflow_python/tensorflow_python-ke8y2yhg.html)
+TensorFlow [使用之 tf.metrics](https://www.w3cschool.cn/tensorflow_python/tensorflow_python-ke8y2yhg.html)
 
 ### 1.4 TensorFlow 功能函数
 
@@ -69,39 +75,6 @@ TensorFlow函数：`tf.reduce_sum`
 
 ### 1.5 TensorFlow 手写数字分类问题
 
-## 2. 学习目录
-
-### part1
-
-- [1. TensorFlow Why?][1p]
-
-- [2. TensorFlow 的计算模型、运行模型、数据模型][2p]
-
-- [3. TensorFlow 的数据模型—–张量(Tensor) ][3p]
-
-### part2
-
-- [1. TensorFlow 数据读取][0]
-
-- [2. TensorFLow 变量命名空间][0]
-
-- [3. Tensorboard 的使用][0] 
-
-- [4. TensorFLow 模型参数的保存与恢复][0]
-
-### part3
-
-- [1. 使用 tf.app.flags 接口定义命令行参数][0] 
-
-- [2. TensorFlow 中 MNIST 数据集的使用][0]
-
-- [3. TensorFlow 实现单层 Softmax 分类][0]
-
-- [4. TensorFlow 实现双隐层分类器][0]
-
-- [5. 深度学习中的参数初始化][0]
-
-- [6. TensorFlow 中 RNN&LSTM 的使用][0]
 
 [0]: /2018/10/04/tensorflow-doc/
 [1p]: /2018/01/22/tensorflow-1-1-why/
