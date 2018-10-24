@@ -354,20 +354,23 @@ def create_evaluation_metrics():
 
 ```python
 estimator = tf.contrib.learn.Estimator(
-model_fn=model_fn,
-model_dir=MODEL_DIR,
-config=tf.contrib.learn.RunConfig())
+    model_fn=model_fn,
+    model_dir=MODEL_DIR,
+    config=tf.contrib.learn.RunConfig()
+)
 
 input_fn_train = udc_inputs.create_input_fn(
-mode=tf.contrib.learn.ModeKeys.TRAIN,
-input_files=[TRAIN_FILE],
-batch_size=hparams.batch_size)
+    mode=tf.contrib.learn.ModeKeys.TRAIN,
+    input_files=[TRAIN_FILE],
+    batch_size=hparams.batch_size
+)
 
 input_fn_eval = udc_inputs.create_input_fn(
-mode=tf.contrib.learn.ModeKeys.EVAL,
-input_files=[VALIDATION_FILE],
-batch_size=hparams.eval_batch_size,
-num_epochs=1)
+    mode=tf.contrib.learn.ModeKeys.EVAL,
+    input_files=[VALIDATION_FILE],
+    batch_size=hparams.eval_batch_size,
+    num_epochs=1
+)
 
 eval_metrics = udc_metrics.create_evaluation_metrics()
 
@@ -375,13 +378,14 @@ eval_metrics = udc_metrics.create_evaluation_metrics()
 # have support ValidationMonitors with metrics built-in.
 # It's already on the master branch.
 class EvaluationMonitor(tf.contrib.learn.monitors.EveryN):
-def every_n_step_end(self, step, outputs):
-  self._estimator.evaluate(
-    input_fn=input_fn_eval,
-    metrics=eval_metrics,
-    steps=None)
+    def every_n_step_end(self, step, outputs):
+        self._estimator.evaluate(
+        input_fn=input_fn_eval,
+        metrics=eval_metrics,
+        steps=None)
 
 eval_monitor = EvaluationMonitor(every_n_steps=FLAGS.eval_every)
+
 estimator.fit(input_fn=input_fn_train, steps=None, monitors=[eval_monitor])
 ```
 
