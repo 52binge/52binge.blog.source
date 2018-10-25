@@ -103,13 +103,15 @@ mathjax: true
 
 > 转成能输出概率的01分类问题
 > 
-> **Q1 -> { A1: 0.8, A2: 0.1, A3: 0.05, A4: 0.2 }**
+> **Q1 -> { R1: 0.8, R2: 0.1, R3: 0.05, R4: 0.2 }**
+> 
+> Query <> Response
 
 **数据构建?**
 
 > 我们需要正样本(正确的回答) 和 负样本(不对的回答)
 > 
-> **{ 正样本 : Q1-A1 1 }, { 负样本 : Q1-A3 0 }**
+> **{ 正样本 : Q1-R1 1 }, { 负样本 : Q1-R3 0 }**
 
 **Loss function?**
 
@@ -129,26 +131,51 @@ mathjax: true
 
 ## 4. 数据 - Ubuntu 对话语料库
 
-ubuntu 语料库（UDC），它是目前公开的最大的数据集。
+我们将使用Ubuntu对话数据集（[论文来源](https://arxiv.org/abs/1506.08909) [github地址](https://github.com/rkadlec/ubuntu-ranking-dataset-creator)）。这个数据集（Ubuntu Dialog Corpus, UDC）是目前最大的公开对话数据集之一，它是来自 Ubuntu 的 IRC网络 上的对话日志。[这篇论文](https://arxiv.org/abs/1506.08909)介绍了该数据集生成的具体细节。下面简单介绍一下数据的格式。
+
+训练数据有 100W 条实例，其中一半是正例（label为1），一半是负例（label为0，负例为随机生成）。每条实例包括一段上下文信息（context），即Query；和一段可能的回复内容，即Response；Label为1表示该Response确实是Query的回复，Label为0则表示不是。下面是数据示例：
+
+> 数据集生成脚本已经使用 [NLTK][6] 做了一系列的语料处理包括（[分词][6_1]，[stemmed][6_2]，[lemmatized][6_3]）等文本预处理步骤；
+> 
+> 使用了NER技术，将文本中的实体，如 姓名、地点、组织、URL 等替换成特殊字符。
+> 
+> 这些预处理不是严格必要的，但是能改善一些系统的表现。
+> 
+> 语料的上下文平均有86个词语，答复平均有17个词语长。有人做了语料的统计分析：[data analysis][6_4]
+>
+> 数据集也包括了 **Test / Validation sets**，但这两部分的数据和训练数据在格式上不太一样。
+> 
+> 在 **Test / Validation sets** 中，对于每一条实例，有一个正例和九个负例数据（也称为干扰数据）。
+> 
+> 模型的目标在于给正例的得分尽可能的高，而给负例的得分尽可能的低。下面是数据示例：
 
 ### 4.1 Train sets
 
 <img src="/images/chatbot/chatbot-5_4.png" width="900" />
 
-> 注意: 
->
-> - 上面的数据集生成脚本已经使用 [NLTK][6] 做了一系列的语料处理包括（[分词][6_1]，[提取词干][6_2]，[词意恢复][6_3]）
-> - 脚本也做了把 名字、地点、组织、URL。系统路径等实体信息用特殊的 token 来替代。
-> 
-> 这些预处理不是严格必要的，但是能改善一些系统的表现。
-> 
-> 语料的上下文平均有86个词语，答复平均有17个词语长。有人做了语料的统计分析：[data analysis][6_4]
-
 ### 4.2 Test / Validation sets
 
 - 每个样本，有一个正例和九个负例数据 (也称为干扰数据)。
 - 建模的目标在于给正例的得分尽可能的高，而给负例的得分尽可能的低。(有点类似分类任务)
-- 语料做过分词、stemmed、lemmatized 等文本预处理。 
+- 语料做过分词、stemmed、lemmatized 等文本预处理。
+
+NLTK stemmed
+
+> ```python
+from nltk.stem.porter import PorterStemmer
+p = PorterStemmer()
+p.stem('wenting') 
+```
+
+NLTK Lemma
+
+```python
+from nltk.stem import WordNetLemmatizer
+wordnet_lemmatizer = WordNetLemmatizer()
+wordnet_lemmatizer.lemmatize(‘dogs’)
+u’dog’
+```
+
 - 用 NER(命名实体识别) 将文本中的 **实体**，如姓名、地点、组织、URL等 替换成特殊字符
 
 <img src="/images/chatbot/chatbot-5_5.png" width="900" />
@@ -180,7 +207,7 @@ def evaluate_recall(y, y_test, k=1):
     return num_correct/num_examples
 ```
 
-其中，y 是所预测的以降序排列的模型预测分值，y_test 是实际的 label 值。举个例子，假设 y 的值为 [0,3,1,2,5,6,4,7,8,9]，这说明 第0号 的候选的预测分值最高、作为回复的可能性最高，而9号则最低。这里的第0号同时也是正确的那个，即正例数据，标号为1-9的为随机生成的负例数据。
+其中，y 是所预测的以降序排列的模型预测分值，y_test 是实际的 label 值。举个例子，假设 y 的值为 [0,3,1,2,5,6,4,7,8,9]，这说明 第0号 的候选的预测分值最高、作为回复的可能性最高，而9号则最低。这里的 第0号 同时也是正确的那个，即正例数据，标号为 1-9 的为随机生成的负例数据。
 
 ### 5.1  基线模型:random guess
 
@@ -263,13 +290,13 @@ Recall @ (10, 10): 1
 
 **大致流程：**
 
-> - (1). Query 和 Response 都是经过分词的，分词后每个词 embedding 为向量形式。初始的词向量使用 GloVe / Word2vec，之后词向量随着模型的训练会进行 fine-tuned 。
+> (1). Query 和 Response 都是经过分词的，分词后每个词 embedding 为向量形式。初始的词向量使用 GloVe / Word2vec，之后词向量随着模型的训练会进行 fine-tuned 。
 >
-> - (2). 分词且向量化的 Query 和 Response 经过相同的 RNN（word by word）。RNN 最终生成一个向量表示，捕捉了 Query 和 Response 之间的[语义联系]（图中的$c$和$r$）；这个向量的维度是可以指定的，这里指定为 256维。
+> (2). 分词且向量化的 Query 和 Response 经过相同的 RNN（word by word）。RNN 最终生成一个向量表示，捕捉了 Query 和 Response 之间的[语义联系]（图中的$c$和$r$）；这个向量的维度是可以指定的，这里指定为 256维。
 >
-> - (3). 将 向量c 与一个 矩阵M 相乘，来预测一个可能的 回复$r’$。如果 $c$ 为一个256维的向量，M维 256*256 的矩阵，两者相乘的结果为另一个256维的向量，我们可以将其解释为[一个生成式的回复向量]。矩阵M 是需要训练的参数。
+> (3). 将 向量c 与一个 矩阵M 相乘，来预测一个可能的 回复$r’$。如果 $c$ 为一个256维的向量，M维 256*256 的矩阵，两者相乘的结果为另一个256维的向量，我们可以将其解释为[一个生成式的回复向量]。矩阵M 是需要训练的参数。
 >
-> - (4). 通过点乘的方式来预测生成的 回复$r’$ 和 候选的 回复$r$ 之间的相似程度，点乘结果越大表示候选回复作为回复的可信度越高；之后通过 sigmoid 函数归一化，转成概率形式。
+> (4). 通过点乘的方式来预测生成的 回复$r’$ 和 候选的 回复$r$ 之间的相似程度，点乘结果越大表示候选回复作为回复的可信度越高；之后通过 sigmoid 函数归一化，转成概率形式。
 > 
 >  (sigmoid作为压缩函数经常使用) 图中把第(3)步和第(4)步结合在一起了。
 >  
