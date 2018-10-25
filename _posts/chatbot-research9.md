@@ -7,7 +7,7 @@ tags: deeplearning.ai
 mathjax: true
 ---
 
-搜集的一些用于对话系统的中文语料
+一些用于对话系统的中文语料资料汇总
 
 <!-- more -->
 
