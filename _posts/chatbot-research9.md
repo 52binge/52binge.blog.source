@@ -19,7 +19,9 @@ mathjax: true
 
 - [3. chatterbot-corpus chinese][3]
 
-- [4. 简书 ： 高质量闲聊（聊天、对话）语料（数据）][4]
+- [4. 简书 ： 高质量闲聊（聊天、对话）语料（数据）][4_1]
+
+- [4. 简书 ： ___dada____ 对话语料][4_2]
 
 - [5. 知乎 ： 现在有哪些中文的聊天语料库？][5]
 
@@ -29,7 +31,8 @@ mathjax: true
 [1]: https://github.com/candlewill/Dialog_Corpus
 [2]: http://www.shareditor.com/blogshow/?blogId=112
 [3]: https://github.com/gunthercox/chatterbot-corpus/blob/master/chatterbot_corpus/data/chinese/greetings.yml
-[4]: https://www.jianshu.com/p/c1865d2b911c
+[4_1]: https://www.jianshu.com/p/c1865d2b911c
+[4_2]: https://www.jianshu.com/u/73283aaafe29
 [5]: https://www.zhihu.com/question/44764422
 [6]: http://jddc.jd.com/
 [7]: https://github.com/Samurais/insuranceqa-corpus-zh
