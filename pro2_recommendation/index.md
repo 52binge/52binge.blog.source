@@ -14,8 +14,6 @@
 
 - [Machine Learning Notes][5]
 
-- [Python & Hive & Spark..][6]
-
 - [SpringMVC demo][s1] & [Csdn Java 分类，旧版学笔记][c1]
 
 [s1]: https://github.com/blair101/language/tree/master/java/springMVC_demo

@@ -15,7 +15,7 @@
 [2]: https://github.com/blair101/bigdata/tree/master/bigdata-offline-demo
 [4]: /user_profile_content_interest/
 [5]: /deeplearning/
-[6]: /project_frame/
+[6]: /framework/
 
 [redis_part]: https://github.com/blair101/project/tree/master/redis
 [img1]: /images/resume_project/user_interest_img.png
