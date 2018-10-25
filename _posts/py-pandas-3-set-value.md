@@ -20,7 +20,7 @@ mathjax: true
 import pandas as pd
 import numpy as np
 
-dates = pd.date_range('20130101', periods=6)
+dates = pd.date_range('20130101', periods=6) # 2013-01-01 结果一样
 df = pd.DataFrame(np.arange(24).reshape((6,4)),index=dates, columns=['A','B','C','D'])
 print(df)
 ```
@@ -40,7 +40,7 @@ print(df)
 
 ```python
 df.iloc[2,2] = 1111
-df.loc['20130101','B'] = 2222
+df.loc['2013-01-01','B'] = 2222
 print(df)
 ```
 

@@ -206,12 +206,15 @@ def evaluate_recall(y, y_test, k=1):
 
 ### 5.1  基线模型:random guess
 
-理论上，最base的随机模型（Random Predictor）的 recall@1 的值为10%，recall@2 的值为20%。相应的代码如下：
+理论上，最base的随机模型（Random Predictor）的recall@1的值为10%，recall@2的值为20%.
+
+相应的代码如下：
 
 ```python
 # Random Predictor
 def predict_random(context, utterances):
-    return np.random.choice(len(utterances), 10, replace=False)
+    return np.random.choice(len(utterances), 10, replace=False) #np.random.choice(5, 3)  array([0, 3, 4])
+    # 可以从一个 int数字 或 1维 array 里随机选取内容，并将选取结果放入 n维 array 中返回
 
 # Evaluate Random predictor
 y_random = [predict_random(test_df.Context[x], test_df.iloc[x,1:].values) for x in range(len(test_df))]
