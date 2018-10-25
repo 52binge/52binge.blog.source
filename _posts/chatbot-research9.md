@@ -1,13 +1,13 @@
 ---
-title: Chatbot Research 7 - Dialog_Corpus 中文语料库
+title: Chatbot Research 9 - Dialog_Corpus 中文语料库
 toc: true
-date: 2019-08-17 14:00:21
+date: 2019-08-19 14:00:21
 categories: deeplearning
 tags: deeplearning.ai
 mathjax: true
 ---
 
-用于对话系统的中文语料
+搜集的一些用于对话系统的中文语料
 
 <!-- more -->
 
@@ -23,8 +23,13 @@ mathjax: true
 
 - [5. 知乎 ： 现在有哪些中文的聊天语料库？][5]
 
+- [6. JD Dialog Challenge 多轮对话系统挑战赛][6]
+
+
 [1]: https://github.com/candlewill/Dialog_Corpus
 [2]: http://www.shareditor.com/blogshow/?blogId=112
 [3]: https://github.com/gunthercox/chatterbot-corpus/blob/master/chatterbot_corpus/data/chinese/greetings.yml
 [4]: https://www.jianshu.com/p/c1865d2b911c
 [5]: https://www.zhihu.com/question/44764422
+[6]: http://jddc.jd.com/
+[7]: https://github.com/Samurais/insuranceqa-corpus-zh
