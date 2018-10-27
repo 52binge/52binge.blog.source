@@ -3,23 +3,9 @@ title: Chatbot Research 5 - 基于深度学习的检索聊天机器人
 toc: true
 date: 2019-08-15 14:00:21
 categories: deeplearning
-tags: deeplearning.ai
+tags: Chatbot
 mathjax: true
 ---
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
 
 介绍基于检索式机器人。检索式架构有预定好的语料答复库。
 
@@ -126,8 +112,18 @@ mathjax: true
 ## 3. 用深度学习来完成
 
 <img src="/images/chatbot/chatbot-5_3.png" width="700" />
-  
-> [2016 Google Brain deep-learning-for-chatbots-2-retrieval-based-model-tensorflow, wildml blog][2]
+
+> 不管网络结构如何，你抓住最好的 loss function
+>
+> 100 W 样本，50W+， 50W-， 这样的数据集
+>
+> 我们拿来做训练，这样的网络结构，不管如何搭建，都不要太担心，你就抓住 loss function，你的损失函数由 c 和 r 决定的。 c 和 r 是由于上面的结构产生的，所以我们就可以用 BPTT 做训练了.
+>
+> Query 和 Respon 都是我们分词后用的 word embmming，灌入 RNN 中，我们把 LSTM 顺着捕捉下来，当做问题和回答，两个捕捉的信息来做匹配，我找了个参数 M，来做 c 和 r 的匹配。 M 是一定的，匹配程度和方式一致.
+>
+> M 初始化的时候可以由 radom 是生成. M 之后是可以通过训练做更新的.
+>  
+> [2016 Google Brain deep-learning-for-chatbots-2-retrieval-based-model-tensorflow, wildml blog][2_2]
 
 ## 4. 数据 - Ubuntu 对话语料库
 

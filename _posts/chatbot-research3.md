@@ -7,20 +7,6 @@ tags: deeplearning.ai
 mathjax: true
 ---
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
-
 Chatterbot 框架
 
 检索与匹配 & 分类与朴素贝叶斯
@@ -160,3 +146,17 @@ print(Levenshtein.distance(texta,textb)) # 1
 [3]: https://blog.xiaoquankong.ai/使用chatterbot构建自己的中文chat(闲聊)机器人/
 [4]: https://www.cnblogs.com/LHWorldBlog/p/9292024.html
 [5]: https://blog.csdn.net/qifengzou/article/details/77126933
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>
