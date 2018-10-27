@@ -3,8 +3,7 @@ title: Chatbot Research 1 - 聊天机器人的行业综述
 toc: true
 date: 2019-08-11 14:00:21
 categories: deeplearning
-tags: deeplearning.ai
-mathjax: true
+tags: Chatbot
 ---
 
 英文原文： [《Deep Learning For Chatbots, Part 1 - Introduction》](http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/)
@@ -90,6 +89,8 @@ mathjax: true
 > 目前深度学习的价值主要体现在能够获取大量数据的特定领域。
 > 
 > 目前一个无法做的事情是产生一个有意义的对话。
+> 
+> 详细： 当今深度学习的价值在你可以获得许多数据的狭窄领域内。有一件事它做不到：进行有意义的对话。存在一些演示，并且如果你仔细挑选这些对话，看起来就像它正在进行有意义的对话，但是如果你亲自尝试，它就会快速偏离轨道。
 
 许多创业公司声称只要有足够多的数据，就能够产生自动智能的对话系统。然而，目前的水平生产出面向一个特定的子领域的对话应用（如利用Uber打车），而对于一个稍微开放点的领域就难以实现了（如自动销售）。但是，帮助用户提供自动回复建议以及语法纠正还是可行的。
 
@@ -127,6 +128,3 @@ mathjax: true
 
 - 算法越简单，解释性越好
 - 数据量足够大，覆盖的真实世界的大部分场景
-
-[1]: https://blog.csdn.net/Jerr__y/article/details/53749693
-
