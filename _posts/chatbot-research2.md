@@ -9,27 +9,25 @@ mathjax: true
 
 [NLTK](http://pypi.python.org/pypi/nltk) Python上著名的自然语言处理库。 
 
-- 自带语料库，词性分类库 等等
+- 自带语料库，词性分类库， 还有强大的社区支持。
 
 <!-- more -->
 
 **文本处理流程**
 
-> - 分词
-> - 归一化 
-> - 停止词
+- 分词
+- 归一化 
+- 停止词
 
 **NLP经典三案例 **
 
-> - 情感分析
-> - 文本相似度
-> - 文本分类
+- 情感分析
+- 文本相似度
+- 文本分类
 
 > 斯坦佛 CoreNLP (英文、中文、西班牙语)
 
 ## 1. NLTK
-
-[nltk.org][1]
 
 1. Python 著名的自然语言处理库
 2. 自带语料库、词性分类库
@@ -46,6 +44,8 @@ import nltk
 nltk.download()
 ```
 
+<!--<img src="/images/chatbot/chatbot-2_1.png" width="400" />
+-->
 测试是否安装成功
 
 ```python
@@ -53,59 +53,31 @@ nltk.download()
 >>> import nltk
 ```
 
-NLTK Modules | Functionality
-:-------: | :-------:
-nltk.corpus | Corpus
-nltk.tokenize, nltk.stem | Tokenizers, stemmers
+## 2. 功能一览表
 
-## 2. NLTK 自带语料库
+<img src="/images/chatbot/chatbot-2_2.png" width="800" />
 
-```py
->>> from nltk.corpus import brown
->>> brown.categories()
-[u'adventure', u'belles_lettres', u'editorial', u'fiction', u'government', u'hobbies', u'humor', u'learned', u'lore', u'mystery', u'news', u'religion', u'reviews', u'romance', u'science_fiction']
->>> len(brown.sents())
-57340
->>> len(brown.words())
-1161192
->>>
-```
+**NLTK 自带语料库**
 
-## 3. 文本处理流程
+<img src="/images/chatbot/chatbot-2_3.png" width="600" />
 
-![][2]
+## 3. Tokenize
 
-## 4. Tokenize
+**tokenize 把长句子拆成有“意义”的小部件**
 
 ```py
 >>> import nltk>>> sentence = “hello, world">>> tokens = nltk.word_tokenize(sentence)>>> tokens['hello', ‘,', 'world']
 ```
 
-### 4.1 中英文分词
+**中文分词 jieba** (第三方开源库)
 
-今天 / 天⽓ / 不错 / !What a nice weather today !
+<img src="/images/chatbot/chatbot-2_4.png" width="780" />
 
-[‘what’, ‘a’, ‘nice’, ‘weather’, ‘today’] 
-[‘今天’,’天气’,’真’,’不错’]
-
-NLTK
-
-word_tokenize 分词器
-
-### 4.2 中文分词
-
-> jieba (第三方开源库)
-
-```py
-import jiebaseg_list = jieba.cut("我来到北京清华⼤学", cut_all=True)print "Full Mode:", "/ ".join(seg_list) # 全模式seg_list = jieba.cut("我来到北京清华⼤学", cut_all=False)print "Default Mode:", "/ ".join(seg_list) # 精确模式seg_list = jieba.cut("他来到了网易杭研⼤厦") # 默认是精确模式print ", ".join(seg_list)seg_list = jieba.cut_for_search("⼩明硕士毕业于中国科学院计算所,后在日本京都⼤学深造") # 搜索引擎模式print ", ".join(seg_list)
-```
-【全模式】: 我/ 来到/ 北北京/ 清华/ 清华⼤大学/ 华⼤大/ ⼤大学   
-【精确模式】: 我/ 来到/ 北北京/ 清华⼤大学  【新词识别】:他, 来到, 了了, ⽹网易易, 杭研, ⼤大厦 (此处,“杭研”并没有在词典中,但是也被Viterbi算法识别出来了了)  【搜索引擎模式】: ⼩小明, 硕⼠士, 毕业, 于, 中国, 科学, 学院, 科学院, 中国科学院, 计算, 计算所, 后, 在, ⽇日本, 京都, ⼤大学, ⽇日本京都⼤大学, 深造
-
-
-> 有时候tokenize没那么简单 :
+**有时候tokenize没那么简单**
 
 > 比如社交网络上,这些乱七八糟的不合语法不合正常逻辑的语言很多:拯救 @某人, 表情符号, URL, #话题符号
+
+<img src="/images/chatbot/chatbot-2_5.png" width="650" />
 
 **社交网络语言的tokenize :**
 
@@ -113,36 +85,36 @@ import jiebaseg_list = jieba.cut("我来到北京清华⼤学", cut_all=True)p
 from nltk.tokenize import word_tokenizetweet = 'RT @angelababy: love you baby! :D http://ah.love #168cm'print(word_tokenize(tweet))
 ```
 
-[正则表达式对照表][1]
+<img src="/images/chatbot/chatbot-2_6.png" width="880" />
 
+[正则表达式对照表](http://www.regexlab.com/zh/regref.htm)
 
-## 5. 词形归一化
+## 4. 词形归一化
 
 Inflection变化: walk => walking => walked 不影响词性
 derivation 引申: nation (noun) => national (adjective) => nationalize (verb) 影响词性
 
-### 5.1 Stemming 
+Stemming 词干提取:一般来说，就是把不影响词性的inflection的小尾巴砍掉
 
-Stemming 词干提取:一般来说,就是把不影响词性的inflection的小尾巴砍掉
-walking 砍ing = walk   
-walked 砍ed = walk
+> walking 砍ing = walk 
+> walked 砍ed = walk
+
+Lemmatization 词形归一:把各种类型的词的变形，都归为一个形式 
+
+> went 归一 = go
+> are 归一 = be
+
+### 4.1 Stemming
+
+1. PorterStemmer
+2. SnowballStemmer
+3. LancasterStemmer
+4. PorterStemmer
 
 **PorterStemmer**
 
 ```py
->>> from nltk.stem.porter import PorterStemmer>>> porter_stemmer = PorterStemmer()>>> porter_stemmer.stem(‘maximum’)u’maximum’>>> porter_stemmer.stem(‘presumably’)u’presum’>>> porter_stemmer.stem(‘multiply’)u’multipli’>>> porter_stemmer.stem(‘provision’)u’provis’
-```
-
-**SnowballStemmer**
-
-
-```py
->>> from nltk.stem import SnowballStemmer
->>> snowball_stemmer = SnowballStemmer("english")
->>> snowball_stemmer.stem('maximum')
-u'maximum'
->>> snowball_stemmer.stem('presumably')
-u’presum’
+>>> from nltk.stem.porter import PorterStemmer>>> porter_stemmer = PorterStemmer()>>> porter_stemmer.stem(‘maximum’)u’maximum’>>> porter_stemmer.stem(‘presumably’)u’presum’
 ```
 
 **LancasterStemmer**
@@ -154,55 +126,39 @@ u’presum’
 ‘maxim’
 >>> lancaster_stemmer.stem(‘presumably’)
 ‘presum’
->>> lancaster_stemmer.stem(‘presumably’)
-‘presum’
 ```
+### 4.2 Lemmatization 
 
-**PorterStemmer**
-
-```py
->>> from nltk.stem.porter import PorterStemmer
->>> p = PorterStemmer()
->>> p.stem('went')
-'went'
->>> p.stem('wenting')
-'went'
-```
-### 5.2 Lemmatization 
-
-词形归一:把各种类型的词的变形,都归为一个形式 
+词形归一： 把各种类型的词的变形,都归为一个形式 
 
 went 归一 = go  are 归一 = be
 
 ```py
->>> from nltk.stem import WordNetLemmatizer>>> wordnet_lemmatizer = WordNetLemmatizer()>>> wordnet_lemmatizer.lemmatize(‘dogs’)u’dog’>>> wordnet_lemmatizer.lemmatize(‘churches’)u’church’>>> wordnet_lemmatizer.lemmatize(‘aardwolves’)u’aardwolf’>>> wordnet_lemmatizer.lemmatize(‘abaci’)u’abacus’>>> wordnet_lemmatizer.lemmatize(‘hardrock’)‘hardrock’
+>>> from nltk.stem import WordNetLemmatizer>>> wordnet_lemmatizer = WordNetLemmatizer()>>> wordnet_lemmatizer.lemmatize(‘dogs’)u’dog’>>> wordnet_lemmatizer.lemmatize(‘churches’)u’church’>>> wordnet_lemmatizer.lemmatize(‘aardwolves’)u’aardwolf’
 ```
 
 NLTK更好地实现Lemma
 
 ```py
-# ⽊木有POS Tag,默认是NN 名词>>> wordnet_lemmatizer.lemmatize(‘are’) ‘are’>>> wordnet_lemmatizer.lemmatize(‘is’) ‘is’# 加上POS Tag>>> wordnet_lemmatizer.lemmatize(‘is’, pos=’v’) u’be’>>> wordnet_lemmatizer.lemmatize(‘are’, pos=’v’) u’be’
+# ⽊木有POS Tag,默认是NN 名词>>> wordnet_lemmatizer.lemmatize(‘are’) # ‘are’>>> wordnet_lemmatizer.lemmatize(‘is’)  # ‘is’# 加上POS Tag>>> wordnet_lemmatizer.lemmatize(‘is’, pos=’v’)  # u’be’>>> wordnet_lemmatizer.lemmatize(‘are’, pos=’v’) # u’be’
 ```
 
-## 6. Part Of Speech
-
-### 6.1 NLTK 标注 POS Tag
+### 4.3 NLTK 标注 POS Tag
 
 ```py
 >>> import nltk>>> text = nltk.word_tokenize('what does the fox say')>>> text['what', 'does', 'the', 'fox', 'say']>>> nltk.pos_tag(text)[('what', 'WDT'), ('does', 'VBZ'), ('the', 'DT'), ('fox', 'NNS'), ('say', 'VBP')]
 ```
 
-## 7. Stopwords
+## 5. Stopwords
 
-一千个HE有一千种指代
-一千个THE有一千种指事 对于注重理解文本『意思』的应用场景来说
-歧义太多
+一千个 He 有一千种指代
+一千个 The 有一千种指事 对于注重理解文本『意思』的应用场景来说
 
-[全体stopwords列表][5] 
+全体stopwords列表 http://www.ranks.nl/stopwords
 
-### 7.1 NLTK去除stopwords
+**去除 stopwords**
 
-> 首先记得在console里面下载一下词库> 或者 nltk.download(‘stopwords’)
+> 首先记得在console里面下载一下词库， 或者 nltk.download(‘stopwords’)
 
 ```py
 import nltk
@@ -219,54 +175,27 @@ filtered_words = [word for word in word_list if word not in stopwords.words('eng
 filtered_words
 ```
 
-## 8. 文本预处理流水线
+## 6. 文本预处理流水线
 
-> 一条typical的文本预处理流水线
+一条typical的文本预处理流水线
 
-![][4]
+<img src="/images/chatbot/chatbot-2_8.png" width="320" />
 
-**文本预处理让我们得到了什么?**
+文本预处理让我们得到了什么?
 
-![][6]
+<img src="/images/chatbot/chatbot-2_9.png" width="320" />
 
-## 9. NLP上的经典应用
+## 7. NLP上的经典应用
 
-1. 情感分析2. 文本相似度 
-3. 文本分类
+情感分析 、 文本相似度 、 文本分类
 
-### 9.1 情感分析
+### 7.1 情感分析
 
-![][7]
+<img src="/images/chatbot/chatbot-2_10.png" width="720" />
 
 哪些是夸你？哪些是黑你？
 
-**最简单的 sentiment dictionary**
-
-- like 1 
-- good 2 
-- bad -2 
-- terrible -3
-
-> 最简单也比较有效的方法，不需要学习
-> 
-> 比如:AFINN-111> http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010
-
-**NLTK 完成简单的情感分析**
-
-```py
-sentiment_dictionary = {}for line in open('data/AFINN-111.txt')    word, score = line.split('\t')    sentiment_dictionary[word] = int(score)# 把这个打分表记录在⼀一个Dict上以后 
-# 跑⼀一遍整个句句⼦子,把对应的值相加total_score = sum(sentiment_dictionary.get(word, 0) for word in 
-words) 
-
-# 有值就是Dict中的值,没有就是0# 于是你就得到了了⼀一个 sentiment score
-```
-
-> 显然这个方法太Naive 
-> 新词怎么办? 
-> 特殊词汇怎么办? 
-> 更深层次的玩意儿怎么办?
-
-**配上ML的情感分析**
+**ML的情感分析**
 
 ```py
 from nltk.classify import NaiveBayesClassifier# 随⼿手造点训练集s1 = 'this is a good book's2 = 'this is a awesome book's3 = 'this is a bad book's4 = 'this is a terrible book'def preprocess(s): # Func: 句⼦处理# 这⾥简单的⽤了了split(), 把句子中每个单词分开 # 显然 还有更多的processing method可以⽤ 
@@ -276,15 +205,9 @@ from nltk.classify import NaiveBayesClassifier# 随⼿手造点训练集s1 = '
 # 把训练集给做成标准形式training_data = [[preprocess(s1), 'pos'],                 [preprocess(s2), 'pos'],                 [preprocess(s3), 'neg'],                 [preprocess(s4), 'neg']]# 喂给model吃model = NaiveBayesClassifier.train(training_data)# 打出结果print(model.classify(preprocess('this is a good book')))
 ```
 
-### 9.2 文本相似度
+### 7.2 文本相似度
 
-![][8]
-
-**9.2.1 用元素频率表示文本特征**
-
-![][9]
-
-**9.2.2 Frequency 频率统计**
+**Frequency 频率统计**
 
 ```py
 import nltk
@@ -310,7 +233,7 @@ fdist = FreqDist(tokens)
 # 带上某个单词, 可以看到它在整个文章中出现的次数
 print(fdist['is']) #3
 
-# 好, 此刻, 我们可以把最常⽤用的50个单词拿出来 
+# 好, 此刻, 我们可以把最常⽤的50个单词拿出来 
 standard_freq_vector = fdist.most_common(50) 
 size = len(standard_freq_vector) 
 print "size: %s" % (size)
@@ -330,12 +253,12 @@ def position_lookup(v):
 # 把标准的单词位置记录下来
 standard_position_dict = position_lookup(standard_freq_vector) 
 print(standard_position_dict)
-# 得到⼀一个位置对照表
+# 得到⼀个位置对照表
 # {'is': 0, 'the': 3, 'day': 4, 'this': 1, 'sentence': 5, 'my': 2, 'life': 6}
 
-# 这时, 如果我们有个新句句⼦子:
+# 这时, 如果我们有个新句子:
 sentence = 'this is cool'
-# 先新建⼀一个跟我们的标准vector同样⼤小的向量 
+# 先新建⼀个跟我们的标准vector同样⼤小的向量 
 freq_vector = [0] * size
 # 简单的Preprocessing
 tokens = nltk.word_tokenize(sentence) # 对于这个新句⼦⾥的每一个单词
@@ -344,29 +267,34 @@ for word in tokens:
     # 如果在我们的词库里出现过
     # 那么就在"标准位置"上+1 
         freq_vector[standard_position_dict[word]] += 1
-    except KeyError: # 如果是个新词
+    except KeyError: # 如果是个新词, 就 pass掉
         continue
 print(freq_vector)   # [1, 1, 0, 0, 0, 0, 0]
+# [1, 1, 0, 0, 0, 0, 0]
+# 第一个位置代表 is, 出现了一次
+# 第二个位置代表 this, 出现了一次 
+# 后面都没有
 ```
 
-### 9.3 文本分类
+### 7.3 文本分类 tf-idf
 
-#### 9.3.1 tf-idf
+TF: Term Frequency, 衡量一个term在文档中出现得有多频繁。
 
-**TF: Term Frequency**, 衡量一个term在文档中出现得有多频繁。 T
+$$
+F(t) = (t出现在文档中的次数) / (文档中的term总数)
+$$IDF: Inverse Document Frequency, 衡量一个term有多重要。 有些词出现的很多,但是明显不是很有卵用。
+$$
+IDF(t) = log\_e(文档总数 / 含有t的文档总数)
+$$
 
-F(t) = (t出现在文档中的次数) / (文档中的term总数).**IDF: Inverse Document Frequency**, 衡量一个term有多重要。 有些词出现的很多,但是明显不是很有卵用。比如’is',’the‘,’and‘之类 的。
-为了平衡,我们把罕见的词的重要性(weight)搞高, 把常见词的重要性搞低。
-IDF(t) = log_e(文档总数 / 含有t的文档总数). 
+> **TF-IDF = TF \* IDF**
+>
+> 举个栗子🌰 :
+>
+> 一个文档有100个单词,其中单词baby出现了3次。 那么,TF(baby) = (3/100) = 0.03.
+>> 好,现在我们如果有10M的文档, baby出现在其中的1000个文档中。 那么,IDF(baby) = log(10,000,000 / 1,000) = 4>> 所以, TF-IDF(baby) = TF(baby) \* IDF(baby) = 0.03 \* 4 = 0.12
 
-**TF-IDF = TF * IDF**
-
-举个栗子🌰 :
-
-一个文档有100个单词,其中单词baby出现了3次。 那么,TF(baby) = (3/100) = 0.03.
-好,现在我们如果有10M的文档, baby出现在其中的1000个文档中。 那么,IDF(baby) = log(10,000,000 / 1,000) = 4所以, TF-IDF(baby) = TF(baby) \* IDF(baby) = 0.03 \* 4 = 0.12
-
-#### 9.3.2 nltk implement tf-idf
+**nltk implement tf-idf**
 
 ```py
 from nltk.text import TextCollection
