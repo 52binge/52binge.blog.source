@@ -7,7 +7,7 @@ tags: deeplearning.ai
 mathjax: true
 ---
 
-Chatterbot 框架
+Chatterbot 聊天机器人框架
 
 检索与匹配 & 分类与朴素贝叶斯
 

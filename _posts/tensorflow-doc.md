@@ -6,9 +6,7 @@ categories: python
 tags: tensorflow
 ---
 
-介绍 Tensorflow 的学习流程 与 W3C shchool Tensorflow 的中文文档。
-
-- [TensorFlow 入门基础 W3C school][2] 
+介绍 Tensorflow 的学习流程 与 [W3C shchool Tensorflow][2] 的中文文档。
 
 <!-- more -->
 

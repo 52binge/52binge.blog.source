@@ -8,9 +8,9 @@ tags: tensorflow
 
 简单的 Seq2Seq 实现，我们将使用 TensorFlow 来实现个基础版的 Seq2Seq，主要帮助理解 Seq2Seq 中的基础架构。
 
-<img src="/images/tensorflow/tf-nlp-seq2seq.jpg" width="800" />
-
 <!-- more -->
+
+<img src="/images/tensorflow/tf-nlp-seq2seq.jpg" width="800" />
 
 自己做了一个示意图，希望帮助初学者更好地理解. 
 

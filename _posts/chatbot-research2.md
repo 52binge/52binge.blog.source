@@ -7,7 +7,9 @@ tags: NLTK
 mathjax: true
 ---
 
-[NLTK](http://pypi.python.org/pypi/nltk) Python上著名的自然语言处理库。 自带语料库，词性分类库 等等
+[NLTK](http://pypi.python.org/pypi/nltk) Python上著名的自然语言处理库。 
+
+- 自带语料库，词性分类库 等等
 
 <!-- more -->
 
