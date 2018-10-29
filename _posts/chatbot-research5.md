@@ -346,9 +346,9 @@ def create_input_fn(mode, input_files, batch_size, num_epochs=None):
 (1) 定义了示例文件中的 feature字段；
 (2) 使用 tf.TFRecordReader 来读取 input_files 中的数据；
 (3) 根据 feature字段 的定义对数据进行解析；
-(4) 提取训练数据的标签；
-(5) 产生批量化的训练数据；
-(6) 返回批量的特征数据及对应标签；
+(4) 提取训练数据的标签 label；
+(5) 产生批量化的训练数据 batch train_datasets；
+(6) 返回批量的特征数据及对应标签 label；
 
 ### 6.3. 定义评测指标
 
@@ -413,6 +413,8 @@ estimator.fit(input_fn=input_fn_train, steps=None, monitors=[eval_monitor])
 这里创建了一个 **model_fn** 的 **estimator**(评估函数)；
 
 两个输入函数，**input_fn_train** 和 **input_fn_eval**，以及计算评测指标的函数；
+
+完整的code见[udc_train.py](https://github.com/dennybritz/chatbot-retrieval/blob/master/udc_train.py)。
 
 ### 6.5. 创建模型
 
