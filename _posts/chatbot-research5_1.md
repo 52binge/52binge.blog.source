@@ -37,6 +37,7 @@ Tensorflow 实现 代码解析部分
 - [tensorflow 中tf.concat()用法][6]
 - [NLP的一些任务来说 tensorflow高阶教程:tf.dynamic_rnn][7]
 - [tf.split()][8]
+- [tf.contrib.learn基础的记录和监控教程][9]
 
 [1]: https://www.w3cschool.cn/tensorflow_python/tensorflow_python-f1np2gyt.html
 [2]: https://www.zhihu.com/question/52250059
@@ -46,6 +47,7 @@ Tensorflow 实现 代码解析部分
 [6]: https://blog.csdn.net/momaojia/article/details/77603322
 [7]: https://blog.csdn.net/u010223750/article/details/71079036
 [8]: https://blog.csdn.net/liuweiyuxiang/article/details/81192547
+[9]: http://cwiki.apachecn.org/pages/viewpage.action?pageId=10029489
 
 ## Reference
 
