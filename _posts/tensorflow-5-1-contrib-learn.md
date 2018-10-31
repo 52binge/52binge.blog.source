@@ -77,7 +77,8 @@ def main():
 
         return x, y
 
-    # Evaluate accuracy.
+    '''Evaluate accuracy''' 
+    # {'loss': 0.098150678, 'accuracy': 0.96666664, 'global_step': 4000}
     accuracy_score = classifier.evaluate(input_fn=get_test_inputs,
                                          steps=1)["accuracy"]
 
@@ -256,10 +257,65 @@ classifier.fit(x=training_set.data, y=training_set.target, steps=1000)
 
 ## 6. 评估模型精度
 
+您已经在Iris训练数据上拟合DNNClassifier模型; 现在，您可以使用该[evaluate](https://www.tensorflow.org/api_docs/python/tf/contrib/learn/BaseEstimator#evaluate)方法检查其对Iris测试数据的准确性 。正如fit， evaluate需要一个构建其输入渠道的输入函数。evaluate 返回一个评估结果dict。下面的代码通过Iris测试数据- test_set.data和test_set.target进行evaluate并打印结果的精度：
+
+```py
+# Define the test inputs
+def get_test_inputs():
+  x = tf.constant(test_set.data)
+  y = tf.constant(test_set.target)
+ 
+  return x, y
+ 
+'''Evaluate accuracy.''' 
+# {'loss': 0.098150678, 'accuracy': 0.96666664, 'global_step': 4000}
+accuracy_score = classifier.evaluate(input_fn=get_test_inputs,
+                                     steps=1)["accuracy"]
+ 
+print("\nTest Accuracy: {0:f}\n".format(accuracy_score))
+```
+
+注意：这里的steps参数对evaluate很重要。 evaluate直到它到达输入的末尾才停止运行。
+
 ## 7. 分类新样本
+
+使用estimator的predict()方法对新样本进行分类。例如，说你有这两个新的花朵样例：
+
+```py
+
+# Classify two new flower samples.
+def new_samples():
+  return np.array(
+    [[6.4, 3.2, 4.5, 1.5],
+     [5.8, 3.1, 5.0, 1.7]], dtype=np.float32)
+ 
+predictions = list(classifier.predict(input_fn=new_samples))
+ 
+print(
+    "New Samples, Class Predictions:    {}\n"
+    .format(predictions))
+```
+
+您可以使用该predict()方法预测其物种。predict返回一个生成器，可以很容易地转换成一个列表。以下代码取得并打印分类的预测结果：
+
+```
+New Samples, Class Predictions:    [1 2]
+```
 
 ## 8. 其他资源
 
+- 其他资源有关tf.contrib.learn的更多参考资料，请参阅官方 [API文档][t1]。
+- 有关使用tf.contrib.learn创建线性模型的更多信息，请参阅 [Large-scale Linear Models with TensorFlow.][t2]
+- 要使用tf.contrib.learn API构建自己的Estimator，请查看在 [tf.contrib.learn中创建估计器][t3]。
+- 要在浏览器中实验神经网络建模和可视化，请查看[Deep Playground][t4]。
+- 有关神经网络的更多高级教程，请参阅 [卷积神经网络][t5]和[循环神经网络][t6]。
+
+[t1]: https://www.tensorflow.org/api_guides/python/contrib.learn
+[t2]: https://www.tensorflow.org/tutorials/linear
+[t3]: https://www.tensorflow.org/extend/estimators
+[t4]: http://playground.tensorflow.org/
+[t5]: https://www.tensorflow.org/tutorials/images/deep_cnn
+[t6]: https://www.tensorflow.org/tutorials/sequences/recurrent
 
 ## Reference
 
