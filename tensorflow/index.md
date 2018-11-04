@@ -12,11 +12,13 @@ TensorFlow 是一款神经网络的 Python 外部的结构包, 也是一个采�
 
 ### 5. TensorFlow Estimator
 
-- [5.1 tf.contrib.learn快速入门][0]
+- [5.1 tf.contrib.learn 快速入门][0]
 
-- [5.2 tf.contrib.learn构建输入函数][0]
+- [5.2 tf.contrib.learn 构建输入函数][0]
 
-- [5.3 tf.contrib.learn基础的记录和监控教程][0]
+- [5.3 tf.contrib.learn 基础的记录和监控教程][0]
+
+- [5.4 tf.contrib.learn 创建 Estimator][0]
 
 ### 1. TensorFlow 简介
 
