@@ -24,10 +24,12 @@ aas
 - [知乎 * 基于深度学习的对话系统][r1]
 - [TensorFlow练习13: 制作一个简单的聊天机器人][r2]
 - [Github上Seq2Seq_Chatbot_QA中文语料和DeepQA英文语料两个对话机器人测试][r3]
+- [TensorFlow入门学习(让机器/算法帮助我们作出选择)][r4]
 
 [r1]: https://zhuanlan.zhihu.com/p/33088748
 [r2]: http://blog.topspeedsnail.com/archives/10735
 [r3]: https://blog.csdn.net/huxuanlai/article/details/76853094
+[r4]: https://www.cnblogs.com/LittleHann/p/6413864.html
 
 ## Reference dual_encoder 
 
