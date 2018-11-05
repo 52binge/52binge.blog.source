@@ -1,5 +1,5 @@
 ---
-title: Chatbot Research 5 - 基于深度学习的检索聊天机器人代码解析
+title: Chatbot Research 5 - 基于深度学习的检索聊天机器人-中文实践
 toc: true
 date: 2019-08-15 18:00:21
 categories: deeplearning
@@ -13,21 +13,23 @@ mathjax: true
 
 <!-- more -->
 
-Tensorflow 实现 代码解析部分
-
-1. 输入文本预处理
-2. 模型超级参数定义
-3. 模型核心定义
-4. 模型构建
-5. 模型训练
+## 1. TensorFlow
 
 
-## 1. udc_hparams 模型超参数
 
-模型超参数
 
-## 2. dual_encoder 模型实现核心代码
 
+## Reference
+
+- [知乎 * 基于深度学习的对话系统][r1]
+- [TensorFlow练习13: 制作一个简单的聊天机器人][r2]
+- [Github上Seq2Seq_Chatbot_QA中文语料和DeepQA英文语料两个对话机器人测试][r3]
+
+[r1]: https://zhuanlan.zhihu.com/p/33088748
+[r2]: http://blog.topspeedsnail.com/archives/10735
+[r3]: https://blog.csdn.net/huxuanlai/article/details/76853094
+
+## Reference dual_encoder 
 
 - [TensorFlow函数：tf.random_uniform_initializer][1]
 - [tf.nn.embedding_lookup函数原理？][2]
@@ -48,6 +50,3 @@ Tensorflow 实现 代码解析部分
 [7]: https://blog.csdn.net/u010223750/article/details/71079036
 [8]: https://blog.csdn.net/liuweiyuxiang/article/details/81192547
 [9]: http://cwiki.apachecn.org/pages/viewpage.action?pageId=10029489
-
-## Reference
-

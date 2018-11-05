@@ -27,6 +27,8 @@ mathjax: true
 
 - [6. JD Dialog Challenge 多轮对话系统挑战赛][6]
 
+- [7. 深度学习对话系统理论篇--数据集和评价指标介绍][7]
+
 
 [1]: https://github.com/candlewill/Dialog_Corpus
 [2]: http://www.shareditor.com/blogshow/?blogId=112
@@ -36,3 +38,4 @@ mathjax: true
 [5]: https://www.zhihu.com/question/44764422
 [6]: http://jddc.jd.com/
 [7]: https://github.com/Samurais/insuranceqa-corpus-zh
+[7]: https://zhuanlan.zhihu.com/p/33088748
