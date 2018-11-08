@@ -7,7 +7,7 @@ tags: RNN
 mathjax: true
 ---
 
-实战Google深度学习框架 笔记-第8章 循环神经网络-1-前向传播。 [Github: RNN-1-Forward_Propagation.ipynb][2]
+实战Google深度学习框架 笔记-第8章 循环神经网络-1-前向传播。 [Github: RNN-1-Forward_Propagation.ipynb][g2]
 
 <!-- more -->
 
@@ -88,14 +88,19 @@ state:  [[0.88656589 0.91491336]]
 output:  [[2.0184833]]
 ```
 
+和其他神经网络类似，在定义完损失函数之后，套用第4章中介绍的优化框架TensorFlow就可以**自动完成模型训练**的过程。这里唯一需要特别指出的是，理论上循环神经网络可以支持任意长度的序列，然而在实际中，如果序列过长会导致优化时出现梯度消散的问题（**the vanishing gradient problem**） (8) ，所以实际中一般会**规定一个最大长度**，当序列长度超过规定长度之后会对序列进行截断。
+
 ## Reference
 
-- [知乎 ：《TensorFlow：实战Google深度学习框架》笔记、代码及勘误-第8章 循环神经网络-1-前向传播][1]
+- [知乎：《TensorFlow：实战Google深度学习框架》笔记、代码及勘误-第8章 循环神经网络-1-前向传播][1]
+- [7天时间： 循环神经网络简介 (1)][2]
 
 [img1]: /images/tensorflow/tf-google-8-1.jpg
 
 [1]: https://zhuanlan.zhihu.com/p/31539492
-[2]: https://github.com/blair101/TensorFlowExamples/tree/master/Chapter8
+[2]: http://b.7dtime.com/B076DGNXP1/13/0.html
+
+[g2]: https://github.com/blair101/TensorFlowExamples/tree/master/Chapter8
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
