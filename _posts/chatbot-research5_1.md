@@ -51,6 +51,16 @@ mathjax: true
 [s5]: https://zhuanlan.zhihu.com/p/32055400
 [s6]: https://zhuanlan.zhihu.com/p/47929039
 
+
+## 4. 机器学习
+
+- [记录自己深度学习之路的点滴][d1]
+- [xgboost 库使用入门][d2]、[xgboost 库使用入门 简书][d2_1]
+
+[d1]: https://github.com/zhuanxuhit/nd101
+[d2]: https://www.zybuluo.com/zhuanxu/note/969884
+[d2_1]: https://www.jianshu.com/p/05ec35a120b1
+
 ## Reference dual_encoder 
 
 - [TensorFlow函数：tf.random_uniform_initializer][1]
