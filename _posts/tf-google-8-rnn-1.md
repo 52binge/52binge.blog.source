@@ -1,5 +1,5 @@
 ---
-title: 《TensorFlow：实战Google深度学习框架》p8 RNN-1-前向传播
+title: TensorFlow：实战Google深度学习框架 笔记 第8章 循环神经网络 1
 toc: true
 date: 3017-11-08 22:00:21
 categories: deeplearning
@@ -7,9 +7,7 @@ tags: RNN
 mathjax: true
 ---
 
-TensorFlow：实战Google深度学习框架 笔记-第8章 循环神经网络-1-前向传播
-
-Github : [TensorFlowExamples/Chapter8/RNN-1-Forward_Propagation.ipynb][2]
+实战Google深度学习框架 笔记-第8章 循环神经网络-1-前向传播。 [Github: RNN-1-Forward_Propagation.ipynb][2]
 
 <!-- more -->
 
