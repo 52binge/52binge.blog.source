@@ -23,12 +23,14 @@ mathjax: true
 
 ## 2. TensorFlow
 
+- [初见TensorFlow ：知其所以然 * 推荐][t1]
 - [TensorFlow入门学习(让机器/算法帮助我们作出选择)][r4]
 - [TensorFlow的发展][r5]
 - [zhihu * TensorFlow][r6]
 - [Tensorflow 低版本代码自动升级为1.0版本][r7]
 - [TensorFlow循环神经网络识别Mnist验证码][r8]
 
+[t1]: https://www.cnblogs.com/ariel-dreamland/p/9184200.html
 [r4]: https://www.cnblogs.com/LittleHann/p/6413864.html
 [r5]: https://www.jianshu.com/p/3f2b10e8d26c
 [r6]: https://www.zhihu.com/topic/20032249/hot
