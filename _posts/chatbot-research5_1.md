@@ -11,6 +11,14 @@ mathjax: true
 
 <!-- more -->
 
+## Fasttext
+
+- [我爱自然语言处理 - fastText原理及实践][f1]
+- [PaperWeekly 第五期 - 从Word2Vec到FastText][f2]
+
+[f1]: http://www.52nlp.cn/fasttext
+[f2]: https://zhuanlan.zhihu.com/p/22466665
+
 ## 1. Chatbot Seq2Seq
 
 - [知乎 * 基于深度学习的对话系统][r1]

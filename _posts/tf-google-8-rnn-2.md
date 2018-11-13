@@ -63,7 +63,7 @@ _init__(
 import tensorflow as tf
 
 # 定义一个lstm结构，在tensorflow中通过一句话就能实现一个完整的lstm结构
-# lstm中使用的变量也会在该函数中自动被声明
+# lstm_hidden_size 表示 LSTM cell 中神经元的数量。 cell其实就是一个RNN的网络。
 lstm = tf.nn.rnn_cell.BasicLSTMCell(lstm_hidden_size)
 
 # 将lstm中的状态初始化为全0数组，BasicLSTMCell提供了zero_state来生成全0数组
@@ -150,9 +150,13 @@ foor i in range(len(num_steps)):
 
 - [深入浅出Tensorflow（五）：循环神经网络简介][1]
 - [Tensorflow实战(1): 实现深层循环神经网络][2]
+- [zh.gluon.ai 动手学深度学习][3]
+- [正确理解 cell 与 hidden size 的区别][4]
 
 [1]: https://www.ctolib.com/docs-Tensorflow-c-Tensorflow5.html
 [2]: https://zhuanlan.zhihu.com/p/37070414
+[3]: https://zh.gluon.ai/
+[4]: https://www.zhihu.com/question/272049149
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
