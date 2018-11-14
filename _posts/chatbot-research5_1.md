@@ -21,6 +21,14 @@ mathjax: true
 
 ## 1. Chatbot Seq2Seq
 
+- [深度学习对话系统理论篇--seq2seq+Attention机制模型详解][s1]
+- [深度学习对话系统实战篇--老版本tf.contrib.legacy_seq2seq API介绍和源码解析][s2]
+
+[s1]: https://zhuanlan.zhihu.com/p/32092871
+[s2]: https://zhuanlan.zhihu.com/p/32199930
+
+other hand
+
 - [知乎 * 基于深度学习的对话系统][r1]
 - [TensorFlow练习13: 制作一个简单的聊天机器人][r2]
 - [Github上Seq2Seq_Chatbot_QA中文语料和DeepQA英文语料两个对话机器人测试][r3]
