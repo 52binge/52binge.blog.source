@@ -14,7 +14,7 @@ mathjax: true
 - Seq-to-Seq 框架1
 - Seq-to-Seq 框架2（teacher forcing）
 - Seq-to-Seq with Attention（NMT）
-- Seq-to-Seq with Attention各种变形
+- Seq-to-Seq with Attention 各种变形
 - Seq-to-Seq with Beam-Search
 
 当输入输出都是不定长序列时，我们可以使用编码器—解码器（encoder-decoder）[1] 或者 seq2seq 模型 [2]。这两个模型本质上都用到了两个循环神经网络，分别叫做编码器和解码器。编码器用来分析输入序列，解码器用来生成输出序列。
@@ -57,7 +57,7 @@ $$
 \boldsymbol{h}\_{t^\prime} = g(y\_{t^\prime-1}, \boldsymbol{c}, \boldsymbol{h}\_{t^\prime-1}).
 $$
 
-有了解码器的隐藏状态后，我们可以使用自定义的输出层和 softmax 运算来计算 $\mathbb{P}(y\_{t^\prime} \mid y\_1, \ldots, y\_{t^\prime-1}, \boldsymbol{c})$，例如基于当前时间步的解码器隐藏状态 $\boldsymbol{h}\_{t^\prime}$、上一时间步的输出 $y\_{t^\prime-1}$ 以及背景变量 $c$ 来计算当前时间步输出 $y\_{t^\prime}$ 的概率分布。
+有了decode的隐藏状态后，我们可以使用自定义的输出层和 softmax 运算来计算 $\mathbb{P}(y\_{t^\prime} \mid y\_1, \ldots, y\_{t^\prime-1}, \boldsymbol{c})$，例如基于当前时间步的解码器隐藏状态 $\boldsymbol{h}\_{t^\prime}$、上一时间步的输出 $y\_{t^\prime-1}$ 以及背景变量 $c$ 来计算当前时间步输出 $y\_{t^\prime}$ 的概率分布。
 
 ### 1.3 train 模型训练
 
@@ -78,7 +78,7 @@ $$
 
 <img src="/images/chatbot/seq2seq-6.png" width="800" />
 
-在模型训练中，所有输出序列损失的均值通常作为需要最小化的损失函数。在图中所描述的模型预测中，我们需要将解码器在上一个时间步的输出作为当前时间步的输入。与此不同，在训练中我们也可以将标签序列在上一个时间步的标签作为解码器在当前时间步的输入。这叫做强制教学（teacher forcing）。
+在模型训练中，所有输出序列损失的均值通常作为需要最小化的损失函数。在图中所描述的模型预测中，我们需要将decode在上一个时间步的输出作为当前时间步的输入。与此不同，在训练中我们也可以将标签序列在上一个时间步的标签作为decode在当前时间步的输入。这叫做强制教学（teacher forcing）。
 
 ### 1.4 Seq-to-Seq 1 小结
 
