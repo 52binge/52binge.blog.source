@@ -139,9 +139,13 @@ $$
 \alpha\_{t' t} = \frac{\exp(e\_{t' t})}{ \sum\_{k=1}^T \exp(e\_{t' k}) },\quad t=1,\ldots,T.
 $$
 
+现在，我们需要定义如何计算上式中 softmax 运算的输入 $e\_{t' t}$。由于 $e\_{t' t}$ 同时取决于decode的时间步 $t'$ 和encode的时间步 $t$，我们不妨以解码器在时间步 $t'−1$ 的隐藏状态 $\boldsymbol{s}\_{t' - 1}$ 与编码器在时间步 $t$ 的隐藏状态 $h\_t$ 为输入，并通过函数 $a$ 计算 $e\_{t' t}$：
+
 $$
 e\_{t' t} = a(\boldsymbol{s}\_{t' - 1}, \boldsymbol{h}\_t).
 $$
+
+这里函数 a 有多种选择，如果两个输入向量长度相同，一个简单的选择是计算它们的内积 $a(\boldsymbol{s}, \boldsymbol{h})=\boldsymbol{s}^\top \boldsymbol{h}$。而最早提出Attention机制的论文则将输入连结后通过含单隐藏层的多层感知机MLP 变换 
 
 $$
 a(\boldsymbol{s}, \boldsymbol{h}) = \boldsymbol{v}^\top \tanh(\boldsymbol{W}\_s \boldsymbol{s} + \boldsymbol{W}\_h \boldsymbol{h}),
@@ -174,7 +178,7 @@ $$
 ### 3.3 Seq-to-Seq with Attention（NMT）小结
 
 - 可以在decode的每个时间步使用不同的背景变量，并对输入序列中不同时间步编码的信息分配不同的注意力。
-- 注意力机制可以采用更为高效的矢量化计算。
+- Attention机制可以采用更为高效的矢量化计算。
 
 ## 4. Seq-to-Seq with Attention各种变形
 
