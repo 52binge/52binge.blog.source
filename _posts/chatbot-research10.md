@@ -1,5 +1,5 @@
 ---
-title: Chatbot Research 9 - Dialog_Corpus 中文语料库
+title: Chatbot Research 10 - Dialog_Corpus 中文语料库
 toc: true
 date: 2019-08-19 14:00:21
 categories: deeplearning
