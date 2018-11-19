@@ -148,13 +148,31 @@ Here are some useful links
 
 [m1]: https://www.zhihu.com/question/20021861
 
+## 比特币
+
+- [港台数字货币交易平台排名][b1]
+- [bitfinex][b2]
+- [binance][b3]
+- [如何把火币网的比特币移到OKEX？][b4]
+- [币安(Binance) | 注册和使用教程][b5]
+- [台湾币托][b6]
+- [OTCBTC - 支持场外交易，支付宝][b7]
+
+[b1]: http://www.btcranks.com/hk/
+[b2]: https://www.bitfinex.com/
+[b3]: https://www.binance.com/en
+[b4]: https://www.zhihu.com/question/269003572
+[b5]: https://zhuanlan.zhihu.com/p/36776300
+[b6]: https://www.bitoex.com/dashboard/statistics?locale=zh-CN
+[b7]: https://otcbtc.com/
+
 ## blog
 
-- [鼓励工程师写blog][b1]
-- [技术人员的发展之路][b2]
+- [鼓励工程师写blog][blog1]
+- [技术人员的发展之路][blog2]
 
-[b1]: https://dotblogs.com.tw/hatelove/2017/03/26/why-engineers-should-keep-blogging
-[b2]: https://coolshell.cn/articles/17583.html
+[blog1]: https://dotblogs.com.tw/hatelove/2017/03/26/why-engineers-should-keep-blogging
+[blog2]: https://coolshell.cn/articles/17583.html
 
 
 
