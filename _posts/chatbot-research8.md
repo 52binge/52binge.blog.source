@@ -19,7 +19,7 @@ mathjax: true
 
 当输入输出都是不定长序列时，我们可以使用编码器—解码器（encoder-decoder）[1] 或者 seq2seq 模型 [2]。这两个模型本质上都用到了两个循环神经网络，分别叫做编码器和解码器。编码器用来分析输入序列，解码器用来生成输出序列。
 
-## 1. Seq-to-Seq 框架1
+## 1. Seq2Seq 框架1
 
 <img src="/images/chatbot/seq2seq-1.jpg" width="300" />
 
@@ -80,13 +80,13 @@ $$
 
 在模型训练中，所有输出序列损失的均值通常作为需要最小化的损失函数。在图中所描述的模型预测中，我们需要将decode在上一个时间步的输出作为当前时间步的输入。与此不同，在训练中我们也可以将标签序列在上一个时间步的标签作为decode在当前时间步的输入。这叫做强制教学（teacher forcing）。
 
-### 1.4 Seq-to-Seq 1 小结
+### 1.4 小结
 
 - 编码器 - 解码器（seq2seq）可以输入并输出不定长的序列。
 - 编码器—解码器使用了两个循环神经网络。
 - 在编码器—解码器的训练中，我们可以采用强制教学。 （这也是 Seq2Seq 2 的内容）
 
-## 2. Seq-to-Seq 框架2
+## 2. Seq2Seq 框架2
 
 第二个要讲的Seq-to-Seq模型来自于 “[Sequence to Sequence Learning with Neural Networks](https://arxiv.org/pdf/1409.3215.pdf)”，其模型结构图如下所示：
 
@@ -102,7 +102,7 @@ $$
 
 e向量仅作为RNN的初始化状态传入decode模型。接下来就是标准的循环神经网络，每一时刻输入都是前一时刻的正确label。直到最终输入<eos>符号截止滚动。
 
-## 3. Seq-to-Seq with Attention（NMT）
+## 3. Seq2Seq Attention
 
 **decode** 在各个时间步依赖相同的 **背景变量 $c$** 来获取输入序列信息。当 **encode** 为 RNN 时，**背景变量$c$** 来自它最终时间步的隐藏状态。
 
@@ -175,16 +175,16 @@ $$
 
 <img src="/images/chatbot/seq2seq-7.jpeg" width="800" />
 
-### 3.3 Seq-to-Seq with Attention（NMT）小结
+### 3.3 小结
 
 - 可以在decode的每个时间步使用不同的背景变量，并对输入序列中不同时间步编码的信息分配不同的注意力。
 - Attention机制可以采用更为高效的矢量化计算。
 
-## 4. Seq-to-Seq with Attention各种变形
+## 4. Seq2Seq Attention各种变形
 
 第四个Seq-to-Seq模型，来自于论文 [Effective Approaches to Attention-based Neural Machine Translation](http://link.zhihu.com/?target=http%3A//aclweb.org/anthology/D15-1166) 这篇论文提出了两种 Seq2Seq模型 分别是global Attention 和 local Attention。
 
-## 5. Seq-to-Seq with Beam-Search
+## 5. Seq2Seq with Beam-Search
 
 上面讲的几种Seq2Seq模型都是从模型结构上进行的改进，也就说为了从训练的层面上改善模型的效果，但这里要介绍的beam-search是在测试的时候才用到的技术。
 
@@ -194,11 +194,13 @@ $$
 - [门控循环单元（GRU）][2]
 - [seq2seq+Attention机制模型详解][3]
 - [三分钟带你对 Softmax 划重点][4]
+- [Softmax 回归][5]
 
 [1]: https://www.youtube.com/watch?v=GQh7wDQDc0Y&index=18&list=PLLbeS1kM6teJqdFzw1ICHfa4a1y0hg8Ax
 [2]: https://zh.gluon.ai/chapter_recurrent-neural-networks/gru.html
 [3]: https://zhuanlan.zhihu.com/p/32092871
 [4]: https://zhuanlan.zhihu.com/p/38064637
+[5]: https://zh.gluon.ai/chapter_deep-learning-basics/softmax-regression.html
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
