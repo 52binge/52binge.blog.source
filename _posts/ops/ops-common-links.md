@@ -128,8 +128,10 @@ Here are some useful links
 ## shell
 
 - [runoob linux][s1]
+- [Mac OSX 沒有的 rename，用 brew 抓回來～][s2]
 
 [s1]: http://www.runoob.com/linux/linux-command-manual.html
+[s2]: https://shazi.info/mac-osx-%E6%B2%92%E6%9C%89%E7%9A%84-rename%EF%BC%8C%E7%94%A8-brew-%E6%8A%93%E5%9B%9E%E4%BE%86%EF%BD%9E/
 
 
 ## spark
