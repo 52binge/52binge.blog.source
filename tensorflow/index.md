@@ -20,10 +20,10 @@ TensorFlow 是一款神经网络的 Python 外部的结构包, 也是一个采�
 
 - [5.4 tf.contrib.learn 创建 Estimator][t5.4]
 
-[t5.1]: /2017/10/31/tensorflow/tf-5-1-contrib-learn-Quickstart/
-[t5.2]: /2017/11/01/tensorflow/tf-5-2-contrib-learn-Input-fn/
-[t5.3]: /2017/11/04/tensorflow/tf-5-3-contrib-learn-MonitorAPI/
-[t5.4]: /2017/11/04/tensorflow/tf-5-4-contrib-learn-Estimator/
+[t5.1]: /2017/10/31/tensorflow/tf-5.1-contrib-learn-Quickstart/
+[t5.2]: /2017/11/01/tensorflow/tf-5.2-contrib-learn-Input-fn/
+[t5.3]: /2017/11/04/tensorflow/tf-5.3-contrib-learn-MonitorAPI/
+[t5.4]: /2017/11/04/tensorflow/tf-5.4-contrib-learn-Estimator/
 
 ### 1. TensorFlow 简介
 
@@ -31,8 +31,8 @@ TensorFlow 是一款神经网络的 Python 外部的结构包, 也是一个采�
 
 - [1.2 TensorFlow 快速学习 & 文档][t3]  
 
-[t1]: /2018/01/22/tensorflow/tf-1-1-why/
-[t2]: /2018/08/24/tensorflow/tf-1-2-NN-what-do/
+[t1]: /2018/01/22/tensorflow/tf-1.1-why/
+[t2]: /2018/08/24/tensorflow/tf-1.2-NN-what-do/
 [t3]: /2018/10/23/tensorflow/tf-doc/
 
 ### 2. Tensorflow 基础构架
@@ -53,14 +53,14 @@ TensorFlow 是一款神经网络的 Python 外部的结构包, 也是一个采�
 
 - [2.8 TensorFlow 基本用法总结 🌰🌰🌰][t2.8]
 
-[t2.1]: /2018/08/24/tensorflow/tf-2-1-structure/
-[t2.2]: /2018/08/24/tensorflow/tf-2-2-example2/
-[t2.3]: /2018/09/06/tensorflow/tf-2-3-session/
-[t2.4]: /2018/09/07/tensorflow/tf-2-4-variable/
-[t2.5]: /2018/09/07/tensorflow/tf-2-5-placeholde/
-[t2.6]: /2018/09/07/tensorflow/tf-2-6-A-activation-function/
-[t2.7]: /2018/09/07/tensorflow/tf-2-6-B-activation-function/
-[t2.8]: /2018/09/08/tensorflow/tf-2-8-tensorflow/tf-basic-summary/
+[t2.1]: /2018/08/24/tensorflow/tf-2.1-structure/
+[t2.2]: /2018/08/24/tensorflow/tf-2.2-example2/
+[t2.3]: /2018/09/06/tensorflow/tf-2.3-session/
+[t2.4]: /2018/09/07/tensorflow/tf-2.4-variable/
+[t2.5]: /2018/09/07/tensorflow/tf-2.5-placeholde/
+[t2.6]: /2018/09/07/tensorflow/tf-2.6-A-activation-function/
+[t2.7]: /2018/09/07/tensorflow/tf-2.6-B-activation-function/
+[t2.8]: /2018/09/08/tensorflow/tf-2.8-tensorflow/tf-basic-summary/
 
 ### 3. 建造我们第一个神经网络
 
@@ -72,16 +72,16 @@ TensorFlow 是一款神经网络的 Python 外部的结构包, 也是一个采�
 
 - [3.4 Speed Up Training & Optimizer (转载自莫烦)][t3.4]
 
-[t3.1]: /2018/09/09/tensorflow/tf-3-1-add-layer/
-[t3.2]: /2018/09/11/tensorflow/tf-3-2-create-NN/
-[t3.3]: /2018/09/11/tensorflow/tf-3-3-visualize-result/
-[t3.4]: /2018/09/12/tensorflow/tf-3-4-A-speed-up-learning/
+[t3.1]: /2018/09/09/tensorflow/tf-3.1-add-layer/
+[t3.2]: /2018/09/11/tensorflow/tf-3.2-create-NN/
+[t3.3]: /2018/09/11/tensorflow/tf-3.3-visualize-result/
+[t3.4]: /2018/09/12/tensorflow/tf-3.4-A-speed-up-learning/
 
 ### 4. 可视化好助手 Tensorboard
 
 - [4.1 Tensorboard 可视化好帮手 1][t4.1]
 
-[t4.1]: /2018/09/12/tensorflow/tf-4-1-tensorboard1/
+[t4.1]: /2018/09/12/tensorflow/tf-4.1-tensorboard1/
 
 ### 5. TensorFlow other link
 
@@ -183,7 +183,7 @@ Sklearn 机器学习领域当中最知名的 Python 模块之一 [why][sklearn0]
 
 - [4.4 多层 LSTM 通俗易懂版][minst4]
 
-[minst1]: /2018/09/12/tensorflow/tf-mnist-1-beginners/
+[minst1]: /2018/09/12/tensorflow/tf-mnist-1.beginners/
 [minst2]: 0
 [minst3]: /2018/10/05/tensorflow/tf-name-variable_scope/
 [minst4]: /2018/10/07/tensorflow/tf-simple-lstms/
