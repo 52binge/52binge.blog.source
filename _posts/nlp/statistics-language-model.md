@@ -7,20 +7,6 @@ tags: word2vec
 mathjax: true
 ---
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
-
 1946年 计算机出现之后，计算机很多事情比人类做得好，那么机器是否能懂**自然语言**?
 
 <!-- more -->
@@ -103,7 +89,7 @@ $$
 - [word2vec前世今生][3]
 - [CS224N NLP with Deep Learning: Lecture 1 课程笔记][4]
 
-[info-1]: /images/nlp/nlp-info-1.jpg
+[info-1]: /images/nlp/info-1.jpg
 
 [1]: https://www.jiqizhixin.com/articles/2017-08-31-2
 [2]: http://blog.codinglabs.org/articles/pca-tutorial.html
@@ -111,3 +97,18 @@ $$
 [4]: https://whiskytina.github.io/14947653164873.html
 [5]: http://studyai.site/2016/05/03/数学之美-技术详解(01)/
 [6]: http://heshenghuan.github.io/2016/05/13/Good-Turing估计/
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>
