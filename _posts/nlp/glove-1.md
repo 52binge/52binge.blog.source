@@ -15,7 +15,7 @@ mathjax: true
 
 ## 从条件概率比值理解 GloVe
 
-<img src="/images/nlp/glove-1.jpeg" width="800" /img>
+<img src="/images/nlp/glove-1.jpeg" width="900" /img>
 
 ## Reference
 
