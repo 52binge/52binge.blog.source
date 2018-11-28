@@ -144,6 +144,15 @@ Here are some useful links
 [sp2]: http://spark.apache.org/docs/1.6.3/api/python/pyspark.sql.html#pyspark.sql.DataFrame
 [sp3]: https://github.com/apache/spark
 
+在 pycharm 上配置 pyspark
+
+- [pycharm 上配置 pyspark](https://blog.csdn.net/rifengxxc/article/details/74503119)
+- [Pycharm开发spark程序](https://blog.csdn.net/suzyu12345/article/details/53885092)
+
+## devops
+
+- 免登陆设置 ssh-copy-id -i id_rsa.pub hdfs@192.192.0.27
+
 ## mac
 
 - [macOS (OS X) 有哪些常用的快捷键？][m1]
