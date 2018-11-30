@@ -9,7 +9,7 @@ mathjax: true
 
 <!-- 2018 -->
 
-上期博文我们使用 tf.contrib.legacy_seq2seq 下的 API 构建了一个简单的 chatbot 对话系统. 代码是1.0之前旧版.
+上期我们使用 tf.contrib.legacy_seq2seq 下的 API 构建了一个简单的 chatbot 对话系统. 代码是1.0之前旧版.
 
 这期我们学习新版本灵活的的API，这里先来说一下二者的不同：
 
@@ -18,8 +18,9 @@ mathjax: true
 **新版本API：**
 
 > - 用 dynamic\_rnn 来构造 RNN模型，这样就避免了数据长度不同所带来的困扰，不需要再使用 model\_with\_buckets 这种方法来构建模型，使得我们数据处理和模型代码都简洁很多。
->
+> 
 > - 新版本将 Attention、 Decoder 等几个主要的功能都分别进行封装，直接调用相应的 Wapper函数 进行封装即可，调用起来更加灵活方便，而且只需要写几个简单的函数既可以自定义的各个模块以满足我们个性化的需求。
+>
 >
 > - 实现了beam_search功能，可直接调用。
 
