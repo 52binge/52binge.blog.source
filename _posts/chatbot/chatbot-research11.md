@@ -1,7 +1,7 @@
 ---
 title: Chatbot Research 11 - Chatbot 的第二个版本 (新API实现)
 toc: true
-date: 3017-11-29 22:00:21
+date: 2018-11-29 22:00:21
 categories: chatbot
 tags: Chatbot
 mathjax: true
@@ -19,7 +19,7 @@ mathjax: true
 
 > - 用 dynamic\_rnn 来构造 RNN模型，这样就避免了数据长度不同所带来的困扰，不需要再使用 model\_with\_buckets 这种方法来构建模型，使得我们数据处理和模型代码都简洁很多。
 > 
-> - 新版本将 Attention、 Decoder 等几个主要的功能都分别进行封装，直接调用相应的 Wapper函数 进行封装即可，调用起来更加灵活方便，而且只需要写几个简单的函数既可以自定义的各个模块以满足我们个性化的需求。
+> - 新版本将 Attention、 Decoder 等几个主要的功能都分别进行封装，直接调用相应的 Wapper函数 进行封装即可，更加灵活方便，而且只需要写几个简单的函数既可以自定义的各个模块以满足我们个性化的需求。
 >
 >
 > - 实现了beam_search功能，可直接调用。

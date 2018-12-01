@@ -9,7 +9,7 @@ mathjax: true
 
 <!-- 2018 -->
 
-本节介绍两种更新一点的词向量。它们分别是2014年Stanford团队发表的[Glove](https://nlp.stanford.edu/projects/glove/)和2017年由Facebook团队发表的[fastText](https://fasttext.cc/)。
+本节介绍两种更新一点的词向量。分别是2014年Stanford发表的[Glove](https://nlp.stanford.edu/projects/glove/)和2017年由Facebook发表的[fastText](https://fasttext.cc/).
 
 <!-- more -->
 

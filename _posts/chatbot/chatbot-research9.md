@@ -1,233 +1,154 @@
 ---
-title: Chatbot Research 9 - Chatbot 的第一个版本 (简单实现)
+title: Chatbot Research 9 - 旧版 tf.contrib.legacy_seq2seq API 介绍
 toc: true
-date: 3017-11-26 22:00:21
+date: 2018-11-19 14:00:21
 categories: deeplearning
-tags: Chatbot
+tags: deeplearning.ai
 mathjax: true
 ---
 
-<!-- 2018 -->
-
-本篇主要讲述如何调用 tf 提供的 seq2seq 的 API，实现一个chatbot对话系统.
-
-网上很多参考代码都是基于tf的旧版本实现，导致这些代码在新版本的tf中无法正常运行。
+有了对代码的深层次理解，我们之后构建 Chatbot 系统的时候有很大的帮助。
 
 <!-- more -->
 
-## 1. 版本兼容
+> 旧的seq2seq接口也就是tf.contrib.legacy_seq2seq下的那部分，新的接口在tf.contrib.seq2seq下。
+>
+> 新seq2seq接口与旧的相比最主要的区别是它是动态展开的，而旧的是静态展开的。
+>
+> 静态展开(static unrolling) ：指的是定义模型创建graph的时候，序列的长度是固定的，之后传入的所有序列都得是定义时指定的长度。这样所有的句子都要padding到指定的长度，很浪费存储空间，计算效率也不高。但想处理变长序列，也是有办法的，需要预先指定一系列的buckets，如
 
-**常见的几个问题主要是**：
+## 函数部分
 
-- seq2seq API 旧版 tf.contrib.legacy_seq2seq, 新的接口 tf.contrib.seq2seq
-- rnn 目前也大都使用 tf.contrib.rnn 下面的 RNNCell；
-- embedding_attention_seq2seq 函数中调用deepcopy(cell)这个函数报异常
-> deepcopy(cell)这个函数经常会爆出（TypeError: can't pickle _thread.lock objects）的错误
+[旧版legacy_seq2seq代码][2]
 
-**解决方案**：
+首先看一下这个文件的组成，主要包含下面几个函数：
 
-1. 切换TF版本 1.4 问题解决。
-2. 不切换版本：一种解决方案就是将embedding_attention_seq2seq的传入参数中的cell改成两个，分别是encoder_cell和decoder_cell，然后这两个cell分别使用下面代码进行初始化：
+> - def _extract\_argmax\_and\_embed(embedding, ...
+> - def rnn\_decoder(decoder\_inputs, initial\_state, ...
+> - def basic\_rnn\_seq2seq(encoder\_inputs, ... 
+> - def tied\_rnn\_seq2seq(encoder\_inputs, ...
+> - def embedding\_rnn\_seq2seq(encoder\_inputs, ...
+> - def embedding\_tied\_rnn\_seq2seq(encoder\_inputs, ...
+> - def attention\_decoder(decoder_inputs, ...
+> - def embedding\_attention\_decoder(decoder\_inputs, ...
+> - def embedding\_attention\_seq2seq(encoder\_inputs, ...
+> - def one2many\_rnn\_seq2seq(encoder\_inputs, ...
+> - def sequence\_loss\_by\_example(logits, ...
+> - def sequence\_loss(logits, ...
+> - def model\_with\_buckets(encoder\_inputs, ...
 
-```py
-encoCell = tf.contrib.rnn.MultiRNNCell([create_rnn_cell() for _ in range(num_layers)],)
-decoCell = tf.contrib.rnn.MultiRNNCell([create_rnn_cell() for _ in range(num_layers)],)
-```
-
-这样做不需要调用deepcopy函数对cell进行复制了，问题解决了，但在模型构建的时候速度会比较慢，猜测是因为需要构造两份RNN模型，但是最后训练的时候发现速度也很慢，无奈只能放弃这种做法。
-
-然后分析代码，发现问题并不是单纯的出现在 embedding_attention_seq2seq 这个函数，而是在调用module_with_buckets的时候会构建很多个不同bucket的seq2seq模型，这就导致了embedding_attention_seq2seq会被重复调用很多次，后来发现确实是这里出现的问题。
-
-解决方案的话就是，`不适用buckets构建模型`，而是简单的将所有序列都padding到统一长度，然后直接调用一次embedding_attention_seq2seq 函数构建模型即可，这样是不会抱错的。
-
-## 2. 数据处理
-
-用[DeepQA](https://github.com/Conchylicultor/DeepQA#chatbot)里数据处理的代码，省去从原始本文文件构造对话的过程直接使用其生成的 dataset-cornell-....pkl文件
-
-> dataset-cornell-length10-filter1-vocabSize40000.pkl
-
-主要包括：
-
-1. 读取数据的函数loadDataset()
-2. 根据数据创建batches的函数getBatches()和createBatch()
-3. 预测时将用户输入的句子转化成batch的函数sentence2enco()
-
-## 3. 模型构建
-
-1. 一些变量的传入和定义
-2. OutputProjection层和sampled_softmax_loss函数的定义
-3. RNNCell的定义和创建
-4. 根据训练或者测试调用相应的embedding_attention_seq2seq函数构建模型
-5. step函数定义，主要用于给定一个batch的数据，构造相应的 feed_dict 和 run_opt
+**可以看到按照调用关系和功能不同可以分成下面的结构**：
 
 ```py
-import tensorflow as tf
-from seq2seq import embedding_attention_seq2seq
-
-class Seq2SeqModel():
-
-    def __init__(self, source_vocab_size, target_vocab_size, en_de_seq_len, hidden_size, num_layers,
-                 batch_size, learning_rate, num_samples=1024,
-                 forward_only=False, beam_search=True, beam_size=10):
-        '''
-        初始化并创建模型
-        :param source_vocab_size:encoder输入的vocab size
-        :param target_vocab_size: decoder输入的vocab size，这里跟上面一样
-        :param en_de_seq_len: 源和目的序列最大长度
-        :param hidden_size: RNN模型的隐藏层单元个数
-        :param num_layers: RNN堆叠的层数
-        :param batch_size: batch大小
-        :param learning_rate: 学习率
-        :param num_samples: 计算loss时做sampled softmax时的采样数
-        :param forward_only: 预测时指定为真
-        :param beam_search: 预测时是采用greedy search还是beam search
-        :param beam_size: beam search的大小
-        '''
-        self.source_vocab_size = source_vocab_size
-        self.target_vocab_size = target_vocab_size
-        self.en_de_seq_len = en_de_seq_len
-        self.hidden_size = hidden_size
-        self.num_layers = num_layers
-        self.batch_size = batch_size
-        self.learning_rate = tf.Variable(float(learning_rate), trainable=False)
-        self.num_samples = num_samples
-        self.forward_only = forward_only
-        self.beam_search = beam_search
-        self.beam_size = beam_size
-        self.global_step = tf.Variable(0, trainable=False)
-
-        output_projection = None
-        softmax_loss_function = None
-        # 定义采样loss函数，传入后面的sequence_loss_by_example函数
-        if num_samples > 0 and num_samples < self.target_vocab_size:
-            w = tf.get_variable('proj_w', [hidden_size, self.target_vocab_size])
-            w_t = tf.transpose(w)
-            b = tf.get_variable('proj_b', [self.target_vocab_size])
-            output_projection = (w, b)
-            #调用sampled_softmax_loss函数计算sample loss，这样可以节省计算时间
-            def sample_loss(logits, labels):
-                labels = tf.reshape(labels, [-1, 1])
-                return tf.nn.sampled_softmax_loss(w_t, b, labels=labels, inputs=logits, num_sampled=num_samples, num_classes=self.target_vocab_size)
-            softmax_loss_function = sample_loss
-
-        self.keep_drop = tf.placeholder(tf.float32)
-        # 定义encoder和decoder阶段的多层dropout RNNCell
-        def create_rnn_cell():
-            encoDecoCell = tf.contrib.rnn.BasicLSTMCell(hidden_size)
-            encoDecoCell = tf.contrib.rnn.DropoutWrapper(encoDecoCell, input_keep_prob=1.0, output_keep_prob=self.keep_drop)
-            return encoDecoCell
-        encoCell = tf.contrib.rnn.MultiRNNCell([create_rnn_cell() for _ in range(num_layers)])
-
-        # 定义输入的placeholder，采用了列表的形式
-        self.encoder_inputs = []
-        self.decoder_inputs = []
-        self.decoder_targets = []
-        self.target_weights = []
-        for i in range(en_de_seq_len[0]):
-            self.encoder_inputs.append(tf.placeholder(tf.int32, shape=[None, ], name="encoder{0}".format(i)))
-        for i in range(en_de_seq_len[1]):
-            self.decoder_inputs.append(tf.placeholder(tf.int32, shape=[None, ], name="decoder{0}".format(i)))
-            self.decoder_targets.append(tf.placeholder(tf.int32, shape=[None, ], name="target{0}".format(i)))
-            self.target_weights.append(tf.placeholder(tf.float32, shape=[None, ], name="weight{0}".format(i)))
-
-        # test模式，将上一时刻输出当做下一时刻输入传入
-        if forward_only:
-            if beam_search:#如果是beam_search的话，则调用自己写的embedding_attention_seq2seq函数，而不是legacy_seq2seq下面的
-                self.beam_outputs, _, self.beam_path, self.beam_symbol = embedding_attention_seq2seq(
-                    self.encoder_inputs, self.decoder_inputs, encoCell, num_encoder_symbols=source_vocab_size,
-                    num_decoder_symbols=target_vocab_size, embedding_size=hidden_size,
-                    output_projection=output_projection, feed_previous=True)
-            else:
-                decoder_outputs, _ = tf.contrib.legacy_seq2seq.embedding_attention_seq2seq(
-                    self.encoder_inputs, self.decoder_inputs, encoCell, num_encoder_symbols=source_vocab_size,
-                    num_decoder_symbols=target_vocab_size, embedding_size=hidden_size,
-                    output_projection=output_projection, feed_previous=True)
-                # 因为seq2seq模型中未指定output_projection，所以需要在输出之后自己进行output_projection
-                if output_projection is not None:
-                    self.outputs = tf.matmul(decoder_outputs, output_projection[0]) + output_projection[1]
-        else:
-            # 因为不需要将output作为下一时刻的输入，所以不用output_projection
-            decoder_outputs, _ = tf.contrib.legacy_seq2seq.embedding_attention_seq2seq(
-                self.encoder_inputs, self.decoder_inputs, encoCell, num_encoder_symbols=source_vocab_size,
-                num_decoder_symbols=target_vocab_size, embedding_size=hidden_size, output_projection=output_projection,
-                feed_previous=False)
-            self.loss = tf.contrib.legacy_seq2seq.sequence_loss(
-                decoder_outputs, self.decoder_targets, self.target_weights, softmax_loss_function=softmax_loss_function)
-
-            # Initialize the optimizer
-            opt = tf.train.AdamOptimizer(learning_rate=self.learning_rate, beta1=0.9, beta2=0.999, epsilon=1e-08)
-            self.optOp = opt.minimize(self.loss)
-
-        self.saver = tf.train.Saver(tf.all_variables())
+model_with_buckets
+│
+├── seq2seq函数
+│   
+│   ├── basic_rnn_seq2seq
+│   │   ├── rnn_decoder
+│   └── tied_rnn_seq2seq
+│   ├── embedding_tied_rnn_seq2seq
+│   └── embedding_rnn_seq2seq
+│   │   ├── embedding_rnn_decoder
+│   ├── embedding_attention_seq2seq
+│   │   ├── embedding_attention_decoder
+│   │   │   ├── attention_decoder
+│   │   │   ├── attention
+│   └── one2many_rnn_seq2seq
+│   
+└── loss函数
+    ├── sequence_loss_by_example
+    ├── sequence_loss
 ```
 
-step 函数定义，主要用于给定一个batch的数据，构造相应的 feed_dict 和 run_opt
+### model_with_buckets()函数
 
 ```py
-    def step(self, session, encoder_inputs, decoder_inputs, decoder_targets, target_weights, go_token_id):
-        # 传入一个batch的数据，并训练性对应的模型
-        # 构建sess.run时的feed_inpits
-        feed_dict = {}
-        if not self.forward_only:
-            feed_dict[self.keep_drop] = 0.5
-            for i in range(self.en_de_seq_len[0]):
-                feed_dict[self.encoder_inputs[i].name] = encoder_inputs[i]
-            for i in range(self.en_de_seq_len[1]):
-                feed_dict[self.decoder_inputs[i].name] = decoder_inputs[i]
-                feed_dict[self.decoder_targets[i].name] = decoder_targets[i]
-                feed_dict[self.target_weights[i].name] = target_weights[i]
-            run_ops = [self.optOp, self.loss]
-        else:
-            feed_dict[self.keep_drop] = 1.0
-            for i in range(self.en_de_seq_len[0]):
-                feed_dict[self.encoder_inputs[i].name] = encoder_inputs[i]
-            feed_dict[self.decoder_inputs[0].name] = [go_token_id]
-            if self.beam_search:
-                run_ops = [self.beam_path, self.beam_symbol]
-            else:
-                run_ops = [self.outputs]
-
-        outputs = session.run(run_ops, feed_dict)
-        if not self.forward_only:
-            return None, outputs[1]
-        else:
-            if self.beam_search:
-                return outputs[0], outputs[1]
-
+def model_with_buckets(encoder_inputs,
+                      decoder_inputs,
+                      targets,
+                      weights,
+                      buckets,
+                      seq2seq,
+                      softmax_loss_function=None,
+                      per_example_loss=False,
+                      name=None):
 ```
 
-## 4. 模型定制 TF-Beam search
+这个函数，目的是为了减少计算量和加快模型计算速度，然后由于这部分代码比较古老，你会发现有些地方还在使用static_rnn()这种函数，其实新版的tf中引入dynamic_rnn之后就不需要这么做了。
 
-beam search 是在预测时需要用到，代替 greedy，但是如何编程实现呢？ 如何在TF内模型构建时进行？
+分析一下，其实思路很简单，就是将输入长度分成不同的间隔，这样数据的在填充时只需要填充到相应的bucket长度即可，不需要都填充到最大长度。
 
+比如 buckets 取 `[(5，10), (10，20),(20，30)...]` 每个 bucket 的
 
+1. 第一个数字表示 source 填充的长度
+2. 第二个数字表示 target 填充的长度
 
+举个🌰 eg：**‘我爱你’-->‘I love you’**， 应该会被分配到第一个bucket中
 
+然后‘我爱你’会被pad成长度为5的序列，‘I love you’会被pad成长度为10的序列。其实就是每个bucket表示一个模型的参数配置。这样对每个bucket都构造一个模型，然后训练时取相应长度的序列进行，而这些模型将会共享参数。其实这一部分可以参考现在的dynamic_rnn来进行理解，dynamic_rnn是对每个batch的数据将其pad至本batch中长度最大的样本，而bucket则是在数据预处理环节先对数据长度进行聚类操作。
 
-> beam search 是在预测时需要用到，所以在tf之外用python实现也可，这样做可能造成decode速度变慢
+我们再看一下该函数的参数和内部实现：
 
-## 5. 模型训练
+```py
+   encoder_inputs: encoder的输入，一个tensor的列表。列表中每一项都是encoder时的一个词（batch）。
+   decoder_inputs: decoder的输入，同上
+   targets:        目标值，与decoder_input只相差一个<EOS>符号，int32型
+   weights:        目标序列长度值的mask标志，如果是padding则weight=0，否则weight=1
+   buckets:        就是定义的bucket值，是一个列表：[(5，10), (10，20),(20，30)...]
+   seq2seq:        定义好的seq2seq模型，可以使用后面介绍的embedding_attention_seq2seq，embedding_rnn_seq2seq，basic_rnn_seq2seq等
+   softmax_loss_function: 计算误差的函数，(labels, logits)，默认为sparse_softmax_cross_entropy_with_logits
+   per_example_loss: 如果为真，则调用sequence_loss_by_example，返回一个列表，其每个元素就是一个样本的loss值。如果为假，则调用sequence_loss函数，对一个batch的样本只返回一个求和的loss值，具体见后面的分析
+   name: Optional name for this operation, defaults to "model_with_buckets".
+```
 
-## 6. 模型预测
+内部代码这里不会全部贴上来，捡关键的说一下：
 
+```py
+#保存每个bucket对应的loss和output    
+losses = []
+outputs = []
+with ops.name_scope(name, "model_with_buckets", all_inputs):
+#对每个bucket都要选择数据进行构建模型
+for j, bucket in enumerate(buckets):
+ #buckets之间的参数要进行复用
+ with variable_scope.variable_scope(variable_scope.get_variable_scope(), reuse=True if j > 0 else None):
+
+   #调用seq2seq进行解码得到输出，这里需要注意的是，encoder_inputs和decoder_inputs是定义好的placeholder，
+   #都是长度为序列最大长度的列表（也就是最大的那个buckets的长度），按上面的例子，这两个placeholder分别是长度为20和30的列表。
+   #在构建模型时，对于每个bucket，只取其对应的长度个placeholder即可，如对于（5,10）这个bucket，就取前5/10个placeholder进行构建模型
+   bucket_outputs, _ = seq2seq(encoder_inputs[:bucket[0]], decoder_inputs[:bucket[1]])
+   outputs.append(bucket_outputs)
+   #如果指定per_example_loss则调用sequence_loss_by_example，losses添加的是一个batch_size大小的列表
+   if per_example_loss:
+     losses.append(
+         sequence_loss_by_example(
+             outputs[-1],
+             targets[:bucket[1]],
+             weights[:bucket[1]],
+             softmax_loss_function=softmax_loss_function))
+   #否则调用sequence_loss，对上面的结果进行求和，losses添加的是一个值
+   else:
+     losses.append(
+         sequence_loss(
+             outputs[-1],
+             targets[:bucket[1]],
+             weights[:bucket[1]],
+             softmax_loss_function=softmax_loss_function))
+```
+
+函数的输出为outputs和losses，其tensor的shape见上面解释。
+                              
 ## Reference
 
-- [Tensorflow新版Seq2Seq接口使用](https://blog.csdn.net/thriving_fcl/article/details/74165062)
-- [tensorflow官网API指导](https://www.tensorflow.org/api_docs/python/tf/contrib/legacy_seq2seq)
-- [DeepQA](https://github.com/Conchylicultor/DeepQA#chatbot)
-- [Neural_Conversation_Models](https://github.com/pbhatia243/Neural_Conversation_Models)
+- [官网代码](https://github.com/tensorflow/tensorflow/blob/r1.4/tensorflow/contrib/legacy_seq2seq/python/ops/seq2seq.py)
+- [Tensorflow源码解读（一）：Attention Seq2Seq模型](https://zhuanlan.zhihu.com/p/27769667)
+- [Chatbots with Seq2Seq](http://complx.me/2016-06-28-easy-seq2seq/)
+- [tensorflow的legacy_seq2seq](https://lan2720.github.io/2017/03/10/tensorflow%E7%9A%84legacy-seq2seq/)
+- [Neural Machine Translation (seq2seq) Tutorial](https://github.com/tensorflow/nmt#tips--tricks)
+- [Tensorflow新版Seq2Seq接口使用][1]
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
+[1]: https://blog.csdn.net/thriving_fcl/article/details/74165062
+[2]: https://github.com/tensorflow/tensorflow/blob/r1.4/tensorflow/contrib/legacy_seq2seq/python/ops/seq2seq.py
+
 

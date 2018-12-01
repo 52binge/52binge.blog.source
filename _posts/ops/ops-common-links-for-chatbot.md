@@ -1,9 +1,9 @@
 ---
 title: Common Useful Links for Chatbot
 toc: true
-date: 2018-11-22 16:16:21
+date: 2018-11-15 16:16:21
 categories: devops
-tags: help
+tags: chatbot
 ---
 
 Here are some useful links about Chatbot
