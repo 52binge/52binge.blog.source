@@ -2,8 +2,8 @@
 title: Chatbot Research 9 - 旧版 tf.contrib.legacy_seq2seq API 介绍
 toc: true
 date: 2018-11-19 14:00:21
-categories: deeplearning
-tags: deeplearning.ai
+categories: chatbot
+tags: tf.contrib.legacy_seq2seq
 mathjax: true
 ---
 

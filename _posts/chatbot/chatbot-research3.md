@@ -2,8 +2,8 @@
 title: Chatbot Research 3 - 机器学习构建 chatbot
 toc: true
 date: 2017-08-13 14:00:21
-categories: deeplearning
-tags: deeplearning.ai
+categories: chatbot
+tags: Chatbot
 mathjax: true
 ---
 

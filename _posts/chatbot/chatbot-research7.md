@@ -2,8 +2,8 @@
 title: Chatbot Research 7 - Dialog_Corpus 常用数据集
 toc: true
 date: 2017-09-26 14:00:21
-categories: deeplearning
-tags: deeplearning.ai
+categories: chatbot
+tags: Dialog_Corpus
 mathjax: true
 ---
 

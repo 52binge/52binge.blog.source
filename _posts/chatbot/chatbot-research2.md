@@ -2,7 +2,7 @@
 title: Chatbot Research 2 - NLP基础知识回顾
 toc: true
 date: 2017-08-12 14:00:21
-categories: nlp
+categories: chatbot
 tags: NLTK
 mathjax: true
 ---

@@ -2,7 +2,7 @@
 title: Chatbot Research 10 - Chatbot 的第一个版本 (简单实现)
 toc: true
 date: 2018-11-26 22:00:21
-categories: deeplearning
+categories: chatbot
 tags: Chatbot
 mathjax: true
 ---

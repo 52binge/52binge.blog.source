@@ -2,8 +2,8 @@
 title: Chatbot Research 6 - 更多论文 (感谢 PaperWeekly)
 toc: true
 date: 2017-08-16 14:00:21
-categories: deeplearning
-tags: deeplearning.ai
+categories: chatbot
+tags: PaperWeekly
 mathjax: true
 ---
 
