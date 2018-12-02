@@ -1,7 +1,7 @@
 ---
 title: TensorFlow：第8章 LSTM & Bi-RNN & Deep RNN
 toc: true
-date: 3017-11-10 13:00:21
+date: 2018-11-10 13:00:21
 categories: deeplearning
 tags: RNN
 mathjax: true

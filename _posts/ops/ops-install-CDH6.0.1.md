@@ -1,5 +1,5 @@
 ---
-title: 大数据平台CDH集群在线安装
+title: 大数据平台CDH6.0集群在线安装
 toc: true
 date: 2018-11-02 14:16:21
 categories: devops

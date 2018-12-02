@@ -1,7 +1,7 @@
 ---
 title: Glove 和 fastText
 toc: true
-date: 3017-11-28 07:00:21
+date: 2018-11-16 07:00:21
 categories: nlp
 tags: Glove
 mathjax: true
