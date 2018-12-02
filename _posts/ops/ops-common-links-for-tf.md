@@ -21,6 +21,13 @@ Here are some useful links about Tensorflow
 - [tf.strided_slice函数][7]
 - [Tensorlow 中文API: 常量(constants) - 5. tf.fill][8]
 - [【TensorFlow】tf.concat的用法][9]
+- [[第 28 天] 深度學習（2）TensorBoard][10]
+- [tf.identity的意义以及用例][11]
+- [Tensorflow动态seq2seq使用总结（r1.3）- Loss Function][12]
+- [tensorflow学习笔记(二十一):tensorflow可视化][13]
+- [tensorflow—tf.gradients()简单实用教程][14]
+- [tf.clip_by_global_norm理解][15]
+- [Tensorflow 学习笔记（六） ———— Optimizer][16]
 
 [1]: https://blog.csdn.net/leviopku/article/details/78508951
 [2]: https://feisky.xyz/machine-learning/tensorflow/hello.html
@@ -31,5 +38,10 @@ Here are some useful links about Tensorflow
 [7]: https://blog.csdn.net/banana1006034246/article/details/75092388
 [8]: https://zhuanlan.zhihu.com/p/27685060
 [9]: https://blog.csdn.net/mao_xiao_feng/article/details/53366163
-
-
+[10]: https://ithelp.ithome.com.tw/articles/10187814
+[11]: https://blog.csdn.net/hu_guan_jie/article/details/78495297
+[12]: https://www.jianshu.com/p/c0c5f1bdbb88
+[13]: https://blog.csdn.net/u012436149/article/details/53184847
+[14]: https://blog.csdn.net/hustqb/article/details/80260002
+[15]: https://blog.csdn.net/u013713117/article/details/56281715
+[16]: https://applenob.github.io/tf_6.html
