@@ -1,7 +1,7 @@
 ---
 title: Chatbot Research 10 - Chatbot 的第一个版本 (简单实现)
 toc: true
-date: 2018-11-26 22:00:21
+date: 2017-11-26 22:00:21
 categories: chatbot
 tags: Chatbot
 mathjax: true
@@ -195,20 +195,6 @@ step 函数定义，主要用于给定一个batch的数据，构造相应的 fee
                 return outputs[0], outputs[1]
 
 ```
-
-## 4. 模型定制 TF-Beam search
-
-beam search 是在预测时需要用到，代替 greedy，但是如何编程实现呢？ 如何在TF内模型构建时进行？
-
-
-
-
-
-> beam search 是在预测时需要用到，所以在tf之外用python实现也可，这样做可能造成decode速度变慢
-
-## 5. 模型训练
-
-## 6. 模型预测
 
 ## Reference
 

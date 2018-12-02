@@ -64,7 +64,7 @@ decoder文件中定义了
 - Decoder抽象类
 - dynamic_decode函数
 
-> dynamic_decode 可以视为整个解码过程的入口，需要传入的参数就是 Decoder 的一个实例，他会动态的调用 Decoder 的 `step`函数 按步执行 decode，可以理解为Decoder类定义了单步解码（根据输入求出输出，并将该输出当做下一时刻输入），而dynamic_decode则会调用control_flow_ops.while_loop这个函数来循环执行直到输出<eos>结束编码过程
+> dynamic_decode 可以视为整个解码过程的入口，需要传入的参数就是 Decoder 的一个实例，他会动态的调用 Decoder 的 `step`函数 按步执行 decode，可以理解为Decoder类定义了单步解码（根据输入求出输出，并将该输出当做下一时刻输入），而dynamic_decode则会调用control_flow_ops.while_loop这个函数来循环执行直到输出<eos>结束编码过程.
 
 ### 2.2 cell类型（Attention类型）
 

@@ -1,7 +1,7 @@
 ---
 title: Chatbot Research 8 - 理论 seq2seq+Attention 机制模型详解
 toc: true
-date: 2018-11-17 22:00:21
+date: 2017-11-17 22:00:21
 categories: chatbot
 tags: Attention
 mathjax: true
