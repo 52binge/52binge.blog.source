@@ -13,7 +13,7 @@ mathjax: true
 
 <!-- more -->
 
-## 1. 评价指标
+## 1. 评价指标*概览
 
 **对于某一轮对话而言:**
 
@@ -31,15 +31,47 @@ mathjax: true
 
 ## 2. 词重叠评价指标
 
+首先来看词重叠评价指标，他们认为有效地回答应该和真实回答之间存在大量的词重叠
+（但是对话系统的答案空间往往是发散的，也就是一个问题的答案可能是完全不同的两句话，这种情况下该评价指标效果不好），也就是说这是一个非常强的假设。（以下环节中r表示真是响应，r^表示系统生成响应）
+
 ## 3. BLEU
+
+该评价指标有IBM在2002年提出，参考论文“BLEU: a Method for Automatic Evaluation of Machine Translation”，常作为机器翻译系统评价指标。其实就是统计生成响应和真实响应中的n-gram词组在整个训练语料中出现次数。公式如下所示：
+
+<img src="/images/chatbot/chatbot-12.1.jpg" width="400" /img>
+
+> ROUGE : 该指标常用于文本摘要领域
+> METEOR: BLEU 的升级版
 
 ## 4. 词向量评价指标
 
+上面的词重叠评价指标基本上都是n-gram方式，去计算生成响应和真实响应之间的重合程度，共现程度等指标。而词向量则是通过Word2Vec等方法将句子转换为向量表示，这样一个句子就被映射到一个低维空间，句向量在一定程度上表征了其含义，在通过余弦相似度等方法就可以计算两个句子之间的相似程度。使用词向量的好处是，可以一定程度上增加答案的多样性，因为这里大多采用词语相似度进行表征，相比词重叠中要求出现完全相同的词语，限制降低了很多。
+
 ## 5. perplexity困惑度
+
+perplexity是语言模型中的指标，用于评价语言模型的好坏，其实就是估算一句话出现的概率，看一句话是否通顺。也经常会在对话系统中出现评价生成的响应是否符合语言规则，计算方法也很简单，如下图所示：
+
+<img src="/images/chatbot/chatbot-12.3.jpg" width="400" /img>
+
+所以当我们使用tf.contrib.seq2seq.sequence_loss()函数计算模型loss的时候，perplexity的计算就显得很简单了，直接对计算出来的loss取个指数就行了，命令如下所示：
+
+```py
+train_perp = math.exp(float(mean_loss)) if mean_loss < 300 else math.inf
+```
+
+现在我训练的对话系统，一般都只是用了perplexity来评判模型的效果，最终perplexity可以降到20左右（越小越好，说明越接近于自然语言）。
 
 ## 6. 人工指标
 
+最后说一下人工评价，首先来讲，上面说了这么多的评价指标，并没有一个可以很好的解决对话系统的问题，就像“How NOT To Evaluate Your Dialogue System”论文中说到的那样，当下的这些评价指标都跟人工评价成弱相关或者完全没有关系，相关程度跟具体的数据集有关。
 
+以下摘自徐阿衡的回答：
+
+- 在闲聊性质的数据集上，上述 metric 和人工判断有一定微弱的关联 (only a small positive correlation on chitchat oriented Twitter dataset)
+- 在技术类的数据集上，上述 metric 和人工判断完全没有关联(no correlation at all on the technical UDC)
+- 当局限于一个特别具体的领域时，BLEU 会有不错的表现
+
+随着发展，还逐渐有了一些别的评价方法，比如使用GAN网络来评价生成的回复是否跟人类回复相似等等。。。
 
 ## Reference
 
