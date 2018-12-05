@@ -19,7 +19,10 @@ Summarize NLP my offer road
 
 ## Seq2Seq
 
-7. seq2seq时遇到的deepcopy和beam_search两个问题以及解决方案.
+- seq2seq时遇到的deepcopy和beam_search两个问题以及解决方案.
+- 知名博主WildML给google写了个通用的seq2seq，[文档地址][7] ， [Github地址][8]
+- [Tensorflow动态seq2seq使用总结](https://www.jianshu.com/p/c0c5f1bdbb88)
+- [荷楠仁 tensorflow sequence_loss](https://www.cnblogs.com/zhouyang209117/p/8338193.html)
 
 ## 多标签分类
 
@@ -56,6 +59,9 @@ Summarize NLP my offer road
 
 但是我感觉临时突击这些东西价值不大，主要还是看面试的一个整体效果
 
+
+- [如何理解互信息公式的含义?](https://www.zhihu.com/question/24059517)
+
 ## Reference
 
 - [2019 11家互联网公司，NLP面经回馈][1]
@@ -69,6 +75,7 @@ Summarize NLP my offer road
 [3]: https://www.zhihu.com/question/265357659
 [4]: https://blog.csdn.net/liuchonge/article/details/77140719
 [5]: https://zhuanlan.zhihu.com/p/25928551
-
+[7]: https://google.github.io/seq2seq/
+[8]: https://github.com/google/seq2seq
 
 
