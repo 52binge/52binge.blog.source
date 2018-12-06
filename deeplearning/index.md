@@ -18,12 +18,12 @@ No. | <font color="#0085a1">**Neural Networks**</font> | <font color="#0085a1">*
 > 
 > so the one place you might use as linear activation function others usually in the output layer.
 
-[in1]: /2018/07/14/deeplearning-ai-Neural-Networks-and-Deep-Learning-week3/#3-神经网络中的激活函数
+[in1]: /2018/07/14/deeplearning/Neural-Networks-and-Deep-Learning-week3/#3-神经网络中的激活函数
 
-[c1w1]: /2017/12/01/deeplearning-ai-Neural-Networks-and-Deep-Learning-week1/
-[c1w2]: /2018/07/07/deeplearning-ai-Neural-Networks-and-Deep-Learning-week2/
-[c1w3]: /2018/07/14/deeplearning-ai-Neural-Networks-and-Deep-Learning-week3/
-[c1w4]: /2018/07/15/deeplearning-ai-Neural-Networks-and-Deep-Learning-week4/
+[c1w1]: /2017/12/01/deeplearning/Neural-Networks-and-Deep-Learning-week1/
+[c1w2]: /2018/07/07/deeplearning/Neural-Networks-and-Deep-Learning-week2/
+[c1w3]: /2018/07/14/deeplearning/Neural-Networks-and-Deep-Learning-week3/
+[c1w4]: /2018/07/15/deeplearning/Neural-Networks-and-Deep-Learning-week4/
 
 ## 2. Improving Deep Neural Networks 
 
@@ -33,9 +33,9 @@ No. | <font color="#0085a1">**Improving**</font> | <font color="#0085a1">**Impro
 6 | [Optimization][c2w2] | mini-batch、指数加权平均-偏差修正、Momentum、RMSprop、Adam、α decay、局部优
 7 | [超参数调试、Batch][c2w3] | Hyperparameter、Normalizing Activations、Batch Norm [Fitting NN]、Softmax
 
-[c2w1]: /2018/07/19/deeplearning-ai-Improving-Deep-Neural-Networks-week1/
-[c2w2]: /2018/07/21/deeplearning-ai-Improving-Deep-Neural-Networks-week2/
-[c2w3]: /2018/07/23/deeplearning-ai-Improving-Deep-Neural-Networks-week3/
+[c2w1]: /2018/07/19/deeplearning/Improving-Deep-Neural-Networks-week1/
+[c2w2]: /2018/07/21/deeplearning/Improving-Deep-Neural-Networks-week2/
+[c2w3]: /2018/07/23/deeplearning/Improving-Deep-Neural-Networks-week3/
 
 ## 3. Structured Machine Learning 
 
@@ -44,8 +44,8 @@ No. | <font color="#0085a1">**Structured**</font> | <font color="#0085a1">**Stru
 8 | [ML Strategy 1][c3w1] | 正交化、Satisficing and optimizing metrics、Train/dev/test 改变、可避免偏差、人的表现
 9 | [ML Strategy 2][c3w2] | 误差分析、标注错误数据、定位数据不匹配偏差与方差、迁移学习、多任务学习、端到端学习
 
-[c3w1]: /2018/07/24/deeplearning-ai-Structured-Machine-Learning-Projects-week1/
-[c3w2]: /2018/07/25/deeplearning-ai-Structured-Machine-Learning-Projects-week2/
+[c3w1]: /2018/07/24/deeplearning/Structured-Machine-Learning-Projects-week1/
+[c3w2]: /2018/07/25/deeplearning/Structured-Machine-Learning-Projects-week2/
 
 ## 4. Convolutional Neural Networks
 
@@ -58,10 +58,10 @@ No. | <font color="#0085a1">**CNN**</font> | <font color="#0085a1">**Convolution
 
 > LeNet-5、AlexNet、VGG、ResNet (有152层)、Inception。 目标定位、特征点检测、Bounding Box预测、Anchor Boxes
 
-[c4w1]: /2018/08/21/deeplearning-ai-Convolutional-Neural-Networks-week1/
-[c4w2]: /2018/08/24/deeplearning-ai-Convolutional-Neural-Networks-week2/
-[c4w3]: /2018/09/01/deeplearning-ai-Convolutional-Neural-Networks-week3/
-[c4w4]: /2018/09/08/deeplearning-ai-Convolutional-Neural-Networks-week4/
+[c4w1]: /2018/08/21/deeplearning/Convolutional-Neural-Networks-week1/
+[c4w2]: /2018/08/24/deeplearning/Convolutional-Neural-Networks-week2/
+[c4w3]: /2018/09/01/deeplearning/Convolutional-Neural-Networks-week3/
+[c4w4]: /2018/09/08/deeplearning/Convolutional-Neural-Networks-week4/
 
 ## 5. Sequence Models
 
@@ -71,9 +71,9 @@ No. | <font color="#0085a1">**Sequence Models**</font> | <font color="#0085a1">*
 15 | [NLP & Word Embeddings][c5w2] | Matrix、Word2Vec、Negative Sampling、GloVe、Debiasing Word Embeddings
 16 | [Sequence Models & Attention][c5w3] | Greedy Search、Beam Search、Error analysis on beam search、Attention
 
-[c5w1]: /2018/07/26/deeplearning-ai-Sequence-Models-week1/
-[c5w2]: /2018/08/02/deeplearning-ai-Sequence-Models-week2/
-[c5w3]: /2018/08/14/deeplearning-ai-Sequence-Models-week3/
+[c5w1]: /2018/07/26/deeplearning/Sequence-Models-week1/
+[c5w2]: /2018/08/02/deeplearning/Sequence-Models-week2/
+[c5w3]: /2018/08/14/deeplearning/Sequence-Models-week3/
 
 [0]: / 
 
@@ -143,43 +143,43 @@ No. | <font color="#0085a1">**Machine Learning Tree Model**</font> | <font color
 [n2]: /2017/07/30/nlp-01-string-operation-re/
 [n3]: /2017/11/13/nlp-pre-statistics-language-model/
 [n4]: /2017/07/29/nlp-01-jieba/
-[n5_1]: /2017/08/10/ml-4-naive-bayes-1/
-[n5_2]: /2017/08/23/ml-4-naive-bayes-2/
+[n5_1]: /2017/08/10/ml/4-naive-bayes-1/
+[n5_2]: /2017/08/23/ml/4-naive-bayes-2/
 [n6]: /2017/07/12/nlp-word-vector-basic/
 [n7]: /2017/11/14/nlp-pre-hidden-markov-model/
 
-[1.1]: /2016/09/20/ml-coursera-ng-w1-01-introduce/
-[1.2]: /2016/09/28/ml-coursera-ng-w1-02-cost-function-gradient-descent/
-[1.3]: /2016/09/30/ml-coursera-ng-w1-03-Linear-Algebra/
+[1.1]: /2016/09/20/ml/coursera-ng-w1-01-introduce/
+[1.2]: /2016/09/28/ml/coursera-ng-w1-02-cost-function-gradient-descent/
+[1.3]: /2016/09/30/ml/coursera-ng-w1-03-Linear-Algebra/
 
-[2]: /2016/10/08/ml-coursera-ng-w2-01-Linear-Regression/
-[3]: /2016/10/24/ml-coursera-ng-w3-LR/
+[2]: /2016/10/08/ml/coursera-ng-w2-01-Linear-Regression/
+[3]: /2016/10/24/ml/coursera-ng-w3-LR/
 
-[4]: /2017/02/07/ml-coursera-ng-w4-NN-02/
-[5]: /2017/02/13/ml-coursera-ng-w4-NN-03/
+[4]: /2017/02/07/ml/coursera-ng-w4-NN-02/
+[5]: /2017/02/13/ml/coursera-ng-w4-NN-03/
 
-[6.1]: /2017/05/24/ml-coursera-ng-w6-Advice-for-Applying-Machine-Learning/
-[6.2]: /2017/05/29/ml-coursera-ng-w6-Machine-Learning-System-Design/
+[6.1]: /2017/05/24/ml/coursera-ng-w6-Advice-for-Applying-Machine-Learning/
+[6.2]: /2017/05/29/ml/coursera-ng-w6-Machine-Learning-System-Design/
 
-[7]: /2017/10/13/ml-coursera-ng-w7-svm/
-[8]: /2018/01/24/ml-coursera-ng-w8-clustering-1/
+[7]: /2017/10/13/ml/coursera-ng-w7-svm/
+[8]: /2018/01/24/ml/coursera-ng-w8-clustering-1/
 
-[11]: /2018/07/11/ml-1-L1-L2/
-[12]: /2018/07/05/ml-1-roc-auc-summary/
+[11]: /2018/07/11/ml/1-L1-L2/
+[12]: /2018/07/05/ml/1-roc-auc-summary/
 
-[14.1]: /2017/08/10/ml-4-naive-bayes-1/
-[14.2]: /2017/08/23/ml-4-naive-bayes-2/
+[14.1]: /2017/08/10/ml/4-naive-bayes-1/
+[14.2]: /2017/08/23/ml/4-naive-bayes-2/
 
-[15.1]: /2016/08/16/ml-5-decisionTree-part1/
-[15.2]: /2018/06/27/ml-5-decisionTree-part2/
+[15.1]: /2016/08/16/ml/5-decisionTree-part1/
+[15.2]: /2018/06/27/ml/5-decisionTree-part2/
 
-[17]: /2018/06/29/ml-8-gradient-boosting-part1/
-[18]: /2018/07/03/ml-8-xgboost/
+[17]: /2018/06/29/ml/8-gradient-boosting-part1/
+[18]: /2018/07/03/ml/8-xgboost/
 [18.1]: https://weibo.com/u/2397265244?is_all=1
 
-[19.1]: /2018/04/07/ml-9-ensumble-boosting-1/
-[19.2]: /2018/04/11/ml-9-ensumble-boosting-2/
-[19]: /2018/07/03/ml-9-ensumble-part1/
+[19.1]: /2018/04/07/ml/9-ensumble-boosting-1/
+[19.2]: /2018/04/11/ml/9-ensumble-boosting-2/
+[19]: /2018/07/03/ml/9-ensumble-part1/
 
 <!--## Internet Finance
 
