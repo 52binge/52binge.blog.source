@@ -44,7 +44,7 @@ Summarize NLP my offer road
 12. Attention机制的计算细节和公式是怎样的，然后我就介绍了一下公式的计算方法，然后说了一下改进的方案等。
 13. MMI模型第一个改进目标函数中P(T)是如何计算的？ 我说每个词的联合概率分布乘积，当时他面露疑问，我还没反应过来是什么意思，到后面有说到这个问题才明白，原来他的意思是P(T)应该是单纯语言模型学习出来的结果，而按照我的说法，P(T)是在输入的基础上进行计算的
 
-## deep\_learning
+## deep
 
 14. FastText，CNN，RNN的区别？
 
@@ -63,12 +63,14 @@ Summarize NLP my offer road
 - [在文本分类任务中，有哪些论文中很少提及却对性能有重要影响的tricks？][3]
 - [深度学习与文本分类总结第一篇--常用模型总结][4]
 - [用深度学习（CNN RNN Attention）解决大规模文本分类问题 - 综述和实践][5]
+- [严重数据倾斜文本分类，比如正反比1:20～100，适合什么model][6]
 
 [1]: https://zhuanlan.zhihu.com/p/46999592
 [2]: https://zhuanlan.zhihu.com/p/36387348
 [3]: https://www.zhihu.com/question/265357659
 [4]: https://blog.csdn.net/liuchonge/article/details/77140719
 [5]: https://zhuanlan.zhihu.com/p/25928551
+[6]: https://www.zhihu.com/question/59236897
 
 
 
