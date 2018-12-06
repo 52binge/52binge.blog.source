@@ -1,7 +1,7 @@
 ---
 title: mac 安装 mysql 与 常用命令
 toc: true
-date: 2018-12-03 09:16:21
+date: 2017-12-03 09:16:21
 categories: devops
 tags: mysql
 ---
