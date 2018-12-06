@@ -76,12 +76,8 @@ Summarize NLP my offer road
 [3]: https://www.zhihu.com/question/265357659
 [4]: https://blog.csdn.net/liuchonge/article/details/77140719
 [5]: https://zhuanlan.zhihu.com/p/25928551
-<<<<<<< HEAD
 [6]: https://www.zhihu.com/question/59236897
-
-=======
 [7]: https://google.github.io/seq2seq/
 [8]: https://github.com/google/seq2seq
->>>>>>> f1064f2ac7dfc1e97d10a34abb58961d0c830e5f
 
 
