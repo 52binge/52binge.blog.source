@@ -1,5 +1,5 @@
 ---
-title: cin 与 scanf
+title: 格式化输入 scanf 与 输入流 cin
 toc: true
 date: 2010-09-24 18:04:21
 categories: icpc

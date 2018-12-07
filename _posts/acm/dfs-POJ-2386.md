@@ -1,5 +1,5 @@
 ---
-title: POJ 2386 Lake Counting 搜索的经典
+title: 搜索的经典 POJ 2386 Lake Counting 
 toc: true
 date: 2010-09-27 18:04:21
 categories: icpc
