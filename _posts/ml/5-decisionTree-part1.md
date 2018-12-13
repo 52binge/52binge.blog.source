@@ -36,7 +36,7 @@ tags: [decision-tree]
 代表性的例子说明 :
 
 ID | 阴晴(F)	| 温度(F)	| 湿度(F)	| 刮风(F)	| 是否玩（C）
-------- | ------- | ------- | ------- | ------- | -------
+:-------: | :-------: | :-------: | :-------: | :-------: | :-------:
 1	| sunny |	hot	 |	high |	false | 否
 2	| sunny |	hot	 |	high |	true |	否
 3	| overcast |	hot	 |	high |	false |	是
@@ -100,7 +100,7 @@ Feature Selection，如何量化最优Feature? `->` 导致 DT Algorithm 出现�
 那么如何才能做到选择的特征对应的样本子集纯度最高呢？
 
 Algorithm | Feature 选择方法 | Author
-------- | ------- | -------
+:-------: | :-------: | :-------:
 ID3 | Information gain | Quinlan. 1986
 C4.5 | Gain ratio | Quinlan. 1993.
 CART | 回归树： 最小二乘<br>分类树： 基尼指数 Gini index | Breiman. 1984<br>(Classification and Regression Tree 分类与回归树)
@@ -224,7 +224,7 @@ $$
 >>>
 ```
 
-## Reference article
+## Reference
 
 - [逗比算法工程师][9]、[算法杂货铺][10]、[52caml][11]
 - [决策树ID3、C4.5、CART算法：信息熵，区别，剪枝理论总结][c2]

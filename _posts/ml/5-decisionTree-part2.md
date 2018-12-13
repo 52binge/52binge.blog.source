@@ -4,24 +4,7 @@ toc: true
 date: 2018-06-27 16:43:21
 categories: machine-learning
 tags: [decision-tree]
-description: decision tree learning
-mathjax: true
-list_number: true
 ---
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
 
 <img src="/images/ml/decision-tree/decision-tree-2.png" width="330" /img>
 
@@ -84,7 +67,7 @@ Notes: 决策树的生成对应于模型的局部选择，决策树的剪枝对�
 - 常用准则
 
 > Algorithm | Feature 选择方法 | Author
-> ------- | ------- | -------
+> :-------: | :-------: | :-------:
 > ID3 | Information gain | Quinlan. 1986
 > C4.5 | Gain ratio | Quinlan. 1993.
 CART | 回归树： 最小二乘<br>分类树： 基尼指数 Gini index | Breiman. 1984<br>(Classification and Regression Tree 分类与回归树)
@@ -171,7 +154,7 @@ C4.5算法与ID3算法类似，不同之处在于，C4.5在生成的过程中，
 CART 中用于选择变量的不纯性度量是 **Gini index**；如果目标变量是标称的，并且是具有两个以上的类别，则 CART 可能考虑将目标类别合并成两个超类别（双化）；如果目标变量是连续的，则 CART 找出一组基于树的回归方程来预测目标变量。
 
 Algorithm | Feature Selection | Author
-------- | ------- | -------
+:-------: | :-------: | :-------:
 CART | 回归树： 最小二乘<br>分类树： 基尼指数 Gini index | Breiman. 1984<br>(Classification and Regression Tree 分类与回归树)
 
 ### 5.2 CART 步骤
@@ -438,7 +421,7 @@ $$
 代表性的例子说明 :
 
 ID | 阴晴(F)	| 温度(F)	| 湿度(F)	| 刮风(F)	| 是否玩（C）
-------- | ------- | ------- | ------- | ------- | -------
+:-------: | :-------: | :-------: | :-------: | :-------: | :-------:
 1	| sunny |	hot	 |	high |	false | 否
 2	| sunny |	hot	 |	high |	true |	否
 3	| overcast |	hot	 |	high |	false |	是
@@ -522,3 +505,17 @@ $$
 [14]: https://cethik.vip/2016/09/21/machineCAST/
 
 [part1]: /2016/08/16/ml-5-decisionTree-part1/
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>

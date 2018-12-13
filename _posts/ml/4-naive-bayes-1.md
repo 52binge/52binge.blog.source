@@ -363,7 +363,7 @@ $log{\frac{C}{\overline{C}}}$如果大于0则属于垃圾邮件。我们可以�
 
 如下图所示，蓝色点代表垃圾邮件，绿色点代表正常邮件，横坐标为计算出来的 $log{\frac{C}{\overline{C}}}$  值，中间的红线代表阈值。
 
-<img src="/images/nlp/nlp-bayes-07.jpg" style="width:500px; height:250px;"/> 
+<img src="/images/ml/bayes/bayes-07.jpg" style="width:500px; height:250px;"/> 
 
 > k 的选取，需要你自己判断。可以通过交叉验证来判断。
 
@@ -500,11 +500,11 @@ $$
 
 [1]: /images/ml/nlp/word-bags.jpg
 [0]: http://www.cs.unb.ca/profs/hzhang/publications/FLAIRS04ZhangH.pdf
-[3]: /images/ml/nlp/bayes-03.jpg
-[4]: /images/ml/nlp/bayes-04.jpg
-[5]: /images/ml/nlp/bayes-05.jpg
-[6]: /images/ml/nlp/bayes-06.jpg
-[7]: /images/ml/nlp/bayes-07.jpg
+[3]: /images/ml/bayes/bayes-03.jpg
+[4]: /images/ml/bayes/bayes-04.jpg
+[5]: /images/ml/bayes/bayes-05.jpg
+[6]: /images/ml/bayes/bayes-06.jpg
+[7]: /images/ml/bayes/bayes-07.jpg
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
