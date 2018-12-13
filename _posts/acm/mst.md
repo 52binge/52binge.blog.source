@@ -1,7 +1,7 @@
 ---
 title: Minimum Spanning Tree
 toc: true
-date: 2016-10-27 10:28:21
+date: 2011-10-27 10:28:21
 categories: icpc
 tags: acm
 ---

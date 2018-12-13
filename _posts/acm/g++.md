@@ -2,9 +2,8 @@
 title: 学用 g++ (初步)
 date: 2012-03-22 10:54:16
 tags: g++
-categories: devops
+categories: icpc
 toc: true
-list_number: true
 ---
 
 gcc 和 g++ 都是GNU(组织)的一个编译器.

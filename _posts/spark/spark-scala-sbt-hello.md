@@ -5,14 +5,13 @@ date: 2016-03-16 07:54:16
 tags: [scala, sbt]
 categories: spark
 toc: true
-list_number: false
 ---
 
  1. 什么是 SBT ?
  2. SBT 项目工程目录
  3. SBT 编译打包 Scala HelloWorld
 
-<!--more-->
+<!-- more -->
 
 ## 1. SBT, What?
 
@@ -59,9 +58,9 @@ Hello, SBT
 
 一个典型的SBT项目工程结构如下图所示：
 
-![图片描述][1]
+![segmentfault][1]
 
-** build.sbt 详解 **
+**build.sbt 详解**
 
 build.sbt 相当于 maven-pom.xml，它是build定义文件。 
 
@@ -108,7 +107,7 @@ libraryDependencies ++= Seq("org.scalatest" %% "scalatest" % "1.8" % "test")
 
 当然， build.sbt文件中还可以定义很多东西，比如添加插件，声明额外的repository，声明各种编译参数等等
 
-** project目录即相关文件介绍 **
+**project目录即相关文件介绍**
 
 project目录下的几个文件可以根据情况添加。
 
@@ -118,7 +117,7 @@ plugins.sbt 文件用来声明当前项目希望使用哪些插件来增强当�
 
 为了能够成功加载这些sbt插件，我们将他们的查找位置添加到resolovers当中.
 
-** 其他 **
+**其他**
 
 ```shell
 $ touch build.sbt
@@ -139,7 +138,7 @@ $ ...
 giter8的更多信息可参考https://github.com//giter8.
 
 
-## 4. SBT Cmd ##
+## 4. SBT Cmd
 
  1. actions – 显示对当前工程可用的命令
  2. update – 下载依赖
@@ -183,7 +182,7 @@ Hi!
 
 ## 6. Spark HelloWorld
 
-Spark HelloWorld 具体请看 : <a href="https://github.com/blair1/hadoop-spark/tree/master/spark/HelloWorld">Spark-Projects/HelloWorld</a>
+Spark HelloWorld 具体请看 : <a href="https://github.com/blair101/bigdata-tools/tree/master/spark/HelloWorld">Spark-Projects/HelloWorld</a>
 
 
 ➜  HelloWorld> sbt compile
@@ -195,12 +194,11 @@ $SPARK_HOME/bin/spark-submit \
     target/scala-2.11/helloworld_2.11-1.0.jar
 ``` 
     
-## 7. Referenced article ##
+## 7. Referenced#
 
 参考 : <a href="http://www.scala-sbt.org/0.13/docs/zh-cn/Getting-Started.html">scala-sbt.org/0.13/docs/zh-cn/Getting-Started.html</a>
 参考 : <a href="https://github.com/CSUG/real_world_scala/blob/master/02_sbt.markdown">CSUG/real_world_scala/blob/master/02_sbt.markdown</a>
 参考 : <a href="http://www.scala-sbt.org/0.13.1/docs/Getting-Started/Hello.html">scala-sbt.org/0.13.1/docs/Getting-Started</a>
 参考 : <a href="http://article.yeeyan.org/view/442873/404261">译言网</a>
 
-
-  [1]: https://segmentfault.com/img/bVtyRb
+[1]: https://image-static.segmentfault.com/396/971/3969713528-56ea0c71e094e_articlex

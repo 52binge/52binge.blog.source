@@ -4,10 +4,9 @@ date: 2016-05-17 15:59:16
 tags: elasticsearch
 categories: hadoop
 toc: true
-list_number: false
 ---
 
-> Elasticsearch 扩展性非常好，有很多官方和第三方开发的插件
+ Elasticsearch 扩展性非常好，有很多官方和第三方开发的插件
 
 <!--more-->
 

@@ -4,7 +4,6 @@ toc: true
 date: 2016-02-01 10:07:21
 categories: [spark]
 tags: [spark]
-mathjax: true
 ---
 
 介绍 Spark 的历史，介绍 Spark 的安装与部署，介绍 Spark 的代码架构 等
@@ -213,7 +212,7 @@ partial：含有近似评估代码。
 Spark架构采用了分布式计算中的Master-Slave模型。
 
 Role | description
-------- | -------
+:-------: | :-------:
 Master | 对应集群中的含有Master进程的节点, 集群的控制器
 Slave | 集群中含有Worker进程的节点
 |
@@ -228,14 +227,14 @@ RDD | Spark的基本计算单元，一组RDD可形成执行的 DAG
 
 ![spark][3]
 
-Spark App 流程 |
-------- | -------
-1. Client 提交应用 |
-2. Master 找到一个 Worker 启动 Driver |
-3. Driver 向 Master 或者 资源管理器申请资源，之后将应用转化为 RDD Graph |
-4. DAGScheduler 将 RDD Graph 转化为 Stage的有向无环图 提交给 TaskScheduler |
-5. TaskScheduler 提交 task 给Executor执行 |
-6. 在任务执行的过程中，其他组件协同工作，确保整个应用顺利执行 |
+Num | Spark App 流程 
+:-------: | :-------:
+1. | Client 提交应用
+2. | Master 找到一个 Worker 启动 Driver
+3. | Driver 向 Master 或者 资源管理器申请资源，之后将应用转化为 RDD Graph 
+4. | DAGScheduler 将 RDD Graph 转化为 Stage的有向无环图 提交给 TaskScheduler
+5. | TaskScheduler 提交 task 给Executor执行
+6. | 在任务执行的过程中，其他组件协同工作，确保整个应用顺利执行 
 
 > 在执行阶段，Driver 会将 Task 和 Task所依赖的file 和 jar 序列化后传递给对应的 Worker机器，同时 Executor对相应数据分区的任务进行处理。
 

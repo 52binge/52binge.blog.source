@@ -6,7 +6,7 @@ categories: tensorflow
 tags: tensorflow
 ---
 
-TensorFlow 最初由 Google 大脑的研究员和工程师开发出来，用于机器学习和神经网络方面的研究，`2015.10`宣布开源.
+2015.10 开源的 TensorFlow 是由 Google brain 的工程师开发出来，用于机器学习和神经网络方面的研究
 
 <!-- more -->
 

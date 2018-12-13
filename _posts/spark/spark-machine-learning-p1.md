@@ -9,7 +9,7 @@ mathjax: true
 
 Spark 的环境搭建与运行, 接触了 RDD 与 SparkContext, 启动 Spark-Shell 以及如何使用 Scala、Python 编写 Spark 程序. 
 
-<!--more-->
+<!-- more -->
 
 **Apache Spark**
 

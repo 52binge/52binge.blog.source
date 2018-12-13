@@ -1,5 +1,5 @@
 ---
-title: Tensorflow 例子2
+title: Tensorflow 入门例子
 toc: true
 date: 2017-08-27 11:27:21
 categories: tensorflow

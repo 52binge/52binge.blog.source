@@ -4,11 +4,11 @@ toc: true
 date: 2016-09-08 10:07:21
 categories: spark
 tags: [spark, machine-learning]
-description: introduce how to design ml system about moiveStream
-mathjax: true
 ---
 
-> Spark Machine Learing Reading Notes
+《Spark Machine Learing》 Reading Notes ： 如何设计机器学习系统 moiveStream
+
+<!-- more -->
 
 <style>
 img {

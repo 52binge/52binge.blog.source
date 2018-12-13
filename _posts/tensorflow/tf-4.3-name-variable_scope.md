@@ -1,12 +1,12 @@
 ---
-title: TensorFlow ： name_scope / variable_scope 命名方法
+title: TensorFlow 命名方法 name_scope / variable_scope 
 toc: true
 date: 2017-10-05 12:10:21
 categories: tensorflow
 tags: tensorflow
 ---
 
-本例子主要介绍 name_scope 和 variable_scope 的正确使用方式，学习并理解本例之后，你就能够真正读懂 TensorFlow 的很多代码并能够清晰地理解模型结构了
+本例主要介绍 name_scope 和 variable_scope 的正确使用方式，学习并理解本例之后，你就能够真正读懂 TensorFlow 的很多代码并能够清晰地理解模型结构了.
 
 <!-- more --> 
 

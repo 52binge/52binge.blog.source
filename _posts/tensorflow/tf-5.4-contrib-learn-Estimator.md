@@ -28,4 +28,4 @@ Estimator 提供您可以实例化的类以快速配置常见的模型类型，�
 
 [1]: http://cwiki.apachecn.org/pages/viewpage.action?pageId=10029584
 [2]: https://github.com/tensorflow/tensorflow/blob/r1.11/tensorflow/examples/tutorials/estimators/abalone.py
-[3]: https://github.com/blair101/TensorFlowExamples/tree/master/tf.contrib.learn/tf-5.4-Estimator
+[3]: https://github.com/blair101/deep-learning-action/tree/master/tf.contrib.learn/tf-5.4-Estimator

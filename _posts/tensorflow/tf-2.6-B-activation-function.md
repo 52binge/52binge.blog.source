@@ -6,7 +6,7 @@ categories: tensorflow
 tags: tensorflow
 ---
 
-[Tensorflow 提供的一些 Activation Function][5]
+Tensorflow 提供的一些 Activation Function [tensorflow/api_guides/python/nn][5]
  
 <!-- more -->
 

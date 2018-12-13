@@ -1,12 +1,12 @@
 ---
-title: 例子3 添加层 def add_layer()
+title: Tensorflow 例子3 ： 添加层 def add_layer()
 toc: true
 date: 2017-09-09 09:37:21
 categories: tensorflow
 tags: tensorflow
 ---
 
-在 Tensorflow 里定义一个 **添加层的函数** 可以很容易的 **添加神经层**, 为之后的添加省下不少时间.
+在 Tensorflow 里定义一个 添加层的函数， 可以很容易的 添加神经层, 为之后的添加省下不少时间.
 
 <!-- more -->
 
@@ -40,22 +40,22 @@ Weights = tf.Variable(tf.random_normal([in_size, out_size]))
 biases = tf.Variable(tf.zeros([1, out_size]) + 0.1)
 ```
 
-下面，我们定义Wx_plus_b, 即神经网络未激活的值。其中，tf.matmul()是矩阵的乘法。
+下面，我们定义 Wx_plus_b, 即神经网络未激活的值。其中，tf.matmul() 是矩阵的乘法。
 
 ```python
 Wx_plus_b = tf.matmul(inputs, Weights) + biases
 ```
 
-当 `activation_function` ——激励函数为 `None` 时，输出就是当前的预测值——`Wx_plus_b`，不为 `None` 时，就把 `Wx_plus_b` 传到 `activation_function()` 函数中得到输出。
+当 activation_function 为 `None` 时，输出就是当前的预测值 `Wx_plus_b`，不为 `None` 时，就把 `Wx_plus_b` 传到 `activation_function()` 函数中得到输出。
 
 ```python
 if activation_function is None:
-        outputs = Wx_plus_b
-    else:
-        outputs = activation_function(Wx_plus_b)
+    outputs = Wx_plus_b
+else:
+    outputs = activation_function(Wx_plus_b)
 ```
 
-最后，返回输出，添加一个神经层的函数——`def add_layer()`就定义好了。
+最后，返回输出，添加一个神经层的函数 `def add_layer()` 就定义好了。
 
 ```python
 return outputs

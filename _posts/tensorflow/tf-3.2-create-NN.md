@@ -1,5 +1,5 @@
 ---
-title: 例子3 建造神经网络
+title: Tensorflow 例子3 ： 建造神经网络
 toc: true
 date: 2017-09-11 14:37:21
 categories: tensorflow

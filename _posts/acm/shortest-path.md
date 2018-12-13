@@ -1,15 +1,15 @@
 ---
 title: Shortest Path
 toc: true
-date: 2016-10-27 15:28:21
+date: 2011-10-27 15:28:21
 categories: icpc
 tags: acm
 mathjax: true
 ---
 
-shortest path : `dijstra`
+shortest path ： dijstra 、 Bellman 、 Floyd 、 SPFA
 
-<!--more-->
+<!-- more -->
 
 ## 1. dijstra
 

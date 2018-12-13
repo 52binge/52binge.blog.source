@@ -2,14 +2,14 @@
 title: Spark ALS
 toc: true
 date: 2017-05-07 10:28:21
-categories: machine-learning
-tags: RS
-description: Spark ALS
-mathjax: true
+categories: spark
+tags: ALS
 ---
 
 [Spark.apache.org][2]
 [Java Chen Spark][3]
+
+<!-- more -->
 
 以下为手动计算流程 :
 

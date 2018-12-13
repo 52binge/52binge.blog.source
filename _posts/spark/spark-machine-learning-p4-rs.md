@@ -4,25 +4,12 @@ toc: true
 date: 2016-11-23 15:28:21
 categories: [spark]
 tags: [spark, recommendation-system]
-description: spark build recommendation system
 mathjax: true
 ---
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
+Spark build Recommendation System, 推荐引擎试图对用户与某类物品之间的联系建模
 
-> 推荐引擎试图对用户与某类物品之间的联系建模
+<!-- more -->
 
 - 推荐引擎的类型；
 - 用用户偏好数据来建立一个推荐模型；
@@ -246,4 +233,16 @@ Rating(789,127,4.963069165947614)
 [5]: /images/spark/spark-ml-4.5.jpg
 [6]: /images/spark/spark-ml-4.6.png
 
-> Reading notes
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>

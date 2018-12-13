@@ -1,14 +1,15 @@
 ---
-title: Spark Read Mysql 的四种方式 (not finish)
+title: Spark Read Mysql 的四种方式
 toc: true
 date: 2017-04-20 15:28:21
 categories: [spark]
 tags: [spark]
-description: Spark 读取数据库(Mysql) 的四种方式
 mathjax: true
 ---
 
 目前 `Spark` 支持四种方式从数据库中读取数据，这里以 `MySQL` 为例进行介绍。
+
+<!-- more -->
 
 ## Startup spark-shell
 
@@ -58,7 +59,7 @@ def jdbc(
 
 ## 3. 根据任意字段进行分区
 
-... not finish
+...
 
 ## 4. 通过 load 获取
 
@@ -81,7 +82,7 @@ options函数支持url、driver、dbtable、partitionColumn、lowerBound、upper
 
 > Reading notes
 
-## 5. Ref
+## 5. Reference
 
 > 尊重原创，转载请注明： 转载自过往记忆（http://www.iteblog.com/） 
 

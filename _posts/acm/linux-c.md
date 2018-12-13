@@ -2,7 +2,7 @@
 title: Linux C语言的一些知识学习
 date: 2012-05-19 10:54:16
 tags: Linux_C
-categories: devops
+categories: icpc
 toc: true
 ---
 

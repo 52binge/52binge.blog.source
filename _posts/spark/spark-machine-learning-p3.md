@@ -3,12 +3,12 @@ title: Spark Machine Learning p3 - 数据的获取、处理与准备
 toc: true
 date: 2016-09-09 16:07:21
 categories: spark
-tags: [spark, machine-learning]
-description: introduce Spark上数据的获取、处理与准备
-mathjax: true
+tags: spark
 ---
 
-> 《Spark Machine Learing》 Reading Notes
+《Spark Machine Learing》 Reading Notes ： Spark上数据的获取、处理与准备
+
+<!-- more -->
 
 MovieStream 包括网站提供的电影数据、用户的服务信息数据以及行为数据。
 

@@ -100,7 +100,7 @@ output:  [[2.0184833]]
 [1]: https://zhuanlan.zhihu.com/p/31539492
 [2]: http://b.7dtime.com/B076DGNXP1/13/0.html
 
-[g2]: https://github.com/blair101/TensorFlowExamples/tree/master/Chapter8
+[g2]: https://github.com/blair101/deep-learning-action/tree/master/tf.tutorials/Chapter8
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({

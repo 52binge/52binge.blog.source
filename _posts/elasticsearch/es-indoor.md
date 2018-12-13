@@ -4,13 +4,11 @@ date: 2016-05-17 15:59:16
 tags: elasticsearch
 categories: hadoop
 toc: true
-description: 这是关于 Elasticsearch 入门 的一些基本内容.
-list_number: false
 ---
 
-Elasticsearch 是一个基于Apache Lucene(TM)的开源搜索引擎、`实时分布式搜索`和`分析引擎`。
+Elasticsearch 是一个基于Apache Lucene(TM)的开源搜索引擎 、 实时分布式搜索 和 分析引擎。
 
-<!--more-->
+<!-- more -->
 
 > Lucene 是 成熟的`全文索引与信息检索(IR)库`，采用Java实现。信息检索式指文档搜索、文档内信息搜索或者文档相关的元数据搜索等操作。。
 >
