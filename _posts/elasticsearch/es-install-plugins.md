@@ -2,7 +2,7 @@
 title: Elasticsearch installation plugins
 date: 2016-05-17 15:59:16
 tags: elasticsearch
-categories: elasticsearch
+categories: hadoop
 toc: true
 ---
 
