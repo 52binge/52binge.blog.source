@@ -2,7 +2,7 @@
 title: TensorFlow 基本用法总结
 toc: true
 date: 2018-02-08 14:27:21
-categories: python
+categories: tensorflow
 tags: tensorflow
 ---
 
