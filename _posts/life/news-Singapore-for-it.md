@@ -4,9 +4,6 @@ toc: true
 date: 2017-09-25 21:15:21
 categories: life
 tags: [Singapore]
-description: 本文简短介绍了下 Singapore 的一些 IT 公司的情况
-mathjax: true
-list_number: true
 ---
 
 本文简短介绍了下 Singapore 的一些 IT 公司的情况

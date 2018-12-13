@@ -1,7 +1,7 @@
 ---
 title: Kettle ETL
 date: 2016-01-22 15:34:16
-categories: devops
+categories: hadoop
 tags: [kettle]
 toc: true
 list_number: false

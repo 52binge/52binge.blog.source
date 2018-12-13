@@ -1,11 +1,9 @@
 ---
-title: python 结构化您的工程 (not finish)
+title: python 结构化您的工程
 toc: true
 date: 2017-11-04 10:05:21
 categories: python
 tags: [python]
-mathjax: true
-list_number: true
 ---
 
 如何利用Python的特性来创造简洁、高效的代码。 “**结构化**” 意味着通过编写简洁的代码，使逻辑和依赖清晰.
@@ -47,6 +45,8 @@ tests/test_advanced.py
 如果您不太清楚您应该使用哪种许可方式，请查看 choosealicense.com.
 
 ## Setup.py
+
+...
 
 ## Reference
 

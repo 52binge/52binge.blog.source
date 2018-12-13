@@ -1,5 +1,5 @@
 ---
-title: 互联网金融风控中的数据科学 (part3) ： Lending Club 的数据试验（正在整理）
+title: 互联网金融风控中的数据科学 (part3) ： Lending Club 的数据试验
 toc: true
 date: 2018-04-23 13:28:21
 categories: datascience
@@ -187,10 +187,9 @@ lending club 要求 FICO 是个特定的评分方法，是一个固定的评分�
 
 - [金融反欺诈场景下的Spark实践][yirendai]
 
-
 [yirendai]: https://myslide.cn/slides/3199
 
-[g1]: https://github.com/blair101/datascience/blob/master/LC/LC.ipynb
+[g1]: https://github.com/blair101/machine-learning-action/blob/master/LC/LC.ipynb
 
 [img1]: /images/datascience/finance-LC-19.jpg
 [img2]: /images/datascience/finance-LC-20.png

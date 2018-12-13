@@ -6,6 +6,9 @@ categories: life
 toc: true
 ---
 
+我对中国人起名学问的自我研究记录
+
+<!-- more -->
 
 ## 1. 五行八字介绍
 

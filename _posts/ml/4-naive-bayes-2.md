@@ -2,24 +2,9 @@
 title: Naive Bayes * 文本分类
 toc: true
 date: 2017-08-23 07:08:21
-categories: [nlp]
+categories: machine-learning
 tags: Bayes
-mathjax: true
 ---
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
 
 朴素贝叶斯，适用于新闻分类问题
 
@@ -83,3 +68,17 @@ p(class\_i|{f\_0, f\_1, \ldots, f\_n})= \frac{p(class\_i)}{p({f\_0, f\_1, \ldots
 $$
 
 ## 4. 文本分类问题
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>

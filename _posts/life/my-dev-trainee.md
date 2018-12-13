@@ -5,10 +5,9 @@ date: 2014-05-07 06:24:16
 tags: health
 categories: life
 toc: true
-list_number: false
 ---
 
-> an trainee in qunar
+an trainee in qunar
 
 <!--more-->
   时间过得真快，转眼间，我在去哪儿网实习的这段时间马上就要过去了，在这段实习的日子真的学会了很多，经过这次培训，我学会了java，了解了guava，学习了SVN， git版本管理工具， Maven项目管理及自动构建工具， SpringMVC的开发，mybatis 的使用，Servlet， jsp， html， http 的初步了解，动态代理与AOP， 单元测试与自动化测试，数据库建表规范， Linux系统的使用等等等等，熟悉了公司内部的开发框架，了解公司开发规范，适应公司文化，环境。

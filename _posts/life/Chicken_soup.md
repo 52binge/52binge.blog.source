@@ -4,7 +4,6 @@ toc: true
 date: 2011-11-29 10:26:48
 categories: life
 tags: Chicken-soup
-mathjax: true
 ---
 
 这是关于一些励志的句子， 现在看那时候的我，真的是超励志， 超刻苦

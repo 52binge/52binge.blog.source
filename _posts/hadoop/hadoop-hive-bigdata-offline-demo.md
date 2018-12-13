@@ -51,7 +51,7 @@ drwxr-xr-x   4 blair  staff   128B Dec 15 14:11 docs
 **目录功能说明**
 
 名称 | 说明
-------- | -------
+:-------: | :-------:
 bigdata-offline-demo | 主代码目录 名称
 README.md | 主要说明
 LICENSE | 许可说明
@@ -226,4 +226,4 @@ total 144
 
 - [blair's github bigdata_offline_demo][1]
 
-[1]: https://github.com/blair101/bigdata/tree/master/bigdata-offline-demo
+[1]: https://github.com/blair101/bigdata-tools/tree/master/bigdata-offline-demo

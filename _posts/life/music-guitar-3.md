@@ -5,7 +5,6 @@ date: 2017-10-28 21:00:16
 tags: Guitar
 categories: life
 toc: true
-list_number: false
 ---
 
 音乐分为 噪音 与 乐音

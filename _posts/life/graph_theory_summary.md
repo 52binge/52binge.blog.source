@@ -4,7 +4,6 @@ toc: true
 date: 2011-12-29 10:26:48
 categories: icpc
 tags: graph_theory
-mathjax: true
 ---
 
 关于图论的学习总结, 在本博可以详细的体现，做的大部分都是非常经典的图论算法入门题。

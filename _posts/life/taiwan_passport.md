@@ -4,7 +4,6 @@ toc: true
 date: 2018-09-05 10:26:48
 categories: life
 tags: Taiwan
-mathjax: true
 ---
 
 网上关于大陆居民换台湾护照众说纷纭, 现我整理下网路上的文章，记录下通过什么途径可以拿到台湾护照？

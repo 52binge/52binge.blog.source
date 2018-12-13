@@ -4,10 +4,11 @@ date: 2017-07-09 20:54:16
 tags: cooking
 categories: life
 toc: true
-description: I am learning cooking
 ---
 
-## 1. 火腿炒蛋
+记录我学 Cooking 火腿炒蛋 的做法
+
+<!-- more -->
 
 1. 2个鸡蛋，打入小碗中，搅拌均匀
 2. 切一根火腿，切成片状

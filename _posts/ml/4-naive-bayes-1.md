@@ -2,9 +2,8 @@
 title: Naive Bayes * 垃圾邮件分类
 toc: true
 date: 2017-08-10 07:08:21
-categories: nlp
+categories: machine-learning
 tags: Bayes
-mathjax: true
 ---
 
 贝叶斯方法是一个历史悠久，有着坚实的理论基础的方法，同时处理很多问题时直接而又高效, 很多高级 NLP 模型也可以从它演化而来。因此，学习贝叶斯方法，是研究 NLP 问题的一个非常好的切入口。

@@ -7,7 +7,9 @@ categories: life
 toc: true
 ---
 
-Tuning and changing strings of guitar<!--more-->
+Tuning and changing strings of guitar
+
+<!-- more -->
 
 ## Guitar 调音操作 
 将调音器夹琴头空白位置，短按开关键将模式调节到G字母再进行调试~

@@ -4,8 +4,6 @@ toc: true
 date: 2017-08-02 16:07:21
 categories: life
 tags: books
-description: some books for sold
-mathjax: true
 ---
 
 如下是我打算转卖的一些二手书，很多都比较新, 参考价如下:

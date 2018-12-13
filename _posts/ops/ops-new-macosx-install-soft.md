@@ -4,10 +4,11 @@ toc: true
 date: 2017-03-22 16:43:21
 categories: devops
 tags: [mac]
-description: new mac install soft
-mathjax: true
-list_number: false
 ---
+
+新机 mac 安装一些常用软件
+
+<!-- more -->
 
 ## 1. install homebrew
 
@@ -123,7 +124,7 @@ brew cask uninstall qq  #卸载 QQ
 A computer
 
 ```
-python -m SimpleHTTPServer
+python -m http.server
 ```
 
 B computer

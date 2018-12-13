@@ -2,28 +2,13 @@
 title: 点到平面的距离公式
 toc: true
 date: 2016-05-17 15:07:21
-categories: machine-learning
+categories: tools
 tags: math
-mathjax: true
 ---
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$'], ['\[','\]'] ],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
 
 平面的一般式方程, 向量的模（长度）, 向量的数量积, 点到平面的距离
 
-<!--more-->
+<!-- more -->
 
 [维基百科_Vector](https://zh.wikipedia.org/wiki/%E5%90%91%E9%87%8F)
 
@@ -55,5 +40,19 @@ Ax +By +Cz + D = 0
 > 如果法向量是单位向量的话，那么分母为1
 
 
-  [1]: /images/math/math-pointdis.png
-  [2]: /images/math/math-pointToPlane.jpeg
+[1]: /images/math/math-pointdis.png
+[2]: /images/math/math-pointToPlane.jpeg
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$'], ['\[','\]'] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>

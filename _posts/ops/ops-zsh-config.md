@@ -6,7 +6,7 @@ categories: devops
 tags: zshrc
 ---
 
- `~/.zprofile` and `~/.zshrc` custom config
+我的配置文件 **~/.zprofile** 和 **~/.zshrc**
 
 <!-- more -->
 
