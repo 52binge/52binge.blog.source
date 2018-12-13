@@ -1,7 +1,7 @@
 ---
 title: 多层 LSTM 通俗版
 toc: true
-date: 2018-10-07 13:10:21
+date: 2017-10-07 13:10:21
 categories: tensorflow
 tags: tensorflow
 ---

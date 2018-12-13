@@ -1,7 +1,7 @@
 ---
 title: Tensorflow 神经网络在干嘛 ?
 toc: true
-date: 2018-01-24 10:17:21
+date: 2017-08-24 10:17:21
 categories: tensorflow
 tags: tensorflow
 ---

@@ -1,7 +1,7 @@
 ---
 title: TensorFlow 基本用法总结
 toc: true
-date: 2018-02-08 14:27:21
+date: 2017-09-08 14:27:21
 categories: tensorflow
 tags: tensorflow
 ---

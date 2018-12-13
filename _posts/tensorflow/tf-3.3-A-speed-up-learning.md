@@ -1,7 +1,7 @@
 ---
 title: 加速神经网络训练 (Speed Up Training)
 toc: true
-date: 2018-02-12 09:10:21
+date: 2017-09-12 09:10:21
 categories: tensorflow
 tags: tensorflow
 ---

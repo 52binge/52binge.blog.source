@@ -1,7 +1,7 @@
 ---
 title: Tensorflow 例子2
 toc: true
-date: 2018-01-27 11:27:21
+date: 2017-08-27 11:27:21
 categories: tensorflow
 tags: tensorflow
 ---

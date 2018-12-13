@@ -1,7 +1,7 @@
 ---
 title: 例子3 建造神经网络
 toc: true
-date: 2018-02-11 14:37:21
+date: 2017-09-11 14:37:21
 categories: tensorflow
 tags: tensorflow
 ---
