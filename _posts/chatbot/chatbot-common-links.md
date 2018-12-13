@@ -1,12 +1,12 @@
 ---
-title: Common Useful Links for Tensorflow
+title: Chatbot Common Useful Links
 toc: true
-date: 2018-11-15 20:16:21
-categories: devops
-tags: TF
+date: 2018-12-01 19:16:21
+categories: chatbot
+tags: Useful-Links
 ---
 
-Here are some useful links about Tensorflow
+Here are some useful links about Chatbot
 
 <!-- more -->
 
@@ -45,3 +45,18 @@ Here are some useful links about Tensorflow
 [14]: https://blog.csdn.net/hustqb/article/details/80260002
 [15]: https://blog.csdn.net/u013713117/article/details/56281715
 [16]: https://applenob.github.io/tf_6.html
+
+
+## Seq2Seq
+
+- [sampled softmax Csdn wuzqChom][s1]
+- [如何通俗理解sampled softmax机制？][s2]
+
+[s1]: https://blog.csdn.net/wuzqChom/article/details/77073246
+[s2]: https://www.zhihu.com/question/62070907/answer/218745719
+
+
+
+
+
+
