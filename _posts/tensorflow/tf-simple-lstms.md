@@ -1,8 +1,8 @@
 ---
-title: 多层 LSTM 通俗易懂版
+title: 多层 LSTM 通俗版
 toc: true
 date: 2018-10-07 13:10:21
-categories: python
+categories: tensorflow
 tags: tensorflow
 ---
 

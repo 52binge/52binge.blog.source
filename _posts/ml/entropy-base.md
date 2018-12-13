@@ -1,5 +1,5 @@
 ---
-title: 熵 介绍
+title: Entropy 介绍
 date: 2016-09-12 16:06:16
 categories: machine-learning
 tags: [entropy]

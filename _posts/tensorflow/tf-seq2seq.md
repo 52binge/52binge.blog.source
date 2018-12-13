@@ -2,7 +2,7 @@
 title: 从 Encoder 到 Decoder 实现 Seq2Seq 模型
 toc: true
 date: 2018-10-15 13:10:21
-categories: python
+categories: tensorflow
 tags: tensorflow
 ---
 

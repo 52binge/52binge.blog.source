@@ -4,30 +4,16 @@ date: 2016-09-12 16:06:16
 categories: machine-learning
 tags: [entropy, beauty-of-mathematics]
 toc: true
-description: 《数学之美》 19 数学模型的重要性 & 20 最大熵模型 Reading Notes
 ---
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
-
 《数学之美》 19 数学模型的重要性 & 20 最大熵模型 Reading Notes
+
+<!-- more -->
 
 ## 1. 数学模型的重要性
 
 > 伟大的天文学家托勒密
 > 哥白尼、伽利略、牛顿
-
 
 吴军博士的总结
 
@@ -52,3 +38,16 @@ Maximum Entropy 的原理很简单，就是保留 全部的不确定性，将风
 
 匈牙利数学家，信息论最高奖香农奖得主 希萨 Csiszar 证明 : 对任一组不自相矛盾的信息，这个最大熵模型存在，且唯一。
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>

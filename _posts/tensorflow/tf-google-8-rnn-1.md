@@ -2,7 +2,7 @@
 title: TensorFlow： 第8章 循环神经网络 1
 toc: true
 date: 2018-11-08 22:00:21
-categories: deeplearning
+categories: tensorflow
 tags: RNN
 mathjax: true
 ---

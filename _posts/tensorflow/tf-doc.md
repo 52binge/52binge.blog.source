@@ -2,7 +2,7 @@
 title: Tensorflow 快速学习 & 文档
 toc: true
 date: 2018-10-23 21:00:21
-categories: python
+categories: tensorflow
 tags: tensorflow
 ---
 

@@ -2,7 +2,7 @@
 title: TensorFlow ： name_scope / variable_scope 命名方法
 toc: true
 date: 2018-10-05 12:10:21
-categories: python
+categories: tensorflow
 tags: tensorflow
 ---
 

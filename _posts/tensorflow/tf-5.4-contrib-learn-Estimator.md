@@ -1,8 +1,8 @@
 ---
 title: TensorFlow - tf.contrib.learn 创建 Estimator
 toc: true
-date: 2017-11-04 10:10:21
-categories: python
+date: 2018-11-04 10:10:21
+categories: tensorflow
 tags: tensorflow
 ---
 

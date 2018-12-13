@@ -1,24 +1,10 @@
 ---
 title: What's Activation Function
 toc: true
-date: 2018-09-07 14:15:21
-categories: python
+date: 2018-02-07 14:15:21
+categories: tensorflow
 tags: tensorflow
 ---
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
 
 现代神经网络中 必不可少的一个组成部分, 激励函数, activation function.
 
@@ -75,3 +61,16 @@ tags: tensorflow
 [img4]: /images/tensorflow/tf-2.6-active4.png
 [img5]: /images/tensorflow/tf-2.6-active5.jpg
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>

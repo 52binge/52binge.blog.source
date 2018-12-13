@@ -2,7 +2,7 @@
 title: TensorFlow Why?
 toc: true
 date: 2018-01-22 13:17:21
-categories: python
+categories: tensorflow
 tags: tensorflow
 ---
 

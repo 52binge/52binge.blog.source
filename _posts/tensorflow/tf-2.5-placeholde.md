@@ -1,8 +1,8 @@
 ---
 title: Placeholder 传入值
 toc: true
-date: 2018-09-07 11:45:21
-categories: python
+date: 2018-01-30 11:45:21
+categories: tensorflow
 tags: tensorflow
 ---
 

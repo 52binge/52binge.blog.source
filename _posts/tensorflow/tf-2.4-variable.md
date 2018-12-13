@@ -1,8 +1,8 @@
 ---
 title: Variable 变量
 toc: true
-date: 2018-09-07 10:07:21
-categories: python
+date: 2018-01-29 10:07:21
+categories: tensorflow
 tags: tensorflow
 ---
 

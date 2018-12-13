@@ -2,7 +2,7 @@
 title: Tensorflow tf.app.run()与命令行参数解析
 toc: true
 date: 2018-10-23 13:10:21
-categories: python
+categories: tensorflow
 tags: tensorflow
 ---
 

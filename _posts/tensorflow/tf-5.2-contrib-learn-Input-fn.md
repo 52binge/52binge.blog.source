@@ -1,8 +1,8 @@
 ---
 title: TensorFlow - tf.contrib.learn 构建输入函数
 toc: true
-date: 2017-11-01 16:10:21
-categories: python
+date: 2018-11-01 16:10:21
+categories: tensorflow
 tags: tensorflow
 ---
 

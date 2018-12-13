@@ -1,8 +1,8 @@
 ---
 title: Tensorflow 例子2
 toc: true
-date: 2018-08-24 11:27:21
-categories: python
+date: 2018-01-27 11:27:21
+categories: tensorflow
 tags: tensorflow
 ---
 

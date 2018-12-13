@@ -1,8 +1,8 @@
 ---
 title: TensorFlow - tf.contrib.learn 基础的记录和监控教程
 toc: true
-date: 2017-11-04 09:10:21
-categories: python
+date: 2018-11-04 09:10:21
+categories: tensorflow
 tags: tensorflow
 ---
 

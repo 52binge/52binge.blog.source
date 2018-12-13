@@ -1,8 +1,8 @@
 ---
 title: Session 会话控制
 toc: true
-date: 2018-09-06 16:07:21
-categories: python
+date: 2018-01-28 16:07:21
+categories: tensorflow
 tags: tensorflow
 ---
 
