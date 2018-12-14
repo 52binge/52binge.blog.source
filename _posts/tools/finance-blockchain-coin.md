@@ -2,7 +2,7 @@
 title: 探索世界財富自由之路
 date: 2018-01-22 10:54:16
 tags: [finance]
-categories: life
+categories: tools
 toc: true
 ---
 
