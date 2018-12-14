@@ -65,17 +65,3 @@ $$\boldsymbol{u}\_j^\top \boldsymbol{v}\_i + b\_i + c\_j \approx \log(x\_{ij}).$
 
 - [动手学深度学习第十七课：GloVe、fastText和使用预训练的词向量](https://www.youtube.com/watch?v=ioSnNLZSQq0&list=PLLbeS1kM6teJqdFzw1ICHfa4a1y0hg8Ax&index=17)
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
-

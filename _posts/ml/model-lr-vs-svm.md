@@ -4,24 +4,11 @@ toc: true
 date: 2018-06-23 16:08:21
 categories: machine-learning
 tags: machine-learning
-mathjax: true
 ---
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
-
 LR 和 SVM 之间的相同点和不同点, 查询了网络上的一些资料，特整理汇总如下 : 😄
+
+<!-- more -->
 
 1. LR 和 SVM 放在一起来进行比较, why？
 2. LR 和 SVM 的 相同点和不同点?

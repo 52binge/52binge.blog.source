@@ -4,23 +4,7 @@ toc: true
 date: 2018-07-03 17:43:21
 categories: machine-learning
 tags: [LR]
-mathjax: true
-list_number: true
 ---
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
 
 Github上和机器学习工具包（如sklearn）中有很多优秀的开源boosting实现。在这里重点介绍[@陈天奇怪][tqchen]同学的 [Xgboost][xgboost].
 

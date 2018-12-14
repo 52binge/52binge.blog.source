@@ -6,20 +6,6 @@ categories: tensorflow
 tags: tensorflow
 ---
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
-
 上篇 `PTB` 数据集 batching 中我们介绍了如何对 `PTB` 数据集进行 连接、切割 成多个 batch，作为 NNLM 的输入。
 
 本文将介绍如何采用 TensorFlow 实现 RNN-based NNLM。 

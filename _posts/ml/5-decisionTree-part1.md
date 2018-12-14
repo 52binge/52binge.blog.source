@@ -245,17 +245,3 @@ $$
 [9]: http://www.cnblogs.com/fengfenggirl/p/classsify_decision_tree.html
 [10]: http://www.52caml.com/
 [11]: http://www.cnblogs.com/leoo2sk/archive/2010/09/19/decision-tree.html
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>

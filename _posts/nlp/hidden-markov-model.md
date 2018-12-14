@@ -6,7 +6,9 @@ categories: nlp
 tags: HMM
 ---
 
-Hidden Markov Model (HMM) model is the most rapid and effective method to solve most Natural Language Processing problems. It successfully solves the problems of speech recognition, Machine Translation.<!-- more -->
+Hidden Markov Model (HMM) model is the most rapid and effective method to solve most Natural Language Processing problems. It successfully solves the problems of speech recognition, Machine Translation.
+
+<!-- more -->
 
 HMM is a statistical Markov model in which the system being modeled is assumed to be a Markov process with unobserved (i.e. hidden) states.
 
@@ -54,17 +56,3 @@ $$
 - 《数学之美》 读书笔记 
 
 [1]: /images/nlp/nlp-communication-model.png
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>

@@ -4,7 +4,6 @@ toc: true
 date: 2018-11-10 13:00:21
 categories: tensorflow
 tags: RNN
-mathjax: true
 ---
 
 LSTM 可以学习到距离很远的信息，解决了RNN无法长期依赖的问题。 
@@ -157,17 +156,3 @@ foor i in range(len(num_steps)):
 [2]: https://zhuanlan.zhihu.com/p/37070414
 [3]: https://zh.gluon.ai/
 [4]: https://www.zhihu.com/question/272049149
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>

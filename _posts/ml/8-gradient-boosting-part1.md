@@ -4,23 +4,7 @@ toc: true
 date: 2018-06-29 17:43:21
 categories: machine-learning
 tags: [LR]
-mathjax: true
-list_number: true
 ---
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
 
 我们需要对多个模型进行融合以提高效果时，常常会用到 Bagging，Boosting，Stacking 等这几个框架算法.
 

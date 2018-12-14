@@ -6,20 +6,6 @@ categories: tensorflow
 tags: tensorflow
 ---
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
-
 `PTB` 数据集 batching 介绍, 如何对 `PTB` 数据集进行 连接、切割 成多个 batch。
 
 重点了解 **batch_size**、**num_batch**、**num_step** 这三个概念。

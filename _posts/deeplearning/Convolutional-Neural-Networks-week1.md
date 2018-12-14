@@ -4,22 +4,7 @@ toc: true
 date: 2018-08-21 10:00:21
 categories: deeplearning
 tags: deeplearning.ai
-mathjax: true
 ---
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
 
 -	理解如何搭建一个神经网络，包括最新的变体，例如残余网络。
 -	知道如何将卷积网络应用到视觉检测和识别任务。

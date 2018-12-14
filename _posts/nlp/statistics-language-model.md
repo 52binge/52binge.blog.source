@@ -96,18 +96,3 @@ $$
 [4]: https://whiskytina.github.io/14947653164873.html
 [5]: http://studyai.site/2016/05/03/数学之美-技术详解(01)/
 [6]: http://heshenghuan.github.io/2016/05/13/Good-Turing估计/
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>

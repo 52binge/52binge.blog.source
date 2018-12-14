@@ -4,22 +4,7 @@ toc: true
 date: 2018-09-08 15:00:21
 categories: deeplearning
 tags: deeplearning.ai
-mathjax: true
 ---
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
 
 Face recognition & Neural style transfer 能够在图像、视频以及其他 2D 或 3D 数据上应用这些算法。
 

@@ -4,9 +4,11 @@ toc: true
 date: 2017-02-16 17:28:21
 categories: machine-learning
 tags: Neural Networks
-description: neural networks example - pybrain kaggle titanic
-mathjax: true
 ---
+
+neural networks example - pybrain kaggle titanic
+
+<!-- more -->
 
 ## [泰坦尼克号](https://www.kaggle.com/c/titanic)
 『Jack and Rose』的故事，豪华游艇倒了，大家都惊恐逃生，可是救生艇的数量有限，无法人人都有，副船长发话了『lady and kid first！』，所以是否获救其实并非随机，而是基于一些背景有rank先后的。<br>

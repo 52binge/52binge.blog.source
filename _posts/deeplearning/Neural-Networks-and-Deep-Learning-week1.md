@@ -4,7 +4,6 @@ toc: true
 date: 2017-12-01 19:55:21
 categories: deeplearning
 tags: deeplearning.ai
-mathjax: true
 ---
 
 1. Introduction to Deep Learning

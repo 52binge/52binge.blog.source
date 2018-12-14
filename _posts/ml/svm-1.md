@@ -4,7 +4,6 @@ toc: true
 date: 2018-06-20 16:08:21
 categories: machine-learning
 tags: machine-learning
-mathjax: true
 ---
 
 Support Vecor Machine, 自一诞生便由于它良好的分类性能席卷了机器学习领域，并牢牢压制了神经网络领域好多年。 如果不考虑集成学习的算法，不考虑特定的训练数据集，在分类算法中的表现SVM说是排第一估计是没有什么异议的.
@@ -62,17 +61,3 @@ Support Vecor Machine, 自一诞生便由于它良好的分类性能席卷了机
 [4]: https://blog.csdn.net/han_xiaoyang/article/details/79079540
 [5]: https://blog.csdn.net/yaoqiang2011/article/details/79080100
 [6]: https://blog.csdn.net/yaoqiang2011/article/details/79080123
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>

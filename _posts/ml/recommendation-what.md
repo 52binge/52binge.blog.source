@@ -6,20 +6,6 @@ categories: machine-learning
 tags: Recommendation
 ---
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
-
 随着互联网的深入发展，越来越多的信息在互联网上传播，产生了严重的信息过载。如果不采用一定的手段，用户很难从如此多的信息流中找到对自己有价值的信息。
 
 <!-- more -->

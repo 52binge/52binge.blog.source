@@ -101,17 +101,3 @@ output:  [[2.0184833]]
 [2]: http://b.7dtime.com/B076DGNXP1/13/0.html
 
 [g2]: https://github.com/blair101/deep-learning-action/tree/master/tf.tutorials/Chapter8
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
