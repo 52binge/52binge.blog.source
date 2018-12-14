@@ -4,22 +4,7 @@ toc: true
 date: 2017-08-16 14:00:21
 categories: chatbot
 tags: PaperWeekly
-mathjax: true
 ---
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
 
 Chatbot 更多 Paper 论文和参考资料 (感谢 PaperWeekly)
 

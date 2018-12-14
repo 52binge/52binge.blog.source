@@ -595,17 +595,3 @@ Response 2: 0.481638
 [17]: https://github.com/dennybritz/chatbot-retrieval/blob/master/scripts/prepare_data.py
 
 [udc18]: https://github.com/dennybritz/chatbot-retrieval/blob/master/udc_inputs.py
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>

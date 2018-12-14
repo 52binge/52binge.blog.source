@@ -4,7 +4,6 @@ toc: true
 date: 2017-11-17 22:00:21
 categories: chatbot
 tags: Attention
-mathjax: true
 ---
 
 从具体的模型细节、公式推导、结构图以及变形等几个方向详细介绍一下 Seq-to-Seq 模型。
@@ -201,18 +200,4 @@ $$
 [3]: https://zhuanlan.zhihu.com/p/32092871
 [4]: https://zhuanlan.zhihu.com/p/38064637
 [5]: https://zh.gluon.ai/chapter_deep-learning-basics/softmax-regression.html
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
 

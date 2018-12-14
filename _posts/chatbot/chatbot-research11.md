@@ -4,7 +4,6 @@ toc: true
 date: 2018-11-29 22:00:21
 categories: chatbot
 tags: Chatbot
-mathjax: true
 ---
 
 <!-- 2018 -->
@@ -94,18 +93,4 @@ helper其实就是decode阶段如何根据预测结果得到下一时刻的输�
 - [tensorflow官网API指导](https://www.tensorflow.org/api_docs/python/tf/contrib/legacy_seq2seq)
 - [DeepQA](https://github.com/Conchylicultor/DeepQA#chatbot)
 - [Neural\_Conversation\_Models](https://github.com/pbhatia243/Neural_Conversation_Models)
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
 

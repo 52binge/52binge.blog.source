@@ -147,16 +147,3 @@ print(Levenshtein.distance(texta,textb)) # 1
 [4]: https://www.cnblogs.com/LHWorldBlog/p/9292024.html
 [5]: https://blog.csdn.net/qifengzou/article/details/77126933
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>

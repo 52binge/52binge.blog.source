@@ -203,17 +203,3 @@ step 函数定义，主要用于给定一个batch的数据，构造相应的 fee
 - [DeepQA](https://github.com/Conchylicultor/DeepQA#chatbot)
 - [Neural_Conversation_Models](https://github.com/pbhatia243/Neural_Conversation_Models)
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
-

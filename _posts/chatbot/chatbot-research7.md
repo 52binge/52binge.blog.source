@@ -4,7 +4,6 @@ toc: true
 date: 2017-09-26 14:00:21
 categories: chatbot
 tags: Dialog_Corpus
-mathjax: true
 ---
 
 一些用于 Dialog 对话系统的数据集资料汇总

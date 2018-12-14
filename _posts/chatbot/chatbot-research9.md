@@ -4,7 +4,6 @@ toc: true
 date: 2017-11-19 14:00:21
 categories: chatbot
 tags: tf.contrib.legacy_seq2seq
-mathjax: true
 ---
 
 有了对代码的深层次理解，我们之后构建 Chatbot 系统的时候有很大的帮助。

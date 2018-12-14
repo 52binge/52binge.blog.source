@@ -4,10 +4,7 @@ toc: true
 date: 2018-12-01 22:00:21
 categories: chatbot
 tags: Chatbot
-mathjax: true
 ---
-
-<!-- 2018 -->
 
 对话系统之所以没有取得突破性的进展，很大程度是因为没有一个可以准确表示回答效果好坏的评价标准。对话系统中大都使用机器翻译、摘要生成领域提出来的评价指标，但是很明显对话系统的场景和需求与他们是存在差别的.
 
@@ -74,20 +71,4 @@ train_perp = math.exp(float(mean_loss)) if mean_loss < 300 else math.inf
 随着发展，还逐渐有了一些别的评价方法，比如使用GAN网络来评价生成的回复是否跟人类回复相似等等。。。
 
 ## Reference
-
-
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
 
