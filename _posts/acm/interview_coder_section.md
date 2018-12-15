@@ -2,7 +2,7 @@
 title: 校招面试的代码部分 (剑指offer & 笔试面试)
 toc: true
 date: 2013-09-05 20:05:21
-categories: tools
+categories: icpc
 tags: interview\_50coder
 ---
 

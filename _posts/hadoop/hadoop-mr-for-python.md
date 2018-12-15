@@ -1,7 +1,7 @@
 ---
 title: MapReduce for Python
 toc: true
-date: 2018-01-30 10:37:21
+date: 2015-01-30 10:37:21
 categories: hadoop
 tags: hadoop
 mathjax: true

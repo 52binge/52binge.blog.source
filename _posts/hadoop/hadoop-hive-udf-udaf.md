@@ -1,7 +1,7 @@
 ---
 title: Hive 中 udf、udaf 和 udtf 的使用
 toc: true
-date: 2018-02-01 10:07:21
+date: 2015-02-01 10:07:21
 categories: hadoop
 tags: hive
 ---
