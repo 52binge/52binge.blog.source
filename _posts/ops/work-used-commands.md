@@ -68,6 +68,12 @@ find .|xargs grep -ri "IBM" -l 
 sed -i "s/oldString/newString/g"  `grep oldString -rl ./`
 ```
 
+8). VIM tab ^I 替换
+
+```
+:set listchars=tab:\ \ ,eol:$
+```
+
 ## git
 
 ```bash

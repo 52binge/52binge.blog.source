@@ -1,7 +1,7 @@
 ---
 title: Linux 鸟哥的私房菜 读书心得
 toc: true
-date: 2013-05-29 18:09:44
+date: 2013-08-29 18:09:44
 categories: devops
 tags: linuxbird
 ---
