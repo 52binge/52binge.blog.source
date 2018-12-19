@@ -125,19 +125,7 @@ No. | <font color="#0085a1">**Machine Learning Tree Model**</font> | <font color
 19. | [Ensumble 集成学习小记][19] | Bagging、Boosting、Stacking、Blending
 
 
-### 1. NLP 基础知识
-
-- [1.1 文字和语言 vs 数字和信息][n1]
- 
-- [1.2 Python 字符串处理-正则表达式][n2]
-
-- [1.3 NLP 简介 & 统计语言模型][n3]
-
-- [1.4 Jieba 分词中文处理][n4]
-
-- [1.5 Naive Bayes * 垃圾邮件分类][n5_1]、[Naive Bayes * 文本分类][n5_2]
-
-- [1.6 Word2vec 基础][n6]
+### NLP 基础知识
 
 [n1]: /2017/11/08/nlp-pre-word-language-number-info-history/
 [n2]: /2017/07/30/nlp-01-string-operation-re/
@@ -181,14 +169,3 @@ No. | <font color="#0085a1">**Machine Learning Tree Model**</font> | <font color
 [19.2]: /2018/04/11/ml/9-ensumble-boosting-2/
 [19]: /2018/07/03/ml/9-ensumble-part1/
 
-<!--## Internet Finance
-
-No. | <font color="#0085a1">**Internet Finance Title**</font> | <font color="#0085a1">**Internet Finance Part**</font>
-:-------: | :-------: | :-------:
-1. | [金融科技企业面临的欺诈⻛险][if1] | 互联网金融风控中的数据科学 (part1) 
-2. | [模型策略][if2] | 互联网金融风控中的数据科学 (part2) 
-3. | [Lending Club 的数据试验][if3] | 互联网金融风控中的数据科学 (part3)
-
-[if3]: /2018/04/23/data-science-internet-finance-3/
-[if2]: /2018/04/21/data-science-internet-finance-2/
-[if1]: /2018/04/20/data-science-internet-finance-1/-->
