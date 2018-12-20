@@ -1,14 +1,29 @@
 ---
-title: my offer
+title: myfer
 toc: true
 date: 2018-12-03 13:36:21
-categories: chatbot
+categories: tools
 tags: Useful-Links
 ---
 
-Summarize NLP my offer road
+Summarize prepare offer road
 
 <!-- more -->
+
+## Common links
+
+- [简单的交叉熵损失函数，你真的懂了吗？](https://zhuanlan.zhihu.com/p/38241764)
+- [聊天机器人Chatbot的训练质量如何评价？](https://www.zhihu.com/question/60530973/answer/184454797)
+
+> 可以类比语言模型的ppl，在词表几万的情况下，我的经验是100左右就已经能生成流畅的话了，如果远高于100，如200，生成的基本不流畅。如果远小于100，倒不一定非常过拟合。
+
+- [實現基於seq2seq的聊天機器人](https://www.smwenku.com/a/5b7c8a4a2b71770a43db78ed/)
+
+> Cornell Movie-Dialogs Corpus 困惑度降到了二十多
+
+- [小黄鸡-多语言](http://www.simsimi.com/ChatSettings)
+
+- [从产品完整性的角度浅谈chatbot](https://zhuanlan.zhihu.com/p/34927757)
 
 ## Seq2Seq
 
