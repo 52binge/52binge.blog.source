@@ -10,9 +10,8 @@ Summarize prepare offer road
 
 <!-- more -->
 
-## Common links
+## chatbot 项目
 
-- [简单的交叉熵损失函数，你真的懂了吗？](https://zhuanlan.zhihu.com/p/38241764)
 - [聊天机器人Chatbot的训练质量如何评价？](https://www.zhihu.com/question/60530973/answer/184454797)
 
 > 可以类比语言模型的ppl，在词表几万的情况下，我的经验是100左右就已经能生成流畅的话了，如果远高于100，如200，生成的基本不流畅。如果远小于100，倒不一定非常过拟合。
@@ -74,8 +73,14 @@ Summarize prepare offer road
 
 但是我感觉临时突击这些东西价值不大，主要还是看面试的一个整体效果
 
+## 深度学习的坑
+
+- [深度学习的坑](https://www.cnblogs.com/rocketfan/p/7482786.html)
 
 - [如何理解互信息公式的含义?](https://www.zhihu.com/question/24059517)
+
+- [简单的交叉熵损失函数，你真的懂了吗？](https://zhuanlan.zhihu.com/p/38241764)
+
 
 ## Reference
 
