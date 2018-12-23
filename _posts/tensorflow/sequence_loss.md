@@ -1,12 +1,12 @@
 ---
-title: tensorflow sequence_loss
+title: Tensorflow Sequence_loss
 toc: true
-date: 2018-12-07 13:36:21
-categories: chatbot
+date: 2018-12-01 13:36:21
+categories: tensorflow
 tags: sequence_loss
 ---
 
-sequence_loss是nlp算法中非常重要的一个函数.rnn,lstm,attention都要用到这个函数.看下面代码:
+sequence_loss 是 nlp算法 中非常重要的一个函数. rnn,lstm,attention都要用到这个函数.看下面代码:
 
 <!-- more -->
 
