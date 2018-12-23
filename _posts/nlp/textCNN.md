@@ -10,7 +10,7 @@ textCNN 是 2014年 提出的用来做文本分类的卷积神经网络，结构
 
 论文链接： [Convolutional Neural Networks for Sentence Classification](https://arxiv.org/abs/1510.03820) 在文本分类等 NLP 领域应用广泛. 
 
-常见结构： 降维 -> conv -> 最大池化 -> 完全连接层 -> softmax .
+一般结构： 降维 -> conv -> 最大池化 -> 完全连接层 -> softmax .
 
 <!-- more -->
 
