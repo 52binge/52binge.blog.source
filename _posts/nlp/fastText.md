@@ -8,11 +8,15 @@ tags: fastText
 
 fastText 是 2016年 FAIR(Facebook AIResearch) 推出的一款文本分类与向量化工具。
 
-fastText 是 智慧与美貌并重的文本分类及向量化工具。
+fastText 是 智慧与美貌并重的**文本分类** and **向量化工具** 的项目，它是有两部分组成的。 
 
-论文链接： [Bag of Tricks for Efficient Text Classification](https://arxiv.org/abs/1607.01759)
+论文1链接： [Bag of Tricks for Efficient Text Classification](https://arxiv.org/abs/1607.01759)
+
+论文2链接： [Enriching Word Vectors with Subword Information](https://arxiv.org/abs/1607.01759)
 
 <!-- more -->
+
+github链接： [facebookresearch/fastText](https://github.com/facebookresearch/fastText)
 
 fastText能够做到效果好，速度快，主要依靠两个秘密武器：
 
@@ -54,6 +58,12 @@ FastText 的其余部分同 **skip-gram** 一致，不在此重复。可以看�
 
 - [子词嵌入（fastText）][1]
 - [fastText，智慧与美貌并重的文本分类及向量化工具][2]
+- [NLP︱高级词向量表达（二）——FastText（简述、学习笔记）][3]
+- [如何在python 非常简单训练FastText][4]
+- [我爱自然语言处理-fastText原理及实践][5]
 
 [1]: https://zh.gluon.ai/chapter_natural-language-processing/fasttext.html
 [2]: https://www.jiqizhixin.com/articles/2018-06-05-3
+[3]: https://blog.csdn.net/sinat_26917383/article/details/54850933
+[4]: https://blog.csdn.net/sinat_26917383/article/details/83041424
+[5]: http://www.52nlp.cn/fasttext
