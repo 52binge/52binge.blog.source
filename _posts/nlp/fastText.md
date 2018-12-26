@@ -14,7 +14,7 @@ fastText 是 智慧与美貌并重的文本分类及向量化工具。
 
 <!-- more -->
 
-fastText能够做到效果好，速度快，主要依靠两个秘密武器：
+fastText 能够做到效果好，速度快，主要依靠两个秘密武器：
 
 > 1. 利用了词内的n-gram信息(subword n-gram information)
 > 2. 用到了层次化Softmax回归(Hierarchical Softmax) 的训练 trick.
