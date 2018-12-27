@@ -16,13 +16,9 @@ fastText 是 智慧与美貌并重的**文本分类** and **向量化工具** �
 
 <!-- more -->
 
-<<<<<<< HEAD
-fastText 能够做到效果好，速度快，主要依靠两个秘密武器：
-=======
 github链接： [facebookresearch/fastText](https://github.com/facebookresearch/fastText)
 
-fastText能够做到效果好，速度快，主要依靠两个秘密武器：
->>>>>>> 4e9d4d945b210da47162a1d434260e56313520fa
+fastText 能够做到效果好，速度快，主要依靠两个秘密武器：
 
 > 1. 利用了词内的n-gram信息(subword n-gram information)
 > 2. 用到了层次化Softmax回归(Hierarchical Softmax) 的训练 trick.
@@ -37,9 +33,7 @@ fastText能够做到效果好，速度快，主要依靠两个秘密武器：
 
 在 fastText 中，每个中心词被表示成子词的集合。下面我们用单词“where”作为例子来了解子词是如何产生的。首先，我们在单词的首尾分别添加特殊字符“<”和“>”以区分作为前后缀的子词。然后，将单词当成一个由字符构成的序列来提取 $n$ 元语法。例如当 $n=3$ 时，我们得到所有长度为 3 的子词：
 
-$$
-<.wh ， whe ， her ， ere ， re>
-$$
+$$<.wh ， whe ， her ， ere ， re>$$
 
 以及特殊子词 "<.where>"。
 
@@ -54,6 +48,10 @@ FastText 的其余部分同 **skip-gram** 一致，不在此重复。可以看�
 ## 1. 前置知识
 
 ### 1.1 Softmax Regression
+
+Softmax Regression (回归) 又被称作多项LR（multinomial logistic regression），它是LR在多类别任务上的推广。
+
+<img src="/images/nlp/fastText2.jpg" width="850" /img>
 
 ### 1.2 Hierarchical Softmax
 
@@ -138,7 +136,8 @@ n-gram 产生的特征只是作为**文本特征的候选集**，你后面可能
 - [我爱自然语言处理-fastText原理及实践][5]
 - [AI Challenger 2018 进行时][6]
 - [AI Challenger 2018 细粒度用户评论情感分析 fastText Baseline][7]
-- [QA问答系统中的深度学习技术实现][8]
+- [ai-challenger-2018-文本挖掘类竞赛相关解决方案及代码汇总][8]
+- [QA问答系统中的深度学习技术实现][9]
 
 [1]: https://zh.gluon.ai/chapter_natural-language-processing/fasttext.html
 [2]: https://www.jiqizhixin.com/articles/2018-06-05-3
@@ -147,4 +146,5 @@ n-gram 产生的特征只是作为**文本特征的候选集**，你后面可能
 [5]: http://www.52nlp.cn/fasttext
 [6]: http://www.52nlp.cn/ai-challenger-2018-进行时
 [7]: http://www.52nlp.cn/ai-challenger-2018-细粒度用户评论情感分析-fasttext-baseline
-[8]: http://www.52nlp.cn/qa问答系统中的深度学习技术实现
+[8]: http://www.52nlp.cn/ai-challenger-2018-文本挖掘类竞赛相关解决方案及代码汇总
+[9]: http://www.52nlp.cn/qa问答系统中的深度学习技术实现
