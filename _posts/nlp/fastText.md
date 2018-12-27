@@ -134,10 +134,14 @@ n-gram 产生的特征只是作为**文本特征的候选集**，你后面可能
 - [NLP︱高级词向量表达（二）——FastText（简述、学习笔记）][3]
 - [如何在python 非常简单训练FastText][4]
 - [我爱自然语言处理-fastText原理及实践][5]
+- [FastText文本分类算法学习笔记（好文）][10]
+- [FastText的内部机制][11]
+- [利用skift实现fasttext模型][12]
 - [AI Challenger 2018 进行时][6]
 - [AI Challenger 2018 细粒度用户评论情感分析 fastText Baseline][7]
 - [ai-challenger-2018-文本挖掘类竞赛相关解决方案及代码汇总][8]
 - [QA问答系统中的深度学习技术实现][9]
+
 
 [1]: https://zh.gluon.ai/chapter_natural-language-processing/fasttext.html
 [2]: https://www.jiqizhixin.com/articles/2018-06-05-3
@@ -148,3 +152,6 @@ n-gram 产生的特征只是作为**文本特征的候选集**，你后面可能
 [7]: http://www.52nlp.cn/ai-challenger-2018-细粒度用户评论情感分析-fasttext-baseline
 [8]: http://www.52nlp.cn/ai-challenger-2018-文本挖掘类竞赛相关解决方案及代码汇总
 [9]: http://www.52nlp.cn/qa问答系统中的深度学习技术实现
+[10]: https://www.jianshu.com/p/2acc49549af6
+[11]: https://blog.csdn.net/fendouaini/article/details/81086575
+[12]: https://blog.csdn.net/joleoy/article/details/84987230
