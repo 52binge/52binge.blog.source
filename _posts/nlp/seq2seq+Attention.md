@@ -1,9 +1,9 @@
 ---
-title: Chatbot Research 8 - 理论 seq2seq+Attention 机制模型详解
+title: 理论 seq2seq+Attention 机制模型详解
 toc: true
-date: 2017-11-17 22:00:21
-categories: chatbot
-tags: Attention
+date: 2017-11-17 20:00:21
+categories: nlp
+tags: seq2seq+Attention
 ---
 
 从具体的模型细节、公式推导、结构图以及变形等几个方向详细介绍一下 Seq-to-Seq 模型。
@@ -200,3 +200,4 @@ $$
 [3]: https://zhuanlan.zhihu.com/p/32092871
 [4]: https://zhuanlan.zhihu.com/p/38064637
 [5]: https://zh.gluon.ai/chapter_deep-learning-basics/softmax-regression.html
+

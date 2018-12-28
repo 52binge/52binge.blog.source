@@ -1,16 +1,26 @@
 ---
-title: myfer
-toc: true
 date: 2018-12-03 13:36:21
-categories: tools
-tags: Useful-Links
 ---
 
-Summarize prepare offer road
+## 1. deep learning
 
-<!-- more -->
+[请点击链接][dl1]
 
-## chatbot 项目
+- L1 L2 Dropout、梯度爆炸和梯度弥散、Weight init、Gradient checking
+
+- mini-batch、指数加权平均-偏差修正、Momentum、RMSprop、Adam、α decay、局部优
+
+- word2vec (Negative Sampling、 Hierarchical Softmax、 [fastText 联系][dl2])
+
+[dl1]: /deeplearning/
+[dl2]: /2018/12/19/nlp/fastText/
+
+## 2. machine learning 
+
+- woe、IV、卡方、p-value
+- RF、GBDT、Xgboost
+
+## 3. chatbot project
 
 - [聊天机器人Chatbot的训练质量如何评价？](https://www.zhihu.com/question/60530973/answer/184454797)
 
@@ -24,21 +34,31 @@ Summarize prepare offer road
 
 - [从产品完整性的角度浅谈chatbot](https://zhuanlan.zhihu.com/p/34927757)
 
-## Seq2Seq
+**MMI：**
+
+11. 对话项目的模型的缺点以及使用MMI的改进方案。
+12. Attention机制的计算细节和公式是怎样的，然后我就介绍了一下公式的计算方法，然后说了一下改进的方案等。
+13. MMI模型第一个改进目标函数中P(T)是如何计算的？ 我说每个词的联合概率分布乘积，当时他面露疑问，我还没反应过来是什么意思，到后面有说到这个问题才明白，原来他的意思是P(T)应该是单纯语言模型学习出来的结果，而按照我的说法，P(T)是在输入的基础上进行计算的
+
+## 4. 细粒度情感分类 project
+
+## 5. 信用评分 project
+
+## 6. 其他 help
+
+### Seq2Seq
 
 1. seq2seq模型，seq2seq的缺点, attention机制
 2. attention的公式，怎样计算得分和权重
 3. soft attention 和 hard attention的区别
 4. tensorflow里面seq2seq的借口， 自己实现的模型里面的一些细节和方法。
 
-## Seq2Seq
-
 - seq2seq时遇到的deepcopy和beam_search两个问题以及解决方案.
 - 知名博主WildML给google写了个通用的seq2seq，[文档地址][7] ， [Github地址][8]
 - [Tensorflow动态seq2seq使用总结](https://www.jianshu.com/p/c0c5f1bdbb88)
 - [荷楠仁 tensorflow sequence_loss](https://www.cnblogs.com/zhouyang209117/p/8338193.html)
 
-## 多标签分类
+### 多标签分类
 
 8. 都用过那些模型实现文本分类？
 9. 现在文本分类中还有哪些没有解决的问题，我想了会说样本不平衡问题？
@@ -55,25 +75,19 @@ Summarize prepare offer road
 > 7. 超参数的话，推荐看看之前TextCNN的一篇论文，个人感觉足够了“A Sensitivity Analysis of (and Practitioners’ Guide to) Convolutional Neural Networks for Sentence Classification”
 > 8. 之前还见别人在文本领域用过数据增强的方法，就是对文本进行随机的shuffle和drop等操作来增加数据量
 
-## MMI
-
-11. 对话项目的模型的缺点以及使用MMI的改进方案。
-12. Attention机制的计算细节和公式是怎样的，然后我就介绍了一下公式的计算方法，然后说了一下改进的方案等。
-13. MMI模型第一个改进目标函数中P(T)是如何计算的？ 我说每个词的联合概率分布乘积，当时他面露疑问，我还没反应过来是什么意思，到后面有说到这个问题才明白，原来他的意思是P(T)应该是单纯语言模型学习出来的结果，而按照我的说法，P(T)是在输入的基础上进行计算的
-
-## deep
+### deep
 
 14. FastText，CNN，RNN的区别？
 
 > 对话 与 多标签分类 是重中之重
 
-## 临时突击
+### 临时突击
 
 无外乎是一些正则化、dropout、BN、LR推导、交叉熵损失函数、softmax求导、BP反向传播、过拟合、BPTT反向传播、梯度爆炸和梯度弥散、ReLu、激活函数、文本分类、对话系统评价指标、word2vec、attention、seq2seq、优化算法、GBDT、Bagging、Boosting等等等等
 
 但是我感觉临时突击这些东西价值不大，主要还是看面试的一个整体效果
 
-## 深度学习的坑
+### 深度学习的坑
 
 - [深度学习的坑](https://www.cnblogs.com/rocketfan/p/7482786.html)
 
