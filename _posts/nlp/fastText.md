@@ -8,7 +8,7 @@ tags: fastText
 
 fastText 是 2016年 FAIR(Facebook AIResearch) 推出的一款文本分类与向量化工具。
 
-fastText 是 智慧与美貌并重的**文本分类** and **向量化工具** 的项目，它是有两部分组成的。 
+fastText 是 智慧与美貌并重的 **文本分类** and **向量化工具** 的项目，它是有两部分组成的。 
 
 论文1链接： [Bag of Tricks for Efficient Text Classification](https://arxiv.org/abs/1607.01759)
 
