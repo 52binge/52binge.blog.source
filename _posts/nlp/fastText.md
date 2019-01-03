@@ -126,6 +126,7 @@ n-gram 产生的特征只是作为**文本特征的候选集**，你后面可能
 
 - FastText 提出了子词嵌入方法。在 word2vec **skip-gram** 基础上，将中心词向量表示成单词的子词向量之和。
 - 子词嵌入（subword embedding）利用构词上的规律，通常可以提升生僻词表示的质量。
+- fastText 训练时复杂度 采用层次化 softmax 之后，减少为 O(hlogK) 级别, 预测时还是 O(Kh) 
 
 ## Reference
 
@@ -141,6 +142,7 @@ n-gram 产生的特征只是作为**文本特征的候选集**，你后面可能
 - [AI Challenger 2018 细粒度用户评论情感分析 fastText Baseline][7]
 - [ai-challenger-2018-文本挖掘类竞赛相关解决方案及代码汇总][8]
 - [QA问答系统中的深度学习技术实现][9]
+- [CSDN 层次softmax][13]
 
 
 [1]: https://zh.gluon.ai/chapter_natural-language-processing/fasttext.html
@@ -155,3 +157,4 @@ n-gram 产生的特征只是作为**文本特征的候选集**，你后面可能
 [10]: https://www.jianshu.com/p/2acc49549af6
 [11]: https://blog.csdn.net/fendouaini/article/details/81086575
 [12]: https://blog.csdn.net/joleoy/article/details/84987230
+[13]: https://blog.csdn.net/sxllllwd/article/details/81914447

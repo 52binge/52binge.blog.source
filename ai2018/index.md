@@ -4,7 +4,80 @@ date: 2018-10-17 21:19:48
 
 ## 细粒度用户评论情感分析
 
-- [AI-Challenger Baseline 细粒度用户评论情感分析][2_2]
+有20个粒度的评价指标，每个粒度又有4种情感状态，从官方baseline来看，分别训练了20个（4标签）分类器。
+
+要用facebook官方的 fastText 以及自带的 Python fastText 工具包做这件事并不容易，或者说对于20个多标签分类器来说这事很繁琐
+
+> skift：scikit-learn wrappers for Python fastText.
+
+默认配置参数训练fasttext多模型，直接运行“python main_train.py” 即可。这样大概跑了不到10分钟，内存峰值占用不到8G，在验证集上得到一个f1均值约为0.5451的fasttext多分类模型(20个），模型存储位置在 model_path 下：fasttext_model.pkl，大概1.8G，在验证集上详细的F1值大致如下：
+
+```bash
+location_traffic_convenience:0.5175700387941342
+location_distance_from_business_district:0.427891674259875
+location_easy_to_find:0.570805555583767
+service_wait_time:0.5052181634999748
+service_waiters_attitude:0.6766570408968818
+service_parking_convenience:0.5814636947460745
+service_serving_speed:0.5701241141533907
+price_level:0.6161258412096242
+price_cost_effective:0.5679586399625348
+price_discount:0.5763345656700684
+environment_decoration:0.5554146717297597
+environment_noise:0.563452055291662
+environment_space:0.5288336794721515
+environment_cleaness:0.5511776910510577
+dish_portion:0.5527095496220675
+dish_taste:0.6114994440656155
+dish_look:0.43750894239614163
+dish_recommendation:0.41756941548558957
+others_overall_experience:0.5322283082904627
+others_willing_to_consume_again:0.5404900044311536
+
+
+2018-10-02 14:32:18,927 [INFO]  (MainThread) f1_score: 0.5450516545305993
+```
+
+调参：
+
+```py
+python main_train.py -mn fasttext_wn2_model.pkl -wn 2
+```
+
+这次大约跑了15分钟，内存峰值最大到37G，存储的模型大约在17G，验证集F1值结果如下：
+
+```bash
+location_traffic_convenience:0.5482785384602362
+location_distance_from_business_district:0.4310319720574882
+location_easy_to_find:0.6140713866422334
+service_wait_time:0.5247890022873511
+service_waiters_attitude:0.6881098513108542
+service_parking_convenience:0.5828935095474249
+service_serving_speed:0.6168828054420539
+price_level:0.6615100420842464
+price_cost_effective:0.5954569043369508
+price_discount:0.5744529736585073
+environment_decoration:0.5743996877298929
+environment_noise:0.6186211367923496
+environment_space:0.5981761036053918
+environment_cleaness:0.6002515744280692
+dish_portion:0.5733503000134572
+dish_taste:0.6075507493398153
+dish_look:0.4424685719881029
+dish_recommendation:0.5936671419596734
+others_overall_experience:0.5325664419580063
+others_willing_to_consume_again:0.5875683298630815
+
+2018-10-02 14:53:00,701 [INFO]  (MainThread) f1_score: 0.5783048511752592
+```
+
+这个结果看起来还不错，我们可以基于这个fasttext多分类模型进行测试集的预测：
+
+```py
+python main_predict.py -mn fasttext_wn2_model.pkl
+```
+
+大约运行不到3分钟，预测结果就出炉了，可以在 test_data_predict_output_path 找到这个预测输出文件: testa_predict.csv ，然后就可以去官网提交了，在线提交的结果和验证集F1值大致相差0.01~0.02。这里还可以做一些事情来优化结果，譬如去停用词，不过我试了去停用词和去一些标点符号，结果还有一些降低；**调参，learning_rate的影响是比较直接的**，min_count设置为2貌似也有一些负向影响，有兴趣的同学可以多试试，寻找一个最优组合。
 
 ## Reference
 
