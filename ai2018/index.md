@@ -114,6 +114,8 @@ python main_predict.py -mn fasttext_wn2_model.pkl
 
 ### 2.2 Attention Model
 
+- 参考自 Kaggle 的 [Attention Model](https://www.kaggle.com/qqgeogor/keras-lstm-attention-glove840b-lb-0-043)
+
 ## Reference
 
 - [比赛官网 https://challenger.ai][2_1]
