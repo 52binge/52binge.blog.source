@@ -6,6 +6,8 @@ date: 2018-10-17 21:19:48
 
 有20个粒度的评价指标，每个粒度又有4种情感状态，从官方baseline来看，分别训练了20个（4标签）分类器。
 
+## 1. fastText baseline
+
 要用facebook官方的 fastText 以及自带的 Python fastText 工具包做这件事并不容易，或者说对于20个多标签分类器来说这事很繁琐
 
 > skift：scikit-learn wrappers for Python fastText.
@@ -79,12 +81,38 @@ python main_predict.py -mn fasttext_wn2_model.pkl
 
 大约运行不到3分钟，预测结果就出炉了，可以在 test_data_predict_output_path 找到这个预测输出文件: testa_predict.csv ，然后就可以去官网提交了，在线提交的结果和验证集F1值大致相差0.01~0.02。这里还可以做一些事情来优化结果，譬如去停用词，不过我试了去停用词和去一些标点符号，结果还有一些降低；**调参，learning_rate的影响是比较直接的**，min_count设置为2貌似也有一些负向影响，有兴趣的同学可以多试试，寻找一个最优组合。
 
-## Seq2Seq
+## 2. Seq2Seq Attention
 
-- 􏰶􏰐􏰹􏰱􏰨􏰠􏰄􏰶􏰐􏰃􏰗􏰑􏰎􏰙􏰂􏰉􏰮􏰜􏰱􏰌􏰟jieba 分词
+- jieba 分词
 - 建立词典时，过滤掉出现次数小于 5 的词
 - 训练集、验证集 以及 测试集A组成的语料，词典大小为 66347
 - 预测和训练时，词典没有出现的词 用 `<UNK>` 代替
+
+> 模型：Attention-RCNN、Attention-RNN
+
+直接使用的是char模型，不需要分词，用到的停用词也不多。粗暴但实测效果比 word level 好。
+
+### 2.1 预处理数据 data
+
+- trainsets lines：  501132， 合法例子 ： 105000
+- validationset lines：  70935, 合法例子 ： 15000
+- testsets lines：  72028， 合法例子 ： 15000
+
+**word2vec：** 维度 100， 窗口 10， 过滤掉次数小于 1 的词
+
+```
+3.1M chars.vector
+```
+
+数据预处理，在 preprocess 文件夹下生成了 train_char.csv、test_char.csv、test_char.csv 三个文件。
+
+```bash
+-rw-r--r--  1 blair 10:36 test_char.csv
+-rw-r--r--  1 blair 10:09 train_char.csv
+-rw-r--r--  1 blair 10:32 validation_char.csv
+```
+
+### 2.2 Attention Model
 
 ## Reference
 
