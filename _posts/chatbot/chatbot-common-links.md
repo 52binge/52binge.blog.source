@@ -29,6 +29,7 @@ Here are some useful links about Chatbot
 - [tf.clip_by_global_norm理解][15]
 - [Tensorflow 学习笔记（六） ———— Optimizer][16]
 - [Tensorflow中的Seq2Seq全家桶][17]
+- [map() 与 nest.map_structure（） 的区别及用法][18]
 
 [1]: https://blog.csdn.net/leviopku/article/details/78508951
 [2]: https://feisky.xyz/machine-learning/tensorflow/hello.html
@@ -47,6 +48,7 @@ Here are some useful links about Chatbot
 [15]: https://blog.csdn.net/u013713117/article/details/56281715
 [16]: https://applenob.github.io/tf_6.html
 [17]: https://zhuanlan.zhihu.com/p/47929039
+[18]: https://blog.csdn.net/weixin_41700555/article/details/85011957
 
 
 ## Seq2Seq

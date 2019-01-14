@@ -95,6 +95,42 @@ decoder_initial_state = decoder_cell.zero_state(batch_size=batch_size, dtype=tf.
 output_layer = tf.layers.Dense(self.vocab_size, ...
 ```
 
+```py
+            if self.mode == 'train':
+
+                # 定义decoder阶段的输入，其实就是在decoder的target开始处添加一个<go>,并删除结尾处的<end>,并进行embedding。
+                # decoder_inputs_embedded的shape为[batch_size, decoder_targets_length, embedding_size]
+                ending = tf.strided_slice(self.decoder_targets, [0, 0], [self.batch_size, -1], [1, 1])
+                decoder_input = tf.concat([tf.fill([self.batch_size, 1], self.word_to_idx['<go>']), ending], 1)
+
+                decoder_inputs_embedded = tf.nn.embedding_lookup(embedding, decoder_input)
+
+                # 训练阶段，使用TrainingHelper+BasicDecoder的组合，这一般是固定的，当然也可以自己定义Helper类，实现自己的功能
+                training_helper = tf.contrib.seq2seq.TrainingHelper(inputs=decoder_inputs_embedded,
+                                                                    sequence_length=self.decoder_targets_length,
+                                                                    time_major=False, name='training_helper')
+
+                training_decoder = tf.contrib.seq2seq.BasicDecoder(cell=decoder_cell, helper=training_helper,
+                                                                   initial_state=decoder_initial_state,
+                                                                   output_layer=output_layer)
+
+                # 调用dynamic_decode进行解码，decoder_outputs是一个namedtuple，里面包含两项(rnn_outputs, sample_id)
+                # rnn_output: [batch_size, decoder_targets_length, vocab_size]，保存decode每个时刻每个单词的概率，可以用来计算loss
+                # sample_id: [batch_size], tf.int32，保存最终的编码结果。可以表示最后的答案
+                
+                decoder_outputs, _, _ = tf.contrib.seq2seq.dynamic_decode(decoder=training_decoder,
+                                                                          impute_finished=True,
+                                                                          maximum_iterations=self.max_target_sequence_length)
+```
+
+> 其实简单来讲dynamic_decode就是
+> 
+>  1. 执行decoder的初始化函数
+>  2. 对解码时刻的state等变量进行初始化
+>  3. 循环执行 decoder 的 step函数 进行多轮解码
+> 
+> 常人写可能就一个for循环，但是源码很复杂，为了保证健壮性.
+
 
 [decode self.mode == 'train'](https://github.com/blair101/seq2seq_chatbot/blob/master/new_seq2seq_chatbot/model.py)
 
