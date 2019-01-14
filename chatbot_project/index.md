@@ -146,8 +146,28 @@ training_decoder = tf.contrib.seq2seq.BasicDecoder(cell=decoder_cell, helper=tra
 
 ### 6. train
 
-perplexity = math.exp(float(loss)) if loss < 300 else float('inf')
+训练时，优化梯度求解计算
 
+```py
+optimizer = tf.train.AdamOptimizer(self.learing_rate)
+trainable_params = tf.trainable_variables()
+gradients = tf.gradients(self.loss, trainable_params)
+
+# 其中 global_norm = sqrt(sum([l2norm(t)**2 for t in t_list]))
+# global_norm 是所有梯度的平方和，如果 clip_norm > global_norm ，就不进行截取
+# clip_norm = self.max_gradient_norm
+# t_list[i] * clip_norm / max(global_norm, clip_norm)
+clip_gradients, _ = tf.clip_by_global_norm(gradients, self.max_gradient_norm)
+
+# 应用梯度 apply_gradients
+self.train_op = optimizer.apply_gradients(zip(clip_gradients, trainable_params))
+```
+
+loss
+
+```py
+perplexity = math.exp(float(loss)) if loss < 300 else float('inf')
+```
 
 
 
