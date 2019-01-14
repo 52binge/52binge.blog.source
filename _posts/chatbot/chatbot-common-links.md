@@ -28,6 +28,7 @@ Here are some useful links about Chatbot
 - [tensorflow—tf.gradients()简单实用教程][14]
 - [tf.clip_by_global_norm理解][15]
 - [Tensorflow 学习笔记（六） ———— Optimizer][16]
+- [Tensorflow中的Seq2Seq全家桶][17]
 
 [1]: https://blog.csdn.net/leviopku/article/details/78508951
 [2]: https://feisky.xyz/machine-learning/tensorflow/hello.html
@@ -45,6 +46,7 @@ Here are some useful links about Chatbot
 [14]: https://blog.csdn.net/hustqb/article/details/80260002
 [15]: https://blog.csdn.net/u013713117/article/details/56281715
 [16]: https://applenob.github.io/tf_6.html
+[17]: https://zhuanlan.zhihu.com/p/47929039
 
 
 ## Seq2Seq

@@ -78,6 +78,7 @@ with tf.variable_scope('encoder'):
 ```
 
 - [tf.nn.embedding_lookup()的用法](https://blog.csdn.net/John_xyz/article/details/60882535)
+- [tf.nn.dynamic_rnn 详解](https://zhuanlan.zhihu.com/p/43041436)
 
 ### 5.2 decode
 
