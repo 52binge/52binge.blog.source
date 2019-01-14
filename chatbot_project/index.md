@@ -95,6 +95,15 @@ decoder_initial_state = decoder_cell.zero_state(batch_size=batch_size, dtype=tf.
 output_layer = tf.layers.Dense(self.vocab_size, ...
 ```
 
+训练阶段， 使用 TrainingHelper+BasicDecoder 的组合：
+
+```py
+training_helper = tf.contrib.seq2seq.TrainingHelper(inputs=decoder_inputs_embedded, sequence_length=self.decoder_targets_length,time_major=False, name='training_helper')
+
+training_decoder = tf.contrib.seq2seq.BasicDecoder(cell=decoder_cell, helper=training_helper, initial_state=decoder_initial_state,output_layer=output_layer)
+```
+
+
 ```py
             if self.mode == 'train':
 
@@ -134,13 +143,6 @@ output_layer = tf.layers.Dense(self.vocab_size, ...
 
 [decode self.mode == 'train'](https://github.com/blair101/seq2seq_chatbot/blob/master/new_seq2seq_chatbot/model.py)
 
-使用 TrainingHelper+BasicDecoder 的组合
-
-```py
-training_helper = tf.contrib.seq2seq.TrainingHelper(inputs=decoder_inputs_embedded, sequence_length=self.decoder_targets_length,time_major=False, name='training_helper')
-
-training_decoder = tf.contrib.seq2seq.BasicDecoder(cell=decoder_cell, helper=training_helper, initial_state=decoder_initial_state,output_layer=output_layer)
-```
 
 ### 6. train
 
