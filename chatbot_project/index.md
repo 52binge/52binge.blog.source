@@ -1,5 +1,53 @@
 
-第一部分
+## Tech pre
+
+### 1. RNN
+
+在介绍 RNN 之前，首先解释一下为什么之前的标准网络不再适用了。
+
+因为它有两个缺点：
+
+- 输入和输出的长度不尽相同
+- 无法共享从其他位置学来的特征
+
+> DNN 标准网络，输入层，比如每个 $x^{<1>}$ 都是一个 1000 维的向量，这样输入层很庞大, 那么第一层的权重矩阵就有着巨大的参数. 而 RNN 可以共享参数
+> 
+> DNN 传统网络存在的问题，即单词之间没有联系
+> 
+> RNN 为了将单词之间关联起来，所以将前一层的结果也作为下一层的输入数据。
+> 
+> RNN 在正向传播的过程中可以看到 a 的值随着时间的推移被传播了出去，也就一定程度上保存了单词之间的特性
+> 
+> RNN 要开始整个流程, 需要编造一个激活值, 这通常是 0向量, 有些研究人员会用其他方法随机初始化 $a^{<0>}=\vec{0}$. 不过使用 0向量，作为 0时刻 的伪激活值 是最常见的选择. 因此我们把它输入神经网络.
+
+<img src="/images/deeplearning/C5W1-10_1.png" width="750" />
+
+> $a^{<0>}=\vec{0}$
+> 
+> $a^{<1>}=g\_1(W\_{aa}a^{<0>}+W\_{ax}x^{<1>}+b\_a)$
+> 
+> $y^{<1>}=g\_2(W\_{ya}a^{<1>}+b\_y)$
+> 
+> $a^{<{t}>}=g\_1(W\_{aa}a^{<{t-1}>}+W\_{ax}x^{<{t}>}+b\_a)$
+> 
+> $y^{<{t}>}=g\_2(W\_{ya}a^{<{t}>}+b\_y)$
+>
+> 激活函数：**$g\_1$** 一般为 **`tanh`函数** (或者是 **`Relu`函数**)，**$g\_2$** 一般是 **`Sigmod`函数**.
+>
+> 注意: 参数的下标是有顺序含义的，如 $W\_{ax}$ 下标的第一个参数表示要计算的量的类型，即要计算 $a$ 矢量，第二个参数表示要进行乘法运算的数据类型，即需要与 $x$ 矢量做运算。如 $W\_{ax} x^{t}\rightarrow{a}$
+
+**Simplified RNN notation：**
+
+<img src="/images/deeplearning/C5W1-11_1.png" width="400" />
+
+$$
+\begin{align}
+a^{<{t}>}&= g(W\_{aa}a^{<{t-1}>}+W\_{ax}x^{<{t}>}+b\_a) \notag \\\\
+&= g(W\_a [a^{<{t-1}>},x^{<{t}>}]^{T}+b\_a) \notag
+\end{align}
+$$
+
+[TensorFlow： 第8章 RNN 循环神经网络 1][1]
 
 ### 1. 数据预处理
 
@@ -173,9 +221,23 @@ perplexity = math.exp(float(loss)) if loss < 300 else float('inf')
 
 
 
+## Reference
 
+[1]: /2018/11/08/tensorflow/tf-google-8-rnn-1/
 
-
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+</script>
 
 
 
