@@ -1,6 +1,3 @@
-
-## Tech pre
-
 ### 1. RNN
 
 在介绍 RNN 之前，首先解释一下为什么之前的标准网络不再适用了。
@@ -48,6 +45,30 @@ a^{<{t}>}&= g(W\_{aa}a^{<{t-1}>}+W\_{ax}x^{<{t}>}+b\_a) \notag \\\\
 $$
 
 [TensorFlow： 第8章 RNN 循环神经网络 1][1]
+
+#### Vanishing gradients with RNNs
+
+> 现在你已经学会了 基本的 RNN 如何应用在 比如 语言模型 还有 如何用反向传播来训练你的 RNN 模型, 但是还有一个问题就是 梯度消失 与 梯度爆炸 问题.
+>
+> 目前这种基本的 RNN 也不擅长捕获这种长期依赖效应.
+>
+> 梯度爆炸可以用梯度消减解决、梯度消失就有点麻烦了，需要用 **GRU** 来解决.
+
+**RNN 的梯度消失、爆炸问题:**
+
+但梯度值过小的解决方案要稍微复杂一点，比如下面两句话：
+
+> “The **cat**，which already ate apple，yogurt，banana，…, **was** full.”
+
+所以为了 解决梯度消失 问题，提出了
+
+1. GRU单元
+2. LSTM
+
+- [人人都能看懂的GRU](https://zhuanlan.zhihu.com/p/32481747)
+- [一文了解LSTM和GRU背后的秘密（绝对没有公式）](https://zhuanlan.zhihu.com/p/46327831)
+
+识别偏见方向
 
 ### 1. 数据预处理
 
