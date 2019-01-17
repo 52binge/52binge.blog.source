@@ -65,10 +65,13 @@ $$
 1. GRU单元
 2. LSTM
 
-- [人人都能看懂的GRU](https://zhuanlan.zhihu.com/p/32481747)
-- [一文了解LSTM和GRU背后的秘密（绝对没有公式）](https://zhuanlan.zhihu.com/p/46327831)
+> - [人人都能看懂的GRU](https://zhuanlan.zhihu.com/p/32481747)
+> - [一文了解LSTM和GRU背后的秘密（绝对没有公式）](https://zhuanlan.zhihu.com/p/46327831)
+>
+> 识别偏见方向
 
-识别偏见方向
+- [理论 seq2seq+Attention 机制模型详解](/2017/11/17/chatbot/chatbot-research8/)
+- [Tensorflow 实现 seq2seq+Attention 详解](https://github.com/blair101/seq2seq_chatbot)
 
 ### 1. 数据预处理
 
