@@ -1,4 +1,14 @@
-### 1. RNN
+> 个人看法要在面试之前按照简历上面的内容自己能够讲一个小故事。主要体现自己的深度学习的基础知识，这一部分要结合项目经验进行拔高，让面试官看到你的能力和特点。
+
+## 1. DNN
+
+- 交叉熵损失函数
+- softmax求导
+- 过拟合
+- 梯度爆炸和梯度弥散
+- ReLu、Tanh、Sigmod 激活函数
+
+## 2. RNN
 
 在介绍 RNN 之前，首先解释一下为什么之前的标准网络不再适用了。
 
@@ -72,6 +82,15 @@ $$
 
 - [理论 seq2seq+Attention 机制模型详解](/2017/11/17/chatbot/chatbot-research8/)
 - [Tensorflow 实现 seq2seq+Attention 详解](https://github.com/blair101/seq2seq_chatbot)
+
+
+## 3. NLP
+
+- word2vec
+- fasttext
+- seq2seq
+- soft attention和hard attention的区别
+- transformer
 
 ### 1. 数据预处理
 
@@ -241,9 +260,28 @@ loss
 perplexity = math.exp(float(loss)) if loss < 300 else float('inf')
 ```
 
+## 文本分类
+
+1. fasttext
+2. 调参数
+3. 优化
+4. RCNN
+5. seq2seq
+6. TextCNN，TextRNN的模型
+
+> fasttext TextCNN RCNN HAN DMN EntityNetwork charCNN charRNN）。需要在总结一下各个模型的优缺点
+> fasttext、CNN、RNN的优缺点各是什么等等
+> 为什么fasttext速度很快，然后问了下如果现在在做会采用什么样的方案；
+> 说一说 RNN 和 LSTM 的区别和原理
 
 
+## 写代码
 
+ 1. 剑指offer
+ 2. 现场写tf代码 简单的
+ 3. 用tensorflow实现一个
+
+> 个人定位： 是深度学习与NLP， 不断地展现自己在深度学习上的造诣
 
 ## Reference
 
