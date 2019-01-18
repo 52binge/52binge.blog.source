@@ -2,11 +2,22 @@
 
 ## 1. DNN
 
-- 交叉熵损失函数
+- 交叉熵损失函数 (Cross Entropy Error Function)
 - softmax求导
 - 过拟合
 - 梯度爆炸和梯度弥散
 - ReLu、Tanh、Sigmod 激活函数
+
+### 1.1 Cross Entropy
+
+Cross Entropy损失函数常用于分类问题中，但是为什么它会在分类问题中这么有效呢？我们先从一个简单的分类例子来入手。
+
+- [Cross Entropy 交叉熵损失函数](https://zhuanlan.zhihu.com/p/35709485)
+
+
+> Tanh 数据平均值为 0，具有数据中心化的效果，几乎在任何场合都优于 Sigmoid
+
+<img src="/images/deeplearning/C1W3-9_1.png" width="700" />
 
 ## 2. RNN
 
