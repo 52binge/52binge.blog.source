@@ -2,22 +2,136 @@
 
 ## 1. DNN
 
+- ReLu、Tanh、Sigmod 激活函数
 - 交叉熵损失函数 (Cross Entropy Error Function)
 - softmax求导
 - 过拟合
 - 梯度爆炸和梯度弥散
-- ReLu、Tanh、Sigmod 激活函数
+- Optimization (Mini-batch、指数加权平均-偏差修正、Momentum、RMSprop、Adam、学习率衰减)
 
-### 1.1 Cross Entropy
+### 1.1 Deep Neural Networks
+
+Tanh 数据平均值为 0，具有数据中心化的效果，几乎在任何场合都优于 Sigmoid
+
+<img src="/images/deeplearning/C1W3-9_1.png" width="700" />
+
+> 对于中间层来说, 往往是 ReLU 的效果最好.
+>
+> 虽然 z < 0 时，斜率为0， 但在实践中，有足够多的隐藏单元 令 z > 0, 对大多数训练样本来说是很快的.
+
+### 1.2 Cross Entropy
 
 Cross Entropy损失函数常用于分类问题中，但是为什么它会在分类问题中这么有效呢？我们先从一个简单的分类例子来入手。
 
 - [Cross Entropy 交叉熵损失函数](https://zhuanlan.zhihu.com/p/35709485)
 
+> 预测政治倾向例子
+> - Classification Error（分类错误率）
+> - Mean Squared Error (均方方差)
+> - Cross Entropy Error Function（交叉熵损失函数）
 
-> Tanh 数据平均值为 0，具有数据中心化的效果，几乎在任何场合都优于 Sigmoid
+**模型1：**
 
-<img src="/images/deeplearning/C1W3-9_1.png" width="700" />
+![](https://pic3.zhimg.com/80/v2-0c49d6159fc8a5676637668683d41762_hd.jpg)
+
+**模型2：**
+
+![](https://pic3.zhimg.com/80/v2-6d31cf03185b408d5e93fa3e3c05096e_hd.jpg)
+
+**Classification Error: **
+
+![](https://www.zhihu.com/equation?tex=classification%5C+error%3D%5Cfrac%7Bcount%5C+of%5C+error%5C+items%7D%7Bcount%5C+of+%5C+all%5C+items%7D)
+
+**Mean Squared Error:**
+
+![](https://www.zhihu.com/equation?tex=MSE%3D%5Cfrac%7B1%7D%7Bn%7D%5Csum_%7Bi%7D%5En%28%5Chat%7By_i%7D-y_i%29%5E2)
+
+> 我们发现，MSE能够判断出来模型2优于模型1，那为什么不采样这种损失函数呢？主要原因是逻辑回归配合MSE损失函数时，采用梯度下降法进行学习时，会出现模型一开始训练时，学习速率非常慢的情况
+> 
+> 结论： 对于分类问题的损失函数来说，分类错误率和平方和损失都不是很好的损失函数
+
+**Cross Entropy Error Function（交叉熵损失函数）**
+
+二分类
+
+![](https://www.zhihu.com/equation?tex=%5Cbegin%7Balign%7DJ+%3D+%E2%88%92%5By%5Ccdot+log%28p%29%2B%281%E2%88%92y%29%5Ccdot+log%281%E2%88%92p%29%5D%5Cend%7Balign%7D+%5C%5C)
+
+多分类
+
+![](https://www.zhihu.com/equation?tex=%5Cbegin%7Balign%7DJ+%3D+-%5Csum_%7Bc%3D1%7D%5EMy_%7Bc%7D%5Clog%28p_%7Bc%7D%29%5Cend%7Balign%7D+%5C%5C)
+
+> 函数性质: 该函数是凸函数，求导时能够得到全局最优值
+> 
+> 交叉熵损失函数经常用于分类问题中，特别是在神经网络做分类问题时，也经常使用交叉熵作为损失函数，此外，由于交叉熵涉及到计算每个类别的概率，所以交叉熵几乎每次都和softmax函数一起出现。
+> 
+> 使用交叉熵损失函数，不仅可以很好的衡量模型的效果，又可以很容易的的进行求导计算
+
+在用梯度下降法做参数更新的时候，模型学习的速度取决于两个值：
+
+> 1. 学习率
+> 2. 偏导值
+
+### 1.3 Improving Deep Neural Networks
+
+> - 能够高效地使用神经网络**通用**的技巧，包括 `初始化、L2和dropout正则化、Batch归一化、梯度检验`。
+> - 能够实现并应用各种**优化**算法，例如 `Mini-batch、Momentum、RMSprop、Adam，并检查它们的收敛程度`。
+> - 理解深度学习时代关于如何 **构建训练/开发/测试集** 以及 **偏差/方差分析** 最新最有效的方法.
+
+本周主要内容包括:
+ 
+ > 1. Data set partition
+ > 2. Bias / Variance
+ > 3. Regularization
+ > 4. Normalization
+ > 5. Gradient Checking
+ 
+#### Data set partition
+ 
+> 在以往传统的机器学习中, 我们通常按照 70/30 来数据集分为 `Train set`/`Validation set`, 或者按照 60/20/20 的比例分为 `Train/Validation/Test`. 
+> 
+> 但在今天机器学习问题中, 我们可用的**数据集的量级非常大** (例如有 100W 个样本). 这时我们就**不需要给验证集和测试集太大的比例, 例如 98/1/1**.
+
+#### Regularization
+
+- L1 regularization 
+- L2 regularization 
+
+> 当我们的 λ 比较大的时候, 模型就会加大对 w 的惩罚, 这样有些 w 就会变得很小 (L2 Regularization 也叫权重衰减, weights decay). 从下图左边的神经网络来看, 效果就是整个神经网络变得简单了(一些隐藏层甚至 w 趋向于 0), 从而降低了过拟合的风险.
+>
+> 那些 隐藏层 并没有被消除，只是影响变得更小了，神经网络变得简单了.
+> 
+> L2 正则化 的缺点是，要用大量精力搜索合适的 λ .
+
+#### dropout
+
+> dropout 将产生收缩权重的平方范数的效果, 和 L2 类似，实施 dropout 的结果是它会压缩权重，并完成一些预防过拟合的外层正则化，事实证明 dropout 被正式地作为一种正则化的替代形式
+>
+> L2 对不同权重的衰减是不同的，它取决于倍增的激活函数的大小.
+>
+> dropout 的功能类似于 L2 正则化. 甚至 dropout 更适用于不同的输入范围.
+
+#### Normalization
+
+#### Vanishing/Exploding gradients
+
+一个可以减小这种情况发生的方法, 就是用有效的参数初始化 (该方法并不能完全解决这个问题). 但是也是有意义的
+
+设置合理的权重，希望你设置的权重矩阵，既不会增长过快，也不会下降过快到 0.
+
+想更加了解如何初始化权重可以看下这篇文章 [神经网络权重初始化问题](http://www.cnblogs.com/marsggbo/p/7462682.html)，其中很详细的介绍了权重初始化问题。
+
+> 我们不应该做的事情（即初始化为0）, 如果权重初始化为同一个值，网络就不可能不对称(即是对称的)。
+>
+> 警告：并不是数字越小就会表现的越好。比如，如果一个神经网络层的权重非常小，那么在反向传播算法就会计算出很小的梯度(因为梯度gradient是与权重成正比的)。在网络不断的反向传播过程中将极大地减少“梯度信号”，并可能成为深层网络的一个需要注意的问题
+
+**实际操作：**
+
+> 通常的建议是使用ReLU单元以及 Kaiming He 等人 推荐的公式
+>
+> $$
+w = np.random.randn(n) * sqrt(2.0/n)
+$$
+> np.random.randn 是从标准正态分布中返回一个或多个样本值
 
 ## 2. RNN
 
