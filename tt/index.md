@@ -5,9 +5,9 @@ date: 2019-01-19 22:05:21
 
 湯湯：
 
-記得我之前有推薦你一個影集 叫做 《How I met your mother》 簡稱 《How》，我昨天有看到第 10 集，發現劇中有類似我們的困擾，他們竟然用一只  Pineapple 就可以化解掉很多憂愁和煩惱。所以我想和你 Share 這部影集。
+記得我之前有推薦你一個影集 叫做 《How I met your mother》 簡稱 《How》，我昨天有看到第 10 集，發現劇中有類似我們的困擾，他們竟然用一只  Pineapple 就可以化解憂愁和煩惱。所以我想和你 Share 這部影集。
 
-<img src="/tt/how10_tt4.JPG" width="400" /img>
+<img src="/tt/how10_tt6.jpeg" width="400" /img>
 
 > 《Voices》： Hey，it's me again. Plain, you see again. Please,  I’m a fool again. ...
    
@@ -34,6 +34,9 @@ and all your left with the next day is a bad hangover, ... and a pineapple.
 > 有時候生活就是這樣，你一天不用腦，等到了第二天留下的就是宿醉後嚴重的後果, 還有一個菠蘿，我們一直都不知道哪個菠蘿到底哪來的，不過還蠻好吃的。
 
 
-> 相信我們一定會有智慧，有胸懷，有能力來解決 Pineapple incident, 雖然不完全一樣，我覺得類似點蠻多的，所以我也準備和你 share 一種 fruit. 讓我們慢慢恢復過去的拘謹和真實，經過波折后的真實，那將一定更加和諧珍貴美好，真的。湯湯相信我， I can do it. you can do it.
+> 相信我們一定會有智慧，有胸懷，有能力來解決 Pineapple incident, 雖然不完全一樣，我覺得有些類似點，所以我也準備和你 share 一種 fruit. 讓我們慢慢恢復過去的拘謹和真實，經過波折后的真實，那將一定更加和諧珍貴美好。 不能這樣一直冷處理，這樣下去，真的太讓人痛苦和遺憾了，真的。 阿湯湯你一向陽光開朗不拘小節，So，Let’s moved on. I moved on. you moved on. I can do it. you can do it.
 >
-> 湯湯，好了。我先去尋找一種 Fruit，過幾天和你 Share. 共鑒
+> 湯湯，我先去尋找一種 Fruit，過幾天和你 Share 共鑒， 作為一個慢慢恢復的一個良好的開始... 🤝🤝🤝
+
+https://www.facebook.com/blair101v/videos/1158390307652653/
+
