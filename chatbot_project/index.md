@@ -401,10 +401,6 @@ perplexity = math.exp(float(loss)) if loss < 300 else float('inf')
 > 为什么fasttext速度很快，然后问了下如果现在在做会采用什么样的方案；
 > 说一说 RNN 和 LSTM 的区别和原理
 
----
-date: 2018-10-17 21:19:48
----
-
 ## 细粒度用户评论情感分析
 
 有20个粒度的评价指标，每个粒度又有4种情感状态，从官方baseline来看，分别训练了20个（4标签）分类器。
