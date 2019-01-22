@@ -15,7 +15,7 @@ date: 2017-11-05 20:05:21
 
 1. 支付宝：
 <div class="tweetimg">
-<img src="/images/life/pay-10.png" width="300" height="800"/img></div>
+<img src="/images/tech-logos/pay-10.png" width="300" height="800"/img></div>
 
 2. PayPal: 请点击[付款链接][2]
 
