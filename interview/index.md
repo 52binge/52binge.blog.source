@@ -513,15 +513,6 @@ python main_predict.py -mn fasttext_wn2_model.pkl
 
 - 参考自 Kaggle 的 [Attention Model](https://www.kaggle.com/qqgeogor/keras-lstm-attention-glove840b-lb-0-043)
 
-## Reference
-
-- [比赛官网 https://challenger.ai][2_1]
-- [AI-Challenger Baseline 细粒度用户评论情感分析 (0.70201) 前篇][2_1]
-
-[2_1]: https://challenger.ai/competition/fsauor2018
-[2_2]: https://zhuanlan.zhihu.com/p/47207009
-
-
 ## 写代码
 
  1. 剑指offer
@@ -532,4 +523,18 @@ python main_predict.py -mn fasttext_wn2_model.pkl
 
 ## Reference
 
+- [比赛官网 https://challenger.ai][2_1]
+- [AI-Challenger Baseline 细粒度用户评论情感分析 (0.70201) 前篇][2_1]
+
 [1]: /2018/11/08/tensorflow/tf-google-8-rnn-1/
+[2_1]: https://challenger.ai/competition/fsauor2018
+[2_2]: https://zhuanlan.zhihu.com/p/47207009
+
+- [2019 11家互联网公司，NLP面经回馈][v1]
+- [暑期实习NLP算法岗面经总结][v2]
+- [呜呜哈做一个有思想的码农][v3]
+
+[v1]: https://zhuanlan.zhihu.com/p/46999592
+[v2]: https://zhuanlan.zhihu.com/p/36387348
+[v3]: https://www.zhihu.com/people/liu-he-he-44/posts
+
