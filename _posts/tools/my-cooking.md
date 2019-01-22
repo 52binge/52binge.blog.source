@@ -2,7 +2,7 @@
 title: Cooking
 date: 2017-07-09 20:54:16
 tags: cooking
-categories: life
+categories: tools
 toc: true
 ---
 

@@ -3,7 +3,7 @@
 title: Travel Note For Thai
 date: 2016-10-27 19:54:16
 tags: MyTrip
-categories: life
+categories: tools
 toc: true
 ---
 

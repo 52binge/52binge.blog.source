@@ -3,7 +3,7 @@
 title: 气质的培养
 date: 2013-01-17 06:24:16
 tags: life
-categories: life
+categories: tools
 toc: true
 ---
 
@@ -67,4 +67,4 @@ toc: true
 
 - [转自网络][1]
 
-[1]: http://blog.csdn.net/robbyo/article/details/8514334
+[1]: http://blog.csdn.net/robbyo/article/details/8514334

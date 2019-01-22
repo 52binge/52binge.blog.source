@@ -2,7 +2,7 @@
 title: Singapore IT environment
 toc: true
 date: 2017-09-25 21:15:21
-categories: life
+categories: tools
 tags: [Singapore]
 ---
 
