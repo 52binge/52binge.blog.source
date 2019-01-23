@@ -246,11 +246,11 @@ Adaptive Moment Estimation
 
 ## 3. Hyperparameter、Batch Regularization
 
-Normalizing Activations in a network
-
-Fitting Batch Norm into a neural network
-
-Why does Batch Norm work?
+> Normalizing Activations in a network
+>
+> Fitting Batch Norm into a neural network
+>
+> Why does Batch Norm work?
 
 1. 归一化数据可以减弱前层参数的作用与后层参数的作用之间的联系，它使得网络每层都可以自己学习
 2. batch norm 奏效的另一个原因则是它具有正则化的效果。其与dropout有异曲同工之妙
