@@ -133,7 +133,141 @@ w = np.random.randn(n) * sqrt(2.0/n)
 $$
 > np.random.randn 是从标准正态分布中返回一个或多个样本值
 
-## 2. RNN
+## 2. Optimization 
+
+### 2.1 Mini-batch
+
+**算法核心**
+
+> 假设我们有 5,000,000 个数据，每 1000 作为一个集合，计入上面所提到的 $x^{\\{1\\}}=\\{x^{(1)},x^{(2)}……x^{(5000)}\\},……$
+
+> 1. 需要迭代运行 5000次 神经网络运算.
+> 2. 每一次迭代其实与之前笔记中所提到的计算过程一样，首先是前向传播，但是每次计算的数量是 1000.
+> 3. 计算损失函数，如果有 Regularization ，则记得加上 Regularization Item
+> 4. Backward propagation
+> 
+> 注意，mini-batch 相比于之前一次性计算所有数据不仅速度快，而且反向传播需要计算 5000次，所以效果也更好.
+
+epoch
+
+> - 对于普通的梯度下降法，一个 epoch 只能进行一次梯度下降；
+> - 对于 Mini-batch 梯度下降法，一个 epoch 可以进行 numbers of mini-batch 次梯度下降;
+
+> **epoch** : 当一个`完整的数据集`通过了神经网络一次并且返回了一次，这个过程称为一个 epoch。
+> 
+> 比如对于一个有 2000 个训练样本的数据集。将 2000 个样本分成大小为 500 的 batch，那么完成一个 epoch 需要 4 个 iteration。
+
+**mini-batch 大小的选择**
+
+> - 如果训练样本的大小比较小时，如 $m⩽2000$ 时 — 选择 batch 梯度下降法；
+> - 如果训练样本的大小比较大时，典型的大小为：$2^{6}、2^{7}、\cdots、2^{10}$
+> - Mini-batch 的大小要符合 CPU/GPU 内存， 运算起来会更快一些.
+
+### 2.2 Exponentially weighted averages
+
+指数加权平均的关键函数： 
+
+$$
+v\_{t} = \beta v\_{t-1}+(1-\beta)\theta\_{t}
+$$
+
+我们现在需要计算出一个温度趋势曲线，计算方法(`指数加权平均实现`)如下：
+
+$$
+v\_{0} =0 \\\\
+v\_{1}= \beta v\_{0}+(1-\beta)\theta\_{1} \\\\
+v\_{2}= \beta v\_{1}+(1-\beta)\theta\_{2} \\\\
+v\_{3}= \beta v\_{2}+(1-\beta)\theta\_{3} \\\\
+\ldots
+$$
+
+展开：
+
+$$
+v\_{100}=0.1\theta\_{100}+0.9(0.1\theta\_{99}+0.9(0.1\theta\_{98}+0.9v\_{97})) \\\\ v\_{100}=0.1\theta\_{100}+0.1\times0.9\theta\_{99}+0.1\times(0.9)^{2}\theta\_{98}+0.1\times(0.9)^{3}\theta\_{97}+\cdots
+$$
+
+上式中所有 $θ$ 前面的系数相加起来为 1 或者 接近于 1，称之为偏差修正.
+
+**原因**： 
+
+> $$
+v\_{0}=0\\\\v\_{1}=0.98v\_{0}+0.02\theta\_{1}=0.02\theta\_{1}\\\\v\_{2}=0.98v\_{1}+0.02\theta\_{2}=0.98\times0.02\theta\_{1}+0.02\theta\_{2}=0.0196\theta\_{1}+0.02\theta\_{2}
+$$
+
+> 如果第一天的值为如40，则得到的 v1=0.02×40=0.8，则得到的值要远小于实际值，后面几天的情况也会由于初值引起的影响，均低于实际均值.
+
+> 注意 ：！！！上面公式中的 $V\_{t-1}$ 是未修正的值.
+> 
+> 为方便说明，令 $β=0.98,θ\_1=40℃,θ\_2=39℃$, 则
+> 
+> - 当 $t=1,θ\_1=40℃$ 时，$V\_1=\frac{0.02*40}{1-0.98}=40$ ,哇哦, 有没有很巧的感觉，再看
+> - 当 $t=2,θ\_2=39℃$ 时，$V\_2 = \frac{0.98\*V\_{t-1} + 0.02\*θ\_2}{1-0.98^2}$ $=\frac{0.98\*(0 + 0.02\*θ\_1)+0.02\*39}{1-0.98^2}=39.49$
+> 
+> `注意点` : 所以，**记住你如果直接用修正后的 $V\_{t−1}$ 值代入计算就大错特错了**.
+
+### 2.3 Momentum 解释版
+
+Momentum 优化器 刚好可以解决我们所面临的问题，它主要是基于梯度的移动指数加权平均
+
+**RMSProp** (Root Mean Square Prop)
+
+为了进一步优化损失函数在更新中存在摆动幅度过大的问题，并且进一步加快函数的收敛速度，RMSProp 算法对权重 W 和偏置 b 的梯度使用了微分平方加权平均数。
+
+其中，假设在第 t 轮迭代过程中，各个公式如下所示：
+
+$$
+{s\_{dw}} = \beta {s\_{dw}} + (1 - \beta )d{W^2} \\\\
+{s\_{db}} = \beta {s\_{db}} + (1 - \beta )d{b^2}
+$$
+
+$$
+W = W - \alpha \frac {dW} { \sqrt {s\_{dw}} + \varepsilon } \\\\
+b = b - \alpha \frac {db} { \sqrt{s\_{db}}  + \varepsilon }
+$$
+
+> 当 dW 或者 db 中有一个值比较大的时候，那么我们在更新权重或者偏置的时候除以它之前累积的梯度的平方根，这样就可以使得更新幅度变小
+
+### 2.4 Adam (Adaptive Moment Estimation)
+
+Adam（Adaptive Moment Estimation）算法是将 Momentum算法 和 RMSProp算法 结合起来使用的一种算法
+
+上面的所有步骤就是Momentum算法和RMSProp算法结合起来从而形成Adam算法。在Adam算法中，参数 ${\beta\_1}$ 所对应的就是Momentum算法中的 ${\beta}$ 值，一般取0.9，参数 ${\beta\_2}$ 所对应的就是RMSProp算法中的 ${\beta}$ 值，一般我们取0.999，而 $\epsilon$ 是一个平滑项，我们一般取值为 ${10^{ - 8}}$，而学习率 $\alpha$ 则需要我们在训练的时候进行微调。
+
+Adaptive Moment Estimation
+
+> ${\beta\_1}$ 用于计算这个微分 (computing the mean of the derivatives, this is called the first moment).
+> 
+> ${\beta\_2}$ 用于计算平方数的指数加权平均数 (compute exponentially weighted average of the squares. this is called the second moment)
+> 
+> So that gives rise to the name `Adaptive Moment Estimation`.
+
+- [Optimization](/2018/07/21/deeplearning/Improving-Deep-Neural-Networks-week2/)
+
+## 3. Hyperparameter、Batch Regularization
+
+Normalizing Activations in a network
+
+Fitting Batch Norm into a neural network
+
+Why does Batch Norm work?
+
+1. 归一化数据可以减弱前层参数的作用与后层参数的作用之间的联系，它使得网络每层都可以自己学习
+2. batch norm 奏效的另一个原因则是它具有正则化的效果。其与dropout有异曲同工之妙
+
+batch norm 奏效的另一个原因则是它具有正则化的效果。其与dropout有异曲同工之妙，我们知道dropout会随机的丢掉一些节点，即数据，这样使得模型训练不会过分依赖某一个节点或某一层数据。batch norm也是如此，通过归一化使得各层之间的依赖性降低，并且会给每层都加入一些噪声，从而达到正则化的目的
+
+> 它减弱了前层参数的作用，与后层参数的作用之间的联系
+
+## 4. Residual Network (ResNets)
+
+> AlexNet->VGG->LeNet
+
+ResNets 发明者是 何恺明、张翔宇、任少卿、孙剑
+
+吴大师表示 “非常深的网络是很难训练的，因为存在梯度消失和梯度爆炸的问题”，为了解决这个问题，引入了 **Skip Connection** (跳远链接)，残差网络正是使用了这个方法。
+
+## 5. RNN
 
 在介绍 RNN 之前，首先解释一下为什么之前的标准网络不再适用了。
 
