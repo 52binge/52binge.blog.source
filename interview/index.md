@@ -401,6 +401,8 @@ $$
 >
 > 1. CBOW  Continous Bag of Words Model 连续词袋模型
 > 2. Skip-Gram Model
+>
+> 词向量既能够降低维度，又能够capture到当前词在本句子中上下文的信息（表现为前后距离关系），那么我们对其用来表示语言句子词语作为NN的输入是非常自信与满意的
 
 ## 9. fastText
 
