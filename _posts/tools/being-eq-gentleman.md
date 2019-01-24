@@ -1,6 +1,6 @@
 
 ---
-title: 气质的培养
+title: 需要的气质品格
 date: 2013-01-17 06:24:16
 tags: life
 categories: tools
