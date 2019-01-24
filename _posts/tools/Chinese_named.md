@@ -1,5 +1,5 @@
 ---
-title: 中国人起名字的学问 - 自我研究
+title: 中国人起名字的学问
 date: 2016-08-13 07:54:16
 tags: Chinese's name
 categories: tools
