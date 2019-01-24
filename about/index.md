@@ -33,7 +33,7 @@ less is more. 小勝靠智, 大勝靠德.  <!--[Blair’s Instagram][ins]-->
 
 <a class="article-myself" href="/"> Blair Chan</a> 90s, a program engineer, a GTD practitioner, live in Hangzhou, China.
 
-<a class="article-myself" href="/tweet"> Libin Chan</a> focus on Python、NLP、DeepLearning and other fields.
+<a class="article-myself" href="https://instagram.com/blair101v/"> Blair Chan</a> focus on Python、NLP、DeepLearning and other fields.
 
 <!--<a class="article-myself" href="/">  Libin Chan</a>-->
 <!-- <img src="/images/tech-logos/2016-10-03-6.png" width="250"  style="margin-left:100px;" /img> -->
@@ -57,7 +57,7 @@ HIMYM 影響一個人的價值觀、友情觀、愛情觀…, 包含蠻多人生
 
 > You see, kids, there’s no way of knowing for sure where the safest place is… so the best you can hope for is to have some good company.
 >
-> 孩子們，你永遠沒法確定什麼地方最安全，所以你只能期望能有三兩好友陪在身旁。
+> 你永遠沒法確定什麼地方最安全，所以你只能期望能有三兩好友陪在身旁。
 > &nbsp;
 > Whatever you do in this life, it's not legendary, unless your friends are there to see it.
 >
