@@ -399,6 +399,8 @@ $$
 - Skip-Gram
 - CBOW
 
+[word2vec](https://blog.csdn.net/u012052268/article/details/77170517/#63个人对word-embedding的理解)
+[文本特征提取_02：Word2Vec词嵌入矩阵](https://blog.csdn.net/sinat_33761963/article/details/54631367)
 
 
 ## chatbot
