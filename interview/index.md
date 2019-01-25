@@ -386,6 +386,31 @@ $$
 
 [word2vec language model](/2017/07/12/nlp/word2vector-basic/#3-4-语言模型-词组合出现的概率)
 
+### 7.1 language model 的评价方法
+
+常用指标 perplexity， perplexity 越低，说明建模效果越好. 
+
+计算perplexity的公式如下：
+
+<img src="/images/tensorflow/tf-google-9.1.2_1-equation.svg" width="600" />
+
+简单来说，perplexity刻画的是语言模型预测一个语言样本的能力.
+
+在语言模型的训练中，通常采用perplexity的对数表达形式：
+
+<img src="/images/tensorflow/tf-google-9.1.2_2-equation.svg" width="600" />
+
+相比较乘积求平方根的方式，采用加法的形式可以加速计算，同时避免概率乘积数值过小而导致浮点数向下溢出的问题。在数学上，log perplexity 可以看作真实分布与预测分布之间的交叉熵 Cross Entropy, 交叉熵描述了两个概率分布之间的一种距离. log perplexity和交叉熵是等价的
+
+在神经网络模型中，$P(w\_i | w\_{1}, , ..., w\_{i-1})$ 分布通常是由一个softmax层产生的，TensorFlow中提供了两个方便计算交叉熵的函数，可以将logits结果直接放入输入，来帮助计算softmax然后再进行计算交叉熵，在后面我们会详细介绍
+
+```py
+cross_entropy = tf.nn.softmax_cross_entropy_with_logits(labels = y, logits = y)
+cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(labels = y, logits = y)
+```
+
+- [知乎_习翔宇](https://www.zhihu.com/people/xi-xiang-yu-20/posts)
+
 ## 8. word2vec
 
 - NNLM
