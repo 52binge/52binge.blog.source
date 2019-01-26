@@ -386,7 +386,7 @@ $$
 
 [word2vec language model](/2017/07/12/nlp/word2vector-basic/#3-4-语言模型-词组合出现的概率)
 
-### 7.1 language model 的评价方法
+### 7.1 PPL 评价方法
 
 常用指标 perplexity， perplexity 越低，说明建模效果越好. 
 
@@ -413,7 +413,7 @@ cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(labels = y, logit
 
 ## 8. word2vec
 
-- NNLM
+- NNLM 
 - Skip-Gram
 - CBOW (Continuous Bagof-Words)
 
@@ -427,7 +427,90 @@ cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(labels = y, logit
 > 1. CBOW  Continous Bag of Words Model 连续词袋模型
 > 2. Skip-Gram Model
 >
-> 词向量既能够降低维度，又能够capture到当前词在本句子中上下文的信息（表现为前后距离关系），那么我们对其用来表示语言句子词语作为NN的输入是非常自信与满意的
+> 词向量（词的特征向量）既能够降低维度，又能够capture到当前词在本句子中上下文的信息（表现为前后距离关系），那么我们对其用来表示语言句子词语作为NN的输入是非常自信与满意的
+
+### 8.1 NNLM
+
+NNLM,直接从语言模型出发，将模型最优化过程转化为求词向量表示的过程。 
+既然离散的表示有辣么多缺点，于是有小伙伴就尝试着用模型最优化的过程去转换词向量了
+
+<img src="/images/nlp/word2vec-nnlm.png" width="600" />
+
+计算复杂度： ($N \* D + N \* D \* H + H \* V$) 相当之高
+
+于是有了 CBOW 和 Skip-Gram .
+
+> 感悟： 技术的发展日新月异
+
+### 8.2 word2vec
+
+word2vec 并不是一个模型， 而是一个 2013年 google 发表的工具. 该工具包含了2个模型： Skip-Gram 和 CBOW. 以及两种高效的训练方法： negative sampling 和 hierarchicam softmax. word2vec 可以很好表达不同词之间的相似度和类比关系.
+
+> word2vec 有两篇 paper.
+
+#### 8.2.1 Skip-Gram
+
+跳字模型假设基于某个词来生成它在文本序列周围的词。举个例子，假设文本序列是“the”“man”“loves”“his”“son”。以“loves”作为中心词，设背景窗口大小为2。如图10.1所示，跳字模型所关心的是，给定中心词“loves”，生成与它距离不超过2个词的背景词“the”“man”“his”“son”的条件概率，即
+
+$$
+P(\textrm{the},\textrm{man},\textrm{his},\textrm{son}\mid\textrm{loves}).
+$$
+
+假设给定中心词的情况下，背景词的生成是相互独立的，那么上式可以改写成
+
+$$
+P(\textrm{the}\mid\textrm{loves})\cdot P(\textrm{man}\mid\textrm{loves})\cdot P(\textrm{his}\mid\textrm{loves})\cdot P(\textrm{son}\mid\textrm{loves}).
+$$
+
+<img src="/images/nlp/word2vec-skip-gram.svg" width="300" />
+
+**训练 Skip-Gram**
+
+跳字模型的参数是每个词所对应的中心词向量和背景词向量。训练中我们通过最大化似然函数来学习模型参数，即最大似然估计。这等价于最小化以下损失函数：
+
+$$ - \sum\_{t=1}^{T} \sum\_{-m \leq j \leq m,\ j \neq 0} \text{log}\, P(w^{(t+j)} \mid w^{(t)}).
+$$
+
+如果使用随机梯度下降，那么在每一次迭代里我们随机采样一个较短的子序列来计算有关该子序列的损失，然后计算梯度来更新模型参数。梯度计算的关键是条件概率的对数有关中心词向量和背景词向量的梯度。根据定义，首先看到
+
+$$
+\log P(w\_o \mid w\_c) =
+\boldsymbol{u}\_o^\top \boldsymbol{v}\_c - \log\left(\sum\_{i \in \mathcal{V}} \text{exp}(\boldsymbol{u}\_i^\top \boldsymbol{v}\_c)\right)
+$$
+
+<img src="/images/nlp/word2vec-skip.png" width="800" />
+
+它的计算需要词典中所有词以 $w\_c$ 为中心词的条件概率。有关其他词向量的梯度同理可得。
+
+训练结束后，对于词典中的任一索引为 $i$ 的词，我们均得到该词作为中心词和背景词的两组词向量 $v\_i$ 和 $u\_i$ 。在自然语言处理应用中，一般使用跳字模型的中心词向量作为词的表征向量。
+
+> Softmax函数
+> 
+> 在Logistic regression二分类问题中，我们可以使用sigmoid函数将输入$Wx + b$映射到$(0,1)$区间中，从而得到属于某个类别的概率。将这个问题进行泛化，推广到多分类问题中，我们可以使用softmax函数，对输出的值归一化为概率值。
+
+- [Softmax函数与交叉熵](https://blog.csdn.net/behamcheung/article/details/71911133#softmax函数)
+
+**小结：**
+
+1. 最大似然估计
+2. 最小化损失函数（与第一步等价），损失函数对数联合概率的相反数
+3. 描述概率函数，该函数的自变量是词向量（u和v），词向量也是模型参数
+4. 对第二步中每一项求梯度。有了梯度就可以优化第二步中的损失函数，从而迭代学习到模型参数，也就是词向量。（优化在第五课和第六课里讲了）
+
+**什么样的动机让作者想到了用点积？：**
+
+> 概率需要值在0到1之间，点乘不行
+
+> 对于你另外一个问题的一种解释：
+
+> 假如所有包含love或者like的句子都像下面这样：
+>
+> I love you because you are nice.
+> I like you because you are nice.
+>
+> 那么，由于love和like旁边的词一样，最终学出来的love和like的词向量也应该相近（cosine similarity较高，因为目标函数中有词向量点乘操作）
+> 
+> 两词向量共同出现的频率比较高的话，那么这两个词向量也应该比较相似。所以两个词向量的点积应该与它们公共出现的次数成正比，这个于上节课讲的矩阵分解就很像了。
 
 ## 9. fastText
 
