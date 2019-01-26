@@ -484,11 +484,21 @@ $$
 
 训练结束后，对于词典中的任一索引为 $i$ 的词，我们均得到该词作为中心词和背景词的两组词向量 $v\_i$ 和 $u\_i$ 。在自然语言处理应用中，一般使用跳字模型的中心词向量作为词的表征向量。
 
-> Softmax函数
-> 
-> 在Logistic regression二分类问题中，我们可以使用sigmoid函数将输入$Wx + b$映射到$(0,1)$区间中，从而得到属于某个类别的概率。将这个问题进行泛化，推广到多分类问题中，我们可以使用softmax函数，对输出的值归一化为概率值。
+**Softmax函数:**
+ 
+在Logistic regression二分类问题中，我们可以使用sigmoid函数将输入$Wx + b$映射到$(0,1)$区间中，从而得到属于某个类别的概率。将这个问题进行泛化，推广到多分类问题中，我们可以使用softmax函数，对输出的值归一化为概率值。
 
-- [Softmax函数与交叉熵](https://blog.csdn.net/behamcheung/article/details/71911133#softmax函数)
+这里假设在进入softmax函数之前，已经有模型输出 $C$ 值，其中$C$是要预测的类别数，模型可以是全连接网络的输出$a$，其输出个数为 $C$，即输出为 $a\_{1}, a\_{2}, ..., a\_{C}$。
+
+所以对每个样本，它属于类别ii的概率为： 
+
+$$
+y\_{i} = \frac{e^{a\_i}}{\sum\_{k=1}^{C}e^{a\_k}} \ \ \  \forall i \in 1...C
+$$
+
+通过上式可以保证 $\sum\_{i=1}^{C}y\_i = 1$，即属于各个类别的概率和为1。
+
+> [Softmax函数与交叉熵](https://blog.csdn.net/behamcheung/article/details/71911133#softmax函数)
 
 **小结：**
 
