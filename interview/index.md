@@ -442,13 +442,21 @@ NNLM,直接从语言模型出发，将模型最优化过程转化为求词向量
 
 > 感悟： 技术的发展日新月异
 
-### 8.2 word2vec
+**word2vec：**
 
 word2vec 并不是一个模型， 而是一个 2013年 google 发表的工具. 该工具包含了2个模型： Skip-Gram 和 CBOW. 以及两种高效的训练方法： negative sampling 和 hierarchicam softmax. word2vec 可以很好表达不同词之间的相似度和类比关系.
 
 > word2vec 有两篇 paper.
 
-#### 8.2.1 Skip-Gram
+### 8.2 CBOW
+
+<img src="/images/nlp/word2vec-CBOW_1.png" width="600" />
+
+> 纠错 : 上图”目标函数“的第一个公式，应该是 连乘 公式，不是 连加 运算。
+> 
+> 理解 : 背景词向量与 中心词向量 内积 等部分，你可考虑 softmax $w \* x+b$ 中 $x$ 和 $w$ 的关系来理解.
+
+### 8.3 Skip-Gram
 
 跳字模型假设基于某个词来生成它在文本序列周围的词。举个例子，假设文本序列是“the”“man”“loves”“his”“son”。以“loves”作为中心词，设背景窗口大小为2。如图10.1所示，跳字模型所关心的是，给定中心词“loves”，生成与它距离不超过2个词的背景词“the”“man”“his”“son”的条件概率，即
 
@@ -478,11 +486,13 @@ $$
 \boldsymbol{u}\_o^\top \boldsymbol{v}\_c - \log\left(\sum\_{i \in \mathcal{V}} \text{exp}(\boldsymbol{u}\_i^\top \boldsymbol{v}\_c)\right)
 $$
 
-<img src="/images/nlp/word2vec-skip.png" width="800" />
+<img src="/images/nlp/word2vec-skip.png" width="700" />
 
 它的计算需要词典中所有词以 $w\_c$ 为中心词的条件概率。有关其他词向量的梯度同理可得。
 
 训练结束后，对于词典中的任一索引为 $i$ 的词，我们均得到该词作为中心词和背景词的两组词向量 $v\_i$ 和 $u\_i$ 。在自然语言处理应用中，一般使用跳字模型的中心词向量作为词的表征向量。
+
+> 两个向量越相似，他们的点乘也就越大.
 
 **Softmax函数:**
  
@@ -502,28 +512,38 @@ $$
 
 **小结：**
 
-1. 最大似然估计
+1. 最大似然估计 MLE
 2. 最小化损失函数（与第一步等价），损失函数对数联合概率的相反数
 3. 描述概率函数，该函数的自变量是词向量（u和v），词向量也是模型参数
 4. 对第二步中每一项求梯度。有了梯度就可以优化第二步中的损失函数，从而迭代学习到模型参数，也就是词向量。（优化在第五课和第六课里讲了）
 
-**什么样的动机让作者想到了用点积？：**
+### 8.4 近似训练
 
-> 概率需要值在0到1之间，点乘不行
-
-> 对于你另外一个问题的一种解释：
-
-> 假如所有包含love或者like的句子都像下面这样：
->
-> I love you because you are nice.
-> I like you because you are nice.
->
-> 那么，由于love和like旁边的词一样，最终学出来的love和like的词向量也应该相近（cosine similarity较高，因为目标函数中有词向量点乘操作）
-> 
-> 两词向量共同出现的频率比较高的话，那么这两个词向量也应该比较相似。所以两个词向量的点积应该与它们公共出现的次数成正比，这个于上节课讲的矩阵分解就很像了。
+- hierarchicam softmax
+- negative sampling
 
 ## 9. fastText
 
+FastText是一个快速文本分类算法，在使用标准多核CPU的情况下，在10分钟内可以对超过10亿个单词进行训练。 不需要使用预先训练好的词向量，因为FastText会自己训练词向量。
+
+文本分类：
+
+<img src="/images/nlp/fastText-3.webp" width="500" />
+
+情感分类:
+
+<img src="/images/nlp/fastText-4.webp" width="500" />
+
+fastText 能够做到效果好，速度快，主要依靠两个秘密武器：
+
+> 1. 利用了 词内的n-gram信息 (subword n-gram information)
+> 2. 用到了 层次化Softmax回归 (Hierarchical Softmax) 的训练 trick.
+
+
+
 ## 10. seq2seq
+
+
+- [TensorFlow学习笔记(3): tf.gradients计算导数和gradient clipping解决梯度爆炸/消失问题](https://zhuanlan.zhihu.com/p/38005390)
 
 
