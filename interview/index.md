@@ -539,11 +539,28 @@ fastText 能够做到效果好，速度快，主要依靠两个秘密武器：
 > 1. 利用了 词内的n-gram信息 (subword n-gram information)
 > 2. 用到了 层次化Softmax回归 (Hierarchical Softmax) 的训练 trick.
 
+**fastText 和 word2vec 的区别:**
+
+**两者表面的不同：**
+
+> **模型的输出层：**
+> 
+> word2vec的输出层，对应的是每一个term，计算某term的概率最大；而fasttext的输出层对应的是 分类的label。不过不管输出层对应的是什么内容，起对应的vector都不会被保留和使用；
+> 
+> **模型的输入层：**
+> 
+> word2vec的输出层，是 context window 内的term；而fasttext对应的整个sentence的内容，包括term，也包括 n-gram的内容；
+
+**两者本质的不同，体现在 h-softmax 的使用：**
+
+> Wordvec的目的是得到词向量，该词向量最终是在输入层得到，输出层对应的 h-softmax也会生成一系列的向量，但最终都被抛弃，不会使用。
+>
+> fasttext则充分利用了h-softmax的分类功能，遍历分类树的所有叶节点，找到概率最大的label（一个或者N个）
 
 
 ## 10. seq2seq
 
-
+- [理论 seq2seq+Attention 机制模型详解](/2017/11/17/chatbot/chatbot-research8/)
 - [TensorFlow学习笔记(3): tf.gradients计算导数和gradient clipping解决梯度爆炸/消失问题](https://zhuanlan.zhihu.com/p/38005390)
 
 

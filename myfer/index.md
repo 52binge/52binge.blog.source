@@ -301,6 +301,18 @@ python main_predict.py -mn fasttext_wn2_model.pkl
 
 大约运行不到3分钟，预测结果就出炉了，可以在 test_data_predict_output_path 找到这个预测输出文件: testa_predict.csv ，然后就可以去官网提交了，在线提交的结果和验证集F1值大致相差0.01~0.02。这里还可以做一些事情来优化结果，譬如去停用词，不过我试了去停用词和去一些标点符号，结果还有一些降低；**调参，learning_rate的影响是比较直接的**，min_count设置为2貌似也有一些负向影响，有兴趣的同学可以多试试，寻找一个最优组合。
 
+### Reference 情感分类
+
+- [AI Challenger 2018 进行时][w6]
+- [AI Challenger 2018 细粒度用户评论情感分析 fastText Baseline][w7]
+- [ai-challenger-2018-文本挖掘类竞赛相关解决方案及代码汇总][w8]
+- [QA问答系统中的深度学习技术实现][w9]
+
+[w6]: http://www.52nlp.cn/ai-challenger-2018-进行时
+[w7]: http://www.52nlp.cn/ai-challenger-2018-细粒度用户评论情感分析-fasttext-baseline
+[w8]: http://www.52nlp.cn/ai-challenger-2018-文本挖掘类竞赛相关解决方案及代码汇总
+[w9]: http://www.52nlp.cn/qa问答系统中的深度学习技术实现
+
 ### 5.2 Seq2Seq Attention
 
 - jieba 分词

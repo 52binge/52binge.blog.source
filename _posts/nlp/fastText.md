@@ -138,10 +138,6 @@ n-gram 产生的特征只是作为**文本特征的候选集**，你后面可能
 - [FastText文本分类算法学习笔记（好文）][10]
 - [FastText的内部机制][11]
 - [利用skift实现fasttext模型][12]
-- [AI Challenger 2018 进行时][6]
-- [AI Challenger 2018 细粒度用户评论情感分析 fastText Baseline][7]
-- [ai-challenger-2018-文本挖掘类竞赛相关解决方案及代码汇总][8]
-- [QA问答系统中的深度学习技术实现][9]
 - [CSDN 层次softmax][13]
 
 

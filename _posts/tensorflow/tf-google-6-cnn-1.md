@@ -57,9 +57,11 @@ tags: CNN
 
 - [知乎：《TensorFlow：实战Google深度学习框架》笔记、代码及勘误-第6章 图像识别与卷积神经网络-1][1]
 - [7天时间读书 Tensorflow 实战 Google 深度学习框架][2]
+- [MNIST识别自己手写的数字--进阶篇（CNN）][3]
 
 
 [img1]: /images/tensorflow/tf-google-6-1.jpg
 
 [1]: https://zhuanlan.zhihu.com/p/31534286
 [2]: http://b.7dtime.com/B076DGNXP1/11/0.html
+[3]: https://blog.csdn.net/u011389706/article/details/81455750

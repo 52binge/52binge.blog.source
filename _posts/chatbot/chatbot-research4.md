@@ -7,7 +7,7 @@ tags: Chatbot
 mathjax: true
 ---
 
-该篇主要介绍一些 RNN、LSTM 等深度学习知识。 （not finish）
+该篇主要介绍一些 RNN、LSTM 等深度学习知识。  [详情请戳](/deeplearning/#5-Sequence-Models)
 
 <!-- more -->
 
