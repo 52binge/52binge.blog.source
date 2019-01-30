@@ -2,25 +2,7 @@
 date: 2018-12-03 13:36:21
 ---
 
-## 1. deep learning
-
-[请点击链接][dl1]
-
-- L1 L2 Dropout、梯度爆炸和梯度弥散、Weight init、Gradient checking
-
-- mini-batch、指数加权平均-偏差修正、Momentum、RMSprop、Adam、α decay、局部优
-
-- word2vec (Negative Sampling、 Hierarchical Softmax、 [fastText 联系][dl2])
-
-[dl1]: /deeplearning/
-[dl2]: /2018/12/19/nlp/fastText/
-
-## 2. machine learning 
-
-- woe、IV、卡方、p-value
-- RF、GBDT、Xgboost
-
-## 3. chatbot project
+## 1. chatbot
 
 - [聊天机器人Chatbot的训练质量如何评价？](https://www.zhihu.com/question/60530973/answer/184454797)
 
@@ -40,11 +22,63 @@ date: 2018-12-03 13:36:21
 12. Attention机制的计算细节和公式是怎样的，然后我就介绍了一下公式的计算方法，然后说了一下改进的方案等。
 13. MMI模型第一个改进目标函数中P(T)是如何计算的？ 我说每个词的联合概率分布乘积，当时他面露疑问，我还没反应过来是什么意思，到后面有说到这个问题才明白，原来他的意思是P(T)应该是单纯语言模型学习出来的结果，而按照我的说法，P(T)是在输入的基础上进行计算的
 
-### 3.1 数据预处理
+### 1.1 数据预处理
 
-### 3.2 定义模型
+### 1.2 定义模型
 
-### 3.3 设置模型参数
+```py
+class Seq2SeqModel():
+    def __init__(self, rnn_size, num_layers, embedding_size, learning_rate, word_to_idx, mode, use_attention,
+                 beam_search, beam_size, max_gradient_norm=5.0):
+
+        self.learing_rate = learning_rate
+        self.embedding_size = embedding_size  # 1024
+
+        self.rnn_size = rnn_size
+        self.num_layers = num_layers
+
+        self.word_to_idx = word_to_idx
+        self.vocab_size = len(self.word_to_idx)  # 词汇表 size
+
+        self.mode = mode  # train
+        self.use_attention = use_attention  # True
+
+        self.beam_search = beam_search  # False
+        self.beam_size = beam_size
+
+        self.max_gradient_norm = max_gradient_norm
+        # 执行模型构建部分的代码
+        self.build_model()
+        
+    def _create_rnn_cell(self):
+        ...
+    def build_model(self):       
+        ...
+        # ==== 2, 定义模型的encoder部分 ====
+        with tf.variable_scope('encoder'):
+            # 创建LSTMCell，两层+dropout
+            ...
+        # ==== 3, 定义模型的decoder部分 ====
+        with tf.variable_scope('decoder'):
+            ...
+            if self.beam_search:
+                ...
+            # 定义要使用的attention机制
+            ...
+            
+            if self.mode == 'train':
+                ...
+            if self.mode == 'decode':
+                ...
+    def train(self, sess, batch):
+        ...
+    def eval(self, sess, batch):
+        ...
+    def infer(self, sess, batch):
+        ...
+```
+
+### 1.3 设置模型参数
 
 ```py
 tf.app.flags.DEFINE_integer('rnn_size', 1024, 'Number of hidden units in each layer')
@@ -59,7 +93,7 @@ tf.app.flags.DEFINE_string('model_dir', 'model/', 'Path to save model checkpoint
 tf.app.flags.DEFINE_string('model_name', 'chatbot.ckpt', 'File name used for model checkpoints')
 ```
 
-### 3.4 构建 batch
+### 1.4 构建 batch
 
 padToken, goToken, eosToken, unknownToken = 0, 1, 2, 3
 
@@ -93,13 +127,13 @@ self.decoder_targets = [[target1], [target2], [target3], ..., [target_n]]
 > target 是 target + pad
 
 
-### 3.5 model
+### 1.5 model
 
 rnn_size', 1024, (隐藏单元的个数)
 
 max\_gradient\_norm=5.0
 
-#### 3.5.1 encoder
+#### 1.5.1 encoder
 
 ```py
 with tf.variable_scope('encoder'):
@@ -108,31 +142,61 @@ with tf.variable_scope('encoder'):
     # 构建embedding矩阵,encoder和decoder公用该词向量矩阵
     embedding = tf.get_variable('embedding', [self.vocab_size, self.embedding_size])
     encoder_inputs_embedded = tf.nn.embedding_lookup(embedding, self.encoder_inputs)
-    # 使用dynamic_rnn构建LSTM模型，将输入编码成隐层向量。
+    # encoder_inputs_embedded 输入的训练或测试数据，一般格式为[batch_size, max_time, embed_size]
+    
+    # 使用dynamic_rnn构建LSTM模型，将输入编码成隐层向量。 
+    # 返回值：元组（outputs, states）， outputs：outputs 就是每个cell会有一个输出
+    
     # encoder_outputs 用于 attention，batch_size*encoder_inputs_length*rnn_size,
-    # encoder_state   用于 decoder 的初始化状态，batch_size*rnn_szie
+    # encoder_state   encoder 最后一个cell输出的状态, 用于 decoder 的初始化状态，batch_size*rnn_szie
     encoder_outputs, encoder_state = tf.nn.dynamic_rnn(encoder_cell, encoder_inputs_embedded,
                                                        sequence_length=self.encoder_inputs_length,
                                                        dtype=tf.float32)
 ```
 
+> tf.nn.dynamic_rnn 函数是 tensorflow 封装的用来实现 RNN 的函数
+
 - [tf.nn.embedding_lookup()的用法](https://blog.csdn.net/John_xyz/article/details/60882535)
 - [tf.nn.dynamic_rnn 详解](https://zhuanlan.zhihu.com/p/43041436)
 
-#### 3.5.2 decode
+#### 1.5.2 decode
 
 ```py
-attention_mechanism = tf.contrib.seq2seq.BahdanauAttention...
+# ====== 3, 定义模型的decoder部分 ======
+with tf.variable_scope('decoder'):
+    encoder_inputs_length = self.encoder_inputs_length
+    if self.beam_search:
+        # 如果使用beam_search，则需将encoder的输出进行tile_batch，其实就是复制beam_size份。
+        print("use beamsearch decoding..")
+        encoder_outputs = tf.contrib.seq2seq.tile_batch(encoder_outputs, multiplier=self.beam_size)
+        encoder_state = nest.map_structure(lambda s: tf.contrib.seq2seq.tile_batch(s, self.beam_size),
+                                           encoder_state)
+        encoder_inputs_length = tf.contrib.seq2seq.tile_batch(self.encoder_inputs_length,
+                                                              multiplier=self.beam_size)
 
-decoder_cell = self._create_rnn_cell()
-
-decoder_cell = tf.contrib.seq2seq.AttentionWrapper...
-
-# 定义decoder阶段的初始化状态，直接使用encoder阶段的最后一个隐层状态进行赋值
-decoder_initial_state = decoder_cell.zero_state(batch_size=batch_size, dtype=tf.float32).clone(cell_state=encoder_state)
-
-output_layer = tf.layers.Dense(self.vocab_size, ...
+	# 定义要使用的 attention机制。                                                               
+	attention_mechanism = tf.contrib.seq2seq.BahdanauAttention(
+				                 num_units=self.rnn_size, 
+				                 memory=encoder_outputs, 
+				                 memory_sequence_length=encoder_inputs_length)
+	
+	decoder_cell = self._create_rnn_cell()
+	
+	# 定义 decoder阶段 要是用的 LSTMCell，然后为其封装 attention wrapper
+	decoder_cell = tf.contrib.seq2seq.AttentionWrapper(cell=decoder_cell,
+						attention_mechanism=attention_mechanism,
+						attention_layer_size=self.rnn_size,
+						name='Attention_Wrapper')
+	
+	# 定义decoder阶段的初始化状态，直接使用encoder阶段的最后一个隐层状态进行赋值
+	decoder_initial_state = decoder_cell.zero_state(batch_size=batch_size, dtype=tf.float32).clone(cell_state=encoder_state)
+	
+	output_layer = tf.layers.Dense(self.vocab_size, ...
 ```
+
+- [map() 与 nest.map_structure()的区别](https://blog.csdn.net/weixin_41700555/article/details/85011957)
+- [seq2seq 全家桶](https://zhuanlan.zhihu.com/p/47929039)
+- [Github new_seq2seq_chatbot](https://github.com/blair101/seq2seq_chatbot/blob/master/new_seq2seq_chatbot/model.py)
 
 训练阶段， 使用 TrainingHelper+BasicDecoder 的组合：
 
@@ -183,7 +247,7 @@ training_decoder = tf.contrib.seq2seq.BasicDecoder(cell=decoder_cell, helper=tra
 [decode self.mode == 'train'](https://github.com/blair101/seq2seq_chatbot/blob/master/new_seq2seq_chatbot/model.py)
 
 
-### 3.6 train
+### 1.6 train
 
 训练时，优化梯度求解计算
 
