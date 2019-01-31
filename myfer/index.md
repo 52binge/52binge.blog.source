@@ -235,16 +235,27 @@ training_decoder = tf.contrib.seq2seq.BasicDecoder(cell=decoder_cell, helper=tra
                                                                           maximum_iterations=self.max_target_sequence_length)
 ```
 
-> 其实简单来讲dynamic_decode就是
+> 上面 train 阶段，Teacher Forcing 上面是默认使用了，可以阻断错误积累，斧正模型训练，加快参数收敛.
 > 
->  1. 执行decoder的初始化函数
->  2. 对解码时刻的state等变量进行初始化
+> 但是，有个最大的问题：模型训练好了，到了测试test阶段，你是不能用 Teacher Forcing 的，因为测试阶段你是看不到期望的输出序列的，所以必须乖乖等着上一时刻输出一个单词，下一时刻才能确定该输入什么。不能提前把整个 decoder 的输入序列准备好，也就不能用 dynamic_rnn 函数了
+
+dynamic_decode 函数类似于 dynamic_rnn，帮你自动执行 rnn 的循环，返回完整的输出序列:
+
+> 其实简单来讲 dynamic_decode 就是
+> 
+>  1. 执行 decoder 的初始化函数
+>  2. 对解码时刻的 state 等变量进行初始化
 >  3. 循环执行 decoder 的 step函数 进行多轮解码
 > 
 > 常人写可能就一个for循环，但是源码很复杂，为了保证健壮性.
 
+心得： helper 的作用，就是可以控制数据流，比如：是否要 Teacher Forcing 
+
+从这里也可以看到训练时使用 Teacher Forcing 可以提升训练速度与质量，但是也会产生一些过拟合的副作用等等，这里不多说了
 
 [decode self.mode == 'train'](https://github.com/blair101/seq2seq_chatbot/blob/master/new_seq2seq_chatbot/model.py)
+
+<img src="/images/nlp/seq2seq-attention.jpg" width="900" />
 
 
 ### 1.6 train
