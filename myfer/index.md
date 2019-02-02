@@ -16,11 +16,20 @@ date: 2018-12-03 13:36:21
 
 - [从产品完整性的角度浅谈chatbot](https://zhuanlan.zhihu.com/p/34927757)
 
-**MMI：**
+- [对话系统(Chatbot)论文串烧](https://zhuanlan.zhihu.com/p/35317776)
+
+## MMI (Maximum Mutual Information)
 
 11. 对话项目的模型的缺点以及使用MMI的改进方案。
 12. Attention机制的计算细节和公式是怎样的，然后我就介绍了一下公式的计算方法，然后说了一下改进的方案等。
 13. MMI模型第一个改进目标函数中P(T)是如何计算的？ 我说每个词的联合概率分布乘积，当时他面露疑问，我还没反应过来是什么意思，到后面有说到这个问题才明白，原来他的意思是P(T)应该是单纯语言模型学习出来的结果，而按照我的说法，P(T)是在输入的基础上进行计算的
+
+> 作者： Jiwei Li， Jiwei Li’s Github
+> 关于《A Persona-Based Neural Conversation Model》的pre-paper Seq2seq 容易产出”呵呵”，”都可以”，”我不知道”这种 safe 但无意义的回答
+> NLG 问题，常使用 MLE 作为目标函数，产出的结果通畅，但 diversity 差，可考虑 decoder 产出 n-best, 再 rank
+> 提出 Maximum Mutual Information(MMI) 作为目标函数， 有 MMI-antiLM 和MMI-bidi 2种
+> 
+> 作者通过使用MMI, 最大化输入与输出的互信息，能够有效避免与输入无关的responses，得到更为diverse的responses.
 
 ### 1.1 数据预处理
 
