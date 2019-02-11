@@ -292,6 +292,30 @@ loss
 perplexity = math.exp(float(loss)) if loss < 300 else float('inf')
 ```
 
+```py
+
+    optimizer = tf.train.AdamOptimizer(self.learing_rate)
+    trainable_params = tf.trainable_variables() # 获取需要训练的变量
+    gradients = tf.gradients(self.loss, trainable_params) # 计算梯度的函数 tf.gradients(ys, xs)，要注意的是，xs中的x必须要与ys相关
+
+    # 其中 sumsq_diff  global_norm = sqrt(sum([l2norm(t)**2 for t in t_list]))
+    # clip_norm = self.max_gradient_norm
+    # global_norm 是所有梯度的平方和，如果 clip_norm > global_norm ，就不进行截取
+    # clip_norm = self.max_gradient_norm
+    # t_list[i] * clip_norm / max(global_norm, clip_norm)
+    
+    # Gradient Clipping的引入是为了处理gradient explosion或者gradients vanishing的问题
+    clip_gradients, _ = tf.clip_by_global_norm(gradients, self.max_gradient_norm)
+
+    # 应用梯度 apply_gradients
+    self.train_op = optimizer.apply_gradients(zip(clip_gradients, trainable_params))
+```
+
+> [tf.gradients()简单实用教程](https://blog.csdn.net/hustqb/article/details/80260002)
+> [tf.clip_by_global_norm](https://blog.csdn.net/u013713117/article/details/56281715)
+
+> 保证了在一次迭代更新中，所有权重的梯度的平方和在一个设定范围以内，这个范围就是clip_gradient.
+
 ## 4. 文本分类
 
 1. fasttext
@@ -431,6 +455,24 @@ python main_predict.py -mn fasttext_wn2_model.pkl
 ### 5.4 Attention Model
 
 - 参考自 Kaggle 的 [Attention Model](https://www.kaggle.com/qqgeogor/keras-lstm-attention-glove840b-lb-0-043)
+
+
+为了解决上述模型的局限性，我们提出了一个循环卷积神经网络(RCNN)，并将其应用于文本分类的任务。首先，我们应用一个双向的循环结构，与传统的基于窗口的神经网络相比，它可以大大减少噪声，从而最大程度地捕捉上下文信息。此外，**该模型在学习文本表示时可以保留更大范围的词序**。其次，我们使用了一个可以**自动判断哪些特性在文本分类中扮演关键角色的池化层**，以捕获文本中的关键组件。我们的模型结合了RNN的结构和最大池化层，**利用了循环神经模型和卷积神经模型的优点**。此外，我们的模型显示了O(n)的时间复杂度，它与文本长度的长度是线性相关的。
+
+> 1. RNN 优点： 最大程度捕捉上下文信息，这可能有利于捕获长文本的语义。
+> 2. RNN 缺点： 是一个有偏倚的模型，在这个模型中，后面的单词比先前的单词更具优势。因此，当它被用于捕获整个文档的语义时，它可能会降低效率，因为关键组件可能出现在文档中的任何地方，而不是最后。
+> 3. CNN 优点： 提取数据中的局部位置的特征，然后再拼接池化层。 CNN可以更好地捕捉文本的语义。是O(n)
+> 4. CNN 优点： 一个可以自动判断哪些特性在文本分类中扮演关键角色的池化层，以捕获文本中的关键组件。
+
+word embedding是单词的一种分布式表示，极大地缓解了数据稀疏问题(Bengio et al. 2003)
+
+> [自然语言处理系列（8）：RCNN](https://plushunter.github.io/2018/03/08/自然语言处理系列（8）：RCNN/)
+> [Keras之文本分类实现](https://zhuanlan.zhihu.com/p/29201491)
+> 首先我们来理解下什么是卷积操作？卷积，你可以把它想象成一个应用在矩阵上的滑动窗口函数。
+> 
+> 卷积网络也就是对输入样本进行多次卷积操作，提取数据中的局部位置的特征，然后再拼接池化层（图中的Pooling层）做进一步的降维操作
+> 
+> 我们可以把CNN类比N-gram模型，N-gram也是基于词窗范围这种局部的方式对文本进行特征提取，与CNN的做法很类似
 
 ## 6. 写代码
 
