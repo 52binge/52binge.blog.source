@@ -474,6 +474,73 @@ word embedding是单词的一种分布式表示，极大地缓解了数据稀疏
 > 
 > 我们可以把CNN类比N-gram模型，N-gram也是基于词窗范围这种局部的方式对文本进行特征提取，与CNN的做法很类似
 
+### 5.5 RCNN Model
+
+[用的 Attention Model 参考自 Kaggle](https://zhuanlan.zhihu.com/p/47207009)
+[keras lstm attention glove840b,lb 0.043](https://www.kaggle.com/qqgeogor/keras-lstm-attention-glove840b-lb-0-043)
+
+```py
+import keras
+from keras import Model
+from keras.layers import *
+from JoinAttLayer import Attention
+
+class TextClassifier():
+
+    def model(self, embeddings_matrix, maxlen, word_index, num_class):
+        inp = Input(shape=(maxlen,))
+        encode = Bidirectional(CuDNNGRU(128, return_sequences=True))
+        encode2 = Bidirectional(CuDNNGRU(128, return_sequences=True))
+        attention = Attention(maxlen)
+        x_4 = Embedding(len(word_index) + 1, # input_dim
+                        embeddings_matrix.shape[1], # outputa_dim
+                        weights=[embeddings_matrix],
+                        input_length=maxlen, # 当输入序列的长度固定时，该值为其长度。如果要在该层后接Flatten层，然后接Dense层，则必须指定该参数，否则Dense层的输出维度无法自动推断。
+                        trainable=True)(inp)
+        x_3 = SpatialDropout1D(0.2)(x_4) # SpatialDropout1D ，那么常规的 dropout 将无法使激活正则化，且导致有效的学习速率降低。在这种情况下，SpatialDropout1D 将有助于提高特征图之间的独立性，应该使用它来代替 Dropout。
+        x_3 = encode(x_3)
+        x_3 = Dropout(0.2)(x_3)
+        x_3 = encode2(x_3)
+        x_3 = Dropout(0.2)(x_3)
+        # 1D 卷积层 (例如时序卷积),该层创建了一个卷积核，该卷积核以 单个空间（或时间）维上的层输入进行卷积， 以生成输出张量。
+        # kernel_size 指明 1D 卷积窗口的长度是 3， padding="valid" 表示「不填充」， kernel_initializer权值矩阵的初始化器->Glorot均匀分布初始化方法
+        x_3 = Conv1D(64, kernel_size=3, padding="valid", kernel_initializer="glorot_uniform")(x_3) 
+        x_3 = Dropout(0.2)(x_3)
+        avg_pool_3 = GlobalAveragePooling1D()(x_3)
+        max_pool_3 = GlobalMaxPooling1D()(x_3)
+        attention_3 = attention(x_3)
+        x = keras.layers.concatenate([avg_pool_3, max_pool_3, attention_3])
+        x = Dense(num_class, activation="sigmoid")(x)
+
+        adam = keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-08)
+        model = Model(inputs=inp, outputs=x)
+        model.compile(
+            loss='categorical_crossentropy',
+            optimizer=adam
+            )
+        return model
+```
+
+[慢慢学NLP](https://zhuanlan.zhihu.com/p/47207009)
+[训练过程-后篇](https://zhuanlan.zhihu.com/p/47278559)
+
+[多分类和多标签分类](https://blog.csdn.net/qinglv1/article/details/85701106)
+
+> 多分类：类别数目大于2个，类别之间是互斥的。比如是猫，就不能是狗、猪
+> categorical crossentropy 用来做多分类问题
+> binary crossentropy 用来做多标签分类问题
+ 
+### 5.6 Early Stop（提前停止）
+
+就是在训练模型的时候，当在验证集上效果不再提升的时候，就提前停止训练，节约时间。通过设置 patience 来调节。
+
+
+结束当前的TF计算图，并新建一个。有效的避免模型/层的混乱
+
+### 5.7 Max Length (padding 的最大句子长度)
+
+这个看似不重要，其实确实很重要的点。一开我以为 padding 的最大长度取整个评论平均的长度的2倍差不多就可以啦(对于char level 而言，max_length 取 400左右)，但是会发现效果上不去，当时将 max_length 改为 1000 之后，macro f-score提示明显，我个人认为是在多分类问题中，那些长度很长的评论可能会有部分属于那些样本数很少的类别，padding过短会导致这些长评论无法被正确划分。
+
 ## 6. 写代码
 
  1. 剑指offer
