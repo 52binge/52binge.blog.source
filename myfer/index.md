@@ -26,7 +26,7 @@ date: 2018-12-03 13:36:21
 
 > 作者： Jiwei Li， Jiwei Li’s Github
 > 关于《A Persona-Based Neural Conversation Model》的pre-paper Seq2seq 容易产出”呵呵”，”都可以”，”我不知道”这种 safe 但无意义的回答
-> NLG 问题，常使用 MLE 作为目标函数，产出的结果通畅，但 diversity 差，可考虑 decoder 产出 n-best, 再 rank
+> NLG 问题，常使用 MLE （maximum likelihood estimation）作为目标函数，产出的结果通畅，但 diversity 差，可考虑 decoder 产出 n-best, 再 rank
 > 提出 Maximum Mutual Information(MMI) 作为目标函数， 有 MMI-antiLM 和MMI-bidi 2种
 > 
 > 作者通过使用MMI, 最大化输入与输出的互信息，能够有效避免与输入无关的responses，得到更为diverse的responses.
