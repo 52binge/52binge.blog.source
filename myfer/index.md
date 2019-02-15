@@ -438,11 +438,15 @@ python main_predict.py -mn fasttext_wn2_model.pkl
 - validationset lines：  70935, 合法例子 ： 15000
 - testsets lines：  72028， 合法例子 ： 15000
 
-**word2vec：** 维度 100， 窗口 10， 过滤掉次数小于 1 的词
+**word2vec：** 维度 100， 窗口 10， 过滤掉次数小于 1 的词 (说成2)
+
+word2vec : 7983 100 word2vec/chars.vector
 
 ```
 3.1M chars.vector
 ```
+
+过滤掉低频词之后，所以 word2vec 为 7983 \* 100
 
 数据预处理，在 preprocess 文件夹下生成了 train_char.csv、test_char.csv、test_char.csv 三个文件。
 
@@ -521,10 +525,14 @@ class TextClassifier():
         return model
 ```
 
-[慢慢学NLP](https://zhuanlan.zhihu.com/p/47207009)
+
+[慢慢学NLP-前篇](https://zhuanlan.zhihu.com/p/47207009)
 [训练过程-后篇](https://zhuanlan.zhihu.com/p/47278559)
 
 [多分类和多标签分类](https://blog.csdn.net/qinglv1/article/details/85701106)
+
+[gensim训练word2vec及相关函数](https://blog.csdn.net/sinat_26917383/article/details/69803018)
+
 
 > 多分类：类别数目大于2个，类别之间是互斥的。比如是猫，就不能是狗、猪
 > categorical crossentropy 用来做多分类问题
@@ -541,16 +549,8 @@ class TextClassifier():
 
 这个看似不重要，其实确实很重要的点。一开我以为 padding 的最大长度取整个评论平均的长度的2倍差不多就可以啦(对于char level 而言，max_length 取 400左右)，但是会发现效果上不去，当时将 max_length 改为 1000 之后，macro f-score提示明显，我个人认为是在多分类问题中，那些长度很长的评论可能会有部分属于那些样本数很少的类别，padding过短会导致这些长评论无法被正确划分。
 
-## 6. 写代码
-
- 1. 剑指offer
- 2. 现场写tf代码 简单的
- 3. 用tensorflow实现一个
-
-> 个人定位： 是深度学习与NLP， 不断地展现自己在深度学习上的造诣
 
 
-## 7. 信用评分 project
 
 ## 8. 其他 help
 
@@ -602,7 +602,8 @@ class TextClassifier():
 - [用深度学习（CNN RNN Attention）解决大规模文本分类问题 - 综述和实践][5]
 - [严重数据倾斜文本分类，比如正反比1:20～100，适合什么model][6]
 - [比赛官网 https://challenger.ai][2_1]
-- [AI-Challenger Baseline 细粒度用户评论情感分析 (0.70201) 前篇][2_1]
+- [AI-Challenger Baseline (0.70201) 前篇 总览][niu1]
+- [AI-Challenger Baseline (0.70201) 后篇 训练][niu2]
 - [2019 11家互联网公司，NLP面经回馈][v1]
 - [暑期实习NLP算法岗面经总结][v2]
 - [呜呜哈做一个有思想的码农][v3]
@@ -617,8 +618,10 @@ class TextClassifier():
 [8]: https://github.com/google/seq2seq
 
 [1]: /2018/11/08/tensorflow/tf-google-8-rnn-1/
-[2_1]: https://challenger.ai/competition/fsauor2018
-[2_2]: https://zhuanlan.zhihu.com/p/47207009
+[com1]: https://challenger.ai/competition/fsauor2018
+
+[niu1]: https://zhuanlan.zhihu.com/p/47207009
+[niu2]: https://zhuanlan.zhihu.com/p/47207009
 
 [v1]: https://zhuanlan.zhihu.com/p/46999592
 [v2]: https://zhuanlan.zhihu.com/p/36387348
