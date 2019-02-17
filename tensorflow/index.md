@@ -2,17 +2,13 @@
 date: 2018-07-16 16:59:48
 ---
 
-[Keras][k1] 是一个用 Python 编写的高级神经网络 API，它能够以 `TensorFlow`  作为后端运行。
+TensorFlow 用于机器学习和神经网络方面的研究，采用**数据流图**来进行数值计算的开源软件库.
 
 [Keras][k2] 开发重点是支持快速的实验。能够以最小的时延把你的想法转换为实验结果，是做好研究的关键。 
 
 [0]: /tensorflow
 [k1]: https://keras.io/zh/
 [k2]: https://keras.io/zh/models/about-keras-models/
-
-## TensorFlow
-
-TensorFlow 用于机器学习和神经网络方面的研究，采用**数据流图**来进行数值计算的开源软件库.
 
 ### Estimator
 
