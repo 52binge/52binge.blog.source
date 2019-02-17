@@ -83,6 +83,7 @@ Here are some useful links
 - [搬瓦工VPS续费的那些事][v7]
 - [搬瓦工取消一键SS功能后，教您三种方法轻松搭建SS！][v8]
 - [登陆到搬瓦工后台, 一键安装SS，类似方法一（小白适用][v9]
+- [Centos6.8搭建SS][v10]
 
 [v1]: https://www.yuntionly.com/
 [v2]: https://www.wisevpn.net/
@@ -91,8 +92,9 @@ Here are some useful links
 [v5]: https://www.cnbanwagong.com/4.html
 [v6]: https://bwh1.net/
 [v7]: http://ulis.me/archives/5909
-[v8]: https://www.weibo.com/ttarticle/p/show?id=2309404240665209879945&infeed=1
+[v8]: https://bwhgw.wordpress.com/2018/03/30/ban_wa_gong_qu_xiao_yi_jian_ss_gong_neng_hou_jiao_nin_san_zhong_fang_fa_qing_song_da_jian_ss/
 [v9]: https://kiwivm.64clouds.com/preloader.php?load=/main-exec.php?mode=extras_shadowsocks
+[v10]: https://blog.csdn.net/qq_31897023/article/details/82533887
 
 > ssh 登录搬瓦工机器
 > 
