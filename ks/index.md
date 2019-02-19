@@ -81,6 +81,7 @@ K-S值仅仅代表模型的分割样本的能力，不能表示分割的是否�
 - [关于模型检验的ROC值和KS值的异同_ROC曲线和KS值][3]
 - [（原创）sklearn中 F1-micro 与 F1-macro区别和计算原理][4]
 - [分类问题的几个评价指标（Precision、Recall、F1-Score、Micro-F1、Macro-F1）][5]
+- [ks（洛伦兹曲线）指标理解][6]
 
 
 [1]: https://blog.csdn.net/qq_36330643/article/details/79522537
@@ -88,3 +89,4 @@ K-S值仅仅代表模型的分割样本的能力，不能表示分割的是否�
 [3]: http://cda.pinggu.org/view/21012.html
 [4]: https://www.cnblogs.com/techengin/p/8962024.html
 [5]: https://blog.csdn.net/sinat_28576553/article/details/80258619 
+[6]: https://blog.csdn.net/sinat_30316741/article/details/80018932
