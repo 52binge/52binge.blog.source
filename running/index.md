@@ -19,10 +19,10 @@
 
 ## 3. 评分卡
 
- - LR 如何处理数据不平衡？
- - GBDT 与Xgboost 区别 ?
+ - LR 如何处理数据不平衡 ?   答： 好坏样本34：1， 有时候关注坏用本个数， 好样本欠采样等.
+ - GBDT 与Xgboost 区别 ?  答： [RF、GBDT、XGBoost 区别](https://zhuanlan.zhihu.com/p/34679467)
  - GBDT 如何判断特征重要度？
- - 如何判断你的模型是否过拟合 ? 以及过拟合的处理方式？
+ - 如何判断你的模型是否过拟合 ? 以及过拟合的处理方式？ 答：[画learning_curve](https://blog.csdn.net/aliceyangxi1987/article/details/73598857)
  - 信息增益 与 Gini & 回归树..
  - LR 分析的变量 & GBDT 分析的变量分别是多少？
  - 如何将模型打包为 pmml？
