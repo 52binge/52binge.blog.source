@@ -21,12 +21,28 @@
 
  - LR 如何处理数据不平衡 ?   答： 好坏样本34：1， 有时候关注坏用本个数， 好样本欠采样等.
  - GBDT 与Xgboost 区别 ?  答： [RF、GBDT、XGBoost 区别](https://zhuanlan.zhihu.com/p/34679467)
- - GBDT 如何判断特征重要度？
- - 如何判断你的模型是否过拟合 ? 以及过拟合的处理方式？ 答：[画learning_curve](https://blog.csdn.net/aliceyangxi1987/article/details/73598857)
- - 信息增益 与 Gini & 回归树..
- - LR 分析的变量 & GBDT 分析的变量分别是多少？
- - 如何将模型打包为 pmml？
- - 变量如何分箱？ IV 值的计算
+ - GBDT 如何判断特征重要度？ 答： 特征j的全局重要度通过特征j在单颗树中的重要度的平均值来衡量
+ - 如何判断你的模型是否过拟合 ? 以及过拟合的处理方式？ 答：[画 learning_curve](https://blog.csdn.net/aliceyangxi1987/article/details/73598857)
+ - Info Gain vs Info Gain ratio vs Gini vs CART.. 
+ 
+> Info Gain =Entropy(S) - Entropy(S|“阴晴”) 最大的特征. 
+> Info Gain ratio 减少信息增益方法对取值数较多的特征的影响。(可减少过拟合，这对某特征取值过多的一惩罚)
+> Gini 是介于0~1之间的数，0-完全相等，1-完全不相等；
+ 
+ - LR 分析的变量 & GBDT 分析的变量分别是多少？  26维，84维
+ - 变量如何分箱？ IV 值的计算。 卡方分箱和woe编码进行转换
+
+> 信息熵，代表的是随机变量或整个系统的不确定性，熵越大，随机变量或系统的不确定性就越大。
+> 
+> 交叉熵，用来衡量在给定的真实分布下，使用非真实分布所指定的策略消除系统的不确定性所需要付出的努力值。
+
+Reference
+
+> [Python三大评分卡之行为评分卡](https://zhuanlan.zhihu.com/p/34370741)
+> 
+> [玩转逻辑回归之金融评分卡模型](https://zhuanlan.zhihu.com/p/36539125)
+> 
+> [拍拍贷教你如何用GBDT做评分卡](http://www.sfinst.com/?p=1389)
 
 **评估指标ks：**
 
