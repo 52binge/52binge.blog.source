@@ -1,7 +1,7 @@
 
 ## 1. 兴趣挖掘
 
-  - 数据量
+  - 数据量 sina week 10W+, 4W+
   - ABTest 效果评估
   - 什么 tree
   - depth
