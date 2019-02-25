@@ -21,15 +21,19 @@
 
  - LR 如何处理数据不平衡 ?   答： 好坏样本34：1， 有时候关注坏用本个数， 好样本欠采样等.
  - GBDT 与Xgboost 区别 ?  答： [RF、GBDT、XGBoost 区别](https://zhuanlan.zhihu.com/p/34679467)
+ 
+> xgboost最大的特点在于，它能够自动利用CPU的多线程进行并行，同时在算法上加以改进提高了精度。
+ 
  - GBDT 如何判断特征重要度？ 答： 特征j的全局重要度通过特征j在单颗树中的重要度的平均值来衡量
+ - GBDT 如何缓解 over fitting？ 答： 子采样比例[0.5~0.8]
  - 如何判断你的模型是否过拟合 ? 以及过拟合的处理方式？ 答：[画 learning_curve](https://blog.csdn.net/aliceyangxi1987/article/details/73598857)
  - Info Gain vs Info Gain ratio vs Gini vs CART.. 
  
 > Info Gain =Entropy(S) - Entropy(S|“阴晴”) 最大的特征. 
-> Info Gain ratio 减少信息增益方法对取值数较多的特征的影响。(可减少过拟合，这对某特征取值过多的一惩罚)
+> Info Gain ratio 减少信息增益对取值数较多的特征的影响。(可减少过拟合，这对某特征取值过多的一惩罚)
 > Gini 是介于0~1之间的数，0-完全相等，1-完全不相等；
  
- - LR 分析的变量 & GBDT 分析的变量分别是多少？  26维，84维
+ - LR 分析的变量 & GBDT 分析的变量分别是多少？  26维，204维
  - 变量如何分箱？ IV 值的计算。 卡方分箱和woe编码进行转换
 
 > 信息熵，代表的是随机变量或整个系统的不确定性，熵越大，随机变量或系统的不确定性就越大。
@@ -115,4 +119,33 @@ param_grid = {
  - RNN 与 LSTM 与 GRU 区别
  - ELMO-Like
 
+### 4.1 FastText
 
+skift：scikit-learn wrappers for Python fastText.
+
+**一些可能的问题**：
+
+- Fasttext 又快又准？fastText 能够做到效果好，速度快，主要依靠两个秘密武器：
+
+> 1. 利用了词内的n-gram信息(subword n-gram information)
+> 2. 用到了层次化Softmax回归(Hierarchical Softmax) 的训练 trick.
+
+于是fastText的核心思想就是：将整篇文档的词及n-gram向量叠加平均得到文档向量，然后使用文档向量做softmax多分类。这中间涉及到两个技巧：字符级n-gram特征的引入以及分层Softmax分类。
+
+**fastText 和 word2vec 的区别:**
+
+**两者表面的不同：**
+
+> **模型的输出层：**
+> 
+> word2vec的输出层，对应的是每一个term，计算某term的概率最大；而fasttext的输出层对应的是 分类的label。不过不管输出层对应的是什么内容，起对应的vector都不会被保留和使用；
+> 
+> **模型的输入层：**
+> 
+> word2vec的输出层，是 context window 内的term；而fasttext对应的整个sentence的内容，包括term，也包括 n-gram的内容；
+
+**两者本质的不同，体现在 h-softmax 的使用：**
+
+> Wordvec的目的是得到词向量，该词向量最终是在输入层得到，输出层对应的 h-softmax也会生成一系列的向量，但最终都被抛弃，不会使用。
+>
+> fasttext则充分利用了h-softmax的分类功能，遍历分类树的所有叶节点，找到概率最大的label（一个或者N个）
