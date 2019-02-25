@@ -150,7 +150,9 @@ Reference
 >
 > 方差: 来描述变量与均值的偏离程度
 
-#### 3.3.3 WOE编码 (weight of evidence)
+#### 3.3.3 WOE编码 
+
+> WOE: weight of evidence
 
 将离散变量转化为连续变量。WOE编码是评分卡模型常用的编码方式。
 
@@ -211,6 +213,19 @@ cor.loc[:,:] = np.tril(cor, k=-1) # below main lower triangle of an array
 cor = cor.stack()
 cor[(cor > 0.55) | (cor < -0.55)] # 特征相关度筛选
 ```
+#### 3.3.7 转化为评分卡
+
+将 odds 带入可得：
+
+![](https://www.zhihu.com/equation?tex=%5Ctext%7Blog%7D%28+%5Ctext%7Bodds%7D%29+%3D+%5Ctheta%5ETx+%5C%5C)
+
+评分卡的分值可以定义为比率对数的线性表达来，即： 
+
+![](https://www.zhihu.com/equation?tex=Score+%3D+A+-B+%5Ctimes+%5Ctext%7Blog%7D%28+%5Ctext%7Bodds%7D%29+%5C%5C)
+
+最终得到评分卡模型：
+
+![](https://pic2.zhimg.com/80/v2-fec98ff9de65d835a5be217f01f678a5_hd.jpg)
 
 **GBDT, GBRT, Xgboost, RF grid search**
 
