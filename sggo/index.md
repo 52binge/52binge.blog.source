@@ -22,13 +22,18 @@
 
 1. seq2seq模型，seq2seq的缺点, attention机制
 2. attention的公式，怎样计算得分和权重
-3. soft attention 和 hard attention的区别
-4. tensorflow里面seq2seq的借口， 自己实现的模型里面的一些细节和方法。
+3. tensorflow里面seq2seq的借口， 自己实现的模型里面的一些细节和方法。
 
 - seq2seq时遇到的deepcopy和beam_search两个问题以及解决方案.
 - 知名博主WildML给google写了个通用的seq2seq，[文档地址][7] ， [Github地址][8]
 - [Tensorflow动态seq2seq使用总结](https://www.jianshu.com/p/c0c5f1bdbb88)
 - [荷楠仁 tensorflow sequence_loss](https://www.cnblogs.com/zhouyang209117/p/8338193.html)
+
+[Attention是如何利用中间的输出的](https://www.jianshu.com/p/c94909b835d6)
+
+- soft attention 和 hard attention的区别?
+
+> 总结下：最大区别在于hard 方法是采样得到Z，Z作为lstm输入。soft方法是有所有做平均得到Z。这两种在图像里肯定是soft用的多，hard一般用在reinforcement learning 里。hard 不可微，不能后向传播，因为采样梯度为0。
 
 ## 3. 评分卡
 
