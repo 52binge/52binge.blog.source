@@ -1175,7 +1175,7 @@ void res(char *number, int len, int index) {
         printNum(number, len); return;
     }
     for(int i = 0; i < 10; i++) {
-        number[index+1] = '0'+1;
+        number[index+1] = '0'+i;
         res(number, len, index+1);
     }
 }
