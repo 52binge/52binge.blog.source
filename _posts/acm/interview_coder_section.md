@@ -1116,6 +1116,8 @@ for i=k+1 to N
 
 >  dp: F[i] = max(a[i], F[i-1]+a[i]);  
 
+[子序列问题（递增、公共、摆动）](https://blog.csdn.net/sisteryaya/article/details/82937967)
+
 ## 21. 寻找丑数 
 
 不在非丑数上浪费时间，只看在丑数上的方法！ 
