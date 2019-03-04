@@ -1,6 +1,4 @@
 
-校招面试时，需要准备的 50 道常考题目的写代码部分。
-
 ```cpp
 #include <iostream>
 #include <cstdio>
