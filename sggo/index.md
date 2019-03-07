@@ -1,7 +1,7 @@
 
 ## 1. 兴趣挖掘
 
-  - 数据量 sina week 10W+, 4W+
+  - 数据量 sina week 7W+, 20W+
   - ABTest 效果评估
   - 什么 tree
   - depth
@@ -279,6 +279,12 @@ cor[(cor > 0.55) | (cor < -0.55)] # 特征相关度筛选
 最终得到评分卡模型：
 
 ![](https://pic2.zhimg.com/80/v2-fec98ff9de65d835a5be217f01f678a5_hd.jpg)
+
+需要设定两个假设：
+
+- 某个特定的违约概率下的预期评分，即比率 即比率 $\text{odds}$ 为 $θ\_0$ 时的分数为 $P\_0$
+- 该违约概率翻倍的评分（PDO）
+
 
 **GBDT, GBRT, Xgboost, RF grid search**
 
