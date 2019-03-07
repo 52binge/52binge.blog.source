@@ -59,7 +59,7 @@ epoch
 - validationset lines：  70935, 合法例子 ： 15000
 - testsets lines：  72028， 合法例子 ： 15000
 
-**word2vec：** 维度 100， 窗口 10， 过滤掉次数小于 1 的词 (说成2)
+**word2vec：** 维度 100， 窗口 10， 过滤掉次数小于 1 的字 (说成2)
 
 word2vec : 7983 100 word2vec/chars.vector
 
