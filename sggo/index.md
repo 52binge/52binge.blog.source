@@ -1,16 +1,49 @@
+> 个人看法要在面试之前按照简历上面的内容自己能够讲一个小故事。主要体现自己的深度学习的基础知识，这一部分要结合项目经验进行拔高，让面试官看到你的能力和特点。
+
+[RNN中为什么要采用tanh而不是ReLu作为激活函数？](https://www.zhihu.com/question/61265076)
 
 ## 1. 兴趣挖掘
 
-  - 数据量 sina week 7W+, 20W+
-  - ABTest 效果评估
-  - 什么 tree
-  - depth
+  - 数据量 sina week 14W+, 20W+
+  - page, 基于1个月的， 标准化之后，打标数据 14W+
+  - jieba 抽取 keyword，去掉停用词，5000, 对用每个 page 特征.
+  - 20颗 tree， depth=5， 特征选择 gini
   - 特征选择，RF 与 GBDT 区别
+  - ABTest 效果评估
   - loss
+
+新浪语料库： 2.14G （2014年的数据）
+
+```bash
+cat news_tensite_xml.dat | iconv -f gbk -t utf-8 -c | grep "<content>"  > corpus.txt 
+```
+
+样本数据来源在这里可以是新闻标题+新闻内容
+
+先逐个读入这些txt文件内容，然后正则表达匹配出URL（新闻类别）和content（新闻内容
+
+对于小于 50 个字符的，文章过滤掉.
+
+
 
 > 随机森林的随机性体现在每棵树的训练样本是随机的，树中每个节点的分裂属性也是随机选择的。两个随机性的引入，使得随机森林不容易陷入过拟合。
 >
 > 因为随机选的样本和特征吧。你每个树用的都是样本数据的很小的一部分。所以信息量没有过于充裕，所以过拟合的可能性小。
+
+> - [使用搜狗新闻语料库，训练word embeding](https://blog.csdn.net/mengfanzhong/article/details/78929239)
+> - [对搜狗语料库进行想要格式的获取](https://blog.csdn.net/sgfmby1994/article/details/53436228)
+> - [新闻语料文本分类实践](https://blog.csdn.net/sadfassd/article/details/80568321)
+> - [word2vec训练中文模型 寒小阳老师](https://blog.csdn.net/BTUJACK/article/details/80666966)
+> 
+> - [搜狗实验室](http://www.sogou.com/labs/resource/list_yuliao.php)
+> 
+> - [搜狐新闻数据(SogouCS)](http://www.sogou.com/labs/resource/cs.php)
+> 
+> - [通过搜狗新闻语料用word2Vec训练中文模型](https://www.jianshu.com/p/6d542ff65b1e)
+> 
+> url-page : level1_interest, level2_interest
+
+标准化后，230W 篇文章
 
 ## 2. Chatbot
 
