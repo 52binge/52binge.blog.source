@@ -424,3 +424,16 @@ python main_predict.py -mn fasttext_wn2_model.pkl
 [w7]: http://www.52nlp.cn/ai-challenger-2018-细粒度用户评论情感分析-fasttext-baseline
 [w8]: http://www.52nlp.cn/ai-challenger-2018-文本挖掘类竞赛相关解决方案及代码汇总
 [w9]: http://www.52nlp.cn/qa问答系统中的深度学习技术实现
+
+
+> - [使用搜狗新闻语料库，训练word embeding](https://blog.csdn.net/mengfanzhong/article/details/78929239)
+> - [对搜狗语料库进行想要格式的获取](https://blog.csdn.net/sgfmby1994/article/details/53436228)
+> - [新闻语料文本分类实践](https://blog.csdn.net/sadfassd/article/details/80568321)
+> - [word2vec训练中文模型 寒小阳老师](https://blog.csdn.net/BTUJACK/article/details/80666966)
+> 
+> - [搜狗实验室](http://www.sogou.com/labs/resource/list_yuliao.php)
+> 
+> - [搜狐新闻数据(SogouCS)](http://www.sogou.com/labs/resource/cs.php)
+> 
+> - [通过搜狗新闻语料用word2Vec训练中文模型](https://www.jianshu.com/p/6d542ff65b1e)
+> 

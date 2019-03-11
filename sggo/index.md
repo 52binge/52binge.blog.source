@@ -1,49 +1,60 @@
 > 个人看法要在面试之前按照简历上面的内容自己能够讲一个小故事。主要体现自己的深度学习的基础知识，这一部分要结合项目经验进行拔高，让面试官看到你的能力和特点。
 
-[RNN中为什么要采用tanh而不是ReLu作为激活函数？](https://www.zhihu.com/question/61265076)
-
 ## 1. 兴趣挖掘
 
-  - 数据量 sina week 14W+, 20W+
-  - page, 基于1个月的， 标准化之后，打标数据 14W+
+  - 数据量 sina week 18W+, 30W+
+  - blog page, 基于3个月的， 标准化之后，打标数据 16W+ (博主)
+  - 没有标的 blog page 数据，每周增加 30多W， 每天增加 3~5W。 （只预测到 1 级兴趣）
   - jieba 抽取 keyword，去掉停用词，5000, 对用每个 page 特征.
-  - 20颗 tree， depth=5， 特征选择 gini
-  - 特征选择，RF 与 GBDT 区别
-  - ABTest 效果评估
-  - loss
+  - 40颗 tree， depth=9， 特征选择 gini
 
-新浪语料库： 2.14G （2014年的数据）
+ user-page ： 访问次数 $n\_i = log2N + 1$， 平滑
+ 
+ ```
+ 截取 Top3 个
+ 
+ page1 { interest1, interest2, interest4 }
+ page2 { interest2, interest4, interest8 }
+ 
+ user1-page1 prob * 1(平滑次)， user1-page2 prob * 2(平滑次), 标准化, 截取前 5 个兴趣
+ 
+ 每7天统计 ：
+ 
+ day1： 访问次数 * interest_i [i1 * n1, i2 * n2, i3 * n3] 降序，截取 5 个兴趣.
+ day2：
+ day3：
+ day4：
+ 
+ 兴趣衰减 * 0.8, 周兴趣 ： 截取前 5 个.
 
-```bash
-cat news_tensite_xml.dat | iconv -f gbk -t utf-8 -c | grep "<content>"  > corpus.txt 
+长期兴趣： 长期兴趣指用户在较长一段时间(至少3个月)内表现出的兴趣倾向。
+
+level2 interest： 只根据 sina web page (没有包含 blog page)
 ```
 
-样本数据来源在这里可以是新闻标题+新闻内容
+兴趣策略如下：
 
-先逐个读入这些txt文件内容，然后正则表达匹配出URL（新闻类别）和content（新闻内容
+> 1. 每周进行一次用户兴趣的合并。
+> 2. 对于最近3个月的用户兴趣记录，统计两个指标: 判断是否为长期兴趣
 
-对于小于 50 个字符的，文章过滤掉.
+随机森林调参：
 
+> 1) n_estimators: 也就是弱学习器的最大迭代次数，或者说最大的弱学习器的个数。一般来说n_estimators太小，容易欠拟合，n_estimators太大，计算量会太大，并且n_estimators到一定的数量后，再增大n_estimators获得的模型提升会很小，所以一般选择一个适中的数值。默认是100。
+> 
+> 2) oob_score :即是否采用袋外样本来评估模型的好坏。默认识False。个人推荐设置为True，因为袋外分数反应了一个模型拟合后的泛化能力。
 
+[scikit-learn随机森林调参小结](https://www.cnblogs.com/pinard/p/6160412.html)
+
+训练时格子搜索: 每一个颗树 2860 左右的样本， 一共 40颗树, 最大深度为 9。
+
+n_estimators= 40, max_depth=9, min_samples_split=220,
+                                  min_samples_leaf=20, max_features=7 ,oob_score=True
+
+对于内部节点再划分所需最小样本数 min_samples_split
 
 > 随机森林的随机性体现在每棵树的训练样本是随机的，树中每个节点的分裂属性也是随机选择的。两个随机性的引入，使得随机森林不容易陷入过拟合。
 >
 > 因为随机选的样本和特征吧。你每个树用的都是样本数据的很小的一部分。所以信息量没有过于充裕，所以过拟合的可能性小。
-
-> - [使用搜狗新闻语料库，训练word embeding](https://blog.csdn.net/mengfanzhong/article/details/78929239)
-> - [对搜狗语料库进行想要格式的获取](https://blog.csdn.net/sgfmby1994/article/details/53436228)
-> - [新闻语料文本分类实践](https://blog.csdn.net/sadfassd/article/details/80568321)
-> - [word2vec训练中文模型 寒小阳老师](https://blog.csdn.net/BTUJACK/article/details/80666966)
-> 
-> - [搜狗实验室](http://www.sogou.com/labs/resource/list_yuliao.php)
-> 
-> - [搜狐新闻数据(SogouCS)](http://www.sogou.com/labs/resource/cs.php)
-> 
-> - [通过搜狗新闻语料用word2Vec训练中文模型](https://www.jianshu.com/p/6d542ff65b1e)
-> 
-> url-page : level1_interest, level2_interest
-
-标准化后，230W 篇文章
 
 ## 2. Chatbot
 
@@ -82,7 +93,7 @@ cat news_tensite_xml.dat | iconv -f gbk -t utf-8 -c | grep "<content>"  > corpus
 
 - soft attention 和 hard attention的区别?
 
-> 总结下：最大区别在于hard 方法是采样得到Z，Z作为lstm输入。soft方法是有所有做平均得到Z。这两种在图像里肯定是soft用的多，hard一般用在reinforcement learning 里。hard 不可微，不能后向传播，因为采样梯度为0。
+> 最大区别在于hard 方法是采样得到Z，Z作为lstm输入。soft方法是有所有做平均得到Z。这两种在图像里肯定是soft用的多，hard一般用在reinforcement learning 里。hard 不可微，不能后向传播，因为采样梯度为0。
 
 ## 3. 评分卡
 
