@@ -316,6 +316,18 @@ perplexity = math.exp(float(loss)) if loss < 300 else float('inf')
 
 > 保证了在一次迭代更新中，所有权重的梯度的平方和在一个设定范围以内，这个范围就是clip_gradient.
 
+## Tensorflow
+
+TensorFlow分为图和session两个部分，因为构建和执行在不同的阶段，所以很好的支持了模型的分布式
+
+TensorFlow是声明式开发方式，通过Session真正执行程序
+
+[【Tensorflow】相关面试题](https://blog.csdn.net/weixin_31866177/article/details/87974664)
+
+[二分类、多分类与多标签的基本概念](https://juejin.im/post/5b38971be51d4558b10aad26)
+
+多分类与多标签的损失函数
+
 ## Reference
 
 - [2019 11家互联网公司，NLP面经回馈][1]
