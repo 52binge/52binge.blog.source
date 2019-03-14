@@ -11,12 +11,27 @@ seq2seq模型，并主要介绍了一下attention机制，让写了下attention�
 
 SVM 算法 与 tensorflow 实现 LR
 
+## LR
+
+[Logistic Regression常见面试题整理](https://zhuanlan.zhihu.com/p/34670728)
+
+1. 怎么防止过拟合？
+2. 为什么正则化可以防止过拟合？ 
+3. L1正则和L2正则有什么区别？
+4. 如何用LR解决非线性问题？
+5. 工程上，怎么实现LR的并行化？有哪些并行化的工具
+
+> 为什么正则化可以防止过拟合？
+>
+> 过拟合表现在训练数据上的误差非常小，而在测试数据上误差反而增大。其原因一般是模型过于复杂，过分得去拟合数据的噪声。正则化则是对模型参数添加先验，使得模型复杂度较小，对于噪声扰动相对较小。
+
+
 ## 0. 字符串
 
 027-字符串的排列  ok.   
 028-[反转字符串单词](https://blog.csdn.net/koala_tree/article/details/79625599)  ok.   
 029-左旋转字符串  ok
-030-字符串转整型    
+030-[字符串转整型](https://blog.csdn.net/u010429424/article/details/78054448)       
 
 
 [必刷-刷题小结](https://zhuanlan.zhihu.com/p/56200260)
