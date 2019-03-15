@@ -1,6 +1,12 @@
 
 short part
 
+[正态分布-通俗知乎](https://www.zhihu.com/question/56891433)
+
+[机器学习中的损失函数](https://blog.csdn.net/u010976453/article/details/78488279)
+
+[LR 和 SVM 的 不同](/2018/06/23/ml/model-lr-vs-svm/)
+
 [ID3、C4.5、CART、随机森林、bagging、boosting、Adaboost、GBDT、xgboost算法总结](https://zhuanlan.zhihu.com/p/34534004)
 
 [从零开始使用TensorFlow建立简单的逻辑回归模型](https://segmentfault.com/a/1190000009954640)
