@@ -10,6 +10,7 @@
 #include <queue>
 #include <deque>
 #include <algorithm>
+#include <utility>
 
 using namespace std;
 struct Node {
@@ -18,7 +19,34 @@ struct Node {
 };
 ```
 
-## 1. 八皇后的实现
+## 1. 字符串
+
+### 1.1 反转字符串的单词
+
+```cpp
+string ReverseSentence(string& str) {
+    if(str.length() <= 0)
+        return str;
+	reverse(str.begin(), str.end());
+    int begin = 0, end = 0;
+	
+    while(str[begin] != '\0') {
+        if(str[begin] == ' ') {
+            begin++;
+            end++;
+        }
+        else if(str[end] == ' ' || str[end] == '\0'){
+            reverse(str.begin() + begin, str.begin() + end);
+            begin = ++end;
+        }
+        else
+            end++;
+    }
+    return str;
+}
+```
+
+## 2. 八皇后的实现
 
 ```cpp
 const int N = 105;
@@ -429,7 +457,7 @@ void selectSort(int a[], int len) {
 ```cpp
 void res(char *str, char *pStr) {
     if(*pStr == '\0') cout << str << endl;
-    for(char *p = pStr; p != '\0'; ++p) {
+    for(char *p = pStr; *p != '\0'; ++p) {
         char tmp = *p;
         *p = *pStr;
         *pStr = tmp;

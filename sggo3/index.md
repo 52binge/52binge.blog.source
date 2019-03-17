@@ -1,14 +1,14 @@
 ### 1. 字符串
 
-> 1. 字符串的排列 void res(char *str, char *pStr)
-> 2. 反转字串单词 string ReverseSentence(string str), void Reverse(int begin, int end, string& str)
+> 1. 字符串的排列 void res(char \*str, char \*pStr), scanf("%s", str); \#include < utility\> 
+> 2. 反转字串单词 string ReverseSentence(string str), reverse(str.begin(), str.end()); in lib algorithm
 > 3. 左旋转字符串 string LeftRotateString(string str, int n),string Reverse(string str)
-> 4. 字符串转整型 int StrToInt(char* str)       
+> 4. 字符串转整型 int StrToInt(char* str)       nok
 
 ### 2. 数组 & 排序
 
-> 1. 二维数组中的查找 bool find(int a[], rows, cols, value) 右上角 
-> 2. 替换空格 char\* replace(char\* str, int len) 在源数组上先计算总长度，从后向前，逐个赋值
+> 1. 二维数组中的查找 bool find(int a[], rows, cols, value) 右上角，nok
+> 2. 替换空格 char\* replace(char\* str, int len) ‘ ’->%20 在源数组总长度，从后向前，逐个赋值
 > 3. 旋转数组的最小元素 int get_min(int \*a, int len)
 > 4. 调整数组位数使奇数位于前面
 > 5. 数组中出现次数超过一半的次数 \* int core(int \*a, int len)
