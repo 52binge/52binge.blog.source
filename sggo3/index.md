@@ -3,50 +3,54 @@
 > 1. 字符串的排列 void res(char \*str, char \*pStr), scanf("%s", str); \#include < utility\> 
 > 2. 反转字串单词 string ReverseSentence(string str), reverse(str.begin(), str.end()); in lib algorithm
 > 3. 左旋转字符串 string LeftRotateString(string str, int n),string Reverse(string str)
-> 4. 字符串转整型 int StrToInt(char* str)       nok
+> 4. 字符串转整型 int StrToInt(char* str)       ok
 
 ### 2. 数组 & 排序
 
-> 1. 二维数组中的查找 bool find(int a[], rows, cols, value) 右上角，nok
+> 1. 二维数组中的查找 bool Find(int\* matrix, int rows, int cols, int value)用一维 \*(matrix+i\*cols+j)
 > 2. 替换空格 char\* replace(char\* str, int len) ‘ ’->%20 在源数组总长度，从后向前，逐个赋值
 > 3. 旋转数组的最小元素 int get_min(int \*a, int len)
-> 4. 调整数组位数使奇数位于前面
+> 4. 调整数组位数使奇数位于前面 void reorderOddEven(int[] arr) 
 > 5. 数组中出现次数超过一半的次数 \* int core(int \*a, int len)
-> 6. 最小的K个数  part 快排思想 + void set_k(int\* input, int n, int k)
+> 6. 最小的K个数  part 快排思想 + void set_k(int\* input, int n, int k) **nok**
 > 7. 连续子数组的最大和   // dp: F[i] = max(a[i], F[i-1]+a[i]);
-> 8. 把数组排成最小的数   // 心得 ： 排序cmp写好
+> 8. 把数组排成最小的数  #include < sstream \> ostringstream oss;oss <<t; oss.str() bool Compare(const string &left, const string &right)
 > 9. [数组中的逆序对](https://blog.csdn.net/bf23456/article/details/51303632)
-> 10. 数组中只出现一次的数字 
-> 11. 丑数
-> 12. 整数中1出现的次数（从1到n整数中1出现的次数）.
-> 13. 和为S的连续正数序列(滑动窗口思想) ok.
+> 10. 数组中只出现一次的数字 , 划分2数组，num & (-num);二者与后得到的数，将num最右边的1保留下来
+> 11. 丑数 ok
+> 12. 整数中1出现的次数（从1到n整数中1出现的次数）. **nok**
+> 13. 和为S的连续正数序列(滑动窗口思想) left=1, right = 2, total = (left + right) \* (right - left + 1) / 2; 
 > 14. 和为S的两个数字(双指针思想) ok.
 > 15. 孩子们的游戏-圆圈中最后剩下的数(约瑟夫环) ok.
-> 16. 构建乘积数组
+> 16. [构建乘积数组](https://blog.csdn.net/u012327058/article/details/81007333)
 > 17. 如何在排序数组中找出给定数字出现的次数 int bina(int \*a, int len, int num, bool isLeft)
+> 18. [最短路Floyd](https://www.cnblogs.com/biyeymyhjob/archive/2012/07/31/2615833.html)
+> 19. quick_sort 双 while + one swap
 
 ### 3. LinkedList
 
 > 5. 从尾到头打印链表, 递归 ok.    
 > 6. 链表中倒数第k个结点 ok.   
-> 3. 反转链表    
+> 3. [反转链表][3.3] next=head->next, head->next=pre, pre=head, head=next; 4步
 > 4. 合并两个或k个有序链表  ok， 递归 (三元运算符).   
 > 5. 复杂链表的复制    
 > 6. 两个链表的第一个公共结点  ok.   
 > 7. 链表中环的入口结点     
-> 8. 删除链表中重复的结点  链表1->2->3->3->4->4->5 处理后为 1->2->5.   
+> 8. 删除链表中重复的结点  链表1->2->3->3->4->4->5 处理后为 1->2->5. first->next=head, last, p 三指针, first 技巧
+
+[3.3]: https://www.jianshu.com/p/bd6a64d36916
 
 ### 4. Tree
 
 > 1. 重建二叉树 ok Node* f3(int* pre, int\* ino, int len)       
-> 2. 树的子结构  ok 递归 , 需要2个函数，牛题.   
+> 2. 树的子结构,遍历+判断, bool f5(Node\* root1, Node\* root2), bool son(Node\* p1, Node\* p2) 
 > 3. 二叉树的镜像  ok 递归.   
 > 4. 从上往下打印二叉树 ok bfs      
-> 5. 二叉搜索树的后序遍历序列 ok.   
-> 6. 二叉树中和为某一值的路径 ok     
-> 7. 二叉搜索树与双向链表  ok.   
-> 8. 二叉树的深度  ok.   
-> 9. 平衡二叉树  ok.    
+> 5. 二叉搜索树的后序遍历序列 bool f6(int\* sec, int len)  
+> 6. 二叉树中和为某一值的路径 void f4(Node\* root, int exSum, int curSum, vecotr\< int \>& path)     
+> 7. 二叉搜索树与双向链表 void convert(Node\* root, Node\*& pLast)   
+> 8. 二叉树的深度 bool isBalance(Node\* root, int\* dep)
+> 9. 平衡二叉树 bool isBalance(Node\* root, int\* dep)    
 > 10. [二叉树的下一个结点](https://blog.csdn.net/libin1105/article/details/48422299)  ok       
 > 11. 对称的二叉树 ok      
 > 12. 按之字形顺序打印二叉树      
@@ -54,6 +58,7 @@
 > 14. 序列化二叉树      
 > 15. 二叉搜索树的第k个结点 ok.   
 > 16. [二叉查找树节点的删除](https://blog.csdn.net/xiaoxiaoxuanao/article/details/61918125).  重要
+> 17. strcpy 手写 char\* my_strcpy(char \*dst, const char\* src)
 
 ### 5. 具体算法
 
