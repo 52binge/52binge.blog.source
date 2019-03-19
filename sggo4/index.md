@@ -13,3 +13,14 @@ GBDT和随机森林的不同点：
 > 4. RF 对异常值不敏感，GBDT对异常值非常敏感 
 > 5. RF 对训练集一视同仁，GBDT是基于权值的弱分类器的集成 
 > 6. RF 是通过减少模型方差提高性能，GBDT是通过减少模型偏差提高性能
+
+#### [LR和SVM的联系区别](https://zhuanlan.zhihu.com/p/30419036)
+
+### 2. [机器学习常见面试题整理](http://kubicode.me/2015/08/16/Machine%20Learning/Common-Interview/)
+
+### 3. [机器学习面试题总结](https://zhuanlan.zhihu.com/c_129612503)
+
+### 4. [机器学习常见面试题（上）](https://zhuanlan.zhihu.com/p/45091568)
+
+### 5. [BAT机器学习面试1000题系列](https://blog.csdn.net/v_july_v/article/details/78121924)
+
