@@ -24,3 +24,6 @@ GBDT和随机森林的不同点：
 
 ### 5. [BAT机器学习面试1000题系列](https://blog.csdn.net/v_july_v/article/details/78121924)
 
+### 工程架构
+
+[操作系统面试题](https://zhuanlan.zhihu.com/p/23755202)
