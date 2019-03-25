@@ -23,9 +23,14 @@ Tanh 数据平均值为 0，具有数据中心化的效果，几乎在任何场�
 
 <font color=#c7254e>**摘要心得1：**</font>
 
-> 1. Sigmoid 和 Tanh  Activation function 为什么会导致 Vanishing/Exploding gradients ?
-> 2. ReLU 的优点，和局限性分别是什么?
-
+> 1. Sigmoid 和 Tanh 为什么会导致 Vanishing/Exploding gradients ? 
+> 2. Tanh 值域 (-1,1) Sigmoid 值域 (0,1)
+> 3. ReLU 的优点，和局限性分别是什么? 
+> 4. [谈谈激活函数 Sigmoid,Tanh,ReLu,softplus,softmax](https://zhuanlan.zhihu.com/p/48776056)
+> 5. softmax函数可以看做是Sigmoid函数的一般化，可以进行多分类。
+> 6. 非常适合用于`分类`问题： `Cross Entropy` 交叉熵损失函数
+> 7. Square error loss function 与 Cross Entropy Error Function 分别适合什么景？
+> 8. [偏差和方差与过拟合欠拟合的关系](https://blog.csdn.net/u012033832/article/details/78401486)
 
 ### 1.2 Cross Entropy
 
@@ -76,8 +81,8 @@ Cross Entropy损失函数常用于分类问题中，但是为什么它会在分�
 
 <font color=#c7254e>**摘要心得2：**</font>
 
-> 1. Square error loss function 与 Cross Entropy Error Function 分别适合什么场景？
-
+> 1. Square error loss function 与 Cross Entropy Error Function 分别适合什么景？
+> 2. [偏差和方差与过拟合欠拟合的关系](https://blog.csdn.net/u012033832/article/details/78401486)
 
 
 在用梯度下降法做参数更新的时候，模型学习的速度取决于两个值：
