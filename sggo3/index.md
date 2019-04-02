@@ -9,7 +9,7 @@
 
 > 1. 二维数组中的查找 bool Find(int\* matrix, int rows, int cols, int value)用一维 \*(matrix+i\*cols+j)
 > 2. 替换空格 char\* replace(char\* str, int len) ‘ ’->%20 在源数组总长度，从后向前，逐个赋值
-> 3. 旋转数组的最小元素 int get_min(int \*a, int len)
+> 3. 旋转数组的最小元素 int get_min(int \*a, int len) , while(a[p1] >= a[p2]) {
 > 4. 调整数组位数使奇数位于前面 void reorderOddEven(int[] arr) 
 > 5. 数组中出现次数超过一半的次数 \* int core(int \*a, int len)
 > 6. 最小的K个数  part 快排思想 + void set_k(int\* input, int n, int k) **nok**
@@ -42,7 +42,7 @@
 
 ### 4. Tree
 
-> 1. 重建二叉树 ok Node* f3(int* pre, int\* ino, int len)       
+> 1. 重建二叉树 ok Node\* f3(int\* pre, int\* ino, int len)       
 > 2. 树的子结构,遍历+判断, bool f5(Node\* root1, Node\* root2), bool son(Node\* p1, Node\* p2) 
 > 3. 二叉树的镜像  ok 递归.   
 > 4. 从上往下打印二叉树 ok bfs      
