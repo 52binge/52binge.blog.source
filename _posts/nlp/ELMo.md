@@ -1,5 +1,5 @@
 ---
-title: ELMo 最好用的词向量《Deep Contextualized Word Representations》
+title: ELMo 最好用的词向量《Deep Contextualized Word Representations》（not finish）
 toc: true
 date: 2018-12-23 07:00:21
 categories: nlp
