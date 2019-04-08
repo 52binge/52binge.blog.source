@@ -12,12 +12,15 @@ tags: BERT
 
 **Paper**: [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805)
 
-**BERT** 的创新点在于提出了一套完整的方案，利用之前最新的算法模型，去解决各种各样的 NLP 任务.
+**BERT** 创新点在于提出了一套完整的方案，利用之前最新的算法模型，去解决各种各样的 NLP 任务.
 
 <!-- more -->
 
 ## 1. NLP 的发展
 
+要处理 NLP 问题，首先要解决 **文本表示** 问题。虽然我们人去看文本，能够清楚明白文本中的符号表达什么含义，但是计算机只能做数学计算，需要将文本表示成计算机可以处理的形式。
+
+![](https://pic3.zhimg.com/80/v2-597b011ddd148eb53b5a90730b6090ae_hd.jpg)
 
 
 ## Reference
