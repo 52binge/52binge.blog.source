@@ -112,23 +112,132 @@ Reference Article
 > 3). **fn** 小， sample number **很大**5W+（n=1-1000，m=50000+）
 > &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 增加更多的 feature 然后使用LR 算法或者 not have kernel 的 SVM
 
-**5.** GBDT vs Xgboost
+**5. ERM / SRM**
 
-**6.** 评估指标 F1 和 auc 的区别是哪些?
+> 经验风险最小化 empirical risk minimization, 结构风险最小化 structural risk minimization
 
-**7.** sigmoid 用作激活函数时，分类为什么要用 crossentry loss，而不用均方损失？
+> 李沐曾经说过：
+> 
+> model是用离散特征还是连续特征，其实是“**海量离散特征+简单模型**” 同 “**少量连续特征+复杂模型**”的权衡。
+> 
+> 既可以离散化用线性模型，也可以用连续特征加深度学习。就看是喜欢折腾 **feature** 还是折腾 **model** 了。通常来说，前者容易，而且可以n个人一起并行做，有成功经验；后者目前看很赞，能走多远还须拭目以待。
 
-**8.** 神经网络中的激活函数的对比？
+**6. Linear classifier / nonlinear classifier 的区别以及优劣?**
+
+> 线性和非线性是针对，模型参数和输入特征来讲的；
+>
+> 比如输入x，模型 y=ax+ax^2 那么就是 nonlinear model 如果输入是x和X^2则模型是线性的。
+>
+> 1. Linear classifier 可解释性好，计算复杂度较低，不足之处是模型的拟合效果相对弱些。
+> 2. nonlinear classifier 拟合能力较强，不足之处是数据量不足容易 **overfiting** 、计算复杂度高、解释性不好。
+> 
+> Linear classifier ：LR,贝叶斯分类，单层感知机、线性回归
+> 
+> nonlinear classifier：决策树、RF、GBDT、多层感知机
+> 
+> SVM 两种都有（看线性核还是高斯核）
+
+**7. Random Forest**
+
+> - [RF、bagging、boosting、GBDT、xgboost算法总结][7.1]
+
+> RF 是一个典型的多个决策树的组合分类器。
+> 
+> 1). 数据的随机性选取
+> 2). 待选特征的随机选取
+
+Sample Random： 
+
+![](https://pic1.zhimg.com/80/v2-a1c3ce43528dbc274be8952c06d2b9b4_hd.jpg)
+
+Feature Random：
+
+> 与数据集的随机选取类似，随机森林中的子树的每一个分裂过程并未用到所有的待选特征，而是从所有的待选特征中随机选取一定的特征，之后再在随机选取的特征中选取最优的特征。这样能够使得随机森林中的决策树都能够彼此不同，提升系统的多样性，从而提升分类性能。
+
+![](https://pic1.zhimg.com/80/v2-569009cc3ccd3e9922b77c1e4cbf4ca0_hd.jpg)
+
+[7.1]: https://zhuanlan.zhihu.com/p/34534004
+
+**8. Bagging & boosting**
+
+
+**9. GBDT**
+
+GBDT是以决策树（CART）为基学习器的GB算法，是迭代树，而不是分类树。
+
+一般Boosting算法都是一个迭代的过程，每一次新的训练都是为了改进上一次的结果。
+
+![](https://pic2.zhimg.com/80/v2-4713a5b63da71ef5afba3fcd3a65299d_hd.jpg)
+
+GBDT的核心就在于：每一棵树学的是之前所有树结论和的残差，这个残差就是一个加预测值后能得真实值的累加量。
+
+![](https://pic3.zhimg.com/80/v2-a384924b89b1bdd581cef7d75b56e226_hd.jpg)
+
+**10. Xgboost**
+
+Xgboost相比于GBDT来说，更加有效应用了数值优化，最重要是对损失函数（预测值和真实值的误差）变得更复杂。目标函数依然是所有树的预测值相加等于预测值。
+
+**Bagging & Boosting 的理念**
+
+Bagging 的思想比较简单，即每一次从原始数据中根据 **均匀概率分布有放回的抽取和原始数据大小相同的样本集合**，样本点可能出现重复，然后对每一次产生的训练集构造一个分类器，再对分类器进行组合。
+
+boosting 的每一次抽样的 **样本分布都是不一样** 的。每一次迭代，都根据上一次迭代的结果，**增加被错误分类的样本的权重**，使得模型能在之后的迭代中更加注意到 **难以分类的样本**，这是一个 **不断学习的过程，也是一个不断提升** 的过程，这也就是boosting思想的本质所在。 迭代之后，将每次迭代的基分类器进行集成。那么如何进行样本权重的调整和分类器的集成是我们需要考虑的关键问题。
+
+![](https://pic4.zhimg.com/80/v2-aca3644ddd56abe1e47c0f45601587c3_hd.jpg)
+
+
+**11.** **Evaluation Metric**,  F1 和 auc 的区别是哪些， 对比优缺点等 ?
+
+> 1). accuracy (正反比例严重失衡，则没意义，存在 accuracy paradox 现象)
+>
+> 2). precision (TPR, 80% = 你一共预测了100个正例，80个是对的正例)
+>
+> 3). recall
+>
+> 4). F1-score （precision 和 recall 的 metric）
+>
+> 5). ROC curve
+> 
+> 6). AUC
+
+**9.** sigmoid 用作激活函数时，分类为什么要用 crossentry loss，而不用均方损失？
+
+**10.** 神经网络中的激活函数的对比？
 
 ## 二、NLP高频问题
 
-1、word2vec和tf-idf 相似度计算时的区别？
-2、word2vec和NNLM对比有什么区别？（word2vec vs NNLM）
-3、 word2vec负采样有什么作用？
-4、word2vec和fastText对比有什么区别？（word2vec vs fastText）
-5、glove和word2vec、 LSA对比有什么区别？（word2vec vs glove vs LSA）
-6、 elmo、GPT、bert三者之间有什么区别？（elmo vs GPT vs bert）
-7、LSTM和GRU的区别？
+**1. word2vec 和 tf-idf 相似度计算时的区别？**
+
+> **word2vec:** 
+>
+> 1). 稠密的 低维度的 
+> 
+> 2). 表达出相似度； 
+> 
+> 3). 表达能力强；
+> 
+> 4). 泛化能力强；
+
+2. word2vec和NNLM对比有什么区别？（word2vec vs NNLM）
+
+3.  word2vec负采样有什么作用？
+
+4. word2vec和fastText对比有什么区别？（word2vec vs fastText）
+
+1）都可以无监督学习词向量， fastText训练词向量时会考虑subword；
+
+2）fastText还可以进行有监督学习进行文本分类，其主要特点：
+
+结构与CBOW类似，但学习目标是人工标注的分类结果；
+采用hierarchical softmax对输出的分类标签建立哈夫曼树，样本中标签多的类别被分配短的搜寻路径；
+引入N-gram，考虑词序特征；
+引入subword来处理长词，处理未登陆词问题；
+
+5. glove和word2vec、 LSA对比有什么区别？（word2vec vs glove vs LSA）
+
+6. elmo、GPT、bert三者之间有什么区别？（elmo vs GPT vs bert）
+
+7. RNN 和 LSTM 和 GRU 的区别？
 
 ## 三、其他算法问题
 
