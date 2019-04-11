@@ -1,14 +1,33 @@
 
 ## 一、AI算法基础
 
-**1.** 样本不平衡的解决方法？
+**1.** 防止 overfiting 的 8 条迭代方向
+
+> 1). get more data
+> 2). Data augmentation
+> 3). Regularization（权值衰减）. (L1 拉普拉斯先验, L2 高斯先验)
+> 4). Dropout (类似 RF bagging 作用，最后以投票的方式降低过拟合；)
+> 5). Choosing Right Network Structure
+> 6). Early stopping
+> 7). Model Ensumble
+> 8). Batch Normalization
+
+> Batch Normalization 可以有效避免复杂参数对网络训练产生的影响，也可提高泛化能力.
+>
+> 神经网路的训练过程的本质是学习数据分布，如果训练数据与测试数据分布不同，将大大降低网络泛化能力， BN 是针对每一批数据，在网络的每一层输入之前增加 BN，(均值0，标准差1)。
+>
+> Dropout 可以抑制过拟合，作用于每份小批量的训练数据，随机丢弃部分神经元机制. bagging 原理.
+>
+> [ML算法： 关于防止过拟合，整理了 8 条迭代方向](https://posts.careerengine.us/p/5cae13b2d401440a7fe047af)
+
+**2.** 样本不平衡的 4 个解决方法？
 
 > 1）上采样和子采样；
 > 2）修改权重（修改损失函数）；
 > 3）集成方法：bagging，类似随机森林、自助采样；
 > 4）多任务联合学习；
 
-**2.** CrossEntropy 系列问题？与最大似然函数的关系和区别？
+**3.** CrossEntropy 系列问题？与最大似然函数的关系和区别？
 
 > 1）CrossEntropy lossFunction ![](https://www.zhihu.com/equation?tex=L%3D-%5Bylog%5C+%5Chat+y%2B%281-y%29log%5C+%281-%5Chat+y%29%5D)
 > 
@@ -59,17 +78,47 @@ Reference Article
 [1.2]: https://zhuanlan.zhihu.com/p/26614750
 [1.3]: https://blog.csdn.net/u011508640/article/details/72815981
 
-3. SVM 和 LR 的区别与联系？
+**4.** SVM 和 LR 的区别与联系？
 
-4. GBDT vs Xgboost
+> 1). 对非线性表达上，LR 只能通过人工的特征组合来实现，而 SVM 可以很容易引入非线性核函数来实现非线性表达，当然也可以通过特征组合。
+> 
+> 2). LR 产出的是概率值，而SVM只能产出是正类还是负类，不能产出概率。LR 的损失函数是 log loss，而 SVM 使用的是 hinge loss。
+> 
+> 3). SVM 不直接依赖数据分布，而LR则依赖, SVM 主要关注的是“支持向量”，也就是和分类最相关的少数点，即关注局部关键信息；而 LR 是在全局进行优化的。这导致 SVM 天然比 LR 有**更好的泛化能力**，防止过拟合。
+> 
+> 4). 损失函数的优化方法不同，LR 是使用 GD 来求解 **对数似然函数** 的最优解；SVM 使用 (Sequnential Minimal Optimal) 顺序最小优化，来求解条件约束损失函数的对偶形式。
+>
+> ---
+>
+> 一般用线性核和高斯核，也就是Linear核与RBF核需要注意的是需要对 **数据归一化处理**.
+>
+> 一般情况下RBF效果是不会差于Linear但是时间上RBF会耗费更多
 
-5. 评估指标 F1 和 auc 的区别是哪些?
+**Andrew Ng 的见解：**
 
-6. sigmoid 用作激活函数时，分类为什么要用 crossentry loss，而不用均方损失？
+> 1. 如果Feature的数量很大，跟样本数量差不多，这时候选用LR或者是Linear Kernel的SVM
+> 2. 如果Feature的数量比较小，样本数量一般，不算大也不算小，选用SVM+Gaussian Kernel
+> 3. 如果Feature的数量比较小，而样本数量很多，需要手工添加一些feature变成第一种情况
 
-7. 神经网络中的激活函数的对比？
+**如何量化 feature number 和 sample number：**
 
+> n 是feature的数量, m是样本数   
 
+> 1). feature number >> sample number，则使用LR算法或者不带核函数的SVM（线性分类）
+>   &nbsp;&nbsp;&nbsp;&nbsp; feature number = 1W， sample number = 1K
+>     
+> 2). **fn** 小， sample number **一般**1W，使用带有 **kernel函数** 的 SVM算法.  
+>    
+> 3). **fn** 小， sample number **很大**5W+（n=1-1000，m=50000+）
+> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 增加更多的 feature 然后使用LR 算法或者 not have kernel 的 SVM
+
+**5.** GBDT vs Xgboost
+
+**6.** 评估指标 F1 和 auc 的区别是哪些?
+
+**7.** sigmoid 用作激活函数时，分类为什么要用 crossentry loss，而不用均方损失？
+
+**8.** 神经网络中的激活函数的对比？
 
 ## 二、NLP高频问题
 
