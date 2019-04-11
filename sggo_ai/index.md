@@ -114,10 +114,19 @@ Reference Article
 
 **5. ERM / SRM**
 
+Supervised Learning Obj
+
+$$
+w^*=argmin_w\sum_iL(y_i,f(x_i;w))+\lambda\Omega(w)
+$$
+
+> 1. 第一项对应模型的训练损失函数 (Square Loss、Hinge loss、Exp loss、Log loss)
+> 2. 第二项对应模型的正则化项 （模型参数向量的范数）
+
 > 经验风险最小化 empirical risk minimization, 结构风险最小化 structural risk minimization
 
-> 李沐曾经说过：
-> 
+李沐曾经说过：
+ 
 > model是用离散特征还是连续特征，其实是“**海量离散特征+简单模型**” 同 “**少量连续特征+复杂模型**”的权衡。
 > 
 > 既可以离散化用线性模型，也可以用连续特征加深度学习。就看是喜欢折腾 **feature** 还是折腾 **model** 了。通常来说，前者容易，而且可以n个人一起并行做，有成功经验；后者目前看很赞，能走多远还须拭目以待。
@@ -183,6 +192,12 @@ GBDT 的核心就在于：**每一棵树学的是之前所有树结论和的残�
 
 Xgboost相比于GBDT来说，更加有效应用了数值优化，最重要是**对损失函数**（预测值和真实值的误差）**变得更复杂**。目标函数依然是所有树的预测值相加等于预测值。
 
+> 1. 二阶泰勒展开，同时用到了一阶和二阶导数
+> 2. xgboost在代价函数里加入了正则项，用于控制模型的复杂度
+> 3. Shrinkage（缩减），相当于学习速率（xgboost中的eta）
+> 4. 列抽样（column subsampling）。xgboost借鉴RF做法，支持列抽样（即每次的输入特征不是全部特征)
+> 5. 并行化处理： 预先对每个特征内部进行了排序找出候选切割点.各个**feature**的增益计算就可以开多线程进行.
+
 <!--![](https://pic2.zhimg.com/80/v2-1c0706e463f78b6036b3923048ac9149_hd.jpg)-->
 
 > 好的模型需要具备两个基本要素：
@@ -210,13 +225,13 @@ boosting 的每一次抽样的 **样本分布都是不一样** 的。每一次�
 >
 > 2). precision (TPR, 80% = 你一共预测了100个正例，80个是对的正例)
 >
-> 3). recall
+> 3). recall (样本中的正例有多少被预测正确 R = TP/(TP+FN))
 >
 > 4). F1-score （precision 和 recall 的 metric）
 >
-> 5). ROC curve
+> 5). ROC curve （TPR 纵轴，FPR 横轴，TP（真正率）和 FP（假正率），设一个阈值）
 > 
-> 6). AUC
+> 6). AUC  (AUC = 0.5，跟随机猜测一样， ROC 纵轴 TPR 越大， 横轴 FPR 越小 模型越好）
 
 **12.** sigmoid 用作激活函数时，分类为什么要用 crossentry loss，而不用均方损失？
 
