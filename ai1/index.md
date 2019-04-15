@@ -20,12 +20,22 @@
 >
 > [ML算法： 关于防止过拟合，整理了 8 条迭代方向](https://posts.careerengine.us/p/5cae13b2d401440a7fe047af)
 
-### 1.2 样本不平衡的 4 个解决方法？
+### 1.2 机器学习之类别不平衡问题
 
-> 1）上采样和子采样；
+机器学习之类别不平衡问题 (1) —— 各种评估指标
+
+> 1）过采样和欠采样；（1. 随机过采样(不太使用了，重采样往往会导致严重的过拟合)， 2. **Border-line SMOTE**）
 > 2）修改权重（修改损失函数）；
 > 3）集成方法：bagging，类似随机森林、自助采样；
 > 4）多任务联合学习；
+
+> - [机器学习之类别不平衡问题 (1) —— 各种评估指标][2.1]
+> - [机器学习之类别不平衡问题 (2) —— ROC和PR曲线][2.2]
+> - [机器学习之类别不平衡问题 (3) —— 采样方法][2.3]
+
+[2.1]: https://zhuanlan.zhihu.com/p/34473430
+[2.2]: https://zhuanlan.zhihu.com/p/34655990
+[2.3]: https://zhuanlan.zhihu.com/p/41237940
 
 ### 1.3 CrossEntropy 与 最大似然？
 
@@ -271,6 +281,8 @@ Confusion Matrix
 **ROC曲线无视样本不平衡**
 
 > - [精确率、召回率、F1 值、ROC、AUC 各自的优缺点是什么？](https://www.zhihu.com/question/30643044)
+> - [机器学习之类别不平衡问题 (2) —— ROC和PR曲线](https://zhuanlan.zhihu.com/p/34655990)
+
  
 **6). AUC**  (AUC = 0.5，跟随机猜测一样， ROC 纵轴 TPR 越大， 横轴 FPR 越小 模型越好）
 
@@ -296,12 +308,23 @@ precision & recall
 
 ### 1.12 Bias-Variance Tradeoff
 
+<img src="https://charlesliuyx.github.io/2017/09/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%88%86%E7%B1%BB%E5%99%A8%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87%E8%AF%A6%E8%A7%A3/BV-Tradeoff.png" width="450" />
 
-> - [Bias-Variance Tradeoff](https://charlesliuyx.github.io/2017/09/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%88%86%E7%B1%BB%E5%99%A8%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87%E8%AF%A6%E8%A7%A3/BV-Tradeoff.png)
+> - [Bias-Variance Tradeoff](https://charlesliuyx.github.io)
 
-### 1.13 sigmoid 用作激活函数时，分类为什么要用 crossentry loss，而不用均方损失？
+### 1.13 激活函数的对比？
 
-### 1.14 激活函数的对比？
+> 1. Sigmoid 和 Tanh 为什么会导致 Vanishing/Exploding gradients ? 
+> 2. Tanh 值域 (-1,1) Sigmoid 值域 (0,1)
+> 3. ReLU 的优点，和局限性分别是什么? 
+> 4. [谈谈激活函数 Sigmoid,Tanh,ReLu,softplus,softmax](https://zhuanlan.zhihu.com/p/48776056)
+
+### 1.14 sigmoid 用作激活函数时，分类为什么要用 crossentry loss，而不用均方损失？
+
+> 5. softmax函数可以看做是Sigmoid函数的一般化，可以进行多分类。
+> 6. 非常适合用于`分类`问题： `Cross Entropy` 交叉熵损失函数
+> 7. Square error loss function 与 Cross Entropy Error Function 分别适合什么景？
+
 
 ## 二、NLP高频问题
 
