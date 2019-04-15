@@ -232,6 +232,18 @@ boosting 的每一次抽样的 **样本分布都是不一样** 的。每一次�
 > 5). ROC curve （TPR 纵轴，FPR 横轴，TP（真正率）和 FP（假正率），设一个阈值）
 > 
 > 6). AUC  (AUC = 0.5，跟随机猜测一样， ROC 纵轴 TPR 越大， 横轴 FPR 越小 模型越好）
+> 
+> 7). multi-class classification 如果非要用一个综合考量的 metric 的话，
+>
+> 1. macro-average（宏平均） 
+> 2. micro-average（微平均）
+>  
+> macro-average（宏平均） 会比 micro-average（微平均）好一些哦，因为 macro 会受 minority class 影响更大，也就是说更能体现在 small class 上的 performance.
+
+precision & recall
+
+> precision 是相对你自己的模型预测而言
+> recall 是相对真实的答案而言
 
 **12.** sigmoid 用作激活函数时，分类为什么要用 crossentry loss，而不用均方损失？
 
