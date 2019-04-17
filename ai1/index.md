@@ -328,38 +328,68 @@ precision & recall
 
 ## 二、NLP高频问题
 
-**1. word2vec 和 tf-idf 相似度计算时的区别？**
+### 2.1 word2vec vs NNLM
 
-> **word2vec:** 
+> 1）其本质都可以看作是 Language Model；
+
+> 2）词向量只不过 NNLM 一个产物， word2vec 虽然其本质也是 Language Model，但是其专注于**词向量本身**，因此做了许多优化来提高计算效率：
+
+> 与 NNLM 相比，词向量直接sum，不再拼接，并舍弃隐层；
+> 考虑到 sofmax归一化 需要遍历整个词汇表，采用 hierarchical softmax 和 negative sampling 进行优化
+
+> 1. hierarchical softmax 实质上生成一颗带权路径最小的哈夫曼树，让高频词搜索路劲变小；
+> 2. negative sampling 更为直接，实质上对每一个样本中每一个词都进行负例采样；
+
+### 2.2 word2vec negative sampling
+
+负采样这个点引入 word2vec 非常巧妙，两个作用，
+
+> 1. 加速了模型计算
+> 2. 保证了模型训练的效果，一个是模型每次只需要更新采样的词的权重，不用更新所有的权重，那样会很慢，第二，中心词其实只跟它周围的词有关系，位置离着很远的词没有关系，也没必要同时训练更新，作者这点非常聪明.
+
+### 2.3 word2vec vs fastText
+
+> 1. 都可以无监督学习词向量， fastText 训练词向量时会考虑 subword；
+> 2. fastText 还可以进行有监督学习进行文本分类，其主要特点：
+
+> - 结构与CBOW类似，但学习目标是人工标注的分类结果；
+> - 采用 hierarchical softmax 对输出的分类标签建立哈夫曼树，样本中标签多的类别被分配短的搜寻路径；
+> - 引入 N-gram，考虑词序特征；
+> - 引入 subword 来处理长词，处理未登陆词问题；
+
+### 2.4 word2vec vs glove
+
+> - word2vec 是局部语料库训练的，其特征提取是基于滑窗的；而glove的滑窗是为了构建co-occurance matrix，是基于全局语料的，可见glove需要事先统计共现概率；因此，word2vec可以进行在线学习，glove则需要统计固定语料信息。
 >
-> 1). 稠密的 低维度的 
+>
+> - word2vec 是无监督学习，同样由于不需要人工标注；glove通常被认为是无监督学习，但实际上glove还是有label的，即共现次数log(X_{ij})。
+>
+>
+> - word2vec 损失函数实质上是带权重的交叉熵，权重固定；glove的损失函数是最小平方损失函数，权重可以做映射变换。
 > 
-> 2). 表达出相似度； 
-> 
-> 3). 表达能力强；
-> 
-> 4). 泛化能力强；
+>
+> - 总体来看，glove 可以被看作是更换了目标函数和权重函数的全局 word2vec。
 
-2. word2vec和NNLM对比有什么区别？（word2vec vs NNLM）
+### 2.5 ELMO vs GPT vs BERT
 
-3.  word2vec负采样有什么作用？
+![](https://pic1.zhimg.com/80/v2-004df09bcc2f085c72cc0938c08b1910_hd.jpg)
 
-4. word2vec和fastText对比有什么区别？（word2vec vs fastText）
+之前介绍词向量均是静态的词向量，无法解决一次多义等问题。下面介绍三种elmo、GPT、bert词向量，它们都是基于语言模型的动态词向量。下面从几个方面对这三者进行对比：
 
-1）都可以无监督学习词向量， fastText训练词向量时会考虑subword；
+（1）**特征提取器**：elmo采用LSTM进行提取，GPT和bert则采用Transformer进行提取。很多任务表明Transformer特征提取能力强于LSTM，elmo采用1层静态向量+2层LSTM，多层提取能力有限，而GPT和bert中的Transformer可采用多层，并行计算能力强。
 
-2）fastText还可以进行有监督学习进行文本分类，其主要特点：
+（2）**单/双向语言模型**：
 
-结构与CBOW类似，但学习目标是人工标注的分类结果；
-采用hierarchical softmax对输出的分类标签建立哈夫曼树，样本中标签多的类别被分配短的搜寻路径；
-引入N-gram，考虑词序特征；
-引入subword来处理长词，处理未登陆词问题；
+GPT采用单向语言模型，elmo和bert采用双向语言模型。但是elmo实际上是两个单向语言模型（方向相反）的拼接，这种融合特征的能力比bert一体化融合特征方式弱。
+GPT和bert都采用Transformer，Transformer是encoder-decoder结构，GPT的单向语言模型采用decoder部分，decoder的部分见到的都是不完整的句子；bert的双向语言模型则采用encoder部分，采用了完整句子。
 
-5. glove和word2vec、 LSA对比有什么区别？（word2vec vs glove vs LSA）
+### 2.6 RNN vs LSTM vs GRU
 
-6. elmo、GPT、bert三者之间有什么区别？（elmo vs GPT vs bert）
+- GRU和LSTM的性能在很多任务上不分伯仲。
 
-7. RNN 和 LSTM 和 GRU 的区别？
+- GRU 参数更少因此更容易收敛，但是数据集很大的情况下，LSTM表达性能更好。
+
+- 从结构上来说，GRU只有两个门（update和reset），LSTM有三个门（forget，input，output），GRU直接将hidden state 传给下一个单元，而LSTM则用memory cell 把hidden state 包装起来。
 
 ## 三、其他算法问题
 
