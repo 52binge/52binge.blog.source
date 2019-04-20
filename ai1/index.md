@@ -15,7 +15,7 @@
 
 ![趋势热点：值得关注的NLP技术](https://pic4.zhimg.com/80/v2-c79815588a512fc8a9256bc7582b02e3_hd.jpg)
 
-除了备受关注的神经网络预训练外，知识和常识的引入将大幅推动NLP技术的发展：
+除了备受关注的 NN Pre-Train 外，知识和常识的引入将大幅推动NLP技术的发展：
 
 > - [2019：迈向高能NLP之路！](https://zhuanlan.zhihu.com/p/53794989)
 > - [高能NLP之路的专栏](https://zhuanlan.zhihu.com/c_1064159241216102400)
@@ -325,10 +325,12 @@ Confusion Matrix
 
 **7). multi-class classification** 如果非要用一个综合考量的 metric 的话，
 
-> 1. macro-average（宏平均） 
-> 2. micro-average（微平均）
+> 1. macro-average（宏平均）- 分布计算每个类别的F1，然后做平均（各类别F1的权重相同）
+> 2. micro-average（微平均）- 通过先计算总体的TP，FN和FP的数量，再计算F1
 >  
 > macro-average（宏平均） 会比 micro-average（微平均）好一些哦，因为 macro 会受 minority class 影响更大，也就是说更能体现在 small class 上的 performance.
+> 
+> [sklearn中 F1-micro 与 F1-macro 区别和计算原理](https://www.cnblogs.com/techengin/p/8962024.html)
 
 precision & recall
 
@@ -374,12 +376,20 @@ precision & recall
 负采样这个点引入 word2vec 非常巧妙，两个作用，
 
 > 1. 加速了模型计算
-> 2. 保证了模型训练的效果，一个是模型每次只需要更新采样的词的权重，不用更新所有的权重，那样会很慢，第二，中心词其实只跟它周围的词有关系，位置离着很远的词没有关系，也没必要同时训练更新，作者这点非常聪明.
+> 2. 保证了模型训练的效果
+> 
+> 第一，model 每次只需要更新采样的词的权重，不用更新所有的权重，那样会很慢。
+> 
+> 第二，中心词其实只跟它周围的词有关系，位置离着很远的词没有关系，也没必要同时训练更新，作者这点聪明.
+
+- [word2vec Negative Sampling 刘建平Pinard](https://www.cnblogs.com/pinard/p/7249903.html)
 
 ### 2.3 word2vec vs fastText
 
 > 1. 都可以无监督学习词向量， fastText 训练词向量时会考虑 subword；
-> 2. fastText 还可以进行有监督学习进行文本分类，其主要特点：
+> 2. fastText 还可以进行有监督学习进行文本分类
+
+其主要特点：
 
 > - 结构与CBOW类似，但学习目标是人工标注的分类结果；
 > - 采用 hierarchical softmax 对输出的分类标签建立哈夫曼树，样本中标签多的类别被分配短的搜寻路径；
@@ -414,11 +424,14 @@ GPT和bert都采用Transformer，Transformer是encoder-decoder结构，GPT的单
 
 ### 2.6 RNN vs LSTM vs GRU
 
-- GRU和LSTM的性能在很多任务上不分伯仲。
+- GRU 和 LSTM 的性能在很多任务上不分伯仲。
 
 - GRU 参数更少因此更容易收敛，但是数据集很大的情况下，LSTM表达性能更好。
 
-- 从结构上来说，GRU只有两个门（update和reset），LSTM有三个门（forget，input，output），GRU直接将hidden state 传给下一个单元，而LSTM则用memory cell 把hidden state 包装起来。
+> 从结构上来说：
+>
+> - GRU 只有两个门（update和reset），LSTM 有三个门（forget，input，output）
+> - GRU 直接将 hidden state 传给下一个单元，而 LSTM 则用 memory cell 把hidden state 包装起来。
 
 ## 三、其他算法问题
 
