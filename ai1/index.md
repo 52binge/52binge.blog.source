@@ -348,12 +348,17 @@ precision & recall
 > 3. ReLU 的优点，和局限性分别是什么? 
 > 4. [谈谈激活函数 Sigmoid,Tanh,ReLu,softplus,softmax](https://zhuanlan.zhihu.com/p/48776056)
 
-### 1.14 sigmoid 用作激活函数时，分类为什么要用 crossentry loss，而不用均方损失？
+### 1.14 sigmoid 用作激活函数时，分类为什么要用 crossentropy loss，而不用均方损失？
 
 > 5. softmax函数可以看做是Sigmoid函数的一般化，可以进行多分类。
 > 6. 非常适合用于`分类`问题： `Cross Entropy` 交叉熵损失函数
 > 7. Square error loss function 与 Cross Entropy Error Function 分别适合什么景？
 
+### 1.15 InfoEntropy vs Crossentropy
+
+> InfoEntropy，代表的是随机变量或整个系统的不确定性，熵越大，随机变量或系统的不确定性就越大。
+
+> Crossentropy，用来衡量在给定的真实分布下，使用非真实分布所指定的策略消除系统的不确定性所需要付出的努力值。
 
 ## 二、NLP高频问题
 
@@ -394,7 +399,7 @@ precision & recall
 > - word2vec 是无监督学习，同样由于不需要人工标注；glove通常被认为是无监督学习，但实际上glove还是有label的，即共现次数log(X_{ij})。
 >
 >
-> - word2vec 损失函数实质上是带权重的交叉熵，权重固定；glove的损失函数是最小平方损失函数，权重可以做映射变换。
+> - word2vec 损失函数实质上是带权重的**crossentrpy**，权重固定；glove的损失函数是最小**平方损失函数**，权重可以做映射变换。
 > 
 >
 > - 总体来看，glove 可以被看作是更换了目标函数和权重函数的全局 word2vec。
@@ -419,6 +424,40 @@ GPT和bert都采用Transformer，Transformer是encoder-decoder结构，GPT的单
 - GRU 参数更少因此更容易收敛，但是数据集很大的情况下，LSTM表达性能更好。
 
 - 从结构上来说，GRU只有两个门（update和reset），LSTM有三个门（forget，input，output），GRU直接将hidden state 传给下一个单元，而LSTM则用memory cell 把hidden state 包装起来。
+
+### 2.7 RNN vs CNN
+
+> 1. RNN 优点： 最大程度捕捉上下文信息，这可能有利于捕获长文本的语义。
+> 2. RNN 缺点： 是一个有偏倚的模型，在这个模型中，后面的单词比先前的单词更具优势。因此，当它被用于捕获整个文档的语义时，它可能会降低效率，因为关键组件可能出现在文档中的任何地方，而不是最后。
+> 3. CNN 优点： 提取数据中的局部位置的特征，然后再拼接池化层。 CNN可以更好地捕捉文本的语义。是O(n)
+> 4. CNN 优点： 一个可以自动判断哪些特性在文本分类中扮演关键角色的池化层，以捕获文本中的关键组件。
+
+### 2.8 Attention
+
+除此之外模型为了取得比较好的效果还是用了下面三个小技巧来改善性能：
+
+> 深层次的LSTM：作者使用了4层LSTM作为encoder和decoder模型，并且表示深层次的模型比shallow的模型效果要好（单层，神经元个数多）。
+>
+> 将source进行反序输入：输入的时候将“ABC”变成“CBA”，这样做的好处是解决了长序列的long-term依赖，使得模型可以学习到更多的对应关系，从而达到比较好的效果。
+> 
+> Beam Search：这是在test时的技巧，也就是在训练过程中不会使用。
+>
+> 一般来讲我们会采用greedy贪婪式的序列生成方法，也就是每一步都取概率最大的元素作为当前输出，但是这样的缺点就是一旦某一个输出选错了，可能就会导致最终结果出错，所以使用beam search的方法来改善。也就是每一步都取概率最大的k个序列（beam size），并作为下一次的输入。更详细的解释和例子可以参考下面这个链接：https://zhuanlan.zhihu.com/p/28048246
+
+### 2.9 文本分类任务 tricks
+
+在文本分类任务中，有哪些论文中很少提及却对性能有重要影响的tricks？
+
+> 1. 数据预处理时vocab的选取（前N个高频词或者过滤掉出现次数小于3的词等等）
+> 2. 词向量的选择，可以使用预训练好的词向量如谷歌、facebook开源出来的，当训练集比较大的时候也可以进行微调或者随机初始化与训练同时进行。训练集较小时就别微调了
+> 3. 结合要使用的模型，这里可以把数据处理成char、word或者都用等
+> 4. 有时将词性标注信息也加入训练数据会收到比较好的效果
+> 5. 至于PAD的话，取均值或者一个稍微比较大的数，但是别取最大值那种应该都还好
+> 6. 神经网络结构的话到没有什么要说的，可以多试几种比如fastText、TextCNN、RCNN、char-CNN/RNN、HAN等等。哦，对了，加上dropout和BN可能会有意外收获。反正模型这块还是要具体问题具体分析吧，根据自己的需求对模型进行修改（比如之前参加知乎竞赛的时候，最终的分类标签也有文本描述，所以就可以把这部分信息也加到模型之中等等）
+> 7. 超参数的话，推荐看看之前TextCNN的一篇论文，个人感觉足够了“A Sensitivity Analysis of (and Practitioners’ Guide to) Convolutional Neural Networks for Sentence Classification”
+> 8. 之前还见别人在文本领域用过数据增强的方法，就是对文本进行随机的shuffle和drop等操作来增加数据量
+
+这个看似不重要，其实确实很重要的点。一开我以为 padding 的最大长度取整个评论平均的长度的2倍差不多就可以啦(对于char level 而言，max_length 取 400左右)，但是会发现效果上不去，当时将 max_length 改为 1000 之后，macro f-score提示明显，我个人认为是在多分类问题中，那些长度很长的评论可能会有部分属于那些样本数很少的类别，padding过短会导致这些长评论无法被正确划分。
 
 ## 三、其他算法问题
 
