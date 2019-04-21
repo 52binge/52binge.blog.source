@@ -1,4 +1,6 @@
-## 机器学习ML 与 逻辑编程LP
+## Machine Learning / NLP
+
+### ML / 逻辑编程LP
 
 > 1. 逻辑编程是什么 （X + 2 = 5 询问 X 的值，回答： X=3）类比 **forward pass + back propagation**
 > 2. **ML框架** 其实是一种 **程序语言** : differentiable programming language
@@ -12,7 +14,7 @@
 
 > [machine learning and logic programming 机器学习与逻辑编程](http://www.yinwang.org/blog-cn/2019/01/30/machine-learning)
 
-## NLP Research
+### NLP Research
 
 未来十年将是 NLP 发展的黄金档：
 
