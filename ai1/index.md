@@ -1,3 +1,17 @@
+## 机器学习ML 与 逻辑编程LP
+
+> 1. 逻辑编程是什么 （X + 2 = 5 询问 X 的值，回答： X=3）类比 **forward pass + back propagation**
+> 2. **ML框架** 其实是一种 **程序语言** : differentiable programming language
+> 
+> &nbsp;&nbsp; Pytorch 和 TensorFlow 的动态计算图和静态计算图. 对应动态静态语言。
+> 
+> **简单表达 & 递归：**
+> 
+> 1. Feed-forward 网络，比如 CNN 一类的，对应了最简单的表达式，它只能处理图像一类具有固定长度的数据。
+> 2. RNN（LSTM）对应的是单个递归（循环）的函数。这就是为什么 RNN 可以处理文本这类线性“链表”数据。
+
+> [machine learning and logic programming 机器学习与逻辑编程](http://www.yinwang.org/blog-cn/2019/01/30/machine-learning)
+
 ## NLP Research
 
 未来十年将是 NLP 发展的黄金档：
@@ -28,9 +42,9 @@
 
 > 人工智能背后两大技术驱动力：**深度学习和知识图谱**，知识图谱就是人工智能的基础。
 
-## 一、AI算法基础
+## 1. AI 算法基础
 
-### 1.1 防止 overfiting 的 8 条
+**1.1 防止 overfiting 的 8 条**
 
 > 1). get more data
 > 2). Data augmentation
@@ -49,7 +63,7 @@
 >
 > [ML算法： 关于防止过拟合，整理了 8 条迭代方向](https://posts.careerengine.us/p/5cae13b2d401440a7fe047af)
 
-### 1.2 机器学习之类别不平衡问题
+**1.2 机器学习之类别不平衡问题**
 
 机器学习之类别不平衡问题 (1) —— 各种评估指标
 
@@ -66,7 +80,7 @@
 [2.2]: https://zhuanlan.zhihu.com/p/34655990
 [2.3]: https://zhuanlan.zhihu.com/p/41237940
 
-### 1.3 CrossEntropy 与 最大似然？
+**1.3 CrossEntropy 与 最大似然？**
 
 > 1）CrossEntropy lossFunction ![](https://www.zhihu.com/equation?tex=L%3D-%5Bylog%5C+%5Chat+y%2B%281-y%29log%5C+%281-%5Chat+y%29%5D)
 > 
@@ -117,7 +131,7 @@ Reference Article
 [1.2]: https://zhuanlan.zhihu.com/p/26614750
 [1.3]: https://blog.csdn.net/u011508640/article/details/72815981
 
-### 1.4 SVM 和 LR 的区别与联系？
+**1.4 SVM 和 LR 的区别与联系？**
 
 > 1). 对非线性表达上，LR 只能通过人工的特征组合来实现，而 SVM 可以很容易引入非线性核函数来实现非线性表达，当然也可以通过特征组合。
 > 
@@ -151,7 +165,7 @@ Reference Article
 > 3). **fn** 小， sample number **很大**5W+（n=1-1000，m=50000+）
 > &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 增加更多的 feature 然后使用LR 算法或者 not have kernel 的 SVM
 
-### 1.5 ERM / SRM
+**1.5 ERM / SRM**
 
 Supervised Learning Obj
 
@@ -170,7 +184,7 @@ $$
 > 
 > 既可以离散化用线性模型，也可以用连续特征加深度学习。就看是喜欢折腾 **feature** 还是折腾 **model** 了。通常来说，前者容易，而且可以n个人一起并行做，有成功经验；后者目前看很赞，能走多远还须拭目以待。
 
-### 1.6 Linear classifier / Nonlinear classifier 区别优劣?
+**1.6 Linear vs Nonlinear classifier**
 
 > 线性和非线性是针对，模型参数和输入特征来讲的；
 >
@@ -185,7 +199,7 @@ $$
 > 
 > SVM 两种都有（看线性核还是高斯核）
 
-### 1.7 Random Forest
+**1.7 Random Forest**
 
 > - [RF、bagging、boosting、GBDT、xgboost算法总结][7.1]
 
@@ -206,7 +220,7 @@ Feature Random：
 
 [7.1]: https://zhuanlan.zhihu.com/p/34534004
 
-### 1.8 GBDT
+**1.8 GBDT**
 
 GBDT 是以决策树（CART）为基学习器的 GB算法，是迭代树，而不是分类树。
 
@@ -218,7 +232,7 @@ GBDT 的核心就在于：**每一棵树学的是之前所有树结论和的残�
 
 ![](https://pic3.zhimg.com/80/v2-a384924b89b1bdd581cef7d75b56e226_hd.jpg)
 
-### 1.9 RF vs GBDT 区别
+**1.9 RF vs GBDT 区别**
 
 > 1. 组成 RF 的树可以是分类树，也可以是回归树；而GBDT只由回归树组成 
 > 2. 组成 RF 的树可以并行生成；而GBDT只能是串行生成 
@@ -227,7 +241,7 @@ GBDT 的核心就在于：**每一棵树学的是之前所有树结论和的残�
 > 5. RF 对训练集一视同仁，GBDT是基于权值的弱分类器的集成 
 > 6. RF 是通过减少模型方差提高性能，GBDT是通过减少模型偏差提高性能
 
-### 1.10 GBDT vs Xgboost
+**1.10 GBDT vs Xgboost**
 
 Xgboost相比于GBDT来说，更加有效应用了数值优化，最重要是**对损失函数**（预测值和真实值的误差）**变得更复杂**。目标函数依然是所有树的预测值相加等于预测值。
 
@@ -258,7 +272,7 @@ boosting 的每一次抽样的 **样本分布都是不一样** 的。每一次�
 
 ![](https://pic4.zhimg.com/80/v2-aca3644ddd56abe1e47c0f45601587c3_hd.jpg)
 
-### 1.11 Evaluation Metric 对比 ?
+**1.11 Evaluation Metric 对比 ?**
 
 Confusion Matrix
 
@@ -337,32 +351,32 @@ precision & recall
 > precision 是相对你自己的模型预测而言
 > recall 是相对真实的答案而言
 
-### 1.12 Bias-Variance Tradeoff
+**1.12 Bias-Variance Tradeoff**
 
 <img src="https://charlesliuyx.github.io/2017/09/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%88%86%E7%B1%BB%E5%99%A8%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87%E8%AF%A6%E8%A7%A3/BV-Tradeoff.png" width="450" />
 
 > - [Bias-Variance Tradeoff](https://charlesliuyx.github.io)
 
-### 1.13 激活函数的对比？
+**1.13 激活函数的对比？**
 
 > 1. Sigmoid 和 Tanh 为什么会导致 Vanishing/Exploding gradients ? 
 > 2. Tanh 值域 (-1,1) Sigmoid 值域 (0,1)
 > 3. ReLU 的优点，和局限性分别是什么? 
 > 4. [谈谈激活函数 Sigmoid,Tanh,ReLu,softplus,softmax](https://zhuanlan.zhihu.com/p/48776056)
 
-### 1.14 sigmoid 用作激活函数时，分类为什么要用 crossentropy loss，而不用均方损失？
+**1.14 sigmoid 用作激活函数时，分类为什么要用 crossentropy loss，而不用均方损失？**
 
 > 5. softmax函数可以看做是Sigmoid函数的一般化，可以进行多分类。
 > 6. 非常适合用于`分类`问题： `Cross Entropy` 交叉熵损失函数
 > 7. Square error loss function 与 Cross Entropy Error Function 分别适合什么景？
 
-### 1.15 InfoEntropy vs Crossentropy
+**1.15 InfoEntropy vs Crossentropy**
 
 > InfoEntropy，代表的是随机变量或整个系统的不确定性，熵越大，随机变量或系统的不确定性就越大。
 
 > Crossentropy，用来衡量在给定的真实分布下，使用非真实分布所指定的策略消除系统的不确定性所需要付出的努力值。
 
-## 二、NLP高频问题
+## 2. NLP高频问题
 
 ### 2.1 word2vec vs NNLM
 
@@ -376,7 +390,7 @@ precision & recall
 > 1. hierarchical softmax 实质上生成一颗带权路径最小的哈夫曼树，让高频词搜索路劲变小；
 > 2. negative sampling 更为直接，实质上对每一个样本中每一个词都进行负例采样；
 
-### 2.2 word2vec negative sampling
+### 2.2 negative sampling
 
 负采样这个点引入 word2vec 非常巧妙，两个作用，
 
@@ -472,7 +486,7 @@ GPT和bert都采用Transformer，Transformer是encoder-decoder结构，GPT的单
 
 这个看似不重要，其实确实很重要的点。一开我以为 padding 的最大长度取整个评论平均的长度的2倍差不多就可以啦(对于char level 而言，max_length 取 400左右)，但是会发现效果上不去，当时将 max_length 改为 1000 之后，macro f-score提示明显，我个人认为是在多分类问题中，那些长度很长的评论可能会有部分属于那些样本数很少的类别，padding过短会导致这些长评论无法被正确划分。
 
-## 三、其他算法问题
+## 3. 其他算法问题
 
 1、怎么进行单个样本的学习？
 2、 决策树 bagging boosting adaboost 区别？RF的特征随机目的是什么？
