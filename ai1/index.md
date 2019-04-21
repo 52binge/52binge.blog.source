@@ -1,6 +1,6 @@
-## Machine Learning / NLP
+你可能想不到，Machine Learning and Logic Programming 有一种奇妙的关系，她们就像亲姐妹.
 
-### ML / 逻辑编程LP
+**Machine Learning and Logic Programming**
 
 > 1. 逻辑编程是什么 （X + 2 = 5 询问 X 的值，回答： X=3）类比 **forward pass + back propagation**
 > 2. **ML框架** 其实是一种 **程序语言** : differentiable programming language
@@ -14,7 +14,7 @@
 
 > [machine learning and logic programming 机器学习与逻辑编程](http://www.yinwang.org/blog-cn/2019/01/30/machine-learning)
 
-### NLP Research
+**NLP 发展方向**
 
 未来十年将是 NLP 发展的黄金档：
 
@@ -29,7 +29,9 @@
 > 3. 上下文建模、多轮语义理解。
 > 4. 基于语义分析、知识和常识的可解释 NLP。
 
-![趋势热点：值得关注的NLP技术](https://pic4.zhimg.com/80/v2-c79815588a512fc8a9256bc7582b02e3_hd.jpg)
+![趋势热点：值得关注的NLP技术][ai1]
+
+[ai1]: /images/ai/nlp-1.jpg
 
 除了备受关注的 NN Pre-Train 外，知识和常识的引入将大幅推动NLP技术的发展：
 
