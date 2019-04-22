@@ -48,7 +48,7 @@
 
 ## 1. AI 算法基础
 
-**1.1 防止 overfiting 的 8 条**
+### 1.1 防止 overfiting 的 8 条
 
 > 1). get more data
 > 2). Data augmentation
@@ -67,7 +67,7 @@
 >
 > [ML算法： 关于防止过拟合，整理了 8 条迭代方向](https://posts.careerengine.us/p/5cae13b2d401440a7fe047af)
 
-**1.2 机器学习之类别不平衡问题**
+### 1.2 机器学习之类别不平衡问题
 
 机器学习之类别不平衡问题 (1) —— 各种评估指标
 
@@ -84,7 +84,7 @@
 [2.2]: https://zhuanlan.zhihu.com/p/34655990
 [2.3]: https://zhuanlan.zhihu.com/p/41237940
 
-**1.3 CrossEntropy 与 最大似然？**
+### 1.3 CrossEntropy 与 最大似然？
 
 > 1）CrossEntropy lossFunction ![](https://www.zhihu.com/equation?tex=L%3D-%5Bylog%5C+%5Chat+y%2B%281-y%29log%5C+%281-%5Chat+y%29%5D)
 > 
@@ -135,7 +135,7 @@ Reference Article
 [1.2]: https://zhuanlan.zhihu.com/p/26614750
 [1.3]: https://blog.csdn.net/u011508640/article/details/72815981
 
-**1.4 SVM 和 LR 的区别与联系？**
+### 1.4 SVM 和 LR 的区别与联系？
 
 > 1). 对非线性表达上，LR 只能通过人工的特征组合来实现，而 SVM 可以很容易引入非线性核函数来实现非线性表达，当然也可以通过特征组合。
 > 
@@ -169,7 +169,7 @@ Reference Article
 > 3). **fn** 小， sample number **很大**5W+（n=1-1000，m=50000+）
 > &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 增加更多的 feature 然后使用LR 算法或者 not have kernel 的 SVM
 
-**1.5 ERM / SRM**
+### 1.5 ERM / SRM
 
 Supervised Learning Obj
 
