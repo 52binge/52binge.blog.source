@@ -11,6 +11,8 @@ tags: BERT
 
 <!-- more -->
 
+<br>
+
 **2018.10** google 发布 **BERT** 模型. 引爆整个AI圈的 NLP 模型. 在 NLP领域 刷新 11 项记录.
 
 **BERT** 其实是 language_encoder，把输入的 sentence 或 paragraph 转成 feature_vector（embedding）.

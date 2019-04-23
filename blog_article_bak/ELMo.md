@@ -1,10 +1,14 @@
 ---
-title: ELMo 最好用的词向量《Deep Contextualized Word Representations》（not finish）
+title: ELMo《Deep Contextualized Word Representations》
 toc: true
 date: 2018-12-23 07:00:21
 categories: nlp
 tags: ELMo
 ---
+
+<img src="/images/logo/elmo.jpg" width="550" />
+
+<!-- more -->
 
 ELMo 模型在非常多的 NLP task上都提高了state-of-the-art 方法的performance.
 
@@ -26,17 +30,12 @@ ELMo 模型在非常多的 NLP task上都提高了state-of-the-art 方法的perf
 
 基于大量文本，ELMo模型是从深层的双向语言模型（deep bidirectional language model）中的内部状态(internal state)学习而来的，而这些词向量很容易加入到QA、文本对齐、文本分类等模型中，后面会展示一下ELMo词向量在各个任务上的表现。
 
-## 3. 双向语言模型
-
-## 4. ELMo
-
-## 小结
-
-
 
 ## Reference
 
-- [文本情感分类：使用卷积神经网络（textCNN）][1]
+- [ELMo最好用词向量Deep Contextualized Word Representations][1]
+- [ELMo词向量及使用方法记录][2]
 
 
 [1]: https://zhuanlan.zhihu.com/p/38254332
+[2]: https://zhuanlan.zhihu.com/p/53803919
