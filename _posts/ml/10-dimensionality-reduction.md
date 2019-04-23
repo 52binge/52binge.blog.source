@@ -8,7 +8,7 @@ tags: PCA
 
 <img src="/images/logo/pca-lg1.png" width="550" />
 
-<!-- more -->
+<!-- more --><br>
 
 常见的 Dimensionality Reduction 方法： PCA、LDA 等。 [PCA主成分分析](https://terrifyzhao.github.io/2018/06/30/PCA主成分分析.html)
 

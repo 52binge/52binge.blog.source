@@ -8,9 +8,7 @@ tags: fastText
 
 <img src="/images/logo/fasttext.png" width="550" />
 
-<!-- more -->
-
-<br>
+<!-- more --><br>
 
 fastText 是 2016年 FAIR(Facebook AIResearch) 推出的一款文本分类与向量化工具。
 

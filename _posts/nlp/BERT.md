@@ -9,9 +9,7 @@ tags: BERT
 
 <img src="/images/logo/Bert-Ernie.jpg" width="550" />
 
-<!-- more -->
-
-<br>
+<!-- more --><br>
 
 **2018.10** google 发布 **BERT** 模型. 引爆整个AI圈的 NLP 模型. 在 NLP领域 刷新 11 项记录.
 
