@@ -41,7 +41,8 @@ BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is Al
 
 > Jay Alammar's Blog [Transformer](https://jalammar.github.io/illustrated-transformer/)
 
-![Transformer Encoder](https://pic4.zhimg.com/80/v2-393d5284f5132c3150b294cfc5e5218f_hd.jpg)
+- [Transformer 知识点理解](https://zhuanlan.zhihu.com/p/58009338)
+- [The Illustrated Transformer【译】](https://blog.csdn.net/yujianmin1990/article/details/85221271)
 
 ## 3. BERT
 
