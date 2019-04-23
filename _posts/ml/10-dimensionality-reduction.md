@@ -1,18 +1,20 @@
 ---
-title: Dimensionality Reduction
+title: Dimensionality Reduction： PCA
 toc: true
 date: 2019-04-21 17:01:21
 categories: machine-learning
 tags: PCA
 ---
 
-Machine Learning 中的数据维数 与 现实世界中的空间维度本同末离。在 Machine Learning 中，数据通常需要被表示成向量形式以输入模型进行训练。用一个**低维度的向量**表示原始**高纬度的特征**显得尤为重要。 
-
-降维的好处很明显，它不仅可以数据减少对内存的占用，而且还可以加快学习算法的执行
-
-常见的 Dimensionality Reduction 方法： PCA、LDA 等。
+<img src="/images/logo/pca-lg1.png" width="550" />
 
 <!-- more -->
+
+常见的 Dimensionality Reduction 方法： PCA、LDA 等。 [PCA主成分分析](https://terrifyzhao.github.io/2018/06/30/PCA主成分分析.html)
+
+Machine Learning 中的数据维数 与 现实世界中的空间维度本同末离。在 Machine Learning 中，数据通常需要被表示成向量形式以输入模型进行训练。用一个 **低维度的向量** 表示原始 **高纬度的特征** 显得尤为重要。 
+
+降维的好处很明显，它不仅可以数据减少对内存的占用，而且还可以加快学习算法的执行
 
 ## 1. Motivation
 

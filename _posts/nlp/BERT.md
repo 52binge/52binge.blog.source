@@ -1,10 +1,15 @@
 ---
-title: NLP 中的 Transformer 和 BERT（not finish）
+title: BERT 完全指南
 toc: true
 date: 2019-04-08 11:00:21
 categories: nlp
 tags: BERT
 ---
+
+
+<img src="/images/logo/Bert-Ernie.jpg" width="550" />
+
+<!-- more -->
 
 **2018.10** google 发布 **BERT** 模型. 引爆整个AI圈的 NLP 模型. 在 NLP领域 刷新 11 项记录.
 
@@ -53,6 +58,11 @@ BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is Al
 [a2]: https://netycc.com/2018/12/05/利用bert构建句向量并计算相似度/
 [a3]: https://juejin.im/post/5c6d65a56fb9a04a0f65c45d
 [a4]: https://terrifyzhao.github.io/2018/11/29/使用BERT做中文文本相似度计算.html
+[a5]: https://terrifyzhao.github.io/2019/01/11/Transformer模型详解.html
+
+**Transformer**
+
+- [Transformer模型详解][a5]
 
 ## Reference
 
