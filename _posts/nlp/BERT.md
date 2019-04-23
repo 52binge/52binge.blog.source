@@ -41,6 +41,19 @@ BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is Al
 
 ## 3. BERT
 
+
+**Action:**
+
+- [hanxiao大佬开源出来的bert-as-service框架很适合初学者][a1]
+- [Netycc's blog 利用Bert构建句向量并计算相似度][a2]
+- [BERT使用详解(实战)][a3]
+- [BERT中文文本相似度计算与文本分类][a4]
+
+[a1]: https://github.com/hanxiao/bert-as-service/blob/master/README.md
+[a2]: https://netycc.com/2018/12/05/利用bert构建句向量并计算相似度/
+[a3]: https://juejin.im/post/5c6d65a56fb9a04a0f65c45d
+[a4]: https://terrifyzhao.github.io/2018/11/29/使用BERT做中文文本相似度计算.html
+
 ## Reference
 
 - [张俊林: 从Word Embedding到Bert模型—自然语言处理中的预训练技术发展史][9]
