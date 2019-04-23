@@ -6,7 +6,6 @@ categories: nlp
 tags: BERT
 ---
 
-
 <img src="/images/logo/Bert-Ernie.jpg" width="550" />
 
 <!-- more --><br>
@@ -60,9 +59,12 @@ BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is Al
 [a4]: https://terrifyzhao.github.io/2018/11/29/使用BERT做中文文本相似度计算.html
 [a5]: https://terrifyzhao.github.io/2019/01/11/Transformer模型详解.html
 
-**Transformer**
 
-- [Transformer模型详解][a5]
+**Bert完全指南**
+
+- [BERT完全指南][a6]
+
+[a6]: https://terrifyzhao.github.io/2019/01/17/BERT完全指南.html
 
 ## Reference
 

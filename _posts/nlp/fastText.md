@@ -6,7 +6,7 @@ categories: nlp
 tags: fastText
 ---
 
-<img src="/images/logo/fasttext.png" width="550" />
+<img src="/images/logo/fasttext3.png" width="650" />
 
 <!-- more --><br>
 
