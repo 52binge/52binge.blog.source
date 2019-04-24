@@ -521,6 +521,7 @@ GPT和bert都采用Transformer，Transformer是encoder-decoder结构，GPT的单
 - [【NLP/AI算法面试必备-2】NLP/AI面试全记录（持续更新）][1]
 - [【NLP/AI算法面试必备-1】学习NLP/AI，必须深入理解“神经网络及其优化问题”][2]
 - [JayLouNLP算法工程师][2]
+- [140个GOOGLE的面试题](https://coolshell.cn/articles/3345.html)
 
 [1]: https://zhuanlan.zhihu.com/p/57153934
 [2]: https://www.zhihu.com/people/lou-jie-9/posts
