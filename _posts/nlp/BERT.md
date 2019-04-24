@@ -1,7 +1,7 @@
 ---
 title: BERT 完全指南
 toc: true
-date: 2019-04-08 11:00:21
+date: 2019-04-23 11:00:21
 categories: nlp
 tags: BERT
 ---
@@ -19,6 +19,66 @@ tags: BERT
 **BERT** 创新点在于提出了一套完整的方案，利用之前最新的算法模型，去解决各种各样的 NLP 任务.
 
 <!-- more -->
+
+---
+
+<!--![](/images/nlp/language-mode-l.jpg)
+-->
+
+[NLP 神经网络发展历史中最重要的 8 个里程碑](https://www.infoq.cn/article/66vicQt*GTIFy33B4mu9)
+
+> 1. Language Model (语言模型就是要看到上文预测下文, So NNLM)
+> 
+> 2. n-gram model（n元模型）（基于 马尔可夫假设 思想）
+> 
+> 3. 2001 - **NNLM** , @Bengio , 火于 2013 年， 沉寂十年终时来运转。 但很快又被NLP工作者祭入神殿。
+> 
+> 4. 2008 - Multi-task learning
+> 
+> 5. 2013 - Word2Vec (Word Embedding的工具word2vec : CBOW 和 Skip-gram)
+> 
+> 6. 2014 - sequence-to-sequence 
+> 
+> 7. 2015 - Attention
+> 
+> 8. 2015 - Memory-based networks
+> 
+> 9. 2018 - Pretrained language models
+
+[good 张俊林: 从Word Embedding到Bert模型—自然语言处理中的预训练技术发展史](https://zhuanlan.zhihu.com/p/49271699) 
+ 
+**NNLM vs Word2Vec**
+
+> 1. NNLM 目标： 训练语言模型， 语言模型就是要看上文预测下文， word embedding 只是无心的一个副产品。
+> 2. Word2Vec目标： 它单纯就是要 word embedding 的，这是主产品。
+> 
+> 2018 年之前的 Word Embedding 有个缺点就是无法处理 **多义词** 的问题, 静态词嵌.
+
+**ELMO: Embedding from Language Models**
+
+> ELMO的论文题目：“Deep contextualized word representation”
+> 
+> NAACL 2018 最佳论文 - ELMO： Deep contextualized word representation
+>
+> ELMO 本身是个根据当前上下文对Word Embedding动态调整的思路。
+>
+> **ELMO 有什么缺点？**
+> 
+>  1. LSTM 抽取特征能力远弱于 Transformer
+>  2. 拼接方式双向融合特征能力偏弱
+
+**GPT (Generative Pre-Training) **
+
+> 1. 第一个阶段是利用 language 进行 Pre-Training.
+> 2. 第二阶段通过 Fine-tuning 的模式解决下游任务。
+>
+> **GPT: 有什么缺点？**
+>
+> 1. 要是把 language model 改造成双向就好了
+> 2. 不太会炒作，GPT 也是非常重要的工作.
+ 
+
+---
 
 ## 1. NLP 的发展
 
@@ -72,7 +132,6 @@ BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is Al
 
 ## Reference
 
-- [张俊林: 从Word Embedding到Bert模型—自然语言处理中的预训练技术发展史][9]
 - [AINLP BERT相关论文、文章和代码资源汇总][6]
 - [自然语言处理中的Transformer和BERT][1]
 - [【NLP】Google BERT详解][7]
@@ -90,4 +149,3 @@ BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is Al
 [6]: https://zhuanlan.zhihu.com/p/50717786
 [7]: https://zhuanlan.zhihu.com/p/46652512
 [8]: https://zhuanlan.zhihu.com/p/36331888
-[9]: https://zhuanlan.zhihu.com/p/49271699
