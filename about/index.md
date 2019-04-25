@@ -35,9 +35,9 @@ p + p {
 
 ### Who am I
 
-<a class="article-myself" href="/"> Blair Chan</a> 90s, a program engineer, a GTD practitioner, live in Hangzhou, China.
+<a class="article-myself" href="/about"> Blair Chan</a> 90s, a program engineer, a GTD practitioner, live in Hangzhou, China.
 
-<a class="article-myself" href="https://instagram.com/blair101v/"> Blair Chan</a> focus on Python、NLP、DeepLearning and other fields.
+<a class="article-myself" href="https://instagram.com/blair101v/"> Blair Chan</a> focus on NLP、Deep Learning、MachineLearning、DataScience and other fields.
 
 <!--<a class="article-myself" href="/">  Libin Chan</a>-->
 <!-- <img src="/images/tech-logos/2016-10-03-6.png" width="250"  style="margin-left:100px;" /img> -->
