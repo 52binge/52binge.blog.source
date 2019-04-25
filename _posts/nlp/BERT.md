@@ -47,6 +47,8 @@ tags: BERT
 > 
 > 9. 2018 - Pretrained language models
 
+[good 张俊林: 深度学习中的注意力模型（2017版）](https://zhuanlan.zhihu.com/p/37601161)
+
 [good 张俊林: 从Word Embedding到Bert模型—自然语言处理中的预训练技术发展史](https://zhuanlan.zhihu.com/p/49271699) 
  
 **NNLM vs Word2Vec**
@@ -102,9 +104,6 @@ tags: BERT
 分类任务 | 特点是不管文章有多长，总体给出一个分类**label** 即可；
 句子关系判断 | 特点是给定两个句子，模型**判断出两个句子** 是否具备某种语义关系；
 生成式任务 |  特点是输入文本内容后，需要自主生成另外一段文字。
-
-<!--
-![](https://pic4.zhimg.com/80/v2-a0d3d439fe45cb03f7bd8a4936992a6b_hd.jpg)-->
 
 ---
 
@@ -164,10 +163,12 @@ BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is Al
 
 ## Reference
 
+- [张俊林: 天空之城：拉马努金式思维训练法](https://zhuanlan.zhihu.com/p/51934140)
+- [张俊林: 放弃幻想，全面拥抱Transformer：自然语言处理三大特征抽取器（CNN/RNN/TF）比较][2]
+- [互联网人到了 30 岁，大部分都去干什么了？](https://www.zhihu.com/question/20584585/answer/15559213)
 - [AINLP BERT相关论文、文章和代码资源汇总][6]
 - [自然语言处理中的Transformer和BERT][1]
 - [【NLP】Google BERT详解][7]
-- [放弃幻想，全面拥抱Transformer：自然语言处理三大特征抽取器（CNN/RNN/TF）比较][2]
 - [RNN和LSTM弱！爆！了！注意力模型才是王道][3]
 - [NLP-Attention模型][4]
 - [NLP突破性成果 BERT 模型详细解读][5]

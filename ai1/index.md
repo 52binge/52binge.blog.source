@@ -59,6 +59,8 @@
 > 7). Model Ensumble
 > 8). Batch Normalization
 
+> [张俊林 - Batch Normalization导读](https://zhuanlan.zhihu.com/p/38176412) 、 [张俊林 - 深度学习中的Normalization模型](https://zhuanlan.zhihu.com/p/43200897)
+> 
 > Batch Normalization 可以有效避免复杂参数对网络训练产生的影响，也可提高泛化能力.
 >
 > 神经网路的训练过程的本质是学习数据分布，如果训练数据与测试数据分布不同，将大大降低网络泛化能力， BN 是针对每一批数据，在网络的每一层输入之前增加 BN，(均值0，标准差1)。

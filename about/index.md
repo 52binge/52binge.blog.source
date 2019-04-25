@@ -19,7 +19,11 @@ p + p {
 
 ## About
 
-less is more. 小勝靠智, 大勝靠德.  <!--[Blair’s Instagram][ins]-->
+基于时间成本，人一生只能做好仅有的一两件事情，一直做才会走通，有巅峰期。
+
+跳来跳去，将永远看不到，30岁，其实还没完成起步阶段；
+
+ <!--[Blair’s Instagram][ins]-->
 
 <!--&nbsp; 、&nbsp;[Netease Music][wangyiyun]&nbsp;、&nbsp;[Tweet][tweet]
 -->
@@ -74,6 +78,12 @@ HIMYM 影響一個人的價值觀、友情觀、愛情觀…, 包含蠻多人生
 > Life is full of changes. One day you have an apartment, the next day it's a house of dumplings. But the important stuff doesn't change. To the important stuff.
 >
 > 生活是充滿挑戰的。今天你還擁有一間公寓，但改天也許就變成餃子館了。但一些重要的東西是不會改變的。為那些重要的東西乾杯。
+
+---
+
+> 非名人名言： 任何对其它人或者事物报以极高期望的人是这个世界上最不幸福的人, 降低期望是通向幸福之路
+
+---
 
 **愛情觀：**
 
