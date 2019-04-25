@@ -25,6 +25,8 @@ tags: BERT
 <!--![](/images/nlp/language-mode-l.jpg)
 -->
 
+## 1. NLP 的发展
+
 [NLP 神经网络发展历史中最重要的 8 个里程碑](https://www.infoq.cn/article/66vicQt*GTIFy33B4mu9)
 
 > 1. Language Model (语言模型就是要看到上文预测下文, So NNLM)
@@ -77,10 +79,40 @@ tags: BERT
 > 1. 要是把 language model 改造成双向就好了
 > 2. 不太会炒作，GPT 也是非常重要的工作.
  
+**Bert**
+
+> 1. Transformer 特征抽取器
+> 2. Language Model 作为训练任务 (双向)
+>
+> Bert 采用和 GPT 完全相同的 **两阶段** 模型：
+>
+> 1. Pre-Train Language Model；
+> 2. Fine-> Tuning模式解决下游任务。
+
+**NLP 的 4大任务**
+
+> 1. 序列标注 (分词、POS Tag、NER、语义标注)
+> 2. 分类任务
+> 3. 句子关系判断 （Entailment、QA、语义改写）
+> 4. 生成式任务 （机器翻译、文本摘要、写诗造句、看图说话）
+
+4 NLP task | description
+:----: | :---:
+序列标注 | 特点是句子中**每个单词**要求模型根据上下文都要给出一个 分类**label**；
+分类任务 | 特点是不管文章有多长，总体给出一个分类**label** 即可；
+句子关系判断 | 特点是给定两个句子，模型**判断出两个句子** 是否具备某种语义关系；
+生成式任务 |  特点是输入文本内容后，需要自主生成另外一段文字。
+
+<!--
+![](https://pic4.zhimg.com/80/v2-a0d3d439fe45cb03f7bd8a4936992a6b_hd.jpg)-->
 
 ---
 
-## 1. NLP 的发展
+**Bert 亮点 : 效果好 和 普适性强**
+
+![](https://pic3.zhimg.com/80/v2-0245d07d9e227d1cb1091d96bf499032_hd.jpg)
+
+## 2. NLP 的发展
 
 要处理 NLP 问题，首先要解决 **Word Representation 文本表示** 问题。虽然我们人去看文本，能够清楚明白文本中的符号表达什么含义，但是计算机只能做数学计算，需要将文本表示成计算机可以处理的形式。
 
@@ -95,7 +127,7 @@ tags: BERT
 NLP 领域经常引入一种做法，在非常大的语料库上进行 pre-training，然后在特定任务上进行 fine-tuning.
 BERT 就是用了一个已有的模型结构，提出了一整套的 pre-training 方法和 fine-tuning 方法.
 
-## 2. Transformer
+## 3. Transformer
 
 BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is All You Need](https://arxiv.org/abs/1706.03762)
 
