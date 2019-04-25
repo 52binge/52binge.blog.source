@@ -111,7 +111,8 @@ tags: BERT
 
 ![](https://pic3.zhimg.com/80/v2-0245d07d9e227d1cb1091d96bf499032_hd.jpg)
 
-## 2. NLP 的发展
+<!--
+## 2. Word Representation
 
 要处理 NLP 问题，首先要解决 **Word Representation 文本表示** 问题。虽然我们人去看文本，能够清楚明白文本中的符号表达什么含义，但是计算机只能做数学计算，需要将文本表示成计算机可以处理的形式。
 
@@ -124,7 +125,15 @@ tags: BERT
 > 在图像中就不存在表示方法的困扰，因为图像本身就是数值矩阵，计算机可以直接处理。
 
 NLP 领域经常引入一种做法，在非常大的语料库上进行 pre-training，然后在特定任务上进行 fine-tuning.
-BERT 就是用了一个已有的模型结构，提出了一整套的 pre-training 方法和 fine-tuning 方法.
+BERT 就是用了一个已有的模型结构，提出了一整套的 pre-training 方法和 fine-tuning 方法.-->
+
+## 2. Attention
+
+![](/images/nlp/attention.jpg)
+
+> Attention model 物理含义: 看作是输出 Target句子 中某个单词和输入 Source句子 每个单词的 **对齐模型**.
+
+[good 张俊林: 深度学习中的 Attention Model（2017版）](https://zhuanlan.zhihu.com/p/37601161)
 
 ## 3. Transformer
 
