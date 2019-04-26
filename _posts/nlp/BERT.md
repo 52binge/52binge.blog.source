@@ -81,7 +81,7 @@ tags: BERT
 > 1. 要是把 language model 改造成双向就好了
 > 2. 不太会炒作，GPT 也是非常重要的工作.
  
-**Bert**
+**Bert 亮点 : 效果好 和 普适性强**
 
 > 1. Transformer 特征抽取器
 > 2. Language Model 作为训练任务 (双向)
@@ -93,11 +93,6 @@ tags: BERT
 
 **NLP 的 4大任务**
 
-> 1. 序列标注 (分词、POS Tag、NER、语义标注)
-> 2. 分类任务
-> 3. 句子关系判断 （Entailment、QA、语义改写）
-> 4. 生成式任务 （机器翻译、文本摘要、写诗造句、看图说话）
-
 4 NLP task | description
 :----: | :---:
 序列标注 | 特点是句子中**每个单词**要求模型根据上下文都要给出一个 分类**label**；
@@ -106,8 +101,6 @@ tags: BERT
 生成式任务 |  特点是输入文本内容后，需要自主生成另外一段文字。
 
 ---
-
-**Bert 亮点 : 效果好 和 普适性强**
 
 ![](https://pic3.zhimg.com/80/v2-0245d07d9e227d1cb1091d96bf499032_hd.jpg)
 
@@ -127,6 +120,57 @@ tags: BERT
 NLP 领域经常引入一种做法，在非常大的语料库上进行 pre-training，然后在特定任务上进行 fine-tuning.
 BERT 就是用了一个已有的模型结构，提出了一整套的 pre-training 方法和 fine-tuning 方法.-->
 
+[good 张俊林: 放弃幻想，全面拥抱Transformer：自然语言处理三大特征抽取器（CNN/RNN/TF）比较][2]
+
+**NLP领域三大特征抽取器**
+
+> 1. RNN 人老珠黄，已经基本完成它的历史使命，将来会逐步退出历史舞台；
+> 2. CNN 如果改造成功并超出期望，那么还有一丝可能继续生存壮大；
+> 3. Transformer 明显会很快成为 NLP里 担当大任的最主流的特征抽取器。
+>
+> 特征抽取器能否具备长距离特征捕获能力这一点对于解决NLP任务来说也是很关键的。
+>
+> 一个特征抽取器是否适配问题领域的特点，有时候决定了它的成败，而很多模型改进的方向，其实就是改造得使得它更匹配领域问题的特性。
+
+Three Feature Extraction:
+
+> “Transformer考上了北京大学；CNN进了中等技术学校，希望有一天能够考研考进北京大学；RNN在百货公司当售货员：我们都有看似光明的前途。”
+
+> **1. 进退维谷的 RNN**
+>
+> 1. RNN (包括LSTM、GRU + Attention) 效果与 Transformer 差距很明显
+> 2. RNN 很难并行计算。 由于 RNN 特点 ： 线形序列收集前面的信息。
+>
+> 对于小数据集 RNN 可能速度更快些， Transformer 慢些， 但是可以改进 Transformer 缓解：
+>
+>  1. 可把Block数目降低，减少参数量；
+>  2. 引入Bert两阶段训练模型，那么对于小数据集合来说会极大缓解效果问题。
+> 
+> **2. 一希尚存的 CNN**
+> 
+> 1. CNN 天生自带的高并行计算能力
+> 2. 一些深度网络的优化trick，CNN在NLP领域里的深度逐步能做起来了。dilated CNN
+> 
+> 
+> 早期CNN做不好NLP的一个很大原因是网络深度做不起来。 原生的CNN在很多方面仍然是比不过Transformer的，典型的还是长距离特征捕获能力方面，而这点在NLP界算是比较严重的缺陷。
+>
+> **3. Transformer**
+> 
+> Transformer作为新模型，并不是完美无缺的。它也有明显的缺点：首先，对于长输入的任务，典型的比如篇章级别的任务（例如文本摘要），因为任务的输入太长，Transformer会有巨大的计算复杂度，导致速度会急剧变慢。
+> 
+> 做语义特征抽取能力比较时，结论是对于距离远与13的长距离特征，Transformer性能弱于RNN，比较出乎意料，因为Transformer通过Self attention使得远距离特征直接发生关系，按理说距离不应该成为它的问题，但是效果竟然不如RNN，这背后的原因是什么呢？这也是很有价值的一个探索点。
+
+
+**NLP 4 大任务：**
+
+1. 序列标注 (分词、POS Tag、NER、语义标注)
+2. 分类任务
+3. 句子关系判断 （Entailment、QA、语义改写）
+4. 生成式任务 （机器翻译、文本摘要、写诗造句、看图说话）
+
+> 解决这些不同的任务，从模型角度来讲什么最重要？是特征抽取器的能力。尤其是深度学习流行开来后，这一点更凸显出来。因为深度学习最大的优点是“端到端（end to end）”，当然这里不是指的从客户端到云端，意思是以前研发人员得考虑设计抽取哪些特征，而端到端时代后，这些你完全不用管，把原始输入扔给好的特征抽取器，它自己会把有用的特征抽取出来。
+
+
 ## 2. Attention
 
 ![](/images/nlp/attention.jpg)
@@ -136,6 +180,7 @@ BERT 就是用了一个已有的模型结构，提出了一整套的 pre-trainin
 [good 张俊林: 深度学习中的 Attention Model（2017版）](https://zhuanlan.zhihu.com/p/37601161)
 
 ## 3. Transformer
+
 
 BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is All You Need](https://arxiv.org/abs/1706.03762)
 
@@ -173,7 +218,6 @@ BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is Al
 ## Reference
 
 - [张俊林: 天空之城：拉马努金式思维训练法](https://zhuanlan.zhihu.com/p/51934140)
-- [张俊林: 放弃幻想，全面拥抱Transformer：自然语言处理三大特征抽取器（CNN/RNN/TF）比较][2]
 - [互联网人到了 30 岁，大部分都去干什么了？](https://www.zhihu.com/question/20584585/answer/15559213)
 - [AINLP BERT相关论文、文章和代码资源汇总][6]
 - [自然语言处理中的Transformer和BERT][1]
