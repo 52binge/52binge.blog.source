@@ -1,7 +1,7 @@
 ---
 title: BERT 完全指南
 toc: true
-date: 2019-04-23 11:00:21
+date: 2019-04-30 11:00:21
 categories: nlp
 tags: BERT
 ---
