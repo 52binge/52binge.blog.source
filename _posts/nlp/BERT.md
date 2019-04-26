@@ -122,7 +122,7 @@ BERT 就是用了一个已有的模型结构，提出了一整套的 pre-trainin
 
 [good 张俊林: 放弃幻想，全面拥抱Transformer：自然语言处理三大特征抽取器（CNN/RNN/TF）比较][2]
 
-**NLP领域三大特征抽取器**
+## 2. Feature Extraction
 
 > 1. RNN 人老珠黄，已经基本完成它的历史使命，将来会逐步退出历史舞台；
 > 2. CNN 如果改造成功并超出期望，那么还有一丝可能继续生存壮大；
@@ -140,6 +140,8 @@ Three Feature Extraction:
 >
 > 1. RNN (包括LSTM、GRU + Attention) 效果与 Transformer 差距很明显
 > 2. RNN 很难并行计算。 由于 RNN 特点 ： 线形序列收集前面的信息。
+>
+> 一个严重阻碍RNN将来继续走红的问题是：RNN本身的序列依赖结构对于大规模并行计算来说相当之不友好。通俗点说，就是RNN很难具备高效的并行计算能力，这个乍一看好像不是太大的问题，其实问题很严重。
 >
 > 对于小数据集 RNN 可能速度更快些， Transformer 慢些， 但是可以改进 Transformer 缓解：
 >
@@ -160,6 +162,7 @@ Three Feature Extraction:
 > 
 > 做语义特征抽取能力比较时，结论是对于距离远与13的长距离特征，Transformer性能弱于RNN，比较出乎意料，因为Transformer通过Self attention使得远距离特征直接发生关系，按理说距离不应该成为它的问题，但是效果竟然不如RNN，这背后的原因是什么呢？这也是很有价值的一个探索点。
 
+[good 张俊林: 放弃幻想，全面拥抱Transformer：自然语言处理三大特征抽取器（CNN/RNN/TF）比较][2]
 
 **NLP 4 大任务：**
 
@@ -171,7 +174,7 @@ Three Feature Extraction:
 > 解决这些不同的任务，从模型角度来讲什么最重要？是特征抽取器的能力。尤其是深度学习流行开来后，这一点更凸显出来。因为深度学习最大的优点是“端到端（end to end）”，当然这里不是指的从客户端到云端，意思是以前研发人员得考虑设计抽取哪些特征，而端到端时代后，这些你完全不用管，把原始输入扔给好的特征抽取器，它自己会把有用的特征抽取出来。
 
 
-## 2. Attention
+## 3. Attention
 
 ![](/images/nlp/attention.jpg)
 
@@ -179,20 +182,37 @@ Three Feature Extraction:
 
 [good 张俊林: 深度学习中的 Attention Model（2017版）](https://zhuanlan.zhihu.com/p/37601161)
 
-## 3. Transformer
-
+## 4. Transformer
 
 BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is All You Need](https://arxiv.org/abs/1706.03762)
 
-> Jay Alammar's Blog [Transformer](https://jalammar.github.io/illustrated-transformer/)
+入门 Transformer 的可以参考以下三篇文章：
+
+> 第二篇是 Jay Alammar's Blog
+> 
+> [Transformer](https://jalammar.github.io/illustrated-transformer/)
+> 
+> [The Illustrated Transformer【译】](https://blog.csdn.net/yujianmin1990/article/details/85221271)
+> 
+> [The Illustrated Transformer 中文版](https://zhuanlan.zhihu.com/p/54356280)
+> 
+> 第二篇是 Calvo's Blog
+> 
+> [Dissecting BERT Part 1: The Encoder](https://medium.com/dissecting-bert/dissecting-bert-part-1-d3c3d495cdb3)
+> 
+> 第三篇是 哈佛大学NLP研究组
+> 
+> [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
+
+
 
 - [完全图解自然语言处理中的Transformer——BERT基础（入门长文）](https://blog.csdn.net/qq_42208267/article/details/84967446)
 - [tensor2tensor 助于理解](https://colab.research.google.com/github/tensorflow/tensor2tensor/blob/master/tensor2tensor/notebooks/hello_t2t.ipynb)
 
 - [Transformer 知识点理解](https://zhuanlan.zhihu.com/p/58009338)
-- [The Illustrated Transformer【译】](https://blog.csdn.net/yujianmin1990/article/details/85221271)
 
-## 3. BERT
+
+## 5. BERT
 
 
 **Action:**
