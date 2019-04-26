@@ -179,6 +179,8 @@ Three Feature Extraction:
 ![](/images/nlp/attention.jpg)
 
 > Attention model 物理含义: 看作是输出 Target句子 中某个单词和输入 Source句子 每个单词的 **对齐模型**.
+> 
+> Self Attention 可以认为是一种特殊的 Source == Target 的情况.
 
 [good 张俊林: 深度学习中的 Attention Model（2017版）](https://zhuanlan.zhihu.com/p/37601161)
 
