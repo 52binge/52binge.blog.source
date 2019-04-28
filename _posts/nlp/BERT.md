@@ -177,6 +177,12 @@ Three Feature Extraction:
 
 **华山论剑：三大特征抽取器比较**
 
+> 总而言之，关于三者速度对比方面，目前的主流经验结论基本如上所述：Transformer Base最快，CNN次之，再次Transformer Big，最慢的是RNN。RNN比前两者慢了3倍到几十倍之间。
+
+> 单从任务综合效果方面来说，Transformer明显优于CNN，CNN略微优于RNN。速度方面Transformer和CNN明显占优，RNN在这方面劣势非常明显。这两者再综合起来，如果我给的排序结果是Transformer>CNN>RNN
+> 
+> 从速度和效果折衷的角度看，对于工业界应用，特征抽取选择方面配置**Transformer base**是个较好的选择。
+
 [good 张俊林: 放弃幻想，全面拥抱Transformer：自然语言处理三大特征抽取器（CNN/RNN/TF）比较][2]
 
 **NLP 4 大任务：**
@@ -262,17 +268,13 @@ BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is Al
 - [互联网人到了 30 岁，大部分都去干什么了？](https://www.zhihu.com/question/20584585/answer/15559213)
 - [AINLP BERT相关论文、文章和代码资源汇总][6]
 - [自然语言处理中的Transformer和BERT][1]
-- [【NLP】Google BERT详解][7]
 - [RNN和LSTM弱！爆！了！注意力模型才是王道][3]
-- [NLP-Attention模型][4]
 - [NLP突破性成果 BERT 模型详细解读][5]
-- [RNN和LSTM弱！爆！了！注意力模型才是王道][8]
+
 
 [1]: https://zhuanlan.zhihu.com/p/53099098
 [2]: https://zhuanlan.zhihu.com/p/54743941
 [3]: https://zhuanlan.zhihu.com/p/36331888
-[4]: https://zhuanlan.zhihu.com/p/29402703
 [5]: https://zhuanlan.zhihu.com/p/46997268
 [6]: https://zhuanlan.zhihu.com/p/50717786
-[7]: https://zhuanlan.zhihu.com/p/46652512
-[8]: https://zhuanlan.zhihu.com/p/36331888
+
