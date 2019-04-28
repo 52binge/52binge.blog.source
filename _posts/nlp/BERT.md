@@ -155,12 +155,27 @@ Three Feature Extraction:
 > 
 > 
 > 早期CNN做不好NLP的一个很大原因是网络深度做不起来。 原生的CNN在很多方面仍然是比不过Transformer的，典型的还是长距离特征捕获能力方面，而这点在NLP界算是比较严重的缺陷。
+> 
+> 对于远距离特征，单层怀旧版CNN是无法捕获到的，如果滑动窗口k最大为2，而如果有个远距离特征距离是5，那么无论上多少个卷积核，都无法覆盖到长度为5的距离的输入，所以它是无法捕获长距离特征的
+> 
+> 滑动窗口从左到右滑动，捕获到的特征也是如此顺序排列，所以它在结构上已经记录了相对位置信息了。但是如果卷积层后面立即接上Pooling层的话，Max Pooling的操作逻辑是：从一个卷积核获得的特征向量里只选中并保留最强的那一个特征，所以到了Pooling层，位置信息就被扔掉了，这在NLP里其实是有信息损失的。所以在NLP领域里，目前CNN的一个发展趋势是抛弃Pooling层，靠全卷积层来叠加网络深度。
+> 
+> 怀旧版 CNN模型 一直处于被 RNN模型 压制到抑郁症早期的尴尬局面。
+>
+> **CNN的进化**：物竞天择的模型斗兽场
+> 
+> 摩登CNN（使用Skip Connection来辅助优化）、Dilated CNN 
+> 
+> 想方设法把CNN的深度做起来，随着深度的增加，很多看似无关的问题就随之解决了。
+>
 >
 > **3. Transformer**
 > 
 > Transformer作为新模型，并不是完美无缺的。它也有明显的缺点：首先，对于长输入的任务，典型的比如篇章级别的任务（例如文本摘要），因为任务的输入太长，Transformer会有巨大的计算复杂度，导致速度会急剧变慢。
 > 
 > 做语义特征抽取能力比较时，结论是对于距离远与13的长距离特征，Transformer性能弱于RNN，比较出乎意料，因为Transformer通过Self attention使得远距离特征直接发生关系，按理说距离不应该成为它的问题，但是效果竟然不如RNN，这背后的原因是什么呢？这也是很有价值的一个探索点。
+
+**华山论剑：三大特征抽取器比较**
 
 [good 张俊林: 放弃幻想，全面拥抱Transformer：自然语言处理三大特征抽取器（CNN/RNN/TF）比较][2]
 
@@ -206,7 +221,11 @@ BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is Al
 > 
 > [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
 
+![](/images/nlp/bert-2.jpg)
 
+> 本文所说的Transformer特征抽取器并非原始论文所指。因为Encoder部分目的比较单纯，就是从原始句子中提取特征，而Decoder部分则功能相对比较多，除了特征提取功能外，还包含语言模型功能，以及用attention机制表达的翻译模型功能。
+
+![](/images/nlp/bert-3.jpg)
 
 - [完全图解自然语言处理中的Transformer——BERT基础（入门长文）](https://blog.csdn.net/qq_42208267/article/details/84967446)
 - [tensor2tensor 助于理解](https://colab.research.google.com/github/tensorflow/tensor2tensor/blob/master/tensor2tensor/notebooks/hello_t2t.ipynb)
