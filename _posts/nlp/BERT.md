@@ -220,7 +220,7 @@ BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is Al
 > [The Illustrated Transformer 中文版](https://zhuanlan.zhihu.com/p/54356280)
 > 
 > 
-> ![](/images/nlp/bert-4.jpg)
+> <!--![](/images/nlp/bert-4.jpg)-->
 > 
 > **Q、K、V 它们都是有助于计算和理解注意力机制**的抽象概念
 > 
@@ -233,8 +233,10 @@ BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is Al
 > 第三篇是 哈佛大学NLP研究组
 > 
 > [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
+> 
+> [good Transformer 知乎模型笔记，阅读心得](https://zhuanlan.zhihu.com/p/39034683)
 
-![](/images/nlp/bert-2.jpg)
+<!--![](/images/nlp/bert-2.jpg)-->
 
 > 本文所说的Transformer特征抽取器并非原始论文所指。因为Encoder部分目的比较单纯，就是从原始句子中提取特征，而Decoder部分则功能相对比较多，除了特征提取功能外，还包含语言模型功能，以及用attention机制表达的翻译模型功能。
 
@@ -248,7 +250,6 @@ BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is Al
 
 ## 5. BERT
 
-
 **Action:**
 
 - [hanxiao大佬开源出来的bert-as-service框架很适合初学者][a1]
@@ -261,7 +262,6 @@ BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is Al
 [a3]: https://juejin.im/post/5c6d65a56fb9a04a0f65c45d
 [a4]: https://terrifyzhao.github.io/2018/11/29/使用BERT做中文文本相似度计算.html
 [a5]: https://terrifyzhao.github.io/2019/01/11/Transformer模型详解.html
-
 
 **Bert完全指南**
 
