@@ -211,13 +211,20 @@ BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is Al
 
 入门 Transformer 的可以参考以下三篇文章：
 
-> 第二篇是 Jay Alammar's Blog
+> 第一篇是 Jay Alammar's Blog
 > 
 > [Transformer](https://jalammar.github.io/illustrated-transformer/)
 > 
 > [The Illustrated Transformer【译】](https://blog.csdn.net/yujianmin1990/article/details/85221271)
 > 
 > [The Illustrated Transformer 中文版](https://zhuanlan.zhihu.com/p/54356280)
+> 
+> 
+> ![](/images/nlp/bert-4.jpg)
+> 
+> **Q、K、V 它们都是有助于计算和理解注意力机制**的抽象概念
+> 
+> ![](/images/nlp/bert-6.jpg)
 > 
 > 第二篇是 Calvo's Blog
 > 
