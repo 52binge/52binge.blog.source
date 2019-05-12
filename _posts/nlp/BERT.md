@@ -217,7 +217,7 @@ BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is Al
 > 
 > [The Illustrated Transformer【译】](https://blog.csdn.net/yujianmin1990/article/details/85221271)
 > 
-> [The Illustrated Transformer 中文版](https://zhuanlan.zhihu.com/p/54356280)
+> [good The Illustrated Transformer 中文版](https://zhuanlan.zhihu.com/p/54356280)
 > 
 > 
 > <!--![](/images/nlp/bert-4.jpg)-->
