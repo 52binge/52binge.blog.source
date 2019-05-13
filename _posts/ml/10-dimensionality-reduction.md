@@ -79,9 +79,33 @@ Machine Learning 中的数据维数 与 现实世界中的空间维度本同末�
 >
 > [知乎: 如何直观地理解「协方差矩阵」？](https://zhuanlan.zhihu.com/p/37609917)
 
+> 方差是用来度量单个随机变量的离散程度，而协方差则一般用来刻画两个随机变量的相似程度.
+
 ### 2.2 PCA Algorithm
 
-基于上一节给出的结论，下面给出PCA算法。
+输入： 
+
+> 训练集 $x^{(1)}, x^{(2)}, ..., x^{(m)}$ 和 低维空间维数 $k$
+
+过程：
+
+> (1) 数据预处理：对所有样本进行中心化(即使得样本和为0)
+>
+> <img src="/images/ml/pca-7.png" width="350" />
+>
+> (2) 计算样本的协方差矩阵
+>
+> <img src="/images/ml/pca-8.png" width="350" />
+> 
+> (3) 对2中求得的协方差矩阵Sigma进行特征值分解
+> 
+>   &nbsp;&nbsp;&nbsp;&nbsp;在实践中通常对协方差矩阵进行 **SVD分解** 代替 特征值分解.
+> $$
+    [U, S, V] = svd(Sigma);
+> $$
+>
+> (4) 取最大的k个特征值所对应的特征向量 $u^{(1)}, u^{(2)}, ..., u^{(k)}$
+
 
 ### 2.3 Choosing the Number of Principal Components
 
@@ -100,11 +124,12 @@ Machine Learning 中的数据维数 与 现实世界中的空间维度本同末�
 5. 仅在需用 PCA 的时使用 PCA: 降维丢失的信息可能在一定程度上是噪声，使用 PCA 可以起到一定的去噪效果。
 6. PCA 通常用来 Data Compression 以加快算法，减少内存使用或磁盘占用，或者用于可视化(k=2, 3)。
 
-[tu1]: /images/ml/dimensionality-reduction/dr-1.png
-[tu2]: /images/ml/dimensionality-reduction/dr-2.png
-[tu3]: /images/ml/dimensionality-reduction/dr-3.png
-[tu4]: /images/ml/dimensionality-reduction/dr-4.png
-[tu5]: /images/ml/dimensionality-reduction/dr-5.png
+[tu1]: /images/ml/pca-1.png
+[tu2]: /images/ml/pca-2.png
+[tu3]: /images/ml/pca-3.png
+[tu4]: /images/ml/pca-4.png
+[tu5]: /images/ml/pca-5.png
+[tu6]: /images/ml/pca-6.png
 
 ## Reference article
 
