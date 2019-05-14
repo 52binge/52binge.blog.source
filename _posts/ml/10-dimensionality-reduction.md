@@ -78,6 +78,8 @@ Machine Learning 中的数据维数 与 现实世界中的空间维度本同末�
 > [good CSDN 主成分分析PCA之协方差矩阵的理解](https://blog.csdn.net/u014665013/article/details/78669835)
 >
 > [知乎: 如何直观地理解「协方差矩阵」？](https://zhuanlan.zhihu.com/p/37609917)
+> 
+> [PCA为什么要用协方差矩阵？](https://blog.csdn.net/babywong/article/details/50085239)
 
 > 方差是用来度量单个随机变量的离散程度，而协方差则一般用来刻画两个随机变量的相似程度.
 
