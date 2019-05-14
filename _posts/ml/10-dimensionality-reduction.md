@@ -81,6 +81,12 @@ Machine Learning 中的数据维数 与 现实世界中的空间维度本同末�
 > 
 > [PCA为什么要用协方差矩阵？](https://blog.csdn.net/babywong/article/details/50085239)
 > 
+> [线性降维方法（代码篇）| 机器学习你会遇到的“坑”](https://mp.weixin.qq.com/s/QqqLAxx92v_HOg7QBKrK6A)
+> 
+> [主成分分析（PCA）原理总结](http://www.cnblogs.com/pinard/p/6239403.html)
+> 
+> [刘建平Pinard 用scikit-learn学习主成分分析(PCA)](https://www.cnblogs.com/pinard/p/6243025.html)
+> 
 > PCA为什么要用协方差矩阵的特征向量矩阵来做投影矩阵呢？为神马啊为神马？
 > 
 > 降维的目的就是“降噪”和“去冗余”。“降噪”的目的就是使保留下来的维度间的相关性尽可能小，而“去冗余”的目的就是使保留下来的维度含有的“能量”即方差尽可能大。那首先的首先，我们得需要知道各维度间的相关性以及个维度上的方差啊！那有什么数据结构能同时表现不同维度间的相关性以及各个维度上的方差呢？自然是协方差矩阵！
