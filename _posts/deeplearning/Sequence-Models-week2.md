@@ -219,7 +219,7 @@ $$
 
 ## 8. GloVe Word Vectors
 
-GloVe(Global vectors for word representation)虽不像Word2Vec模型那样流行，但是它也有自身的优点，即简单.
+GloVe(Global vectors for word representation)虽不像Word2Vec模型那样流行，但是它也有自身的优点.
 
 ## 9. Sentiment Classification
 

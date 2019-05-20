@@ -386,6 +386,8 @@ precision & recall
 
 ## 2. NLP高频问题
 
+> - [Word2Vec介绍: 为什么使用负采样（negtive sample）？](https://zhuanlan.zhihu.com/p/29488930)
+
 ### 2.1 word2vec vs NNLM
 
 > 1）其本质都可以看作是 Language Model；
@@ -398,7 +400,14 @@ precision & recall
 > 1. hierarchical softmax 实质上生成一颗带权路径最小的哈夫曼树，让高频词搜索路劲变小；
 > 2. negative sampling 更为直接，实质上对每一个样本中每一个词都进行负例采样；
 
+**Hierarchical Softmax 缺点:**
+
+> 如果我们的训练样本里的中心词w是一个很生僻的词，那么就得在霍夫曼树中辛苦的向下走很久了.
+
+
 ### 2.2 negative sampling
+
+> 1）如果通过一个正例和neg个负例进行二元逻辑回归呢？ 2） 如何进行负采样呢？
 
 负采样这个点引入 word2vec 非常巧妙，两个作用，
 
@@ -409,7 +418,11 @@ precision & recall
 > 
 > 第二，中心词其实只跟它周围的词有关系，位置离着很远的词没有关系，也没必要同时训练更新，作者这点聪明.
 
-- [word2vec Negative Sampling 刘建平Pinard](https://www.cnblogs.com/pinard/p/7249903.html)
+- [good good, word2vec Negative Sampling 刘建平Pinard](https://www.cnblogs.com/pinard/p/7249903.html)
+
+> [知乎: 哈夫曼树](https://zhuanlan.zhihu.com/p/46430775)
+> 
+> 给定n权值作为n个叶子节点，构造一棵二叉树，若这棵二叉树的带权路径长度达到最小，则称这样的二叉树为最优二叉树，也称为Huffman树。
 
 ### 2.3 word2vec vs fastText
 
@@ -424,6 +437,9 @@ precision & recall
 > - 引入 subword 来处理长词，处理未登陆词问题；
 
 ### 2.4 word2vec vs glove
+
+1. 目标函数不同 （crossentrpy vs 平方损失函数）
+2. glove 全局统计固定语料信息
 
 > - word2vec 是局部语料库训练的，其特征提取是基于滑窗的；而glove的滑窗是为了构建co-occurance matrix，是基于全局语料的，可见glove需要事先统计共现概率；因此，word2vec可以进行在线学习，glove则需要统计固定语料信息。
 >
