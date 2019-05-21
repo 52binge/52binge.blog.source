@@ -581,15 +581,14 @@ GPT和bert都采用Transformer，Transformer是encoder-decoder结构，GPT的单
 > 
 > 怀旧版 CNN模型 一直处于被 RNN模型 压制到抑郁症早期的尴尬局面。
 
-**CNN的进化**：物竞天择的模型斗兽场
+> **CNN的进化**：物竞天择的模型斗兽场
  
 > 摩登CNN（使用Skip Connection来辅助优化）、Dilated CNN 
 > 
 > 想方设法把CNN的深度做起来，随着深度的增加，很多看似无关的问题就随之解决了。
->
->
-> **3. Transformer**
-> 
+
+**3. Transformer**
+ 
 > Transformer作为新模型，并不是完美无缺的。它也有明显的缺点：首先，对于长输入的任务，典型的比如篇章级别的任务（例如文本摘要），因为任务的输入太长，Transformer会有巨大的计算复杂度，导致速度会急剧变慢。
 
 ### 2.6 RNN vs LSTM vs GRU
