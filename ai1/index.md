@@ -386,9 +386,99 @@ precision & recall
 
 ## 2. NLP高频问题
 
-> - [Word2Vec介绍: 为什么使用负采样（negtive sample）？](https://zhuanlan.zhihu.com/p/29488930)
+[NLP 神经网络发展历史中最重要的 8 个里程碑](https://www.infoq.cn/article/66vicQt*GTIFy33B4mu9)
+
+> 1. Language Model (语言模型就是要看到上文预测下文, So NNLM)
+> 
+> 2. n-gram model（n元模型）（基于 马尔可夫假设 思想）
+> 
+> 3. 2001 - **NNLM** , @Bengio , 火于 2013 年， 沉寂十年终时来运转。 但很快又被NLP工作者祭入神殿。
+> 
+> 4. 2008 - Multi-task learning
+> 
+> 5. 2013 - Word2Vec (Word Embedding的工具word2vec : CBOW 和 Skip-gram)
+> 
+> 6. 2014 - Glove
+> 
+> 6. 2014 - sequence-to-sequence
+> 
+> 7. 2015 - Attention
+> 
+> 8. 2015 - Memory-based networks
+> 
+> 9. 2017 - fastText
+> 
+> 10. 2018 - Pretrained language models
+
+
+### 2.0 language model & PPL
+
+如果 S 表示一连串特定顺序排列的词 $w\_1$， $w\_2$，…， $w\_n$ ，换句话说，S 表示的是一个有意义的句子。机器对语言的识别从某种角度来说，就是想知道S在文本中出现的可能性，也就是数学上所说的S 的概率用 P(S) 来表示。利用条件概率的公式，S 这个序列出现的概率等于每一个词出现的概率相乘，于是P(S) 可展开为：
+
+$$
+P(S) = P(w\_1)P(w\_2|w\_1)P(w\_3| w\_1 w\_2)…P(w\_n|w\_1 w\_2…w\_{n-1})
+$$
+
+马尔可夫假设
+
+$$
+P(S) = P(w\_1)P(w\_2|w\_1)P(w\_3|w\_2)…P(w\_i|w\_{i-1})…
+$$
+
+接下来如何估计 $P (w\_i|w\_{i-1})$。只要机器数一数这对词 $(w\_{i-1}, w\_i)$ 在统计的文本中出现了多少次，以及 $w\_{i-1}$ 本身在同样的文本中前后相邻出现了多少次，然后用两个数一除就可以了,
+
+$$
+P(w\_i|w\_{i-1}) = \frac {P(w\_{i-1}, w\_i)} {P(w\_{i-1})}
+$$
+
+因此，
+
+$$
+P(w\_{i}|w\_{1}, w\_{2}, ..., w\_{i-1}) = P(w\_i | w\_{i-N+1}, w\_{i-N+2}, ..., w\_{i-1})
+$$
+
+> N元模型， N=2 时，为二元模型。 在实际中应用最多的是 N=3 的三元模型
+
+[word2vec language model](/2017/07/12/nlp/word2vector-basic/#3-4-语言模型-词组合出现的概率)
+
+常用指标 perplexity， perplexity 越低，说明建模效果越好. 
+
+计算perplexity的公式如下：
+
+<img src="/images/tensorflow/tf-google-9.1.2_1-equation.svg" width="600" />
+
+简单来说，perplexity刻画的是语言模型预测一个语言样本的能力.
+
+在语言模型的训练中，通常采用perplexity的对数表达形式：
+
+<img src="/images/tensorflow/tf-google-9.1.2_2-equation.svg" width="600" />
+
+相比较乘积求平方根的方式，采用加法的形式可以加速计算，同时避免概率乘积数值过小而导致浮点数向下溢出的问题。在数学上，log perplexity 可以看作真实分布与预测分布之间的交叉熵 Cross Entropy, 交叉熵描述了两个概率分布之间的一种距离. log perplexity和交叉熵是等价的
+
+在神经网络模型中，$P(w\_i | w\_{1}, , ..., w\_{i-1})$ 分布通常是由一个softmax层产生的，TensorFlow中提供了两个方便计算交叉熵的函数，可以将logits结果直接放入输入，来帮助计算softmax然后再进行计算交叉熵，在后面我们会详细介绍
+
+```py
+cross_entropy = tf.nn.softmax_cross_entropy_with_logits(labels = y, logits = y)
+cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(labels = y, logits = y)
+```
+
+- [知乎_习翔宇](https://www.zhihu.com/people/xi-xiang-yu-20/posts)
 
 ### 2.1 word2vec vs NNLM
+
+word2vec 并不是一个模型， 而是一个 2013年 google 发表的工具. 
+
+该工具包含了2个模型： 
+ 
+>  1. Skip-Gram 
+>  2. CBOW
+
+两种高效的训练方法： 
+
+> 1. negative sampling 
+> 2. hierarchicam softmax. 
+
+[Word2Vec介绍: 为什么使用负采样（negtive sample）？](https://zhuanlan.zhihu.com/p/29488930)
 
 > 1）其本质都可以看作是 Language Model；
 
