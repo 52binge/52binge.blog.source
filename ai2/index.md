@@ -1,6 +1,11 @@
 
 - [十道海量数据处理面试题与十个方法大总结](https://blog.csdn.net/v_JULY_v/article/details/6279498)
 
+- [hadoop相关试题](https://blog.csdn.net/qq_16633405/article/details/78947969#hadoop_7)
+
+- [Hive相关试题](https://blog.csdn.net/qq_16633405/article/details/78947969#Hive_103)
+
+
 ### 1. 字符串
 
 > 1. 字符串的排列 void res(char \*str, char \*pStr), scanf("%s", str); \#include < utility\> 
