@@ -10,7 +10,7 @@
 
 ### 2. 数组 & 排序
 
-> 1. 二维数组中的查找 bool Find(int\* matrix, int rows, int cols, int value)用一维 \*(matrix+i\*cols+j)
+> 1. 二维数组中的查找 bool Find(int\* matrix, int rows, int cols, int value)用一维/二维 \*(matrix+i\*cols+j)
 > 2. 替换空格 char\* replace(char\* str, int len) ‘ ’->%20 在源数组总长度，从后向前，逐个赋值
 > 3. 旋转数组的最小元素 int get_min(int \*a, int len) , while(a[p1] >= a[p2]) {
 > 4. 调整数组位数使奇数位于前面 void reorderOddEven(int[] arr) 
@@ -90,6 +90,77 @@
 > 3. 数组中只出现一次的数字 ok.  
 
 ### 6. Stack & Queue & heap
+
+## 题目报告
+
+### 2.1 二维数组中的查找
+
+```cpp
+int a[][4] = {
+	{ 1, 2, 3, 4 },
+	{ 5, 6, 7, 8 },
+	{ 9, 10, 11, 12},
+	{ 13, 14, 15, 16},
+	{ 17, 18, 19, 20}
+};
+
+bool Find(int b[][4], int rows, int cols, int value) {
+	
+	int row = 0, col = cols - 1;
+	
+	while (b != NULL && row < rows && col >= 0) {
+		
+		if (b[row][col] == value) {
+			cout << "row: " << row << " col: " << col << end;
+			return true;
+		}
+		else if (b[row][col] > value) {
+			col--;
+		}
+		else {
+			row++;
+		}
+	}
+	return false;
+}
+```
+
+### 2.3 旋转数组的最小元素
+
+```cpp
+int a[N] = {3, 4, 5, 1, 2};
+int get_min(int *a, int len) {
+    if(a == NULL || len <= 0) {
+        return -1;
+    }
+    int p1 = 0, p2 = len-1;
+    int mid = p1;
+    
+    while(a[p1] >= a[p2]) {
+        if(p2 - p1 == 1) {
+            mid = p2; break;
+        }
+        mid = (p1 + p2) / 2;
+        if(a[p1] <= a[mid]) {
+            p1 = mid;
+        }
+        else if(a[p2] >= a[mid]) {
+            p2 = mid;
+        }
+    }
+    return mid;
+}
+```
+
+### 2.4 调整数组位数使奇数位于前面
+
+### 2.5 最小的K个数 part 快排思想 
+
+```cpp
+void set_k(int* input, int n, int k)
+```
+
+=============
 
 ```cpp
 
