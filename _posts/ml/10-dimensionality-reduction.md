@@ -6,9 +6,9 @@ categories: machine-learning
 tags: PCA
 ---
 
-<img src="/images/logo/pca-lg1.png" width="550" />
+<img src="/images/ml/pca/pca-logo.png" width="550" alt="PCA" />
 
-<!-- more --><br>
+<!-- more -->
 
 常见的 Dimensionality Reduction 方法： PCA、LDA 等。 [PCA主成分分析](https://terrifyzhao.github.io/2018/06/30/PCA主成分分析.html)
 
@@ -107,11 +107,11 @@ PCA 是一种经典的降维方法，是一种**线性、非监督、全局的**
 
 > (1) 数据预处理：对所有样本进行中心化(即使得样本和为0)
 >
-> <img src="/images/ml/pca-7.png" width="350" />
+> <img src="/images/ml/pca/pca-7.png" width="350" />
 >
 > (2) 计算样本的协方差矩阵
 >
-> <img src="/images/ml/pca-8.png" width="350" />
+> <img src="/images/ml/pca/pca-8.png" width="350" />
 > 
 > (3) 对2中求得的协方差矩阵Sigma进行特征值分解
 > 
@@ -140,12 +140,12 @@ PCA 是一种经典的降维方法，是一种**线性、非监督、全局的**
 5. 仅在需用 PCA 的时使用 PCA: 降维丢失的信息可能在一定程度上是噪声，使用 PCA 可以起到一定的去噪效果。
 6. PCA 通常用来 Data Compression 以加快算法，减少内存使用或磁盘占用，或者用于可视化(k=2, 3)。
 
-[tu1]: /images/ml/pca-1.png
-[tu2]: /images/ml/pca-2.png
-[tu3]: /images/ml/pca-3.png
-[tu4]: /images/ml/pca-4.png
-[tu5]: /images/ml/pca-5.png
-[tu6]: /images/ml/pca-6.png
+[tu1]: /images/ml/pca/pca-1.png
+[tu2]: /images/ml/pca/pca-2.png
+[tu3]: /images/ml/pca/pca-3.png
+[tu4]: /images/ml/pca/pca-4.png
+[tu5]: /images/ml/pca/pca-5.png
+[tu6]: /images/ml/pca/pca-6.png
 
 ## Reference article
 

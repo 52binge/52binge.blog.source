@@ -6,9 +6,9 @@ categories: nlp
 tags: fastText
 ---
 
-<img src="/images/logo/fasttext3.png" width="650" />
+<img src="/images/nlp/fasttext-logo.png" width="600" alt="fasttext word2vec"/>
 
-<!-- more --><br>
+<!-- more -->
 
 fastText 是 2016年 FAIR(Facebook AIResearch) 推出的一款文本分类与向量化工具。
 

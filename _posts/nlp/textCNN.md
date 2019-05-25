@@ -6,9 +6,9 @@ categories: nlp
 tags: TextCNN
 ---
 
-<img src="/images/logo/textcnn.png" width="650" />
+<img src="/images/nlp/textcnn-logo.png" width="650" />
 
-<!-- more --> <br>
+<!-- more -->
 
 textCNN 是 2014年 提出的用来做文本分类的卷积神经网络，结构简单、效果好.
 
