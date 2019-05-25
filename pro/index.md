@@ -65,7 +65,7 @@ REDIS3=read:order|pool2,pool1#write:pool1
 4. 将接收数据处理为下游需要的格式，抓发到消息队列
 5. 为支持离线的数据挖掘，将数据写入日志，并实时发送至HDFS.
 
-### config
+### 2.2 相关配置文件 config
 
 a)	修改配置bin/catalina.sh，添加java配置
 
@@ -89,10 +89,13 @@ iii.	               redirectPort="8443"
 iv.	               acceptCount="5000" maxThreads="4000"/>
 ```
 
-### 推荐商品接收接口
+### 2.3 推荐商品接收接口
 
 > pc uv 3500W+ , wap uv 4500W+, weibo uv 1.6~1.8亿
-> 200个并发做接口压测，qps是3000+，均延时65ms。延时主要耗在域名解析上，内网压测qps是3万+，均延时10ms
+> 
+> 200个并发做接口压测，qps是3000+，均延时65ms。
+> 
+> 延时主要耗在域名解析上，内网压测qps是3万+，均延时10ms
 
 
 ## 3. 离线分析调度框架
@@ -184,7 +187,6 @@ echo_ex "run $0 end!"
 
 [bigdata-offline-demo 更多项目详情请点击...][2]
 
-
 ## 4. 领券项目
 
 这是一款基于地理位置，为城市生活人群提供优惠卡券的聚合平台APP.
@@ -200,10 +202,6 @@ v2.0 需要解决的问题 :
 [lingquan-offline-part 更多项目详情请点击...][1]   (为了更好的互相了解，脱敏后暂时放上git,会迅速移除)
 
 **多店合一、同店比价** (标记连锁品牌、策略非连锁品牌)
-
-<div class="limg1">
-<img src="/images/pro/lq6.jpeg" width="100" />
-</div>
 
 **shop**
 
@@ -284,16 +282,13 @@ mapping = {
 **business center**
 
 business center |amap name |  address | geo
-------- | ------- | ------- | -------  
+:-------: | :-------: | ------- | -------  
 湖滨银泰 | 杭州湖滨银泰in77A区 | 杭州市上城区东坡路7号 |
 杭州来福士 | 杭州来福士 | 杭州市江干区钱江新城富春路与新业路交汇处往北200米 |
 嘉里中心 | 杭州嘉里中心 | 杭州市下城区延安路353号 |
 ... | ... | ...
 
 **landmark**、**landmark_shop_coupon**、**shopping**、...
-
-<img src="/images/pro/lq5_1.jpg" width="200" />
-
 
 ## 5. 推荐系统
 
