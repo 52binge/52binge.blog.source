@@ -22,10 +22,10 @@
 > 5. 数组中出现次数超过一半的次数 \* int core(int \*a, int len)
 > 6. 最小的K个数  part 快排思想 + void set_k(int\* input, int n, int k) **nok**
 > 7. 连续子数组的最大和   // dp: F[i] = max(a[i], F[i-1]+a[i]);
-> 8. 把数组排成最小的数  #include < sstream \> ostringstream oss;oss <<t; oss.str() bool Compare(const string &left, const string &right)
+> 8. [把数组排成最小的数](https://www.cnblogs.com/youxin/p/3294154.html) #include < sstream > bool Compare(const string &left, const string &right)
 > 9. [数组中的逆序对](https://blog.csdn.net/bf23456/article/details/51303632)
 > 10. 数组中只出现一次的数字 , 划分2数组，num & (-num);二者与后得到的数，将num最右边的1保留下来
-> 11. 丑数 ok
+> 11. **丑数**, 只包含质因子2、3和5的数称作丑数, 1, 2, 3, 5, 6, ... ok
 > 12. 整数中1出现的次数（从1到n整数中1出现的次数）. **nok**
 > 13. 和为S的连续正数序列(滑动窗口思想) left=1, right = 2, total = (left + right) \* (right - left + 1) / 2; 
 > 14. 和为S的两个数字(双指针思想) ok.
@@ -34,6 +34,94 @@
 > 17. 如何在排序数组中找出给定数字出现的次数 int bina(int \*a, int len, int num, bool isLeft)
 > 18. [最短路Floyd](https://www.cnblogs.com/biyeymyhjob/archive/2012/07/31/2615833.html)
 > 19. quick_sort 双 while + one swap
+
+```cpp
+void quickSort(int a[], int left, int right) {
+    if(left < right) { // exit. good idea!
+        int l = left, r = right, x = a[l];
+        while(1) {
+            while(l < r && a[r] >= x) r--;
+            while(l < r && a[l] <= x) l++;
+            if(l >= r) break;
+            swap(a[r], a[l]);
+        }
+        swap(a[left], a[l]);
+        quickSort(a, left, l-1);
+        quickSort(a, l+1, right);
+    }
+}
+```
+
+mergeSort
+
+```cpp
+void mergeSort(int a[], int l, int r) { //  8, 5, 4, 9, 2, 3, 6
+    if(l >= r) return;   // exit.
+    int mid = (l+r) / 2; // overflow  <->  l + (r-l)/2
+    mergeSort(a, l, mid);
+    mergeSort(a, mid+1, r);  
+    int *arr = new int[r-l+1];  
+    int k = 0;
+    int i = l, j = mid + 1;
+    while(i <= mid && j <= r) {  
+        if(a[i] <= a[j]) {
+            arr[k++] = a[i++]; 
+        }
+        else {
+            arr[k++] = a[j++]; // ans += (mid-i+1);  
+        }
+    }
+    while(i <= mid) arr[k++] = a[i++];
+    while(j <= r) arr[k++] = a[j++];
+    for(int i = l; i <= r; i++) {
+        a[i] = arr[i-l];
+    }
+    delete []arr;
+}
+```
+
+约瑟夫环:
+
+```cpp
+int cirnm(int n, int m) {
+    if(n < 1 || m < 1) return -1;
+    int i = 0, count = 0; 
+    list<int> L;
+    for(int i = 0; i < n; i++) L.push_back(i);
+    list<int>::iterator lcur = L.begin(), next;
+    while(!L.empty()) {
+        for(int i = 1; i < m; ++i) {
+            lcur++;
+            if(lcur == L.end()) lcur = L.begin();
+        }
+        next = lcur + 1;
+        if(next == L.end()) next = L.begin();
+        L.erase(lcur);
+        count++;
+        if(count == n - 1) break;
+        lcur = next;
+    }
+    return *lcur;
+}
+```
+
+如何在排序数组中找出给定数字出现的次数:
+
+```cpp
+int bina(int *a, int len, int data) {
+    if(a == NULL || len <= 0) return -1;
+    int l = 0, r = len - 1;
+    while(l <= r) {
+        int mid = (l + r) / 2;
+        if(a[mid] == data) return mid;
+        else if(data < a[mid]) {
+            r = mid - 1;
+        }
+        else l = mid+1;
+    }
+    return -1;
+ }
+```
 
 ### 3. LinkedList
 
