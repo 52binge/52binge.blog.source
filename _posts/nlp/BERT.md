@@ -6,7 +6,9 @@ categories: nlp
 tags: BERT
 ---
 
+<div class="mygallery justified-gallery"> 
 <img src="/images/nlp/Bert-Ernie-logo.jpg" width="550" alt="Bert-Ernie" />
+</div>
 
 <!-- more -->
 
