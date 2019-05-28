@@ -33,7 +33,7 @@
 > 16. [构建乘积数组](https://blog.csdn.net/u012327058/article/details/81007333)
 > 17. 如何在排序数组中找出给定数字出现的次数 int bina(int \*a, int len, int num, bool isLeft)
 > 18. [最短路Floyd](https://www.cnblogs.com/biyeymyhjob/archive/2012/07/31/2615833.html)
-> 19. quick_sort 双 while + one swap
+> 19. quick_sort, while (双while + swap)
 
 ```cpp
 void quickSort(int a[], int left, int right) {
