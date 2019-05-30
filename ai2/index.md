@@ -5,7 +5,6 @@
 
 - [Hive相关试题](https://blog.csdn.net/qq_16633405/article/details/78947969#Hive_103)
 
-
 ### 1. 字符串
 
 > 1. 字符串的排列 void res(char \*str, char \*pStr), scanf("%s", str); \#include < utility\> 
