@@ -1,7 +1,7 @@
 ---
 title: K-means
 toc: true
-date: 2019-04-20 17:01:21
+date: 2018-12-18 10:01:21
 categories: machine-learning
 tags: Kmeans
 ---
@@ -42,7 +42,28 @@ K均值聚类的基本思想是，通过迭代方式寻找K个簇(Cluster)的一
 
 这个算法很简单。
 
-## 3. K-Means 优缺点
+## 3. K-Means 具体步骤
+
+> (1). 数据预处理、归一化、离群点处理。
+> 
+> (2). 随机选择 K 个簇中心，记为 ${\mu\_1}^{(0)}, {\mu\_2}^{(0)}, {\mu\_3}^{(0)}, ..., {\mu\_k}^{(0)}$
+> 
+> (3). 定义代价函数 :
+> 
+> <img src="/images/ml/k-means/K-Means-5.svg" width="280" />
+>
+> (4). 令 t=0,1,2,... 为迭代轮数，重复下面的过程知道 J 收敛:
+> 
+> - 对于每一个样本 $x\_i$, 将其分配到距离最近的簇.
+> 
+> <img src="/images/ml/k-means/K-Means-3.svg" width="280" />
+>
+> - 对于每一个类簇 $k$, 重新计算该类簇的中心
+> 
+> <img src="/images/ml/k-means/K-Means-4.svg" width="280" />
+>
+
+## 4. K-Means 优缺点
 
 **Advantage：**
 
@@ -50,23 +71,23 @@ K均值聚类的基本思想是，通过迭代方式寻找K个簇(Cluster)的一
 
 **Disadvantage：**
 
-> (1) 需要人工预设K值，且该值和真实数据分布未必吻合；  
+> (1) **`需要人工预设K值，且该值和真实数据分布未必吻合`**；  
 > 
-> (2) 受初值和离群点的影响，每次的结果不稳定；  
+> (2) **`受初值和离群点的影响，每次的结果不稳定`**；  
 > 
-> (3) 受初值影响，结果通常是局部最优；  
+> (3) **`受初值影响，结果通常是局部最优`**；  
 > 
 > (4) 无法很好地解决数据簇分布差别比较大的情况(如一类是另一类样本数量的100倍)；  
 > 
 > (5) 不太适用于离散分布；样本点只能被划分到单一的类中。  
 
-## 4. K-Means++ 
+## 5. K-Means++ 
 
 > K-means 最开始是随机选取数据集中的K个点作为聚类中心.
 > 
 > K-means++ **改进了初始值的选择，会尽量使聚类中心越远越好**.
 
-## 5. 扩展
+## 6. 扩展
 
 - ISODATA算法(迭代自组织数据分析法)
 - 高斯混合模型、EM
@@ -77,8 +98,12 @@ K均值聚类的基本思想是，通过迭代方式寻找K个簇(Cluster)的一
 
 - [百面机器学习][3] 、 [网易云课堂][2]
 - [COOLSHELL K-MEANS 算法][1]
+- [K NEAREST NEIGHBOR][4]
+- [单位矩阵和逆矩阵][5]
 
 [1]: https://coolshell.cn/articles/7779.html
 [2]: https://study.163.com/course/courseLearn.htm?courseId=1004570029#/learn/video?lessonId=1052320898&courseId=1004570029
 [3]: https://www.jianshu.com/p/7676f3b9808f
+[4]: https://coolshell.cn/articles/8052.html
+[5]: https://blog.csdn.net/howhigh/article/details/74527651
 
