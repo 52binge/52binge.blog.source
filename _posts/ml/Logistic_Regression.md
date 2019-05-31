@@ -6,7 +6,9 @@ categories: machine-learning
 tags: Logistic_Regression
 ---
 
-<img src="/images/ml/lr/LR-1.png" width="580" />
+<!--<img src="/images/ml/lr/LR-1.png" width="580" />
+-->
+<a href="/2019/05/31/ml/Logistic_Regression/" target="_self" style="display:block; margin:0 auto; background:url('/images/ml/lr/LR-1.png') no-repeat 0 0 / contain; height:290px; width:580px;"></a>
 
 <!-- more -->
 
@@ -26,7 +28,38 @@ Logistic Regression 和 Linear Regression 都是一种广义线性模型（gener
 
 逻辑回归假设因变量 y 服从伯努利分布，而线性回归假设因变量 y 服从高斯分布。 因此与线性回归有很多相同之处，去除 Sigmoid 映射函数的话，逻辑回归算法就是一个线性回归。可以说，逻辑回归是以线性回归为理论支持的，但是逻辑回归通过 Sigmoid函数 引入了非线性因素，因此可以轻松处理 0/1 分类问题。
 
+### 1.1 Linear Regression
+
+$$
+z={\theta\_{0}}+{\theta\_{1}x\_{1}}+{\theta\_{2}x\_{2}+{\theta\_{3}x\_{3}}...+{\theta\_{n}x\_{n}}}=\theta^Tx
+$$
+
+> 使用最小二乘法求解 Linear Regression 时，我们认为因变量 y 服从正态分布。
+> 
 > 线性回归假设因变量 y 服从高斯分布:  真实值y与拟合值Y之间的差值是不是符合正态分布。
+
+### 1.2 Logistic Regression
+
+$$
+h\_{\theta}(x)=\frac{1}{1+e^{-z}}=\frac{1}{1+e^{-\theta^Tx}}
+$$
+
+<img src="/images/ml/lr/LR-2.png" width="280" alt="Logistic Regression 将线性函数的结果映射到了 sigmoid 函数 中. 取值在 [0, 1] 之间." />
+
+$$
+log\frac{p}{1-p} = \theta^Tx
+$$
+
+> 一件事发生的几率 $odds = \frac{p}{1-p}$， $p = P(y=1|x)$
+> 
+> Logistic Regression 可以看作是对于 “y=1|x” 这一事件的对数几率的线性回归.
+
+逻辑回归通过对似然函数 $
+L(\theta)=\prod\_{i=1}^{N}P(y\_i|x\_i;\theta)=\prod\_{i=1}^{N}(\pi(x\_i))^{y\_i}(1-\pi(x\_i))^{1-y\_i} $ 的学习，得到最佳参数 θ.
+
+> Logistic 与 Linear Regression 二者都使用了极大似然估计来对训练样本进行建模
+
+[迭代自己 Logistic Regression](http://www.iterate.site/2019/03/30/12-逻辑回归/)
 
 ## 2. LR Hypothesis function
 
