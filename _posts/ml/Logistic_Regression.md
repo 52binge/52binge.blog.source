@@ -50,11 +50,11 @@ Logistic Regression 假设函数形式如下：
 
 ## 3. Cost Function
 
-all samples ：
+Cost Function：
 
 <img src="/images/ml/lr/LR-7.svg" width="470" />
 
-single simple：
+Loss Function：
 
 <img src="/images/ml/lr/LR-8.svg" width="400" />
 
@@ -65,16 +65,44 @@ single simple：
 <img src="/images/ml/lr/LR-10.png" width="370" />
 
 
-> - 选择代价函数时，最好挑选对参数 $\theta$ 可微的函数（全微分存在，偏导数一定存在）
-> - 对于每种算法来说，代价函数不是唯一的；
-> - 代价函数是参数 $\theta$ 的函数；
-> - $J(\theta)$ 是一个标量
+> - 选择 Cost_Function 时，最好挑选对参数 $\theta$ 可微的函数（全微分存在，偏导数一定存在）
+> - 对于每种算法来说，Cost_Function 不是唯一的； Cost_Function 是参数 $\theta$ 的函数；
+> - Cost Function 是对所有样本而言, Loss Function 是对单一样本而言.
+> - $J(\theta)$ 是一个标量, 我们需要 min 最小化它.
 
 LR 中，代价函数是交叉熵 (**Cross Entropy**)，交叉熵是一个常见的代价函数:
 
 [good 简单的交叉熵损失函数，你真的懂了吗？](https://zhuanlan.zhihu.com/p/38241764)
 
 ## 4. Cross Entropy
+
+Cross Entropy 是信息论中的一个概念，要想了解交叉熵的本质，需要先从最基本的概念讲起。
+
+> 信息量、熵、相对熵（KL散度）、交叉熵
+> 
+> 
+> 同一个随机变量 x 有两个单独的概率分布 P(x) 和 Q(x)， 用 KL散度 来衡量这两个分布的差异。
+> 
+> $D\_{KL}(p||q)=\sum\_{i=1}^np(x\_i)log(\frac{p(x\_i)}{q(x\_i)}) \tag{3.1}$
+> 
+> $$\begin{eqnarray}
+D\_{KL}(p||q) &=& \sum\_{i=1}^np(x\_i)log(p(x\_i))-\sum\_{i=1}^np(x\_i)log(q(x\_i))\end{eqnarray}$$
+>
+> 等式的前一部分恰巧就是p的熵，等式的后一部分，就是交叉熵：
+> 
+> $$\begin{eqnarray}
+=& -H(p(x))+[-\sum\_{i=1}^np(x\_i)log(q(x\_i))]
+\end{eqnarray}$$
+> 
+> 在机器学习中，我们需要评估label和predicts之间的差距，使用KL散度刚刚好，即 $D\_{KL}(y||\hat{y})$ .
+> 
+> 由于KL散度中的前一部分 $-H(y)$ 不变，故在优化过程中，只需要关注 Cross Entropy 就可以了。
+> 
+> 所以一般在机器学习中直接用用 Cross Entropy Loss，评估模型。
+> 
+> $D\_{KL}$ 的值越小，表示 q分布 和 p分布 越接近.
+
+机器学习为什么要用交叉熵做loss函数？ 请参见文章: [一文搞懂交叉熵在机器学习中的使用][6]
 
 > 1）CrossEntropy lossFunction 
 > 
@@ -138,12 +166,14 @@ Likelihood Function：
 - [最大似然估计和最小二乘法怎么理解？][5]
 - [知乎：一文搞懂极大似然估计][1.2]
 - [CSDN：详解最大似然估计（MLE）、最大后验概率估计（MAP），以及贝叶斯公式的理解][1.3]
+- [一文搞懂交叉熵在机器学习中的使用，透彻理解交叉熵背后的直觉][6]
 
 [1]: https://zhuanlan.zhihu.com/p/28408516
 [2]: https://zhuanlan.zhihu.com/p/22876460
 [3]: https://blog.csdn.net/Cdd2xd/article/details/75635688
 [4]: https://www.zhihu.com/question/56891433
 [5]: https://www.zhihu.com/question/20447622
+[6]: https://blog.csdn.net/tsyccnh/article/details/79163834
 
 [1.1]: https://zhuanlan.zhihu.com/p/38241764
 [1.2]: https://zhuanlan.zhihu.com/p/26614750
