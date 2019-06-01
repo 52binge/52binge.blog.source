@@ -135,7 +135,9 @@ D\_{KL}(p||q) &=& \sum\_{i=1}^np(x\_i)log(p(x\_i))-\sum\_{i=1}^np(x\_i)log(q(x\_
 > 
 > $D\_{KL}$ 的值越小，表示 q分布 和 p分布 越接近.
 
-机器学习为什么要用交叉熵做loss函数？ 请参见文章: [一文搞懂交叉熵在机器学习中的使用][6]
+[一文搞懂交叉熵在机器学习中的使用][6]
+
+[交叉熵在多分类问题中的使用, sigmoid](https://blog.csdn.net/tsyccnh/article/details/79163834)
 
 > 1）CrossEntropy lossFunction 
 > 
