@@ -6,10 +6,10 @@ categories: machine-learning
 tags: Rondom_Forest
 ---
 
-<!--<img class="img-fancy" src="/images/ml/ensumble/ensumble-1.png" width="550" border="0" alt="台湾 vs 大陆"/>-->
+<img class="img-fancy" src="/images/ml/ensumble/ensumble-1.png" width="550" border="0" alt=""/>
 
-<a href="/2019/06/02/ml/Random_Forest_and_GBDT/" target="_self" style="display:block; margin:0 auto; background:url('/images/ml/ensumble/ensumble-1.png') no-repeat 0 0 / contain; height:304px; width:550px;"></a>
-
+<!--<a href="/2019/06/02/ml/Random_Forest_and_GBDT/" target="_self" style="display:block; margin:0 auto; background:url('/images/ml/ensumble/ensumble-1.png') no-repeat 0 0 / contain; height:304px; width:550px;"></a>
+-->
 <!-- more -->
 
 ## 1. Random Forest

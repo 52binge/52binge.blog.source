@@ -6,9 +6,9 @@ categories: machine-learning
 tags: Logistic_Regression
 ---
 
-<!--<img src="/images/ml/lr/LR-1.png" width="550" />-->
+<img src="/images/ml/lr/LR-1.png" width="600" />
 
-<a href="/2019/05/31/ml/Logistic_Regression/" target="_self" style="display:block; margin:0 auto; background:url('/images/ml/lr/LR-1.png') no-repeat 0 0 / contain; height:275px; width:550px;"></a>
+<!--<a href="/2019/05/31/ml/Logistic_Regression/" target="_self" style="display:block; margin:0 auto; background:url('/images/ml/lr/LR-1.png') no-repeat 0 0 / contain; height:275px; width:550px;"></a>-->
 
 <!-- more -->
 
