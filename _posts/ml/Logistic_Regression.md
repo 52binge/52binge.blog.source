@@ -12,8 +12,9 @@ tags: Logistic_Regression
 
 <!-- more -->
 
-Logistic Regression 是一种用于解决二分类（0 or 1）问题的机器学习方法，用于估计某种事物的可能性。
-
+<!--<center><font size=3.5>-->
+Logistic Regression 是一种用于解决二分类（0 or 1）问题的机器学习方法.
+<!--</font></center>-->
 举个🌰 :
 
 > (1). 用户购买某商品的可能性
@@ -192,7 +193,7 @@ Likelihood Function：
 - 最小二乘法的核心是权衡，因为你要在很多条线中间选择，选择出距离所有的点之和最短的；
 - 而极大似然的核心是自恋，要相信自己是天选之子，自己看到的，就是冥冥之中最接近真相的。^_^
 
-## Reference Article
+## Reference
 
 - [逻辑回归（Logistic Regression）（一）][1]
 - [广义线性模型（Generalized Linear Model）][2]
