@@ -14,6 +14,10 @@ tags: Metric
 
 <!-- more -->
 
+谈谈机器学习中，常用的性能评估指标：
+
+<img class="img-fancy" src="/images/ml/metric/metric-2.jpg" width="600" border="0" alt=""/>
+
 ## 1. Accuracy
 
 正反比例严重失衡，则没意义，存在 accuracy paradox 现象
@@ -88,8 +92,6 @@ AUC = 0.5，跟随机猜测一样， ROC 纵轴 TPR 越大， 横轴 FPR 越小 
 > 
 > 根据计算公式可以推知，在 testing set 出现 imbalance 时 ROC曲线 能保持不变，而 PR 则会出现大变化。
 
-<img class="img-fancy" src="/images/ml/metric/metric-2.jpg" width="580" border="0" alt=""/>
-
 ## 8. multi-class classification 
 
 如果非要用一个综合考量的 metric 的话，
@@ -114,3 +116,7 @@ precision & recall
 
 ## Reference 
 
+- [精确率、召回率、F1 值、ROC、AUC 各自的优缺点是什么？](https://www.zhihu.com/question/30643044)
+- [机器学习之类别不平衡问题 (2) —— ROC和PR曲线](https://zhuanlan.zhihu.com/p/34655990)
+- [sklearn中 F1-micro 与 F1-macro 区别和计算原理](https://www.cnblogs.com/techengin/p/8962024.html)
+- [Bias-Variance Tradeoff](https://charlesliuyx.github.io)
