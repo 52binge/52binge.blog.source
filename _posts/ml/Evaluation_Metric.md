@@ -16,6 +16,16 @@ tags: Metric
 
 --------
 
+模型评估为啥不用 precision 和 recall？ 因为它支持不了我的决策啊。
+
+> 同样的问题，根据不同情况，我可以问100个:
+>
+> - 为啥这个模型评估不用AUC？而要用logloss，因为它支持不了我的决策啊
+> 
+> - 为啥这个模型评估不用logloss，而要用ROI？因为它支持不了我的决策啊
+> 
+> - 为啥这个模型不用ROI、logloss, 而只用recall，因为recall更支持我的决策啊
+
 谈谈机器学习中，常用的性能评估指标：
 
 <img class="img-fancy" src="/images/ml/metric/metric-2.jpg" width="600" border="0" alt=""/>
