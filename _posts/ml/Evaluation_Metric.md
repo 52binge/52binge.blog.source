@@ -16,19 +16,25 @@ tags: Metric
 
 --------
 
-模型评估为啥不用 precision 和 recall？ 因为它支持不了我的决策啊。
+选择与问题相匹配的评估方法，才能快速发现在 **模型选择和训练过程** 中可能出现的问题，迭代地对模型进行优化. 针对 **`分类、排序、回归、序列预测`** 等不同类型的机器学习问题，评估指标的选择也有所不同:
 
-> 同样的问题，根据不同情况，我可以问100个:
->
-> - 为啥这个模型评估不用AUC？而要用logloss，因为它支持不了我的决策啊
-> 
-> - 为啥这个模型评估不用logloss，而要用ROI？因为它支持不了我的决策啊
-> 
-> - 为啥这个模型不用ROI、logloss, 而只用recall，因为recall更支持我的决策啊
 
-谈谈机器学习中，常用的性能评估指标：
+本文将谈谈机器学习中，常用的性能评估指标：
 
 <img class="img-fancy" src="/images/ml/metric/metric-2.jpg" width="600" border="0" alt=""/>
+
+关于模型评估的基础概念:
+
+>【误差(error)】：学习器的预测输出与样本的真实输出之间的差异。根据产生误差的数据集，可分为：
+>
+> - **Training error**：又称为经验误差(empirical error)，学习器在训练集上的误差。
+> - **Test error**：学习器在测试集上的误差。
+> - **Generalization error**：学习器在未知新样本上的误差。
+>
+> 需要注意的是，上述所说的“误差”均指误差期望，排除数据集大小的影响。
+> 
+> 应该从训练样本中尽可能学出适用于所有 **潜在样本的“普遍规律”**，这样才能在遇到新样本时做出正确的判别。因为，泛化误差无法测量，因此，通常我们会将 **Test error 近似等同于 Generalization error**。
+
 
 ## 1. Accuracy
 
@@ -120,15 +126,12 @@ precision & recall
 > precision 是相对你自己的模型预测而言
 > recall 是相对真实的答案而言
 
-## 9. Bias-Variance Tradeoff
-
-<img src="https://charlesliuyx.github.io/2017/09/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%88%86%E7%B1%BB%E5%99%A8%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87%E8%AF%A6%E8%A7%A3/BV-Tradeoff.png" width="450" />
-
-> - [Bias-Variance Tradeoff](https://charlesliuyx.github.io)
-
 ## Reference 
 
 - [精确率、召回率、F1 值、ROC、AUC 各自的优缺点是什么？](https://www.zhihu.com/question/30643044)
 - [机器学习之类别不平衡问题 (2) —— ROC和PR曲线](https://zhuanlan.zhihu.com/p/34655990)
 - [sklearn中 F1-micro 与 F1-macro 区别和计算原理](https://www.cnblogs.com/techengin/p/8962024.html)
 - [Bias-Variance Tradeoff](https://charlesliuyx.github.io)
+- [程序员大本营-百面](http://www.pianshen.com/article/9039255388/)
+- [CSDN 模型评估](https://blog.csdn.net/weixin_43378396/article/details/90707493)
+- [简单聊聊模型的性能评估标准](https://blog.csdn.net/lc013/article/details/88583580)
