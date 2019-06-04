@@ -14,6 +14,8 @@ tags: Metric
 
 <!-- more -->
 
+--------
+
 谈谈机器学习中，常用的性能评估指标：
 
 <img class="img-fancy" src="/images/ml/metric/metric-2.jpg" width="600" border="0" alt=""/>
@@ -22,7 +24,7 @@ tags: Metric
 
 正反比例严重失衡，则没意义，存在 accuracy paradox 现象
 
-![](https://pic1.zhimg.com/80/v2-492ac29bbed274a282eee069c0b63c93_hd.jpg)
+<img src="/images/ml/metric/metric-3.jpg" width="800" alt=""/>
 
 > accuracy 准确率 = (TP+TN)/(TP+TN+FP+FN), **准确率可以判断总的正确率**
 
@@ -30,7 +32,7 @@ tags: Metric
 
 precision 查准率 (80% = 你一共预测了100个正例，80个是对的正例)
 
-![](https://pic2.zhimg.com/80/v2-3ee1faa3a371c7667fdca01e960dd294_hd.jpg)
+<img src="/images/ml/metric/metric-4.jpg" width="800" alt=""/>
 
 > Precision = TP/(TP+FP)
 
@@ -38,7 +40,7 @@ precision 查准率 (80% = 你一共预测了100个正例，80个是对的正例
 
 recall (样本中的正例有多少被预测正确 TPR = TP/(TP+FN))
 
-![](https://pic1.zhimg.com/80/v2-5c649d8fbb03dae0703a1b70413ae82d_hd.jpg)
+<img src="/images/ml/metric/metric-5.jpg" width="800" alt=""/>
 
 ## 4. F1-score
 
@@ -90,7 +92,7 @@ AUC = 0.5，跟随机猜测一样， ROC 纵轴 TPR 越大， 横轴 FPR 越小 
 >
 > real world data 经常会面临 class imbalance 问题，即正负样本比例失衡。
 > 
-> 根据计算公式可以推知，在 testing set 出现 imbalance 时 ROC曲线 能保持不变，而 PR 则会出现大变化。
+> 根据计算公式可以推知，在 testing set 出现 `imbalance 时 ROC曲线 能保持不变`，而 PR 则会出现大变化。
 
 ## 8. multi-class classification 
 
