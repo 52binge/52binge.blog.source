@@ -64,7 +64,7 @@ P-R（precision-recall）PRC
 
 **ROC curve** （TPR 纵轴，FPR 横轴，TP（真正率）和 FP（假正率），设一个阈值）
 
-> ROC（Receiver Operating Characteristic）曲线。 ROC 曲线 是基于混淆矩阵得出的。 
+> ROC（Receiver Operating Characteristic Curve）曲线。 ROC 曲线 是基于混淆矩阵得出的。 
 >
 > TPR = recall = 灵敏度 = P（X=1 | Y=1）
 > FPR = 特异度 = P（X=0 | Y=0）
@@ -92,7 +92,7 @@ AUC = 0.5，跟随机猜测一样， ROC 纵轴 TPR 越大， 横轴 FPR 越小 
 >
 > real world data 经常会面临 class imbalance 问题，即正负样本比例失衡。
 > 
-> 根据计算公式可以推知，在 testing set 出现 `imbalance 时 ROC曲线 能保持不变`，而 PR 则会出现大变化。
+> 根据计算公式可以推知，在 testing set 出现 **`imbalance 时 ROC曲线 能保持不变`**，而 PR 则会出现大变化。
 
 ## 8. multi-class classification 
 
