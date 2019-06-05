@@ -41,7 +41,7 @@ tags: Metric
 准确率：指的是分类正确的样本数量占样本总数的比例，定义如下：
 
 $$
-Accuracy = \frac{n\_{correct}}{n\_{total}}
+Accuracy = \frac{n\_{correct}}{n\_{total}}, Error = \frac{n\_{error}}{n\_{total}}
 $$
 
 正反比例严重失衡，则没意义，存在 accuracy paradox 现象.
@@ -49,12 +49,6 @@ $$
 <img src="/images/ml/metric/metric-3.jpg" width="800" alt=""/>
 
 > accuracy 准确率 = (TP+TN)/(TP+TN+FP+FN), **准确率可以判断总的正确率**
-
-错误率：指分类错误的样本占样本总数的比例，定义如下：
-
-$$
-Error = \frac{n\_{error}}{n\_{total}}
-$$
 
 ### 1.2 Precision
 
@@ -146,7 +140,7 @@ AUC = 0.5，跟随机猜测一样， ROC 纵轴 TPR 越大， 横轴 FPR 越小 
 MSE （Mean Squared Error）称为均方误差，，又被称为 L2范数损失:
 
 $$
-MSE=\frac{1}{n}\sum_{i=1}^n{(\widehat{y\_i} - y\_i)^2}
+MSE=\frac{1}{n}\sum_{i=1}^n{(f\_i - y\_i)^2}
 $$
 
 ### 2.2 RMSE
