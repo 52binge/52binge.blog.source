@@ -18,7 +18,6 @@ tags: Metric
 
 选择与问题相匹配的评估方法，才能快速发现在 **模型选择和训练过程** 中可能出现的问题，迭代地对模型进行优化. 针对 **`分类、排序、回归、序列预测`** 等不同类型的机器学习问题，评估指标的选择也有所不同:
 
-
 本文将谈谈机器学习中，常用的性能评估指标：
 
 <img class="img-fancy" src="/images/ml/metric/metric-2.jpg" width="600" border="0" alt=""/>
@@ -38,11 +37,23 @@ tags: Metric
 
 ## 1. Accuracy
 
-正反比例严重失衡，则没意义，存在 accuracy paradox 现象
+准确率：指的是分类正确的样本数量占样本总数的比例，定义如下：
+
+$$
+Accuracy = \frac{n\_{correct}}{n\_{total}}
+$$
+
+正反比例严重失衡，则没意义，存在 accuracy paradox 现象.
 
 <img src="/images/ml/metric/metric-3.jpg" width="800" alt=""/>
 
 > accuracy 准确率 = (TP+TN)/(TP+TN+FP+FN), **准确率可以判断总的正确率**
+
+错误率：指分类错误的样本占样本总数的比例，定义如下：
+
+$$
+Error = \frac{n\_{error}}{n\_{total}}
+$$
 
 ## 2. Precision
 
@@ -63,6 +74,22 @@ recall (样本中的正例有多少被预测正确 TPR = TP/(TP+FN))
 F1-score （precision 和 recall 的 metric）
 
 > 2\*precision\*recall / (precision + recall)
+
+**multi-class classification**
+
+如果非要用一个综合考量的 metric 的话，
+
+> 1. macro-average（宏平均）- 分布计算每个类别的F1，然后做平均（各类别F1的权重相同）
+> 2. micro-average（微平均）- 通过先计算总体的TP，FN和FP的数量，再计算F1
+>  
+> macro-average（宏平均） 会比 micro-average（微平均）好一些哦，因为 macro 会受 minority class 影响更大，也就是说更能体现在 small class 上的 performance.
+> 
+> [sklearn中 F1-micro 与 F1-macro 区别和计算原理](https://www.cnblogs.com/techengin/p/8962024.html)
+
+precision & recall
+
+> precision 是相对你自己的模型预测而言
+> recall 是相对真实的答案而言
 
 ## 5. P-R curve
 
@@ -110,21 +137,36 @@ AUC = 0.5，跟随机猜测一样， ROC 纵轴 TPR 越大， 横轴 FPR 越小 
 > 
 > 根据计算公式可以推知，在 testing set 出现 **`imbalance 时 ROC曲线 能保持不变`**，而 PR 则会出现大变化。
 
-## 8. multi-class classification 
 
-如果非要用一个综合考量的 metric 的话，
+## 8. Regression model metric
 
-> 1. macro-average（宏平均）- 分布计算每个类别的F1，然后做平均（各类别F1的权重相同）
-> 2. micro-average（微平均）- 通过先计算总体的TP，FN和FP的数量，再计算F1
->  
-> macro-average（宏平均） 会比 micro-average（微平均）好一些哦，因为 macro 会受 minority class 影响更大，也就是说更能体现在 small class 上的 performance.
-> 
-> [sklearn中 F1-micro 与 F1-macro 区别和计算原理](https://www.cnblogs.com/techengin/p/8962024.html)
+### 8.1 MSE
 
-precision & recall
+MSE （Mean Squared Error）称为均方误差，，又被称为 L2范数损失:
 
-> precision 是相对你自己的模型预测而言
-> recall 是相对真实的答案而言
+$$
+MSE=\frac{1}{n}\sum_{i=1}^n{(\widehat{y\_i} - y\_i)^2}
+$$
+
+### 8.2 RMSE
+
+均方根误差(Root Mean Squared Error, RMSE)，定义如下：
+
+### 8.3 RMSLE
+
+均方根对数误差(Root Mean Squared Logarithmic Error, RMSLE)，定义如下
+
+### 8.4 MAE
+
+### 8.5 MAPE
+
+## 9. 其他评价指标
+
+- 计算速度：模型训练和预测需要的时间；
+- 鲁棒性：处理缺失值和异常值的能力；
+- 可拓展性：处理大数据集的能力；
+- 可解释性：模型预测标准的可理解性，比如决策树产生的规则就很容易理解，而神经网络被称为黑盒子的原因就是它的大量参数并不好理解。
+
 
 ## Reference 
 
