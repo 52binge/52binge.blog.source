@@ -34,8 +34,9 @@ tags: Metric
 > 
 > 应该从训练样本中尽可能学出适用于所有 **潜在样本的“普遍规律”**，这样才能在遇到新样本时做出正确的判别。因为，泛化误差无法测量，因此，通常我们会将 **Test error 近似等同于 Generalization error**。
 
+## 1. Classification Metric
 
-## 1. Accuracy
+### 1.1 Accuracy
 
 准确率：指的是分类正确的样本数量占样本总数的比例，定义如下：
 
@@ -55,7 +56,7 @@ $$
 Error = \frac{n\_{error}}{n\_{total}}
 $$
 
-## 2. Precision
+### 1.2 Precision
 
 precision 查准率 (80% = 你一共预测了100个正例，80个是对的正例)
 
@@ -63,13 +64,13 @@ precision 查准率 (80% = 你一共预测了100个正例，80个是对的正例
 
 > Precision = TP/(TP+FP)
 
-## 3. Recall
+### 1.3 Recall
 
 recall (样本中的正例有多少被预测正确 TPR = TP/(TP+FN))
 
 <img src="/images/ml/metric/metric-5.jpg" width="800" alt=""/>
 
-## 4. F1-score
+### 1.4 F1-score
 
 F1-score （precision 和 recall 的 metric）
 
@@ -91,7 +92,7 @@ precision & recall
 > precision 是相对你自己的模型预测而言
 > recall 是相对真实的答案而言
 
-## 5. P-R curve
+### 1.5 P-R curve
 
 P-R（precision-recall）PRC
 
@@ -103,7 +104,7 @@ P-R（precision-recall）PRC
 >
 > 遍历 0 到 1 之间所有的阈值, 得到了这条曲线
 
-## 6. ROC
+### 1.6 ROC
 
 **ROC curve** （TPR 纵轴，FPR 横轴，TP（真正率）和 FP（假正率），设一个阈值）
 
@@ -125,7 +126,7 @@ P-R（precision-recall）PRC
 > - [精确率、召回率、F1 值、ROC、AUC 各自的优缺点是什么？](https://www.zhihu.com/question/30643044)
 > - [机器学习之类别不平衡问题 (2) —— ROC和PR曲线](https://zhuanlan.zhihu.com/p/34655990)
 
-## 7. AUC  
+### 1.7 AUC  
 
 AUC = 0.5，跟随机猜测一样， ROC 纵轴 TPR 越大， 横轴 FPR 越小 模型越好
 
@@ -138,9 +139,9 @@ AUC = 0.5，跟随机猜测一样， ROC 纵轴 TPR 越大， 横轴 FPR 越小 
 > 根据计算公式可以推知，在 testing set 出现 **`imbalance 时 ROC曲线 能保持不变`**，而 PR 则会出现大变化。
 
 
-## 8. Regression model metric
+## 2 Regression Metric
 
-### 8.1 MSE
+### 2.1 MSE
 
 MSE （Mean Squared Error）称为均方误差，，又被称为 L2范数损失:
 
@@ -148,19 +149,41 @@ $$
 MSE=\frac{1}{n}\sum_{i=1}^n{(\widehat{y\_i} - y\_i)^2}
 $$
 
-### 8.2 RMSE
+### 2.2 RMSE
 
 均方根误差(Root Mean Squared Error, RMSE)，定义如下：
 
-### 8.3 RMSLE
+$$
+RMSE=\sqrt{MSE}
+$$
 
-均方根对数误差(Root Mean Squared Logarithmic Error, RMSLE)，定义如下
+### 2.3 MAE
 
-### 8.4 MAE
+$$
+MAE = \frac{1}{n}\sum\_{i=1}^n|f\_i-y\_i|
+$$
 
-### 8.5 MAPE
+缺点：因为它使用的是平均误差，而平均误差对异常点较敏感，如果回归器对某个点的回归值很不合理，那么它的误差则比较大，从而会对RMSE的值有较大影响，即平均值是非鲁棒的。
 
-## 9. 其他评价指标
+### 2.4 MAPE
+
+全称是 Mean Absolute Percentage Error（WikiPedia）, 也叫 mean absolute percentage deviation (MAPD)，在统计领域是一个预测准确性的衡量指标。 
+
+$$
+MAPE=\frac{100}{n}\sum\_{t=1}^{n}|\frac{y\_i-f\_i}{y\_i}|
+$$
+
+## 3. 余弦距离
+
+## 4. A/B 测试的陷阱
+
+## 5. 模型评估方法
+
+## 6. 超参数调优
+
+## 7. 过拟合/欠拟合
+
+## 8. 其他评价指标
 
 - 计算速度：模型训练和预测需要的时间；
 - 鲁棒性：处理缺失值和异常值的能力；
