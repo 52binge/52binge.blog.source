@@ -4,10 +4,13 @@ date: 2018-01-29 16:20:48
 ---
 
 
-
 ## Open Language
 
 learn what you love. love what you learn.
+
+- [星巴克新品的英语名也太好听了吧！Seasonal specials](https://mp.weixin.qq.com/s?src=11&timestamp=1559716053&ver=1649&signature=pCUC1l02hbltFqD9TxlGrlGQ7vhyQI799AWExSnJfUabEL4VkN79OoeSzG7tu*RZwIXhkAbRvlL0QdMwCYs6vzzuyXgqkHd3jHZnaGpe9tgBWa*ynUwKTFpICVhj-Djo&new=1)
+
+- [再也不能在朋友圈打卡了，但打卡的英语你必须知道！I clock in everyday.](https://mp.weixin.qq.com/s?src=11&timestamp=1559716449&ver=1649&signature=pCUC1l02hbltFqD9TxlGrlGQ7vhyQI799AWExSnJfUbWxN1TheXvK4sIjyfnqbtMClRfgx79mxGvN58vt8yGEMTEG8DDFdRIBSJptHx15xbGFPzPYa4*aanremmi58G4&new=1)
 
 - [你不得不学的减肥英语！ Go on a diet ](https://mp.weixin.qq.com/s/05E0qBlaXUpb6q6f1qGU3A)
 
