@@ -66,9 +66,7 @@ recall (样本中的正例有多少被预测正确 TPR = TP/(TP+FN))
 
 ### 1.4 F1-score
 
-F1-score （precision 和 recall 的 metric）
-
-> 2\*precision\*recall / (precision + recall)
+<img src="/images/ml/metric/metric-16.jpg" width="280" alt=""/>
 
 **multi-class classification**
 
@@ -88,15 +86,13 @@ precision & recall
 
 ### 1.5 P-R curve
 
-P-R（precision-recall）PRC
+P-R曲线的横轴是召回率，纵轴是精确率。对于一个排序模型来说，其P-R曲线上的一个点代表着，在某一阈值下，模型将大于该阈值的结果判定为正样本， 小于该阈值的结果判定为负样本，此时返回结果对应的召回率和精确率。
 
-> 依靠 LR 举例:
+<img src="/images/ml/metric/metric-15.jpg" width="400" alt=""/>
+
+> 整条 P-R 曲线是通过将阈值从高到低移动而生成的。 实线：A model， 虚线：B model
 >
-> 这条曲线是根据什么变化的？为什么是这个形状的曲线？
->
-> 这个阈值是我们随便定义的，我们并不知道这个阈值是否符合我们的要求
->
-> 遍历 0 到 1 之间所有的阈值, 得到了这条曲线
+> 上面说的阈值从高到低原因：阈值高，精确率高，阈值低，召回率高
 
 ### 1.6 ROC
 
@@ -178,7 +174,45 @@ $$
 MAPE=\frac{100}{n}\sum\_{t=1}^{n}|\frac{y\_i-f\_i}{y\_i}|
 $$
 
-## 3. 余弦距离
+## 3. 余弦相似度 vs 欧式距离
+
+**余弦相似度 ：** 坐标系中两个向量，来计算两向量之间的夹角, 值域 [-1, 1]
+
+<img src="/images/ml/metric/metric-8.jpg" width="390" alt=""/>
+
+**余弦距离 ：**  值域 [0, 1]
+
+$$
+1 - cos
+$$
+
+**欧式距离 ：** 坐标系中两个点，来计算两点之间的距离；
+
+<img src="/images/ml/metric/metric-9.png" width="300" alt=""/>
+
+假设二维空间两个点：
+
+<img src="/images/ml/metric/metric-10.svg" width="200" alt=""/>
+
+然后归一化为单位向量：
+
+<img src="/images/ml/metric/metric-11.svg" width="400" alt=""/>
+
+余弦相似度就是：
+
+<img src="/images/ml/metric/metric-12.svg" width="400" alt=""/>
+
+欧式距离就是：
+
+<img src="/images/ml/metric/metric-13.svg" width="400" alt=""/>
+
+化简后就是：
+
+<img src="/images/ml/metric/metric-14.svg" width="200" alt=""/>
+
+很明显，是一个单调函数（图像类似于单位元的第一象限部分），也就意味着，两者在归一化为单位向量的时候计算相似度结果完全一样。只不过余弦相似度是值越大月相似，欧式距离是值越小越相似。
+
+> 知识点 ： 余弦相似度、余弦距离、欧式距离、距离的定义
 
 ## 4. A/B 测试的陷阱
 
@@ -210,7 +244,22 @@ Q2：在自助法的采样过程中，对n个样本进行n次自助抽样，当n
 
 ## 6. 超参数调优
 
+- 网格搜索
+- 随机搜索
+- 贝叶斯优化 (未研究)
+
 ## 7. 过拟合/欠拟合
+
+防止 overfiting 的 8 条
+
+> 1). get more data
+> 2). Data augmentation
+> 3). Regularization（权值衰减）. (L1 拉普拉斯先验, L2 高斯先验)
+> 4). Dropout (类似 RF bagging 作用，最后以投票的方式降低过拟合；)
+> 5). Choosing Right Network Structure
+> 6). Early stopping
+> 7). Model Ensumble
+> 8). Batch Normalization
 
 ## 8. 其他评价指标
 
