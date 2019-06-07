@@ -135,7 +135,6 @@ int bina(int *a, int len, int data) {
 
 [3.3]: https://www.jianshu.com/p/bd6a64d36916
 
-### 4. Tree
 
 > 1. 重建二叉树 ok Node\* f3(int\* pre, int\* ino, int len)       
 > 2. 树的子结构,遍历+判断, bool f5(Node\* root1, Node\* root2), bool son(Node\* p1, Node\* p2) 

@@ -88,60 +88,7 @@
 [2.2]: https://zhuanlan.zhihu.com/p/34655990
 [2.3]: https://zhuanlan.zhihu.com/p/41237940
 
-### 1.4 SVM 和 LR 的区别与联系？
-
-> 1). 对非线性表达上，LR 只能通过人工的特征组合来实现，而 SVM 可以很容易引入非线性核函数来实现非线性表达，当然也可以通过特征组合。
-> 
-> 2). LR 产出的是概率值，而SVM只能产出是正类还是负类，不能产出概率。LR 的损失函数是 log loss，而 SVM 使用的是 hinge loss。
-> 
-> 3). SVM 不直接依赖数据分布，而LR则依赖, SVM 主要关注的是“支持向量”，也就是和分类最相关的少数点，即关注局部关键信息；而 LR 是在全局进行优化的。这导致 SVM 天然比 LR 有**更好的泛化能力**，防止过拟合。
-> 
-> 4). 损失函数的优化方法不同，LR 是使用 GD 来求解 **对数似然函数** 的最优解；SVM 使用 (Sequnential Minimal Optimal) 顺序最小优化，来求解条件约束损失函数的对偶形式。
->
-> ---
->
-> 一般用线性核和高斯核，也就是Linear核与RBF核需要注意的是需要对 **数据归一化处理**.
->
-> 一般情况下RBF效果是不会差于Linear但是时间上RBF会耗费更多
-
-**Andrew Ng 的见解：**
-
-> 1. 如果Feature的数量很大，跟样本数量差不多，这时候选用LR或者是Linear Kernel的SVM
-> 2. 如果Feature的数量比较小，样本数量一般，不算大也不算小，选用SVM+Gaussian Kernel
-> 3. 如果Feature的数量比较小，而样本数量很多，需要手工添加一些feature变成第一种情况
-
-**如何量化 feature number 和 sample number：**
-
-> n 是feature的数量, m是样本数   
-
-> 1). feature number >> sample number，则使用LR算法或者不带核函数的SVM（线性分类）
->   &nbsp;&nbsp;&nbsp;&nbsp; feature number = 1W， sample number = 1K
->     
-> 2). **fn** 小， sample number **一般**1W，使用带有 **kernel函数** 的 SVM算法.  
->    
-> 3). **fn** 小， sample number **很大**5W+（n=1-1000，m=50000+）
-> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 增加更多的 feature 然后使用LR 算法或者 not have kernel 的 SVM
-
-### 1.5 ERM / SRM
-
-Supervised Learning Obj
-
-$$
-w^*=argmin_w\sum_iL(y_i,f(x_i;w))+\lambda\Omega(w)
-$$
-
-> 1. 第一项对应模型的训练损失函数 (Square Loss、Hinge loss、Exp loss、Log loss)
-> 2. 第二项对应模型的正则化项 （模型参数向量的范数）
-
-> 经验风险最小化 empirical risk minimization, 结构风险最小化 structural risk minimization
-
-李沐曾经说过：
- 
-> model是用离散特征还是连续特征，其实是“**海量离散特征+简单模型**” 同 “**少量连续特征+复杂模型**”的权衡。
-> 
-> 既可以离散化用线性模型，也可以用连续特征加深度学习。就看是喜欢折腾 **feature** 还是折腾 **model** 了。通常来说，前者容易，而且可以n个人一起并行做，有成功经验；后者目前看很赞，能走多远还须拭目以待。
-
-**1.6 Linear vs Nonlinear classifier**
+### 1.6 Linear vs Nonlinear classifier
 
 > 线性和非线性是针对，模型参数和输入特征来讲的；
 >
@@ -256,6 +203,8 @@ cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(labels = y, logit
 - [知乎_习翔宇](https://www.zhihu.com/people/xi-xiang-yu-20/posts)
 
 ### 2.1 word2vec vs NNLM
+
+- [百面 word2vec](https://zdkswd.github.io/2019/04/17/word2vec/#)
 
 word2vec 并不是一个模型， 而是一个 2013年 google 发表的工具. 
 
