@@ -1,5 +1,5 @@
 ---
-title: Empirical Risk Minimization and Structural Risk Minimization
+title: L1、L2 Regularization
 date: 2019-06-09 10:06:16
 categories: machine-learning
 tags: [L1-L2]

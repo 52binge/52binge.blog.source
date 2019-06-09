@@ -33,36 +33,67 @@ tags: acm
 > 18. [最短路Floyd](https://www.cnblogs.com/biyeymyhjob/archive/2012/07/31/2615833.html)
 > 19. quick_sort, while (双while + swap)
 
+### 1.0 八皇后的实现
+
+```cpp
+const int N = 105;
+int pos[N];
+int num = 8, cnt = 0;
+bool ok(int n) {
+    for(int i = 0; i < n; i++) {
+        if(pos[i] == pos[n]) return false;
+        if(abs(pos[n] - pos[i]) == n-i) return false;
+    }
+    return true;
+}
+void dfs(int n) {
+    if(n == num) {
+        cnt++;
+        return;
+    }
+    for(int i = 0; i < num; i++) {
+        pos[n] = i;
+        if(ok(n)) {
+            dfs(n+1);
+        }
+    }
+}
+int main() {
+    res = dfs(0);
+    cout << res << endl;
+    return 0;
+}
+```
 
 ### 1.1 二维数组中的查找
 
 ```cpp
 int a[][4] = {
-	{ 1, 2, 3, 4 },
-	{ 5, 6, 7, 8 },
-	{ 9, 10, 11, 12},
-	{ 13, 14, 15, 16},
-	{ 17, 18, 19, 20}
+    { 1, 2, 3, 4 },
+    { 5, 6, 7, 8 },
+    { 9, 10, 11, 12},
+    { 13, 14, 15, 16},
+    { 17, 18, 19, 20}
 };
 
 bool Find(int b[][4], int rows, int cols, int value) {
-	
-	int row = 0, col = cols - 1;
-	
-	while (b != NULL && row < rows && col >= 0) {
-		
-		if (b[row][col] == value) {
-			cout << "row: " << row << " col: " << col << end;
-			return true;
-		}
-		else if (b[row][col] > value) {
-			col--;
-		}
-		else {
-			row++;
-		}
-	}
-	return false;
+    
+    int row = 0, col = cols - 1;
+    
+    while (b != NULL && row < rows && col >= 0) {
+        
+        if (b[row][col] == value) {
+            cout << "row: " << row << " col: " << col << end;
+            return true;
+        }
+        else if (b[row][col] > value) {
+            col--;
+        }
+        else {
+            row++;
+        }
+    }
+    return false;
 }
 ```
 
@@ -70,8 +101,8 @@ bool Find(int b[][4], int rows, int cols, int value) {
 
 ```cpp
 char* replace(char* str, int len) {
-	
-	while(str[len] != '\0'){
+    
+    while(str[len] != '\0'){
     
         if(str[len] == ' '){
             konglen++;
@@ -80,7 +111,7 @@ char* replace(char* str, int len) {
         len++;
     }
 
-	return '\0';
+    return '\0';
 }
 ```
 
