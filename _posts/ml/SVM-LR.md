@@ -13,6 +13,8 @@ toc: true
 
 <!-- more -->
 
+## 1. LR vs SVM
+
 > 1). 对非线性表达上，LR 只能通过人工的特征组合来实现，而 SVM 可以很容易引入非线性核函数来实现非线性表达，当然也可以通过特征组合。
 > 
 > 2). LR 产出的是概率值，而SVM只能产出是正类还是负类，不能产出概率。LR 的损失函数是 log loss，而 SVM 使用的是 hinge loss。
@@ -27,7 +29,7 @@ toc: true
 >
 > 一般情况下RBF效果是不会差于Linear但是时间上RBF会耗费更多
 
-**Andrew Ng 的见解：**
+## 2. Andrew Ng
 
 > 1. 如果Feature的数量很大，跟样本数量差不多，这时候选用LR或者是Linear Kernel的SVM
 > 2. 如果Feature的数量比较小，样本数量一般，不算大也不算小，选用SVM+Gaussian Kernel
