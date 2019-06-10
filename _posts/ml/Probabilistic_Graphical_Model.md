@@ -79,3 +79,32 @@ $$
 <img src="/images/ml/pgm/pgm-03.png" width="120" />
 
 ## 3. Generative vs Discriminative
+
+### 3.1 Generative
+
+generative approach 由数据学习到联合概率分布 $P(X,Y)$，然后求出条件概率分布 $P(Y\mid X)$ 作为预测的模型：
+
+$$
+P(Y\mid X)=\frac{P(X,Y)}{P(X)}
+$$ 
+
+> 典型的生成式模型包括： Native Bayes、HMM、Bayes Net
+
+### 3.2 Discriminative
+
+discriminative approach 由数据直接学到决策函数 $f(X)$ 或条件概率分布 $P(Y\mid X)$ 作为预测的模型：
+
+$$
+f(X), P(Y\mid X)
+$$
+
+判别式模型关心的是对于给定的输入 $X$, 应该预测什么样的输出 $Y$, 判别模型就是判别数据输出量的模型。
+
+
+> 典型的判别式模型包括： LR、NN、SVM、CRF、CART
+
+
+## Reference
+
+- [产生式模型与判别式模型](https://xiaosheng.me/2017/04/09/article50/)
+- [迭代自己 概率图表示](http://www.iterate.site/2019/04/05/12-概率图表示/)
