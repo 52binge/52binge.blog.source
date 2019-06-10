@@ -1,5 +1,5 @@
 ---
-title: 点到平面的距离公式
+title: Point to Plane
 toc: true
 date: 2016-05-17 15:07:21
 categories: machine-learning

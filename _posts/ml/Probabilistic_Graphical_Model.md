@@ -100,9 +100,16 @@ $$
 
 判别式模型关心的是对于给定的输入 $X$, 应该预测什么样的输出 $Y$, 判别模型就是判别数据输出量的模型。
 
-
 > 典型的判别式模型包括： LR、NN、SVM、CRF、CART
 
+### 3.3 generative vs discriminative
+
+vs | generative approach | discriminative approach
+:----: | :----: | :----:
+定义 | 由数据学习联合概率分布$P(X,Y)$ 然后,<br>求出在$X$情况下，$P(Y)$作为预测的模型 | 决策函数$f(x)$或条件概率分布$P(X)$作为预测模型
+特点 | 1. 可还原出$P(X,Y)$；<br> 2. 学习收敛速度更快；<br> 3. 存在隐变量时仍可用 | 1. 直接面对预测，准确率更高些; <br> 2. 便于数据抽象，特征定义使用;
+模型 | native bayes、hidden markov	| Logistic Regression、SVM、Gradient Boosting、CRF.. 
+Note | 给定输入 $X$ 产生输出 $Y$ 的生成关系 | 对给定的输入 $X$，应预测什么样的输出 $Y$
 
 ## Reference
 

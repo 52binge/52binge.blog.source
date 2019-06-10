@@ -1,5 +1,5 @@
 ---
-title: 信息的度量与作用
+title: Information Entropy
 date: 2019-06-07 16:06:16
 categories: machine-learning
 tags: [entropy]
