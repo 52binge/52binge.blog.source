@@ -13,26 +13,34 @@ toc: true
 
 <!-- more -->
 
+关于 SVM 的详细原理与推导过程，详见： [Support Vecor Machine (六部曲)](/2018/06/20/ml/svm-hanxiaoyang/)
+
+其实我认为 SVM 的使用率已经明显在下降趋势了，主要原因是随着神经网络的兴起之后，所以我不建议一定要花非常多的经历去学习 SVM 的原理和推导了，可以简单了解下。 主要还是了解下适用范围和场景等就可以了。
+
 ## 1. LR vs SVM
 
-1. Linear SVM 和 LR 都是线性分类器
-2. Linear SVM 不直接依赖数据分布，分类平面不受一部分样本点影响；LR则受所有数据点的影响，如果数据不同类别strongly unbalance一般需要先对数据做balancing。
-3. Linear SVM 依赖数据表达的距离测度，所以需要对数据先做normalization；LR不受其影响
+要说有什么本质区别，那就是 loss function 不同，两者对数据和参数的敏感程度不同
 
-
-> 1). 对非线性表达上，LR 只能通过人工的特征组合来实现，而 SVM 可以很容易引入非线性核函数来实现非线性表达，当然也可以通过特征组合。
+> (1). 对非线性表达上，LR 只能通过人工的特征组合来实现，而 SVM 引入核函数来实现非线性表达。
 > 
-> 2). LR 产出的是概率值，而SVM只能产出是正类还是负类，不能产出概率。LR 的损失函数是 log loss，而 SVM 使用的是 hinge loss。
+> (2). LR 产出的是概率值，而 SVM 只能产出是正类还是负类，不能产出概率。
 > 
-> 3). SVM 不直接依赖数据分布，而LR则依赖, SVM 主要关注的是“支持向量”，也就是和分类最相关的少数点，即关注局部关键信息；而 LR 是在全局进行优化的。这导致 SVM 天然比 LR 有**更好的泛化能力**，防止过拟合。
+> (3). Linear SVM 依赖数据表达的距离测度，所以需要对数据先做 normalization；LR不受其影响.
 > 
-> 4). 损失函数的优化方法不同，LR 是使用 GD 来求解 **对数似然函数** 的最优解；SVM 使用 (Sequnential Minimal Optimal) 顺序最小优化，来求解条件约束损失函数的对偶形式。
+> (4). SVM 不直接依赖数据分布，而LR则依赖, SVM 主要关注的是“支持向量”，也就是和分类最相关的少数点，即关注局部关键信息；而 LR 是在全局进行优化的。这导致 SVM 天然比 LR 有**更好的泛化能力**，防止过拟合。 LR则受所有数据点的影响，如果数据不同类别 strongly unbalance 一般需要先对数据做 balancing。
+> 
+> (5). 损失函数的优化方法不同，LR 是使用 GD 来求解 **对数似然函数** 的最优解；SVM 使用 (Sequnential Minimal Optimal) 顺序最小优化，来求解条件约束损失函数的对偶形式。
 >
 > ---
 >
 > 一般用线性核和高斯核，也就是Linear核与RBF核需要注意的是需要对 **数据归一化处理**.
 >
 > 一般情况下RBF效果是不会差于Linear但是时间上RBF会耗费更多
+
+扩展点：
+
+> **注**：不带正则化的LR，其做 normalization 的目的是为了方便选择优化过程的起始值，不代表最后的解的 performance 会跟 normalization 相关，而其线性约束是可以被放缩的（等式两边可同时乘以一个系数），所以做 normalization 只是为了求解优化模型过程中更容易选择初始值
+
 
 ## 2. Andrew Ng
 
@@ -52,26 +60,6 @@ toc: true
 > 3). **fn** 小， sample number **很大**5W+（n=1-1000，m=50000+）
 > &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 增加更多的 feature 然后使用LR 算法或者 not have kernel 的 SVM
 
-## 3. SVM 和 LR 的比较
-
-两种方法都是常见的分类算法，从目标函数来看，区别在于逻辑回归采用的是logistical loss，svm采用的是hinge loss。这两个损失函数的目的都是**增加对分类影响较大的数据点的权重，减少与分类关系较小的数据点的权重**。
-
-SVM 的处理方法是只考虑support vectors，也就是和分类最相关的少数点，去学习分类器。而LR通过非线性映射，大大减小了离分类平面较远的点的权重，相对提升了与分类最相关的数据点的权重。两者的根本目的都是一样的。此外，根据需要，两个方法都可以增加不同的正则化项，如l1,l2等等。所以在很多实验中，两种算法的结果是很接近的。
-
-LR 相对来说模型更简单，好理解，实现起来，特别是大规模线性分类时比较方便。而SVM的理解和优化相对来说复杂一些。但是SVM的理论基础更加牢固，有一套结构化风险最小化的理论基础，虽然一般使用的人不太会去关注。还有很重要的一点，SVM转化为对偶问题后，分类只需要计算与少数几个支持向量的距离，这个在进行复杂核函数计算时优势很明显，能够大大简化模型和计算量。
-
-**LR & SVM 不同点:**
-
-> 要说有什么本质区别，那就是两个模型对数据和参数的敏感程度不同
-
-> 但是由于他们或多或少都是线性分类器，所以实际上对低维度数据overfitting的能力都比较有限，相比之下对高维度数据，LR的表现会更加稳定，为什么呢？
-
-> 因为Linear SVM在计算margin有多“宽”的时候是依赖数据表达上的距离测度的，换句话说如果这个测度不好（badly scaled，这种情况在高维数据尤为显著），所求得的所谓Large margin就没有意义了，这个问题即使换用kernel trick（比如用Gaussian kernel）也无法完全避免。
-
-> 所以使用**Linear SVM**都需要先对数据做**normalization**，而求解LR（without regularization）时则不需要或者结果不敏感。
-
-> 注：不带正则化的LR，其做normalization的目的是为了方便选择优化过程的起始值，不代表最后的解的performance会跟normalization相关，而其线性约束是可以被放缩的（等式两边可同时乘以一个系数），所以做normalization只是为了求解优化模型过程中更容易选择初始值。
-
 ## Reference
 
 - [LR 与 SVM的异同][1]
@@ -82,6 +70,7 @@ LR 相对来说模型更简单，好理解，实现起来，特别是大规模�
 - [懒死骆驼 - 口述模型整理][6]
 - [支持向量机(SVM)硬核入门-基础篇](https://zhuanlan.zhihu.com/p/53944720)
 - [scikit-learn 逻辑回归类库使用小结](https://www.cnblogs.com/pinard/p/6035872.html)
+- [LR 正负样本不均衡问题][7]
 
 [1]: https://www.cnblogs.com/zhizhan/p/5038747.html
 [2]: http://izhaoyi.top/2017/06/02/Note-StatisticalML/
@@ -89,6 +78,4 @@ LR 相对来说模型更简单，好理解，实现起来，特别是大规模�
 [4]: https://www.zhihu.com/question/26768865/answer/139613835
 [5]: http://www.cnblogs.com/peizhe123/p/5674730.html
 [6]: http://izhaoyi.top/2017/09/03/model-pre/
-
-
-
+[7]: https://blog.csdn.net/Dinosoft/article/details/50492309
