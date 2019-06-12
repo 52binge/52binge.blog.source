@@ -103,25 +103,6 @@
 > 
 > SVM 两种都有（看线性核还是高斯核）
 
-**1.13 激活函数的对比？**
-
-> 1. Sigmoid 和 Tanh 为什么会导致 Vanishing/Exploding gradients ? 
-> 2. Tanh 值域 (-1,1) Sigmoid 值域 (0,1)
-> 3. ReLU 的优点，和局限性分别是什么? 
-> 4. [谈谈激活函数 Sigmoid,Tanh,ReLu,softplus,softmax](https://zhuanlan.zhihu.com/p/48776056)
-
-**1.14 sigmoid 用作激活函数时，分类为什么要用 crossentropy loss，而不用均方损失？**
-
-> 5. softmax函数可以看做是Sigmoid函数的一般化，可以进行多分类。
-> 6. 非常适合用于`分类`问题： `Cross Entropy` 交叉熵损失函数
-> 7. Square error loss function 与 Cross Entropy Error Function 分别适合什么景？
-
-**1.15 InfoEntropy vs Crossentropy**
-
-> InfoEntropy，代表的是随机变量或整个系统的不确定性，熵越大，随机变量或系统的不确定性就越大。
-
-> Crossentropy，用来衡量在给定的真实分布下，使用非真实分布所指定的策略消除系统的不确定性所需要付出的努力值。
-
 ## 2. NLP高频问题
 
 [NLP 神经网络发展历史中最重要的 8 个里程碑](https://www.infoq.cn/article/66vicQt*GTIFy33B4mu9)

@@ -177,7 +177,7 @@ dropout 也是一种正则化的手段, 在训练时以 1-keep_prob 随机地”
 
 Vanishing/Exploding gradients 指的是随着前向传播不断地进行, 激活单元的值会逐层指数级地增加或减小, 从而导致梯度无限增大或者趋近于零, 这样会严重影响神经网络的训练. 如下图.
 
-<img src="/images/deeplearning/C2W1-16_1.png" width="750" />
+<img src="/images/deeplearning/C2W1-16_1.png" width="650" />
 
 为了直观理解梯度消失和梯度爆炸，我们假设所有激活函数为线性激活函数，即 $g(z)=z$。 并假设前 L−1 个权重矩阵都相等, 即为 $W\_{linear}$，所以可以得到 $y\_{hat}=W\_{linear}^{L-1}W\_{L}X$
 
