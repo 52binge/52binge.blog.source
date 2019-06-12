@@ -1,7 +1,7 @@
 ---
 title: Information Extraction
 toc: true
-date: 2019-07-01 11:00:21
+date: 2019-06-01 11:00:21
 categories: nlp
 tags: DGCNN
 ---

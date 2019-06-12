@@ -6,7 +6,7 @@ tags: [MLP]
 toc: true
 ---
 
-<img src="/images/nn/ANN-01.png" width="500" />
+<img src="/images/deeplearning/ANN-01.png" width="500" />
 
 <!-- more -->
 

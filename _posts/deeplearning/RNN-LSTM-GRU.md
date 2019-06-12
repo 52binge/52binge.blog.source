@@ -6,7 +6,7 @@ tags: [RNN]
 toc: true
 ---
 
-<img src="/images/nn/RNN-01.png" width="500" />
+<img src="/images/deeplearning/RNN-01.png" width="500" />
 
 <!-- more -->
 
