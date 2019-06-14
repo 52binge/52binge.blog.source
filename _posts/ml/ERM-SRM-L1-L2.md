@@ -75,8 +75,7 @@ $$
 
 - $L^1$ 范数：$\|x\|\_{1}$ 为 $x$ 向量各个元素绝对值之和，也叫“稀疏规则算子”（Lasso Regularization）。
 
-- $L^2$ 范数：$\|x\|\_{2}$ 为 $x$ 向量各个元素平方和的 $1/2$ 次方，$L^2$
- 范数又称 Euclidean、 Frobenius 范数。
+- $L^2$ 范数：$\|x\|\_{2}$ 为 $x$ 向量各个元素平方和的 $1/2$ 次方，$L^2$ 范数又称 Euclidean、 Frobenius 范数。
 
 ## 3. L1 Regularization
 
