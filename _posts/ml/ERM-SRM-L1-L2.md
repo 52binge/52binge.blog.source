@@ -61,9 +61,30 @@ $$
 
 [zhihu1]: https://zhuanlan.zhihu.com/p/27424282
 
-## 2. L1 Regularization
+## 2. Norm
+
+在机器学习中，我们经常使用称为范数(norm)的函数来衡量向量大小. 
+
+$L^p$  范数定义如下：
+
+$$
+\|x\|\_{p}=\left(\sum\_{i}\left|x\_{i}\right|^{p}\right)^{\frac{1}{p}}
+$$
+
+- $L^0$ 范数：$\|x\|\_{0}$ 为 $x$ 向量各个非零元素的个数。
+
+- $L^1$ 范数：$\|x\|\_{1}$ 为 $x$ 向量各个元素绝对值之和，也叫“稀疏规则算子”（Lasso Regularization）。
+
+- $L^2$ 范数：$\|x\|\_{2}$ 为 $x$ 向量各个元素平方和的 $1/2$ 次方，$L^2$
+ 范数又称 Euclidean、 Frobenius 范数。
+
+## 3. L1 Regularization
 
 L1 可以实现稀疏，为什么要稀疏？
+
+$$
+\|\boldsymbol{x}\|\_{1}=\sum\_{i}\left|x\_{i}\right|
+$$
 
 让我们的参数稀疏有什么好处呢？这里扯两点：
 
@@ -81,13 +102,13 @@ L1 可以实现稀疏，为什么要稀疏？
 > 
 > 患不患这种病只和这5个因素有关，那医生就好分析多了。但如果1000个 $w\_i$ 都非0，医生面对这1000种因素，累觉不爱.
 
-## 3. L2 Regularization
+## 4. L2 Regularization
 
-### 3.1 L2 能防止过拟合？
+### 4.1 L2 能防止过拟合？
 
 通过 L2范数 的规则项最小来使参数值都较小、甚至趋于0(但不会为0)，模型参数值越小则对应的特征对于模型的影响就比较小，这样相当于对这部分无关特征做了一个惩罚，即使他们的值波动比较大，受限于参数值很小，也不会对模型的输出结果造成太大影响，也就使得模型不会习得这部分特征而发生过拟合
 
-### 3.2 L2 范数的好处
+### 4.2 L2 范数的好处
 
 - 学习理论的角度：可以防止过拟合，提升模型的泛化能力
 - 优化、数值计算的角度：L2范数能够让我们的优化求解变得稳定和快速.
@@ -99,6 +120,7 @@ L1 可以实现稀疏，为什么要稀疏？
 - [机器学习算法系列（28）：L1、L2正则化][3]
 - [L1 / L2 正规化](https://morvanzhou.github.io/tutorials/machine-learning/ML-intro/3-09-l1l2regularization/)
 - [什么是过拟合 (Overfitting)](https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/5-02-A-overfitting/)
+- [迭代自己: 范数](http://www.iterate.site/post/01-数字的张力/02-机器学习/01-机器学习理论/01-数学基础/02-线性代数/25-范数/)
 
 [1]: http://izhaoyi.top/2017/09/15/l1-l2/
 [2]: https://blog.csdn.net/zouxy09/article/details/24971995

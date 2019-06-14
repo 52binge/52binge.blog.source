@@ -14,9 +14,9 @@ toc: true
 
 Convolutional Neural Networks，CNN 也是一种前馈神经网络，其特点是**每层的神经元节点只响应前一层局部区域范围内的神经元**（全连接网络中每个神经元节点响应前一层的全部节点）。
 
-一个深度卷积神经网络模型通常由若干卷积层叠加若干全连接层组成，中间也包含各种非线性操作以及池化操作。
+一个 DCNN 通常由若干 Convolutional-Layer 叠加若干 Fully-Connected 组成，中间也包含各种 Non-Linear 操作以及 Pooling 操作。
 
-卷积操作的**`参数共享特性`**使得需要优化的参数数目大大缩减，提高了模型的训练效率以及可扩展性。
+Convolution operation 的**`参数共享特性`**使得需要优化的参数数目大大缩减，提高了模型的训练效率以及可扩展性。
 
 <img src="/images/deeplearning/CNN-04.png" width="700" alt="LeCun Yann 在 1998 年提出" />
 
@@ -40,8 +40,8 @@ Convolutional Neural Networks，CNN 也是一种前馈神经网络，其特点�
 
 ### 1.2 Parameter Sharing
 
-> 1. 全连接网络中，计算每层的输出时，权值参数矩阵中的每个元素只作用于某个输入元素一次；
-> 2. 卷积神经网络中，卷积核中的每一个元素将作用于每一次局部输入的特定位置上。
+> 1. Fully-Connected Networks，计算每层的输出时，权值参数矩阵中的每个元素只作用于某个输入元素一次；
+> 2. CNN，卷积核中的每一个元素将作用于每一次局部输入的特定位置上。
 
 根据参数共享的思想，我们只需要学习一组参数集合，而不需要针对每个位置的每个参数都进行优化，从而大大降低了模型的存储需求。
 
@@ -54,9 +54,9 @@ Convolutional Neural Networks，CNN 也是一种前馈神经网络，其特点�
 
  <img src="/images/deeplearning/CNN-08.png" width="600" />
 
-池化操作的本质是降采样.
+pooling 的本质是降采样.
 
-池化操作除了能显著降低参数量外，还能够保持对平移、伸缩、旋转操作的不变性。
+pooling 除了能显著降低参数量外，还能够保持对平移、伸缩、旋转操作的不变性。
 
 ## 3. CNN 文本分类任务
 
