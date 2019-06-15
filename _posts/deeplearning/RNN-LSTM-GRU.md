@@ -233,7 +233,18 @@ $$
 
 ## 5. LSTM - Long Short Term
 
-Long Short Term Memory， LSTM 是 RNN 最知名的扩展. `Gate`，`Activation`，`tanh`，`Sigmoid`.
+介绍完 GRU 后，再介绍 LSTM 会更加容易理解。下图是二者公式对比：
+
+GRU 只有两个门，而 LSTM 有三个门，分别是更新门 $\Gamma\_u$ (是否需要更新为 $\tilde{c}^{<{t}>}$，遗忘门 $\Gamma\_f$ (是否需要丢弃上一个时刻的值)，输出门 $\Gamma\_o$ (是否需要输出本时刻的值)
+
+<img src="/images/deeplearning/C5W1-42_1.png" width="650" />
+
+<img src="/images/deeplearning/C5W1-43_1.png" width="650" />
+
+下图是 LSTM 的结构示意图：
+
+<img src="/images/deeplearning/C5W1-44_1.png" width="700" />
+
 
 <img src="/images/deeplearning/RNN-03.png" width="700" alt="1997年, Sepp Hochreiter 和 Jürgen Schmidhuber" />
 
