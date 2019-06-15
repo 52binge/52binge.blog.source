@@ -1,12 +1,12 @@
 ---
 title: BERT 完全指南
 toc: true
-date: 2019-06-30 11:00:21
+date: 2019-06-20 11:00:21
 categories: nlp
 tags: BERT
 ---
 
-<a href="/2019/06/30/nlp/BERT/" target="_self"><img src="/images/nlp/Bert-Ernie-logo.jpg" width="550" alt="Bert-Ernie" />
+<a href="/2019/06/20/nlp/BERT/" target="_self"><img src="/images/nlp/Bert-Ernie-logo.jpg" width="550" alt="Bert-Ernie" />
 </a>
 
 <!--<a href="/2019/06/30/nlp/BERT/" target="_self" style="display:block; margin:0 auto; background:url('/images/nlp/Bert-Ernie-logo.jpg') no-repeat 0 0 / contain; height:323px; width:550px;"></a>-->
