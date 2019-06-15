@@ -312,23 +312,6 @@ GPT和bert都采用Transformer，Transformer是encoder-decoder结构，GPT的单
  
 > Transformer作为新模型，并不是完美无缺的。它也有明显的缺点：首先，对于长输入的任务，典型的比如篇章级别的任务（例如文本摘要），因为任务的输入太长，Transformer会有巨大的计算复杂度，导致速度会急剧变慢。
 
-### 2.6 RNN vs LSTM vs GRU
-
-- GRU 和 LSTM 的性能在很多任务上不分伯仲。
-
-- GRU 参数更少因此更容易收敛，但是数据集很大的情况下，LSTM表达性能更好。
-
-> 从结构上来说：
->
-> - GRU 只有两个门（update和reset），LSTM 有三个门（forget，input，output）
-> - GRU 直接将 hidden state 传给下一个单元，而 LSTM 则用 memory cell 把hidden state 包装起来。
-
-### 2.7 RNN vs CNN
-
-> 1. RNN 优点： 最大程度捕捉上下文信息，这可能有利于捕获长文本的语义。
-> 2. RNN 缺点： 是一个有偏倚的模型，在这个模型中，后面的单词比先前的单词更具优势。因此，当它被用于捕获整个文档的语义时，它可能会降低效率，因为关键组件可能出现在文档中的任何地方，而不是最后。
-> 3. CNN 优点： 提取数据中的局部位置的特征，然后再拼接池化层。 CNN可以更好地捕捉文本的语义。是O(n)
-> 4. CNN 优点： 一个可以自动判断哪些特性在文本分类中扮演关键角色的池化层，以捕获文本中的关键组件。
 
 ### 2.8 Attention
 
