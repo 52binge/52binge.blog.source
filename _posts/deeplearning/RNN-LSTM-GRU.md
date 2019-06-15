@@ -233,9 +233,11 @@ $$
 
 ## 5. LSTM - Long Short Term
 
-介绍完 GRU 后，再介绍 LSTM 会更加容易理解。下图是二者公式对比：
+介绍完 GRU 后，再介绍 LSTM 会更加容易理解。
 
-GRU 只有两个门，而 LSTM 有三个门，分别是更新门 $\Gamma\_u$ (是否需要更新为 $\tilde{c}^{<{t}>}$，遗忘门 $\Gamma\_f$ (是否需要丢弃上一个时刻的值)，输出门 $\Gamma\_o$ (是否需要输出本时刻的值)
+### 5.1 GRU and LSTM
+
+GRU 只有两个门，而 LSTM 有三个门，分别是更新门 $\Gamma\_u$ (是否需要更新为 $\tilde{c}^{<{t}>}$)，遗忘门 $\Gamma\_f$ (是否需要丢弃上一个时刻的值)，输出门 $\Gamma\_o$ (是否需要输出本时刻的值)
 
 <img src="/images/deeplearning/C5W1-42_1.png" width="650" />
 
@@ -245,19 +247,37 @@ GRU 只有两个门，而 LSTM 有三个门，分别是更新门 $\Gamma\_u$ (�
 
 <img src="/images/deeplearning/C5W1-44_1.png" width="700" />
 
+### 5.2 LSTM Structure
 
 <img src="/images/deeplearning/RNN-03.png" width="700" alt="1997年, Sepp Hochreiter 和 Jürgen Schmidhuber" />
 
-LSTM 仍是 $x\_t$ 和 $h\_{t−1}$ 来计算 $h\_t$，只不过对内部的结构进行了更加精心的设计，加入 **3 Gate** 和 **1 memory\_cell**.
+LSTM 仍是 $x\_t$ 和 $h\_{t−1}$ 来计算 $h\_t$，但对内部的结构进行了更加精心的设计，加入 **3 Gate** 和 **1 memory\_cell**.
 
-> - input gate **$i\_t$** ，
-> - forget gate **$f\_t$** ，  ($\Gamma_f$ 是否需要丢弃上一个时刻的值)
-> - output gate **$o\_t$** ，  ($\Gamma_o$ 是否需要输出本时刻的值)
-> - memory cell $c\_t, $ 
+> - 输入门 $\Gamma\_u$： 控制 **当前计算的新状态** 以多大程度更新到记忆单元中 （也叫更新门）;
+>
+> - 遗忘门 $\Gamma\_f$： 控制 **前一步记忆单元** 中的信息有多大程度被遗忘掉;
+>
+> - 输出门 $\Gamma\_o$： 控制当前的输出有多大程度上取决于 **当前的记忆单元**;
+>
+> - 记忆单元 memory cell $c\_t$.
+> $$ h\_{t}=o\_{t} \odot \operatorname{Tanh}\left(c\_{t}\right) $$ 
 
-> 总而言之，LSTM 经历了 20 年的发展，其核心思想一脉相承，但各个组件都发生了很多演化。
-> 
-> 结合问题选择最佳的 LSTM 模块，灵活地思考，并知其所以然，而不是死背各种网络的结构和公式。
+### 5.3 Activation function
+
+在 LSTM 中, 关于 activation function 的选取：
+
+- $\Gamma\_f$、$\Gamma\_i{u}$ 和 $\Gamma\_o$ 使用 Sigmoid 函数作为激活函数；
+- 在生成候选记忆时，使用 Tanh 作为激活函数。
+
+> **注**： 这两个激活函数都是饱和的，也就是说在输入达到一定值的情况下，输出就不会发生明显变化了。如果是用非饱和的激活函数，例如 ReLU，那么将难以实现门控的效果。
+
+使用这个激活函数的原因如下：
+
+> (1). Sigmoid 输出在 0～1 之间。且当输入较大或较小时，其输出会非常接近1或0，从而保证该门开或关。
+>
+> (2). 在生成候选记忆时，使用 Tanh 函数，是因为其输出在 −1~1 之间，这与大多数场景下特征分布是 0 中心的吻合。此外，Tanh 函数在输入为 0 附近相比 Sigmoid 函数有更大的梯度，通常使模型收敛更快。
+
+总而言之，LSTM 经历了 20 年的发展，其核心思想一脉相承，但各个组件都发生了很多演化。
 
 **GRU vs LSTM**
 
@@ -311,3 +331,4 @@ LSTM 仍是 $x\_t$ 和 $h\_{t−1}$ 来计算 $h\_t$，只不过对内部的结�
 
 - [《百面机器学习》](https://book.douban.com/subject/30285146/)
 - [RNN and CNN](http://www.iterate.site/2019/04/14/01-循环神经网络和卷积神经网络/)
+- [LSTM 长短期记忆网络](http://www.iterate.site/2019/04/19/04-长短期记忆网络/)
