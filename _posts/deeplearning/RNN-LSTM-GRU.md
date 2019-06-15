@@ -91,7 +91,7 @@ $$
 > - UNknown, 之前的笔记已介绍过
 >  <img src="/images/deeplearning/C5W1-31_1.png" width="600" />
 
-### 2.2 构建语言模型示例
+### 2.2 Language Model Example
 
 假设要对这句话进行建模：**Cats average 15 hours of sleep a day. <EOS>**
 
@@ -159,9 +159,79 @@ if (gradient > max) {
 
 > 将在接下来的两个章节介绍两种方法来解决 **梯度过小** 问题，目标是当一些重要的单词离得很远的时候，比如例子中的 “**cat**” 和 “**was**”，能让语言模型准确的输出单数人称过去时的 “**was**”，而不是 “**is**” 或者 “**were**”. 两个方法都将引入“记忆”的概念，也就是为 RNN 赋予一个记忆的功能.
 
-## 4. GRU
+## 4. GRU - Gated Recurrent Unit
 
-## 5. LSTM
+GRU 是一种用来解决梯度值过小的方法，首先来看下在一个时刻下的 RNN单元，激活函数为 tanh
+
+### 4.1 回顾 RNN
+
+输入数据为 $a^{<{t-1}>}$ 和 $x^{<{t}>}$, 与参数 $W\_a$ 进行线性运算后再使用 $tanh$ 函数 转化得到 $a^{<{t}>}$. 
+
+当然 $a^{<{t}>}$, 再使用 softmax 函数处理可以得到预测值.
+
+<img src="/images/deeplearning/C5W1-37_1.png" width="750" />
+
+### 4.2 GRU结构
+
+在 GRU中 会用到 “记忆细胞(**Memory cell**)” 这个概念, 我们用变量`C`表示。这个记忆细胞提供了记忆功能，例如它能够帮助记住 cat 对应 was, cats 对应 were.
+
+而在 $t$ 时刻，记忆细胞所包含的值其实就是 Activation function 值，即 $c^{<{t}>}=a^{<{t}>}$
+
+> 注意：在这里两个变量的值虽然一样，但是含义不同。
+> 
+> 另外在下节将介绍的 LSTM 中，二者值的大小有可能是不一样的，所以有必要使用这两种变量进行区分.
+
+为了更新 **memory\_cell** 的值，我们引入 $\tilde{c}$ 来作为候选值从而来更新 $c^{<{t}>}$，其公式为：
+
+$$
+\tilde{c}=tanh(W\_c [c^{<{t-1}>}, x^{<{t}>}]+b\_c)
+$$
+
+**更新门 (update gate):**
+
+更新门是 GRU 的核心概念，它的作用是用于判断是否需要进行更新.
+
+更新门用 $\Gamma\_u$ 表示，其公式为：
+
+$$
+\Gamma\_u=σ(W\_u [c^{<{t-1}>}, x^{<{t}>}]+b\_u)
+$$
+
+> 如上图示，$\Gamma\_u$ 值的大小大多分布在 0 或者 1，所以可以将其值的大小粗略的视为 0 或者 1。
+> 这就是为什么我们就可以将其理解为一扇门，如果 $\Gamma\_u=1$ , 就表示此时需要更新值，反之不用.
+
+**$t$ 时刻记忆细胞:**
+
+有了更新门公式后，我们则可以给出 $t$ 时刻 **memory\_cell** 的值的计算公式:
+
+$$
+c^{<{t}>} =  \Gamma\_u \* \tilde{c} + (1-\Gamma\_u) \* c^{<{t-1}>}
+$$
+
+
+> 公式很好理解，如果 $\Gamma\_u=1$，那么 $t$ 时刻 记忆细胞的值就等于候选值 $\tilde{c}$, 反之等于前一时刻记忆细胞的值.
+> 
+> **注**：上面公式中的 * 表示元素之间进行乘法运算，而其他公式是 矩阵运算.
+
+下图给出了该公式很直观的解释：
+
+> 在读到 “cat” 时候，其他时候一直为 0，知道要输出 “was” 的时刻，我们知道 “cat” 的存在，也就知道它为单数
+>
+> <img src="/images/deeplearning/C5W1-39_1.png" width="550" />
+
+**GRU 结构示意图**
+
+<img src="/images/deeplearning/C5W1-40_1.png" width="550" />
+
+### 4.3 完整版 GRU
+
+上面简化了 GRU，在完整版中还存在另一个符号 ，这符号的意义是控制 $\tilde{c}$ 和 $c^{<{t-1}>}$ 之间的联系强弱，完整版如下：
+
+<img src="/images/deeplearning/C5W1-41_1.png" width="550" />
+
+> 注意，完整公式中多出了一个 $\Gamma\_r$, 这个符号的作用是控制 $\tilde{c}^{<{t}>}$ 和 $c^{<{t}>}$ 之间联系的强弱.
+
+## 5. LSTM - Long Short Term
 
 Long Short Term Memory， LSTM 是 RNN 最知名的扩展. `Gate`，`Activation`，`tanh`，`Sigmoid`.
 
@@ -180,18 +250,52 @@ LSTM 仍是 $x\_t$ 和 $h\_{t−1}$ 来计算 $h\_t$，只不过对内部的结�
 
 **GRU vs LSTM**
 
-- GRU 和 LSTM 的性能在很多任务上不分伯仲。
-- GRU 参数更少因此更容易收敛，但是数据集很大的情况下，LSTM表达性能更好。
+- GRU 和 LSTM 的效果在很多任务上不分伯仲。
+- GRU 参数更少因此更容易收敛，但是数据集很大的情况下，LSTM表达效果更好，但计算量更大。
 
 > 从结构上来说：
 >
 > - GRU 只有两个门（update和reset），LSTM 有三个门（forget，input，output）
 > - GRU 直接将 hidden state 传给下一个单元，而 LSTM 则用 memory cell 把hidden state 包装起来。
 
-## 6. Seq2Seq 
+## 6. Bidirectional RNN
 
-## 7. Attention
- 
+前面介绍的都是单向的 RNN 结构，在处理某些问题上得到的效果不尽人意
+
+如下面两句话，我们要从中标出人名：
+
+> `He` said, "Teddy Roosevelt was a great President".
+> `He` said, "Teddy bears are on sale".
+
+1. 第一句中的 Teddy Roosevelt 是人名
+2. 第二句中的 Teddy bears 是泰迪熊，同样都是单词 **Teddy** 对应的输出在第一句中应该是 1，第二句中应该是 0
+
+像这样的例子如果想让我们的序列模型明白就需要借助不同的结构比如 - 双向递归神经网络(Bidirectional RNN).
+该神经网络首先从正面理解一遍这句话，再从反方向理解一遍.
+
+<img src="/images/deeplearning/C5W1-45_1.png" width="750" />
+
+下图摘自大数据文摘整理
+
+<img src="/images/deeplearning/C5W1-46_1.png" width="750" />
+
+## 7. Deep RNNs
+
+深层，顾名思义就是层次增加。如下图是深层循环神经网络的示意图
+
+横向表示时间展开，纵向则是层次展开。
+
+<img src="/images/deeplearning/C5W1-47_1.png" width="750" />
+
+注意激活值的表达形式有所改变，以 $a^{\[1\]<0>}$ 为例进行解释：
+
+- [1] 表示第一层
+- <0> 表示第一个激活值
+
+另外各个激活值的计算公式也略有不同，以 $a^{\[2\]<3>}$ 为例，其计算公式如下：
+
+<img src="/images/deeplearning/C5W1-48_1.png" width="550" />
+
 ## Reference
 
 - [《百面机器学习》](https://book.douban.com/subject/30285146/)
