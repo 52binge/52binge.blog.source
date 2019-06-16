@@ -1,5 +1,5 @@
 ---
-title: Language Model 、 PPL
+title: Language Model and Perplexity
 toc: true
 date: 2019-06-16 11:00:21
 categories: nlp
@@ -59,17 +59,53 @@ $$
 P(w\_i|w\_{i-1}) = \frac {P(w\_{i-1}, w\_i)} {P(w\_{i-1})}
 $$
 
-## 2. NNLM
+## 2. Perplexity, PPL
 
-NNLM,直接从语言模型出发，将模型最优化过程转化为求词向量表示的过程。 
-既然离散的表示有辣么多缺点，于是有小伙伴就尝试着用模型最优化的过程去转换词向量了
+语言模型效果的常用指标 perplexity， 在测试集上 perplexity 越低，说明建模效果越好. 
+
+计算perplexity的公式如下：
+
+<img src="/images/tensorflow/tf-google-9.1.2_1-equation.svg" width="600" />
+
+**perplexity** 刻画的是语言模型预测一个语言样本的能力. 比如已经知道 (w1,w2,w3,…,wm) 这句话会出现在语料库之中，那么通过语言模型计算得到的这句话的概率越高，说明语言模型对这个语料库拟合得越好。
+
+**perplexity** 实际是计算每一个单词得到的概率倒数的几何平均，因此 perplexity 可以理解为平均分支系数（average branching factor），即模型预测下一个词时的平均可选择数量。
+
+> 例如，考虑一个由0~9这10个数字随机组成的长度为m的序列，由于这10个数字出现的概率是随机的，所以每个数字出现的概率是 。因此，在任意时刻，模型都有10个等概率的候选答案可以选择，于是perplexity就是10（有10个合理的答案）。
+> 
+> perplexity的计算过程如下：
+> 
+> <img src="/images/tensorflow/tf-google-9.1.2_3-ppl.jpg" width="800" />
+
+在语言模型的训练中，通常采用 perplexity 的对数表达形式：
+
+<img src="/images/tensorflow/tf-google-9.1.2_2-equation.svg" width="600" />
+
+> 相比较乘积求平方根的方式，加法的形式可加速计算，同时避免概率乘积数值过小而导致浮点数向下溢出的问题.
+> 
+> 在数学上，log perplexity 可以看作真实分布与预测分布之间的交叉熵 Cross Entropy, 交叉熵描述了两个概率分布之间的一种距离. log perplexity 和 Cross Entropy 是等价的
+
+在神经网络模型中，$P(w\_i | w\_{1}, , ..., w\_{i-1})$ 分布通常是由一个 softmax层 产生的，TensorFlow 中提供了两个方便计算交叉熵的函数，可以将 logits 结果直接放入输入，来帮助计算 softmax 然后再进行计算 Cross Entropy.
+
+```py
+cross_entropy = tf.nn.softmax_cross_entropy_with_logits(labels = y, logits = y)
+cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(labels = y, logits = y)
+```
+
+- [知乎_习翔宇](https://www.zhihu.com/people/xi-xiang-yu-20/posts)
+
+## 3. NNLM
+
+NNLM,直接从语言模型出发，将模型最优化过程转化为求词向量表示的过程.
+
+既然离散的表示有辣么多缺点，于是有小伙伴就尝试着用模型最优化的过程去转换词向量了.
 
 <img src="/images/nlp/word2vec-nnlm.png" width="600" />
 
 计算复杂度： ($N \* D + N \* D \* H + H \* V$) 相当之高, 于是有了 CBOW 和 Skip-Gram .
 
-这一节中主要讲了词嵌矩阵的shape，如果词嵌（词性特征的总量）是300，独热编码的长度是10000，那么词嵌矩阵的的shape就是 `300 * 10000` 。所以就有了下面的式子：
-
+> NN 训练 语言模型， 会顺带产生一个 Word Embedding 矩阵.
+>
 > 词嵌矩阵 * 单词的独热编码 = 单词的词嵌
 >
 > (300, 10000) * (10000, 1) = (300, 1)
@@ -80,7 +116,7 @@ NNLM,直接从语言模型出发，将模型最优化过程转化为求词向量
 
 “**I want a glass of orange ___**”
 
-> 计算方法是将已知单词的特征向量都作为输入数据送到神经网络中去，然后经过一系列计算到达 Softmax分类层，在该例中输出节点数为10000个。经过计算juice概率最高，所以预测为
+> 计算方法是将已知单词的特征向量都作为输入数据送到神经网络中去，然后经过一系列计算到达 Softmax分类层，在该例中输出节点数为 10000个。经过计算 juice 概率最高，所以预测为
 >
 > “I want a glass of orange `juice`”
 
@@ -94,7 +130,7 @@ NNLM,直接从语言模型出发，将模型最优化过程转化为求词向量
 >
 > 如果任务是训练 $E$，除了使用 $W$ 前全部单词还可以通过：前后各4个单词、前面单独的一个词、前面语境中随机的一个词（这个方式也叫做 Skip Gram 算法），这些方法都能提供很好的结果。
 
-### 2.1 Word Representation
+### 3.1 Word Representation
 
 单词与单词之间是有很多共性的，或在某一特性上相近，比如“苹果”和“橙子”都是水果；或者在某一特性上相反，比如“父亲”在性别上是男性，“母亲”在性别上是女性，通过构建他们其中的联系可以将在一个单词学习到的内容应用到其他的单词上来提高模型的学习的效率，这里用一个简化的表格说明:
 
@@ -115,11 +151,11 @@ NNLM,直接从语言模型出发，将模型最优化过程转化为求词向量
 
 > 上图通过聚类将词性相类似的单词在二维空间聚为一类.
 
-### 2.2 Word Embeddings
+### 3.2 Word Embeddings
 
 先下一个非正规定义 “词嵌 - 描述了词性特征的总量，也是在高维词性空间中嵌入的位置，拥有越多共性的词，词嵌离得越近，反之则越远”。值得注意的是，表达这个“位置”，需要使用所有设定的词性特征，假如有 300 个特征（性别，颜色，...），那么词嵌的空间维度就是 300.
 
-### 2.3 使用词嵌三步
+### 3.3 使用词嵌三步
 
 1. 获得词嵌：获得的方式可以通过训练大的文本集或者下载很多开源的词嵌库
 2. 应用词嵌：将获得的词嵌应用在我们的训练任务中
@@ -141,7 +177,7 @@ No. | sencentce | replace word | target
 > 2. 将学到的词嵌入迁移到相对较小规模的训练集 (例如 10万 词汇).
 > 3. (可选) 这一步骤就是对新的数据进行 fine-tune。
 
-## 3. word2vec
+## 4. word2vec
 
 word2vec 并不是一个模型， 而是一个 2013年 google 发表的工具. 该工具包含2个模型： Skip-Gram 和 CBOW. 及两种高效训练方法： negative sampling 和 hierarchicam softmax.
 
@@ -153,7 +189,7 @@ word2vec 并不是一个模型， 而是一个 2013年 google 发表的工具. �
 [Word2Vec](https://blog.csdn.net/u012052268/article/details/77170517/#63个人对word-embedding的理解)
 [Word2Vec词嵌入矩阵](https://blog.csdn.net/sinat_33761963/article/details/54631367)
 
-### 3.1 CBOW
+### 4.1 CBOW
 
 <img src="/images/nlp/word2vec-CBOW_1.png" width="600" />
 
@@ -161,7 +197,7 @@ word2vec 并不是一个模型， 而是一个 2013年 google 发表的工具. �
 > 
 > 理解 : 背景词向量与 中心词向量 内积 等部分，你可考虑 softmax $w \* x+b$ 中 $x$ 和 $w$ 的关系来理解.
 
-### 3.2 Skip-Gram
+### 4.2 Skip-Gram
 
 跳字模型假设基于某个词来生成它在文本序列周围的词。举个例子，假设文本序列是“the”“man”“loves”“his”“son”。以“loves”作为中心词，设背景窗口大小为2。如图10.1所示，跳字模型所关心的是，给定中心词“loves”，生成与它距离不超过2个词的背景词“the”“man”“his”“son”的条件概率，即
 
@@ -206,35 +242,10 @@ $$
 3. 描述概率函数，该函数的自变量是词向量（u和v），词向量也是模型参数
 4. 对第二步中每一项求梯度。有了梯度就可以优化第二步中的损失函数，从而迭代学习到模型参数，也就是词向量。
 
-### 3.3 高效近似训练
+### 4.3 高效近似训练
 
 - hierarchicam softmax
 - negative sampling
-
-## 4. PPL, perplexity
-
-常用指标 perplexity， perplexity 越低，说明建模效果越好. 
-
-计算perplexity的公式如下：
-
-<img src="/images/tensorflow/tf-google-9.1.2_1-equation.svg" width="600" />
-
-简单来说，perplexity刻画的是语言模型预测一个语言样本的能力.
-
-在语言模型的训练中，通常采用perplexity的对数表达形式：
-
-<img src="/images/tensorflow/tf-google-9.1.2_2-equation.svg" width="600" />
-
-相比较乘积求平方根的方式，采用加法的形式可以加速计算，同时避免概率乘积数值过小而导致浮点数向下溢出的问题。在数学上，log perplexity 可以看作真实分布与预测分布之间的交叉熵 Cross Entropy, 交叉熵描述了两个概率分布之间的一种距离. log perplexity和交叉熵是等价的
-
-在神经网络模型中，$P(w\_i | w\_{1}, , ..., w\_{i-1})$ 分布通常是由一个softmax层产生的，TensorFlow中提供了两个方便计算交叉熵的函数，可以将logits结果直接放入输入，来帮助计算softmax然后再进行计算交叉熵，在后面我们会详细介绍
-
-```py
-cross_entropy = tf.nn.softmax_cross_entropy_with_logits(labels = y, logits = y)
-cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(labels = y, logits = y)
-```
-
-- [知乎_习翔宇](https://www.zhihu.com/people/xi-xiang-yu-20/posts)
 
 ## 5. fastText
 
