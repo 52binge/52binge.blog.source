@@ -305,7 +305,7 @@ e向量 仅作为 RNN 的 init state 传入decode模型，每一时刻输入都�
 
 ## 3. Seq2Seq Attention
 
-**decode** 在各个时间步依赖相同的 **背景变量 $c$** 来获取输入序列信息。当 **encode** 为 RNN 时，**背景变量$c$** 来自它最终时间步的隐藏状态。
+**decode** 在各个时间步依赖相同的 **背景变量 $c$** 来获取输入序列信息。当 **encode** 为 RNN 时，**背景变量$c$** 来自它最终时间步的 hidden state。
 
 > 英语输入：“They”、“are”、“watching”、“.”
 > 法语输出：“Ils”、“regardent”、“.”
@@ -314,13 +314,13 @@ e向量 仅作为 RNN 的 init state 传入decode模型，每一时刻输入都�
 >
 > 仍以 RNN 为例，Attention 通过对 Encode 所有时间步的隐藏状态做**加权平均**来得到背景变量$c$。Decode 在每一时间步调整这些权重，即 Attention weight，从而能够在不同时间步分别关注输入序列中的不同部分并编码进相应时间步的背景变量$c$。本节我们将讨论 Attention机制 是怎么工作的。
 
-在“编码器—解码器（seq2seq）”, 解码器在时间步 $t'$ 的隐藏状态
+在“encoder-decoder（seq2seq）”, Decoder 在时间步 $t'$ 的 hidden state
 
 $$
 \boldsymbol{s}\_{t'} = g(\boldsymbol{y}\_{t'-1}, \boldsymbol{c}, \boldsymbol{s}\_{t'-1})
 $$
 
-在 Attention机制 中, 解码器的每一时间步将使用可变的背景变量$c$
+在 Attention机制 中, Decoder 的每一时间步将使用可变的背景变量$c$
 
 $$
 \boldsymbol{s}\_{t'} = g(\boldsymbol{y}\_{t'-1}, \boldsymbol{c}\_{t'}, \boldsymbol{s}\_{t'-1}).
@@ -354,9 +354,9 @@ $$
 
 其中 $v、W\_s、W\_h$ 都是可以学习的模型参数。
 
-### 3.2 更新隐藏状态
+### 3.2 update hidden state
 
-以门控循环单元为例，在解码器中我们可以对门控循环单元的设计稍作修改。解码器在时间步 $t'$ 的隐藏状态为
+以 GRU 为例，在解码器中我们可以对 GRU 的设计稍作修改。解码器在时间步 $t'$ 的隐藏状态为
 
 $$
 \boldsymbol{s}\_{t'} = \boldsymbol{z}\_{t'} \odot \boldsymbol{s}\_{t'-1}  + (1 - \boldsymbol{z}\_{t'}) \odot \tilde{\boldsymbol{s}}\_{t'},
@@ -372,31 +372,25 @@ $$
 \end{aligned}\end{split}
 $$
 
-其中含下标的 W 和 b 分别为门控循环单元的权重参数和偏差参数。
+其中含下标的 W 和 b 分别为 GRU 的权重参数和偏差参数。
 
 <img src="/images/chatbot/seq2seq-7.jpeg" width="800" />
 
-### 3.3 小结
+### 3.3 attention summary
 
 - 可以在decode的每个时间步使用不同的背景变量，并对输入序列中不同时间步编码的信息分配不同的注意力。
 - Attention机制可以采用更为高效的矢量化计算。
-
-## 4. Seq2Seq Attention各种变形
-
-第四个Seq-to-Seq模型，来自于论文 [Effective Approaches to Attention-based Neural Machine Translation](http://link.zhihu.com/?target=http%3A//aclweb.org/anthology/D15-1166) 这篇论文提出了两种 Seq2Seq模型 分别是global Attention 和 local Attention。
-
-## Attention
 
 除此之外模型为了取得比较好的效果还是用了下面三个小技巧来改善性能：
 
 > 深层次的LSTM：作者使用了4层LSTM作为encoder和decoder模型，并且表示深层次的模型比shallow的模型效果要好（单层，神经元个数多）。
 >
 > 将source进行反序输入：输入的时候将“ABC”变成“CBA”，这样做的好处是解决了长序列的long-term依赖，使得模型可以学习到更多的对应关系，从而达到比较好的效果。
->
-> Beam Search：这是在test时的技巧，也就是在训练过程中不会使用。
->
-> 一般来讲我们会采用greedy贪婪式的序列生成方法，也就是每一步都取概率最大的元素作为当前输出，但是这样的缺点就是一旦某一个输出选错了，可能就会导致最终结果出错，所以使用beam search的方法来改善。
-也就是每一步都取概率最大的k个序列（beam size），并作为下一次的输入。更详细的解释和例子可以参考下面这个链接：https://zhuanlan.zhihu.com/p/28048246
+
+## 4. Seq2Seq Attention 各种变形
+
+第四个Seq-to-Seq模型，来自于论文 [Effective Approaches to Attention-based Neural Machine Translation](http://link.zhihu.com/?target=http%3A//aclweb.org/anthology/D15-1166) 这篇论文提出了两种 Seq2Seq模型 分别是global Attention 和 local Attention。
+
 
 
 ## Reference
