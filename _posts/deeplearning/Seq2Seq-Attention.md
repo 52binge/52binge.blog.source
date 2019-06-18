@@ -387,11 +387,13 @@ $$
 >
 > 将source进行反序输入：输入的时候将“ABC”变成“CBA”，这样做的好处是解决了长序列的long-term依赖，使得模型可以学习到更多的对应关系，从而达到比较好的效果。
 
+注意力机制是一种思想，可以有多种不同的实现方式，在 Seq2Seq 模型以外的场景也有不少应用
+
+<img src="/images/deeplearning/Attention-01.jpg" width="700" />
+
 ## 4. Seq2Seq Attention 各种变形
 
 第四个Seq-to-Seq模型，来自于论文 [Effective Approaches to Attention-based Neural Machine Translation](http://link.zhihu.com/?target=http%3A//aclweb.org/anthology/D15-1166) 这篇论文提出了两种 Seq2Seq模型 分别是global Attention 和 local Attention。
-
-
 
 ## Reference
 
