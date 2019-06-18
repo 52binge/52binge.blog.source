@@ -6,11 +6,21 @@ categories: deeplearning
 tags: Seq2Seq
 ---
 
-<img src="/images/deeplearning/Seq2Seq-00.jpg" width="550" alt="Attention" />
+<img src="/images/deeplearning/Seq2Seq-00.jpg" width="550" alt="Attention 和人类的选择性视觉注意力机制类似" />
 
 <!-- more -->
 
-Attention 和人类的选择性视觉注意力机制类似，核心目标也是从众多信息中选择出对当前任务目标更关键的信息.
+我们先结合上篇文章的内容，将 language model 和 Machine translation model 做一个对比：
+
+<img src="/images/deeplearning/C5W3-3.png" width="600" />
+
+<img src="/images/deeplearning/C5W3-4.png" width="700" />
+
+可以看到，机器翻译模型的后半部分其实就是语言模型，Andrew 将其称之为 “**条件语言模型**”.
+
+$$
+P(y^{<1>},…,y^{<{T\_y}>}|x^{<1>},…,x^{<{T\_x}>})
+$$
 
 ## 1. Encoder-Decoder
 
@@ -55,7 +65,7 @@ $$
 
 [Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation](https://arxiv.org/pdf/1406.1078.pdf)
 
-### 1.1 Encoder
+### 1.1 encoder
 
 用函数 $f$ 表达 RNN 隐藏层的变换：
 
@@ -75,7 +85,7 @@ $$
 
 <img src="/images/chatbot/seq2seq-5.jpeg" width="700" />
 
-### 1.2 Decoder
+### 1.2 decoder
 
 > 上小节 Encode 编码器输出的背景变量 $c$ 编码了整个输入序列 $x\_1, \ldots, x\_T$ 的信息。
 
@@ -95,15 +105,7 @@ $$
 
 可使用自定义的 output layer 和 softmax 计算 ${P}(y\_{t^\prime} \mid y\_1, \ldots, y\_{t^\prime-1}, \boldsymbol{c})$，计算当前时间步输出 $y\_{t^\prime}$ 的概率分布.
 
-#### 1.2.1 LM and MT
-
-下面将之前学习的 language model 和 Machine translation 模型做一个对比, P 为概率
-
-<img src="/images/deeplearning/C5W3-3.png" width="600" />
-
-<img src="/images/deeplearning/C5W3-4.png" width="700" />
-
-可以看到，机器翻译模型的后半部分其实就是语言模型，Andrew 将其称之为 “**条件语言模型**”.
+### 1.3 decoder greedy search
 
 在语言模型之前有一 个条件也就是被翻译的句子:
 
@@ -121,12 +123,27 @@ $$
 > - "Jane's Chinese friend welcomed her in September."
 > - ....
 
+得到最好的翻译结果，转换成数学公式就是:
 
-#### 1.2.2 greedy search
+$$
+argmax P(y^{<1>},…,y^{<{T\_y}>}|x^{<1>},…,x^{<{T\_x}>})
+$$
 
-#### 1.2.3 beam search
+那么 Greedy Search 就是每次输出的那个都必须是最好的。还是以翻译那句话为例。
 
-### 1.3 train 模型训练
+> 现在假设通过贪婪搜索已经确定最好的翻译的前两个单词是："Jane is "
+>
+> 然后因为 "going" 出现频率较高和其它原因，所以根据贪婪算法得出此时第三个单词的最好结果是 "going"。
+>
+> 所以据贪婪算法最后的翻译结果可能是下图中的第二个句子，**但第一句可能会更好.**
+>
+> <img src="/images/deeplearning/C5W3-5.png" width="600" />
+>
+> 所以 Greedy Search 的缺点是局部最优并不代表全局最优. Greedy Search 更加短视，看的不长远。
+
+### 1.4 decoder beam search
+
+### 1.5 train 模型训练
 
 **train 模型训练**
 
@@ -152,24 +169,32 @@ $$
 ### 1.4 小结
 
 - 编码器 - 解码器（seq2seq）可以输入并输出不定长的序列。
-- 编码器—解码器使用了两个循环神经网络。
-- 在编码器—解码器的训练中，我们可以采用强制教学。
+- 编码器—解码器使用了两个 RNN。
+- 在编码器—解码器的训练中，我们可以采用 teacher forcing。
 
-## 2. Seq2Seq 2.0
+## 2. Seq2Seq 框架2
 
-Seq2Seq model 来自于 “[Sequence to Sequence Learning with Neural Networks](https://arxiv.org/pdf/1409.3215.pdf)”，其模型结构图如下所示：
+Seq2Seq model 来自于 “[Sequence to Sequence Learning with Neural Networks](https://arxiv.org/pdf/1409.3215.pdf)”
+
+其模型结构图如下所示：
 
 <img src="/images/chatbot/seq2seq-2.jpg" width="700" />
 
-与上面模型最大的区别在于其source编码后的 向量$C$ 直接作为Decoder阶段RNN的初始化state，而不是在每次decode时都作为`RNN cell`的输入。此外，decode时RNN的输入是目标值，而不是前一时刻的输出。首先看一下编码阶段：
+与上面模型最大的区别在于其source编码后的 向量$C$ 直接作为 Decoder RNN 的 init state，而不是在每次decode时都作为 RNN cell 的输入。此外，decode 时 RNN 的输入是 label，而不是前一时刻的输出。
+
+Encoder 阶段：
 
 <img src="/images/chatbot/seq2seq-3.jpg" width="500" />
 
-就是简单的RNN模型，每个词经过RNN之后都会编码为hidden state（e0,e1,e2），并且source序列的编码向量e就是最终的hidden state e2。接下来再看一下解码阶段：
+> 每个词经过 RNN 都会编码为 hidden (e0,e1,e2), source序列 的编码向量e 就是 最终的 hidden state e2
+> 
+> Tips： 这里 $e\_0, e\_1, e\_2$ 是 hidden state， 并没有经过 g 和 softmax .
+
+Decoder 阶段：
 
 <img src="/images/chatbot/seq2seq-4.jpg" width="500" />
 
-e向量仅作为RNN的初始化状态传入decode模型。接下来就是标准的循环神经网络，每一时刻输入都是前一时刻的正确label。直到最终输入<eos>符号截止滚动。
+e向量 仅作为 RNN 的 init state 传入decode模型，每一时刻输入都是前一时刻的正确label。直到最终输入<eos>符号截止.
 
 ## 3. Seq2Seq Attention
 
@@ -276,7 +301,8 @@ $$
 - [动手学深度学习第十八课：seq2seq（编码器和解码器）和注意力机制][1]
 - [seq2seq+Attention机制模型详解][3]
 - [深度学习前沿笔记](https://zhuanlan.zhihu.com/p/37601161)
-- [百面 seq2seq模型][6]
+- [百面 seq2seq模型](http://www.iterate.site/2019/04/19/05-seq2seq%E6%A8%A1%E5%9E%8B/)
+- [百面 注意力机制](http://www.iterate.site/2019/04/19/06-注意力机制/)
 - [Bert遇上Keras][7]
 - [Sequence-Models-week3](/2018/08/14/deeplearning/Sequence-Models-week3/)
 - [seq2seq中的beam search算法过程](https://zhuanlan.zhihu.com/p/28048246)
@@ -284,5 +310,4 @@ $$
 
 [1]: https://www.youtube.com/watch?v=GQh7wDQDc0Y&index=18&list=PLLbeS1kM6teJqdFzw1ICHfa4a1y0hg8Ax
 [3]: https://zhuanlan.zhihu.com/p/32092871
-[6]: http://www.iterate.site/2019/04/19/05-seq2seq%E6%A8%A1%E5%9E%8B/
 [7]: https://kexue.fm/archives/6736
