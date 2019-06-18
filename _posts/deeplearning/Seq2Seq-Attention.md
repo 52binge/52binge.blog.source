@@ -53,6 +53,8 @@ $$
 
 > Encoder-Decoder框架 不仅仅在文本领域广泛使用，在语音识别、图像处理等领域也经常使用.
 
+[Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation](https://arxiv.org/pdf/1406.1078.pdf)
+
 ### 1.1 Encoder
 
 用函数 $f$ 表达 RNN 隐藏层的变换：
@@ -75,9 +77,15 @@ $$
 
 ### 1.2 Decoder
 
-Encode 编码器输出的背景变量 $c$ 编码了整个输入序列 $x\_1, \ldots, x\_T$ 的信息。
+> 上小节 Encode 编码器输出的背景变量 $c$ 编码了整个输入序列 $x\_1, \ldots, x\_T$ 的信息。
 
-给定训练样本中的输出序列 $y\_1, y\_2, \ldots, y\_{T'}$，对每个时间步 $t'$（符号与输入序列或编码器的时间步 $t$ 有区别）， 解码器输出 $y\_{t'}$ 的条件概率将基于之前的输出序列 $y\_1,\ldots,y\_{t'-1}$ 和背景变量 $c$，**即** $\mathbb{P}(y\_{t'} \mid y\_1, \ldots, y\_{t'-1}, \boldsymbol{c})$。
+给定 train sample 的 input sequence： $y\_1, y\_2, \ldots, y\_{T'}$，对每个时间步 $t'$（符号与 input sequence 或 encoder 的时间步 $t$ 有区别）， decoder 输出 $y\_{t'}$ 的条件概率将基于之前的 output sequence： $y\_1,\ldots,y\_{t'-1}$ 和 $c$.
+
+**即:** 
+
+$$
+P(y\_{t'} \mid y\_1, \ldots, y\_{t'-1}, \boldsymbol{c})
+$$
 
 为此，我们可以使用`另一个RNN`作为解码器。 在输出序列的时间步 $t^\prime$，解码器将上一时间步的输出 $y\_{t^\prime-1}$ 以及背景变量 $c$ 作为输入，并将它们与上一时间步的隐藏状态 $\boldsymbol{h}\_{t^\prime-1}$ 变换为当前时间步的隐藏状态 $\boldsymbol{h}\_{t^\prime}$。因此，我们可以用函数 $g$ 表达解码器隐藏层的变换：
 
@@ -85,14 +93,42 @@ $$
 \boldsymbol{h}\_{t^\prime} = g(y\_{t^\prime-1}, \boldsymbol{c}, \boldsymbol{h}\_{t^\prime-1}).
 $$
 
-有了decode的隐藏状态后，我们可以使用自定义的输出层和 softmax 运算来计算 $\mathbb{P}(y\_{t^\prime} \mid y\_1, \ldots, y\_{t^\prime-1}, \boldsymbol{c})$，例如基于当前时间步的解码器隐藏状态 $\boldsymbol{h}\_{t^\prime}$、上一时间步的输出 $y\_{t^\prime-1}$ 以及背景变量 $c$ 来计算当前时间步输出 $y\_{t^\prime}$ 的概率分布。
+可使用自定义的 output layer 和 softmax 计算 ${P}(y\_{t^\prime} \mid y\_1, \ldots, y\_{t^\prime-1}, \boldsymbol{c})$，计算当前时间步输出 $y\_{t^\prime}$ 的概率分布.
+
+#### 1.2.1 LM and MT
+
+下面将之前学习的 language model 和 Machine translation 模型做一个对比, P 为概率
+
+<img src="/images/deeplearning/C5W3-3.png" width="600" />
+
+<img src="/images/deeplearning/C5W3-4.png" width="700" />
+
+可以看到，机器翻译模型的后半部分其实就是语言模型，Andrew 将其称之为 “**条件语言模型**”.
+
+在语言模型之前有一 个条件也就是被翻译的句子:
+
+$$
+P(y^{<1>},…,y^{<{T\_y}>}|x^{<1>},…,x^{<{T\_x}>})
+$$
+
+> 但是我们知道翻译是有很多种方式的，同一句话可以翻译成很多不同的句子，那么如何判断哪一句子是最好的呢？
+>
+> 还是翻译上面那句话，有如下几种翻译结果：
+>
+> - "Jane is visiting China in September."
+> - "Jane is going to visit China in September."
+> - "In September, Jane will visit China"
+> - "Jane's Chinese friend welcomed her in September."
+> - ....
 
 
-**Greedy Search**
+#### 1.2.2 greedy search
 
-**Beam Search**
+#### 1.2.3 beam search
 
 ### 1.3 train 模型训练
+
+**train 模型训练**
 
 根据最大似然估计，我们可以最大化输出序列基于输入序列的条件概率
 
@@ -119,69 +155,11 @@ $$
 - 编码器—解码器使用了两个循环神经网络。
 - 在编码器—解码器的训练中，我们可以采用强制教学。
 
-### 1.5 语言模型 vs 机器翻译
+## 2. Seq2Seq 2.0
 
-下面将之前学习的语言模型和机器翻译模型做一个对比, P 为概率
+Seq2Seq model 来自于 “[Sequence to Sequence Learning with Neural Networks](https://arxiv.org/pdf/1409.3215.pdf)”，其模型结构图如下所示：
 
-语言模型:
-
-<img src="/images/deeplearning/C5W3-3.png" width="600" />
-
-机器翻译模型:
-
-<img src="/images/deeplearning/C5W3-4.png" width="700" />
-
-可以看到，机器翻译模型的后半部分其实就是语言模型，Andrew 将其称之为 “**条件语言模型**”.
-
-在语言模型之前有一 个条件也就是被翻译的句子:
-
-$$
-P(y^{<1>},…,y^{<{T\_y}>}|x^{<1>},…,x^{<{T\_x}>})
-$$
-
-> 但是我们知道翻译是有很多种方式的，同一句话可以翻译成很多不同的句子，那么如何判断哪一句子是最好的呢？
->
-> 还是翻译上面那句话，有如下几种翻译结果：
->
-> - "Jane is visiting China in September."
-> - "Jane is going to visit China in September."
-> - "In September, Jane will visit China"
-> - "Jane's Chinese friend welcomed her in September."
-> - ....
->
-> 与语言模型不同的是，机器模型在输出部分不再使用 **softmax** 随机分布的形式进行取样，因为很容易得到一个不准确的翻译，取而代之的是使用 **`Beam Search`** 做最优化的选择。这个方法会在后下一小节介绍，在此之前先介绍一下 **Greedy Search** 及其弊端，这样才能更好地了解 **`Beam Search`** 的优点。
-
-
-## 2. Attention
-
-> **注**： 注意力模型可以看作一种通用的思想，本身并不依赖于特定框架
-
-
-从具体的模型细节、公式推导、结构图以及变形等几个方向详细介绍一下 Seq-to-Seq 模型。
-
-
-- Seq-to-Seq 框架1
-- Seq-to-Seq 框架2（teacher forcing）
-- Seq-to-Seq with Attention（NMT）
-- Seq-to-Seq with Attention 各种变形
-- Seq-to-Seq with Beam-Search
-
-当输入输出都是不定长序列时，我们可以使用编码器—解码器（encoder-decoder）[1] 或者 seq2seq 模型 [2]。这两个模型本质上都用到了两个循环神经网络，分别叫做编码器和解码器。编码器用来分析输入序列，解码器用来生成输出序列。
-
-## 1. Seq2Seq 框架1
-
-<img src="/images/chatbot/seq2seq-1.jpg" width="300" />
-
-[Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation](https://arxiv.org/pdf/1406.1078.pdf)
-
-
-
-
-## 2. Seq2Seq 框架2
-
-第二个要讲的Seq-to-Seq模型来自于 “[Sequence to Sequence Learning with Neural Networks](https://arxiv.org/pdf/1409.3215.pdf)”，其模型结构图如下所示：
-
-<img src="/images/chatbot/seq2seq-2.jpg" width="600" />
+<img src="/images/chatbot/seq2seq-2.jpg" width="700" />
 
 与上面模型最大的区别在于其source编码后的 向量$C$ 直接作为Decoder阶段RNN的初始化state，而不是在每次decode时都作为`RNN cell`的输入。此外，decode时RNN的输入是目标值，而不是前一时刻的输出。首先看一下编码阶段：
 
@@ -279,17 +257,32 @@ $$
 
 上面讲的几种Seq2Seq模型都是从模型结构上进行的改进，也就说为了从训练的层面上改善模型的效果，但这里要介绍的beam-search是在测试的时候才用到的技术。
 
+## Attention
+
+除此之外模型为了取得比较好的效果还是用了下面三个小技巧来改善性能：
+
+> 深层次的LSTM：作者使用了4层LSTM作为encoder和decoder模型，并且表示深层次的模型比shallow的模型效果要好（单层，神经元个数多）。
+>
+> 将source进行反序输入：输入的时候将“ABC”变成“CBA”，这样做的好处是解决了长序列的long-term依赖，使得模型可以学习到更多的对应关系，从而达到比较好的效果。
+>
+> Beam Search：这是在test时的技巧，也就是在训练过程中不会使用。
+>
+> 一般来讲我们会采用greedy贪婪式的序列生成方法，也就是每一步都取概率最大的元素作为当前输出，但是这样的缺点就是一旦某一个输出选错了，可能就会导致最终结果出错，所以使用beam search的方法来改善。
+也就是每一步都取概率最大的k个序列（beam size），并作为下一次的输入。更详细的解释和例子可以参考下面这个链接：https://zhuanlan.zhihu.com/p/28048246
+
+
 ## Reference
 
 - [动手学深度学习第十八课：seq2seq（编码器和解码器）和注意力机制][1]
-- [门控循环单元（GRU）][2]
 - [seq2seq+Attention机制模型详解][3]
-- [三分钟带你对 Softmax 划重点][4]
-- [Softmax 回归][5]
 - [深度学习前沿笔记](https://zhuanlan.zhihu.com/p/37601161)
+- [百面 seq2seq模型][6]
+- [Bert遇上Keras][7]
+- [Sequence-Models-week3](/2018/08/14/deeplearning/Sequence-Models-week3/)
+- [seq2seq中的beam search算法过程](https://zhuanlan.zhihu.com/p/28048246)
+- [深度学习中的注意力模型（2017版）](https://zhuanlan.zhihu.com/p/37601161)
 
 [1]: https://www.youtube.com/watch?v=GQh7wDQDc0Y&index=18&list=PLLbeS1kM6teJqdFzw1ICHfa4a1y0hg8Ax
-[2]: https://zh.gluon.ai/chapter_recurrent-neural-networks/gru.html
 [3]: https://zhuanlan.zhihu.com/p/32092871
-[4]: https://zhuanlan.zhihu.com/p/38064637
-[5]: https://zh.gluon.ai/chapter_deep-learning-basics/softmax-regression.html
+[6]: http://www.iterate.site/2019/04/19/05-seq2seq%E6%A8%A1%E5%9E%8B/
+[7]: https://kexue.fm/archives/6736
