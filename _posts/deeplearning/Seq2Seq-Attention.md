@@ -143,34 +143,141 @@ $$
 
 ### 1.4 decoder beam search
 
-### 1.5 train 模型训练
+Beam Search 是 greedy search 的加强版本，首先要预设一个值 beam width，这里等于 `3` (如果等于 1 就是 greedy search)。然后在每一步保存最佳的 3 个结果进行下一步的选择，以此直到遇到句子的终结符.
 
-**train 模型训练**
+#### 1.4.1 step 1
+
+如下图示，因为beam width=3，所以根据输入的需要翻译的句子选出 3 个 $y^{<1>}$最可能的输出值。
+
+即选出 $P(y^{<1>}|x)$ 最大的前3个值。 假设分别是 **"in", "jane", "september"**
+
+<img src="/images/deeplearning/C5W3-6_1.png" width="650" />
+
+#### 1.4.2 step 2
+
+以"**in**"为例进行说明，其他同理.
+
+如下图示，在给定被翻译句子 $x$ 和确定 $y^{<1>}$ = "**in**" 的条件下，下一个输出值的条件概率是 $P(y^{<2>}|x,"in")$。
+
+此时需要从 10000 种可能中找出条件概率最高的前 3 个.
+
+又由公式:
+
+$$
+P(y^{<1>},y^{<2>}|x)=P(y^{<1>}|x) P(y^{<2>}|x, y^{<1>})
+$$
+
+我们此时已经得到了给定输入数据，前两个输出值的输出概率比较大的组合了.
+
+<img src="/images/deeplearning/C5W3-7_1.png" width="650" />
+
+另外 2 个单词也做同样的计算
+
+<img src="/images/deeplearning/C5W3-8_1.png" width="650" />
+
+此时我们得到了 9 组 $P(y^{<1>},y^{<2>}|x)$, 此时我们再从这 9组 中选出概率值最高的前 3 个。
+
+如下图示，假设是这3个：
+
+> - "in september"
+> - "jane is"
+> - "jane visits"
+
+#### 1.4.3 step 3
+
+继续 step 2 的过程，根据 $P(y^{<3>}|x,y^{<1>},y^{<2>})$ 选出 $P(y^{<1>},y^{<2>},y^{<3>}|x)$ 最大的前3个组合.
+
+后面重复上述步骤得出结果.
+
+#### 1.4.4 summary
+
+总结一下上面的步骤就是：
+
+
+> - (1). 经过 encoder 以后，decoder 给出最有可能的三个开头词依次为 “in”, "jane", "september" 
+> $$P(y^{<1>}|x)$$
+
+> - (2). 经 step 1 得到的值输入到 step 2 中，最可能的三个翻译为 “in september”, "jane is", "jane visits" 
+> 
+> $$P(y^{<2>}|x,y^{<1>})$$
+>
+> (这里，september开头的句子由于概率没有其他的可能性大，已经失去了作为开头词资格)
+
+> - (3). 继续这个过程... 
+> 
+> $$P(y^{<3>}|x,y^{<1>},y^{<2>})$$
+
+<img src="/images/deeplearning/C5W3-10_1.png" width="750" />
+
+### 1.5 refinements to beam search
+
+$$
+P(y^{<1>},….,P(y^{T\_y})|x)=P(y^{<1>}|x)P(y^{<2>}|x,y^{<1>})…P(y^{<{T\_y}>}|x,y^{<1>},…y^{<{T\_y-1}>})
+$$
+
+所以要满足 $argmax P(y^{<1>},….,P(y^{T\_y})|x)$, 也就等同于要满足
+
+$$
+argmax \prod\_{t=1}^{T\_y}P(y^{<{t}>}|x,y^{<1>},…y^{<{t-1}>})
+$$
+
+但是上面的公式存在一个问题，因为概率都是小于1的，累乘之后会越来越小，可能小到计算机无法精确存储，所以可以将其转变成 log 形式（因为 log 是单调递增的，所以对最终结果不会有影响），其公式如下：
+
+$$
+argmax \sum\_{t=1}^{T\_y}logP(y^{<{t}>}|x,y^{<1>},…y^{<{t-1}>})
+$$
+
+> But！！！上述公式仍然存在bug，观察可以知道，概率值都是小于1的，那么log之后都是负数，所以为了使得最后的值最大，那么只要保证翻译的句子越短，那么值就越大，所以如果使用这个公式，那么最后翻译的句子通常都是比较短的句子，这显然不行。
+
+所以我们可以通过归一化的方式来纠正，即保证平均到每个单词都能得到最大值。其公式如下：
+
+$$
+argmax \frac{1}{T\_y}\sum\_{t=1}^{T\_y}logP(y^{<{t}>}|x,y^{<1>},…y^{<{t-1}>})
+$$
+
+归一化的确能很好的解决上述问题，但是在实际运用中，会额外添加一个参数 $α$, 其大小介于 0 和 1 之间
+
+$$
+argmax \frac{1}{T\_y^α}\sum\_{t=1}^{T\_y}logP(y^{<{t}>}|x,y^{<1>},…y^{<{t-1}>})
+$$
+
+<img src="/images/deeplearning/C5W3-11_1.png" width="700" />
+
+
+> $T\_y$ 为输出句子中单词的个数，$α$ 是一个超参数 (可以设置为 0.7)
+> 
+> $α$ == 1. 则代表 完全用句子长度归一化
+> $α$ == 0. 则代表 没有归一化
+> $α$ == 0~1. 则代表 在 句子长度归一化 与 没有归一化 之间的折中程度.
+> 
+> beam width = B = 3~**10**~100 是会有一个明显的增长，但是 B 从 1000 ~ 3000 是并没有一个明显增长的.
+
+### 1.6 train seq2seq model
 
 根据最大似然估计，我们可以最大化输出序列基于输入序列的条件概率
 
 $$
 \begin{split}\begin{aligned}
-\mathbb{P}(y\_1, \ldots, y\_{T'} \mid x\_1, \ldots, x\_T)
-&= \prod\_{t'=1}^{T'} \mathbb{P}(y\_{t'} \mid y\_1, \ldots, y\_{t'-1}, x\_1, \ldots, x\_T)\\\\
-&= \prod\_{t'=1}^{T'} \mathbb{P}(y\_{t'} \mid y\_1, \ldots, y\_{t'-1}, \boldsymbol{c}),
+{P}(y\_1, \ldots, y\_{T'} \mid x\_1, \ldots, x\_T)
+&= \prod\_{t'=1}^{T'} {P}(y\_{t'} \mid y\_1, \ldots, y\_{t'-1}, x\_1, \ldots, x\_T)\\\\
+&= \prod\_{t'=1}^{T'} {P}(y\_{t'} \mid y\_1, \ldots, y\_{t'-1}, \boldsymbol{c}),
 \end{aligned}\end{split}
 $$
 
 并得到该输出序列的损失
 
-$$ - \log\mathbb{P}(y\_1, \ldots, y\_{T'} \mid x\_1, \ldots, x\_T) = -\sum\_{t'=1}^{T'} \log \mathbb{P}(y\_{t'} \mid y\_1,  \ldots, y\_{t'-1}, \boldsymbol{c}),
+$$ - \log{P}(y\_1, \ldots, y\_{T'} \mid x\_1, \ldots, x\_T) = -\sum\_{t'=1}^{T'} \log {P}(y\_{t'} \mid y\_1,  \ldots, y\_{t'-1}, \boldsymbol{c}),
 $$
 
 <img src="/images/chatbot/seq2seq-6.png" width="800" />
 
 在模型训练中，所有输出序列损失的均值通常作为需要最小化的损失函数。在图中所描述的模型预测中，我们需要将decode在上一个时间步的输出作为当前时间步的输入。与此不同，在训练中我们也可以将标签序列在上一个时间步的标签作为decode在当前时间步的输入。这叫做强制教学（teacher forcing）。
 
-### 1.4 小结
+### 1.7 summary
 
 - 编码器 - 解码器（seq2seq）可以输入并输出不定长的序列。
 - 编码器—解码器使用了两个 RNN。
-- 在编码器—解码器的训练中，我们可以采用 teacher forcing。
+- 在编码器—解码器的训练中，我们可以采用 teacher forcing。(这也是 Seq2Seq 2 的内容)
 
 ## 2. Seq2Seq 框架2
 
@@ -277,10 +384,6 @@ $$
 ## 4. Seq2Seq Attention各种变形
 
 第四个Seq-to-Seq模型，来自于论文 [Effective Approaches to Attention-based Neural Machine Translation](http://link.zhihu.com/?target=http%3A//aclweb.org/anthology/D15-1166) 这篇论文提出了两种 Seq2Seq模型 分别是global Attention 和 local Attention。
-
-## 5. Seq2Seq with Beam-Search
-
-上面讲的几种Seq2Seq模型都是从模型结构上进行的改进，也就说为了从训练的层面上改善模型的效果，但这里要介绍的beam-search是在测试的时候才用到的技术。
 
 ## Attention
 
