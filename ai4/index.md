@@ -58,17 +58,6 @@ n_estimators= 40, max_depth=9, min_samples_split=220,
 
 ## 2. Chatbot
 
- - Attention 区别 (hard or soft)
- - 遇到过什么问题 （model_bucket）
- - 流程
- - BeamSearch
- - MMI
- - PPL 的意义
-
-[seq2seq入门](https://zhuanlan.zhihu.com/p/32035616)
-
-除此之外模型为了取得比较好的效果还是用了下面三个小技巧来改善性能：
-
 > - 深层次的LSTM：作者使用了4层LSTM作为encoder和decoder模型，并且表示深层次的模型比shallow的模型效果要好（单层，神经元个数多）。
 
 > - 将source进行反序输入：输入的时候将“ABC”变成“CBA”，这样做的好处是解决了长序列的long-term依赖，使得模型可以学习到更多的对应关系，从而达到比较好的效果。
@@ -76,24 +65,6 @@ n_estimators= 40, max_depth=9, min_samples_split=220,
 > - Beam Search：这是在test时的技巧，也就是在训练过程中不会使用。
 > 
 > 一般来讲我们会采用greedy贪婪式的序列生成方法，也就是每一步都取概率最大的元素作为当前输出，但是这样的缺点就是一旦某一个输出选错了，可能就会导致最终结果出错，所以使用beam search的方法来改善。也就是每一步都取概率最大的k个序列（beam size），并作为下一次的输入。更详细的解释和例子可以参考下面这个链接：https://zhuanlan.zhihu.com/p/28048246
-
-
-### 2.1 Seq2Seq
-
-1. seq2seq模型，seq2seq的缺点, attention机制
-2. attention的公式，怎样计算得分和权重
-3. tensorflow里面seq2seq的借口， 自己实现的模型里面的一些细节和方法。
-
-- seq2seq时遇到的deepcopy和beam_search两个问题以及解决方案.
-- 知名博主WildML给google写了个通用的seq2seq，[文档地址][7] ， [Github地址][8]
-- [Tensorflow动态seq2seq使用总结](https://www.jianshu.com/p/c0c5f1bdbb88)
-- [荷楠仁 tensorflow sequence_loss](https://www.cnblogs.com/zhouyang209117/p/8338193.html)
-
-[Attention是如何利用中间的输出的](https://www.jianshu.com/p/c94909b835d6)
-
-- soft attention 和 hard attention的区别?
-
-> 最大区别在于hard 方法是采样得到Z，Z作为lstm输入。soft方法是有所有做平均得到Z。这两种在图像里肯定是soft用的多，hard一般用在reinforcement learning 里。hard 不可微，不能后向传播，因为采样梯度为0。
 
 ## 3. 评分卡
 
@@ -138,24 +109,10 @@ n_estimators= 40, max_depth=9, min_samples_split=220,
 > 3. 特征分箱可以简化逻辑回归模型，降低模型过拟合的风险，提高模型的泛化能力。
 > 4. 将所有特征统一变换为类别型变量。
 > 5. 分箱后变量才可以使用标准的评分卡格式，即对不同的分段进行评分。
-> 6. 分箱后降低模型运算复杂度，提升模型运算速度，对后后期生产上线较为友好
 
  - LR 如何处理数据不平衡 ?   答： 好坏样本34：1， 有时候关注坏用本个数， 好样本欠采样等.
- - GBDT 与Xgboost 区别 ?  答： [RF、GBDT、XGBoost 区别](https://zhuanlan.zhihu.com/p/34679467)
- - GBDT 如何判断特征重要度？ 答： 特征j的全局重要度通过特征j在单颗树中的重要度的平均值来衡量
- - 如何判断你的模型是否过拟合 ? 以及过拟合的处理方式？ 答：[画 learning_curve](https://blog.csdn.net/aliceyangxi1987/article/details/73598857)
- - Info Gain vs Info Gain ratio vs Gini vs CART.. 
- 
-> Info Gain =Entropy(S) - Entropy(S|“阴晴”) 最大的特征. 
-> Info Gain ratio 减少信息增益方法对取值数较多的特征的影响。(可减少过拟合，这对某特征取值过多的一惩罚)
-> Gini 是介于0~1之间的数，0-完全相等，1-完全不相等；
- 
  - LR 分析的变量 & GBDT 分析的变量分别是多少？  26维，184维
  - 变量如何分箱？ IV 值的计算。 卡方分箱和woe编码进行转换
-
-> 信息熵，代表的是随机变量或整个系统的不确定性，熵越大，随机变量或系统的不确定性就越大。
-> 
-> 交叉熵，用来衡量在给定的真实分布下，使用非真实分布所指定的策略消除系统的不确定性所需要付出的努力值。
 
 Reference
 
@@ -273,7 +230,6 @@ Reference
 > 4. 有利于对变量的每个分箱进行评分
 > 5. 转化为连续变量之后，便于分析变量与变量之间的相关性
 > 6. 与独热向量编码相比，可以保证变量的完整性，同时避免稀疏矩阵和维度灾难
-
 
 #### 3.3.4 IV 值
 
@@ -409,32 +365,12 @@ sk_clf.fit(train_data_format, train_label)
 
 > min_count设置为2貌似也有一些负向影响， word_ngrams 2， epoch 10 .
 
-===
-
 **fastText 速度快和原理:**
 
 能够做到效果好，速度快，主要依靠两个秘密武器：
 
 > 1. 利用了 词内的n-gram信息 (subword n-gram information)
 > 2. 用到了 层次化Softmax回归 (Hierarchical Softmax) 的训练 trick.
-
-**fastText 和 word2vec 的区别:**
-
-**两者表面的不同：**
-
-> **模型的输出层：**
-> 
-> word2vec的输出层，对应的是每一个term，计算某term的概率最大；而fasttext的输出层对应的是 分类的label。不过不管输出层对应的是什么内容，起对应的vector都不会被保留和使用；
-> 
-> **模型的输入层：**
-> 
-> word2vec的输出层，是 context window 内的term；而fasttext对应的整个sentence的内容，包括term，也包括 n-gram的内容；
-
-**两者本质的不同，体现在 h-softmax 的使用：**
-
-> Wordvec的目的是得到词向量，该词向量最终是在输入层得到，输出层对应的 h-softmax也会生成一系列的向量，但最终都被抛弃，不会使用。
->
-> fasttext则充分利用了h-softmax的分类功能，遍历分类树的所有叶节点，找到概率最大的label（一个或者N个）
 
 ### 4.3 RCNN & RNN
 
@@ -500,10 +436,10 @@ class TextClassifier():
 
 ### 多标签分类
 
-8. 都用过那些模型实现文本分类？
-9. 现在文本分类中还有哪些没有解决的问题，我想了会说样本不平衡问题？
-10. 多标签的分类问题，以及损失函数等。
-11. FastText，CNN，RNN的区别？
+1. 都用过那些模型实现文本分类？
+2. 现在文本分类中还有哪些没有解决的问题，我想了会说样本不平衡问题？
+3. 多标签的分类问题，以及损失函数等。
+4. FastText，CNN，RNN的区别？
 
 在文本分类任务中，有哪些论文中很少提及却对性能有重要影响的tricks？
 
@@ -518,9 +454,7 @@ class TextClassifier():
 
 这个看似不重要，其实确实很重要的点。一开我以为 padding 的最大长度取整个评论平均的长度的2倍差不多就可以啦(对于char level 而言，max_length 取 400左右)，但是会发现效果上不去，当时将 max_length 改为 1000 之后，macro f-score提示明显，我个人认为是在多分类问题中，那些长度很长的评论可能会有部分属于那些样本数很少的类别，padding过短会导致这些长评论无法被正确划分。
 
-
-===
-
+---
 
 > 1. RNN 优点： 最大程度捕捉上下文信息，这可能有利于捕获长文本的语义。
 > 2. RNN 缺点： 是一个有偏倚的模型，在这个模型中，后面的单词比先前的单词更具优势。因此，当它被用于捕获整个文档的语义时，它可能会降低效率，因为关键组件可能出现在文档中的任何地方，而不是最后。

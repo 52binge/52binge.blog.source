@@ -280,6 +280,7 @@ BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is Al
 - [自然语言处理中的Transformer和BERT][1]
 - [RNN和LSTM弱！爆！了！注意力模型才是王道][3]
 - [NLP突破性成果 BERT 模型详细解读][5]
+- [一步步理解BERT][7]
 
 
 [1]: https://zhuanlan.zhihu.com/p/53099098
@@ -287,4 +288,5 @@ BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is Al
 [3]: https://zhuanlan.zhihu.com/p/36331888
 [5]: https://zhuanlan.zhihu.com/p/46997268
 [6]: https://zhuanlan.zhihu.com/p/50717786
+[7]: https://mp.weixin.qq.com/s/H4at_BDLwZWqlBHLjMZWRQ
 
