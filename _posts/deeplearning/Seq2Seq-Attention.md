@@ -415,6 +415,7 @@ Attention顾名思义，指的不是Target和Source之间的Attention机制，�
 
 <img src="/images/deeplearning/Attention-05.jpg" width="600" />
 
+> 引入Self Attention后会更容易捕获句子中长距离的相互依赖的特征，因为如果是RNN或者LSTM，需要依次序序列计算，对于远距离的相互依赖的特征，要经过若干时间步步骤的信息累积才能将两者联系起来，而距离越远，有效捕获的可能性越小。
 
 请务必要阅读： [张俊林 深度学习中的注意力模型（2017版）](https://zhuanlan.zhihu.com/p/37601161)
 
