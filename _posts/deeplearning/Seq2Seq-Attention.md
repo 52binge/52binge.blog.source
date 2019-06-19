@@ -305,6 +305,10 @@ e向量 仅作为 RNN 的 init state 传入decode模型，每一时刻输入都�
 
 ## 3. Seq2Seq Attention
 
+请务必要阅读： [张俊林 深度学习中的注意力模型（2017版）](https://zhuanlan.zhihu.com/p/37601161)
+
+<img src="/images/deeplearning/Attention-01.jpg" width="600" />
+
 **decode** 在各个时间步依赖相同的 **背景变量 $c$** 来获取输入序列信息。当 **encode** 为 RNN 时，**背景变量$c$** 来自它最终时间步的 hidden state。
 
 > 英语输入：“They”、“are”、“watching”、“.”
@@ -389,11 +393,32 @@ $$
 
 注意力机制是一种思想，可以有多种不同的实现方式，在 Seq2Seq 模型以外的场景也有不少应用
 
-<img src="/images/deeplearning/Attention-01.jpg" width="700" />
+<img src="/images/deeplearning/Attention-00.jpg" width="700" />
 
-## 4. Seq2Seq Attention 各种变形
+## 4. Attention 本质思想
 
-第四个Seq-to-Seq模型，来自于论文 [Effective Approaches to Attention-based Neural Machine Translation](http://link.zhihu.com/?target=http%3A//aclweb.org/anthology/D15-1166) 这篇论文提出了两种 Seq2Seq模型 分别是global Attention 和 local Attention。
+把Attention机制从上文讲述例子中的Encoder-Decoder框架中剥离，并进一步做抽象，可以更容易懂:
+
+<img src="/images/deeplearning/Attention-04.jpg" width="600" />
+
+### 4.1 Attention 的三阶段
+
+> 1. 第一个阶段根据Query和Key计算两者的相似性或者相关性；
+> 2. 第二个阶段对第一阶段的原始分值进行归一化处理；
+> 3. 根据权重系数对Value进行加权求和。
+
+<img src="/images/deeplearning/Attention-03.jpg" width="600" />
+
+### 4.2 Self Attention
+
+Attention顾名思义，指的不是Target和Source之间的Attention机制，而是Source内部元素之间或者Target内部元素之间发生的Attention机制，也可以理解为Target=Source这种特殊情况下的注意力计算机制。
+
+<img src="/images/deeplearning/Attention-05.jpg" width="600" />
+
+
+请务必要阅读： [张俊林 深度学习中的注意力模型（2017版）](https://zhuanlan.zhihu.com/p/37601161)
+
+---
 
 ## Reference
 
