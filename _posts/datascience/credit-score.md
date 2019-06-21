@@ -15,9 +15,9 @@ mathjax: true
 
 按照借贷用户的借贷时间，评分卡模型可以划分为以下三种：
 
-- 贷前：申请评分卡（Application score card），又称为A卡
-- 贷中：行为评分卡（Behavior score card），又称为B卡
-- 贷后：催收评分卡（Collection score card），又称为C卡
+- 贷前： Application score card， 又称为A卡
+- 贷中： Behavior score card， 又称为B卡
+- 贷后： Collection score card， 又称为C卡
 
 申请评分卡要求最为严格，也最为重要，可解释性也要求最强，一般用 LR
 
@@ -52,24 +52,36 @@ Exploratory Data Analysis
 
 > 每个字段的缺失值情况、异常值情况、平均值、中位数、最大值、最小值、分布情况等
 
-### 3.3 数据预处理
+## 3. 数据预处理
 
-> 数据清洗，变量分箱和 WOE 编码三个步骤
+(1). 数据清洗
+ 
+(2). 变量分箱
+ 
+(3). WOE 编码
 
-1. 缺失值太多
-2. 非数值变量多 (emp_title..)
-3. id, member_id 等
-4. loan_amnt != df.funded_amnt
-5. 空值填充为 0
-6. 带 % 的浮点，去掉 %
+> 1. 缺失值太多
+> 2. 非数值变量多 (emp_title..)
+> 3. id, member_id 等
+> 4. loan_amnt != df.funded_amnt
+> 5. 空值填充为 0
+> 6. 带 % 的浮点，去掉 %
 
-> 好坏比是 34:1 是非常难以处理的样本了 
+> 好坏比是 34:1 是非常难以处理的样本了.
 
-### 3.3.1 数据清洗
+### 3.1 数据清洗
 
-> 缺失值太多
+缺失值太多
 
-### 3.3.2 变量分箱
+```python
+# 处理对象类型的缺失，unique
+df.select_dtypes(include=['O']).describe().T.\
+assign(missing_pct=df.apply(lambda x : (len(x)-x.count())/float(len(x))))
+
+# 缺失值特别高的可以删除掉
+```
+
+### 3.2 变量分箱
 
 - 对连续变量进行分段离散化；
 - 将多状态的离散变量进行合并，减少离散变量的状态数。
@@ -98,12 +110,7 @@ Exploratory Data Analysis
 >
 > 下一步：变量显著性检验——计算 WOE、IV
 
-在LR中，单变量离散化为N个哑变量后，每个哑变量有单独的权重，相当于为模型引入了非线性，能够提升模型表达能力，加大拟合；
-
-[变量分箱实践](https://zhuanlan.zhihu.com/p/52312186)
-[One-Hot编码与哑变量](http://www.jiehuozhe.com/article/3)
-[方差、标准差和均方根误差的区别总结](https://blog.csdn.net/zengxiantao1994/article/details/77855644)
-[基于卡方分箱的评分卡建模](https://www.cnblogs.com/wzdLY/p/9649101.html)
+举个例子：
 
 > A箱
 > (26.2-19)\*(26.2-19) / 26.2  -> **(26.2 是 正类的期望频数， 19 是真实频数)**
@@ -117,31 +124,6 @@ Exploratory Data Analysis
 > 先建立原假设：A、B两种疗法没有区别。根据卡方值的计算公式，计算：卡方值=10.01。
 >
 > 方差: 来描述变量与均值的偏离程度
-
-### 3.3.3 WOE编码 
-
-> WOE: weight of evidence
-
-将离散变量转化为连续变量。WOE编码是评分卡模型常用的编码方式。
-
-> WOE也可以理解为当前分箱中坏客户和好客户的比值，和所有样本中这个比值的差异
-
-> 当分箱中坏客户和好客户的比例等于随机坏客户和好客户的比值时，说明这个分箱没有预测能力，即WOE=0。 (WOE为0，说明该箱出的特征对结果没有区分度)
-
-实际上WOE编码相当于把分箱后的特征**从非线性可分映射到近似线性**可分的空间内。
-
-![](https://pic2.zhimg.com/80/v2-f9641d365b592361e541b4d5458ebf2d_hd.jpg)
-
-总结一下WOE编码的优势：
-
-> 1. 可提升模型的预测效果
-> 2. 将自变量规范到同一尺度上
-> 3. WOE能反映自变量取值的贡献情况
-> 4. 有利于对变量的每个分箱进行评分
-> 5. 转化为连续变量之后，便于分析变量与变量之间的相关性
-> 6. 与独热向量编码相比，可以保证变量的完整性，同时避免稀疏矩阵和维度灾难
-
----
 
 **分箱的最大区间数：**
 
@@ -181,27 +163,56 @@ Exploratory Data Analysis
 > 4. 将所有特征统一变换为类别型变量。
 > 5. 分箱后变量才可以使用标准的评分卡格式，即对不同的分段进行评分。
 
- - LR 如何处理数据不平衡 ?   答： 好坏样本34：1， 有时候关注坏用本个数， 好样本欠采样等.
- - LR 分析的变量 & GBDT 分析的变量分别是多少？  26维，184维
- - 变量如何分箱？ IV 值的计算。 卡方分箱和woe编码进行转换
+- [变量分箱实践](https://zhuanlan.zhihu.com/p/52312186)
+- [One-Hot编码与哑变量](http://www.jiehuozhe.com/article/3)
+- [方差、标准差和均方根误差的区别总结](https://blog.csdn.net/zengxiantao1994/article/details/77855644)
+- [基于卡方分箱的评分卡建模](https://www.cnblogs.com/wzdLY/p/9649101.html)
 
-Reference
+### 3.3 WOE编码 
 
-> [Python三大评分卡之行为评分卡](https://zhuanlan.zhihu.com/p/34370741)
-> 
-> [玩转逻辑回归之金融评分卡模型](https://zhuanlan.zhihu.com/p/36539125)
-> 
-> [拍拍贷教你如何用GBDT做评分卡](http://www.sfinst.com/?p=1389)
+> WOE: weight of evidence
+
+将离散变量转化为连续变量。WOE编码是评分卡模型常用的编码方式。
+
+> WOE也可以理解为当前分箱中坏客户和好客户的比值，和所有样本中这个比值的差异
+
+> 当分箱中坏客户和好客户的比例等于随机坏客户和好客户的比值时，说明这个分箱没有预测能力，即WOE=0。 (WOE为0，说明该箱出的特征对结果没有区分度)
+
+实际上WOE编码相当于把分箱后的特征**从非线性可分映射到近似线性**可分的空间内。
+
+![](https://pic2.zhimg.com/80/v2-f9641d365b592361e541b4d5458ebf2d_hd.jpg)
+
+总结一下WOE编码的优势：
+
+> 1. 可提升模型的预测效果
+> 2. 将自变量规范到同一尺度上
+> 3. WOE能反映自变量取值的贡献情况
+> 4. 有利于对变量的每个分箱进行评分
+> 5. 转化为连续变量之后，便于分析变量与变量之间的相关性
+> 6. 与独热向量编码相比，可以保证变量的完整性，同时避免稀疏矩阵和维度灾难
+
+---
 
 **评估指标ks：**
 
 等分 10 份，两条洛伦兹曲线， TPR 与 FPR 的差值. 好坏客户的区程度.
 
 
+## 4. 变量筛选
 
-### 3.3.4 IV 值
+主要衡量标准: 变量的预测能力和变量的线性相关性。
 
-IV称为信息价值(information value)，自变量的IV值越大，表示自变量的预测能力越强。
+挑选入模变量:
+
+> 1. 变量的预测能力
+> 2. 变量之间的线性相关性
+> 3. 变量在业务上的可解释性
+
+变量两两相关性分析，变量的多重共线性分析。
+
+### 4.1 单变量筛选
+
+IV 称为信息价值(information value)，自变量的IV值越大，表示自变量的预测能力越强。
 
 ![](https://www.zhihu.com/equation?tex=IV_i+%3D%28%5Cfrac%7B%5C%23B_i%7D%7B%5C%23B_T%7D-%5Cfrac%7B%5C%23G_i%7D%7B%5C%23G_T%7D%29+%2A+log+%28%5Cfrac%7B%5C%23B_i%2F%5C%23B_T%7D%7B%5C%23G_i%2F%5C%23G_T%7D%29%3D%28%5Cfrac%7B%5C%23B_i%7D%7B%5C%23B_T%7D-%5Cfrac%7B%5C%23G_i%7D%7B%5C%23G_T%7D%29+%2A+WOE_i+%5C%5C)
 
@@ -211,7 +222,7 @@ IV称为信息价值(information value)，自变量的IV值越大，表示自变
 
 IV排序后，选择IV>0.02的变量，共58个变量IV>0.02
 
-### 3.3.5 多变量分析
+### 4.2 多变量分析
 
 保留相关性低于阈值0.6的变量，剩余27个变量
 
@@ -226,10 +237,6 @@ IV排序后，选择IV>0.02的变量，共58个变量IV>0.02
 3. 减轻后期验证、部署、监控的负担
 4. 保证变量的可解释性
 
-### 3.3.6 显著性分析
-
-删除P值不显著的变量，剩余12个变量了。
-
 特征相关度筛选
 
 ```py
@@ -238,25 +245,10 @@ cor.loc[:,:] = np.tril(cor, k=-1) # below main lower triangle of an array
 cor = cor.stack()
 cor[(cor > 0.55) | (cor < -0.55)] # 特征相关度筛选
 ```
-### 3.3.7 转化为评分卡
 
-将 odds 带入可得：
+### 4.3 显著性分析
 
-![](https://www.zhihu.com/equation?tex=%5Ctext%7Blog%7D%28+%5Ctext%7Bodds%7D%29+%3D+%5Ctheta%5ETx+%5C%5C)
-
-评分卡的分值可以定义为比率对数的线性表达来，即： 
-
-![](https://www.zhihu.com/equation?tex=Score+%3D+A+-B+%5Ctimes+%5Ctext%7Blog%7D%28+%5Ctext%7Bodds%7D%29+%5C%5C)
-
-最终得到评分卡模型：
-
-![](https://pic2.zhimg.com/80/v2-fec98ff9de65d835a5be217f01f678a5_hd.jpg)
-
-需要设定两个假设：
-
-- 某个特定的违约概率下的预期评分，即比率 即比率 $\text{odds}$ 为 $θ\_0$ 时的分数为 $P\_0$
-- 该违约概率翻倍的评分（PDO）
-
+删除P值不显著的变量，剩余12个变量了。
 
 **GBDT, GBRT, Xgboost, RF grid search**
 
@@ -280,14 +272,39 @@ param_grid = {
 
 最后选择出 84 个变量， 然后在放到不同的模型中做训练，在 ensemble 应该效果还是不错的。
 
-> 为什么要用回归，不用分类，其实我们在做分类器的过程中，大部分用回归的算法，效果好一些，具体为什么，我有点忘记了
-
 **特征不稳定的，不可以作为入模变量：**
     
 > 挑选变量的时候，开始每个月我一直在看它的均值和方差的变化是否在容忍的范围内，超过50%舍
 
-**模型更新周期：**
+## 5. 转化为评分卡
 
-> 信贷产品比较长的话，2个月更新一次比较好，贷款周期短的话，周更新都可以， 月更新
+将 odds 带入可得：
+
+![](https://www.zhihu.com/equation?tex=%5Ctext%7Blog%7D%28+%5Ctext%7Bodds%7D%29+%3D+%5Ctheta%5ETx+%5C%5C)
+
+评分卡的分值可以定义为比率对数的线性表达来，即： 
+
+![](https://www.zhihu.com/equation?tex=Score+%3D+A+-B+%5Ctimes+%5Ctext%7Blog%7D%28+%5Ctext%7Bodds%7D%29+%5C%5C)
+
+最终得到评分卡模型：
+
+![](https://pic2.zhimg.com/80/v2-fec98ff9de65d835a5be217f01f678a5_hd.jpg)
+
+需要设定两个假设：
+
+- 某个特定的违约概率下的预期评分，即比率 即比率 $\text{odds}$ 为 $θ\_0$ 时的分数为 $P\_0$
+- 该违约概率翻倍的评分（PDO）
+
+## 6. KS 评估
+
+KS 值表示了模型区分好坏客户的能力。
+
+其实质是 $TPR - FPR$ 随好坏客户阈值变化的最大值。KS 的取值范围在 0.5 ~ 1 之间，值越大，模型的预测准确性越好。一般，KS > 0.4 即认为模型有比较好的预测性能。
+
+## Reference
+
+- [Python三大评分卡之行为评分卡](https://zhuanlan.zhihu.com/p/34370741)
+- [玩转逻辑回归之金融评分卡模型](https://zhuanlan.zhihu.com/p/36539125)
+- [拍拍贷教你如何用GBDT做评分卡](http://www.sfinst.com/?p=1389)
 
 
