@@ -215,8 +215,7 @@ x_4 = Embedding(7555+ 1,#7983+1 # 词汇表大小， 即，最大整数 index + 
                 input_length=maxlen, # maxlen=1200, 一个 doc 最大长度
                 trainable=True)(inp)
 ```
-
-                
+              
 > Input 一个网络层次，输入层 在 keras
 >
 > SpatialDropout1D ，那么常规的 dropout 将无法使激活正则化，且导致有效的学习速率降低。
