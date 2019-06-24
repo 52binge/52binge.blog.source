@@ -190,45 +190,38 @@ word2vec/chars.vector 为 7983 * 100
 > 2层GRU 接Attention层，然后和 avgpool、maxpool concat 接起来.
 
 ```python
-import keras
-from keras import Model
-from keras.layers import *
-from JoinAttLayer import Attention
+def model(self, embeddings_matrix, maxlen, word_index, num_class):
+    inp = Input(shape=(maxlen,))
+    encode = Bidirectional(CuDNNGRU(128, return_sequences=True))
+    encode2 = Bidirectional(CuDNNGRU(128, return_sequences=True))
+    attention = Attention(maxlen)
+    x_4 = Embedding(len(word_index) + 1, # input_dim
+                    embeddings_matrix.shape[1], # outputa_dim
+                    weights=[embeddings_matrix],
+                    input_length=maxlen, # 当输入序列的长度固定时，该值为其长度。如果要在该层后接Flatten层，然后接Dense层，则必须指定该参数，否则Dense层的输出维度无法自动推断。
+                    trainable=True)(inp)
+    x_3 = SpatialDropout1D(0.2)(x_4) # SpatialDropout1D ，那么常规的 dropout 将无法使激活正则化，且导致有效的学习速率降低。在这种情况下，SpatialDropout1D 将有助于提高特征图之间的独立性，应该使用它来代替 Dropout。
+    x_3 = encode(x_3)
+    x_3 = Dropout(0.2)(x_3)
+    x_3 = encode2(x_3)
+    x_3 = Dropout(0.2)(x_3)
+    # 1D 卷积层 (例如时序卷积),该层创建了一个卷积核，该卷积核以 单个空间（或时间）维上的层输入进行卷积， 以生成输出张量。
+    # kernel_size 指明 1D 卷积窗口的长度是 3， padding="valid" 表示「不填充」， kernel_initializer权值矩阵的初始化器->Glorot均匀分布初始化方法
+    x_3 = Conv1D(64, kernel_size=3, padding="valid", kernel_initializer="glorot_uniform")(x_3) 
+    x_3 = Dropout(0.2)(x_3)
+    avg_pool_3 = GlobalAveragePooling1D()(x_3)
+    max_pool_3 = GlobalMaxPooling1D()(x_3)
+    attention_3 = attention(x_3)
+    x = keras.layers.concatenate([avg_pool_3, max_pool_3, attention_3])
+    x = Dense(num_class, activation="sigmoid")(x)
 
-class TextClassifier():
-
-    def model(self, embeddings_matrix, maxlen, word_index, num_class):
-        inp = Input(shape=(maxlen,))
-        encode = Bidirectional(CuDNNGRU(128, return_sequences=True))
-        encode2 = Bidirectional(CuDNNGRU(128, return_sequences=True))
-        attention = Attention(maxlen)
-        x_4 = Embedding(len(word_index) + 1, # input_dim
-                        embeddings_matrix.shape[1], # outputa_dim
-                        weights=[embeddings_matrix],
-                        input_length=maxlen, # 当输入序列的长度固定时，该值为其长度。如果要在该层后接Flatten层，然后接Dense层，则必须指定该参数，否则Dense层的输出维度无法自动推断。
-                        trainable=True)(inp)
-        x_3 = SpatialDropout1D(0.2)(x_4) # SpatialDropout1D ，那么常规的 dropout 将无法使激活正则化，且导致有效的学习速率降低。在这种情况下，SpatialDropout1D 将有助于提高特征图之间的独立性，应该使用它来代替 Dropout。
-        x_3 = encode(x_3)
-        x_3 = Dropout(0.2)(x_3)
-        x_3 = encode2(x_3)
-        x_3 = Dropout(0.2)(x_3)
-        # 1D 卷积层 (例如时序卷积),该层创建了一个卷积核，该卷积核以 单个空间（或时间）维上的层输入进行卷积， 以生成输出张量。
-        # kernel_size 指明 1D 卷积窗口的长度是 3， padding="valid" 表示「不填充」， kernel_initializer权值矩阵的初始化器->Glorot均匀分布初始化方法
-        x_3 = Conv1D(64, kernel_size=3, padding="valid", kernel_initializer="glorot_uniform")(x_3) 
-        x_3 = Dropout(0.2)(x_3)
-        avg_pool_3 = GlobalAveragePooling1D()(x_3)
-        max_pool_3 = GlobalMaxPooling1D()(x_3)
-        attention_3 = attention(x_3)
-        x = keras.layers.concatenate([avg_pool_3, max_pool_3, attention_3])
-        x = Dense(num_class, activation="sigmoid")(x)
-
-        adam = keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-08)
-        model = Model(inputs=inp, outputs=x)
-        model.compile(
-            loss='categorical_crossentropy',
-            optimizer=adam
-            )
-        return model
+    adam = keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-08)
+    model = Model(inputs=inp, outputs=x)
+    model.compile(
+        loss='categorical_crossentropy',
+        optimizer=adam
+        )
+    return model
 ```
 
 > word2vec : 7983 100 word2vec/chars.vector 过滤掉低频词
