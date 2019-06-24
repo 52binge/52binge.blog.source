@@ -153,7 +153,7 @@ python main_predict.py -mn fasttext_wn2_model.pkl
 
 ## 2. Attention RNN、RCNN
 
-### 2.1 预处理数据 data
+### 2.1 预处理 data
 
 粗暴使用char模型，用到的停用词也不多。
 
@@ -183,83 +183,101 @@ word2vec/chars.vector 为 7983 * 100
 
 ### 2.2 Attention RCNN
 
-- 参考自 Kaggle 的 [Attention Model](https://www.kaggle.com/qqgeogor/keras-lstm-attention-glove840b-lb-0-043)
+> Attention-RNN (0.637)、Attention-RCNN (0.669)
 
-常见的文本分类 baseline:
+- Attention 参考自 Kaggle 的 [Attention Model](https://www.kaggle.com/qqgeogor/keras-lstm-attention-glove840b-lb-0-043)
 
-> 2层GRU 接Attention层，然后和 avgpool、maxpool concat 接起来.
+Kaggle 常见文本分类结构: 2层GRU 接Attention层，然后和 avgpool、maxpool concat 接起来.
 
 ```python
 def model(self, embeddings_matrix, maxlen, word_index, num_class):
-    inp = Input(shape=(maxlen,))
-    encode = Bidirectional(CuDNNGRU(128, return_sequences=True))
-    encode2 = Bidirectional(CuDNNGRU(128, return_sequences=True))
-    attention = Attention(maxlen)
-    x_4 = Embedding(len(word_index) + 1, # input_dim
-                    embeddings_matrix.shape[1], # outputa_dim
-                    weights=[embeddings_matrix],
-                    input_length=maxlen, # 当输入序列的长度固定时，该值为其长度。如果要在该层后接Flatten层，然后接Dense层，则必须指定该参数，否则Dense层的输出维度无法自动推断。
-                    trainable=True)(inp)
-    x_3 = SpatialDropout1D(0.2)(x_4) # SpatialDropout1D ，那么常规的 dropout 将无法使激活正则化，且导致有效的学习速率降低。在这种情况下，SpatialDropout1D 将有助于提高特征图之间的独立性，应该使用它来代替 Dropout。
-    x_3 = encode(x_3)
-    x_3 = Dropout(0.2)(x_3)
-    x_3 = encode2(x_3)
-    x_3 = Dropout(0.2)(x_3)
-    # 1D 卷积层 (例如时序卷积),该层创建了一个卷积核，该卷积核以 单个空间（或时间）维上的层输入进行卷积， 以生成输出张量。
-    # kernel_size 指明 1D 卷积窗口的长度是 3， padding="valid" 表示「不填充」， kernel_initializer权值矩阵的初始化器->Glorot均匀分布初始化方法
-    x_3 = Conv1D(64, kernel_size=3, padding="valid", kernel_initializer="glorot_uniform")(x_3) 
-    x_3 = Dropout(0.2)(x_3)
-    avg_pool_3 = GlobalAveragePooling1D()(x_3)
-    max_pool_3 = GlobalMaxPooling1D()(x_3)
-    attention_3 = attention(x_3)
-    x = keras.layers.concatenate([avg_pool_3, max_pool_3, attention_3])
-    x = Dense(num_class, activation="sigmoid")(x)
-
-    adam = keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-08)
-    model = Model(inputs=inp, outputs=x)
-    model.compile(
-        loss='categorical_crossentropy',
-        optimizer=adam
-        )
-    return model
 ```
 
-> word2vec : 7983 100 word2vec/chars.vector 过滤掉低频词
+为了之后 summary 看清楚网络结构，所以我们一些参数先写死看一下：
+
+```python
+import keras
+from keras import Model
+from keras.layers import *
+# from JoinAttLayer import Attention
+
+maxlen=1200
+
+inp = Input(shape=(maxlen,)) # 当输入序列的长度固定时，该值为其长度 1200 （一个文档doc的最大长度）
+
+encode = Bidirectional(CuDNNGRU(128, return_sequences=True))
+encode2 = Bidirectional(CuDNNGRU(128, return_sequences=True))
+
+# attention = Attention(maxlen)
+
+x_4 = Embedding(7555+ 1,#7983+1 # 词汇表大小， 即，最大整数 index + 1, len(word_index) + 1, # input_dim
+                100, # output_dim: int >= 0。词向量的维度。
+                input_length=maxlen, # maxlen=1200, 一个 doc 最大长度
+                trainable=True)(inp)
+```
+
+                
+> Input 一个网络层次，输入层 在 keras
+>
+> SpatialDropout1D ，那么常规的 dropout 将无法使激活正则化，且导致有效的学习速率降低。
+> SpatialDropout1D ，在这种情况下，SpatialDropout1D 将有助于提高特征图之间的独立性，应该使用它来代替 Dropout。
+>
+> CuDNNGRU 是 基于CuDNN的快速GRU实现，只能在GPU上运行，只能使用 tensoflow 为后端
+> CuDNNLSTM 是 基于CuDNN的快速LSTM实现，只能在GPU上运行，只能使用 tensoflow 为后端
+>
+> attention = Attention(maxlen)
+>
+> Embedding嵌入层将正整数（下标）转换为具有固定大小的向量，如[[4], [20]]->[[0.25, 0.1], [0.6, -0.2]]
 
 ```py
-def model(self, embeddings_matrix, maxlen, word_index, num_class):
-    inp = Input(shape=(maxlen,))
-    encode = Bidirectional(CuDNNGRU(128, return_sequences=True))
-    encode2 = Bidirectional(CuDNNGRU(128, return_sequences=True))
-    attention = Attention(maxlen)
-    x_4 = Embedding(len(word_index) + 1, # input_dim
-                    embeddings_matrix.shape[1], # outputa_dim
-                    weights=[embeddings_matrix],
-                    input_length=maxlen, # 当输入序列的长度固定时，该值为其长度。如果要在该层后接Flatten层，然后接Dense层，则必须指定该参数，否则Dense层的输出维度无法自动推断。
-                    trainable=True)(inp)
-    x_3 = SpatialDropout1D(0.2)(x_4) # SpatialDropout1D ，那么常规的 dropout 将无法使激活正则化，且导致有效的学习速率降低。在这种情况下，SpatialDropout1D 将有助于提高特征图之间的独立性，应该使用它来代替 Dropout。
-    x_3 = encode(x_3)
-    x_3 = Dropout(0.2)(x_3)
-    x_3 = encode2(x_3)
-    x_3 = Dropout(0.2)(x_3)
-    # 1D 卷积层 (例如时序卷积),该层创建了一个卷积核，该卷积核以 单个空间（或时间）维上的层输入进行卷积， 以生成输出张量。
-    # kernel_size 指明 1D 卷积窗口的长度是 3， padding="valid" 表示「不填充」， kernel_initializer权值矩阵的初始化器->Glorot均匀分布初始化方法
-    x_3 = Conv1D(64, kernel_size=3, padding="valid", kernel_initializer="glorot_uniform")(x_3) 
-    x_3 = Dropout(0.2)(x_3)
-    avg_pool_3 = GlobalAveragePooling1D()(x_3)
-    max_pool_3 = GlobalMaxPooling1D()(x_3)
-    attention_3 = attention(x_3)
-    x = keras.layers.concatenate([avg_pool_3, max_pool_3, attention_3])
-    x = Dense(num_class, activation="sigmoid")(x)
-
-    adam = keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-08)
-    model = Model(inputs=inp, outputs=x)
-    model.compile(
-        loss='categorical_crossentropy',
-        optimizer=adam
-        )
-    return model
+keras.layers.embeddings.Embedding(input_dim, output_dim, embeddings_initializer='uniform',
+                                 # embeddings_regularizer=None, activity_regularizer=None,
+                                 # embeddings_constraint=None, mask_zero=False, input_length=None)
+> Embedding层只能作为模型的第一层
 ```
+
+> '''
+input_dim: int > 0。词汇表大小， 即，最大整数 index + 1。
+output_dim: int >= 0。词向量的维度。
+embeddings_initializer: 嵌入矩阵的初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考initializers
+input_length：当输入序列的长度固定时，该值为其长度。如果要在该层后接Flatten层，然后接Dense层，则必须指定该参数，否则Dense层的输出维度无法自动推断。
+'''
+
+接下来：
+
+```python
+x_3 = encode(x_4)
+x_3 = encode2(x_3)
+
+
+# 输入shape， 形如（samples，steps，features）的3D张量
+# 输出shape， 形如(samples, features)的2D张量
+avg_pool_3 = GlobalAveragePooling1D()(x_3) # GlobalAveragePooling1D 为时域信号施加全局平均值池化
+max_pool_3 = GlobalMaxPooling1D()(x_3) # 对于时间信号的全局最大池化
+
+# attention_3 = attention(x_3)
+
+x = keras.layers.concatenate([avg_pool_3, max_pool_3], name="fc")
+x = Dense(4, activation="softmax")(x)
+
+adam = keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-08, amsgrad=True)
+rmsprop = keras.optimizers.RMSprop(lr=0.001, rho=0.9, epsilon=1e-06)
+model = Model(inputs=inp, outputs=x)
+
+model.compile(
+    loss='categorical_crossentropy',
+    optimizer=adam)
+
+# categorical_crossentropy 用来做多分类问题
+# binary_crossentropy 用来做多标签分类问题
+
+model.summary()
+```
+
+<img src="/images/deeplearning/AI-Challenger-16-1.png" width="900" alt=""/>
+
+
+> word2vec : 7983 100 word2vec/chars.vector 过滤掉低频词
 
 
 循环卷积神经网络(RCNN)，并将其应用于文本分类的任务。首先，我们应用一个双向的循环结构，与传统的基于窗口的神经网络相比，它可以大大减少噪声，从而最大程度地捕捉上下文信息。此外，**该模型在学习文本表示时可以保留更大范围的词序**。其次，我们使用了一个可以**自动判断哪些特性在文本分类中扮演关键角色的池化层**，以捕获文本中的关键组件。我们的模型结合了RNN的结构和最大池化层，**利用了循环神经模型和卷积神经模型的优点**。此外，我们的模型显示了O(n)的时间复杂度，它与文本长度的长度是线性相关的。
@@ -367,9 +385,13 @@ class Metrics(Callback):
 
 > early_stop，顾名思义，就是在训练模型的时候，当在验证集上效果不再提升的时候，就提前停止训练，节约时间。通过设置 patience 来调节。
 
+<!--
+
 ### 2.5 Class Weight (类别权重)
 
 这个 class weight 是我一直觉得比较玄学的地方，一般而言，当数据集样本不均衡的时候，通过设置正负样本权重，可以提高一些效果，但是在这道题目里面，我对4个类别分别设置了class_weight 之后，我发现效果竟然变得更差了。这里也希望知道原因的同学能留下评论，一起交流学习。
+
+-->
 
 ### 2.6 Max Length (padding)
 
