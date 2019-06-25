@@ -10,7 +10,7 @@ tags: chatbot
 
 <!-- more -->
 
-[数据集介绍2018](https://challenger.ai/dataset/fsaouord2018)
+[Challenger.AI](https://challenger.ai/)
 
 Online reviews have become the critical factor to make consumption decision in recent years. They not only have a profound impact on the incisive understanding of shops, users, and the implied sentiment, but also have been widely used in Internet and e-commerce industry, such as personalized recommendation, intelligent search, product feedback, and business security. In this challenge, we provide a dataset of user reviews for fine-grained sentiment analysis from the catering industry, containning 335K public user reviews from Dianping.com. The dataset builds a two-layer labeling system according to the granularity, which contains 6 categories and 20 fine-grained elements.
 
@@ -348,7 +348,9 @@ import gc
 
 ### 2.4 Early Stop
 
-这道题目对于使用 keras 的同学，需要注意的是，metric 的设置，如果我们在训练中设置 metric 的话，其实得到是每个 batch 的 f-score 值（非常不靠谱），所以我们需要在每个 epoch 结束之后去计算模型的 f-score 值，这样方便我们去掌握模型的训练情况。
+需要在每个 epoch 结束之后去计算模型的 F1 值，这样可以更好的掌握模型的训练情况。
+
+> Tips 如果我们在训练中设置 metric 的话，得到是每个 batch 的 F1 值, 是不靠谱的.
 
 类似这样: 
 
@@ -371,52 +373,37 @@ class Metrics(Callback):
         self.val_precisions = []
 
     def on_epoch_end(self, epoch, logs={}):
-        val_predict = list(map(getClassification, self.model.predict(self.validation_data[0])))
-        val_targ = list(map(getClassification, self.validation_data[1]))
-        _val_f1 = f1_score(val_targ, val_predict, average="macro")
-        _val_recall = recall_score(val_targ, val_predict, average="macro")
-        _val_precision = precision_score(val_targ, val_predict, average="macro")
-        self.val_f1s.append(_val_f1)
-        self.val_recalls.append(_val_recall)
-        self.val_precisions.append(_val_precision)
-        print(_val_f1, _val_precision, _val_recall)
-        print("max f1")
-        print(max(self.val_f1s))
+        ...
         return
 ```
 
 
-> early_stop，顾名思义，就是在训练模型的时候，当在验证集上效果不再提升的时候，就提前停止训练，节约时间。通过设置 patience 来调节。
+> early_stop，就是在训练模型的时候，当在验证集上效果不再提升的时候，就提前停止训练，节约时间。
 
 <!--
 
 ### 2.5 Class Weight (类别权重)
 
-这个 class weight 是我一直觉得比较玄学的地方，一般而言，当数据集样本不均衡的时候，通过设置正负样本权重，可以提高一些效果，但是在这道题目里面，我对4个类别分别设置了class_weight 之后，我发现效果竟然变得更差了。这里也希望知道原因的同学能留下评论，一起交流学习。
+一般而言，当数据集样本不均衡的时候，通过设置正负样本权重，可以提高一些效果，但是在这道题目里面，我对4个类别分别设置了class_weight 之后，我发现效果竟然变得更差了。
 
 -->
 
 ### 2.6 Max Length (padding)
 
-padding 的最大长度取整个评论平均的长度的2倍差不多就可以啦(对于char level 而言，max_length 取 400左右)，效果一直不给力.
+> 所有评论平均的长度是 200 左右，max_length 取 2 \* 200，效果一直不给力.
+>
+> 将 max_length 改为 1200 ，macro f-score 效果明显提升
+>
+> Tips： 多分类问题中，那些长度很长的评论可能会有部分属于那些样本数很少的类别，padding过短会导致这些长评论无法被正确划分。
 
-将 max_length 改为 1200 ，macro f-score 效果明显提升
-
-> 多分类问题中，那些长度很长的评论可能会有部分属于那些样本数很少的类别，padding过短会导致这些长评论无法被正确划分。
 
 ## 3. ELMO-Like
 
-腾讯词向量 + 自己\*128 + 自己BiGRU + 2*BiGRU
+（腾讯词向量 16G， 800W \* 200 = 5W \* 200 + 自训词向 5W \* 128 ） + BiGRU 中层语义 + BiGRU 高层语义
 
-> 一次输入一个Batch=128条评论，20个属性都4分类成功， 1 个 epoch， 1200秒=20多分钟
-> 
 > 10W+ 数据集，词频前5W的词, 每个评论一个 epoch 输入1次， 参数共享
-
-
-10W+ 数据集，词频前5W的词
-（腾讯词向量 800W \* 200 = 5W \* 200 + 自己训练词向 5W \* 128 ） + BiGRU 中层语义 + BiGRU 高层语义
-
-> 超过1000维度，Batch 128， 不超过 1000维度的时候，256 可以放得下.
+>
+> 328 + 256 + 256 近1000维度，Batch 128， 512维度的时候，Batch 256 可以放得下.
 >
 > 机器配置： 32G 内存， i9 CPU， 显卡型号 1080， 显存8G
 
@@ -425,6 +412,8 @@ epoch
 > 一次输入一个Batch=128条评论，20个属性都4分类成功， 1 个 epoch， 1200秒=20多分钟
 >
 > 每个评论一个 epoch 输入1次， 参数共享
+> 
+> maxLen 500 左右
 
 --- 
 
@@ -433,10 +422,6 @@ epoch
 
 ## 4. Summary
 
-这个看似不重要，其实确实很重要的点。一开我以为 padding 的最大长度取整个评论平均的长度的2倍差不多就可以啦(对于char level 而言，max_length 取 400左右)，但是会发现效果上不去，当时将 max_length 改为 1000 之后，macro f-score提示明显，我个人认为是在多分类问题中，那些长度很长的评论可能会有部分属于那些样本数很少的类别，padding过短会导致这些长评论无法被正确划分。
-
----
-
 > 1. RNN 优点： 最大程度捕捉上下文信息，这可能有利于捕获长文本的语义。
 > 2. RNN 缺点： 是一个有偏倚的模型，在这个模型中，后面的单词比先前的单词更具优势。因此，当它被用于捕获整个文档的语义时，它可能会降低效率，因为关键组件可能出现在文档中的任何地方，而不是最后。
 > 3. CNN 优点： 提取数据中的局部位置的特征，然后再拼接池化层。 CNN可以更好地捕捉文本的语义。是O(n)
@@ -444,25 +429,24 @@ epoch
 
 ---
 
-在文本分类任务中，有哪些论文中很少提及却对性能有重要影响的tricks？
+在文本分类任务中，有哪些对性能有重要影响的tricks？
 
 > 1. 数据预处理时vocab的选取（前N个高频词或者过滤掉出现次数小于3的词等等）
 > 2. 词向量的选择，可以使用预训练好的词向量如谷歌、facebook开源出来的，当训练集比较大的时候也可以进行微调或者随机初始化与训练同时进行。训练集较小时就别微调了
 > 3. 结合要使用的模型，这里可以把数据处理成char、word或者都用等
 > 4. 有时将词性标注信息也加入训练数据会收到比较好的效果
-> 5. 至于PAD的话，取均值或者一个稍微比较大的数，但是别取最大值那种应该都还好
-> 6. 神经网络结构的话到没有什么要说的，可以多试几种比如fastText、TextCNN、RCNN、char-CNN/RNN、HAN等等。哦，对了，加上dropout和BN可能会有意外收获。反正模型这块还是要具体问题具体分析吧，根据自己的需求对模型进行修改（比如之前参加知乎竞赛的时候，最终的分类标签也有文本描述，所以就可以把这部分信息也加到模型之中等等）
-> 7. 超参数的话，推荐看看之前TextCNN的一篇论文，个人感觉足够了“A Sensitivity Analysis of (and Practitioners’ Guide to) Convolutional Neural Networks for Sentence Classification”
-> 8. 之前还见别人在文本领域用过数据增强的方法，就是对文本进行随机的shuffle和drop等操作来增加数据量
+> 5. 至于PAD的话，取均值或者一个稍微比较大的数（比较大的值，费点空间，谨慎使用）
+> 6. 神经网络结构的话到没有什么要说的，加上dropout和BN可能会更好。模型这块还是要具体问题具体分析吧.
+> 7. 文本领域用过数据增强的方法，就是对文本进行随机的shuffle和drop等操作来增加数据量
 
 ## Reference
 
-- [2019 11家互联网公司，NLP面经回馈][1]
-- [暑期实习NLP算法岗面经总结][2]
-- [在文本分类任务中，有哪些论文中很少提及却对性能有重要影响的tricks？][3]
 - [深度学习与文本分类总结第一篇--常用模型总结][4]
 - [用深度学习（CNN RNN Attention）解决大规模文本分类问题 - 综述和实践][5]
 - [严重数据倾斜文本分类，比如正反比1:20～100，适合什么model][6]
+
+<!--
+
 - [AI-Challenger Baseline (0.70201) 前篇 总览][niu1]
 - [AI-Challenger Baseline (0.70201) 后篇 训练][niu2]
 - [2019 11家互联网公司，NLP面经回馈][v1]
@@ -470,8 +454,12 @@ epoch
 - [呜呜哈做一个有思想的码农][v3]
 - [AI Challenger 2018 进行时][w6]
 - [AI Challenger 2018 细粒度用户评论情感分析 fastText Baseline][w7]
+
+-->
+
 - [ai-challenger-2018-文本挖掘类竞赛相关解决方案及代码汇总][w8]
 - [QA问答系统中的深度学习技术实现][w9]
+- [深度学习代码复现之减少随机性的影响](https://zhuanlan.zhihu.com/p/42517760)
 
 
 [1]: https://zhuanlan.zhihu.com/p/46999592
