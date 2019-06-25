@@ -398,7 +398,11 @@ class Metrics(Callback):
 
 ### 2.6 Max Length (padding)
 
-一开我以为 padding 的最大长度取整个评论平均的长度的2倍差不多就可以啦(对于char level 而言，max_length 取 400左右)，但是会发现效果上不去，当时将 max_length 改为 1000 之后，macro f-score提示明显，我个人认为是在多分类问题中，那些长度很长的评论可能会有部分属于那些样本数很少的类别，padding过短会导致这些长评论无法被正确划分。
+padding 的最大长度取整个评论平均的长度的2倍差不多就可以啦(对于char level 而言，max_length 取 400左右)，效果一直不给力.
+
+将 max_length 改为 1200 ，macro f-score 效果明显提升
+
+> 多分类问题中，那些长度很长的评论可能会有部分属于那些样本数很少的类别，padding过短会导致这些长评论无法被正确划分。
 
 ## 3. ELMO-Like
 
