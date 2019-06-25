@@ -215,32 +215,6 @@ x_4 = Embedding(7555+ 1,#7983+1 # 词汇表大小， 即，最大整数 index + 
                 input_length=maxlen, # maxlen=1200, 一个 doc 最大长度
                 trainable=True)(inp)
 ```
-              
-> Input 一个网络层次，输入层 在 keras
->
-> SpatialDropout1D ，那么常规的 dropout 将无法使激活正则化，且导致有效的学习速率降低。
-> SpatialDropout1D ，在这种情况下，SpatialDropout1D 将有助于提高特征图之间的独立性，应该使用它来代替 Dropout。
->
-> CuDNNGRU 是 基于CuDNN的快速GRU实现，只能在GPU上运行，只能使用 tensoflow 为后端
-> CuDNNLSTM 是 基于CuDNN的快速LSTM实现，只能在GPU上运行，只能使用 tensoflow 为后端
->
-> attention = Attention(maxlen)
->
-> Embedding嵌入层将正整数（下标）转换为具有固定大小的向量，如[[4], [20]]->[[0.25, 0.1], [0.6, -0.2]]
-
-```py
-keras.layers.embeddings.Embedding(input_dim, output_dim, embeddings_initializer='uniform',
-                                 # embeddings_regularizer=None, activity_regularizer=None,
-                                 # embeddings_constraint=None, mask_zero=False, input_length=None)
-> Embedding层只能作为模型的第一层
-```
-
-> '''
-input_dim: int > 0。词汇表大小， 即，最大整数 index + 1。
-output_dim: int >= 0。词向量的维度。
-embeddings_initializer: 嵌入矩阵的初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考initializers
-input_length：当输入序列的长度固定时，该值为其长度。如果要在该层后接Flatten层，然后接Dense层，则必须指定该参数，否则Dense层的输出维度无法自动推断。
-'''
 
 接下来：
 
@@ -275,6 +249,41 @@ model.summary()
 
 <img src="/images/deeplearning/AI-Challenger-16-1.png" width="900" alt=""/>
 
+              
+> Input 一个网络层次，输入层 在 keras
+>
+> SpatialDropout1D ，那么常规的 dropout 将无法使激活正则化，且导致有效的学习速率降低。
+> SpatialDropout1D ，在这种情况下，SpatialDropout1D 将有助于提高特征图之间的独立性，应该使用它来代替 Dropout。
+>
+> CuDNNGRU 是 基于CuDNN的快速GRU实现，只能在GPU上运行，只能使用 tensoflow 为后端
+> CuDNNLSTM 是 基于CuDNN的快速LSTM实现，只能在GPU上运行，只能使用 tensoflow 为后端
+>
+> attention = Attention(maxlen)
+>
+> Embedding嵌入层将正整数（下标）转换为具有固定大小的向量，如[[4], [20]]->[[0.25, 0.1], [0.6, -0.2]]
+
+```py
+keras.layers.embeddings.Embedding(
+    input_dim, 
+    output_dim, 
+    embeddings_initializer='uniform', # embeddings_regularizer=None, 
+    activity_regularizer=None,  # embeddings_constraint=None,              
+    mask_zero=False, 
+    input_length=None
+)
+```
+
+Embedding 的一些参数解释：
+
+> Embedding层只能作为模型的第一层
+> 
+> input_dim: int > 0。词汇表大小， 即，最大整数 index + 1。
+> output_dim: int >= 0。词向量的维度。
+> embeddings_initializer: 嵌入矩阵的初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的初始化器。参考initializers
+> input_length：当输入序列的长度固定时，该值为其长度。如果要在该层后接Flatten层，然后接Dense层，则必须指定该参数，否则Dense层的输出维度无法自动推断。
+
+[Convolutional Neural Networks (week1) - CNN , 运用 Padding](/2018/08/21/deeplearning/Convolutional-Neural-Networks-week1/#4-1-运用-Padding-的原因)
+[TensorFlow中CNN的两种padding方式“SAME”和“VALID”](https://blog.csdn.net/wuzqChom/article/details/74785643)
 
 > word2vec : 7983 100 word2vec/chars.vector 过滤掉低频词
 
@@ -325,12 +334,7 @@ import gc
 
 ### 2.3 loss function
 
-[慢慢学NLP-前篇](https://zhuanlan.zhihu.com/p/47207009)
-[训练过程-后篇](https://zhuanlan.zhihu.com/p/47278559)
-
-[多分类和多标签分类](https://blog.csdn.net/qinglv1/article/details/85701106)
-
-[gensim训练word2vec及相关函数](https://blog.csdn.net/sinat_26917383/article/details/69803018)
+[多分类和多标签分类](https://blog.csdn.net/qinglv1/article/details/85701106), [gensim训练word2vec及相关函数](https://blog.csdn.net/sinat_26917383/article/details/69803018)
 
 > 多分类：类别数目大于2个，类别之间是互斥的。比如是猫，就不能是狗、猪
 > categorical crossentropy 用来做多分类问题
@@ -394,7 +398,7 @@ class Metrics(Callback):
 
 ### 2.6 Max Length (padding)
 
-这个看似不重要，其实确实很重要的点。一开我以为 padding 的最大长度取整个评论平均的长度的2倍差不多就可以啦(对于char level 而言，max_length 取 400左右)，但是会发现效果上不去，当时将 max_length 改为 1000 之后，macro f-score提示明显，我个人认为是在多分类问题中，那些长度很长的评论可能会有部分属于那些样本数很少的类别，padding过短会导致这些长评论无法被正确划分。
+一开我以为 padding 的最大长度取整个评论平均的长度的2倍差不多就可以啦(对于char level 而言，max_length 取 400左右)，但是会发现效果上不去，当时将 max_length 改为 1000 之后，macro f-score提示明显，我个人认为是在多分类问题中，那些长度很长的评论可能会有部分属于那些样本数很少的类别，padding过短会导致这些长评论无法被正确划分。
 
 ## 3. ELMO-Like
 
