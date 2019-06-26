@@ -247,7 +247,39 @@ model.compile(
 model.summary()
 ```
 
+RNN：
+
 <img src="/images/deeplearning/AI-Challenger-16-1.png" width="900" alt=""/>
+
+RCNN：
+
+```python
+x_4 = Embedding(7555+ 1,#7983+1 # 词汇表大小， 即，最大整数 index + 1
+                100,
+                input_length=maxlen,
+                trainable=True)(inp)
+
+x_3 = encode(x_4)
+x_3 = encode2(x_3)
+
+x_3 = Conv1D(64, kernel_size=3, padding="valid", kernel_initializer="glorot_uniform")(x_3)
+
+# 输入shape， 形如（samples，steps，features）的3D张量
+# 输出shape， 形如(samples, features)的2D张量
+avg_pool_3 = GlobalAveragePooling1D()(x_3) # GlobalAveragePooling1D 为时域信号施加全局平均值池化
+max_pool_3 = GlobalMaxPooling1D()(x_3) # 对于时间信号的全局最大池化
+
+# attention_3 = attention(x_3)
+
+x = keras.layers.concatenate([avg_pool_3, max_pool_3], name="fc")
+x = Dense(4, activation="softmax")(x)
+
+...
+
+model.summary()
+```
+
+<img src="/images/deeplearning/AI-Challenger-17-1.png" width="900" alt=""/>
 
               
 > Input 一个网络层次，输入层 在 keras
@@ -286,7 +318,6 @@ Embedding 的一些参数解释：
 [TensorFlow中CNN的两种padding方式“SAME”和“VALID”](https://blog.csdn.net/wuzqChom/article/details/74785643)
 
 > word2vec : 7983 100 word2vec/chars.vector 过滤掉低频词
-
 
 循环卷积神经网络(RCNN)，并将其应用于文本分类的任务。首先，我们应用一个双向的循环结构，与传统的基于窗口的神经网络相比，它可以大大减少噪声，从而最大程度地捕捉上下文信息。此外，**该模型在学习文本表示时可以保留更大范围的词序**。其次，我们使用了一个可以**自动判断哪些特性在文本分类中扮演关键角色的池化层**，以捕获文本中的关键组件。我们的模型结合了RNN的结构和最大池化层，**利用了循环神经模型和卷积神经模型的优点**。此外，我们的模型显示了O(n)的时间复杂度，它与文本长度的长度是线性相关的。
 
