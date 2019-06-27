@@ -353,5 +353,7 @@ KS 值表示了模型区分好坏客户的能力。
 - [Python三大评分卡之行为评分卡](https://zhuanlan.zhihu.com/p/34370741)
 - [玩转逻辑回归之金融评分卡模型](https://zhuanlan.zhihu.com/p/36539125)
 - [拍拍贷教你如何用GBDT做评分卡](http://www.sfinst.com/?p=1389)
+- [模型区分度指标 KS 值](https://blog.csdn.net/zs15321583801/article/details/88217839)
+- [分类模型评判指标 ROC，AUC，GINI，KS](https://blog.csdn.net/Orange_Spotty_Cat/article/details/82425113)
 
 
