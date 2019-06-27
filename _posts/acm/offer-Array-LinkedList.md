@@ -1,7 +1,7 @@
 ---
 title: Array & LinkedList
 toc: true
-date: 2018-12-17 18:06:21
+date: 2013-09-17 18:06:21
 categories: icpc
 tags: acm
 ---

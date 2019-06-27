@@ -1,7 +1,7 @@
 ---
 title: Binary Tree
 toc: true
-date: 2019-06-11 10:06:21
+date: 2013-10-11 10:06:21
 categories: icpc
 tags: acm
 ---
