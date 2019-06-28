@@ -3,27 +3,28 @@
 
 ## 1. 数组 & 排序
 
-> 1. 二维数组中的查找 bool Find(int\* matrix, int rows, int cols, int value)用一维/二维 \*(matrix+i\*cols+j)
-> 2. 替换空格 char\* replace(char\* str, int len) ‘ ’->%20 在源数组总长度，从后向前，逐个赋值
-> 3. 旋转数组的最小元素 int get_min(int \*a, int len) , while(a[p1] >= a[p2]) {
-> 4. 调整数组位数使奇数位于前面 void reorderOddEven(int[] arr) 
-> 5. 数组中出现次数超过一半的次数 \* int core(int \*a, int len)
-> 6. 最小的K个数  part 快排思想 + void set_k(int\* input, int n, int k) **nok**
-> 7. 连续子数组的最大和   // dp: F[i] = max(a[i], F[i-1]+a[i]);
-> 8. [把数组排成最小的数](https://www.cnblogs.com/youxin/p/3294154.html) #include < sstream > bool Compare(const string &left, const string &right)
-> 9. [数组中的逆序对](https://blog.csdn.net/bf23456/article/details/51303632)
-> 10. 数组中只出现一次的数字 , 划分2数组，num & (-num);二者与后得到的数，将num最右边的1保留下来
-> 11. **丑数**, 只包含质因子2、3和5的数称作丑数, 1, 2, 3, 5, 6, ... ok
-> 12. 整数中1出现的次数（从1到n整数中1出现的次数）. **nok**
-> 13. 和为S的连续正数序列(滑动窗口思想) left=1, right = 2, total = (left + right) \* (right - left + 1) / 2; 
-> 14. 和为S的两个数字(双指针思想) ok.
-> 15. 孩子们的游戏-圆圈中最后剩下的数(约瑟夫环) ok.
-> 16. [构建乘积数组](https://blog.csdn.net/u012327058/article/details/81007333)
-> 17. 如何在排序数组中找出给定数字出现的次数 int bina(int \*a, int len, int num, bool isLeft)
-> 18. [最短路Floyd](https://www.cnblogs.com/biyeymyhjob/archive/2012/07/31/2615833.html)
-> 19. quick_sort, while (双while + swap)
+> 1. **八皇后**， void dfs(int n)
+> 2. **二维数组中的查找** bool Find(int\* matrix, int rows, int cols, int value)用一维/二维 \*(matrix+i\*cols+j)
+> 3. 替换空格 char\* replace(char\* str, int len) ‘ ’->%20 在源数组总长度，从后向前，逐个赋值
+> 4. 旋转数组的最小元素 int get_min(int \*a, int len) , while(a[p1] >= a[p2]) {
+> 5. 调整数组位数使奇数位于前面 void odds(int[] arr) 
+> 6. 次数超过一半的次数 \* int core(int \*a, int len)
+> 7. **最小的K个数 ** part 快排思想 + void set_k(int\* input, int n, int k) **nok**
+> 8. **连续子数组的最大和**   // dp: F[i] = max(a[i], F[i-1]+a[i]);
+> 9. [把数组排成最小的数](https://www.cnblogs.com/youxin/p/3294154.html) #include < sstream > bool Compare(const string &left, const string &right)
+> 10. [数组中的逆序对](https://blog.csdn.net/bf23456/article/details/51303632)
+> 11. 数组中只出现一次的数字 , 划分2数组，num & (-num);二者与后得到的数，将num最右边的1保留下来
+> 12. **丑数**, 只包含质因子2、3和5的数称作丑数, 1, 2, 3, 5, 6, ... ok
+> 13. 整数中1出现的次数（从1到n整数中1出现的次数）. **nok**
+> 14. 和为S的连续正数序列(滑动窗口思想) left=1, right = 2, total = (left + right) \* (right - left + 1) / 2; 
+> 15. 和为S的两个数字(双指针思想) ok.
+> 16. 孩子们的游戏-圆圈中最后剩下的数(约瑟夫环) ok.
+> 17. [构建乘积数组](https://blog.csdn.net/u012327058/article/details/81007333)
+> 18. 如何在排序数组中找出给定数字出现的次数 int bina(int \*a, int len, int num, bool isLeft)
+> 19. [最短路Floyd](https://www.cnblogs.com/biyeymyhjob/archive/2012/07/31/2615833.html)
+> 20. quick_sort, while (双while + swap)
 
-### 1.0 八皇后的实现
+### 1.1 八皇后
 
 ```cpp
 const int N = 105;
@@ -55,7 +56,7 @@ int main() {
 }
 ```
 
-### 1.1 二维数组中的查找
+### 1.2 二维数组中的查找
 
 ```cpp
 int a[][4] = {
@@ -87,7 +88,7 @@ bool Find(int b[][4], int rows, int cols, int value) {
 }
 ```
 
-### 1.2 替换空格
+### 1.3 替换空格
 
 ```cpp
 char* replace(char* str, int len) {
@@ -105,7 +106,7 @@ char* replace(char* str, int len) {
 }
 ```
 
-### 1.3 旋转数组的最小元素
+### 1.4 旋转数组的最小元素
 
 ```cpp
 void quickSort(int a[], int left, int right) {
@@ -124,7 +125,89 @@ void quickSort(int a[], int left, int right) {
 }
 ```
 
+### 1.5 调整数组位数使奇数位于前面
+
+```cpp
+void reorderOddEven(int[] arr, len) {
+    if (arr == NULL || len <= 1 ) {
+        return;
+    }
+    int l = 0, r = len - 1;
+    while (l < r) {
+        while (l < r && arr[r] % 2 == 0) {
+            r--;
+        }
+        while (l < r && arr[l] % 2 == 1) {
+            l++;
+        }
+        if (l < r) {
+            swap(arr[l], arr[r]);
+            l++, r--;
+        }
+    }
+}   
+```
+
+### 1.5 出现次数超过一半的次数
+
+```cpp
+int core(int *a, int len) {
+    if (arr == NULL || len <= 0 ) {
+        return;
+    }
+    int target = a[0], cnt = 1;
+    
+    for (int i = 1; i < len; i++) {
+        if (a[i] == target) {
+            cnt++;
+        }
+        else {
+            cnt--;
+            if (cnt == 0) {
+                target = a[i];
+                cnt = 1;
+            }
+        }
+    }
+    return target;
+}
+```
+
+
 ### 1.6 最小的K个数  part 快排思想
+
+```cpp
+const int N = 105;
+int a[N] = {4, 5, 1, 6, 2, 7, 3, 8};
+int part (int *a, int left, int right) {
+    if(left < right) {
+        int x = a[0], l = left, r = right;
+        while(l < r) {
+            while(l < r && a[r] >= x) r--;
+            while(l < r && a[l] <= x) l++;
+            if(l >= r) break;
+            swap(a[l], a[r]);
+        }
+        swap(x, a[l]);
+        return l;
+    }
+    else return left;
+}
+```
+
+```cpp
+void set_k(int *input, int n, int k) { 
+    if(input == NULL || k > n || k <= 0 || n <= 0) return;
+    int start = 0, end = n    - 1;
+    int index = part(input, start, end);
+    while(index != k-1) {
+        if(index > k-1) end = index - 1;
+        else if(index < k - 1) start = index + 1;
+        else break;
+        index = part(input, start, end);
+    }
+}
+```
 
 ### 1.7 连续子数组的最大和
 
