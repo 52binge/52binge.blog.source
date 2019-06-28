@@ -180,30 +180,45 @@ int core(int *a, int len) {
 const int N = 105;
 int a[N] = {4, 5, 1, 6, 2, 7, 3, 8};
 int part (int *a, int left, int right) {
+    
     if(left < right) {
+    
         int x = a[0], l = left, r = right;
+    
         while(l < r) {
             while(l < r && a[r] >= x) r--;
             while(l < r && a[l] <= x) l++;
             if(l >= r) break;
             swap(a[l], a[r]);
         }
+    
         swap(x, a[l]);
         return l;
     }
+    
     else return left;
 }
-```
 
-```cpp
-void set_k(int *input, int n, int k) { 
-    if(input == NULL || k > n || k <= 0 || n <= 0) return;
-    int start = 0, end = n    - 1;
+void set_k(int *input, int n, int k) {
+     
+    if(input == NULL || k > n || k <= 0 || n <= 0) {
+        return;
+    }
+    int start = 0, end = n - 1;
+    
     int index = part(input, start, end);
+    
     while(index != k-1) {
-        if(index > k-1) end = index - 1;
-        else if(index < k - 1) start = index + 1;
-        else break;
+        
+        if(index > k-1) {
+            end = index - 1;
+        }
+        else if(index < k - 1) {
+            start = index + 1;
+        }
+        else {
+            break;
+        }
         index = part(input, start, end);
     }
 }
