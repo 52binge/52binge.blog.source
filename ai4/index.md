@@ -44,25 +44,59 @@ Node* f3(int* pre, int* ino, int len) { // pre : 1, 2, 4, 7, 3, 5, 6, 8  ino : 4
 
 ```cpp
 bool son(Node* p1, Node* p2) {
-    if(p2 == NULL) return true;
-    if(p1 == NULL) return false;
-    if(p1->value == p2->value) return son(p1->lchild, p2->lchild) && son(p1->rchild, p2->rchild);
-    return false;
+	if (p2 == NULL) {
+		return true;
+	}
+	if (p1 == NULL) {
+		return false;
+	}
+	if (p1->value == p2->value) {
+		return son(p1->lchild, p2-lchild);
+	}
 }
-bool f5(Node* root1, Node* root2) {
-    if(root2 == NULL) return true;
-    if(root1 == NULL) return false;
-    if(root1->value == root2->value) return son(root1, root2);
-    bool flag = false;
-    flag = f5(root->lchild, root2);
-    if(!flag) {
-        flag = f5(root->rchild, root2);
-    }
-    return flag;
+
+bool son_tree(Node* root1, Node* root2) {
+	if (root2 == NULL) {
+		return true;
+	}
+	if (root1 == NULL) {
+		return false;
+	}
+	if (root1->value == root2->child) {
+		return son(root1, root2);
+	}
+	bool flag = false
+	flag = son_tree(root1->lchild, root2);
+	if (!flag) {
+		return son_tree(root1->rchild, root2);
+	}
 }
 ```
 
 ### 1.3 树的镜像 & BFS 二叉树
+
+### 1.4 从上往下打印二叉树
+
+```cpp
+void LevelOrderBinaryTree(BinaryTreeNode *root)//层序遍历二叉树
+{
+    assert(root);
+    queue<BinaryTreeNode*> q;
+
+    q.push(root);
+    while(!q.empty())
+    {
+        if(q.front()->_Lnode != NULL)
+            q.push(q.front()->_Lnode);
+        if(q.front()->_Rnode != NULL)
+            q.push(q.front()->_Rnode);
+
+        cout<<q.front()->_val<<" ";
+        q.pop();
+    }
+    cout<<endl;
+}
+```
 
 ### 1.5 二叉搜索树后序遍历的结果
 

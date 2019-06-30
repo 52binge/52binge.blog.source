@@ -1,4 +1,28 @@
-<font color=#c7254e>**摘要心得4：**</font>  
+
+## interview 整理
+
+#### 1. spark, map vs flatMap
+
+```scala
+val textFile = sc.textFile("README.md")
+textFile.flatMap(_.split(" ")) 
+```
+
+> 在这个示例中，flatMap就把包含多行数据的RDD，即[“a b c”, “”, “d”] ，转换为了一个包含多个单词的集合。实际上，flatMap相对于map多了的是[[“a”,”b”,”c”],[],[“d”]] => [“a”,”b”,”c”,”d”]这一步。
+
+
+#### 2. sparlk, 常用算子
+
+1、map算子
+2、flatMap算子
+3、mapPartitions算子
+4、glom算子
+5、union算子
+6、cartesian算子
+7、grouBy算子
+
+#### 3. transformer
+
 
 > 1. [十道海量数据处理面试题](https://blog.csdn.net/v_JULY_v/article/details/6279498)
 
