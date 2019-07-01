@@ -268,8 +268,6 @@ GPT和bert都采用Transformer，Transformer是encoder-decoder结构，GPT的单
 > 7. 超参数的话，推荐看看之前TextCNN的一篇论文，个人感觉足够了“A Sensitivity Analysis of (and Practitioners’ Guide to) Convolutional Neural Networks for Sentence Classification”
 > 8. 之前还见别人在文本领域用过数据增强的方法，就是对文本进行随机的shuffle和drop等操作来增加数据量
 
-这个看似不重要，其实确实很重要的点。一开我以为 padding 的最大长度取整个评论平均的长度的2倍差不多就可以啦(对于char level 而言，max_length 取 400左右)，但是会发现效果上不去，当时将 max_length 改为 1000 之后，macro f-score提示明显，我个人认为是在多分类问题中，那些长度很长的评论可能会有部分属于那些样本数很少的类别，padding过短会导致这些长评论无法被正确划分。
-
 ## 3. 其他算法问题
 
 1、怎么进行单个样本的学习？
@@ -298,11 +296,4 @@ GPT和bert都采用Transformer，Transformer是encoder-decoder结构，GPT的单
 
 ## Reference
 
-- [【NLP/AI算法面试必备-2】NLP/AI面试全记录（持续更新）][1]
-- [【NLP/AI算法面试必备-1】学习NLP/AI，必须深入理解“神经网络及其优化问题”][2]
-- [JayLouNLP算法工程师][2]
-- [140个GOOGLE的面试题](https://coolshell.cn/articles/3345.html)
 
-[1]: https://zhuanlan.zhihu.com/p/57153934
-[2]: https://www.zhihu.com/people/lou-jie-9/posts
-[3]: https://zhuanlan.zhihu.com/p/56633392
