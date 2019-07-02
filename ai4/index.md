@@ -22,6 +22,8 @@
 > 16. [二叉查找树节点的删除](https://blog.csdn.net/xiaoxiaoxuanao/article/details/61918125).  重要
 > 17. strcpy 手写 char\* my_strcpy(char \*dst, const char\* src)
 
+- [20tree](https://www.weiweiblog.cn/20tree/)
+
 ### 1.1 前序中序重建二叉树
 
 ```cpp

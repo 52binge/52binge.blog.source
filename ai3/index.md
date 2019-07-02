@@ -307,18 +307,119 @@ int bina(int *a, int len, int data) {
 
 ## 2. LinkedList
 
-> 5. 从尾到头打印链表, 递归 ok.    
-> 6. 链表中倒数第k个结点 ok.   
-> 3. [反转链表][3.3] next=head->next, head->next=pre, pre=head, head=next; 4步
-> 4. 合并两个或k个有序链表  ok， 递归 (三元运算符).   
-> 5. 复杂链表的复制    
-> 6. 两个链表的第一个公共结点  ok.   
-> 7. 链表中环的入口结点     
-> 8. 删除链表中重复的结点  链表1->2->3->3->4->4->5 处理后为 1->2->5. first->next=head, last, p 三指针, first 技巧
+[linkedlist_summary](https://www.weiweiblog.cn/linkedlist_summary/)
 
-[3.3]: https://www.jianshu.com/p/bd6a64d36916
+### 2.1 easy
+
+> 1. 在 O(1) 时间删除链表节点
+> 2. 删除单链表倒数第 n 个节点
+> 3. 求单链表的中间节点
+> 4. 判断单链表是否存在环
+> 5. 从尾到头打印链表, 递归 ok.
+> 6. 链表中倒数第k个结点 ok.
+
+### 2.2 mid
+
+> 2. [反转链表][2.3] next=head->next, head->next=pre, pre=head, head=next; 4步 ok
+> 3. 翻转部分单链表 举例：1->2->3->4->5->null, from = 2, to = 4 结果：1->4->3->2->5->null
+> 4. 旋转单链表
+> 7. 链表划分
+> 8. 链表求和
+> 9. 单链表排序
+> 10. 合并两个或k个有序链表  ok， 递归 (三元运算符).   
+> 11. [复杂链表的复制][2.5] ok
+> 12. 删除链表中重复的结点  链表1->2->3->3->4->4->5 处理后为 1->2->5. first->next=head, last, p 三指针, first 
+
+
+(15). 判断两个无环单链表是否相交
+(16). 两个链表相交扩展：求两个无环单链表的第一个相交点
+
+> 9. 两个链表的第一个公共结点  ok.   
+> 10. 链表中环的入口结点     
+
+
+
+```
+题目描述：给定一个单链表，设计一个算法实现链表向右旋转 K 个位置。
+举例： 给定 1->2->3->4->5->6->NULL, K=3
+则4->5->6->1->2->3->NULL
+```
+
+[2.3]: https://www.jianshu.com/p/bd6a64d36916
+[2.5]: https://zhuanlan.zhihu.com/p/38888164
+
+**反转链表:**
+
+```cpp
+public ListNode reverseList(ListNode head) {
+    ListNode next = null;
+    ListNode pre = null
+
+    while (head != null) {
+        next = head.next; (保存当前头结点的下个节点)
+        head.next = pre;  (将当前头结点的下一个节点指向“上一个节点”，这一步是实现了反转)
+        pre = head;       (将当前头结点设置为“上一个节点”)
+        head = next;      (将保存的下一个节点设置为头结点)
+    }
+    return pre;
+}
+```
+
+**复杂链表的复制:**
+
+![](https://pic2.zhimg.com/80/v2-995312b12e59f14c77f3572e9c94d4c5_hd.jpg)
+
+```cpp
+/*
+public class RandomListNode {
+    int label;
+    RandomListNode next = null;
+    RandomListNode random = null;
+
+    RandomListNode(int label) {
+        this.label = label;
+    }
+}
+*/
+```
+
+```cpp
+public class Solution {
+    public RandomListNode Clone(RandomListNode pHead)
+    {
+        if(pHead == null)
+            return null;
+        //复制节点 A->B->C 变成 A->A'->B->B'->C->C'
+        RandomListNode head = pHead;
+        while(head != null){
+            RandomListNode node = new RandomListNode(head.label);
+            node.next = head.next;
+            head.next = node;
+            head = node.next;
+        }
+        //复制random
+        head = pHead;
+        while(head != null){
+            head.next.random = head.random == null ? null : head.random.next;
+            head = head.next.next;
+        }
+        //折分
+        head = pHead;
+        RandomListNode chead = head.next;
+        while(head != null){
+            RandomListNode node = head.next;
+            head.next = node.next;
+            node.next = node.next == null ? null : node.next.next;
+            head = head.next;
+        }
+        return chead;
+    }
+}
+```
 
 ## 3. String
+
+[13 道题搞定 BAT 面试——字符串](https://www.weiweiblog.cn/13string/)
 
 > 1. 字符串的排列 void res(char \*str, char \*pStr), scanf("%s", str); \#include < utility\> 
 > 2. 反转字串单词 string ReverseSentence(string str), reverse(str.begin(), str.end()); in lib algorithm
@@ -339,3 +440,12 @@ void res(char *str, char *pStr) {
     }
 }
 ```
+
+## 4. Offer
+
+[数据流中的中位数](https://www.weiweiblog.cn/getmedian/)
+
+
+## 5. 10道海量数据
+
+
