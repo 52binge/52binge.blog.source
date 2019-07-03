@@ -529,6 +529,11 @@ void res(char *str, char *pStr) {
 
 [数据流中的中位数](https://www.weiweiblog.cn/getmedian/)
 
+1. [剑指offer] 按之字形顺序打印二叉树
+2. [剑指offer] 求1+2+3+…+n
+3. [剑指offer] 扑克牌顺子
+4. [剑指offer] 和为S的连续正数序列
+5. [剑指offer] 二叉树的下一个结点
 
 ## 5. 10道海量数据
 
