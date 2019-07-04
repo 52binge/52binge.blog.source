@@ -337,6 +337,43 @@ int bina(int *a, int len, int data) {
 > 12. 删除链表重复结点  链表1->2->3->3->4->4->5 处理后为 1->2->5. first->next=head, last, p 三指针
 > 10. 链表中环的入口结点     
 
+单链表排序 or 合并两个或k个有序链表
+
+```cpp
+struct Node { Node *next; int value; }; 
+/* 你一定要相信递归是一个强大的思想 */
+Node* mergeList(Node* head1, Node* head2) { // 有序链表的合并
+    if(head1 == NULL) return head2;
+    if(head2 == NULL) return head1;
+    Node* tmp;
+    if(head1->value < head2->value) {
+        tmp = head1;
+        head1 = head1->next;
+    }
+    else {
+        tmp = head2;
+        head2 = head2->next;
+    }
+    tmp->next = mergeList(head1, head2);
+    return tmp;
+}
+Node* mergeSort(Node* head) {
+    if(head == NULL) return NULL;
+    Node* r_head = head;
+    Node* head1 = head;
+    Node* head2 = head;
+    while(head2->next != NULL && head2->next->next != NULL) {
+        head1 = head1->next;
+        head2 = head2->next->next;
+    }
+    if(head1->next == NULL) return r_head; // 只有一个节点
+    head2 = head1->next;
+    head1 = head;
+    r_head = mergeList(mergeSort(head1), mergeSort(head2));
+    return r_head;
+}
+```
+
 **2.3 difficul:**
 
  1. 链表求和
@@ -494,10 +531,12 @@ public class Solution {
 
 **3.2 medium:**
 
-> 1. 字符流中第一个不重复的字符 (哈希来存每个字符及其出现的次数，另用一字符串 s 来保存字符流中字符顺序)
+> 1. [字符流中第一个不重复的字符][3.2.1] (哈希来存每个字符及其出现的次数，另用一字符串 s 来保存字符流中字符顺序)
 > 2. 字符串全排列 void res(char \*str, char \*pStr), scanf("%s", str); \#include < utility\> 
 > 3. 字符串转整型 int StrToInt(char* str)       ok
 > 4. 字符串的排列 (给定两个字符串 s1 和 s2，第一个字符串的排列之一是第二个字符串的子串)
+
+[3.2.1]: https://www.weiweiblog.cn/firstappearingonce/
 
 ```cpp
 void res(char *str, char *pStr) {
@@ -510,6 +549,65 @@ void res(char *str, char *pStr) {
         tmp = *p;
         *p = *pStr;
         *pStr = tmp;
+    }
+}
+```
+
+字符流中第一个不重复的字符 C++
+
+```cpp
+/class Solution
+{
+public:
+  //Insert one char from stringstream
+    
+    // vector用来记录字符流
+    vector<char> vec;
+    // map用来统计字符的个数
+    map<char, int> table;
+    void Insert(char ch)
+    {
+        table[ch]++;
+        vec.push_back(ch);
+    }
+  //return the first appearence once char in current stringstream
+    char FirstAppearingOnce()
+    {
+        // 遍历字符流，找到第一个为1的字符
+        for (char c : vec) {
+            if (table[c] == 1)
+                return c;
+        }
+        
+        return '#';
+    }
+
+};
+```
+
+字符流中第一个不重复的字符 Java
+
+```java
+import java.util.HashMap;
+public class Solution {
+    HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+    StringBuffer s = new StringBuffer();
+    //Insert one char from stringstream    
+    public void Insert(char ch)    {
+        s.append(ch);
+        if(map.containsKey(ch)){
+            map.put(ch, map.get(ch)+1);
+        }else{
+            map.put(ch, 1);
+        }
+    }
+  //return the first appearence once char in current stringstream    
+    public char FirstAppearingOnce()    {
+        for(int i = 0; i < s.length(); i++){
+            if(map.get(s.charAt(i)) == 1)
+                return s.charAt(i);
+        }
+        return '#';
     }
 }
 ```
@@ -534,6 +632,8 @@ void res(char *str, char *pStr) {
 3. [剑指offer] 扑克牌顺子
 4. [剑指offer] 和为S的连续正数序列
 5. [剑指offer] 二叉树的下一个结点
+6. [剑指offer] 构建乘积数组
+7. [剑指offer] 序列化二叉树
 
 ## 5. 10道海量数据
 
