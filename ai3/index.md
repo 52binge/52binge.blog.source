@@ -3,26 +3,38 @@
 
 ## 1. 数组 & 排序
 
-> 1. **八皇后**， void dfs(int n)
-> 2. **二维数组中的查找** bool Find(int\* matrix, int rows, int cols, int value)用一维/二维 \*(matrix+i\*cols+j)
-> 3. 替换空格 char\* replace(char\* str, int len) ‘ ’->%20 在源数组总长度，从后向前，逐个赋值
+**1.1 easy**
+
+> 1. **二维数组中的查找** bool Find(int\* matrix, int rows, int cols, int value)用一维/二维 \*(matrix+i\*cols+j)
+> 2. 替换空格 char\* replace(char\* str, int len) ‘ ’->%20 在源数组总长度，从后向前，逐个赋值
+> 3. 如何在排序数组中找出给定数字出现的次数 int bina(int \*a, int len, int num, bool isLeft)
 > 4. 旋转数组的最小元素 int get_min(int \*a, int len) , while(a[p1] >= a[p2]) {
 > 5. 调整数组位数使奇数位于前面 void odds(int[] arr) 
 > 6. 次数超过一半的次数 \* int core(int \*a, int len)
-> 7. **最小的K个数 ** part 快排思想 + void set_k(int\* input, int n, int k) **nok**
-> 8. **连续子数组的最大和**   // dp: F[i] = max(a[i], F[i-1]+a[i]);
-> 9. [把数组排成最小的数](https://www.cnblogs.com/youxin/p/3294154.html) #include < sstream > bool Compare(const string &left, const string &right)
-> 10. [数组中的逆序对](https://blog.csdn.net/bf23456/article/details/51303632)
-> 11. 数组中只出现一次的数字 , 划分2数组，num & (-num);二者与后得到的数，将num最右边的1保留下来
-> 12. **丑数**, 只包含质因子2、3和5的数称作丑数, 1, 2, 3, 5, 6, ... ok
-> 13. 整数中1出现的次数（从1到n整数中1出现的次数）. **nok**
-> 14. 和为S的连续正数序列(滑动窗口思想) left=1, right = 2, total = (left + right) \* (right - left + 1) / 2; 
-> 15. 和为S的两个数字(双指针思想) ok.
-> 16. 孩子们的游戏-圆圈中最后剩下的数(约瑟夫环) ok.
-> 17. [构建乘积数组](https://blog.csdn.net/u012327058/article/details/81007333)
-> 18. 如何在排序数组中找出给定数字出现的次数 int bina(int \*a, int len, int num, bool isLeft)
-> 19. [最短路Floyd](https://www.cnblogs.com/biyeymyhjob/archive/2012/07/31/2615833.html)
-> 20. quick_sort, while (双while + swap)
+> 7. **丑数**, 只包含质因子2、3和5的数称作丑数, 1, 2, 3, 5, 6, ... ok
+> 8. 和为S的两个数字(双指针思想) ok.
+
+**1.2 medium**
+
+> 1. **八皇后**， void dfs(int n)
+> 2. 孩子们的游戏-圆圈中最后剩下的数(约瑟夫环) ok.
+> 3. [把数组排成最小的数](https://www.cnblogs.com/youxin/p/3294154.html) #include < sstream > bool Compare(const string &left, const string &right)
+> 4. 数组中只出现一次的数字 , 划分2数组，num & (-num);二者与后得到的数，将num最右边的1保留下来
+> 5. **连续子数组的最大和**   // dp: F[i] = max(a[i], F[i-1]+a[i]);
+
+**1.3 important**
+
+> 1. quick_sort, while (双while + swap)
+> 2. merge_sort
+> 3. [数组中的逆序对](https://blog.csdn.net/bf23456/article/details/51303632)
+> 4. **最小的K个数 ** part 快排思想 + void set_k(int\* input, int n, int k) **nok**
+> 5. [最短路Floyd](https://www.cnblogs.com/biyeymyhjob/archive/2012/07/31/2615833.html)
+
+**1.4 difficult**
+
+> 1. 整数中1出现的次数（从1到n整数中1出现的次数）. **nok**
+> 2. 和为S的连续正数序列(滑动窗口思想) left=1, right = 2, total = (left + right) \* (right - left + 1) / 2; 
+> 3. [构建乘积数组](https://blog.csdn.net/u012327058/article/details/81007333)
 
 ### 1.1 八皇后
 
@@ -623,19 +635,320 @@ public class Solution {
 > 
 > 请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100″,”5e2″,”-123″,”3.1416″和”-1E-16″都表示数值。 但是”12e”,”1a3.14″,”1.2.3″,”+-5″和”12e+4.3″都不是。
 
-## 4. Offer
+## 4. Binary Tree
 
-[数据流中的中位数](https://www.weiweiblog.cn/getmedian/)
+- [算法&数据结构 ， 20Tree](https://www.weiweiblog.cn/20tree/)
 
-1. [剑指offer] 按之字形顺序打印二叉树
+<img src="/images/icpc/BinaryTree-1.png" width="450" />
+
+**4.1 easy**
+
+> 1. 递归： [求二叉树中的节点个数][20tree]
+> 2. 递归： [求二叉树的最大层数(最大深度) & (最小深度)][20tree]
+> 3. 递归： [求二叉树第K层的节点个数][20tree]
+> 4. 递归： [求二叉树第K层的叶子节点个数][20tree]
+> 5. 递归： [二叉树先序遍历/前序遍历][20tree]  (非递归，也要练习，要会写)
+> 6. 递归： [判断两棵二叉树是否结构相同][20tree] 
+> 7. 递归： [求二叉树的镜像（反转二叉树）][20tree]
+> 8. 递归： [对称二叉树][20tree] （双函数，承接 上题二叉树的镜像）
+> 9. 递归： [求二叉树中两个节点的最低公共祖先节点 good][20tree]
+> 10. 递归： [求二叉搜索树的最近公共祖先 good][20tree]
+> 11. 递归： [判断二叉树是不是完全二叉树][20tree] （利用层遍历。遍历到了NULL结点，如后续还有非NULL结点）
+
+双函数，递归
+
+> 1. 树的子结构,遍历+判断, bool f5(Node\* root1, Node\* root2), bool son(Node\* p1, Node\* p2) 
+> 2. 判断二叉树是不是平衡二叉树 bool isBalance(Node\* root, int\* dep) 
+> 3. 求二叉树的直径 （直径长度是任意两个结点路径长度中的最大值）
+
+**4.2 medium**
+
+> 1. 分层遍历 (自下而上分层遍历) bfs + vector< vector < int > >
+> 2. 分层遍历 (按之字形顺序打印二叉树)
+> 3. 重建二叉树 ok Node\* f3(int\* pre, int\* ino, int len) 
+
+[20tree]: https://www.weiweiblog.cn/20tree/
+
+**4.3 difficult:**
+ 
+> 6. 二叉树中和为某一值的路径 void f4(Node\* root, int exSum, int curSum, vecotr\< int \>& path)    
+> 10. [二叉树的下一个结点:3情况](https://blog.csdn.net/libin1105/article/details/48422299)  (1.有right.child 2.没有right.child,父left.child 3.没有right.child,父right.child)    
+> 14. 序列化二叉树      
+> 5. 二叉搜索树的后序遍历序列 bool f6(int\* sec, int len)  
+> 7. 二叉搜索树与双向链表 void convert(Node\* root, Node\*& pLast)   
+> 15. 二叉搜索树的第k个结点 ok.   
+> 16. [二叉查找树节点的删除](https://blog.csdn.net/xiaoxiaoxuanao/article/details/61918125).  重要
+
+
+```cpp
+class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<Integer>();
+        if(root == null)
+            return res;
+
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode cur = root;
+        while(!stack.isEmpty() || cur != null){
+            if(cur != null){
+                stack.push(cur);
+                cur = cur.left;
+            }else{
+                cur = stack.pop();
+                res.add(cur.val);
+                cur = cur.right;
+            }
+        }
+        return res;
+    }
+}
+```
+
+aaa
+
+```java
+public static int getNodeNumRec(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }             
+        return getNodeNumRec(root.left) + getNodeNumRec(root.right) + 1;
+}
+```
+
+1.1 前序中序重建二叉树
+
+```cpp
+Node* f3(int* pre, int* ino, int len) { // pre : 1, 2, 4, 7, 3, 5, 6, 8  ino : 4, 7, 2, 1, 5, 3, 8, 6
+    if(pre == NULL || ino == NULL || len <= 0) return NULL;
+    int r_v = pre[0];
+    Node* root = new Node();
+    root->value = r_v;
+    int i;
+    for(i = 0; ; i++) {
+        if(ino[i] == r_v) break;
+    }
+    root->lchild = f3(pre+1, ino, i);
+    root->rchild = f3(pre+i+1, ino+i+1, len-1-i);
+    return root;
+}
+```
+
+1.2 树2是否是树1的子结构
+
+```cpp
+bool son(Node* p1, Node* p2) {
+	if (p2 == NULL) {
+		return true;
+	}
+	if (p1 == NULL) {
+		return false;
+	}
+	if (p1->value == p2->value) {
+		return son(p1->lchild, p2-lchild);
+	}
+}
+
+bool son_tree(Node* root1, Node* root2) {
+	if (root2 == NULL) {
+		return true;
+	}
+	if (root1 == NULL) {
+		return false;
+	}
+	if (root1->value == root2->child) {
+		return son(root1, root2);
+	}
+	bool flag = false
+	flag = son_tree(root1->lchild, root2);
+	if (!flag) {
+		return son_tree(root1->rchild, root2);
+	}
+}
+```
+
+1.3 树的镜像 & BFS 二叉树
+
+1.4 从上往下打印二叉树
+
+```cpp
+void LevelOrderBinaryTree(BinaryTreeNode *root)//层序遍历二叉树
+{
+    assert(root);
+    queue<BinaryTreeNode*> q;
+
+    q.push(root);
+    while(!q.empty())
+    {
+        if(q.front()->_Lnode != NULL)
+            q.push(q.front()->_Lnode);
+        if(q.front()->_Rnode != NULL)
+            q.push(q.front()->_Rnode);
+
+        cout<<q.front()->_val<<" ";
+        q.pop();
+    }
+    cout<<endl;
+}
+```
+
+1.5 二叉搜索树后序遍历的结果
+
+```cpp
+bool f6(int* sec, int len) {
+    if(sec == NULL) return false;
+    if(len <= 1) return true;
+    int i, rv = sec[len-1];
+    for(i = 0; i < len-1; i++) {
+        if(sec[i] > rv) break;
+    }
+    for(int j = i; j < len-1; j++) {
+        if(sec[j] < rv) return false;
+    }
+    return f6(sec, i) && f6(sec+i, len-i-1);
+}
+```
+
+1.6 中和为某一值的路径
+
+```cpp
+void f4(Node*, int, int, vector<int>&);
+void f4(Node* root, int exSum) {
+    if(root == NULL) return;
+    vector<int> V;
+    int curSum = 0;
+    f4(root, exSum, curSum, V);
+}
+void f4(Node* root, int exSum, int curSum, vecotr<int>& path) {
+    curSum += root->value;
+    path.push_back(root->value);
+    if(curSum == exSum && root->lchild == NULL && root->rchild == NULL) {
+        //; 打印vector中的路径
+    }
+    if(root->lchild) f4(root->lchild, exSum, curSum, path);
+    if(root->rchild) f4(root->rchild, exSum, curSum, path);
+    curSum -= root->value;
+    path.pop_back();
+}
+```
+
+1.7 二叉搜索树与双向链表
+
+```cpp
+void convert(Node* root, Node*& pLast) {
+    if(root == NULL) return;
+    if(root->lchild) convert(root->lchild, pLast);
+    Node* pCur = root;
+    pCur->lchild = pLast;
+    if(pLast) pLast->rchild = pCur;
+    pLast = pCur;
+    if(root->rchild) convert(root->rchild, pLast);
+}
+```
+
+1.8 深度到是否为平衡二叉树
+
+```cpp
+bool isBalance(Node* root, int* dep) {
+    if(root == NULL) {
+        *dep = 0;
+        return true;
+    }
+    int left = 0, right = 0;
+    if(isBalance(root->lchild, &left) && isBalance(root->rchild, &right)) {
+        int diff = left - right;
+        if(diff >= -1 && diff <= 1) {
+            *dep = 1 + (left > right ? left : right);
+            return true;
+        }
+    }
+    return false;
+}
+```
+
+1.9 二叉搜索树后序遍历的结果
+
+```cpp
+bool f6(int* sec, int len) {
+    if(sec == NULL) return false;
+    if(len <= 1) return true;
+    int i, rv = sec[len-1];
+    for(i = 0; i < len-1; i++) {
+        if(sec[i] > rv) break;
+    }
+    for(int j = i; j < len-1; j++) {
+        if(sec[j] < rv) return false;
+    }
+    return f6(sec, i) && f6(sec+i, len-i-1);
+}
+```
+
+1.10 二叉树两节点的最低公共祖先
+
+```cpp
+vector<Node*> V1;
+vector<Node*> V2;
+bool getNodePath(Node* root, Node* tar, vector<Node*>& V) { // 根左右，回溯
+    if(root == NULL) return false;
+    V.push_back(root);
+    if(root == tar) return true;
+    bool flag = false;
+    if(root->lchild) flag = getNodePath(root->lchild, tar, V);
+    if(!flag && root->rchild) flag = getNodePath(root->rchild, tar, V);
+    if(!flag) V.pop_back();
+    return flag;
+}
+Node* getCom(const vector<Node*>& V1, const vector<Node*>& V2) {
+    vector<Node*>::const_iterator it1 = V1.begin();
+    vector<Node*>::const_iterator it2 = V2.begin();
+    Node* pLast = NULL;
+    while(it != V1.end() && it2 != V2.end()) {
+        if(*it != *it2) break;
+        pLast = *it1;
+        ++it1;
+        ++it2;
+    }
+    return pLast;
+}
+```
+
+## 5. 具体算法
+
+### 5.1 斐波拉契
+
+> 1. 斐波拉契数列 ok.   
+> 2. 跳台阶  ok.   
+> 3. 变态跳台阶  2 \* Fib(n-1).   
+> 4. 矩形覆盖  ok
+
+### 5.4 回溯
+
+> 1. 矩阵中的路径(BFS).   
+> 2. 机器人的运动范围(DFS)
+
+### 5.5 排序
+
+> 1. 数组中的逆序对(归并排序).  void mergeSort(int a[], int l, int r)
+> 2. 最小的K个数(堆排序).   
+> 3. 最小的K个数(快速排序) ok
+
+### 5.6 位运算
+
+> 1. 二进制中1的个数  n & n-1.   
+> 2. 数值的整数次方 dp.   
+> 3. 数组中只出现一次的数字 ok.  
+
+## 6. Stack & Queue & heap
+
+
+## 7. Offer
+
+[算法学习](https://www.weiweiblog.cn/category/算法学习/page/3/)
+
 2. [剑指offer] 求1+2+3+…+n
 3. [剑指offer] 扑克牌顺子
 4. [剑指offer] 和为S的连续正数序列
-5. [剑指offer] 二叉树的下一个结点
 6. [剑指offer] 构建乘积数组
-7. [剑指offer] 序列化二叉树
 8. [剑指offer] 数组中重复的数字
-9. [剑指offer] 二叉搜索树的第k个结点
 10. [剑指offer] 数据流中的中位数
 11. [剑指offer] 滑动窗口的最大值
 11. [剑指offer] 矩阵中的路径
@@ -643,6 +956,16 @@ public class Solution {
 13. [剑指offer] 把数组排成最小的数
 14. [剑指offer] 整数中1出现的次数（从1到n整数中1出现的次数）
 
-## 5. 10道海量数据
+## 8. 10道海量数据
 
+## Reference
+
+- [【NLP/AI算法面试必备-2】NLP/AI面试全记录（持续更新）][1]
+- [【NLP/AI算法面试必备-1】学习NLP/AI，必须深入理解“神经网络及其优化问题”][2]
+- [JayLouNLP算法工程师][2]
+- [140个GOOGLE的面试题](https://coolshell.cn/articles/3345.html)
+
+[1]: https://zhuanlan.zhihu.com/p/57153934
+[2]: https://www.zhihu.com/people/lou-jie-9/posts
+[3]: https://zhuanlan.zhihu.com/p/56633392
 
