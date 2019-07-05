@@ -1,7 +1,7 @@
 
 <img src="/images/icpc/Array-In-C.png" width="580" />
 
-## 1. 数组 & 排序
+## 1. Array
 
 **1.1 easy**
 
@@ -36,7 +36,7 @@
 > 2. 和为S的连续正数序列(滑动窗口思想) left=1, right = 2, total = (left + right) \* (right - left + 1) / 2; 
 > 3. [构建乘积数组](https://blog.csdn.net/u012327058/article/details/81007333)
 
-### 1.1 八皇后
+1.1 八皇后
 
 ```cpp
 const int N = 105;
@@ -68,7 +68,7 @@ int main() {
 }
 ```
 
-### 1.2 二维数组中的查找
+1.2 二维数组中的查找
 
 ```cpp
 int a[][4] = {
@@ -100,7 +100,7 @@ bool Find(int b[][4], int rows, int cols, int value) {
 }
 ```
 
-### 1.3 替换空格
+1.3 替换空格
 
 ```cpp
 char* replace(char* str, int len) {
@@ -118,7 +118,7 @@ char* replace(char* str, int len) {
 }
 ```
 
-### 1.4 旋转数组的最小元素
+1.4 旋转数组的最小元素
 
 ```cpp
 void quickSort(int a[], int left, int right) {
@@ -137,7 +137,7 @@ void quickSort(int a[], int left, int right) {
 }
 ```
 
-### 1.5 调整数组位数使奇数位于前面
+1.5 调整数组位数使奇数位于前面
 
 ```cpp
 void reorderOddEven(int[] arr, len) {
@@ -160,7 +160,7 @@ void reorderOddEven(int[] arr, len) {
 }   
 ```
 
-### 1.5 出现次数超过一半的次数
+1.5 出现次数超过一半的次数
 
 ```cpp
 int core(int *a, int len) {
@@ -186,7 +186,7 @@ int core(int *a, int len) {
 ```
 
 
-### 1.6 最小的K个数  part 快排思想
+1.6 最小的K个数  part 快排思想
 
 ```cpp
 const int N = 105;
@@ -236,13 +236,13 @@ void set_k(int *input, int n, int k) {
 }
 ```
 
-### 1.7 连续子数组的最大和
+1.7 连续子数组的最大和
 
 ```cpp
 dp: F[i] = max(a[i], F[i-1]+a[i]);
 ```
 
-### 1.8 数组中的逆序对 & 归并排序
+1.8 数组中的逆序对 & 归并排序
 
 mergeSort
 
@@ -272,9 +272,9 @@ void mergeSort(int a[], int l, int r) { //  8, 5, 4, 9, 2, 3, 6
 }
 ```
 
-### 1.13 和为S的连续正序列(滑窗思想)
+1.13 和为S的连续正序列(滑窗思想)
 
-### 1.15 约瑟夫环
+1.15 约瑟夫环
 
 ```cpp
 int cirnm(int n, int m) {
@@ -299,7 +299,7 @@ int cirnm(int n, int m) {
 }
 ```
 
-### 1.17 排序数组中某数字出现的次数
+1.17 排序数组中某数字出现的次数
 
 ```cpp
 int bina(int *a, int len, int data) {
