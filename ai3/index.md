@@ -643,12 +643,12 @@ public class Solution {
 
 **4.1 easy**
 
-> 1. 递归： [求二叉树中的节点个数][20tree]
-> 2. 递归： [求二叉树的最大层数(最大深度) & (最小深度)][20tree]
-> 3. 递归： [求二叉树第K层的节点个数][20tree]
-> 4. 递归： [求二叉树第K层的叶子节点个数][20tree]
+> 1. 递归： [求二叉树中的节点个数][20tree] ， **✔️**
+> 2. 递归： [求二叉树的最大层数(最大深度) & (最小深度)][20tree] 最小深度特殊情况：left/right==0 ， ✔️
+> 3. 递归： [求二叉树第K层的节点个数][20tree] get_k(root.left, k-1) + get_k(root.right, k-1); ， ✔️
+> 4. 递归： [求二叉树第K层的叶子节点个数][20tree] if(k==1 and root.left and root.right is null) return 1; ， ✔️
 > 5. 递归： [二叉树先序遍历/前序遍历][20tree]  (非递归，也要练习，要会写)
-> 6. 递归： [判断两棵二叉树是否结构相同][20tree] 
+> 6. 递归： [判断两棵二叉树是否结构相同][20tree] ， ✔️
 > 7. 递归： [求二叉树的镜像（反转二叉树）][20tree]
 > 8. 递归： [对称二叉树][20tree] （双函数，承接 上题二叉树的镜像）
 > 9. 递归： [求二叉树中两个节点的最低公共祖先节点 good][20tree]
@@ -679,6 +679,26 @@ public class Solution {
 > 15. 二叉搜索树的第k个结点 ok.   
 > 16. [二叉查找树节点的删除](https://blog.csdn.net/xiaoxiaoxuanao/article/details/61918125).  重要
 
+平衡二叉树
+
+```java
+class Solution {
+    public boolean isBalanced(TreeNode root) {
+        if(root == null)
+            return true;
+        return Math.abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 
+            && isBalanced(root.left) && isBalanced(root.right);
+    }
+
+    public int maxHigh(TreeNode root){
+        if(root == null)
+            return 0;
+        return Math.max(maxHigh(root.left), maxHigh(root.right))+1;
+    }
+}
+```
+
+inorderTraversal
 
 ```cpp
 class Solution {
