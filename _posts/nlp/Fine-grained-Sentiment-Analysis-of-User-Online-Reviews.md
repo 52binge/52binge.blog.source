@@ -34,6 +34,20 @@ An example of one labelled review:
 
 ---
 
+「AI Challenger」是面向全球人工智能人才的开源数据集和编程竞赛平台。AI Challenger 2018 由创新工场、搜狗、美团点评、美图公司联合主办。有上万支团队参赛， 覆盖 81 个国家、1100 所高校、990 家公司。
+
+<!--<img src="/images/deeplearning/AI-Challenger-21.webp" width="850" alt=""/>
+-->
+
+## 整体流程
+
+- **问题建模**
+- **模型基本架构**
+- **数据处理**
+。。。
+
+<img src="/images/deeplearning/AI-Challenger-22.webp" width="890" alt=""/>
+
 有20个粒度的评价指标，每个粒度又有4种情感状态，从官方baseline来看，分别训练了20个（4标签）分类器。
 
 > FastText（0.573）、Attention-RNN (0.637)、Attention-RCNN (0.669)、ELMO-like（0.68830）
@@ -430,6 +444,9 @@ class Metrics(Callback):
 
 ## 3. ELMO-Like
 
+<!--<img src="/images/deeplearning/AI-Challenger-23.webp" width="850" alt=""/>
+-->
+
 （腾讯词向量 16G， 800W \* 200 = 5W \* 200 + 自训词向 5W \* 128 ） + BiGRU 中层语义 + BiGRU 高层语义
 
 > 10W+ 数据集，词频前5W的词, 每个评论一个 epoch 输入1次， 参数共享
@@ -437,6 +454,12 @@ class Metrics(Callback):
 > 328 + 256 + 256 近1000维度，Batch 128， 512维度的时候，Batch 256 可以放得下.
 >
 > 机器配置： 32G 内存， i9 CPU， 显卡型号 1080， 显存8G
+
+**多任务学习**
+
+> - **分别训练20个分类模型的计算复杂度较高**
+> - **20个分类模型占用存储空间**
+> - **多任务学习可以通过特征共享降低过拟合风险**
 
 epoch
 
