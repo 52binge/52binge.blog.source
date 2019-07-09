@@ -679,6 +679,36 @@ public class Solution {
 > 15. 二叉搜索树的第k个结点 ok.   
 > 16. [二叉查找树节点的删除](https://blog.csdn.net/xiaoxiaoxuanao/article/details/61918125).  重要
 
+
+1.10 二叉树两节点的最低公共祖先
+
+```cpp
+vector<Node*> V1;
+vector<Node*> V2;
+bool getNodePath(Node* root, Node* tar, vector<Node*>& V) { // 根左右，回溯
+    if(root == NULL) return false;
+    V.push_back(root);
+    if(root == tar) return true;
+    bool flag = false;
+    if(root->lchild) flag = getNodePath(root->lchild, tar, V);
+    if(!flag && root->rchild) flag = getNodePath(root->rchild, tar, V);
+    if(!flag) V.pop_back();
+    return flag;
+}
+Node* getCom(const vector<Node*>& V1, const vector<Node*>& V2) {
+    vector<Node*>::const_iterator it1 = V1.begin();
+    vector<Node*>::const_iterator it2 = V2.begin();
+    Node* pLast = NULL;
+    while(it != V1.end() && it2 != V2.end()) {
+        if(*it != *it2) break;
+        pLast = *it1;
+        ++it1;
+        ++it2;
+    }
+    return pLast;
+}
+```
+
 平衡二叉树
 
 ```java
@@ -734,6 +764,7 @@ public static int getNodeNumRec(TreeNode root) {
         return getNodeNumRec(root.left) + getNodeNumRec(root.right) + 1;
 }
 ```
+
 
 1.1 前序中序重建二叉树
 
@@ -902,34 +933,7 @@ bool f6(int* sec, int len) {
 }
 ```
 
-1.10 二叉树两节点的最低公共祖先
 
-```cpp
-vector<Node*> V1;
-vector<Node*> V2;
-bool getNodePath(Node* root, Node* tar, vector<Node*>& V) { // 根左右，回溯
-    if(root == NULL) return false;
-    V.push_back(root);
-    if(root == tar) return true;
-    bool flag = false;
-    if(root->lchild) flag = getNodePath(root->lchild, tar, V);
-    if(!flag && root->rchild) flag = getNodePath(root->rchild, tar, V);
-    if(!flag) V.pop_back();
-    return flag;
-}
-Node* getCom(const vector<Node*>& V1, const vector<Node*>& V2) {
-    vector<Node*>::const_iterator it1 = V1.begin();
-    vector<Node*>::const_iterator it2 = V2.begin();
-    Node* pLast = NULL;
-    while(it != V1.end() && it2 != V2.end()) {
-        if(*it != *it2) break;
-        pLast = *it1;
-        ++it1;
-        ++it2;
-    }
-    return pLast;
-}
-```
 
 ## 5. 具体算法
 
