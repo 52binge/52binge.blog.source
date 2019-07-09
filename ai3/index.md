@@ -651,8 +651,8 @@ public class Solution {
 > 6. 递归： [判断两棵二叉树是否结构相同][20tree] ， ✔️
 > 7. 递归： [求二叉树的镜像（反转二叉树）][20tree] ， ✔️
 > 8. 递归： [对称二叉树][20tree] （双函数，承接上题二叉树的镜像， good） ， ✔️
-> 9. 递归： [求二叉树中两个节点的最低公共祖先节点 good][20tree]
-> 10. 递归： [求二叉搜索树的最近公共祖先 good][20tree]
+> 9. 递归： [求二叉树中两个节点的最低公共祖先节点 good][20tree] ， ✔️
+> 10. 递归： [求二叉搜索树的最近公共祖先 good][20tree] ， ✔️
 > 11. 递归： [判断二叉树是不是完全二叉树][20tree] （利用层遍历。遍历到了NULL结点，如后续还有非NULL结点）
 
 双函数，递归
@@ -680,32 +680,87 @@ public class Solution {
 > 16. [二叉查找树节点的删除](https://blog.csdn.net/xiaoxiaoxuanao/article/details/61918125).  重要
 
 
-1.10 二叉树两节点的最低公共祖先
+1.9 二叉树两节点的最低公共祖先
 
 ```cpp
-vector<Node*> V1;
-vector<Node*> V2;
-bool getNodePath(Node* root, Node* tar, vector<Node*>& V) { // 根左右，回溯
-    if(root == NULL) return false;
-    V.push_back(root);
-    if(root == tar) return true;
+# include <iostream>
+# include <vector>
+# include <cstring>
+
+using namespace std;
+
+struct Node {
+    Node* lchild;
+    Node* rchild;
+    int value;
+    Node(): value(0), lchild(NULL), rchild(NULL) {}
+    
+};
+
+vector<Node*> vec1;
+vector<Node*> vec2;
+
+/**
+
+  1. 找到目标节点1，寻找路径，存放在 vec1 中.
+  2. 找到目标节点2，寻找路径，存放在 vec2 中.
+  3. 同时遍历 2 个 
+
+*/
+bool getNodePath(Node* root, Node* target, vector<Node*>& vec) {
+    if (root == NULl) {
+        return false;
+    }
+    vec.push_back(root);
+    if (root == target) {
+        return true;
+    }
     bool flag = false;
-    if(root->lchild) flag = getNodePath(root->lchild, tar, V);
-    if(!flag && root->rchild) flag = getNodePath(root->rchild, tar, V);
-    if(!flag) V.pop_back();
+    flag = getNodePath(root->lchild, target, vec)
+    if (!flag && root->rchild) {
+        flag = getNodePath(root->rchild, target, vec)
+    }
+    if (!flag) {
+        vec.pop_back();
+    }
     return flag;
 }
-Node* getCom(const vector<Node*>& V1, const vector<Node*>& V2) {
-    vector<Node*>::const_iterator it1 = V1.begin();
-    vector<Node*>::const_iterator it2 = V2.begin();
+
+Node* getCom(const vector<Node*>& v1,  const vector<Node*>& v2) {
+    vector<Node*>::const_iterator it1 = v1.begin();
+    vector<Node*>::const_iterator it2 = v2.begin();
+    
     Node* pLast = NULL;
-    while(it != V1.end() && it2 != V2.end()) {
-        if(*it != *it2) break;
+
+    while (it1 != v1.end() && it2 != v2.end()) {
+        if (*it1 != *it2) {
+            break;
+        }
         pLast = *it1;
-        ++it1;
-        ++it2;
+        it1++;
+        it2++;
     }
     return pLast;
+}
+int main() {
+    retunr 0;
+}
+```
+
+2.10 求二叉搜索树的最近公共祖先
+
+```cpp
+Node* lowestCommonAncestor(Node* root, Node* p, Node* q) {
+    if (root == NULL || p == NULL || q == NULL) {
+        return NULL;
+    } 
+    if (root->value > p->value && root > q->value) {
+        return lowestCommonAncestor(root->lchild, p, q);
+    } 
+    if (root->value < p->value && root < q->value) {
+        return lowestCommonAncestor(root->rchild, p, q);
+    } 
+    return root;
 }
 ```
 
@@ -788,32 +843,32 @@ Node* f3(int* pre, int* ino, int len) { // pre : 1, 2, 4, 7, 3, 5, 6, 8  ino : 4
 
 ```cpp
 bool son(Node* p1, Node* p2) {
-	if (p2 == NULL) {
-		return true;
-	}
-	if (p1 == NULL) {
-		return false;
-	}
-	if (p1->value == p2->value) {
-		return son(p1->lchild, p2-lchild);
-	}
+    if (p2 == NULL) {
+        return true;
+    }
+    if (p1 == NULL) {
+        return false;
+    }
+    if (p1->value == p2->value) {
+        return son(p1->lchild, p2-lchild);
+    }
 }
 
 bool son_tree(Node* root1, Node* root2) {
-	if (root2 == NULL) {
-		return true;
-	}
-	if (root1 == NULL) {
-		return false;
-	}
-	if (root1->value == root2->child) {
-		return son(root1, root2);
-	}
-	bool flag = false
-	flag = son_tree(root1->lchild, root2);
-	if (!flag) {
-		return son_tree(root1->rchild, root2);
-	}
+    if (root2 == NULL) {
+        return true;
+    }
+    if (root1 == NULL) {
+        return false;
+    }
+    if (root1->value == root2->child) {
+        return son(root1, root2);
+    }
+    bool flag = false
+    flag = son_tree(root1->lchild, root2);
+    if (!flag) {
+        return son_tree(root1->rchild, root2);
+    }
 }
 ```
 
