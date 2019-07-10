@@ -649,16 +649,16 @@ public class Solution {
 > 4. 递归： [求二叉树第K层的叶子节点个数][20tree] if(k==1 and root.left and root.right is null) return 1; ， ✔️
 > 5. 递归： [二叉树先序遍历/前序遍历][20tree]  (非递归，也要练习，要会写)
 > 6. 递归： [判断两棵二叉树是否结构相同][20tree] ， ✔️
-> 7. 递归： [求二叉树的镜像（反转二叉树）][20tree] ， ✔️
+> 7. 递归： [求二叉树的镜像（反转二叉树）][20tree] ， （左右递归交换）✔️ 
 > 8. 递归： [对称二叉树][20tree] （双函数，承接上题二叉树的镜像， good） ， ✔️
 > 9. 递归： [求二叉树中两个节点的最低公共祖先节点 good][20tree] ， ✔️
 > 10. 递归： [求二叉搜索树的最近公共祖先 good][20tree] ， ✔️
-> 11. 递归： [判断二叉树是不是完全二叉树][20tree] （利用层遍历。遍历到了NULL结点，如后续还有非NULL结点）
+> 11. 递归： [判断二叉树是不是完全二叉树][20tree] （利用层遍历。遍历到了NULL结点，如后续还有非NULL结点）， ✔️
 
 双函数，递归
 
-> 1. 树的子结构,遍历+判断, bool f5(Node\* root1, Node\* root2), bool son(Node\* p1, Node\* p2) 
-> 2. 判断二叉树是不是平衡二叉树 bool isBalance(Node\* root, int\* dep) 
+> 1. 树的子结构,遍历+判断, bool f5(Node\* root1, Node\* root2), bool son(Node\* p1, Node\* p2)  ， ✔️
+> 2. 判断二叉树是不是平衡二叉树 bool isBalance(Node\* root)， int maxHigh(Node\* root)  ， ✔️
 > 3. 求二叉树的直径 （直径长度是任意两个结点路径长度中的最大值）
 
 **4.2 medium**
@@ -764,23 +764,89 @@ Node* lowestCommonAncestor(Node* root, Node* p, Node* q) {
 }
 ```
 
-平衡二叉树
+2.11 判断二叉树是不是完全二叉树 
 
-```java
-class Solution {
-    public boolean isBalanced(TreeNode root) {
-        if(root == null)
-            return true;
-        return Math.abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 
-            && isBalanced(root.left) && isBalanced(root.right);
+```cpp
+bool checkCompleteTree(Node* root) {
+
+    bool flag = true;
+    queue<Node*> q;
+
+    if (root == null)
+        return true;
+
+    q.push(root);
+
+     while(!q.empty()){  
+         for (int i = 0; i < q.size(); ++i) {  
+             Node* tmp = q.front();
+             q.pop();
+            
+             if (tmp->lchild == NULL && tmp->rchild != NULL){
+                 flag = false;
+                 break;
+             }
+             if (tmp->left != NULL)
+                 que.push(tmp->left);
+             if (tmp->right != NULL)
+                 que.push(tmp->right);
+         }
     }
+    return flag;    
+}
+```
 
-    public int maxHigh(TreeNode root){
-        if(root == null)
-            return 0;
-        return Math.max(maxHigh(root.left), maxHigh(root.right))+1;
+双函数 + 递归
+
+1.12 树2是否是树1的子结构
+
+```cpp
+bool son(Node* p1, Node* p2) {
+    if (p2 == NULL) {
+        return true;
+    }
+    if (p1 == NULL) {
+        return false;
+    }
+    if (p1->value == p2->value) {
+        return son(p1->lchild, p2-lchild);
     }
 }
+
+bool son_tree(Node* root1, Node* root2) {
+    if (root2 == NULL) {
+        return true;
+    }
+    if (root1 == NULL) {
+        return false;
+    }
+    if (root1->value == root2->child) {
+        return son(root1, root2);
+    }
+    bool flag = false
+    flag = son_tree(root1->lchild, root2);
+    if (!flag) {
+        return son_tree(root1->rchild, root2);
+    }
+}
+```
+
+平衡二叉树
+
+```cpp
+bool isBalanced(Node* root) {
+    if(root == NULL)
+        return true;
+    return (-1 <= (maxHigh(root->lchild) - maxHigh(root->rchild)) <= 1)
+        && isBalanced(root->lchild) && isBalanced(root->lchild);
+}
+
+int maxHigh(Node* root){
+    if(root == NULL)
+        return 0;
+    return max(maxHigh(root->lchild), maxHigh(root->rchild))+1;
+}
+
 ```
 
 inorderTraversal
@@ -836,39 +902,6 @@ Node* f3(int* pre, int* ino, int len) { // pre : 1, 2, 4, 7, 3, 5, 6, 8  ino : 4
     root->lchild = f3(pre+1, ino, i);
     root->rchild = f3(pre+i+1, ino+i+1, len-1-i);
     return root;
-}
-```
-
-1.2 树2是否是树1的子结构
-
-```cpp
-bool son(Node* p1, Node* p2) {
-    if (p2 == NULL) {
-        return true;
-    }
-    if (p1 == NULL) {
-        return false;
-    }
-    if (p1->value == p2->value) {
-        return son(p1->lchild, p2-lchild);
-    }
-}
-
-bool son_tree(Node* root1, Node* root2) {
-    if (root2 == NULL) {
-        return true;
-    }
-    if (root1 == NULL) {
-        return false;
-    }
-    if (root1->value == root2->child) {
-        return son(root1, root2);
-    }
-    bool flag = false
-    flag = son_tree(root1->lchild, root2);
-    if (!flag) {
-        return son_tree(root1->rchild, root2);
-    }
 }
 ```
 
