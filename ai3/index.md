@@ -653,7 +653,7 @@ public class Solution {
 > 8. 递归： [对称二叉树][20tree] （双函数，承接上题二叉树的镜像， good） ， ✔️
 > 9. 递归： [求二叉树中两个节点的最低公共祖先节点 good][20tree] ， ✔️
 > 10. 递归： [求二叉搜索树的最近公共祖先 good][20tree] ， ✔️
-> 11. 递归： [判断二叉树是不是完全二叉树][20tree] （利用层遍历。遍历到了NULL结点，如后续还有非NULL结点）， ✔️
+> 11. 递归： 根据前序和中序重建二叉树 ， ✔️
 
 双函数，递归
 
@@ -663,24 +663,25 @@ public class Solution {
 
 **4.2 medium**
 
-> 1. 分层遍历 (自下而上分层遍历) bfs + vector< vector < int > >
-> 2. 分层遍历 (按之字形顺序打印二叉树)
-> 3. 重建二叉树 ok Node\* f3(int\* pre, int\* ino, int len) 
+> 1. 分层遍历 (判断二叉树是不是完全二叉树) （遍历到了NULL结点，如后续还有非NULL结点）， ✔️
+> 2. 分层遍历 (自下而上分层遍历) bfs + vector< vector < int > >
+> 3. 分层遍历 (按之字形顺序打印二叉树)
 
 [20tree]: https://www.weiweiblog.cn/20tree/
 
 **4.3 difficult:**
  
-> 6. 二叉树中和为某一值的路径 void f4(Node\* root, int exSum, int curSum, vecotr\< int \>& path)    
-> 10. [二叉树的下一个结点:3情况](https://blog.csdn.net/libin1105/article/details/48422299)  (1.有right.child 2.没有right.child,父left.child 3.没有right.child,父right.child)    
-> 14. 序列化二叉树      
-> 5. 二叉搜索树的后序遍历序列 bool f6(int\* sec, int len)  
-> 7. 二叉搜索树与双向链表 void convert(Node\* root, Node\*& pLast)   
-> 15. 二叉搜索树的第k个结点 ok.   
-> 16. [二叉查找树节点的删除](https://blog.csdn.net/xiaoxiaoxuanao/article/details/61918125).  重要
+> 1. 二叉树中和为某一值的路径 void f4(Node\* root, int exSum, int curSum, vecotr\< int \>& path)    
+> 2. [二叉树的下一个结点:3情况](https://blog.csdn.net/libin1105/article/details/48422299)  (1.有right.child 2.没有right.child,父left.child 3.没有right.child,父right.child)    
+> 3. 序列化二叉树      
+> 4. 二叉搜索树的后序遍历序列 bool f6(int\* sec, int len)  
+> 5. 二叉搜索树与双向链表 void convert(Node\* root, Node\*& pLast)   
+> 6. 二叉搜索树的第k个结点 ok.   
+> 7. [二叉查找树节点的删除](https://blog.csdn.net/xiaoxiaoxuanao/article/details/61918125).  重要
 
+### 4.1 easy
 
-1.9 二叉树两节点的最低公共祖先
+4.1.9 二叉树两节点的最低公共祖先
 
 ```cpp
 # include <iostream>
@@ -747,7 +748,7 @@ int main() {
 }
 ```
 
-2.10 求二叉搜索树的最近公共祖先
+4.1.10 求二叉搜索树的最近公共祖先
 
 ```cpp
 Node* lowestCommonAncestor(Node* root, Node* p, Node* q) {
@@ -764,41 +765,27 @@ Node* lowestCommonAncestor(Node* root, Node* p, Node* q) {
 }
 ```
 
-2.11 判断二叉树是不是完全二叉树 
+4.1.11 前序中序重建二叉树
 
 ```cpp
-bool checkCompleteTree(Node* root) {
-
-    bool flag = true;
-    queue<Node*> q;
-
-    if (root == null)
-        return true;
-
-    q.push(root);
-
-     while(!q.empty()){  
-         for (int i = 0; i < q.size(); ++i) {  
-             Node* tmp = q.front();
-             q.pop();
-            
-             if (tmp->lchild == NULL && tmp->rchild != NULL){
-                 flag = false;
-                 break;
-             }
-             if (tmp->left != NULL)
-                 que.push(tmp->left);
-             if (tmp->right != NULL)
-                 que.push(tmp->right);
-         }
+Node* f3(int* pre, int* ino, int len) { // pre : 1, 2, 4, 7, 3, 5, 6, 8  ino : 4, 7, 2, 1, 5, 3, 8, 6
+    if(pre == NULL || ino == NULL || len <= 0) return NULL;
+    int r_v = pre[0];
+    Node* root = new Node();
+    root->value = r_v;
+    int i;
+    for(i = 0; ; i++) {
+        if(ino[i] == r_v) break;
     }
-    return flag;    
+    root->lchild = f3(pre+1, ino, i);
+    root->rchild = f3(pre+i+1, ino+i+1, len-1-i);
+    return root;
 }
 ```
 
 双函数 + 递归
 
-1.12 树2是否是树1的子结构
+4.1.12 树2是否是树1的子结构
 
 ```cpp
 bool son(Node* p1, Node* p2) {
@@ -831,6 +818,40 @@ bool son_tree(Node* root1, Node* root2) {
 }
 ```
 
+4.1.13 判断二叉树是不是完全二叉树 
+
+```cpp
+bool checkCompleteTree(Node* root) {
+
+    bool flag = true;
+    queue<Node*> q;
+
+    if (root == null)
+        return true;
+
+    q.push(root);
+
+     while(!q.empty()){  
+         for (int i = 0; i < q.size(); ++i) {  
+             Node* tmp = q.front();
+             q.pop();
+            
+             if (tmp->lchild == NULL && tmp->rchild != NULL){
+                 flag = false;
+                 break;
+             }
+             if (tmp->left != NULL)
+                 que.push(tmp->left);
+             if (tmp->right != NULL)
+                 que.push(tmp->right);
+         }
+    }
+    return flag;    
+}
+```
+
+### 4.2 medium
+
 平衡二叉树
 
 ```cpp
@@ -846,108 +867,11 @@ int maxHigh(Node* root){
         return 0;
     return max(maxHigh(root->lchild), maxHigh(root->rchild))+1;
 }
-
 ```
 
-inorderTraversal
+### 4.3 difficult
 
-```cpp
-class Solution {
-    public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> res = new ArrayList<Integer>();
-        if(root == null)
-            return res;
-
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        TreeNode cur = root;
-        while(!stack.isEmpty() || cur != null){
-            if(cur != null){
-                stack.push(cur);
-                cur = cur.left;
-            }else{
-                cur = stack.pop();
-                res.add(cur.val);
-                cur = cur.right;
-            }
-        }
-        return res;
-    }
-}
-```
-
-aaa
-
-```java
-public static int getNodeNumRec(TreeNode root) {
-        if (root == null) {
-            return 0;
-        }             
-        return getNodeNumRec(root.left) + getNodeNumRec(root.right) + 1;
-}
-```
-
-
-1.1 前序中序重建二叉树
-
-```cpp
-Node* f3(int* pre, int* ino, int len) { // pre : 1, 2, 4, 7, 3, 5, 6, 8  ino : 4, 7, 2, 1, 5, 3, 8, 6
-    if(pre == NULL || ino == NULL || len <= 0) return NULL;
-    int r_v = pre[0];
-    Node* root = new Node();
-    root->value = r_v;
-    int i;
-    for(i = 0; ; i++) {
-        if(ino[i] == r_v) break;
-    }
-    root->lchild = f3(pre+1, ino, i);
-    root->rchild = f3(pre+i+1, ino+i+1, len-1-i);
-    return root;
-}
-```
-
-1.3 树的镜像 & BFS 二叉树
-
-1.4 从上往下打印二叉树
-
-```cpp
-void LevelOrderBinaryTree(BinaryTreeNode *root)//层序遍历二叉树
-{
-    assert(root);
-    queue<BinaryTreeNode*> q;
-
-    q.push(root);
-    while(!q.empty())
-    {
-        if(q.front()->_Lnode != NULL)
-            q.push(q.front()->_Lnode);
-        if(q.front()->_Rnode != NULL)
-            q.push(q.front()->_Rnode);
-
-        cout<<q.front()->_val<<" ";
-        q.pop();
-    }
-    cout<<endl;
-}
-```
-
-1.5 二叉搜索树后序遍历的结果
-
-```cpp
-bool f6(int* sec, int len) {
-    if(sec == NULL) return false;
-    if(len <= 1) return true;
-    int i, rv = sec[len-1];
-    for(i = 0; i < len-1; i++) {
-        if(sec[i] > rv) break;
-    }
-    for(int j = i; j < len-1; j++) {
-        if(sec[j] < rv) return false;
-    }
-    return f6(sec, i) && f6(sec+i, len-i-1);
-}
-```
-
-1.6 中和为某一值的路径
+4.3.1 二叉树中和为某一值的路径
 
 ```cpp
 void f4(Node*, int, int, vector<int>&);
@@ -970,7 +894,57 @@ void f4(Node* root, int exSum, int curSum, vecotr<int>& path) {
 }
 ```
 
-1.7 二叉搜索树与双向链表
+4.3.3 序列化二叉树
+
+```java
+public String serialize(TreeNode root) {
+    if(root == null)
+        return "#,";
+    StringBuffer res = new StringBuffer(root.val + ",");
+    res.append(serialize(root.left));
+    res.append(serialize(root.right));
+    return res.toString();
+}
+
+// Decodes your encoded data to tree.
+public TreeNode deserialize(String data) {
+    String [] d = data.split(",");
+    Queue<String> queue = new LinkedList<>();
+    for(int i = 0; i < d.length; i++){
+        queue.offer(d[i]);
+    }
+    return pre(queue);
+}
+
+public TreeNode pre(Queue<String> queue){
+    String val = queue.poll();
+    if(val.equals("#"))
+        return null;
+    TreeNode node = new TreeNode(Integer.parseInt(val));
+    node.left = pre(queue);
+    node.right = pre(queue);
+    return node;
+}
+```
+
+4.3.4 二叉搜索树后序遍历的结果
+
+```cpp
+bool f6(int* sec, int len) {
+    if(sec == NULL) return false;
+    if(len <= 1) return true;
+    int i, rv = sec[len-1];
+    for(i = 0; i < len-1; i++) {
+        if(sec[i] > rv) break;
+    }
+    for(int j = i; j < len-1; j++) {
+        if(sec[j] < rv) return false;
+    }
+    return f6(sec, i) && f6(sec+i, len-i-1);
+}
+```
+
+4.3.5 二叉搜索树与双向链表
 
 ```cpp
 void convert(Node* root, Node*& pLast) {
@@ -981,6 +955,37 @@ void convert(Node* root, Node*& pLast) {
     if(pLast) pLast->rchild = pCur;
     pLast = pCur;
     if(root->rchild) convert(root->rchild, pLast);
+}
+```
+
+4.3.6 二叉搜索树的第k个结点
+
+给定一棵二叉搜索树，请找出其中的第k小的结点。例如， （5，3，7，2，4，6，8）中，按结点数值大小顺序第三小结点的值为4。
+
+因为二叉搜索树按照中序遍历的顺序打印出来就是排好序的，所以，我们按照中序遍历找到第k个结点就是题目所求的结点。
+
+```cpp
+class Solution {
+    public int kthSmallest(TreeNode root, int k) {
+        if(root == null)
+             return Integer.MIN_VALUE;
+        Stack<TreeNode> stack = new Stack<>();
+        int count = 0;
+        TreeNode p = root;
+        while(p != null || !stack.isEmpty()){
+            if(p != null){
+                stack.push(p);
+                p = p.left;
+            }else{
+                TreeNode node = stack.pop();
+                count ++;
+                if(count == k)
+                    return node.val;
+                p = node.right;
+            }
+        }
+        return Integer.MIN_VALUE;
+    }
 }
 ```
 
