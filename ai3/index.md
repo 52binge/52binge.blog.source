@@ -1,6 +1,17 @@
 
 <img src="/images/icpc/Array-In-C.png" width="580" />
 
+1、七种常见的数组排序算法整理(C语言版本)
+2、2019 算法面试相关(leetcode)--数组和链表
+3、2019 算法面试相关(leetcode)--字符串
+4、2019 算法面试相关(leetcode)--栈和队列
+5、2019 算法面试相关(leetcode)--优先队列
+6、2019 算法面试相关(leetcode)--哈希表
+7、2019 算法面试相关(leetcode)--树、二叉树、二叉搜索树
+8、2019 算法面试相关(leetcode)--递归与分治
+9、2019 算法面试相关(leetcode)--贪心算法
+10、2019 算法面试相关(leetcode)--动态规划(Dynamic Programming)
+
 ## 1. Array
 
 **1.1 easy**
@@ -503,6 +514,33 @@ public class Solution {
 ## 3. String
 
 [13 道题搞定 BAT 面试——字符串](https://www.weiweiblog.cn/13string/)
+
+字符串
+
+```cpp
+# include <iostream>
+# include <vector>
+# include <queue>
+# include <cstring>
+
+using namespace std;
+
+ 
+int main() {
+    
+    string x;
+    
+    cin >> x;
+    
+    sort(x.begin(), x.end());
+    
+    reverse(x.begin(), x.end());
+    
+    cout << x << endl;
+    
+    return 0;
+}
+```
 
 **3.1 easy:**
 
@@ -1056,8 +1094,50 @@ bool f6(int* sec, int len) {
 
 ## 6. Stack & Queue & heap
 
+## 7. DP
 
-## 7. Offer
+> 1. 爬楼梯
+> 2. 不同路径 II
+> 3. 编辑距离
+
+不同路径 II
+
+![](https://upload-images.jianshu.io/upload_images/1782258-9dbebab909d4a555.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/400/format/webp)
+
+> 如果当前没有障碍物，dp[m][n] = dp[m - 1][n] + dp[m][n - 1]
+> 如果有障碍物，则dp[m][n] = 0
+
+编辑距离
+
+> 如果单词1第i+1个字符和单词2第j+1个字符相同，那么就不用操作，则DP[i + 1][j + 1] = DP[i][j];
+> 
+> 如果不相同,则有三种可能操作，即增，删，替换。则取这三种操作的最优值，即dp[i + 1][j + 1] = 1 + Math.min(dp[i][j], Math.min(dp[i][j + 1], dp[i + 1][j]));
+
+### 7.1 一维DP
+
+### 7.2 二维DP
+
+#### 7.2.1 布尔数组
+
+Longest Palindromic Substring/最长回文子串 给出一个字符串S，找到一个最长的连续回文串。
+Interleaving String/交错字符串 输入三个字符串s1、s2和s3，判断第三个字符串s3是否由前两个字符串s1和s2交替而成且不改变s1和s2中各个字符原有的相对顺序。
+
+#### 7.2.2 数字数组
+
+Unique Paths/Unique Paths II/不同路径 机器人从起点到终点有多少条不同的路径，只能向右或者向下走。
+Minimum Path Sum/最小路径和 一个矩阵的左上角出发到右下角，只能向右或向下走，找出哪一条路径上的数字之和最小。
+Edit Distance/编辑距离 求两个字符串之间的最短编辑距离，即原来的字符串至少要经过多少次操作才能够变成目标字符串，操作包括删除一个字符、插入一个字符、更新一个字符。
+Distinct Subsequences/不同子序列 给定S和T两个字符串，问把通过删除S中的某些字符，把S变为T有几种方法？
+
+
+> 补充：京东2019实习编程题-删除0或部分字符使其成为回文串 见笔试整理总结
+> 
+> 补充：爱奇艺2019实习编程题-n种糖果，每个盒子m个，每个糖果有最小最大限制，求多少种放法 见网页
+
+
+### 7.3 三维DP
+
+## 8. Offer
 
 [算法学习](https://www.weiweiblog.cn/category/算法学习/page/3/)
 
@@ -1073,16 +1153,11 @@ bool f6(int* sec, int len) {
 13. [剑指offer] 把数组排成最小的数
 14. [剑指offer] 整数中1出现的次数（从1到n整数中1出现的次数）
 
-## 8. 10道海量数据
+## 9. 10道海量数据
 
 ## Reference
 
-- [【NLP/AI算法面试必备-2】NLP/AI面试全记录（持续更新）][1]
-- [【NLP/AI算法面试必备-1】学习NLP/AI，必须深入理解“神经网络及其优化问题”][2]
-- [JayLouNLP算法工程师][2]
-- [140个GOOGLE的面试题](https://coolshell.cn/articles/3345.html)
+- [知乎： [Leetcode][动态规划]相关题目汇总/分析/总结](https://zhuanlan.zhihu.com/p/35707293)
+- [简书： 2019 算法面试相关(leetcode)--动态规划(Dynamic Programming)](https://www.jianshu.com/p/af880bbba792)
 
-[1]: https://zhuanlan.zhihu.com/p/57153934
-[2]: https://www.zhihu.com/people/lou-jie-9/posts
-[3]: https://zhuanlan.zhihu.com/p/56633392
 
