@@ -702,8 +702,8 @@ public class Solution {
 **4.2 medium**
 
 > 1. 分层遍历 (判断二叉树是不是完全二叉树) （遍历到了NULL结点，如后续还有非NULL结点）， ✔️
-> 2. 分层遍历 (自下而上分层遍历) bfs + vector< vector < int > >
-> 3. 分层遍历 (按之字形顺序打印二叉树)
+> 2. 分层遍历 (自下而上分层遍历) bfs + vector< vector < int > >， ✔️
+> 3. 分层遍历 (按之字形顺序打印二叉树)， ✔️
 
 [20tree]: https://www.weiweiblog.cn/20tree/
 
@@ -856,7 +856,9 @@ bool son_tree(Node* root1, Node* root2) {
 }
 ```
 
-4.1.13 判断二叉树是不是完全二叉树 
+### 4.2 medium
+
+4.2.1 判断二叉树是不是完全二叉树 
 
 ```cpp
 bool checkCompleteTree(Node* root) {
@@ -888,7 +890,45 @@ bool checkCompleteTree(Node* root) {
 }
 ```
 
-### 4.2 medium
+4.2.2 分层遍历 (自下而上分层遍历) 
+
+```cpp
+vector<vector<int>> bfs(Node* root) {
+
+    vector <vector<int> > ans;
+
+    if (root == NULL)
+        return ans;
+
+    queue<Node*> q;
+	
+    q.push(root);
+
+     while(!q.empty()) {  
+     
+         vector<int> tv;
+         
+         for (int i = 0; i < q.size(); ++i) {  
+             Node* tmp = q.front();
+             q.pop();
+             if (tmp->lchild == NULL && tmp->rchild != NULL){
+                 flag = false;
+                 break;
+             }
+             if (tmp->left != NULL)
+                 que.push(tmp->left);
+             if (tmp->right != NULL)
+                 que.push(tmp->right);
+             
+             tv.push_back(tmp->value);
+         }
+         ans.push_back(tv)
+    }
+    return flag;    
+}
+
+// reverse(res[i].begin(), res[i].end());
+```
 
 平衡二叉树
 
