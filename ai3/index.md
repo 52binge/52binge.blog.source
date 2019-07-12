@@ -682,8 +682,8 @@ public class Solution {
 **4.1 easy**
 
 > 1. 递归： [求二叉树中的节点个数][20tree] ， **✔️**
-> 2. 递归： [求二叉树的最大层数(最大深度) & (最小深度)][20tree] 最小深度特殊情况：left/right==0 ， ✔️
-> 3. 递归： [求二叉树第K层的节点个数][20tree] get_k(root.left, k-1) + get_k(root.right, k-1); ， ✔️
+> 2. 递归： [求二叉树的最大层数(最大深度) & (最小深度)][20tree] 最小深度特殊情况：left || right==0 ， ✔️
+> 3. 递归： [求二叉树第K层的节点个数][20tree] get_k(root.left, k-1) + get_k(root.right, k-1); good ， ✔️
 > 4. 递归： [求二叉树第K层的叶子节点个数][20tree] if(k==1 and root.left and root.right is null) return 1; ， ✔️
 > 5. 递归： [二叉树先序遍历/前序遍历][20tree]  (非递归，也要练习，要会写)
 > 6. 递归： [判断两棵二叉树是否结构相同][20tree] ， ✔️
@@ -697,7 +697,7 @@ public class Solution {
 
 > 1. 树的子结构,遍历+判断, bool f5(Node\* root1, Node\* root2), bool son(Node\* p1, Node\* p2)  ， ✔️
 > 2. 判断二叉树是不是平衡二叉树 bool isBalance(Node\* root)， int maxHigh(Node\* root)  ， ✔️
-> 3. 求二叉树的直径 （直径长度是任意两个结点路径长度中的最大值）
+> 3. 求二叉树的直径 （直径长度是任意两个结点路径长度中的最大值）， ✔️
 
 **4.2 medium**
 
@@ -709,12 +709,12 @@ public class Solution {
 
 **4.3 difficult:**
  
-> 1. 二叉树中和为某一值的路径 void f4(Node\* root, int exSum, int curSum, vecotr\< int \>& path)    
-> 2. [二叉树的下一个结点:3情况](https://blog.csdn.net/libin1105/article/details/48422299)  (1.有right.child 2.没有right.child,父left.child 3.没有right.child,父right.child)    
-> 3. 序列化二叉树      
-> 4. 二叉搜索树的后序遍历序列 bool f6(int\* sec, int len)  
-> 5. 二叉搜索树与双向链表 void convert(Node\* root, Node\*& pLast)   
-> 6. 二叉搜索树的第k个结点 ok.   
+> 1. 二叉树中和为某一值的路径 void f4(Node\* root, int exSum, int curSum, vecotr\< int \>& path)， ✔️
+> 2. [二叉树下一结点:3情况](https://blog.csdn.net/libin1105/article/details/48422299)  (1.有right.child 2.没有right.child,父left.child 3.没有right.child,父right.child)✔️    
+> 3. 序列化二叉树， String serialize(TreeNode root), TreeNode deserialize(String data) Queue<String> queue = new LinkedList<>(); ✔️      
+> 4. 二叉搜索树的后序遍历序列 bool f6(int\* sec, int len)， ✔️  
+> 5. 二叉搜索树与双向链表 void convert(Node\* root, Node\*& pLast) ， ✔️   
+> 6. 二叉搜索树的第k个结点 ， ✔️
 > 7. [二叉查找树节点的删除](https://blog.csdn.net/xiaoxiaoxuanao/article/details/61918125).  重要
 
 ### 4.1 easy
@@ -856,6 +856,38 @@ bool son_tree(Node* root1, Node* root2) {
 }
 ```
 
+4.1.13 平衡二叉树
+
+```cpp
+bool isBalanced(Node* root) {
+    if(root == NULL)
+        return true;
+    return (-1 <= (maxHigh(root->lchild) - maxHigh(root->rchild)) <= 1)
+        && isBalanced(root->lchild) && isBalanced(root->lchild);
+}
+
+int maxHigh(Node* root){
+    if(root == NULL)
+        return 0;
+    return max(maxHigh(root->lchild), maxHigh(root->rchild))+1;
+}
+```
+
+4.1.14 求二叉树的直径
+
+```java
+private int diamHelper(TreeNode root){
+    if(root == null)
+        return 0;
+    int left = diamHelper(root.left);
+    int right = diamHelper(root.right);
+    path = Math.max(path, left + right);
+    return Math.max(left, right) + 1;
+}
+```
+
+
+
 ### 4.2 medium
 
 4.2.1 判断二叉树是不是完全二叉树 
@@ -928,23 +960,6 @@ vector<vector<int>> bfs(Node* root) {
 }
 
 // reverse(res[i].begin(), res[i].end());
-```
-
-平衡二叉树
-
-```cpp
-bool isBalanced(Node* root) {
-    if(root == NULL)
-        return true;
-    return (-1 <= (maxHigh(root->lchild) - maxHigh(root->rchild)) <= 1)
-        && isBalanced(root->lchild) && isBalanced(root->lchild);
-}
-
-int maxHigh(Node* root){
-    if(root == NULL)
-        return 0;
-    return max(maxHigh(root->lchild), maxHigh(root->rchild))+1;
-}
 ```
 
 ### 4.3 difficult
@@ -1024,14 +1039,19 @@ bool f6(int* sec, int len) {
 
 4.3.5 二叉搜索树与双向链表
 
+![](https://pic4.zhimg.com/80/v2-dfed873e672f0cb9aa0f6cd729fc19df_hd.jpg)
+
 ```cpp
 void convert(Node* root, Node*& pLast) {
     if(root == NULL) return;
     if(root->lchild) convert(root->lchild, pLast);
+    
     Node* pCur = root;
     pCur->lchild = pLast;
+    
     if(pLast) pLast->rchild = pCur;
     pLast = pCur;
+    
     if(root->rchild) convert(root->rchild, pLast);
 }
 ```
@@ -1067,7 +1087,8 @@ class Solution {
 }
 ```
 
-1.8 深度到是否为平衡二叉树
+
+<!--1.8 深度到是否为平衡二叉树
 
 ```cpp
 bool isBalance(Node* root, int* dep) {
@@ -1085,26 +1106,7 @@ bool isBalance(Node* root, int* dep) {
     }
     return false;
 }
-```
-
-1.9 二叉搜索树后序遍历的结果
-
-```cpp
-bool f6(int* sec, int len) {
-    if(sec == NULL) return false;
-    if(len <= 1) return true;
-    int i, rv = sec[len-1];
-    for(i = 0; i < len-1; i++) {
-        if(sec[i] > rv) break;
-    }
-    for(int j = i; j < len-1; j++) {
-        if(sec[j] < rv) return false;
-    }
-    return f6(sec, i) && f6(sec+i, len-i-1);
-}
-```
-
-
+```-->
 
 ## 5. 具体算法
 
@@ -1185,7 +1187,6 @@ Distinct Subsequences/不同子序列 给定S和T两个字符串，问把通过�
 3. [剑指offer] 扑克牌顺子
 4. [剑指offer] 和为S的连续正数序列
 6. [剑指offer] 构建乘积数组
-8. [剑指offer] 数组中重复的数字
 10. [剑指offer] 数据流中的中位数
 11. [剑指offer] 滑动窗口的最大值
 11. [剑指offer] 矩阵中的路径
