@@ -555,6 +555,33 @@ int main() {
 
 [3.2.1]: https://www.weiweiblog.cn/firstappearingonce/
 
+```java
+import java.util.HashMap;
+public class Solution {
+    HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+    StringBuffer s = new StringBuffer();
+    //Insert one char from stringstream
+    public void Insert(char ch)
+    {
+        s.append(ch);
+        if(map.containsKey(ch)){
+            map.put(ch, map.get(ch)+1);
+        }else{
+            map.put(ch, 1);
+        }
+    }
+  //return the first appearence once char in current stringstream
+    public char FirstAppearingOnce()
+    {
+        for(int i = 0; i < s.length(); i++){
+            if(map.get(s.charAt(i)) == 1)
+                return s.charAt(i);
+        }
+        return '#';
+    }
+}
+```
+
 **3.2 difficult**
 
 > 1. KMP 算法
@@ -1154,6 +1181,97 @@ bool isBalance(Node* root, int* dep) {
 
 ## 6. Stack & Queue & heap
 
+[Stack & Queue](https://www.weiweiblog.cn/ispoporder/)
+
+> 1. 用两个栈实现队列
+> 2. 包含min函数的栈
+> 3. [栈的压入、弹出序列](https://www.weiweiblog.cn/ispoporder/)
+
+### 6.1 用两个栈实现队列
+
+	class MyQueue {
+	    Stack<Integer> input = new Stack<Integer>();
+	    Stack<Integer> output = new Stack<Integer>();
+	    /** Push element x to the back of queue. */
+	    public void push(int x) {
+	        input.push(x);
+	    }
+	    /** Removes the element from in front of queue and returns that element. */
+	    public int pop() {
+	        peek();
+	        return output.pop();
+	    }
+	    /** Get the front element. */
+	    public int peek() {
+	        if(output.isEmpty()){
+	            while(!input.isEmpty())
+	                output.push(input.pop());
+	        }
+	        return output.peek();
+	    }
+	    /** Returns whether the queue is empty. */
+	    public boolean empty() {
+	        return input.isEmpty() && output.isEmpty();
+	    }
+	}
+
+### 6.2 包含min函数的栈
+
+	class MinStack {
+	    Stack<Integer> stack = new Stack<Integer>();
+	    Stack<Integer> temp = new Stack<Integer>();
+	
+	    public void push(int x) {
+	        stack.push(x);
+	        if(temp.isEmpty() || temp.peek() >= x)
+	            temp.push(x);
+	    }
+	
+	    public void pop() {
+	        int x = stack.pop();
+	        int min = temp.peek();
+	        if(x == min)
+	            temp.pop();
+	    }
+	
+	    public int top() {
+	        return stack.peek();
+	    }
+	
+	    public int getMin() {
+	        return temp.peek();
+	    }
+	}
+
+
+### 6.3 栈的 push pop 序列 
+
+栈的 push pop 序列 
+1 2 3 4 5
+4 3 5 1 2
+
+	import java.util.ArrayList;
+	import java.util.Stack;
+	public class Solution {
+	    public boolean IsPopOrder(int [] pushA, int [] popA) {
+	        if(pushA.length != popA.length || 
+	               pushA.length == 0 ||
+	               popA.length == 0)
+	            return false;
+	        Stack<Integer> stack = new Stack<>();
+	        int index = 0;
+	        for(int i = 0; i < pushA.length; i++){
+	            stack.push(pushA[i]);
+	            while(!stack.empty() && stack.peek() == popA[index]){
+	                stack.pop();
+	                index++;
+	            }
+	        }
+	        return stack.empty();
+	    }
+	}
+
+
 ## 7. DP
 
 > 1. 爬楼梯
@@ -1179,21 +1297,23 @@ bool isBalance(Node* root, int* dep) {
 
 #### 7.2.1 布尔数组
 
-Longest Palindromic Substring/最长回文子串 给出一个字符串S，找到一个最长的连续回文串。
-Interleaving String/交错字符串 输入三个字符串s1、s2和s3，判断第三个字符串s3是否由前两个字符串s1和s2交替而成且不改变s1和s2中各个字符原有的相对顺序。
+> 1. Longest Palindromic Substring/最长回文子串 给出一个字符串S，找到一个最长的连续回文串。
+2. Interleaving String/交错字符串 输入三个字符串s1、s2和s3，判断第三个字符串s3是否由前两个字符串s1和s2交替而成且不改变s1和s2中各个字符原有的相对顺序。
 
 #### 7.2.2 数字数组
 
-Unique Paths/Unique Paths II/不同路径 机器人从起点到终点有多少条不同的路径，只能向右或者向下走。
-Minimum Path Sum/最小路径和 一个矩阵的左上角出发到右下角，只能向右或向下走，找出哪一条路径上的数字之和最小。
-Edit Distance/编辑距离 求两个字符串之间的最短编辑距离，即原来的字符串至少要经过多少次操作才能够变成目标字符串，操作包括删除一个字符、插入一个字符、更新一个字符。
-Distinct Subsequences/不同子序列 给定S和T两个字符串，问把通过删除S中的某些字符，把S变为T有几种方法？
+> 1. [Unique Paths II/不同路径][dp2.2.1] (初始化很重要) ， 起点到终点有多少条不同路径，向右或向下走。
+2. [Minimum Path Sum][dp2.2.2] 矩阵左上角出发到右下角，只能向右或向下走，找出哪一条路径上的数字之和最小。
+3. Edit Distance/编辑距离 求两个字符串之间的最短编辑距离，即原来的字符串至少要经过多少次操作才能够变成目标字符串，操作包括删除一个字符、插入一个字符、更新一个字符。
+4. Distinct Subsequences/不同子序列 给定S和T两个字符串，问把通过删除S中的某些字符，把S变为T有几种方法？
 
 
 > 补充：京东2019实习编程题-删除0或部分字符使其成为回文串 见笔试整理总结
 > 
 > 补充：爱奇艺2019实习编程题-n种糖果，每个盒子m个，每个糖果有最小最大限制，求多少种放法 见网页
 
+[dp2.2.1]: https://blog.csdn.net/yuanliang861/article/details/83514372
+[dp2.2.2]: https://www.cnblogs.com/grandyang/p/4353255.html
 
 ### 7.3 三维DP
 
@@ -1213,6 +1333,9 @@ Distinct Subsequences/不同子序列 给定S和T两个字符串，问把通过�
 14. [剑指offer] 整数中1出现的次数（从1到n整数中1出现的次数）
 
 ## 9. 10道海量数据
+
+
+
 
 ## Reference
 
