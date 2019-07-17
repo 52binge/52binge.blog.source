@@ -1321,16 +1321,44 @@ bool isBalance(Node* root, int* dep) {
 
 [算法学习](https://www.weiweiblog.cn/category/算法学习/page/3/)
 
-2. [剑指offer] 求1+2+3+…+n
-3. [剑指offer] 扑克牌顺子
-4. [剑指offer] 和为S的连续正数序列
-6. [剑指offer] 构建乘积数组
+easy:
+
+1. [剑指offer] 扑克牌顺子 (排序后，统计大小王数量 + 间隔)， ✔️
+2. [剑指offer] 构建乘积数组 (A数组，从前向后，再从后向前j-2,构造 B)， ✔️
+3. [剑指offer] 求1+2+3+…+n (判断 && 递归)， ✔️
+
+**medium**
+
+[算法学习5](https://www.weiweiblog.cn/category/算法学习/page/5/)
+
+4. [剑指offer] 和为S的连续正数序列 (3函数，while(start<end), sum_fun, vector<vector>)， ✔️
 10. [剑指offer] 数据流中的中位数
-11. [剑指offer] 滑动窗口的最大值
+11. [剑指offer] 滑动窗口的最大值 (双向队列)
 11. [剑指offer] 矩阵中的路径
 12. [剑指offer] 机器人的运动范围
 13. [剑指offer] 把数组排成最小的数
 14. [剑指offer] 整数中1出现的次数（从1到n整数中1出现的次数）
+15. [LRU Cache 需要深入学习Java的Map的内部实现](https://blog.csdn.net/JackZhang_123/article/details/78015549)
+
+
+
+    import java.util.LinkedList;
+	 public class Solution {
+	    public int LastRemaining_Solution(int n, int m) {
+	        if(n < 1 || m < 1)
+	            return -1;
+	        LinkedList<Integer> link = new LinkedList<Integer>();
+	        for(int i = 0; i < n; i++)
+	            link.add(i);
+	        int index = -1;   //起步是 -1 不是 0
+	        while(link.size() > 1){
+	            index = (index + m) % link.size();  //对 link的长度求余不是对 n
+	            link.remove(index);
+	            index --;
+	        }
+	        return link.get(0);
+	    }
+	}
 
 ## 9. 10道海量数据
 
