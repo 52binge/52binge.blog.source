@@ -1337,9 +1337,9 @@ easy:
 11. [剑指offer] 矩阵中的路径
 12. [剑指offer] 机器人的运动范围
 13. [剑指offer] 把数组排成最小的数
-14. [剑指offer] 整数中1出现的次数（从1到n整数中1出现的次数）
-15. [LRU Cache 需要深入学习Java的Map的内部实现](https://blog.csdn.net/JackZhang_123/article/details/78015549)
+14. [整数中1出现的次数][count1]
 
+[count1]: https://github.com/WordZzzz/Note/blob/master/AtOffer/《剑指offer》刷题笔记（时间效率）：整数中1出现的次数（从1到n整数中1出现的次数）.md
 
 
     import java.util.LinkedList;
@@ -1359,6 +1359,10 @@ easy:
 	        return link.get(0);
 	    }
 	}
+
+**diffcult**
+
+15. [LRU Cache 需要深入学习Java的Map的内部实现](https://blog.csdn.net/JackZhang_123/article/details/78015549)
 
 ## 9. 10道海量数据
 
