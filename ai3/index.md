@@ -32,26 +32,17 @@
 
 > 1. **`八皇后`**， void dfs(int n) ， ✔️
 > 2. [和S连续正数序][S1] (3fun，mid = (1+sum)/2; while(start<mid), Sum(int start, int end), 双vector)， ✔️
-> 3. 孩子们的游戏-圆圈中最后剩下的数(约瑟夫环) java ， ✔️
-> 4. [把数组排成最小的数](https://www.cnblogs.com/youxin/p/3294154.html) #include < sstream > bool Compare(const string &left, const string &right)
-> 5. 数组中只出现一次的数字 , 划分2数组，num & (-num);二者与后得到的数，将num最右边的1保留下来
-
-### 1.3 排序
-
-> 1. 数组中的逆序对(归并排序).  void mergeSort(int a[], int l, int r)
-> 2. 最小的K个数(堆排序).   
-> 3. 最小的K个数(快速排序) ok
+> 3. 约瑟夫环 LinkedList; (index = (index + m) %link.size();link.remove(index-\-);) link.get(0); ， ✔️
+> 4. [数组排成最小的数](https://www.weiweiblog.cn/printminnumber/) Arrays.sort(str, new Comparator<String>(){ public int compare(String s1, String s2)，✔️
+> 5. 数组中只出现一次的数字 , 划分2数组，num & (-num);二者与后得到的数，将num最右边的1保留下来，✔️
 
 **1.3 important**
 
-> 1. quick_sort, while (双while + swap)
-> 2. merge_sort
-> 3. [数组中的逆序对](https://blog.csdn.net/bf23456/article/details/51303632)
-> 4. **最小的K个数 ** part 快排思想 + void set_k(int\* input, int n, int k) **nok**
-> 5. [最短路Floyd](https://www.cnblogs.com/biyeymyhjob/archive/2012/07/31/2615833.html)
-
-**1.4 difficult**
-
+> 1. 数组中的逆序对(归并排序).  void mergeSort(int a[], int l, int r) ， ✔️
+> 2. 最小的K个数(堆排序).   
+> 3. **最小的K个数** part 快排思想 + void set_k(int\* input, int n, int k) ， ✔️
+> 4. quick_sort, while (双while + swap)， ✔️
+> 5. [最短路Floyd](https://www.cnblogs.com/biyeymyhjob/archive/2012/07/31/2615833.html)， ✔️
 
 1.1 八皇后
 
@@ -120,17 +111,13 @@ bool Find(int b[][4], int rows, int cols, int value) {
 1.3 替换空格
 
 ```cpp
-char* replace(char* str, int len) {
-    
+char* replace(char* str, int len) {    
     while(str[len] != '\0'){
-    
         if(str[len] == ' '){
             konglen++;
         }
-
         len++;
     }
-
     return '\0';
 }
 ```
@@ -291,30 +278,7 @@ void mergeSort(int a[], int l, int r) { //  8, 5, 4, 9, 2, 3, 6
 
 1.15 约瑟夫环
 
-```cpp
-int cirnm(int n, int m) {
-    if(n < 1 || m < 1) return -1;
-    int i = 0, count = 0; 
-    list<int> L;
-    for(int i = 0; i < n; i++) L.push_back(i);
-    list<int>::iterator lcur = L.begin(), next;
-    while(!L.empty()) {
-        for(int i = 1; i < m; ++i) {
-            lcur++;
-            if(lcur == L.end()) lcur = L.begin();
-        }
-        next = lcur + 1;
-        if(next == L.end()) next = L.begin();
-        L.erase(lcur);
-        count++;
-        if(count == n - 1) break;
-        lcur = next;
-    }
-    return *lcur;
-}
-
-// java
-
+```java
 import java.util.LinkedList;
  public class Solution {
     public int LastRemaining_Solution(int n, int m) {
@@ -358,15 +322,15 @@ int bina(int *a, int len, int data) {
 
 **2.1 easy:**
 
-> 1. 在 O(1) 时间删除链表节点
-> 2. 删除单链表倒数第 n 个节点
-> 3. 求单链表的中间节点
-> 4. 判断单链表是否存在环
-> 5. 从尾到头打印链表, 递归 ok.
-> 6. 链表中倒数第k个结点 ok.
-> 7. 判断两个无环单链表是否相交
-> 8. 两个链表相交扩展：求两个无环单链表的第一个相交点
-> 9. 两个链表的第一个公共结点  ok.   
+> 1. 在 O(1) 时间删除链表节点， ✔️
+> 2. 删除单链表倒数第 n 个节点， ✔️
+> 3. 求单链表的中间节点， ✔️
+> 4. 判断单链表是否存在环， ✔️
+> 5. 从尾到头打印链表, 递归 ok.， ✔️
+> 6. 链表中倒数第k个结点 ok.， ✔️
+> 7. 判断两个无环单链表是否相交， ✔️
+> 8. 两个链表相交扩展：求两个无环单链表的第一个相交点， ✔️
+> 9. 两个链表的第一个公共结点  ， ✔️   
 > 10. 旋转单链表
 > 
 > 题目描述：给定一个单链表，设计一个算法实现链表向右旋转 K 个位置。
@@ -375,14 +339,14 @@ int bina(int *a, int len, int data) {
 
 **2.2 medium:**
 
-> 2. [反转链表][2.3] next=head->next, head->next=pre, pre=head, head=next; 4步 ok
+> 2. [反转链表][2.3] next=head->next, head->next=pre, pre=head, head=next; 4步 ok， ✔️
 > 3. 翻转部分单链表 举例：1->2->3->4->5->null, from = 2, to = 4 结果：1->4->3->2->5->null
-> 4. [复杂链表的复制][2.5] ok
+> 4. [复杂链表的复制][2.5] ok， ✔️
 > 7. 链表划分 （题目描述： 给定一个单链表和数值x，划分链表使得小于x的节点排在大于等于x的节点之前）
 > 9. 单链表排序
 > 10. 合并两个或k个有序链表  ok， 递归 (三元运算符).   
-> 12. 删除链表重复结点  链表1->2->3->3->4->4->5 处理后为 1->2->5. first->next=head, last, p 三指针
-> 10. 链表中环的入口结点     
+> 12. 删除链表重复结点  链表1->2->3->3->4->4->5 处理后为 1->2->5. first->next=head, last, p 三指针， ✔️
+> 10. 链表中环的入口结点， ✔️     
 
 单链表排序 or 合并两个或k个有序链表
 
@@ -1160,8 +1124,8 @@ class Solution {
 
 ### 5.1 斐波拉契
 
-> 1. 斐波拉契数列 & 跳台阶 & 变态跳台阶  2 \* Fib(n-1).   
-> 4. 矩形覆盖  ok
+> 1. 斐波拉契数列 & 跳台阶 & 变态跳台阶  2 \* Fib(n-1).  ， ✔️ 
+> 4. 矩形覆盖  ， ✔️
 
 ### 5.2 回溯
 
@@ -1170,16 +1134,16 @@ class Solution {
 
 ### 5.3 位运算
 
-> 1. 二进制中1的个数  n & n-1.   
-> 2. 数值的整数次方 dp.   
-> 3. 数组中只出现一次的数字 ok.  
+> 1. 二进制中1的个数  n & n-1.， ✔️   
+> 2. 数值的整数次方 dp.   ， ✔️
+> 3. 数组中只出现一次的数字 ok.  ， ✔️
 
 ## 6. Stack & Queue & heap
 
 [Stack & Queue](https://www.weiweiblog.cn/ispoporder/)
 
-> 1. 用两个栈实现队列
-> 2. 包含min函数的栈
+> 1. **`用两个栈实现队列`** ， ✔️
+> 2. **`包含min函数的栈`** ， ✔️
 > 3. [栈的压入、弹出序列](https://www.weiweiblog.cn/ispoporder/)
 
 ### 6.1 用两个栈实现队列
@@ -1273,9 +1237,9 @@ public class Solution {
 
 ## 7. DP
 
-> 1. 爬楼梯
-> 2. 不同路径 II
-> 3. 编辑距离
+> 1. 爬楼梯 ， ✔️
+> 2. 不同路径 II ， ✔️
+> 3. 编辑距离 ， ✔️
 
 不同路径 II
 
@@ -1321,7 +1285,6 @@ public class Solution {
 
 10. 数据流中的中位数
 11. 滑动窗口的最大值 (双向队列)
-13. 把数组排成最小的数
 
 [S1]: https://www.weiweiblog.cn/findcontinuoussequence/
 [count1]: https://github.com/WordZzzz/Note/blob/master/AtOffer/《剑指offer》刷题笔记（时间效率）：整数中1出现的次数（从1到n整数中1出现的次数）.md
