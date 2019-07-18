@@ -31,10 +31,16 @@
 **1.2 medium**
 
 > 1. **`八皇后`**， void dfs(int n) ， ✔️
-> 2. 孩子们的游戏-圆圈中最后剩下的数(约瑟夫环) java ， ✔️
-> 3. [把数组排成最小的数](https://www.cnblogs.com/youxin/p/3294154.html) #include < sstream > bool Compare(const string &left, const string &right)
-> 4. 数组中只出现一次的数字 , 划分2数组，num & (-num);二者与后得到的数，将num最右边的1保留下来
-> 5. **连续子数组的最大和**   // dp: F[i] = max(a[i], F[i-1]+a[i]);
+> 2. [和S连续正数序][S1] (3fun，mid = (1+sum)/2; while(start<mid), Sum(int start, int end), 双vector)， ✔️
+> 3. 孩子们的游戏-圆圈中最后剩下的数(约瑟夫环) java ， ✔️
+> 4. [把数组排成最小的数](https://www.cnblogs.com/youxin/p/3294154.html) #include < sstream > bool Compare(const string &left, const string &right)
+> 5. 数组中只出现一次的数字 , 划分2数组，num & (-num);二者与后得到的数，将num最右边的1保留下来
+
+### 1.3 排序
+
+> 1. 数组中的逆序对(归并排序).  void mergeSort(int a[], int l, int r)
+> 2. 最小的K个数(堆排序).   
+> 3. 最小的K个数(快速排序) ok
 
 **1.3 important**
 
@@ -46,9 +52,6 @@
 
 **1.4 difficult**
 
-> 1. 整数中1出现的次数（从1到n整数中1出现的次数）. **nok**
-> 2. 和为S的连续正数序列(滑动窗口思想) left=1, right = 2, total = (left + right) \* (right - left + 1) / 2; 
-> 3. [构建乘积数组](https://blog.csdn.net/u012327058/article/details/81007333)
 
 1.1 八皇后
 
@@ -285,8 +288,6 @@ void mergeSort(int a[], int l, int r) { //  8, 5, 4, 9, 2, 3, 6
     delete []arr;
 }
 ```
-
-1.13 和为S的连续正序列(滑窗思想)
 
 1.15 约瑟夫环
 
@@ -1159,23 +1160,15 @@ class Solution {
 
 ### 5.1 斐波拉契
 
-> 1. 斐波拉契数列 ok.   
-> 2. 跳台阶  ok.   
-> 3. 变态跳台阶  2 \* Fib(n-1).   
+> 1. 斐波拉契数列 & 跳台阶 & 变态跳台阶  2 \* Fib(n-1).   
 > 4. 矩形覆盖  ok
 
-### 5.4 回溯
+### 5.2 回溯
 
 > 1. 矩阵中的路径(BFS).   
 > 2. 机器人的运动范围(DFS)
 
-### 5.5 排序
-
-> 1. 数组中的逆序对(归并排序).  void mergeSort(int a[], int l, int r)
-> 2. 最小的K个数(堆排序).   
-> 3. 最小的K个数(快速排序) ok
-
-### 5.6 位运算
+### 5.3 位运算
 
 > 1. 二进制中1的个数  n & n-1.   
 > 2. 数值的整数次方 dp.   
@@ -1252,27 +1245,28 @@ class Solution {
 1 2 3 4 5
 4 3 5 1 2
 
-	import java.util.ArrayList;
-	import java.util.Stack;
-	public class Solution {
-	    public boolean IsPopOrder(int [] pushA, int [] popA) {
-	        if(pushA.length != popA.length || 
-	               pushA.length == 0 ||
-	               popA.length == 0)
-	            return false;
-	        Stack<Integer> stack = new Stack<>();
-	        int index = 0;
-	        for(int i = 0; i < pushA.length; i++){
-	            stack.push(pushA[i]);
-	            while(!stack.empty() && stack.peek() == popA[index]){
-	                stack.pop();
-	                index++;
-	            }
-	        }
-	        return stack.empty();
-	    }
-	}
-
+```java
+import java.util.ArrayList;
+import java.util.Stack;
+public class Solution {
+    public boolean IsPopOrder(int [] pushA, int [] popA) {
+        if(pushA.length != popA.length || 
+               pushA.length == 0 ||
+               popA.length == 0)
+            return false;
+        Stack<Integer> stack = new Stack<>();
+        int index = 0;
+        for(int i = 0; i < pushA.length; i++){
+            stack.push(pushA[i]);
+            while(!stack.empty() && stack.peek() == popA[index]){
+                stack.pop();
+                index++;
+            }
+        }
+        return stack.empty();
+    }
+}
+```
 
 ## 7. DP
 
@@ -1295,6 +1289,8 @@ class Solution {
 
 ### 7.1 一维DP
 
+> 1. **连续子数组的最大和**   // dp: F[i] = max(a[i], F[i-1]+a[i]);
+
 ### 7.2 二维DP
 
 #### 7.2.1 布尔数组
@@ -1309,10 +1305,7 @@ class Solution {
 3. Edit Distance/编辑距离 求两个字符串之间的最短编辑距离，即原来的字符串至少要经过多少次操作才能够变成目标字符串，操作包括删除一个字符、插入一个字符、更新一个字符。
 4. Distinct Subsequences/不同子序列 给定S和T两个字符串，问把通过删除S中的某些字符，把S变为T有几种方法？
 
-
 > 补充：京东2019实习编程题-删除0或部分字符使其成为回文串 见笔试整理总结
-> 
-> 补充：爱奇艺2019实习编程题-n种糖果，每个盒子m个，每个糖果有最小最大限制，求多少种放法 见网页
 
 [dp2.2.1]: https://blog.csdn.net/yuanliang861/article/details/83514372
 [dp2.2.2]: https://www.cnblogs.com/grandyang/p/4353255.html
@@ -1323,11 +1316,8 @@ class Solution {
 
 [算法学习5](https://www.weiweiblog.cn/category/算法学习/page/5/)
 
-4. [和为S连续正数序列][S1] (3fun，mid = (1+sum)/2; while(start<mid), Sum(int start, int end), 双vector)， ✔️
 10. 数据流中的中位数
 11. 滑动窗口的最大值 (双向队列)
-11. 矩阵中的路径
-12. 机器人的运动范围
 13. 把数组排成最小的数
 
 [S1]: https://www.weiweiblog.cn/findcontinuoussequence/
