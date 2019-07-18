@@ -19,7 +19,7 @@
 > 1. **二维数组中的查找** bool Find(int b[][4], int rows, int cols, int value)， ✔️
 > 2. 替换空格 char\* replace(char\* str, int len) ‘ ’->%20 在源数组总长度，从后向前，逐个赋值， ✔️
 > 3. 如何在排序数组中找出给定数字出现的次数 int bina(int \*a, int len, int num, bool isLeft)， ✔️
-> 4. 旋转数组的最小元素 int get_min(int \*a, int len) , while(a[p1] >= a[p2]) {， ✔️
+> 4. 旋转数组的最小元素 while(low < high) { if(a[m] > a[high]) min[m+1,high], else [low,m]} ✔️ 
 > 5. 调整数组位数使奇数位于前面 void odds(int[] arr) ， ✔️
 > 6. 次数超过一半的次数 \* int core(int \*a, int len)， ✔️
 > 7. **丑数**, 只包含质因子2、3和5的数称作丑数, 1, 2, 3, 5, 6, ... ， ✔️
@@ -1320,10 +1320,6 @@ class Solution {
 ### 7.3 三维DP
 
 ## 8. 剑指offer
-
-[算法学习](https://www.weiweiblog.cn/category/算法学习/page/3/)
-
-**medium**
 
 [算法学习5](https://www.weiweiblog.cn/category/算法学习/page/5/)
 
