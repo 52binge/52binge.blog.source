@@ -1184,60 +1184,63 @@ class Solution {
 
 ### 6.1 用两个栈实现队列
 
-	class MyQueue {
-	    Stack<Integer> input = new Stack<Integer>();
-	    Stack<Integer> output = new Stack<Integer>();
-	    /** Push element x to the back of queue. */
-	    public void push(int x) {
-	        input.push(x);
-	    }
-	    /** Removes the element from in front of queue and returns that element. */
-	    public int pop() {
-	        peek();
-	        return output.pop();
-	    }
-	    /** Get the front element. */
-	    public int peek() {
-	        if(output.isEmpty()){
-	            while(!input.isEmpty())
-	                output.push(input.pop());
-	        }
-	        return output.peek();
-	    }
-	    /** Returns whether the queue is empty. */
-	    public boolean empty() {
-	        return input.isEmpty() && output.isEmpty();
-	    }
-	}
+```java
+class MyQueue {
+    Stack<Integer> input = new Stack<Integer>();
+    Stack<Integer> output = new Stack<Integer>();
+    /** Push element x to the back of queue. */
+    public void push(int x) {
+        input.push(x);
+    }
+    /** Removes the element from in front of queue and returns that element. */
+    public int pop() {
+        peek();
+        return output.pop();
+    }
+    /** Get the front element. */
+    public int peek() {
+        if(output.isEmpty()){
+            while(!input.isEmpty())
+                output.push(input.pop());
+        }
+        return output.peek();
+    }
+    /** Returns whether the queue is empty. */
+    public boolean empty() {
+        return input.isEmpty() && output.isEmpty();
+    }
+}
+```
 
 ### 6.2 包含min函数的栈
 
-	class MinStack {
-	    Stack<Integer> stack = new Stack<Integer>();
-	    Stack<Integer> temp = new Stack<Integer>();
+```java
+class MinStack {
+    Stack<Integer> stack = new Stack<Integer>();
+    Stack<Integer> temp = new Stack<Integer>();
 	
-	    public void push(int x) {
-	        stack.push(x);
-	        if(temp.isEmpty() || temp.peek() >= x)
-	            temp.push(x);
-	    }
+    public void push(int x) {
+        stack.push(x);
+        if(temp.isEmpty() || temp.peek() >= x)
+            temp.push(x);
+    }
 	
-	    public void pop() {
-	        int x = stack.pop();
-	        int min = temp.peek();
-	        if(x == min)
-	            temp.pop();
-	    }
+    public void pop() {
+        int x = stack.pop();
+        int min = temp.peek();
+        if(x == min)
+            temp.pop();
+    }
 	
-	    public int top() {
-	        return stack.peek();
-	    }
+    public int top() {
+        return stack.peek();
+    }
 	
-	    public int getMin() {
-	        return temp.peek();
-	    }
-	}
-
+    public int getMin() {
+        return temp.peek();
+    }
+}
+```
 
 ### 6.3 栈的 push pop 序列 
 
