@@ -16,19 +16,22 @@
 
 **1.1 easy**
 
-> 1. **二维数组中的查找** bool Find(int\* matrix, int rows, int cols, int value)用一维/二维 \*(matrix+i\*cols+j)
-> 2. 替换空格 char\* replace(char\* str, int len) ‘ ’->%20 在源数组总长度，从后向前，逐个赋值
-> 3. 如何在排序数组中找出给定数字出现的次数 int bina(int \*a, int len, int num, bool isLeft)
-> 4. 旋转数组的最小元素 int get_min(int \*a, int len) , while(a[p1] >= a[p2]) {
-> 5. 调整数组位数使奇数位于前面 void odds(int[] arr) 
-> 6. 次数超过一半的次数 \* int core(int \*a, int len)
-> 7. **丑数**, 只包含质因子2、3和5的数称作丑数, 1, 2, 3, 5, 6, ... ok
-> 8. 和为S的两个数字(双指针思想) ok.
+> 1. **二维数组中的查找** bool Find(int b[][4], int rows, int cols, int value)， ✔️
+> 2. 替换空格 char\* replace(char\* str, int len) ‘ ’->%20 在源数组总长度，从后向前，逐个赋值， ✔️
+> 3. 如何在排序数组中找出给定数字出现的次数 int bina(int \*a, int len, int num, bool isLeft)， ✔️
+> 4. 旋转数组的最小元素 int get_min(int \*a, int len) , while(a[p1] >= a[p2]) {， ✔️
+> 5. 调整数组位数使奇数位于前面 void odds(int[] arr) ， ✔️
+> 6. 次数超过一半的次数 \* int core(int \*a, int len)， ✔️
+> 7. **丑数**, 只包含质因子2、3和5的数称作丑数, 1, 2, 3, 5, 6, ... ， ✔️
+> 8. 和为S的两个数字(双指针思想) ， ✔️
+> 9. 扑克牌顺子 (排序后，统计大小王数量 + 间隔)， ✔️
+> 10. 构建乘积数组 (A数组，从前向后，再从后向前j-2,构造 B)， ✔️
+> 11. 求1+2+3+…+n (判断 && 递归)， ✔️
 
 **1.2 medium**
 
-> 1. **八皇后**， void dfs(int n)
-> 2. 孩子们的游戏-圆圈中最后剩下的数(约瑟夫环) ok.
+> 1. **`八皇后`**， void dfs(int n) ， ✔️
+> 2. 孩子们的游戏-圆圈中最后剩下的数(约瑟夫环) java ， ✔️
 > 3. [把数组排成最小的数](https://www.cnblogs.com/youxin/p/3294154.html) #include < sstream > bool Compare(const string &left, const string &right)
 > 4. 数组中只出现一次的数字 , 划分2数组，num & (-num);二者与后得到的数，将num最右边的1保留下来
 > 5. **连续子数组的最大和**   // dp: F[i] = max(a[i], F[i-1]+a[i]);
@@ -307,6 +310,26 @@ int cirnm(int n, int m) {
         lcur = next;
     }
     return *lcur;
+}
+
+// java
+
+import java.util.LinkedList;
+ public class Solution {
+    public int LastRemaining_Solution(int n, int m) {
+        if(n < 1 || m < 1)
+            return -1;
+        LinkedList<Integer> link = new LinkedList<Integer>();
+        for(int i = 0; i < n; i++)
+            link.add(i);
+        int index = -1;   //起步是 -1 不是 0
+        while(link.size() > 1){
+            index = (index + m) % link.size();  //对 link的长度求余不是对 n
+            link.remove(index);
+            index --;
+        }
+        return link.get(0);
+    }
 }
 ```
 
@@ -1132,27 +1155,6 @@ class Solution {
 }
 ```
 
-
-<!--1.8 深度到是否为平衡二叉树
-
-```cpp
-bool isBalance(Node* root, int* dep) {
-    if(root == NULL) {
-        *dep = 0;
-        return true;
-    }
-    int left = 0, right = 0;
-    if(isBalance(root->lchild, &left) && isBalance(root->rchild, &right)) {
-        int diff = left - right;
-        if(diff >= -1 && diff <= 1) {
-            *dep = 1 + (left > right ? left : right);
-            return true;
-        }
-    }
-    return false;
-}
-```-->
-
 ## 5. 具体算法
 
 ### 5.1 斐波拉契
@@ -1317,56 +1319,58 @@ bool isBalance(Node* root, int* dep) {
 
 ### 7.3 三维DP
 
-## 8. Offer
+## 8. 剑指offer
 
 [算法学习](https://www.weiweiblog.cn/category/算法学习/page/3/)
-
-easy:
-
-1. [剑指offer] 扑克牌顺子 (排序后，统计大小王数量 + 间隔)， ✔️
-2. [剑指offer] 构建乘积数组 (A数组，从前向后，再从后向前j-2,构造 B)， ✔️
-3. [剑指offer] 求1+2+3+…+n (判断 && 递归)， ✔️
 
 **medium**
 
 [算法学习5](https://www.weiweiblog.cn/category/算法学习/page/5/)
 
-4. [剑指offer] 和为S的连续正数序列 (3函数，while(start<end), sum_fun, vector<vector>)， ✔️
-10. [剑指offer] 数据流中的中位数
-11. [剑指offer] 滑动窗口的最大值 (双向队列)
-11. [剑指offer] 矩阵中的路径
-12. [剑指offer] 机器人的运动范围
-13. [剑指offer] 把数组排成最小的数
-14. [整数中1出现的次数][count1]
+4. [和为S连续正数序列][S1] (3fun，mid = (1+sum)/2; while(start<mid), Sum(int start, int end), 双vector)， ✔️
+10. 数据流中的中位数
+11. 滑动窗口的最大值 (双向队列)
+11. 矩阵中的路径
+12. 机器人的运动范围
+13. 把数组排成最小的数
 
+[S1]: https://www.weiweiblog.cn/findcontinuoussequence/
 [count1]: https://github.com/WordZzzz/Note/blob/master/AtOffer/《剑指offer》刷题笔记（时间效率）：整数中1出现的次数（从1到n整数中1出现的次数）.md
-
-
-    import java.util.LinkedList;
-	 public class Solution {
-	    public int LastRemaining_Solution(int n, int m) {
-	        if(n < 1 || m < 1)
-	            return -1;
-	        LinkedList<Integer> link = new LinkedList<Integer>();
-	        for(int i = 0; i < n; i++)
-	            link.add(i);
-	        int index = -1;   //起步是 -1 不是 0
-	        while(link.size() > 1){
-	            index = (index + m) % link.size();  //对 link的长度求余不是对 n
-	            link.remove(index);
-	            index --;
-	        }
-	        return link.get(0);
-	    }
-	}
 
 **diffcult**
 
+14. [整数中1出现的次数][count1] (判断每一位， 比如百位分别为 1, 0, 2~9, 后2种情况可合并)
 15. [LRU Cache 需要深入学习Java的Map的内部实现](https://blog.csdn.net/JackZhang_123/article/details/78015549)
 
+> 1. vector: vector<int>::iterator, Modifiers (push_back, pop_back, insert)
+> 2. array : len = sizeof(arr)/sizeof(int)
+
+```java
+import java.util.ArrayList;
+import java.util.LinkedList;
+public class Solution {
+    public ArrayList<Integer> maxInWindows(int [] num, int size){
+        ArrayList<Integer> res = new ArrayList<Integer>();
+        LinkedList<Integer> deque = new LinkedList<Integer>();
+        if(num.length == 0 || size == 0)
+            return res;
+        for(int i = 0; i < num.length; i++){
+            if(!deque.isEmpty() && deque.peekFirst() <= i - size)
+                deque.poll();
+            while(!deque.isEmpty() && num[deque.peekLast()] < num[i])
+                deque.removeLast();
+            deque.offerLast(i);
+            if(i + 1 >= size)
+                res.add(num[deque.peekFirst()]);
+        }
+        return res;
+    }
+}
+```
+
+
+
 ## 9. 10道海量数据
-
-
 
 
 ## Reference
