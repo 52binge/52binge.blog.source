@@ -1331,9 +1331,40 @@ public class Solution {
 }
 ```
 
+## 10. shopee & sina
 
+shopee
 
-## 10. 海量数据
+> 1. [下一个更大元素][shopee1] (Stack < Integer > (), Map < Int, Int >  map, map.getOrDefault(nums1[i], -1);
+> 2. [鸡蛋掉落][shopee2] (DP问题，难)
+> 3. [二叉树的右视图][shopee3]
+> 4. 复杂链表指针 
+> 5. K 个一组翻转链表
+> 6. [不同的二叉搜索树][shopee4]
+> 7. [零钱兑换][shopee5]
+> 8. 相交链表
+> 9. [有效的括号][shopee9]
+> 10. 两数相加
+
+[shopee1]: https://blog.csdn.net/zhangzhetaojj/article/details/80837232
+[shopee2]: https://wangxin1248.github.io/algorithm/2019/03/leetcode-887.html
+[shopee3]: https://cxyxiaowu.com/articles/2019/05/02/1556786653527.html
+[shopee4]: https://blog.csdn.net/shinanhualiu/article/details/50225093
+[shopee5]: https://blog.csdn.net/qq_32805671/article/details/86939810
+[shopee9]: https://blog.csdn.net/qq_17550379/article/details/80723003
+
+sina
+
+> 1. 搜寻名人
+> 2. 连续出现的数字
+> 3. 搜索二维矩阵
+> 4. 排序链表
+> 5. 翻转二叉树
+> 6. 买卖股票的最佳时机 系列
+> 7. 字符串转整型
+> 8. 无重复字符的最长子串
+
+## 11. 海量数据
 
 
 ## Reference
