@@ -18,7 +18,7 @@
 
 > 1. **二维数组中的查找** bool Find(int b[][4], int rows, int cols, int value)， ✔️
 > 2. 替换空格 char\* replace(char\* str, int len) ‘ ’->%20 在源数组总长度，从后向前，逐个赋值， ✔️
-> 3. 如何在排序数组中找出给定数字出现的次数 int bina(int \*a, int len, int num, bool isLeft)， ✔️
+> 3. 数字在排序数组中出现的次数 biSea(arr,k+0.5)-biSea(arr,k-0.5); / bina(\*a, len, num, isLeft)， ✔️
 > 4. 旋转数组的最小元素 while(low < high) { if(a[m] > a[high]) min[m+1,high], else [low,m]} ✔️ 
 > 5. 调整数组位数使奇数位于前面 void odds(int[] arr) ， ✔️
 > 6. 次数超过一半的次数 \* int core(int \*a, int len)， ✔️
@@ -39,10 +39,15 @@
 **1.3 important**
 
 > 1. 数组中的逆序对(归并排序).  void mergeSort(int a[], int l, int r) ， ✔️
-> 2. 最小的K个数(堆排序).   
+> 2. 最小的K个数(堆排序)， [数据流中的中位数 （2 PriorityQueue）](https://www.weiweiblog.cn/getmedian/).   
 > 3. **最小的K个数** （2fun）快排思想 part return l, 外else return left; void set_k(int\* input, n, k) ， ✔️
 > 4. **quickSort**(a[],left,right), while(1) { (双while, if(l >= r) break; swap) } swap(a[left], a[l]);， ✔️
 > 5. [最短路Floyd](https://www.cnblogs.com/biyeymyhjob/archive/2012/07/31/2615833.html)， ✔️
+
+> quickSort (1 while + [2while + break + swap] + swap + 2 quickSort)
+> 
+> mergeSort (2 mergeSort + new \*arr + 3 while + 1 for)
+
 
 1.1 八皇后
 
@@ -242,8 +247,6 @@ void set_k(int *input, int n, int k) {
 
 1.8 数组中的逆序对 & 归并排序
 
-mergeSort
-
 ```cpp
 void mergeSort(int a[], int l, int r) { //  8, 5, 4, 9, 2, 3, 6
     if(l >= r) return;   // exit.
@@ -331,6 +334,10 @@ int bina(int *a, int len, int data) {
 举例： 给定 1->2->3->4->5->6->NULL, K=3
 则4->5->6->1->2->3->NULL
 
+环路的入口点
+
+> 在第 4 题两个指针相遇后，让其中一个指针回到链表的头部，另一个指针在原地，同时往前每次走一步，当它们再次相遇时，就是在环路的入口点。
+
 **2.2 medium:**
 
 > 2. [反转链表][2.3] next=head->next, head->next=pre, pre=head, head=next; 4步 ok， ✔️
@@ -339,7 +346,7 @@ int bina(int *a, int len, int data) {
 > 7. 链表划分 （题目描述： 给定一个单链表和数值x，划分链表使得小于x的节点排在大于等于x的节点之前）
 > 9. 单链表排序
 > 10. 合并两个或k个有序链表  ok， 递归 (三元运算符).   
-> 12. 删除链表重复结点  链表1->2->3->3->4->4->5 处理后为 1->2->5. first->next=head, last, p 三指针， ✔️
+> 12. 删除链表重复结点  链表1->2->3->3->4->4->5 处理后为 1->2->5. first->next=head, last, p 三针， ✔️
 > 10. 链表中环的入口结点， ✔️     
 
 单链表排序 or 合并两个或k个有序链表
@@ -746,7 +753,7 @@ public class Solution {
 > 6. 二叉搜索树的第k个结点 ， ✔️
 > 7. [二叉查找树节点的删除](https://blog.csdn.net/xiaoxiaoxuanao/article/details/61918125).  重要
 
-### 4.1 easy
+**4.1 easy code**
 
 4.1.9 二叉树两节点的最低公共祖先
 
@@ -915,7 +922,7 @@ private int diamHelper(TreeNode root){
 }
 ```
 
-### 4.2 medium
+**4.2 medium code**
 
 4.2.1 判断二叉树是不是完全二叉树 
 
@@ -989,7 +996,7 @@ vector<vector<int>> bfs(Node* root) {
 // reverse(res[i].begin(), res[i].end());
 ```
 
-### 4.3 difficult
+**4.3 difficult code**
 
 4.3.1 二叉树中和为某一值的路径
 
@@ -1114,7 +1121,7 @@ class Solution {
 }
 ```
 
-## 5. 具体算法
+## 5. 递归 / 回溯
 
 ### 5.1 斐波拉契
 
@@ -1123,8 +1130,8 @@ class Solution {
 
 ### 5.2 回溯
 
-> 1. 矩阵中的路径(BFS).   
-> 2. 机器人的运动范围(DFS)
+> 1. [矩阵中的路径(BFS)](https://www.weiweiblog.cn/haspath/)   
+> 2. [机器人的运动范围(DFS)](https://www.weiweiblog.cn/movingcount/)
 
 ### 5.3 位运算
 
@@ -1229,7 +1236,16 @@ public class Solution {
 }
 ```
 
-## 7. DP
+## 7. PriorityQueue
+
+> 1. [最小的K个数](https://www.weiweiblog.cn/getleastnumbers_solution/)
+> 2. 数据流中的第K大元素
+> 3. 滑动窗口最大值
+> 4. 前K个高频单词
+
+- [优先队列](https://www.jianshu.com/p/1bedaee726da)
+
+## 8. Dynamic Programming
 
 > 1. 爬楼梯 ， ✔️
 > 2. 不同路径 II ， ✔️
@@ -1248,18 +1264,18 @@ public class Solution {
 > 
 > 如果不相同,则有三种可能操作，即增，删，替换。则取这三种操作的最优值，即dp[i + 1][j + 1] = 1 + Math.min(dp[i][j], Math.min(dp[i][j + 1], dp[i + 1][j]));
 
-### 7.1 一维DP
+### 8.1 一维DP
 
 > 1. **连续子数组的最大和**   // dp: F[i] = max(a[i], F[i-1]+a[i]);
 
-### 7.2 二维DP
+### 8.2 二维DP
 
-#### 7.2.1 布尔数组
+**布尔数组**
 
 > 1. Longest Palindromic Substring/最长回文子串 给出一个字符串S，找到一个最长的连续回文串。
 2. Interleaving String/交错字符串 输入三个字符串s1、s2和s3，判断第三个字符串s3是否由前两个字符串s1和s2交替而成且不改变s1和s2中各个字符原有的相对顺序。
 
-#### 7.2.2 数字数组
+**数字数组**
 
 > 1. [Unique Paths II/不同路径][dp2.2.1] (初始化很重要) ， 起点到终点有多少条不同路径，向右或向下走。
 2. [Minimum Path Sum][dp2.2.2] 矩阵左上角出发到右下角，只能向右或向下走，找出哪一条路径上的数字之和最小。
@@ -1271,14 +1287,17 @@ public class Solution {
 [dp2.2.1]: https://blog.csdn.net/yuanliang861/article/details/83514372
 [dp2.2.2]: https://www.cnblogs.com/grandyang/p/4353255.html
 
-### 7.3 三维DP
+### 8.3 三维DP
 
-## 8. 剑指offer
+## 9. 剑指offer
 
 [算法学习5](https://www.weiweiblog.cn/category/算法学习/page/5/)
 
-10. 数据流中的中位数
-11. 滑动窗口的最大值 (双向队列)
+1. 数据流中的中位数
+2. 滑动窗口的最大值 (双向队列)
+3. [正则表达式匹配](https://www.weiweiblog.cn/match/)
+4. [数值的整数次方](https://www.weiweiblog.cn/power/)
+5. [两个链表的第一个公共节点（2个stack or 长短链表相减）](https://www.weiweiblog.cn/findfirstcommonnode/)
 
 [S1]: https://www.weiweiblog.cn/findcontinuoussequence/
 [count1]: https://github.com/WordZzzz/Note/blob/master/AtOffer/《剑指offer》刷题笔记（时间效率）：整数中1出现的次数（从1到n整数中1出现的次数）.md
@@ -1316,7 +1335,7 @@ public class Solution {
 
 
 
-## 9. 10道海量数据
+## 10. 海量数据
 
 
 ## Reference
