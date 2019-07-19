@@ -30,7 +30,7 @@
 
 **1.2 medium**
 
-> 1. **`八皇后`**， void dfs(int n) ， ✔️
+> 1. **`八皇后`**， void dfs(int n) for(int i = 0; i < 8; i++) { pos[n] = i; ， ✔️
 > 2. [和S连续正数序][S1] (3fun，mid = (1+sum)/2; while(start<mid), Sum(int start, int end), 双vector)， ✔️
 > 3. 约瑟夫环 LinkedList; (index = (index + m) %link.size();link.remove(index-\-);) link.get(0); ， ✔️
 > 4. [数组排成最小的数](https://www.weiweiblog.cn/printminnumber/) Arrays.sort(str, new Comparator<String>(){ public int compare(String s1, String s2)，✔️
@@ -40,8 +40,8 @@
 
 > 1. 数组中的逆序对(归并排序).  void mergeSort(int a[], int l, int r) ， ✔️
 > 2. 最小的K个数(堆排序).   
-> 3. **最小的K个数** part 快排思想 + void set_k(int\* input, int n, int k) ， ✔️
-> 4. quick_sort, while (双while + swap)， ✔️
+> 3. **最小的K个数** （2fun）快排思想 part return l, 外else return left; void set_k(int\* input, n, k) ， ✔️
+> 4. **quickSort**(a[],left,right), while(1) { (双while, if(l >= r) break; swap) } swap(a[left], a[l]);， ✔️
 > 5. [最短路Floyd](https://www.cnblogs.com/biyeymyhjob/archive/2012/07/31/2615833.html)， ✔️
 
 1.1 八皇后
@@ -164,7 +164,7 @@ void reorderOddEven(int[] arr, len) {
 }   
 ```
 
-1.5 出现次数超过一半的次数
+1.6 出现次数超过一半的次数
 
 ```cpp
 int core(int *a, int len) {
@@ -190,7 +190,7 @@ int core(int *a, int len) {
 ```
 
 
-1.6 最小的K个数  part 快排思想
+1.7 最小的K个数  part 快排思想
 
 ```cpp
 const int N = 105;
@@ -240,12 +240,6 @@ void set_k(int *input, int n, int k) {
 }
 ```
 
-1.7 连续子数组的最大和
-
-```cpp
-dp: F[i] = max(a[i], F[i-1]+a[i]);
-```
-
 1.8 数组中的逆序对 & 归并排序
 
 mergeSort
@@ -280,7 +274,7 @@ void mergeSort(int a[], int l, int r) { //  8, 5, 4, 9, 2, 3, 6
 
 ```java
 import java.util.LinkedList;
- public class Solution {
+public class Solution {
     public int LastRemaining_Solution(int n, int m) {
         if(n < 1 || m < 1)
             return -1;
