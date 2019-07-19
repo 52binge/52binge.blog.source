@@ -250,6 +250,44 @@ BERT 所采用的算法来自于 **2017.12 google Transformer**: [Attenion Is Al
 
 - [Transformer 知识点理解](https://zhuanlan.zhihu.com/p/58009338)
 
+### 4.1 step
+
+[务必阅读： The Illustrated Transformer 中文版](https://zhuanlan.zhihu.com/p/54356280)
+
+> ![](https://pic4.zhimg.com/80/v2-f5e99be76f0727be85df0d8f4ab88057_hd.jpg)
+
+所有的编码器在结构上都是相同的，但它们没有共享参数。每个解码器都可以分解成两个子层。
+
+> ![](https://pic2.zhimg.com/80/v2-fbb5dbc286b9f9cec2ddbc5eae2bf5a9_hd.jpg)
+
+> 1. 从编码器输入的句子首先会经过一个自注意力（self-attention）层
+> 2. 这层帮助编码器在对`每个单词编码时关注输入句子的其他单词`。我们将在稍后的文章中更深入地研究自注意力。
+
+> 自注意力层的输出会传递到前馈（feed-forward）神经网络中。每个位置的单词对应的前馈神经网络都完全一样（译注：另一种解读就是一层窗口为一个单词的一维卷积神经网络）。
+
+> 解码器中也有编码器的自注意力（self-attention）层和前馈（feed-forward）层。除此之外，这两个层之间还有一个注意力层，用来关注输入句子的相关部分（和seq2seq模型的注意力作用相似）。
+
+> ![](https://pic2.zhimg.com/80/v2-1cfd35f0ff43407e25da3ab25631f82d_hd.jpg)
+
+**将张量引入图景**
+
+> ![](https://pic2.zhimg.com/80/v2-d7b0bb93c9f7e7185d690b6df83d8859_hd.jpg)
+
+**现在我们开始“编码”**
+
+> ![](https://pic2.zhimg.com/80/v2-7173f8fa4d601a5255af46d48e9d370d_hd.jpg)
+
+这个softmax分数决定了每个单词对编码当下位置（“Thinking”）的贡献。显然，已经在这个位置上的单词将获得最高的softmax分数，但有时关注另一个与当前单词相关的单词也会有帮助。
+
+第五步是将每个值向量乘以softmax分数(这是为了准备之后将它们求和)。这里的直觉是希望关注语义上相关的单词，并弱化不相关的单词(例如，让它们乘以0.001这样的小数)。
+
+第六步是对加权值向量求和（译注：自注意力的另一种解释就是在编码某个单词时，就是将所有单词的表示（值向量）进行加权求和，而权重是通过该词的表示（键向量）与被编码词表示（查询向量）的点积并通过softmax得到。），然后即得到自注意力层在该位置的输出(在我们的例子中是对于第一个单词)。
+
+> ![](https://pic4.zhimg.com/80/v2-609de8f8f8e628e6a9ca918230c70d67_hd.jpg)
+
+> ![](https://pic4.zhimg.com/80/v2-f8c32c325da61ee587abcd2426854b33_hd.jpg)
+
+> ![](https://pic4.zhimg.com/80/v2-12e11c0fea79bc485a6d9f4a2cb12f7f_hd.jpg)
 
 ## 5. BERT
 

@@ -240,6 +240,8 @@ GPT和bert都采用Transformer，Transformer是encoder-decoder结构，GPT的单
 
 **3. Transformer**
  
+Transformer改进了RNN最被人诟病的训练慢的缺点，利用self-attention机制实现快速并行。并且Transformer可以增加到非常深的深度，充分发掘DNN模型的特性，提升模型准确率。
+ 
 > Transformer作为新模型，并不是完美无缺的。它也有明显的缺点：首先，对于长输入的任务，典型的比如篇章级别的任务（例如文本摘要），因为任务的输入太长，Transformer会有巨大的计算复杂度，导致速度会急剧变慢。
 
 

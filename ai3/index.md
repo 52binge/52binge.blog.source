@@ -1367,6 +1367,10 @@ sina
 ## 11. 海量数据
 
 
+
+- [leetcode CN](https://leetcode-cn.com/interview)
+- [leetcode EN](https://leetcode.com/problemset/all/)
+
 ## Reference
 
 - [知乎： [Leetcode][动态规划]相关题目汇总/分析/总结](https://zhuanlan.zhihu.com/p/35707293)
