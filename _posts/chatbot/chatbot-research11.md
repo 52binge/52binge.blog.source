@@ -8,9 +8,9 @@ tags: Chatbot
 
 <!-- 2018 -->
 
-上期我们使用 tf.contrib.legacy_seq2seq 下的 API 构建了一个简单的 chatbot 对话系统. 代码是1.0之前旧版.
+我们使用 tf.contrib.legacy_seq2seq 下的 API 构建了一个简单的 chatbot 对话系统. 代码是1.0之前旧版.
 
-这期我们学习新版本灵活的的API，这里先来说一下二者的不同：
+本篇我们学习新版本灵活的的API，这里先来说一下二者的不同：
 
 <!-- more -->
 
@@ -22,6 +22,10 @@ tags: Chatbot
 >
 >
 > - 实现了beam_search功能，可直接调用。
+
+> [tensor flow dynamic_rnn 与rnn有啥区别？](https://www.zhihu.com/question/52200883)
+>
+> dynamic_rnn 只在一个 batch 内部进行自动 padding， 不同 batch padding 长度可以不同
 
 ## 1. 数据处理
 

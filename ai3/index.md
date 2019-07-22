@@ -719,7 +719,7 @@ public class Solution {
 > 2. 递归： [求二叉树的最大层数(最大深度) & (最小深度)][20tree] 最小深度特殊情况：left || right==0 ， ✔️
 > 3. 递归： [求二叉树第K层的节点个数][20tree] get_k(root.left, k-1) + get_k(root.right, k-1); good ， ✔️
 > 4. 递归： [求二叉树第K层的叶子节点个数][20tree] if(k==1 and root.left and root.right is null) return 1; ， ✔️
-> 5. 递归： [二叉树先序遍历/前序遍历][20tree]  (非递归，也要练习，要会写)
+> 5. 递归： [二叉树先序遍历/前序遍历][20tree]  (fIno(Node\* root) { while(1) {if else}
 > 6. 递归： [判断两棵二叉树是否结构相同][20tree] ， ✔️
 > 7. 递归： [求二叉树的镜像（反转二叉树）][20tree] ， （左右递归交换）✔️ 
 > 8. 递归： [对称二叉树][20tree] （双函数，承接上题二叉树的镜像， good） ， ✔️
@@ -965,7 +965,7 @@ vector<vector<int>> bfs(Node* root) {
         return ans;
 
     queue<Node*> q;
-	
+    
     q.push(root);
 
      while(!q.empty()) {  
@@ -1181,24 +1181,24 @@ class MyQueue {
 class MinStack {
     Stack<Integer> stack = new Stack<Integer>();
     Stack<Integer> temp = new Stack<Integer>();
-	
+    
     public void push(int x) {
         stack.push(x);
         if(temp.isEmpty() || temp.peek() >= x)
             temp.push(x);
     }
-	
+    
     public void pop() {
         int x = stack.pop();
         int min = temp.peek();
         if(x == min)
             temp.pop();
     }
-	
+    
     public int top() {
         return stack.peek();
     }
-	
+    
     public int getMin() {
         return temp.peek();
     }
@@ -1355,18 +1355,83 @@ shopee
 
 sina
 
-> 1. 搜寻名人
-> 2. 连续出现的数字
-> 3. 搜索二维矩阵
+> 1. 两数之和 ， ✔️
+> 2. 最大子序和
+> 2. 搜寻名人
+> 2. 连续出现的数字 
+> 3. 搜索二维矩阵 ， ✔️
 > 4. 排序链表
-> 5. 翻转二叉树
+> 5. 翻转二叉树 ， ✔️
 > 6. 买卖股票的最佳时机 系列
 > 7. 字符串转整型
-> 8. 无重复字符的最长子串
+> 8. 无重复字符的最长子串 ， ✔️ （借助hashmap）
+
+【LeetCode】2. Add Two Numbers（两数之和）
+
+```cpp
+class Solution {
+public:
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        int carry = 0;
+        ListNode* fakeHead = new ListNode(-1);
+        ListNode* curr = fakeHead;
+        while (l1 != NULL || l2 != NULL | carry != 0) {
+            if (l1 != NULL) {
+                carry += l1->val;
+                l1 = l1->next;
+            }
+            if (l2 != NULL) {
+                carry += l2->val;
+                l2 = l2->next;
+            }
+            ListNode* node = new ListNode(carry % 10);
+            carry /= 10;
+            curr->next = node;
+            curr = node;
+        }
+        return fakeHead->next;
+    }
+};
+```
 
 ## 11. 海量数据
 
+m_15 二叉树非递归的 先根遍历和中序遍历   (必会数据结构之一)
 
+```cpp
+void fPre(Node* root) { // 先根遍历  根->左->右
+    Node* p = root;
+    stack<Node*>  S;
+    while(1) {
+        if(p != NULL) {
+            cout << p->value << ' ';
+            S.push(p);
+            p = p->lchild;
+        }
+        else {
+            if(S.empty()) return;
+            p = S.top(); S.pop();
+            p = p->rchild;
+        }
+    }
+}
+void fIno(Node* root) {
+    Node* p = root;
+    stack<Node*> S;
+    while(1) {
+        if(p != NULL) {
+            S.push(p);
+            p = p->lchild;
+        }
+        else {
+            if(S.empty()) return;
+            p = S.top(); S.pop();
+            cout << p->value <<  ' ';
+            p = p->rchild;
+        }
+    }
+}           
+```
 
 - [leetcode CN](https://leetcode-cn.com/interview)
 - [leetcode EN](https://leetcode.com/problemset/all/)
