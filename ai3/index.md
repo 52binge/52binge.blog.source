@@ -1355,10 +1355,10 @@ shopee
 
 sina
 
-> 1. 两数之和 ， ✔️
-> 2. 最大子序和
-> 2. 搜寻名人
-> 2. 连续出现的数字 
+> 1. 两数之和 (链表 carry) ， ✔️
+> 2. 最大子序和 ， ✔️ 分治？
+> 2. [搜寻名人](https://www.cnblogs.com/grandyang/p/5310649.html) (if (knows(res, i)) res = i;) ， ✔️
+> 2. 连续出现的数字  ， ✔️
 > 3. 搜索二维矩阵 ， ✔️
 > 4. 排序链表
 > 5. 翻转二叉树 ， ✔️
@@ -1366,7 +1366,11 @@ sina
 > 7. 字符串转整型
 > 8. 无重复字符的最长子串 ， ✔️ （借助hashmap）
 
-【LeetCode】2. Add Two Numbers（两数之和）
+Tencent
+
+> [Minimum Factorization 最小因数分解](https://www.cnblogs.com/grandyang/p/7076026.html)
+> [LeetCode 最小基因变化（广度优先搜索）]
+
 
 ```cpp
 class Solution {
