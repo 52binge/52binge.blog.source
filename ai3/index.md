@@ -1335,23 +1335,60 @@ public class Solution {
 
 shopee
 
-> 1. [下一个更大元素][shopee1] (Stack < Integer > (), Map < Int, Int >  map, map.getOrDefault(nums1[i], -1);
-> 2. [鸡蛋掉落][shopee2] (DP问题，难)
-> 3. [二叉树的右视图][shopee3]
-> 4. 复杂链表指针 
-> 5. K 个一组翻转链表
-> 6. [不同的二叉搜索树][shopee4]
-> 7. [零钱兑换][shopee5]
+> 1. [下一个更大元素][shopee1] (Stack < Integer > (), Map < Int, Int >  map, map.getOrDefault(nums1[i], -1); 序列为 9 2 1 4 借助栈实现，判断栈顶 和 下一个元素的大小 ， ✔️
+> 2. [鸡蛋掉落][shopee2] (DP问题，难) 
+> 3. google 扔鸡蛋，原题是 100 层楼，鸡蛋无限，答案 14 次。， ✔️
+> 3. [二叉树的右视图 (层次遍历)][shopee3] res.push_back(q.back()->val);， ✔️
+> 4. 复杂链表指针  ， ✔️
+> 5. [K 个一组翻转链表][shopee10] 1->2->3->4->5， 当 k = 2 时，应返: 2->1->4->3->5 ， ✔️
+> 6. [不同的二叉搜索树][shopee4]  ， ✔️
+> 7. [零钱兑换][shopee5] 完全背包问题 ， ✔️
 > 8. 相交链表
-> 9. [有效的括号][shopee9]
+> 9. [有效的括号 （Stack来解决）][shopee9] ， ✔️
 > 10. 两数相加
 
+[LeetCode] 887. Super Egg Drop 超级鸡蛋掉落 ， ✔️
+
+```cpp
+dp[i][j] = min(dp[i][j], max(dp[i - 1][k - 1], dp[i][j - k]) + 1) ( 1 <= k <= j )
+```
+
+之后可以再优化.
+
+```python
+class Solution:
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        stack = list()
+        match = {'{':'}', '[':']', '(':')'}
+        for i in s:
+            if i == '{' or i == '(' or i == '[':
+                stack.append(i)
+            else:
+                if len(stack) == 0:
+                    return False
+
+                top = stack.pop()
+                
+                if match[top] != i:
+                    return False
+
+        if len(stack) != 0:
+            return False
+        return True
+```
+
 [shopee1]: https://blog.csdn.net/zhangzhetaojj/article/details/80837232
-[shopee2]: https://wangxin1248.github.io/algorithm/2019/03/leetcode-887.html
+[shopee2]: https://www.cnblogs.com/grandyang/p/11048142.html
 [shopee3]: https://cxyxiaowu.com/articles/2019/05/02/1556786653527.html
 [shopee4]: https://blog.csdn.net/shinanhualiu/article/details/50225093
-[shopee5]: https://blog.csdn.net/qq_32805671/article/details/86939810
+[shopee5]: https://blog.csdn.net/zw159357/article/details/82664026
 [shopee9]: https://blog.csdn.net/qq_17550379/article/details/80723003
+
+[shopee10]: https://blog.csdn.net/qq_17550379/article/details/80696835
 
 sina
 
