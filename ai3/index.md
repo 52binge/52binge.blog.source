@@ -12,6 +12,72 @@
 9、2019 算法面试相关(leetcode)--贪心算法
 10、2019 算法面试相关(leetcode)--动态规划(Dynamic Programming)
 
+**Hot100**
+
+### hot easy
+
+> 1. 两数之和， ✔️
+> 2. 反转链表 ， 回文链表， 相交链表    ✔️
+> 3. 最大子序和 ， ✔️
+> 4. 爬楼梯 ， ✔️
+> 5. 合并2个有序链表， ✔️
+> 6. 有效的括号， 最小栈 ✔️
+> 7. 买卖股票的最佳时机 
+> 8. 翻转二叉树  ， ✔️
+> 9. 只出现一次的数字， ✔️
+> 11. 二叉树的直径 & 二叉树的最大深度 & 对称二叉树   ， ✔️
+> 12. 打家劫舍  & 环形链表    ， ✔️
+> 13. 求众数 ，移动零 ，找到所有数组中消失的数字       
+
+
+---
+
+> 1. 两数之和（方法：一遍哈希表）  Map < Integer, Integer > ， ✔️
+> 2. 最长回文子串    
+> 3. 反转链表    ， ✔️
+> 4. LRU缓存机制
+> 5. 编辑距离
+> 6. 无重复字符的最长子串
+> 7. 戳气球
+> 8. 接雨水
+> 9. 两数相加 (链表+进位carry)， ✔️
+> 10. 寻找两个有序数组的中位数
+> 11. [三数之和][hot11] （2方法： hash & 对撞指针） ， ✔️  
+> 12. [最大子序和][hot12] （动态规划/分治法）， ✔️
+> 13. 字符串解码    
+> 14. [删除无效的括号][hot14]
+> 15. [最大矩形][hot15] 有难度 nok
+> 17. [全排列 (交换法，类比字符串思路)][hot17]， ✔️
+> 18. 合并两个有序链表  ， ✔️  
+> 19. 正则表达式匹配    
+> 20. 零钱兑换 ， ✔️
+
+[hot12]: https://blog.csdn.net/Jaster_wisdom/article/details/80662037
+[hot14]: https://www.cnblogs.com/grandyang/p/4944875.html
+[hot11]: https://blog.csdn.net/qq_17550379/article/details/80614597
+[hot15]: https://www.cnblogs.com/grandyang/p/4322667.html
+[hot17]: https://my.oschina.net/u/3744313/blog/1923933
+
+```java
+public class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> m = new HashMap<Integer, Integer>();
+        int[] res = new int[2];
+        for (int i = 0; i < nums.length; ++i) {
+            if (m.containsKey(target - nums[i])) {
+                res[0] = i;
+                res[1] = m.get(target - nums[i]);
+                break;
+            }
+            m.put(nums[i], i);
+        }
+        return res;
+    }
+}
+```
+
+> 16. 爬楼梯
+
 ## 1. Array
 
 **1.1 easy**
