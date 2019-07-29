@@ -48,11 +48,16 @@ perplexity 实际是计算每一个单词得到的概率倒数的几何平均，
 
 ## 2. NNLM
 
+NNLM,直接从语言模型出发，将模型最优化过程转化为求词向量表示的过程.
+
+<img src="/images/nlp/word2vec-nnlm.png" width="600" />
 
 ## Reference
 
+- [Language Model and Perplexity][3]
 - [sklearn: TfidfVectorizer 中文处理及一些使用参数][1]
 - [sklearn.feature_extraction.text.TfidfVectorizer函数说明][2]
 
 [1]: https://blog.csdn.net/blmoistawinde/article/details/80816179
 [2]: https://blog.csdn.net/binglingzy666/article/details/79241486
+[3]: /2019/06/16/nlp/Language-Model-and-Word-Embedding/
