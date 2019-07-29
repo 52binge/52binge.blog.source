@@ -79,6 +79,12 @@ $$
 
 其中 $f$ 和 $g$ 为激活函数，$U$ 为输入层到隐含层的权重矩阵，$W$ 为隐含层从上一时刻到下一时刻状态转移的权重矩阵。在文本分类任务中，$f$ 可以选取 Tanh 函数或者 ReLU 函数，$g$ 可以采用 Softmax 函数。
 
+**TensorFlow RNN**
+
+<img src="/images/tensorflow/tf-google-8-1.jpg" width="700" alt="Forward Propagation" />
+
+[更多详情参见本博： TensorFlow：第8章 Recurrent Neural Networks 1](/2018/11/08/tensorflow/tf-google-8-rnn-1/)
+
 > 1. RNN 优点： 最大程度捕捉上下文信息，这可能有利于捕获长文本的语义。
 > 2. RNN 缺点： 是一个有偏倚的模型，在这个模型中，后面的单词比先前的单词更具优势。因此，当它被用于捕获整个文档的语义时，它可能会降低效率，因为关键组件可能出现在文档中的任何地方，而不是最后。
 
@@ -121,7 +127,27 @@ fastText 能够做到效果好，速度快，主要依靠两个秘密武器：
 > 1. 利用了 词内的n-gram信息 (subword n-gram information)
 > 2. 用到了 层次化Softmax回归 (Hierarchical Softmax) 的训练 trick.
 
-## 6. Seq2Seq and Attention
+## 6. Seq2Seq 
+
+请务必要阅读： [张俊林 深度学习中的注意力模型（2017版）](https://zhuanlan.zhihu.com/p/37601161)
+
+<img src="/images/deeplearning/Attention-01.jpg" width="600" />
+
+## 7. Attention
+
+**Attention 本质思想**
+
+把Attention机制从上文讲述例子中的Encoder-Decoder框架中剥离，并进一步做抽象，可以更容易懂:
+
+<img src="/images/deeplearning/Attention-04.jpg" width="600" />
+
+**Attention 的三阶段**
+
+> 1. 第一个阶段根据Query和Key计算两者的相似性或者相关性；
+> 2. 第二个阶段对第一阶段的原始分值进行归一化处理；
+> 3. 根据权重系数对Value进行加权求和。
+
+<img src="/images/deeplearning/Attention-03.jpg" width="600" />
 
 ## Reference
 
