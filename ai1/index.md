@@ -52,6 +52,16 @@ NNLM,直接从语言模型出发，将模型最优化过程转化为求词向量
 
 <img src="/images/nlp/word2vec-nnlm.png" width="600" />
 
+**使用词嵌三步**
+
+> 1. 获得词嵌：获得的方式可以通过训练大的文本集或者下载很多开源的词嵌库
+> 2. 应用词嵌：将获得的词嵌应用在我们的训练任务中
+> 3. 可选：通过我们的训练任务更新词嵌库（如果训练量很小就不要更新了）
+
+## 3. word2vec
+
+word2vec 并不是一个模型， 而是一个 2013年 google 发表的工具. 该工具包含2个模型： Skip-Gram 和 CBOW. 及两种高效训练方法： negative sampling 和 hierarchicam softmax.
+
 ## Reference
 
 - [Language Model and Perplexity][3]
