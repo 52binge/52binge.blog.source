@@ -48,7 +48,43 @@ perplexity 实际是计算每一个单词得到的概率倒数的几何平均，
 > 
 > 在数学上，log perplexity 可以看作真实分布与预测分布之间的交叉熵 Cross Entropy, 交叉熵描述了两个概率分布之间的一种距离. log perplexity 和 Cross Entropy 是等价的
 
-## 2. NNLM
+## 2. Recurrent Neural Networks
+
+- **输入和输出的长度不尽相同**
+- **无法共享从其他位置学来的特征**
+
+<img src="/images/deeplearning/RNN-01.png" width="500" />
+
+> - 很多数据是以序列形式存在的，例如文本、语音、视频、点击流等等。
+
+**Typical RNN Structure:**
+
+在 $h\_T$ 后面直接接一个 Softmax 层，输出文本所属类别的预测概率 $y$，就可以实现文本分类.
+
+<img src="/images/deeplearning/RNN-02.png" width="650" />
+
+可应用于多种具体任务：
+
+$$
+net\_{t}=U x\_{t}+W h\_{t-1}
+$$
+
+$$
+h\_{t}=f\left(\text {net}\_{t}\right)
+$$
+
+$$
+y=g\left(V h\_{T}\right)
+$$
+
+其中 $f$ 和 $g$ 为激活函数，$U$ 为输入层到隐含层的权重矩阵，$W$ 为隐含层从上一时刻到下一时刻状态转移的权重矩阵。在文本分类任务中，$f$ 可以选取 Tanh 函数或者 ReLU 函数，$g$ 可以采用 Softmax 函数。
+
+> 1. RNN 优点： 最大程度捕捉上下文信息，这可能有利于捕获长文本的语义。
+> 2. RNN 缺点： 是一个有偏倚的模型，在这个模型中，后面的单词比先前的单词更具优势。因此，当它被用于捕获整个文档的语义时，它可能会降低效率，因为关键组件可能出现在文档中的任何地方，而不是最后。
+
+- [Recurrent Neural Networks](/2019/06/14/deeplearning/RNN-LSTM-GRU/)
+
+## 3. NNLM
 
 NNLM,直接从语言模型出发，将模型最优化过程转化为求词向量表示的过程.
 
@@ -60,7 +96,7 @@ NNLM,直接从语言模型出发，将模型最优化过程转化为求词向量
 > 2. 应用词嵌：将获得的词嵌应用在我们的训练任务中
 > 3. 可选：通过我们的训练任务更新词嵌库（如果训练量很小就不要更新了）
 
-## 3. word2vec
+## 4. word2vec
 
 word2vec 并不是一个模型， 而是一个 2013年 google 发表的工具. 该工具包含2个模型： Skip-Gram 和 CBOW. 及两种高效训练方法： negative sampling 和 hierarchicam softmax.
 
@@ -74,7 +110,7 @@ word2vec 并不是一个模型， 而是一个 2013年 google 发表的工具. �
 > 
 > 理解 : 背景词向量与 中心词向量 内积 等部分，你可考虑 softmax $w \* x+b$ 中 $x$ 和 $w$ 的关系来理解.
 
-## 4. fastText
+## 5. fastText
 
 FastText是一个快速文本分类算法，在使用标准多核CPU的情况下，在10分钟内可以对超过10亿个单词进行训练。 不需要使用预先训练好的词向量，因为FastText会自己训练词向量。
 
@@ -84,6 +120,8 @@ fastText 能够做到效果好，速度快，主要依靠两个秘密武器：
 
 > 1. 利用了 词内的n-gram信息 (subword n-gram information)
 > 2. 用到了 层次化Softmax回归 (Hierarchical Softmax) 的训练 trick.
+
+## 6. Seq2Seq and Attention
 
 ## Reference
 
