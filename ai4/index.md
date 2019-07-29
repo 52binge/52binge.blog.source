@@ -1,260 +1,101 @@
-<img src="/images/icpc/BinaryTree-1.png" width="450" />
 
-<!-- more -->
+## interview 整理
 
-## 1. Binary Tree
+#### 1. spark, map vs flatMap
 
-> 1. 重建二叉树 ok Node\* f3(int\* pre, int\* ino, int len)       
-> 2. 树的子结构,遍历+判断, bool f5(Node\* root1, Node\* root2), bool son(Node\* p1, Node\* p2) 
-> 3. 二叉树的镜像  ok 递归.   
-> 4. 从上往下打印二叉树 ok bfs      
-> 5. 二叉搜索树的后序遍历序列 bool f6(int\* sec, int len)  
-> 6. 二叉树中和为某一值的路径 void f4(Node\* root, int exSum, int curSum, vecotr\< int \>& path)     
-> 7. 二叉搜索树与双向链表 void convert(Node\* root, Node\*& pLast)   
-> 8. 二叉树的深度 bool isBalance(Node\* root, int\* dep)
-> 9. 平衡二叉树 bool isBalance(Node\* root, int\* dep)    
-> 10. [二叉树的下一个结点](https://blog.csdn.net/libin1105/article/details/48422299)  ok       
-> 11. 对称的二叉树 ok      
-> 12. 按之字形顺序打印二叉树      
-> 13. 把二叉树打印成多行  ok.   
-> 14. 序列化二叉树      
-> 15. 二叉搜索树的第k个结点 ok.   
-> 16. [二叉查找树节点的删除](https://blog.csdn.net/xiaoxiaoxuanao/article/details/61918125).  重要
-> 17. strcpy 手写 char\* my_strcpy(char \*dst, const char\* src)
-
-- [20tree](https://www.weiweiblog.cn/20tree/)
-
-### 1.1 前序中序重建二叉树
-
-```cpp
-Node* f3(int* pre, int* ino, int len) { // pre : 1, 2, 4, 7, 3, 5, 6, 8  ino : 4, 7, 2, 1, 5, 3, 8, 6
-    if(pre == NULL || ino == NULL || len <= 0) return NULL;
-    int r_v = pre[0];
-    Node* root = new Node();
-    root->value = r_v;
-    int i;
-    for(i = 0; ; i++) {
-        if(ino[i] == r_v) break;
-    }
-    root->lchild = f3(pre+1, ino, i);
-    root->rchild = f3(pre+i+1, ino+i+1, len-1-i);
-    return root;
-}
+```scala
+val textFile = sc.textFile("README.md")
+textFile.flatMap(_.split(" ")) 
 ```
 
-### 1.2 树2是否是树1的子结构
+> 在这个示例中，flatMap就把包含多行数据的RDD，即[“a b c”, “”, “d”] ，转换为了一个包含多个单词的集合。实际上，flatMap相对于map多了的是[[“a”,”b”,”c”],[],[“d”]] => [“a”,”b”,”c”,”d”]这一步。
 
-```cpp
-bool son(Node* p1, Node* p2) {
-	if (p2 == NULL) {
-		return true;
-	}
-	if (p1 == NULL) {
-		return false;
-	}
-	if (p1->value == p2->value) {
-		return son(p1->lchild, p2-lchild);
-	}
-}
 
-bool son_tree(Node* root1, Node* root2) {
-	if (root2 == NULL) {
-		return true;
-	}
-	if (root1 == NULL) {
-		return false;
-	}
-	if (root1->value == root2->child) {
-		return son(root1, root2);
-	}
-	bool flag = false
-	flag = son_tree(root1->lchild, root2);
-	if (!flag) {
-		return son_tree(root1->rchild, root2);
-	}
-}
-```
+#### 2. sparlk, 常用算子
 
-### 1.3 树的镜像 & BFS 二叉树
+1、map算子
+2、flatMap算子
+3、mapPartitions算子
+4、glom算子
+5、union算子
+6、cartesian算子
+7、grouBy算子
 
-### 1.4 从上往下打印二叉树
+#### 3. transformer
 
-```cpp
-void LevelOrderBinaryTree(BinaryTreeNode *root)//层序遍历二叉树
-{
-    assert(root);
-    queue<BinaryTreeNode*> q;
 
-    q.push(root);
-    while(!q.empty())
-    {
-        if(q.front()->_Lnode != NULL)
-            q.push(q.front()->_Lnode);
-        if(q.front()->_Rnode != NULL)
-            q.push(q.front()->_Rnode);
+> 1. [十道海量数据处理面试题](https://blog.csdn.net/v_JULY_v/article/details/6279498)
 
-        cout<<q.front()->_val<<" ";
-        q.pop();
-    }
-    cout<<endl;
-}
-```
+<font color=#c7254e>**摘要心得5：**</font>  
 
-### 1.5 二叉搜索树后序遍历的结果
+#### 28 逻辑斯特回归为什么要对特征进行离散化。机器学习 ML模型 中等
 
-```cpp
-bool f6(int* sec, int len) {
-    if(sec == NULL) return false;
-    if(len <= 1) return true;
-    int i, rv = sec[len-1];
-    for(i = 0; i < len-1; i++) {
-        if(sec[i] > rv) break;
-    }
-    for(int j = i; j < len-1; j++) {
-        if(sec[j] < rv) return false;
-    }
-    return f6(sec, i) && f6(sec+i, len-i-1);
-}
-```
+@严林，本题解析来源：https://www.zhihu.com/question/31989952
 
-### 1.6 中和为某一值的路径
+在工业界，很少直接将连续值作为逻辑回归模型的特征输入，而是将连续特征离散化为一系列0、1特征交给逻辑回归模型，这样做的优势有以下几点：
 
-```cpp
-void f4(Node*, int, int, vector<int>&);
-void f4(Node* root, int exSum) {
-    if(root == NULL) return;
-    vector<int> V;
-    int curSum = 0;
-    f4(root, exSum, curSum, V);
-}
-void f4(Node* root, int exSum, int curSum, vecotr<int>& path) {
-    curSum += root->value;
-    path.push_back(root->value);
-    if(curSum == exSum && root->lchild == NULL && root->rchild == NULL) {
-        //; 打印vector中的路径
-    }
-    if(root->lchild) f4(root->lchild, exSum, curSum, path);
-    if(root->rchild) f4(root->rchild, exSum, curSum, path);
-    curSum -= root->value;
-    path.pop_back();
-}
-```
+> 0. 离散特征的增加和减少都很容易，易于模型的快速迭代；
+> 1. 稀疏向量内积乘法运算速度快，计算结果方便存储，容易扩展；
+> 2. 离散化后的特征对异常数据有很强的鲁棒性：比如一个特征是年龄>30是1，否则0。如果特征没有离散化，一个异常数据“年龄300岁”会给模型造成很大的干扰；
+> 3. 逻辑回归属于广义线性模型，表达能力受限；单变量离散化为N个后，每个变量有单独的权重，相当于为模型引入了非线性，能够提升模型表达能力，加大拟合；
+> 4. 离散化后可以进行特征交叉，由M+N个变量变为M*N个变量，进一步引入非线性，提升表达能力；
+> 5. 特征离散化后，模型会更稳定，比如如果对用户年龄离散化，20-30作为一个区间，不会因为一个用户年龄长了一岁就变成一个完全不同的人。当然处于区间相邻处的样本会刚好相反，所以怎么划分区间是门学问；
+> 6. 特征离散化以后，起到了简化了逻辑回归模型的作用，降低了模型过拟合的风险。
 
-### 1.7 二叉搜索树与双向链表
+<font color=#c7254e>**摘要心得8：**</font> 
 
-```cpp
-void convert(Node* root, Node*& pLast) {
-    if(root == NULL) return;
-    if(root->lchild) convert(root->lchild, pLast);
-    Node* pCur = root;
-    pCur->lchild = pLast;
-    if(pLast) pLast->rchild = pCur;
-    pLast = pCur;
-    if(root->rchild) convert(root->rchild, pLast);
-}
-```
+#### 30 hash 冲突及解决办法。数据结构/算法 中等
 
-### 1.8 深度到是否为平衡二叉树
+@Sommer_Xia，来源：http://blog.csdn.net/shymi1991/article/details/39432775
+关键字值不同的元素可能会映象到哈希表的同一地址上就会发生哈希冲突。
 
-```cpp
-bool isBalance(Node* root, int* dep) {
-    if(root == NULL) {
-        *dep = 0;
-        return true;
-    }
-    int left = 0, right = 0;
-    if(isBalance(root->lchild, &left) && isBalance(root->rchild, &right)) {
-        int diff = left - right;
-        if(diff >= -1 && diff <= 1) {
-            *dep = 1 + (left > right ? left : right);
-            return true;
-        }
-    }
-    return false;
-}
-```
+解决办法：
 
-### 1.9 二叉搜索树后序遍历的结果
+1）开放定址法：当冲突发生时，使用某种探查(亦称探测)技术在散列表中形成一个探查(测)序列。沿此序列逐个单元地查找，直到找到给定 的关键字，或者碰到一个开放的地址(即该地址单元为空)为止（若要插入，在探查到开放的地址，则可将待插入的新结点存人该地址单元）。查找时探查到开放的 地址则表明表中无待查的关键字，即查找失败。
+2） 再哈希法：同时构造多个不同的哈希函数。
+3）链地址法：将所有哈希地址为i的元素构成一个称为同义词链的单链表，并将单链表的头指针存在哈希表的第i个单元中，因而查找、插入和删除主要在同义词链中进行。链地址法适用于经常进行插入和删除的情况。
+4）建立公共溢出区：将哈希表分为基本表和溢出表两部分，凡是和基本表发生冲突的元素，一律填入溢出表。
 
-```cpp
-bool f6(int* sec, int len) {
-    if(sec == NULL) return false;
-    if(len <= 1) return true;
-    int i, rv = sec[len-1];
-    for(i = 0; i < len-1; i++) {
-        if(sec[i] > rv) break;
-    }
-    for(int j = i; j < len-1; j++) {
-        if(sec[j] < rv) return false;
-    }
-    return f6(sec, i) && f6(sec+i, len-i-1);
-}
-```
+**请简要介绍下tensorflow的计算图，深度学习 DL框架 中**
 
-### 1.10 二叉树两节点的最低公共祖先
+> Tensorflow 通过计算图的形式来表述计算的编程系统，计算图也叫数据流图，可把计算图看做是一种有向图.
+> 
+> Tensorflow 中的每一个节点都是计算图上的一个Tensor, 也就是张量，而节点之间的边描述了计算之间的依赖关系(定义时) 和 数学操作(运算时)。
 
-```cpp
-vector<Node*> V1;
-vector<Node*> V2;
-bool getNodePath(Node* root, Node* tar, vector<Node*>& V) { // 根左右，回溯
-    if(root == NULL) return false;
-    V.push_back(root);
-    if(root == tar) return true;
-    bool flag = false;
-    if(root->lchild) flag = getNodePath(root->lchild, tar, V);
-    if(!flag && root->rchild) flag = getNodePath(root->rchild, tar, V);
-    if(!flag) V.pop_back();
-    return flag;
-}
-Node* getCom(const vector<Node*>& V1, const vector<Node*>& V2) {
-    vector<Node*>::const_iterator it1 = V1.begin();
-    vector<Node*>::const_iterator it2 = V2.begin();
-    Node* pLast = NULL;
-    while(it != V1.end() && it2 != V2.end()) {
-        if(*it != *it2) break;
-        pLast = *it1;
-        ++it1;
-        ++it2;
-    }
-    return pLast;
-}
-```
+<font color=#c7254e>**摘要心得10：**</font> 
 
-### 5. 具体算法
+**KNN中的K如何选取的？机器学习 ML模型 易**
 
-#### 5.1 斐波拉契
+KNN中的K值选取对K近邻算法的结果会产生重大影响。如李航博士的一书「统计学习方法」上所说：
 
-> 1. 斐波拉契数列 ok.   
-> 2. 跳台阶  ok.   
-> 3. 变态跳台阶  2 \* Fib(n-1).   
-> 4. 矩形覆盖  ok
+> 1). 如果选择较小的K值，就相当于用较小的领域中的训练实例进行预测，“学习”近似误差会减小，只有与输入实例较近或相似的训练实例才会对预测结果起作用，与此同时带来的问题是“学习”的估计误差会增大，换句话说，K值的减小就意味着整体模型变得复杂，容易发生过拟合；  
+> 
+> 2). 如果选择较大的K值，就相当于用较大领域中的训练实例进行预测，其优点是可以减少学习的估计误差，但缺点是学习的近似误差会增大。这时候，与输入实例较远（不相似的）训练实例也会对预测器作用，使预测发生错误，且K值的增大就意味着整体的模型变得简单。  
+> 
+> 3). K=N，则完全不足取，因为此时无论输入实例是什么，都只是简单的预测它属于在训练实例中最多的累，模型过于简单，忽略了训练实例中大量有用信息。
 
-#### 5.4 回溯
+> 在实际应用中，K值一般取一个比较小的数值，例如采用交叉验证法（简单来说，就是一部分样本做训练集，一部分做测试集）来选择最优的K值。
 
-> 1. 矩阵中的路径(BFS).   
-> 2. 机器人的运动范围(DFS)
 
-#### 5.5 排序
+### 2. [机器学习interview320道](https://blog.csdn.net/qq_33335553/article/details/80651017)
+    
+### 2. [机器学习常见面试题整理](http://kubicode.me/2015/08/16/Machine%20Learning/Common-Interview/)
 
-> 1. 数组中的逆序对(归并排序).  void mergeSort(int a[], int l, int r)
-> 2. 最小的K个数(堆排序).   
-> 3. 最小的K个数(快速排序) ok
+### 3. [机器学习面试题总结](https://zhuanlan.zhihu.com/c_129612503)
 
-#### 5.6 位运算
+### 5. [BAT机器学习面试1000题系列](https://blog.csdn.net/v_july_v/article/details/78121924)
 
-> 1. 二进制中1的个数  n & n-1.   
-> 2. 数值的整数次方 dp.   
-> 3. 数组中只出现一次的数字 ok.  
+## 工程架构
 
-### 6. Stack & Queue & heap
+### 1. [47道机器学习常见面试题（上）](https://zhuanlan.zhihu.com/p/45091568)
 
-## Reference
+### 2. [操作系统面试题](https://zhuanlan.zhihu.com/p/23755202)
 
-- [【NLP/AI算法面试必备-2】NLP/AI面试全记录（持续更新）][1]
-- [【NLP/AI算法面试必备-1】学习NLP/AI，必须深入理解“神经网络及其优化问题”][2]
-- [JayLouNLP算法工程师][2]
-- [140个GOOGLE的面试题](https://coolshell.cn/articles/3345.html)
+### 3. [网络面试题](https://zhuanlan.zhihu.com/p/24001696)
 
-[1]: https://zhuanlan.zhihu.com/p/57153934
-[2]: https://www.zhihu.com/people/lou-jie-9/posts
-[3]: https://zhuanlan.zhihu.com/p/56633392
+### 4. [TCP/IP四层模型](http://www.cnblogs.com/BlueTzar/articles/811160.html)
+
+### 5. [数据库篇](https://zhuanlan.zhihu.com/p/23713529?refer=passer)
+
+### 6. [面试题](http://python.jobbole.com/85231/)
+

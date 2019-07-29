@@ -287,6 +287,8 @@ fastText 能够做到效果好，速度快，主要依靠两个秘密武器：
 - 《数学之美》 读书笔记 
 - [word2vec前世今生][3]
 - [CS224N NLP with Deep Learning: Lecture 1 课程笔记][4]
+- [good, sklearn 中 CountVectorizer、TfidfTransformer 和 TfidfVectorizer][5]
 
 [3]: https://whiskytina.github.io/word2vec.html
 [4]: https://whiskytina.github.io/14947653164873.html
+[5]: https://blog.csdn.net/m0_37324740/article/details/79411651

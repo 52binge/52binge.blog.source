@@ -34,9 +34,9 @@ tags: BERT
 
 > 1. Language Model (语言模型就是要看到上文预测下文, So NNLM)
 > 
-> 2. n-gram model（n元模型）（基于 马尔可夫假设 思想）
+> 2. n-gram model（n元模型）（基于 马尔可夫假设 思想）**上下文相关的特性 建立数学模型**。
 > 
-> 3. 2001 - **NNLM** , @Bengio , 火于 2013 年， 沉寂十年终时来运转。 但很快又被NLP工作者祭入神殿。
+> 3. 2001 - **NNLM** , @Bengio , 火于 2013 年， 沉寂十年终时来运转。 但很快又被NLP工作者祭入神殿。 
 > 
 > 4. 2008 - Multi-task learning
 > 

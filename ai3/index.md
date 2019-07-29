@@ -30,9 +30,11 @@
 
 [he3]: https://blog.csdn.net/qq_17550379/article/details/85680899
 
-hhh
+### hot 中等
 
-> 1. 两数之和（方法：一遍哈希表）  Map < Integer, Integer > ， ✔️
+Page1
+
+> 2. 两数之和（方法：一遍哈希表）  Map < Integer, Integer > ， ✔️
 > 2. 最长回文子串    
 > 3. 反转链表    ， ✔️
 > 4. LRU缓存机制
@@ -51,6 +53,31 @@ hhh
 > 18. 合并两个有序链表  ， ✔️  
 > 19. 正则表达式匹配    
 > 20. 零钱兑换 ， ✔️
+
+Page3
+
+> 1. [单词搜索][hm3.1] (DFS vector < vector < bool > > **visit(row, vector < bool > (col, false))**)
+> 2. [打家劫舍之三][hm3.2] (DFS)
+> 3. 最小路径和
+> 4. 电话号码的字母组合
+> 5. 每日温度    
+> 6. 回文子串 
+> 7. 验证二叉搜索树    
+> 8. 单词拆分    
+> 9. 颜色分类    
+> 10. 在排序数组中查找元素的第一个和最后一个位置    
+> 11. 字母异位词分组    
+> 12. 完全平方数    
+> 13. 环形链表 II    
+> 14. 除法求值    
+> 15. 课程表    
+> 16. 根据身高重建队列    
+> 17. 除自身以外数组的乘积 
+> 18. 目标和    
+> 19. 比特位计数    
+
+[hm3.1]: https://blog.csdn.net/weixin_41958153/article/details/81735032
+[hm3.2]: https://www.cnblogs.com/grandyang/p/5275096.html
 
 [hot12]: https://blog.csdn.net/Jaster_wisdom/article/details/80662037
 [hot14]: https://www.cnblogs.com/grandyang/p/4944875.html
