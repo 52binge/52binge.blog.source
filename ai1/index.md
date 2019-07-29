@@ -214,6 +214,43 @@ $$
 
 <img src="/images/deeplearning/Attention-03.jpg" width="600" />
 
+## 8. GPT & ELMO
+
+**ELMO: Embedding from Language Models**
+
+> ELMO的论文题目：“Deep contextualized word representation”
+> 
+> NAACL 2018 最佳论文 - ELMO： Deep contextualized word representation
+>
+> ELMO 本身是个根据当前上下文对Word Embedding动态调整的思路。
+>
+> **ELMO 有什么缺点？**
+> 
+>  1. LSTM 抽取特征能力远弱于 Transformer
+>  2. 拼接方式双向融合特征能力偏弱
+
+**GPT (Generative Pre-Training) **
+
+> 1. 第一个阶段是利用 language 进行 Pre-Training.
+> 2. 第二阶段通过 Fine-tuning 的模式解决下游任务。
+>
+> **GPT: 有什么缺点？**
+>
+> 1. 要是把 language model 改造成双向就好了
+> 2. 不太会炒作，GPT 也是非常重要的工作.
+ 
+**Bert 亮点 : 效果好 和 普适性强**
+
+> 1. Transformer 特征抽取器
+> 2. Language Model 作为训练任务 (双向)
+>
+> Bert 采用和 GPT 完全相同的 **两阶段** 模型：
+>
+> 1. Pre-Train Language Model；
+> 2. Fine-> Tuning模式解决下游任务。
+
+## 9. Transformer
+
 ## Reference
 
 - [Language Model and Perplexity][3]
