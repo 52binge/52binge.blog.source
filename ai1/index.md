@@ -166,6 +166,34 @@ $$
 > (2). 如果Source是一篇文章，Target是概括性的几句描述语句，那么这是文本摘要；
 > (3). 如果Source是一句问句，Target是一句回答，那么这是问答系统。
 
+在模型训练中，所有输出序列损失的均值通常作为需要最小化的损失函数。
+
+**train seq2seq model**
+
+根据最大似然估计，我们可以最大化输出序列基于输入序列的条件概率
+
+$$
+\begin{split}\begin{aligned}
+{P}(y\_1, \ldots, y\_{T'} \mid x\_1, \ldots, x\_T)
+&= \prod\_{t'=1}^{T'} {P}(y\_{t'} \mid y\_1, \ldots, y\_{t'-1}, x\_1, \ldots, x\_T)\\\\
+&= \prod\_{t'=1}^{T'} {P}(y\_{t'} \mid y\_1, \ldots, y\_{t'-1}, \boldsymbol{c}),
+\end{aligned}\end{split}
+$$
+
+并得到该输出序列的损失
+
+$$ - \log{P}(y\_1, \ldots, y\_{T'} \mid x\_1, \ldots, x\_T) = -\sum\_{t'=1}^{T'} \log {P}(y\_{t'} \mid y\_1,  \ldots, y\_{t'-1}, \boldsymbol{c}),
+$$
+
+> 在 train 中，所有输出序列损失的均值通常作为需要最小化的损失函数。
+> 
+> 在 predict 中，我们需要将decode在上一个时间步的输出作为当前时间步的输入 Or **teacher forcing**。
+
+**summary**
+
+> - Encoder—Decoder（seq2seq）可以输入并输出不定长的序列。Encoder—Decoder 使用了两个 RNN .
+> - Encoder—Decoder 的训练中，我们可以采用 teacher forcing。(这也是 Seq2Seq 2 的内容)
+
 ## 7. Attention
 
 请务必要阅读： [张俊林 深度学习中的注意力模型（2017版）](https://zhuanlan.zhihu.com/p/37601161)
