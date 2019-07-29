@@ -129,11 +129,48 @@ fastText 能够做到效果好，速度快，主要依靠两个秘密武器：
 
 ## 6. Seq2Seq 
 
+<img src="/images/deeplearning/Seq2Seq-03.jpg" width="600" alt="Encoder-Decoder" />
+
+Source 和 Target 分别由各自的单词序列构成：
+
+$$
+Source = ({x}\_1, {x}\_2, ..., {x}\_m)
+$$
+
+$$
+Target = ({y}\_1, {y}\_2, ..., {y}\_n)
+$$
+
+
+Encoder 顾名思义就是对输入句子Source进行编码，将输入句子通过非线性变换转化为中间语义表示C：
+
+$$
+C = F({x}\_1, {x}\_2, ..., {x}\_m)
+$$
+
+对于 Decoder 来说，其任务是根据句子 Source 的 中间语义表示 C 和 之前已经生成的历史信息
+
+$$
+({y}\_1, {y}\_2, ..., {y}\_{i-1})
+$$
+
+来生成 i时刻 要生成的单词 ${y}\_{i}$
+
+$$
+y\_{i} = g(C, {y}\_1, {y}\_2, ..., {y}\_{i-1})
+$$
+
+> 每个 $y\_i$ 都依次这么产生，那么看起来就是整个系统根据输入 句子Source 生成了目标句子Target。
+> 
+> (1). 如果Source是中文句子，Target是英文句子，那么这就是解决机器翻译问题；
+> (2). 如果Source是一篇文章，Target是概括性的几句描述语句，那么这是文本摘要；
+> (3). 如果Source是一句问句，Target是一句回答，那么这是问答系统。
+
+## 7. Attention
+
 请务必要阅读： [张俊林 深度学习中的注意力模型（2017版）](https://zhuanlan.zhihu.com/p/37601161)
 
 <img src="/images/deeplearning/Attention-01.jpg" width="600" />
-
-## 7. Attention
 
 **Attention 本质思想**
 
