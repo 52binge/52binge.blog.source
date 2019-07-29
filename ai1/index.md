@@ -24,11 +24,13 @@
 
 [good 张俊林: 从Word Embedding到Bert模型—自然语言处理中的预训练技术发展史](https://zhuanlan.zhihu.com/p/49271699) 
  
-### 1. Language Model and Perplexity
+## 1. Language Model
 
 $$
 P(w\_{i}|w\_{1}, w\_{2}, ..., w\_{i-1}) = P(w\_i | w\_{i-N+1}, w\_{i-N+2}, ..., w\_{i-1})
 $$
+
+## 2. Perplexity
 
 计算perplexity的公式如下：
 
@@ -61,6 +63,27 @@ NNLM,直接从语言模型出发，将模型最优化过程转化为求词向量
 ## 3. word2vec
 
 word2vec 并不是一个模型， 而是一个 2013年 google 发表的工具. 该工具包含2个模型： Skip-Gram 和 CBOW. 及两种高效训练方法： negative sampling 和 hierarchicam softmax.
+
+> 词向量（词的特征向量）既能够降低维度，又能够capture到当前词在本句子中上下文的信息
+
+**CBOW**
+
+<img src="/images/nlp/word2vec-CBOW_1.png" width="600" />
+
+> 纠错 : 上图”目标函数“的第一个公式，应该是 连乘 公式，不是 连加 运算。
+> 
+> 理解 : 背景词向量与 中心词向量 内积 等部分，你可考虑 softmax $w \* x+b$ 中 $x$ 和 $w$ 的关系来理解.
+
+## 4. fastText
+
+FastText是一个快速文本分类算法，在使用标准多核CPU的情况下，在10分钟内可以对超过10亿个单词进行训练。 不需要使用预先训练好的词向量，因为FastText会自己训练词向量。
+
+<img src="/images/nlp/fastText-4.webp" width="500" />
+
+fastText 能够做到效果好，速度快，主要依靠两个秘密武器：
+
+> 1. 利用了 词内的n-gram信息 (subword n-gram information)
+> 2. 用到了 层次化Softmax回归 (Hierarchical Softmax) 的训练 trick.
 
 ## Reference
 
