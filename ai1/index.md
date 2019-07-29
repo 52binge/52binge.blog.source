@@ -27,7 +27,7 @@
 ### 1. Language Model and Perplexity
 
 $$
-P(w\_i|w\_{i-1}) = \frac {P(w\_{i-1}, w\_i)} {P(w\_{i-1})}
+P(w\_{i}|w\_{1}, w\_{2}, ..., w\_{i-1}) = P(w\_i | w\_{i-N+1}, w\_{i-N+2}, ..., w\_{i-1})
 $$
 
 计算perplexity的公式如下：
