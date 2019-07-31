@@ -1225,6 +1225,19 @@ class Solution {
 > 1. [矩阵中的路径(BFS)](https://www.weiweiblog.cn/haspath/)   
 > 2. [机器人的运动范围(DFS)](https://www.weiweiblog.cn/movingcount/)
 
+```java
+    public int count(int threshold, int rows, int cols, int i, int j, int[][] flag){
+        if(i<0 || j<0 || i>=rows || j>=cols || sum(i)+sum(j) > threshold || flag[i][j] == 1){
+            return 0;
+        }
+        flag[i][j] = 1;
+        return 1 + count(threshold, rows, cols, i - 1, j, flag) + 
+            count(threshold, rows, cols, i + 1, j, flag) +
+            count(threshold, rows, cols, i, j - 1, flag) +
+            count(threshold, rows, cols, i, j + 1, flag);
+    }
+```
+
 ### 5.3 位运算
 
 > 1. 二进制中1的个数  n & n-1.， ✔️   
