@@ -233,7 +233,7 @@ int bina(int *a, int len, int data) {
 > 7. 判断两个无环单链表是否相交， ✔️
 > 8. 两个链表相交扩展：求两个无环单链表的第一个相交点， ✔️
 > 9. 两个链表的第一个公共结点  ， ✔️   
-> 10. 旋转单链表
+> 10. 旋转单链表  (1. 环 2. 走n-k%n 断开)， ✔️  
 > 
 > 题目描述：给定一个单链表，设计一个算法实现链表向右旋转 K 个位置。
 举例： 给定 1->2->3->4->5->6->NULL, K=3
@@ -1254,6 +1254,7 @@ public class Solution {
 shopee
 
 > 1. [下一个更大元素][shopee1] (Stack < Integer > (), Map < Int, Int >  map, map.getOrDefault(nums1[i], -1); 序列为 9 2 1 4 借助栈实现，判断栈顶 和 下一个元素的大小 ， ✔️
+> 2. [下一个更大元素 III](https://www.cnblogs.com/grandyang/p/6716130.html) (12443322 -> 13222344)
 > 2. [鸡蛋掉落][shopee2] (DP问题，难) 
 > 3. google 扔鸡蛋，原题是 100 层楼，鸡蛋无限，答案 14 次。， ✔️
 > 3. [二叉树的右视图 (层次遍历)][shopee3] res.push_back(q.back()->val);， ✔️
@@ -1264,6 +1265,7 @@ shopee
 > 8. 相交链表
 > 9. [有效的括号 （Stack来解决）][shopee9] ， ✔️
 > 10. 两数相加
+> 11. leetcode-276-栅栏涂色 dp3 = (k-1) * dp1 + (k-1) * dp2;
 
 [LeetCode] 887. Super Egg Drop 超级鸡蛋掉落 ， ✔️
 
@@ -1297,6 +1299,62 @@ class Solution:
         if len(stack) != 0:
             return False
         return True
+```
+
+```cpp
+class Solution {
+public:
+    int nextGreaterElement(int n) {
+        string str = to_string(n);
+        int len = str.size(), i = len - 1;
+        for (; i > 0; --i) {
+            if (str[i] > str[i - 1]) break;
+        }
+        if (i == 0) return -1;
+        for (int j = len - 1; j >= i; --j) {
+            if (str[j] > str[i - 1]) {
+                swap(str[j], str[i - 1]);
+                break;
+            }
+        }
+        sort(str.begin() + i, str.end());
+        long long res = stoll(str);
+        return res > INT_MAX ? -1 : res;
+    }
+};
+```
+
+K 个一组翻转链表 
+
+```cpp
+class Solution {
+public:
+    ListNode* reverseKGroup(ListNode* head, int k) {
+        ListNode* pre; 
+        ListNode* p = head;  
+        ListNode* q = head;  
+        
+        if(!p || k == 1) return p;  
+        for(int i = 1; i < k; i ++){
+            if(!q->next)    return head;
+            q = q->next;
+        }
+        pre = p;  
+        head = q;
+        while(p->next != head){//翻转链表的核心
+            q = p->next;      //1. 缓冲p后面的单链表
+            p->next = p->next->next;   //2. 反转单链表
+            q->next = pre;    //3.让pPre指针后移
+            pre = q;       //4. 让pre指针后移
+    
+ 
+        }
+        p->next =  reverseKGroup(head->next, k);
+        head->next = pre;
+ 
+        return head;        
+    }
+};
 ```
 
 [shopee1]: https://blog.csdn.net/zhangzhetaojj/article/details/80837232
