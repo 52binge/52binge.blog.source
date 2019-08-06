@@ -123,3 +123,5 @@ XGboost是通过该特征每棵树中分裂次数的和去计算的，比如这�
 
 - [随机森林进行特征重要性度量的详细说明](https://blog.csdn.net/m0_37770941/article/details/78330795)
 - [什么是无偏估计？](https://www.zhihu.com/question/22983179)
+- [GBDT PDF](http://wepon.me/files/gbdt.pdf)
+- [机器学习算法中 GBDT 和 XGBOOST 的区别有哪些？](https://www.zhihu.com/question/41354392)

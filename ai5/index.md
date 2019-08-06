@@ -31,6 +31,10 @@ date: 2018-12-03 13:36:21
 > 
 > 作者通过使用MMI, 最大化输入与输出的互信息，能够有效避免与输入无关的responses，得到更为diverse的responses.
 
+## BahdanauAttention / LuongAttention
+
+- [BahdanauAttention与LuongAttention注意力机制简介](https://blog.csdn.net/u010960155/article/details/82853632)
+
 ### 1.1 数据预处理
 
 ### 1.2 定义模型

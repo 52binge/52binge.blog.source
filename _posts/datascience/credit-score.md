@@ -52,6 +52,13 @@ Exploratory Data Analysis
 
 > 每个字段的缺失值情况、异常值情况、平均值、中位数、最大值、最小值、分布情况等
 
+- [牛顿插值的几何解释是怎么样的？](https://www.zhihu.com/question/22320408/answer/141973314)
+- [如何直观地理解拉格朗日插值法？](https://www.zhihu.com/question/58333118)
+- [从牛顿插值法到泰勒公式](https://www.matongxue.com/madocs/126.html)
+- [泰勒公式一句话描述：就是用多项式函数去逼近光滑函数](https://www.zhihu.com/question/21149770/answer/111173412)
+
+> 缺失值的处理，还可以用 RF 去拟合.
+
 ## 3. 数据预处理
 
 (1). 数据清洗
