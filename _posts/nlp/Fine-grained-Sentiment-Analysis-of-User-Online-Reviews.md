@@ -498,6 +498,7 @@ epoch
 - [深度学习与文本分类总结第一篇--常用模型总结][4]
 - [用深度学习（CNN RNN Attention）解决大规模文本分类问题 - 综述和实践][5]
 - [严重数据倾斜文本分类，比如正反比1:20～100，适合什么model][6]
+- [第16名解决方案](https://github.com/xueyouluo/fsauor2018)、 [第17名解决方案](https://github.com/BigHeartC/Al_challenger_2018_sentiment_analysis)、 [基于Bert的尝试](https://github.com/brightmart/sentiment_analysis_fine_grain)
 
 <!--
 
