@@ -42,7 +42,7 @@ perplexity 实际是计算每一个单词得到的概率倒数的 几何平均(*
 
 [参见： arithmetic average vs geometric mean](https://zhuanlan.zhihu.com/p/23809612)
 
-在语言模型的训练中，通常采用 perplexity 的对数表达形式：
+在语言模型的训练中，通常采用 perplexity 的 **`log`** 表达形式：
 
 <img src="/images/tensorflow/tf-google-9.1.2_2-equation.svg" width="600" />
 

@@ -1,7 +1,7 @@
 ---
-title: Information Extraction
+title: Information Extraction - SPO
 toc: true
-date: 2019-05-31 09:00:21
+date: 2019-07-31 09:00:21
 categories: nlp
 tags: DGCNN
 ---
