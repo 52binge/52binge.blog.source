@@ -38,7 +38,9 @@ $$
 
 **perplexity** 刻画的是语言模型预测一个语言样本的能力. 比如已经知道 (w1,w2,w3,…,wm) 这句话会出现在语料库之中，那么通过语言模型计算得到的这句话的概率越高，说明语言模型对这个语料库拟合得越好。
 
-perplexity 实际是计算每一个单词得到的概率倒数的几何平均，因此 perplexity 可以理解为平均分支系数（average branching factor），即模型预测下一个词时的平均可选择数量。
+perplexity 实际是计算每一个单词得到的概率倒数的 几何平均(**geometric mean**) ，因此 perplexity 可以理解为平均分支系数（average branching factor），即模型预测下一个词时的平均可选择数量。
+
+[参见： arithmetic average vs geometric mean](https://zhuanlan.zhihu.com/p/23809612)
 
 在语言模型的训练中，通常采用 perplexity 的对数表达形式：
 
@@ -104,11 +106,21 @@ NNLM,直接从语言模型出发，将模型最优化过程转化为求词向量
 
 ## 4. word2vec
 
-word2vec 并不是一个模型， 而是一个 2013年 google 发表的工具. 该工具包含2个模型： Skip-Gram 和 CBOW. 及两种高效训练方法： negative sampling 和 hierarchicam softmax.
+word2vec 并不是一个模型， 而是一个 2013年 google 发表的工具. 
+
+该工具包含2个模型： 
+
+1. Skip-Gram 
+2. CBOW. 
+
+该工具包含2种高效训练方法： 
+
+1. negative sampling 
+2. hierarchicam softmax.
 
 > 词向量（词的特征向量）既能够降低维度，又能够capture到当前词在本句子中上下文的信息
 
-**CBOW**
+**CBOW** (context(W)->center)
 
 <img src="/images/nlp/word2vec-CBOW_1.png" width="600" />
 
@@ -116,9 +128,25 @@ word2vec 并不是一个模型， 而是一个 2013年 google 发表的工具. �
 > 
 > 理解 : 背景词向量与 中心词向量 内积 等部分，你可考虑 softmax $w \* x+b$ 中 $x$ 和 $w$ 的关系来理解.
 
-**negative sampling**
+### 4.1 Negative Sampling
 
-> 1）如果通过一个正例和neg个负例进行二元逻辑回归呢？ 2） 如何进行负采样呢？
+> 1）如何通过一个正例和neg个负例进行二元逻辑回归呢？ 2） **`如何进行负采样呢`**？
+
+-  **如何进行 negative sampling**？
+
+每个词𝑤的线段长度由下式决定：
+
+$$
+len(w) = \frac{count(w)}{\sum\limits\_{u \in vocab} count(u)}
+$$
+
+- 在word2vec中，分子和分母都取了3/4次幂如下：
+
+$$
+len(w) = \frac{count(w)^{3/4}}{\sum\limits\_{u \in vocab} count(u)^{3/4}}
+$$
+
+<img src="/images/nlp/word2vec-neg.png" width="600" />
 
 负采样这个点引入 word2vec 非常巧妙，两个作用，
 
@@ -129,9 +157,11 @@ word2vec 并不是一个模型， 而是一个 2013年 google 发表的工具. �
 > 
 > 第二，中心词其实只跟它周围的词有关系，位置离着很远的词没有关系，也没必要同时训练更新，作者这点聪明.
 
-- [good good, word2vec Negative Sampling 刘建平Pinard](https://www.cnblogs.com/pinard/p/7249903.html)
+- [good, word2vec Negative Sampling 刘建平Pinard](https://www.cnblogs.com/pinard/p/7249903.html)
 
-> [知乎: 哈夫曼树](https://zhuanlan.zhihu.com/p/46430775)
+### 4.2 Hierarchicam Softmax
+
+> [知乎: Huffman Tree](https://zhuanlan.zhihu.com/p/46430775)
 > 
 > 给定n权值作为n个叶子节点，构造一棵二叉树，若这棵二叉树的带权路径长度达到最小，则称这样的二叉树为最优二叉树，也称为Huffman树。
 
