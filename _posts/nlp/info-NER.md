@@ -34,7 +34,7 @@ tags: NER
 
 ### 2.1  BiLSTM-CRF
 
-LongShort Term Memory网络一般叫做LSTM，是RNN的一种特殊类型，可以学习长距离依赖信息。
+LongShort Term Memory 网络一般叫做LSTM，是RNN的一种特殊类型，可以学习长距离依赖信息。
 
 <img src="/images/nlp/info-NER-5.png" width="500" alt="Information Extraction, NER"/>
 
@@ -42,7 +42,7 @@ LSTM 同样是这样的结构，但是重复的单元拥有一个不同的结构
 
 <img src="/images/nlp/info-NER-6.png" width="500" alt="Information Extraction, NER"/>
 
-LSTM通过三个门结构（输入门，遗忘门，输出门），选择性地遗忘部分历史信息，加入部分当前输入信息，最终整合到当前状态并产生输出状态。
+LSTM 通过三个门结构（输入门，遗忘门，输出门），选择性地遗忘部分历史信息，加入部分当前输入信息，最终整合到当前状态并产生输出状态。
 
 <img src="/images/nlp/info-NER-7.png" width="600" alt="Information Extraction, NER"/>
 
