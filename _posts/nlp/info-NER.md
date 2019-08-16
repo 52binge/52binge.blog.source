@@ -1,34 +1,67 @@
 ---
-title: Information Extraction - NER
+title: Named Entity Recognition，NER
 toc: true
-date: 2019-07-20 11:00:21
+date: 2019-08-15 11:00:21
 categories: nlp
 tags: NER
 ---
 
-图像和语音属于感知智能，而文本属于认知智能，所以号称是“人工智能的明珠”，难度很大。
+<img src="/images/nlp/info-NER-1.png" width="550" alt="Information Extraction, Named Entity Recognition"/>
 
 <!-- more -->
 
-1.文本挖掘简介和抽取算法概况
+<br>
 
-2.传统抽取算法原理及案例：HMM、CRF（重点）
-
-3.基于深度学习的抽取算法原理及案例：双向LSTM、预训练模型（重点）
-
-4.抽取算法的应用实践
+图像和语音属于感知智能，而文本属于认知智能，所以号称是“人工智能的明珠”，难度很大。
 
 ## 1. NER Introduce
 
-命名识别任务（Named-entity recognition），简称 NER，是自然语言处理中的一个非常基础和重要的任务。命名实体识别任务是指在非结构化的文本中抽取出特定意义的实体，包括人名、地名、机构名等。 
+**NER系统 就是从非结构化的输入文本中抽取出上述实体，并且可以按照业务需求识别出更多类别的实体**.
 
-命名实体识别是未登录词中数量最多、识别难度最大、对分词效果影响最大的问题，同时它也是信息抽取、信息检索、机器翻译、问答系统等多种自然语言处理技术必不可少的组成部分。 
+> 比如 产品名称、型号、价格等。
 
-## 2. NER Baseline
+<br>
+<img src="/images/nlp/info-NER-2.png" width="700" alt="Information Extraction, NER"/>
+<br>
 
-**Bilstm+CRF** 是一个非常强的 baseline 模型，是目前基于深度学习的 NER 方法中最主流的模型。
+> 命名实体识别是未登录词中数量最多、识别难度最大、对分词效果影响最大的问题，同时它也是信息抽取、信息检索、机器翻译、问答系统等多种自然语言处理技术必不可少的组成部分。 
 
-该模型主要包括 Embedding 层，双向 LSTM 层和 CRF 层。 
+## 2. Deep Learning in NER
+
+<img src="/images/nlp/info-NER-3.jpg" width="650" alt="NER发展趋势"/>
+
+** Embedding+BiLSTM+CRF** 是一个非常强的 baseline 模型，是目前基于深度学习的 NER 方法中最主流的模型。
+
+### 2.1  BiLSTM-CRF
+
+LongShort Term Memory网络一般叫做LSTM，是RNN的一种特殊类型，可以学习长距离依赖信息。
+
+<img src="/images/nlp/info-NER-5.png" width="500" alt="Information Extraction, NER"/>
+
+LSTM 同样是这样的结构，但是重复的单元拥有一个不同的结构。不同于普通RNN单元，这里是有四个，以一种非常特殊的方式进行交互。
+
+<img src="/images/nlp/info-NER-6.png" width="500" alt="Information Extraction, NER"/>
+
+LSTM通过三个门结构（输入门，遗忘门，输出门），选择性地遗忘部分历史信息，加入部分当前输入信息，最终整合到当前状态并产生输出状态。
+
+<img src="/images/nlp/info-NER-7.png" width="600" alt="Information Extraction, NER"/>
+
+应用于NER中的 biLSTM-CRF 模型主要由 Embedding层（主要有词向量，字向量等特征）。
+
+无需特征工程，使用词向量以及字符向量就可以达到很好的效果，如果有高质量的词典特征，能进一步提高。
+
+<br>
+<img src="/images/nlp/info-NER-8.png" width="550" alt="Information Extraction, NER"/>
+
+### 2.2 IDCNN-CRF
+
+## 3. 实战应用
+
+### 3.1 语料准备
+
+### 3.2 数据增强
+
+## 4. ELMO / GPT / Bert
 
 **ELMO / GPT / Bert**
 
@@ -47,18 +80,23 @@ tags: NER
 >
 > 崔德盛，北京邮电大学模式识别实验室 ，主要的研究方向是自然语言处理和广告推荐，曾获 2017 知乎看山杯挑战赛亚军，2017 摩拜算法挑战赛季军，2019 搜狐算法大赛冠军。
 
----
 
-本次比赛提供了全新的数据集，包括一个大规模的未标注的语料和一个 10000 条标注数据的文档多字段抽取数据集。同时，数据集还做了独特的加密，只提供单词的 id，并不提供单词的字符串（很多预训练好的模型比如 word2vec, elmo 和 bert 都没法直接使用）。 
 
-参赛选手可以直接使用标注数据集训练单任务模型，比如：bilstm+crf 模型，因为该数据集没有原始的单词字符串表示，所以没法使用 Pos-tagger 等信息辅助算法学习。另外，本比赛提供了一个大规模的未标注语料，参赛者也可以使用 word2vec [7] , Glove [8]  等工具训练词向量，将词向量作为单任务模型的词向量初始化。为了更好地利用这个未标注语料，参赛者也可以训练语言模型（ELMO, Bert 等），然后在语言模型上进行下游的 NER 任务。 
+## 5. Summary
+
+最后进行一下总结，将神经网络与CRF模型相结合的CNN/RNN-CRF成为了目前NER的主流模型。
+
+对于CNN与RNN，各有各的优点。由于RNN有天然的序列结构，所以RNN-CRF使用更为广泛。
 
 ## Reference
 
 - 摘要心得: **`baeline`** 是非常重要的.
 - [达观数据高翔详解文本抽取（附“达观杯”参赛方式）][1]
 - [第三届“达观杯”文本智能算法大赛参赛指南][2]
+- [Named-entity recognition | NER][3]
+- [一文详解深度学习在命名实体识别(NER)中的应用][4]
 
 [1]: https://zhuanlan.zhihu.com/p/75342886
 [2]: https://www.jishuwen.com/d/2TEc#tuit
-
+[3]: https://easyai.tech/ai-definition/ner/
+[4]: https://www.jiqizhixin.com/articles/2018-08-31-2
