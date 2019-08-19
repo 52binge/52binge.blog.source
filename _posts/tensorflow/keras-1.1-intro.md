@@ -26,7 +26,7 @@ pip3 install pandas
 pip3 install matplotlib
 ```
 
-## 2. 基本概念
+## 2. Basic concepts
 
 [keras-cn.readthedocs.io 一些基本概念](https://keras-cn.readthedocs.io/en/latest/for_beginners/concepts/)
 
@@ -63,9 +63,96 @@ print(sum1)
 # [3 7]
 ```
 
-## 3. 前导知识
+## 3. Quickstart in 30s
 
-### 3.1 python language
+[30s上手Keras](https://keras-cn.readthedocs.io/en/latest/)
+
+Sequential模型如下
+
+```py
+from keras.models import Sequential
+
+model = Sequential()
+```
+
+将一些网络层通过`.add()`堆叠起来，就构成了一个模型：
+
+```py
+from keras.layers import Dense, Activation
+
+model.add(Dense(units=64, input_dim=100))
+model.add(Activation("relu"))
+model.add(Dense(units=10))
+model.add(Activation("softmax"))
+```
+
+完成模型的搭建后，我们需要使用`.compile()`方法来编译模型：
+
+```python
+model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
+
+# from keras.optimizers import SGD
+# model.compile(loss='categorical_crossentropy', optimizer=SGD(lr=0.01, momentum=0.9, nesterov=True))
+```
+
+完成模型编译后，我们在训练数据上按batch进行一定次数的迭代来训练网络
+
+```python
+model.fit(x_train, y_train, epochs=5, batch_size=32)
+```
+
+也可以手动将一个个batch的数据送入网络中训练，这时候需要使用：
+
+```python
+model.train_on_batch(x_batch, y_batch)
+```
+
+随后，我们可以使用一行代码对我们的模型进行评估，看看模型的指标是否满足我们的要求：
+
+```python
+loss_and_metrics = model.evaluate(x_test, y_test, batch_size=128)
+```
+
+使用模型，对新的数据进行预测：
+
+```
+classes = model.predict(x_test, batch_size=128)
+```
+
+## 4. Functional model
+
+[快速开始函数式（Functional）模型](https://keras-cn.readthedocs.io/en/latest/getting_started/functional_API/)
+
+> 1. 第一个模型：全连接网络
+> 2. 多输入和多输出模型
+> 3. 共享层, 层“节点”的概念
+
+## 5. Sequential model
+
+[Sequential model](https://keras-cn.readthedocs.io/en/latest/getting_started/sequential_model/) 是多个网络层的线性堆叠，也就是“一条路走到黑”。
+
+```python
+model = Sequential()
+model.add(Dense(32, input_shape=(784,)))
+model.add(Activation('relu'))
+```
+
+### 5.1 input data shape
+
+```python
+model = Sequential()
+model.add(Dense(32, input_dim=784))
+model = Sequential()
+model.add(Dense(32, input_shape=(784,)))
+```
+
+### 5.2 compile and train (fit)
+
+
+
+## 6. Pre-knowledge
+
+### 6.1 python language
 
 - Object-oriented,  class, object, encapsulation, polymorphism, inheritance, scope, etc.
 
@@ -73,7 +160,7 @@ print(sum1)
 
 - generator，以及如何编写 generator。什么是匿名函数（lambda）
 
-### 3.2 deep learning
+### 6.2 deep learning
 
 > Supervised Learning, Unsupervised Learning, Classification, Clustering, Regression
 >
