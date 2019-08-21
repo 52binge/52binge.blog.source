@@ -212,5 +212,7 @@ model.fit(data, labels, epochs=10, batch_size=32)
 ## Reference
 
 - [keras-cn][1]
+- [keras.io][2]
 
 [1]: https://keras-cn.readthedocs.io/en/latest/backend/
+[2]: https://keras.io/
