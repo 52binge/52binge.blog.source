@@ -11,9 +11,9 @@ tags: keras
 <!--<img src="/images/tensorflow/keras-5.jpeg" width="550" alt="Keras"/>
 -->
 
-Keras 并不处理如张量乘法、卷积等底层操作。这些操作依赖于某种特定的、优化良好的张量操作库。
-
 <!-- more -->
+
+Keras 并不处理如张量乘法、卷积等底层操作。这些操作依赖于某种特定的、优化良好的张量操作库。
 
 ## 1. Keras install
 
@@ -151,7 +151,41 @@ model.add(Dense(32, input_shape=(784,)))
 
 ### 5.2 compile and train (fit)
 
+[Sequential model methods_cn](https://keras-cn.readthedocs.io/en/latest/getting_started/sequential_model/)、[Sequential model methods_en](https://keras.io/models/sequential/)
 
+**compile** Arguments
+
+> - optimizer
+> - loss
+> - metrics
+
+```python
+# For a multi-class classification problem
+model.compile(optimizer='rmsprop',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
+```
+
+Keras 以 Numpy数组 作为 **`input_data`** 和 **`label`** 的数据类型。训练模型一般使用**`fit函数`**.
+
+```python
+# For a single-input model with 2 classes (binary classification):
+
+model = Sequential()
+model.add(Dense(32, activation='relu', input_dim=100))
+model.add(Dense(1, activation='sigmoid'))
+model.compile(optimizer='rmsprop',
+              loss='binary_crossentropy',
+              metrics=['accuracy'])
+
+# Generate dummy data
+import numpy as np
+data = np.random.random((1000, 100))
+labels = np.random.randint(2, size=(1000, 1))
+
+# Train the model, iterating on the data in batches of 32 samples
+model.fit(data, labels, epochs=10, batch_size=32)
+```
 
 ## 6. Pre-knowledge
 
