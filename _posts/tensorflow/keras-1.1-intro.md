@@ -6,14 +6,17 @@ categories: tensorflow
 tags: keras
 ---
 
-<img src="/images/tensorflow/keras-4.png" width="550" alt="Keras + Tensorflow"/>
 
 <!--<img src="/images/tensorflow/keras-5.jpeg" width="550" alt="Keras"/>
 -->
 
-<!-- more -->
+Keras 开发重点是支持快速的实验。能够以最小的时延把你的想法转换为实验结果，是做好研究的关键。
 
 Keras 并不处理如张量乘法、卷积等底层操作。这些操作依赖于某种特定的、优化良好的张量操作库。
+
+<!-- more -->
+
+<img src="/images/tensorflow/keras-4.png" width="550" alt="Keras + Tensorflow"/>
 
 ## 1. Keras install
 

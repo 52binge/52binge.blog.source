@@ -1,16 +1,16 @@
 ---
-title: Regressor
+title: Regressor in Keras
 toc: true
 date: 2019-08-21 13:17:21
 categories: tensorflow
 tags: keras
 ---
 
-<img src="/images/tensorflow/keras-regressor-1.2-1.png" width="450" alt="Regressor"/>
+NN 可用来模拟 regression，给一组数据，用一条线对数据进行拟合，并可预测新输入 x 的输出值。
 
 <!-- more -->
 
-NN 可用来模拟 regression，给一组数据，用一条线对数据进行拟合，并可预测新输入 x 的输出值。
+<img src="/images/tensorflow/keras-regressor-1.2-1.png" width="450" alt="Regressor in Keras"/>
 
 **创建数据**
 
@@ -141,7 +141,10 @@ numpy.random.normal(loc=0.0, scale=1.0, size=None)
 ## Reference
 
 - [keras-cn][1]、 [keras.io][2]
-- [从np.random.normal()到正态分布的拟合](https://blog.csdn.net/lanchunhui/article/details/50163669)
+- [从np.random.normal()到正态分布的拟合][3]
+- [莫烦 Keras][4]
 
 [1]: https://keras-cn.readthedocs.io/en/latest/backend/
 [2]: https://keras.io/
+[3]: https://blog.csdn.net/lanchunhui/article/details/50163669
+[4]: https://morvanzhou.github.io/tutorials/machine-learning/keras/

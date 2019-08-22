@@ -24,8 +24,6 @@ p + p {
 
 基于时间成本，人一生只能做好仅有的一两件事情，一直做才会走通，有巅峰期。
 
-跳来跳去，将永远看不到，30岁，其实还没完成起步阶段；
-
  <!--[Blair’s Instagram][ins]-->
 
 <!--&nbsp; 、&nbsp;[Netease Music][wangyiyun]&nbsp;、&nbsp;[Tweet][tweet]
