@@ -102,7 +102,7 @@ model.add(Dense(10))
 model.add(Activation('softmax'))
 ```
 
-optimizer
+define your optimizer
 
 ```python
 # Another way to define your optimizer
