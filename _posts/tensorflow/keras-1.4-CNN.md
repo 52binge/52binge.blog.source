@@ -109,6 +109,9 @@ define your optimizer
 adam = Adam(lr=1e-4)
 ```
 
+[keras.layers.Conv1D 1D 卷积层 (例如时序卷积)](https://keras.io/zh/layers/convolutional/)
+[Keras Convolution1D与Convolution2D区别](https://blog.csdn.net/qq_19707521/article/details/78486185)
+
     _________________________________________________________________
     Layer (type)                 Output Shape              Param #   
     =================================================================
