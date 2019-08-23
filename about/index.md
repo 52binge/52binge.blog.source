@@ -128,7 +128,7 @@ HIMYM 影響一個人的價值觀、友情觀、愛情觀…, 包含蠻多人生
 ### ChangeLog
 
 - 2017-10-08 : blairos theme improve
-- 2016-03-22 : blair build blog by hexo
+- 2016-03-22 : build my blog by hexo
 
 [1]: /images/tech-logos/2016-10-03-6.png
 [tw]: /tweet
