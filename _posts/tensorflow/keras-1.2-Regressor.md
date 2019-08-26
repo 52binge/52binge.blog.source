@@ -150,3 +150,4 @@ numpy.random.normal(loc=0.0, scale=1.0, size=None)
 [3]: https://blog.csdn.net/lanchunhui/article/details/50163669
 [4]: https://morvanzhou.github.io/tutorials/machine-learning/keras/
 [5]: https://morvanzhou.github.io/tutorials/machine-learning/keras/3-1-save/
+[6]: https://www.cnblogs.com/vipyoumay/p/ner-chinese-keras.html
