@@ -143,8 +143,10 @@ numpy.random.normal(loc=0.0, scale=1.0, size=None)
 - [keras-cn][1]、 [keras.io][2]
 - [从np.random.normal()到正态分布的拟合][3]
 - [莫烦 Keras][4]
+- [莫烦 Keras Model, Save & reload][5]
 
 [1]: https://keras-cn.readthedocs.io/en/latest/backend/
 [2]: https://keras.io/
 [3]: https://blog.csdn.net/lanchunhui/article/details/50163669
 [4]: https://morvanzhou.github.io/tutorials/machine-learning/keras/
+[5]: https://morvanzhou.github.io/tutorials/machine-learning/keras/3-1-save/
