@@ -22,6 +22,8 @@ BERT 创新点在于提出了一套完整的方案，利用之前最新的算法
 
 keras-bert：https://github.com/CyberZHG/keras-bert
 
+这里简单解释一下Tokenizer的输出结果。首先，默认情况下，分词后句子首位会分别加上[CLS]和[SEP]标记，其中[CLS]位置对应的输出向量是能代表整句的句向量（反正Bert是这样设计的），而[SEP]则是句间的分隔符，其余部分则是单字输出（对于中文来说）
+
 ## Reference
 
 - [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding][2]
