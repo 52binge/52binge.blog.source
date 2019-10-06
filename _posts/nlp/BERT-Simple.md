@@ -1,18 +1,16 @@
 ---
 title: Bert 最简单的打开姿势
 toc: true
-date: 2019-08-26 11:00:21
+date: 2019-06-21 11:00:21
 categories: nlp
 tags: BERT
 ---
 
-<img src="/images/nlp/Bert-Ernie-logo.jpg" width="550" alt="Bert-Ernie" />
-
-<!-- more -->
-
 2018.10 google 发布 BERT 模型. 引爆整个AI圈的 NLP 模型. 在 NLP领域 刷新 11 项记录.
 
 BERT 创新点在于提出了一套完整的方案，利用之前最新的算法模型，去解决各种各样的 NLP 任务.
+
+<!-- more -->
 
 <img src="/images/nlp/bert-sample-1.png" width="700" alt="Bert的预训练和微调（图片来自Bert的原论文）" />
 
