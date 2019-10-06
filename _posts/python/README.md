@@ -69,12 +69,22 @@ Middleware 中间件，可以理解为对应用程序的一组装饰器。
 >
 > 在 Server 看来，他可以接收2个参数，并且可以返回一个类 Application对象。
 
+### 2.4 总结
+
+WSGI 对于 application 对象有如下三点要求
+
+- 必须是一个可调用的对象
+- 接收两个必选参数 environ、start_response。
+- 返回值必须是可迭代对象，用来表示 http body。
+
 ## Reference
 
 - [花了两个星期，我终于把 WSGI 整明白了][1]
 - [尝试理解Flask源码 之 搞懂WSGI协议][2]
 - [WEB开发——Python WSGI协议详解][3]
+- [Flask，从简单开始][4]
 
 [1]: https://zhuanlan.zhihu.com/p/68676316
 [2]: https://zhuanlan.zhihu.com/p/46983059
 [3]: https://zhuanlan.zhihu.com/p/66144617
+[4]: https://heleifz.github.io/15013781349463.html
