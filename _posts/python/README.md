@@ -271,7 +271,7 @@ todo = api.model('Todo', {
     'task': fields.String(required=True, description='The task details')
 })
 
-
+# DAO
 class TodoDAO(object):
     def __init__(self):
         self.counter = 0
@@ -304,7 +304,7 @@ DAO.create({'task': 'Build an API'})
 DAO.create({'task': '?????'})
 DAO.create({'task': 'profit!'})
 
-
+# 对 all todo 操作
 @ns.route('/')
 class TodoList(Resource):
     '''获取所有todos元素，并允许通过POST来添加新的task'''
@@ -321,7 +321,7 @@ class TodoList(Resource):
         '''创建一个新的task'''
         return DAO.create(api.payload), 201
 
-
+# 对其中 某个id 的 实体 操作
 @ns.route('/<int:id>')
 @ns.response(404, 'Todo not found')
 @ns.param('id', 'The task identifier')
@@ -349,6 +349,24 @@ class Todo(Resource):
 
 if __name__ == '__main__':
     app.run(debug=True)
+```
+
+get all
+
+```bash
+curl "http://localhost:5000/todos/"
+```
+
+get id
+
+```bash
+curl -X GET "http://localhost:5000/todos/1" -H "accept: application/json"
+```
+
+delete:
+
+```bash
+curl -X DELETE "http://localhost:5000/todos/2" -H "accept: application/json"
 ```
 
 ## Reference
