@@ -37,7 +37,7 @@ $ docker version
 $ docker info
 ```
 
-## 4. image File
+## 4. image file
 
 1. Docker 把 Application 及依赖，打包在 image file 里.
 2. 只有通过这个 image file，才能生成 Docker Container, image file 可以看作是 template of container.
@@ -99,7 +99,45 @@ control + D or 下面的 CMD
 $ docker container kill [containID]
 ```
 
-## 6. 容器文件
+## 6. container file
+
+image 文件生成的容器实例，本身也是一个文件，称为 container file。
+
+> 也就是说，一旦 container 生成，就会同时存在 2 files： **image file** 和 **container file**。
+> 
+> 且 close container 并不会 delete container file，只是 container stop run.
+
+```bash
+# 列出本机正在运行的容器
+$ docker container ls
+
+# 列出本机所有容器，包括终止运行的容器
+$ docker container ls --all
+```
+
+## 7. Dockerfile
+
+## 8. Custom docker container
+
+### 8.1 make Dockerfile
+
+### 8.2 create image
+
+### 8.3 generate Container
+
+### 8.4 CMD
+
+### 8.5 Release image
+
+## 9. other command
+
+```bash
+docker container start
+docker container stop
+docker container logs
+docker container exec
+docker container cp
+```
 
 ## Reference
 
