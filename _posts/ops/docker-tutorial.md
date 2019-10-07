@@ -101,7 +101,7 @@ $ docker container kill [containID]
 
 ## 6. container file
 
-image 文件生成的容器实例，本身也是一个文件，称为 container file。
+image file 生成的 **instance of container**，本身也是一个文件，称为 container file。
 
 > 也就是说，一旦 container 生成，就会同时存在 2 files： **image file** 和 **container file**。
 > 
@@ -116,6 +116,12 @@ $ docker container ls --all
 ```
 
 ## 7. Dockerfile
+
+> 学会使用 image 文件以后，接下来的问题就是，如何生成 image 文件？
+>
+> 这需要用到 Dockerfile 文件。它是一个文本文件，用来配置 image。
+> 
+> Docker 根据 Dockerfile 生成二进制的 image file。
 
 ## 8. Custom docker container
 
