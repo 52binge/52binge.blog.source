@@ -7,7 +7,7 @@ tags: Docker
 mathjax: true
 ---
 
-<img src="/images/devops/docker-1.png" width="550" alt="WSGI" />
+<img src="/images/devops/docker-1.png" width="550" alt="Docker" />
 
 <!-- more -->
 
@@ -129,7 +129,7 @@ $ docker container ls --all
 
 ### 8.5 Release image
 
-## 9. other command
+## 9. other docker command
 
 ```bash
 docker container start
