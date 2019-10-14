@@ -1,5 +1,5 @@
 ---
-title: Docker 入门教程
+title: Docker tutorial
 toc: true
 date: 2019-10-07 17:11:21
 categories: devops
@@ -39,7 +39,7 @@ $ docker info
 
 ## 4. image file
 
-1. Docker 把 Application 及依赖，打包在 image file 里.
+1. Docker 把 **`Application 及依赖，打包在 image file`** 里.
 2. 只有通过这个 image file，才能生成 Docker Container, image file 可以看作是 template of container.
 3. Docker 根据 image file 生成 instance of container.
 4. 同一 image 文件，可以生成多个同时运行的 instance of container.
