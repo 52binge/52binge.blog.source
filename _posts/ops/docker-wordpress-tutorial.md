@@ -58,6 +58,7 @@ Docker 使得软件可以拆分成若干个标准化容器，然后像搭积木�
 - [阮一峰: MVC，MVP 和 MVVM 的图示][u5]
 - [阮一峰: Linux的五个查找命令][u7]
 - [阮一峰: curl 的用法指南][u8]
+- 
 
 
 - [CoolShell: 打造高效的工作环境 – SHELL 篇][u9]
@@ -99,12 +100,14 @@ devops
 [d6]: http://www.ruanyifeng.com/blog/2016/07/yaml.html
 [d7]: https://www.epubit.com/bookDetails?id=N847
 [d8]: http://www.ruanyifeng.com/blog/2014/03/server_setup.html
-[d9]: http://www.ruanyifeng.com/blog/2012/08/how_to_read_diff.html
+[d9]: http://www.ruanyifeng.com/blog/2012/08/how_to_read_diff.html'
 
 other
 
 - [我的Tweet档案][o1]
+- https://www.liaoxuefeng.com/
 - [陈皓读过的书(72)][o2]
 
 [o1]: http://www.ruanyifeng.com/blog/2010/05/my_wp_tweet_archive.html
 [o2]: https://book.douban.com/people/haoel/collect?start=0&sort=time&rating=all&filter=all&mode=grid
+[o3]: https://www.liaoxuefeng.com/
