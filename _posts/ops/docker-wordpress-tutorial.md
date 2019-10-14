@@ -11,7 +11,7 @@ mathjax: true
 
 <!-- more -->
 
-站在 Docker 的角度，软件就是容器的组合：
+站在 Docker 的角度，**`Software`** is the combination of **`Containers`**：
 
 > 1. 业务逻辑容器
 > 2. 数据库容器
@@ -26,7 +26,7 @@ Docker 使得软件可以拆分成若干个标准化容器，然后像搭积木�
 
 <img src="/images/devops/docker2-3.png" width="550" alt="Docker Microservices" />
 
-如何在一台计算机上实现多个服务，让它们互相配合，组合出一个应用程序:
+如何在**一台计算机**上实现多个 **`Services`**，让它们互相配合，组合出一个 **`Application`**:
 
 <img src="/images/devops/docker2-4.png" width="550" alt="Docker Microservices" />
 
@@ -38,20 +38,62 @@ Docker 使得软件可以拆分成若干个标准化容器，然后像搭积木�
 
 ## 1. 自建 WordPress Container
 
-[方法 A：自建 WordPress 容器][2]
+[方法 A：自建 WordPress Container][2]
 
 ## 2. 官方 WordPress Container
 
-[方法 B：采用官方的 WordPress 容器][2]
+[方法 B：官方 WordPress Container][2]
 
 ## 3. 采用 Docker Compose Tool
 
-[方法 C：采用 Docker Compose 工具][2]
+[方法 C：采用 Docker Compose Tool][2]
 
 ## Reference
 
-- [阮一峰: Docker 入门教程][1]
-- [阮一峰: Docker 微服务教程][2]
+- [阮一峰: Docker 入门教程][u1]
+- [阮一峰: Docker 微服务教程][u2]
+- [阮一峰: developer 手册][u3]
+- [阮一峰: RESTful API 最佳实践][u4]
+- [阮一峰: RESTful API 设计指南][u6]
+- [阮一峰: MVC，MVP 和 MVVM 的图示][u5]
+- [阮一峰: Linux的五个查找命令][u7]
+- [阮一峰: curl 的用法指南][u8]
 
-[1]: http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html
-[2]: http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html
+[u1]: http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html
+[u2]: http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html
+[u3]: http://www.ruanyifeng.com/blog/developer/
+[u4]: http://www.ruanyifeng.com/blog/2018/10/restful-api-best-practices.html
+
+[u5]: http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html
+[u6]: http://www.ruanyifeng.com/blog/2014/05/restful_api.html
+
+[u7]: http://www.ruanyifeng.com/blog/2009/10/5_ways_to_search_for_files_using_the_terminal.html
+[u8]: http://www.ruanyifeng.com/blog/2019/09/curl-reference.html
+
+devops
+
+- [阮一峰: awk 入门教程][d1]
+- [阮一峰: xargs 命令教程][d2]
+- [阮一峰: Vim 配置入门][d3]
+- [阮一峰: 命令行通配符教程][d4]
+- [阮一峰: 为什么文件名要小写？][d5]
+- [阮一峰: YAML 语言教程][d6]
+- [阮一峰: Linux Server的初步配置流程][d8]
+- [阮一峰: 读懂diff][d9]
+- [Steve Yegge 程序员的呐喊][d7]
+
+[d1]: http://www.ruanyifeng.com/blog/2018/11/awk.html
+[d2]: http://www.ruanyifeng.com/blog/2019/08/xargs-tutorial.html
+[d3]: http://www.ruanyifeng.com/blog/2018/09/vimrc.html
+[d4]: http://www.ruanyifeng.com/blog/2018/09/bash-wildcards.html
+[d5]: http://www.ruanyifeng.com/blog/2017/02/filename-should-be-lowercase.html
+[d6]: http://www.ruanyifeng.com/blog/2016/07/yaml.html
+[d7]: https://www.epubit.com/bookDetails?id=N847
+[d8]: http://www.ruanyifeng.com/blog/2014/03/server_setup.html
+[d9]: http://www.ruanyifeng.com/blog/2012/08/how_to_read_diff.html
+
+other
+
+- [我的Tweet档案][o1]
+
+[o1]: http://www.ruanyifeng.com/blog/2010/05/my_wp_tweet_archive.html
