@@ -59,6 +59,11 @@ Docker 使得软件可以拆分成若干个标准化容器，然后像搭积木�
 - [阮一峰: Linux的五个查找命令][u7]
 - [阮一峰: curl 的用法指南][u8]
 
+
+- [CoolShell: 打造高效的工作环境 – SHELL 篇][u9]
+- [CoolShell: 记一次KUBERNETES/DOCKER网络排障][u10]
+- [CoolShell: 程序员技术练级攻略][u11]
+
 [u1]: http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html
 [u2]: http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html
 [u3]: http://www.ruanyifeng.com/blog/developer/
@@ -69,6 +74,10 @@ Docker 使得软件可以拆分成若干个标准化容器，然后像搭积木�
 
 [u7]: http://www.ruanyifeng.com/blog/2009/10/5_ways_to_search_for_files_using_the_terminal.html
 [u8]: http://www.ruanyifeng.com/blog/2019/09/curl-reference.html
+
+[u9]: https://coolshell.cn/articles/19219.html
+[u10]: https://coolshell.cn/articles/18654.html
+[u11]: https://coolshell.cn/articles/4990.html
 
 devops
 
@@ -95,5 +104,7 @@ devops
 other
 
 - [我的Tweet档案][o1]
+- [陈皓读过的书(72)][o2]
 
 [o1]: http://www.ruanyifeng.com/blog/2010/05/my_wp_tweet_archive.html
+[o2]: https://book.douban.com/people/haoel/collect?start=0&sort=time&rating=all&filter=all&mode=grid
