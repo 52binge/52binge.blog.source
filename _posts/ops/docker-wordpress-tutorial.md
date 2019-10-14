@@ -38,15 +38,15 @@ Docker 使得软件可以拆分成若干个标准化容器，然后像搭积木�
 
 ## 1. 自建 WordPress Container
 
-[方法 A：自建 WordPress Container][2]
+[方法 A：自建 WordPress Container][u2]
 
 ## 2. 官方 WordPress Container
 
-[方法 B：官方 WordPress Container][2]
+[方法 B：官方 WordPress Container][u2]
 
 ## 3. 采用 Docker Compose Tool
 
-[方法 C：采用 Docker Compose Tool][2]
+[方法 C：采用 Docker Compose Tool][u2]
 
 ## Reference
 
