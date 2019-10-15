@@ -7,7 +7,7 @@ tags: Docker
 mathjax: true
 ---
 
-<img src="/images/devops/docker-1.png" width="550" alt="Docker" />
+<img src="/images/devops/docker-1.1.jpg" width="550" alt="Docker" />
 
 <!-- more -->
 
