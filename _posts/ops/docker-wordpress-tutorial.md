@@ -183,7 +183,9 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 ## 3. Docker Compose Tool
 
-[方法 C：采用 Docker Compose Tool][u2]
+[Compose](https://docs.docker.com/compose/) 一个工具软件, 可以管理多个 Docker 容器组成一个应用.
+
+> 定义 docker-compose.yml，写好多容器的调用关系。然后，只要一个命令，就能同时启动/关闭这些容器.
 
 ## Reference
 
