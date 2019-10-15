@@ -187,6 +187,49 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 > 定义 docker-compose.yml，写好多容器的调用关系。然后，只要一个命令，就能同时启动/关闭这些容器.
 
+```bash
+docker-compose --version
+```
+
+### 3.1 WordPress example
+
+```
+mysql:
+    image: mysql:5.7
+    environment:
+     - MYSQL_ROOT_PASSWORD=123456
+     - MYSQL_DATABASE=wordpress
+web:
+    image: wordpress
+    links:
+     - mysql
+    environment:
+     - WORDPRESS_DB_PASSWORD=123456
+    ports:
+     - "127.0.0.3:8080:80"
+    working_dir: /var/www/html
+    volumes:
+     - wordpress:/var/www/html
+```
+
+启动 2个 Container
+
+```bash
+docker-compose up
+```
+
+关闭 2个 Container
+
+```bash
+docker-compose stop
+```
+
+关闭以后，这两个容器文件还是存在的，写在里面的数据不会丢失。下次启动的时候，还可以复用。下面的命令可以把这两个容器文件删除（容器必须已经停止运行）。
+
+```bash
+docker-compose rm
+```
+
 ## Reference
 
 - [阮一峰: Docker 入门教程][u1]
