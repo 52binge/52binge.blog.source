@@ -6,23 +6,17 @@ categories: nlp
 tags: NER
 ---
 
-<img src="/images/nlp/info-NER-1.png" width="550" alt="Information Extraction, Named Entity Recognition"/>
+<!--<img src="/images/nlp/info-NER-1.png" width="550" alt="Information Extraction, Named Entity Recognition"/>-->
+
+<img src="/images/nlp/info-NER-2.png" width="600" />
 
 <!-- more -->
 
-<br>
-
-图像和语音属于感知智能，而文本属于认知智能，所以号称是“人工智能的明珠”，难度很大。
-
 ## 1. NER Introduce
 
-**NER系统 就是从非结构化的输入文本中抽取出上述实体，并且可以按照业务需求识别出更多类别的实体**.
+NER系统 就是从非结构化的输入文本中抽取出上述实体，并且可以按照业务需求识别出更多类别的实体.
 
-> 比如 产品名称、型号、价格等。
-
-<br>
-<img src="/images/nlp/info-NER-2.png" width="700" alt="Information Extraction, NER"/>
-<br>
+<!--<img src="/images/nlp/info-NER-2.png" width="700" alt="Information Extraction, NER"/>-->
 
 > 命名实体识别是未登录词中数量最多、识别难度最大、对分词效果影响最大的问题，同时它也是信息抽取、信息检索、机器翻译、问答系统等多种自然语言处理技术必不可少的组成部分。 
 

@@ -134,7 +134,37 @@ docker container run \
 
 [方法 B：官方 WordPress Container][u2]
 
-基本用法
+```bash
+docker container run \
+  -d \
+  --rm \
+  --name wordpressdb \
+  --env MYSQL_ROOT_PASSWORD=123456 \
+  --env MYSQL_DATABASE=wordpress \
+  mysql:5.7
+```
+<p></p>
+```bash
+docker container run \
+  -d \
+  --rm \
+  --name wordpress \
+  --env WORDPRESS_DB_PASSWORD=123456 \
+  --link wordpressdb:mysql \
+  wordpress
+99e93c4dfc7c8d113a0bc5090e72b17d0f34196183113d6e6593b4e44ceeef36
+(anaconda3) (base)
+```
+
+docker container ls --all
+
+```bash
+➜ docker container ls --all
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                 NAMES
+99e93c4dfc7c        wordpress           "docker-entrypoint.s…"   2 seconds ago       Up 1 second         80/tcp                wordpress
+373fcc5e1b94        mysql:5.7           "docker-entrypoint.s…"   2 minutes ago       Up 2 minutes        3306/tcp, 33060/tcp   wordpressdb
+(anaconda3) (base)
+```
 
 ## 3. 采用 Docker Compose Tool
 
