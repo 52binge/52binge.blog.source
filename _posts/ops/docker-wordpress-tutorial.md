@@ -181,7 +181,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 ➜ docker container stop wordpress wordpressdb
 ```
 
-## 3. 采用 Docker Compose Tool
+## 3. Docker Compose Tool
 
 [方法 C：采用 Docker Compose Tool][u2]
 
