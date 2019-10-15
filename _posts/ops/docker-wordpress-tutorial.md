@@ -130,9 +130,11 @@ docker container run \
 ➜ docker container stop wordpress wordpressdb
 ```
 
-## 2. 官方 WordPress Container
+## 2. Official WordPress Container
 
 [方法 B：官方 WordPress Container][u2]
+
+### 2.1 mysql container
 
 ```bash
 docker container run \
@@ -143,20 +145,25 @@ docker container run \
   --env MYSQL_DATABASE=wordpress \
   mysql:5.7
 ```
-<p></p>
+
+### 2.2 wordpress container
+
 ```bash
-docker container run \
+➜ docker container run \
+  -p 8080:80 \
   -d \
   --rm \
   --name wordpress \
   --env WORDPRESS_DB_PASSWORD=123456 \
   --link wordpressdb:mysql \
   wordpress
-99e93c4dfc7c8d113a0bc5090e72b17d0f34196183113d6e6593b4e44ceeef36
-(anaconda3) (base)
 ```
 
-docker container ls --all
+>   -p 127.0.0.1:8080:80：将容器的 80 端口 映射到 127.0.0.2 的 8080 端口
+> 
+>   --volume "$PWD/wordpress":/var/www/html：将容器的/var/www/html目录映射到当前目录的wordpress子目录
+
+### 2.3 docker container ls
 
 ```bash
 ➜ docker container ls --all
@@ -164,6 +171,14 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 99e93c4dfc7c        wordpress           "docker-entrypoint.s…"   2 seconds ago       Up 1 second         80/tcp                wordpress
 373fcc5e1b94        mysql:5.7           "docker-entrypoint.s…"   2 minutes ago       Up 2 minutes        3306/tcp, 33060/tcp   wordpressdb
 (anaconda3) (base)
+```
+
+浏览器 http://localhost:8080 就能看到 WordPress 的安装提示.
+
+### 2.4 stop containers
+
+```bash
+➜ docker container stop wordpress wordpressdb
 ```
 
 ## 3. 采用 Docker Compose Tool
