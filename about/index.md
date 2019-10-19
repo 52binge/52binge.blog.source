@@ -53,14 +53,9 @@ when we meet here. we can focusing on efficient learning, way of thinking, and c
 
 <!-- 社会是复杂的，我们为了自己的整体格局提升， 一定要照顾沟通者的感受。
 每个人的追求和思考面都是不同的，要换位思考，尊重每一个肯为梦想而努力奋斗的人。 
-
 -->
-<!--
-<img src="/images/how/how_logo3.jpg" width="500" /img>
 
-HIMYM 影響一個人的價值觀、友情觀、愛情觀…, 包含蠻多人生哲理，同時摻雜現實因素.
--->
-<img src="/images/tw/tw-2016-08-30-nz.jpg" width="500" /img>
+<img src="/images/tw/tw-2016-08-30-nz.jpg" width="500" />
 
 
 ### Classic line
