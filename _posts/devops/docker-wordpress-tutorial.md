@@ -236,10 +236,12 @@ docker-compose rm
 - [阮一峰: Docker 微服务教程][u2]
 - [阮一峰: developer 手册][u3]
 - [荒野之萍: Docker最简教程][u4]
+- [Hexo+Github博客最简教程-Dockerfile自动搭建][u5]
 
 [u1]: http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html
 [u2]: http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html
 [u3]: http://www.ruanyifeng.com/blog/developer/
 [u4]: https://icoty.github.io/2019/04/22/docker/
+[u5]: https://icoty.github.io/2019/04/18/docker-hexo-blog/
 
 
