@@ -101,17 +101,11 @@ This message shows that your installation appears to be working correctly.
 
 (4). 手动终止容器
 
-> 对于那些不会自动终止的容器，必须使用 docker container kill 手动终止.
-
-control + D or 下面的 CMD
+对于那些不会自动终止的容器，必须使用 docker container kill 手动终止.
 
 ```bash
 $ docker container kill [containID]
 ```
-
-> - docker stop: Stop a running container (send SIGTERM, and then SIGKILL after grace period) [...] The main process inside the container will receive SIGTERM, and after a grace period, SIGKILL. [emphasis mine]
-> 
-> - docker kill: Kill a running container (send SIGKILL, or specified signal) [...] The main process inside the container will be sent SIGKILL, or any signal specified with option --signal. [emphasis mine]
 
 ## 6. container file
 
@@ -144,15 +138,21 @@ docker run hello-world		#执行Docker镜像，镜像名字为hello-world
 
 ## 7. Dockerfile
 
-> 学会使用 image 文件以后，接下来的问题就是，如何生成 image 文件？
->
-> 这需要用到 Dockerfile 文件。它是一个文本文件，用来配置 image。
-> 
-> Docker 根据 Dockerfile 生成二进制的 image file。
+学会使用 image 文件以后，接下来的问题就是，如何生成 image 文件？
+
+这需要用到 Dockerfile 文件。它是一个文本文件，用来配置 image。
+ 
+> Docker 根据 Dockerfile 生成二进制的 image file .
 
 ## 8. Custom docker container
 
 ### 8.1 make Dockerfile
+
+```
+.git
+node_modules
+npm-debug.log
+```
 
 ### 8.2 create image
 
@@ -162,20 +162,96 @@ docker run hello-world		#执行Docker镜像，镜像名字为hello-world
 
 ### 8.5 Release image
 
-## 9. other docker command
+在 hub.docker.com 或 cloud.docker.com 注册一个账户。然后，用下面的命令登录。
+ 
+```bash
+$ docker login
+```
+
+接着，为本地的 image 标注用户名和版本：
 
 ```bash
-docker container start
-docker container stop
-docker container logs
-docker container exec
-docker container cp
+$ docker image tag [imageName] [username]/[repository]:[tag]
+# 实例
+$ docker image tag koa-demos:0.0.1 ruanyf/koa-demos:0.0.1
+```
+
+也可以不标注用户名，重新构建一下 image 文件也是可以的:
+
+```bash
+$ docker image build -t [username]/[repository]:[tag] .
+```
+
+最后，发布 image 文件:
+
+```bash
+$ docker image push [username]/[repository]:[tag]
+```
+
+## 9. other docker command
+
+docker 的主要用法就是上面这些，此外还有几个命令，也非常有用
+
+```bash
+docker container start [containerID]
+docker container stop [containerID]
+docker container logs [containerID]
+docker container exec [containerID]
+docker container cp [containerID]
+```
+
+### 9.1 container start
+
+> 命令是新建容器，每运行一次，就会新建一个容器。同样的命令运行两次，就会生成两个一模一样的容器文件。
+
+```bash
+$ docker container start [containerID]
+```
+
+### 9.2 container stop
+
+docker container kill 命令终止容器运行，相当于向容器里面的主进程发出 SIGKILL 信号。
+
+```bash
+$ docker container kill [containerID]
+```
+
+docker container stop 命令也是用来终止容器运行，相当于向容器里面的主进程发出 SIGTERM 信号，然后过一段时间再发出 SIGKILL 信号
+
+```bash
+$ docker container stop [containerID]
+```
+
+### 9.3 container logs
+
+docker container logs 命令用来查看 docker 容器的输出，即容器里面 Shell 的标准输出。
+
+```bash
+$ docker container logs [containerID]
+```
+
+### 9.4 container exec
+
+docker container exec 命令用于进入一个正在运行的 docker Container.
+
+```bash
+$ docker container exec -it [containerID] /bin/bash
+```
+
+### 9.5 container cp
+
+docker container cp 命令用于从正在运行的 Docker 容器里面，将文件拷贝到本机.
+
+```bash
+$ docker container cp [containID]:[/path/to/file] .
 ```
 
 ## Reference
 
 - [阮一峰: Docker 入门教程][1]
 - [阮一峰: Docker 微服务教程][2]
+- [Dockerfile文件详解][3]
 
 [1]: http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html
 [2]: http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html
+[3]: https://hujb2000.gitbooks.io/docker-flow-evolution/content/cn/basis/dockerfiledetail.html
