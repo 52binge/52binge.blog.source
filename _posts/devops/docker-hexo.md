@@ -18,10 +18,21 @@ mathjax: true
 
 Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。
 
-{% codeblock Array.map %}
-array.map(callback[, thisArg])
-{% endcodeblock %}
+## 4. dockerfile
 
+```bash
+FROM blair101/ubuntu-hexo-blog:v1.3
+
+COPY ./source /blog/source
+
+WORKDIR /blog
+
+#RUN hexo s
+
+EXPOSE 4000
+
+CMD hexo s
+```
 
 ## Reference
 
