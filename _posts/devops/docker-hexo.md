@@ -30,13 +30,16 @@ array.map(callback[, thisArg])
 - [阮一峰: Docker 微服务教程][2]
 - [荒野之萍: Docker 最简教程][u1]
 - [荒野之萍: Hexo+Github-Dockerfile自动搭建][u2]
+- [Docker 容器从入门到入魔][u3]
 
 [1]: http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html
 [2]: http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html
 [3]: https://hexo.io/
 [4]: https://hexo.io/zh-tw/docs/server.html
+
 [u1]: https://icoty.github.io/2019/04/22/docker/
 [u2]: https://icoty.github.io/2019/04/18/docker-hexo-blog/
+[u3]: https://zhuanlan.zhihu.com/p/45610616
 
 plugins:
 
