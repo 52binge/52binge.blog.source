@@ -74,6 +74,7 @@ pre-training 过程同时优化上面两个任务，其结束后就可以在特�
 - [一步步理解BERT][7]
 - [当Bert遇上Keras：这可能是Bert最简单的打开姿势][8]
 - [BERT完全指南][a6]
+- [自然语言处理中的Transformer和BERT][9]
 
 [a6]: https://terrifyzhao.github.io/2019/01/17/BERT完全指南.html
 
@@ -85,4 +86,5 @@ pre-training 过程同时优化上面两个任务，其结束后就可以在特�
 [6]: https://zhuanlan.zhihu.com/p/50717786
 [7]: https://mp.weixin.qq.com/s/H4at_BDLwZWqlBHLjMZWRQ
 [8]: https://kexue.fm/archives/6736
+[9]: https://zhuanlan.zhihu.com/p/53099098
 
