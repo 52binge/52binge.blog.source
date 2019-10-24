@@ -37,10 +37,23 @@ BERT的目的是预训练语言模型，简单来说就是预训练一个模型�
 
 **那么BERT是如何预训练的呢？**
 
-## Masked Language Model
-
+## Task1： Masked Language Model
 
 [Transformer与BERT浅说](https://zhuanlan.zhihu.com/p/49542105)
+
+## Task2: Next Sentence Prediction
+
+NSP 简单说就是预测 句子B 是否承接 句子A，具体 BERT 的策略是：
+
+> (1). 50%B是A的下文，label=IsNext
+> 
+> (2). 50%不是，label=NotNext
+
+也就是个二分类问题。
+
+<img src="/images/nlp/BERT-tutorial-2.jpg" width="700" alt="NSP简单说就是预测句子B是否承接句子A" />
+
+pre-training 过程同时优化上面两个任务，其结束后就可以在特定任务上进行 fine-tuning，仅需在BERT的基础上增加相应的 output layer 即可.
 
 ## Reference
 
