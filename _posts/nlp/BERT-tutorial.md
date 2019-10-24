@@ -39,9 +39,17 @@ BERT的目的是预训练语言模型，简单来说就是预训练一个模型�
 
 ## Task1： Masked Language Model
 
+思想很简单，就是随机mask句子中的一部分词，目标是利用其它词去预测被mask掉的词。
+
+具体BERT采取的策略如下：
+
+<img src="/images/nlp/Bert-tutorial-1.jpg" width="600" alt="Masked Language Model" />
+
+文中解释并不100%进行mask的原因是为了保持pre-training与fine-tuning的一致，因为fine-tuning的时候并不能看到[mask]。至于引入随机word的原因个人感觉仅仅是引入一些噪声从而使模型更稳健，具有一定纠错能力。一点牵强的理由是文中强调了和denoising auto-encoders的区别。
+
 [Transformer与BERT浅说](https://zhuanlan.zhihu.com/p/49542105)
 
-## Task2: Next Sentence Prediction
+## Task2： Next Sentence Prediction
 
 NSP 简单说就是预测 句子B 是否承接 句子A，具体 BERT 的策略是：
 
@@ -51,7 +59,7 @@ NSP 简单说就是预测 句子B 是否承接 句子A，具体 BERT 的策略�
 
 也就是个二分类问题。
 
-<img src="/images/nlp/BERT-tutorial-2.jpg" width="700" alt="NSP简单说就是预测句子B是否承接句子A" />
+<img src="/images/nlp/Bert-tutorial-2.jpg" width="700" alt="NSP简单说就是预测句子B是否承接句子A" />
 
 pre-training 过程同时优化上面两个任务，其结束后就可以在特定任务上进行 fine-tuning，仅需在BERT的基础上增加相应的 output layer 即可.
 
