@@ -30,7 +30,7 @@ Target：
 > 2. 收集的日志根据容器名分开存储
 > 3. 日志文件根据每天滚动
 
-### 2.1 配置Fluentd实例
+### 2.1 配置 Fluentd 实例
 
 fluent.conf
 
@@ -82,7 +82,7 @@ docker run -it \
   fluent/fluentd:v1.7.3-debian-1.0
 ```
 
-### 2.2 指定容器的logging driver
+### 2.2 指定 logging driver
 
 ```bash
 docker run \
