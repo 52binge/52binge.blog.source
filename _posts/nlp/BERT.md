@@ -1,6 +1,6 @@
 ---
 title: BERT 完全指南
-top: 9
+top: 4
 date: 2019-06-20 11:00:21
 categories: nlp
 tags: BERT
