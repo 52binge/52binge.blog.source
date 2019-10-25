@@ -170,6 +170,72 @@ curl -X GET http://localhost:9080
 
 ## 4. fluent-logger-python
 
+### 4.1 fluentd.conf
+
+```bash
+<source>
+  @type forward
+  port 24224
+</source>
+<match fluentd.test.**>
+  @type stdout
+</match>
+```
+
+Please restart your agent once these lines are in place.
+
+```bash
+docker run -d \
+-p 24224:24224 \
+-v /tmp/fluentd/etc:/fluentd/etc -e FLUENTD_CONF=fluentd.conf \
+-v /tmp/container-logs:/fluentd/log \
+fluent/fluentd
+```
+
+### 4.2 Using fluent-logger-python
+
+First, install the fluent-logger library via pip.
+
+```bash
+pip install fluent-logger
+```
+
+Next, initialize and post the records as shown below.
+
+```py
+# test.py
+from fluent import sender
+from fluent import event
+sender.setup('fluentd.test', host='localhost', port=24224)
+event.Event('follow', {
+  'from': 'userA',
+  'to':   'userB'
+})
+```
+
+Executing the script will send the logs to Fluentd
+
+```bash
+# /tmp/fluentd/etc [14:21:01]
+➜ python test.py
+```
+
+show docker fluentd log
+
+```
+# /tmp/fluentd/etc [14:21:11]
+➜ docker logs cda923986a28
+```
+
+```
+2019-10-25 06:19:57 +0000 [info]: parsing config file is succeeded path="/fluentd/etc/fluentd.conf"
+...
+...
+...
+2019-10-25 06:21:11.000000000 +0000 fluentd.test.follow: {"from":"userA","to":"userB"}
+(anaconda3) (base)
+```
+
 ## Reference
 
 - [docs.fluentd.org][1]
@@ -181,6 +247,8 @@ curl -X GET http://localhost:9080
 - [fluentd收集docker容器日志][8]
 - [Docker安装Fluentd并管理 Docker 日志][9]
 - [fluent-logger-python][10]
+- [github.com/fluent/fluent-logger-python][11]
+- [fluent-logger-python, 用於Fluentd的結構化記錄器( python )][12]
 
 [1]: https://docs.fluentd.org/installation/install-by-dmg
 [2]: https://hub.docker.com/r/fluent/fluentd
@@ -192,3 +260,5 @@ curl -X GET http://localhost:9080
 [8]: https://www.yipzale.me/2018/04/22/fluentd-collect-dockerlog.html
 [9]: http://www.pangxieke.com/linux/docker-logging-fluentd.html
 [10]: https://docs.fluentd.org/v/0.12/articles/python
+[11]: https://github.com/fluent/fluent-logger-python
+[12]: https://hant.helplib.com/GitHub/article_58290
