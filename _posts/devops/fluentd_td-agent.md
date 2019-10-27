@@ -168,9 +168,9 @@ curl -X GET http://localhost:9080
 ➜
 ```
 
-## 4. fluent-logger-python
+## 4. Fluent-Logger-Python
 
-### 4.1 fluentd.conf
+**fluentd.conf**
 
 ```bash
 <source>
@@ -192,7 +192,7 @@ docker run -d \
 fluent/fluentd
 ```
 
-### 4.2 Using fluent-logger-python
+### 4.1 Event-Based Interface
 
 First, install the fluent-logger library via pip.
 
@@ -234,6 +234,135 @@ show docker fluentd log
 ...
 2019-10-25 06:21:11.000000000 +0000 fluentd.test.follow: {"from":"userA","to":"userB"}
 (anaconda3) (base)
+```
+
+[#fluentsender-interface](https://github.com/fluent/fluent-logger-python#fluentsender-interface)
+
+### 4.2 FluentSender Interface
+
+**fluentd.conf**
+
+```html
+<source>
+  @type forward
+  port 24224
+</source>
+
+<match fluentd.test.**>
+  @type stdout
+</match>
+
+<match app.**>
+  type stdout
+</match>
+```
+
+**app.py**
+
+```python
+from fluent import sender
+from fluent import event
+
+import time
+
+'''
+   FluentSender Interface
+   
+     sender.FluentSender is a structured event logger for Fluentd.
+
+     By default, the logger assumes fluentd daemon is launched locally. You can also specify remote logger by passing the options.
+'''
+
+# for local fluent
+logger = sender.FluentSender('app')
+
+# for remote fluent
+logger = sender.FluentSender('app', host='localhost', port=24224)
+
+# Specify optional time
+cur_time = int(time.time())
+
+logger.emit_with_time('follow', cur_time, {'from': 'userA', 'to':'userB'})
+```
+
+### 4.3 Handler for buffer overflow
+
+You can inject your own custom proc to handle buffer overflow in the event of connection failure. This will mitigate the loss of data instead of simply throwing data away.
+
+```python
+from fluent import sender
+from fluent import event
+
+import time
+
+import msgpack
+from io import BytesIO
+
+def overflow_handler(pendings):
+    unpacker = msgpack.Unpacker(BytesIO(pendings))
+    for unpacked in unpacker:
+        print(unpacked)
+
+# for local fluent
+logger = sender.FluentSender('app')
+
+# for remote fluent
+logger = sender.FluentSender('app', host='localhost', port=24224)
+
+# Specify optional time
+cur_time = int(time.time())
+
+# logger.emit_with_time('follow', cur_time, {'from': 'userA', 'to':'userB'})
+
+# Use nanosecond
+logger = sender.FluentSender('app', nanosecond_precision=True)
+
+logger = sender.FluentSender('app', host='localhost', port=24224, buffer_overflow_handler=overflow_handler)
+
+logger.emit('follow', {'from': 'userA', 'to': 'userB'})
+
+logger.emit_with_time('follow', time.time(), {'from': 'userA', 'to': 'userB'})
+
+logger.close()
+```
+
+### 4.4 Python logging.Handler interface
+
+This client-library also has FluentHandler class for Python logging module.
+
+```python
+import logging
+from fluent import handler
+
+import msgpack
+from io import BytesIO
+
+custom_format = {
+    'host': '%(hostname)s',
+    'where': '%(module)s.%(funcName)s',
+    'type': '%(levelname)s',
+    'stack_trace': '%(exc_text)s'
+}
+
+logging.basicConfig(level=logging.INFO)
+
+def overflow_handler(pendings):
+    unpacker = msgpack.Unpacker(BytesIO(pendings))
+    for unpacked in unpacker:
+        print(unpacked)
+
+l = logging.getLogger('fluent.test')
+
+h = handler.FluentHandler('app.follow', host='localhost', port=24224, buffer_overflow_handler=overflow_handler)
+formatter = handler.FluentRecordFormatter(custom_format)
+h.setFormatter(formatter)
+l.addHandler(h)
+l.info({
+    'from': 'userA',
+    'to': 'userB'
+})
+l.info('{"from": "userC", "to": "userD"}')
+l.info("This log entry will be logged with the additional key: 'message'.")
 ```
 
 ## Reference
