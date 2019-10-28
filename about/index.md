@@ -42,7 +42,7 @@ when we meet here. we can focusing on efficient learning, way of thinking, and c
 
 <a class="article-myself" href="/about"> Blair Chan</a> 90s, a senior data engineer, a GTD practitioner, live in Singapore, Singapore.
 
-<a class="article-myself" href="https://instagram.com/blair101v/"> Blair Chan</a> focus on data science, machine/deep learning, algorithmic engineering, micro-services.
+<a class="article-myself" href="https://instagram.com/blair101v/"> Blair Chan</a> focus on data science, machine learning, algorithmic engineering, micro-services.
 
 <!--<a class="article-myself" href="/">  Libin Chan</a>-->
 <!-- <img src="/images/tech-logos/2016-10-03-6.png" width="250"  style="margin-left:100px;" /img> -->
