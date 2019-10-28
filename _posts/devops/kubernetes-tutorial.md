@@ -22,7 +22,7 @@ sysctl -a | grep -E --color 'machdep.cpu.features|VMX'
 brew cask install minikube
 ```
 
-Kubernetes is growing rapidly, has become a leader in **container choreography**。
+Kubernetes is growing rapidly, has become a leader in **Container Orchestration**。
 
 ## 2. Kubernetes why？
 
