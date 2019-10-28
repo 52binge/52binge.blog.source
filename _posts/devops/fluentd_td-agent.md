@@ -365,6 +365,23 @@ l.info('{"from": "userC", "to": "userD"}')
 l.info("This log entry will be logged with the additional key: 'message'.")
 ```
 
+**使用步骤总结：**
+
+> 1. FluentHandler (并可设置 formatter)
+> 2. logging instance , l.addHandler(h)
+
+**自定义格式化程序**
+
+你还可以通过 logging.config.dictConfig 自定义格式化程序
+
+```py
+import logging.configimport yamlwithopen('logging.yaml') as fd:
+ conf = yaml.load(fd)
+logging.config.dictConfig(conf['logging'])
+```
+
+你可以在连接失败时插入自己的自定义过程来处理缓冲区溢出。 这将减少数据的丢失，而不是简单地丢弃数据。
+
 ## Reference
 
 - [docs.fluentd.org][1]
