@@ -185,7 +185,8 @@ curl -X GET http://localhost:9080
 Please restart your agent once these lines are in place.
 
 ```bash
-docker run -d \
+docker run --rm \
+-d \
 -p 24224:24224 \
 -v /tmp/fluentd/etc:/fluentd/etc -e FLUENTD_CONF=fluentd.conf \
 -v /tmp/container-logs:/fluentd/log \
@@ -395,6 +396,8 @@ logging.config.dictConfig(conf['logging'])
 - [fluent-logger-python][10]
 - [github.com/fluent/fluent-logger-python][11]
 - [fluent-logger-python, 用於Fluentd的結構化記錄器( python )][12]
+- [fluentd中buffer配置][13]
+- [fluentd插件介绍][14]
 
 [1]: https://docs.fluentd.org/installation/install-by-dmg
 [2]: https://hub.docker.com/r/fluent/fluentd
@@ -408,3 +411,5 @@ logging.config.dictConfig(conf['logging'])
 [10]: https://docs.fluentd.org/v/0.12/articles/python
 [11]: https://github.com/fluent/fluent-logger-python
 [12]: https://hant.helplib.com/GitHub/article_58290
+[13]: https://www.li-rui.top/2018/11/29/log/fluentd中buffer配置/
+[14]: https://chenguolin.github.io/2019/02/28/Fluentd-3-Fluentd插件介绍/

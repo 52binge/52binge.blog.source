@@ -146,7 +146,7 @@ To access the hello-minikube Deployment, expose it as a Service:
 service/hello-minikube exposed
 ```
 
-### 4.4 hello-minikube Pod launche.
+### 4.4 view hello-minikube Pod
 
 The hello-minikube Pod is now launched but you have to wait until the Pod is up before accessing it via the exposed Service.
 
@@ -245,6 +245,8 @@ minikube delete
 - [郑建勋（jonson）K8S][8]
 - [官网 k8s 概念 & 对象][9]
 - [Docker 用户使用 kubectl 命令指南][10]
+- [Get a Shell to a Running Container][11]
+- [Label， Deployment， Service 和 健康检查][12]
 
 [1]: https://kubernetes.io
 [2]: https://kubernetes.io/docs/setup/learning-environment/minikube/
@@ -256,3 +258,5 @@ minikube delete
 [8]: https://dreamerjonson.com/2019/03/14/k8s/index.html
 [9]: https://kubernetes.io/zh/docs/concepts/
 [10]: https://kubernetes.io/zh/docs/reference/kubectl/docker-cli-to-kubectl/
+[11]: https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/
+[12]: http://kubernetes.kansea.com/docs/user-guide/walkthrough/k8s201/
