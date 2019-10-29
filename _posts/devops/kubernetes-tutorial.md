@@ -20,6 +20,19 @@ Kubernetes minikube install @Mac
 sysctl -a | grep -E --color 'machdep.cpu.features|VMX' 
 
 brew cask install minikube
+
+同時它也會一起安裝 kubectl 這個 Kubernetes 指令操作工具 kubectl
+```
+
+minikube version
+
+```bash
+# /tmp/fluentd/etc [9:47:26]
+➜ minikube version
+minikube version: v1.5.0
+commit: d1151d93385a70c5a03775e166e94067791fe2d9
+
+minikube 主要是用在練習和教學使用, 非生产环境.
 ```
 
 Kubernetes is growing rapidly, has become a leader in **Container Orchestration**。
@@ -60,19 +73,28 @@ Kubernetes 支持在多种环境下的安装:
 > 1. 本地主机（Fedora）
 > 2. 云服务（Google GAE、AWS）
 
+### 3.1 K8s architecture
+
 <img src="/images/devops/kubernetes-5.png" width="750" alt="kubernetes.io" />
 
-**Master有三个组件：API Server、Scheduler、Controller**:
+### 3.2 Master
+
+Master有三个组件：API Server、Scheduler、Controller:
 
 > 1. API Server 是整个系统的对外接口，提供 RESTful 方式供客户端和其它组件调用；
 > 2. Scheduler 负责对资源进行调度，分配某个 pod 到某个节点上；
 > 3. Controller-manager 负责管理控制器，包括 endpoint-controller（刷新服务和 pod 的关联信息）和 replication-controller（维护某个 pod 的复制为配置的数值）。
 
-**Node Architecture**
+### 3.3 Node
 
 <img src="/images/devops/kubernetes-4.jpg" width="600" alt="Kubernetes Node" />
 
-**Kubernetes 术语**
+集群中的每个非 master 节点都运行两个进程：
+
+> - **kubelet**，和 master 节点进行通信。
+> - kube-proxy，一种网络代理，将 Kubernetes 的网络服务代理到每个节点上。
+
+### 3.4 Kubernetes 术语
 
 > - Master（主节点）： 控制 Kubernetes 节点的机器，也是创建作业任务的地方。
 > - Node（节点）： 这些机器在 Kubernetes 主节点的控制下执行被分配的任务。
@@ -92,6 +114,12 @@ Kubernetes 支持在多种环境下的安装:
 
 ## 4. Quickstart minikube
 
+启动 Kubernetes cluster
+
+### 4.1 Start Minik & create cluster
+
+Start Minikube and create a cluster
+
 ```bash
 # /tmp/fluentd/etc [14:03:57]
 ➜ minikube start
@@ -100,7 +128,110 @@ Kubernetes 支持在多种环境下的安装:
 💾  Downloading driver docker-machine-driver-hyperkit:
 ```
 
+### 4.2 create a k8s Deployment
 
+Let’s create a Kubernetes Deployment using an existing image named echoserver, which is a simple HTTP server and expose it on port 8080 using --port.
+
+```bash
+➜ kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.10
+deployment.apps/hello-minikube created
+```
+
+### 4.3 hello-minikube Deployment
+
+To access the hello-minikube Deployment, expose it as a Service:
+
+```bash
+➜ kubectl expose deployment hello-minikube --type=NodePort --port=8080
+service/hello-minikube exposed
+```
+
+### 4.4 hello-minikube Pod launche.
+
+The hello-minikube Pod is now launched but you have to wait until the Pod is up before accessing it via the exposed Service.
+
+If the output shows the STATUS as Running, the Pod is now up and running:
+
+```bash
+➜ kubectl get pod
+NAME                              READY   STATUS    RESTARTS   AGE
+hello-minikube-797f975945-nrb6r   1/1     Running   0          2m14s
+(anaconda3) (base)
+```
+
+kubectl get cmd：
+
+```bash
+kubectl get node
+kubectl get po,svc -n kube-system
+```
+
+### 4.5 view the Service details
+
+Get the URL of the exposed Service to view the Service details:
+
+```bash
+➜ minikube service hello-minikube --url
+http://192.168.64.2:30799
+(anaconda3) (base)
+```
+
+Output: 
+
+```bash
+Hostname: hello-minikube-797f975945-nrb6r
+
+Pod Information:
+	-no pod information available-
+
+Server values:
+	server_version=nginx: 1.13.3 - lua: 10008
+
+Request Information:
+	client_address=172.17.0.1
+	method=GET
+	real path=/
+	query=
+	request_version=1.1
+	request_scheme=http
+	request_uri=http://192.168.64.2:8080/
+
+Request Headers:
+	accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3
+	accept-encoding=gzip, deflate
+	accept-language=zh-CN,zh;q=0.9,zh-TW;q=0.8,en-US;q=0.7,en;q=0.6
+	connection=keep-alive
+	host=192.168.64.2:30799
+	upgrade-insecure-requests=1
+	user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36
+
+Request Body:
+	-no body in request-
+```
+
+### 4.6 delete hello-minik service
+
+```bash
+kubectl delete services hello-minikube
+```
+
+### 4.7 delete hello-minik deploym
+
+```bash
+kubectl delete deployment hello-minikube
+```
+
+### 4.8 stop Minikube cluster
+
+```bash
+minikube stop
+```
+
+### 4.9 delete Minikube cluster
+
+```bash
+minikube delete
+```
 
 ## Reference
 
@@ -111,6 +242,9 @@ Kubernetes 支持在多种环境下的安装:
 - [Kubernetes 项目· Docker —— 从入门到实践 - yeasy][5]
 - [从0到1使用Kubernetes系列][6]
 - [知乎： Kubernetes 是什么？][7]
+- [郑建勋（jonson）K8S][8]
+- [官网 k8s 概念 & 对象][9]
+- [Docker 用户使用 kubectl 命令指南][10]
 
 [1]: https://kubernetes.io
 [2]: https://kubernetes.io/docs/setup/learning-environment/minikube/
@@ -119,3 +253,6 @@ Kubernetes 支持在多种环境下的安装:
 [5]: https://yeasy.gitbooks.io/docker_practice/kubernetes/
 [6]: https://juejin.im/post/5b8656a6f265da4332072aae
 [7]: https://zhuanlan.zhihu.com/p/29232090
+[8]: https://dreamerjonson.com/2019/03/14/k8s/index.html
+[9]: https://kubernetes.io/zh/docs/concepts/
+[10]: https://kubernetes.io/zh/docs/reference/kubectl/docker-cli-to-kubectl/
