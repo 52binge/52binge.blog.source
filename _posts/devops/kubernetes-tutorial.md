@@ -217,6 +217,8 @@ kubectl delete services hello-minikube
 
 ### 4.7 delete hello-minik deploym
 
+销毁该 Deployment（和它的 pod）
+
 ```bash
 kubectl delete deployment hello-minikube
 ```
@@ -232,6 +234,215 @@ minikube stop
 ```bash
 minikube delete
 ```
+
+## 5. Kubernetes hexo
+
+[Docker 用户使用 kubectl 命令指南][10]
+
+[Kubernetes 支持两种方式创建资源](https://www.ibm.com/developerworks/community/blogs/132cfa78-44b0-4376-85d0-d3096cd30d3f/entry/k8s_创建资源的两种方式_每天5分钟玩转_Docker_容器技术_124?lang=en)：
+
+1. 用 kubectl 命令直接创建，比如：
+
+```bash
+kubectl run nginx-deployment --image=nginx:1.7.9 --replicas=2
+
+在命令行中通过参数指定资源的属性.
+```
+
+2. 通过配置文件和 kubectl apply 创建，要完成前面同样的工作，可执行命令：
+
+```bash
+kubectl apply -f nginx.yml
+
+kubectl apply 不但能够创建 Kubernetes 资源，也能对资源进行更新，非常方便。
+```
+
+Kubernets 还提供了几个类似的命令，例如:
+ 
+>  1. kubectl create, kubectl replace
+>  2. kubectl edit, kubectl patch
+
+### 5.1 kubectl cluster-info cmd
+
+kubectl cluster-info
+
+```
+➜ kubectl cluster-info
+Kubernetes master is running at https://192.168.64.2:8443
+KubeDNS is running at https://192.168.64.2:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+```
+
+kubectl get po,svc -n kube-system
+
+```bash
+➜ kubectl get po,svc -n kube-system
+NAME                                   READY   STATUS    RESTARTS   AGE
+pod/coredns-5644d7b6d9-2qtds           1/1     Running   0          25h
+pod/coredns-5644d7b6d9-w8442           1/1     Running   0          25h
+pod/etcd-minikube                      1/1     Running   0          25h
+pod/kube-addon-manager-minikube        1/1     Running   0          25h
+pod/kube-apiserver-minikube            1/1     Running   0          25h
+pod/kube-controller-manager-minikube   1/1     Running   1          25h
+pod/kube-proxy-k2pgh                   1/1     Running   0          25h
+pod/kube-scheduler-minikube            1/1     Running   2          25h
+pod/storage-provisioner                1/1     Running   0          25h
+
+NAME               TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)                  AGE
+service/kube-dns   ClusterIP   10.96.0.10   <none>        53/UDP,53/TCP,9153/TCP   25h
+```
+
+### 5.2 Create deployment hexo4
+
+```bash
+kubectl run --image=blair101/ubuntu-hexo-blog:v1.4 hexo4 --port=4000 --env="DOMAIN=cluster"
+```
+
+创建一个 deployment, name: hexo4, 也会生成一个 pod, 可通过 kubectl edit deploy hexo4 修改副本数为2
+
+```
+➜ kubectl get deploy,svc
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/hexo4   2/2     2            2           8m34s
+
+NAME                         READY   STATUS    RESTARTS   AGE
+pod/hexo4-67f54d9bd9-8gzt9   1/1     Running   0          8m34s
+pod/hexo4-67f54d9bd9-dvzht   1/1     Running   0          3s
+```
+
+[k8s 端口映射](https://feisky.gitbooks.io/kubernetes/practice/portmap.html)
+
+查看详细 deploy hexo4 -o yaml
+
+```bash
+kubectl get deploy hexo4 -o yaml
+```
+
+一些常用命令记录：
+
+```bash
+kubectl describe po hexo4-67f54d9bd9-ffnsp
+
+kubectl exec -it hexo4-67f54d9bd9-ffnsp bash
+
+kubectl get po hexo4-5b97779b7c-8z8ns -o yaml --export
+
+kubectl get deploy hexo4 -o yaml --export | tee deploy-v1.yaml
+kubectl apply -f deploy-v5.yaml
+```
+
+### 5.3 Create service hexo4
+
+```bash
+kubectl expose deployment hexo4 --port=4000 --name=hexo4
+```
+
+查看 service, kubectl edit svc hexo4
+
+```
+➜ kubectl get deploy, po, svc
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/hexo4   2/2     2            2           54m
+
+NAME                         READY   STATUS    RESTARTS   AGE
+pod/hexo4-67f54d9bd9-8gzt9   1/1     Running   0          54m
+pod/hexo4-67f54d9bd9-dvzht   1/1     Running   0          45m
+
+NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+service/hexo4        ClusterIP   10.97.151.174   <none>        4000/TCP   35s
+service/kubernetes   ClusterIP   10.96.0.1       <none>        443/TCP    26h
+```
+
+查看 service hexo4 详情:
+
+```bash
+➜ kubectl get svc -o yaml hexo4
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2019-10-30T03:56:49Z"
+  labels:
+    run: hexo4
+  name: hexo4
+  namespace: default
+  resourceVersion: "48479"
+  selfLink: /api/v1/namespaces/default/services/hexo4
+  uid: e1c9c30b-d3b8-4625-9817-a14ea3677bd3
+spec:
+  clusterIP: 10.97.151.174
+  ports:
+  - port: 4000
+    protocol: TCP
+    targetPort: 4000
+  selector:
+    run: hexo4
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
+(anaconda3) (base)
+```
+
+### 5.4 kubectl edit service hexo4
+
+```
+kubectl edit service hexo4
+```
+
+type: ClusterIP --> NodePort 且 spec.ports 增加 nodePort: 30001
+
+```
+spec:
+  clusterIP: 10.107.236.48
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 30001
+    port: 4000
+    protocol: TCP
+    targetPort: 4000
+  selector:
+    run: hexo4
+  sessionAffinity: None
+  type: NodePort
+```
+
+### 5.5 build hexo5, deploy ervice
+
+create deployment hexo5
+
+```bash
+kubectl run --image=blair101/ubuntu-hexo-blog:v1.5 hexo5 --port=4000 --env="DOMAIN=cluster"
+```
+
+create service hexo5
+
+```
+kubectl expose deployment hexo5 --port=4000 --name=hexo5
+```
+
+kubectl edit service hexo5
+
+> type: ClusterIP --> NodePort 且 spec.ports 增加 nodePort: 30001
+
+### 5.6 modify service hexo4 
+
+更改 selector.run: hexo4 为 hexo5
+
+```
+spec:
+  clusterIP: 10.107.236.48
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 30001
+    port: 4000
+    protocol: TCP
+    targetPort: 4000
+  selector:
+    run: hexo5
+  sessionAffinity: None
+  type: NodePort
+```
+
+接下来是一些 delete 操作.
 
 ## Reference
 
