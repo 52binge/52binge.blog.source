@@ -2,7 +2,6 @@
 title: Tech Stack
 date: 2019-10-28 17:11:21
 categories: devops
-top: 1
 tags: Stack
 ---
 

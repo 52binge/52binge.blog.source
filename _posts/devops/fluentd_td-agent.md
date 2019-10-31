@@ -2,7 +2,6 @@
 title: Fluentd tutorial
 date: 2019-10-23 17:11:21
 categories: devops
-top: 10
 tags: Fluentd
 ---
 
