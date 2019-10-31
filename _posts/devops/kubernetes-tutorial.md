@@ -317,6 +317,58 @@ pod/hexo4-67f54d9bd9-dvzht   1/1     Running   0          3s
 kubectl get deploy hexo4 -o yaml
 ```
 
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+  creationTimestamp: null
+  generation: 1
+  labels:
+    run: hexo4
+  name: hexo4
+  selfLink: /apis/apps/v1/namespaces/default/deployments/hexo4
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 2
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      run: hexo4
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: hexo4
+    spec:
+      containers:
+      - env:
+        - name: DOMAIN
+          value: cluster
+        image: blair101/ubuntu-hexo-blog:v1.4
+        imagePullPolicy: IfNotPresent
+        name: hexo4
+        ports:
+        - containerPort: 4000
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status: {}
+(anaconda3) (base)
+```
+
 一些常用命令记录：
 
 ```bash
