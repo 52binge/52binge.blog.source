@@ -21,6 +21,13 @@ tags: ElasticSearch
 ## Reference
 
 - [ElasticSearch各种查询关键字的区别][1]
+- [终于有人把elasticsearch原理讲通了！][2]
+- [深入搜索][3]
+- [Function Score 查询][4]
+- [ElasticSearch 评分排序][5]
 
 [1]: https://my.oschina.net/weiweiblog/blog/1574020
-
+[2]: https://mp.weixin.qq.com/s/dn1n2FGwG9BNQuJUMVmo7w
+[3]: https://wjw465150.github.io/Elasticsearch/3_2_DeepSearch.html#
+[4]: http://doc.codingdict.com/elasticsearch/251/
+[5]: https://www.cnblogs.com/wangiqngpei557/p/10423875.html
