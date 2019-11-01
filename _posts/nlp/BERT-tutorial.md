@@ -1,6 +1,6 @@
 ---
 title: BERT tutorial
-date: 2019-06-20 11:00:21
+date: 2019-10-23 11:00:21
 categories: nlp
 tags: BERT
 ---
