@@ -76,9 +76,9 @@ Epoch 1/1
 
 ## Reference
 
-- [《Attention is All You Need》浅读（简介+代码）][1]
+- [《Attention is All You Need》-苏神][1]
 - [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding][2]
-- [深度学习教程-苏神推荐][5] 、 [当Bert遇上Keras-苏神][6]
+- [深度学习教程-苏神][5] 、 [当Bert遇上Keras-苏神][6]
 - [Keras中文文档 fit_generator][7]
 
 [1]: https://kexue.fm/archives/4765
