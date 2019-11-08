@@ -1,5 +1,5 @@
 ---
-title: Anaconda 命令介绍
+title: Anaconda + Tensorflow 环境搭建
 toc: true
 date: 2019-11-08 22:00:21
 categories: nlp
@@ -66,19 +66,17 @@ pip install <package_name>
 ## 2. Tensorflow
 
 ```bash
-conda install xlrd
-conda install numpy
-conda install pandas
+conda install pandas xlrd
 ```
 
 ```bash
 conda install keras==2.2.4
-conda install keras-bert
+pip install keras-bert
 ```
 
 ```bash
-conda install tensorflow=='1.13.1'
-conda install tensorflow-gpu==1.13.1
+conda install tensorflow=='1.11.0'
+conda install tensorflow-gpu=='1.11.0'
 ```
 
 ## 3. GPU
@@ -97,13 +95,29 @@ nvidia-smi
 +-----------------------------------------------------------------------------+
 ```
 
+## 4. CPU
+
+Keras以及Tensorflow强制使用CPU
+
+使用CUDA_VISIBLE_DEVICES命令行参数，代码如下：
+
+```bash
+CUDA_VISIBLE_DEVICES="" python3 train.py
+```
+
 ## Reference
 
 - [Anaconda介绍、安装及使用教程][2]
 - [Tensorflow检验GPU是否安装成功 及 使用GPU训练注意事项][3]
-
+- [报错：cudaGetDevice() failed. Status: CUDA driver version is][4]
+- [https://tensorflow.google.cn/install/source][5]
+- [tensorflow 使用CPU而不使用GPU的问题解决][6]
+- [Keras以及Tensorflow强制使用CPU][7]
 
 [1]: https://kexue.fm/archives/4765
 [2]: https://zhuanlan.zhihu.com/p/32925500
 [3]: https://www.cnblogs.com/nxf-rabbit75/p/10639833.html
-
+[4]: https://blog.csdn.net/u010513327/article/details/81124110
+[5]: https://tensorflow.google.cn/install/source
+[6]: https://www.cnblogs.com/hutao722/p/9583214.html
+[7]: https://blog.csdn.net/silent56_th/article/details/72628606
