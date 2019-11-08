@@ -23,6 +23,32 @@ keras-bert：https://github.com/CyberZHG/keras-bert
 - [文本情感分类（一）：传统模型][3] 
 - [文本情感分类（二）：深度学习模型][4] 
 
+做一个最基本的文本分类任务:
+
+```
+bert_model = load_trained_model_from_checkpoint(config_path, checkpoint_path, seq_len=None)
+
+for l in bert_model.layers:
+    l.trainable = True
+
+x1_in = Input(shape=(None,))
+x2_in = Input(shape=(None,))
+
+x = bert_model([x1_in, x2_in])
+x = Lambda(lambda x: x[:, 0])(x) # 取出[CLS]对应的向量用来做分类
+p = Dense(1, activation='sigmoid')(x)
+
+model = Model([x1_in, x2_in], p)
+model.compile(
+    loss='binary_crossentropy',
+    optimizer=Adam(1e-5), # 用足够小的学习率
+    metrics=['accuracy']
+)
+model.summary()
+```
+
+在Keras中调用Bert来做情感分类任务就这样写完了～写完了～～
+
 ```bash
 (tf-gpu) clb@ubuntu:~/6e/bert-keras$ CUDA_VISIBLE_DEVICES="" python sentiment-keras.py
 (tf-gpu) clb@ubuntu:~/6e/bert-keras$ Using TensorFlow backend.
@@ -50,17 +76,18 @@ Epoch 1/1
 
 ## Reference
 
-- [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding][2]
 - [《Attention is All You Need》浅读（简介+代码）][1]
-- [深度学习教程-苏神推荐][5]
-- [Keras中文文档 fit_generator][6]
+- [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding][2]
+- [深度学习教程-苏神推荐][5] 、 [当Bert遇上Keras-苏神][6]
+- [Keras中文文档 fit_generator][7]
 
 [1]: https://kexue.fm/archives/4765
 [2]: https://arxiv.org/abs/1810.04805
 [3]: https://kexue.fm/archives/3360
 [4]: https://kexue.fm/archives/3414
 [5]: https://blog.csdn.net/itplus
-[6]: https://keras.io/zh/models/model/#fit_generator
+[6]: https://kexue.fm/archives/6736
+[7]: https://keras.io/zh/models/model/#fit_generator
 
 超牛推荐
 
