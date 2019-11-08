@@ -2,8 +2,8 @@
 title: Anaconda + Tensorflow 环境搭建
 toc: true
 date: 2019-11-08 22:00:21
-categories: nlp
-tags: BERT
+categories: devops
+tags: Anaconda
 ---
 
 <img src="/images/devops/Anaconda-Jupyter-Tensorflow.png" width="550" alt="bert 遇见 keras" />
