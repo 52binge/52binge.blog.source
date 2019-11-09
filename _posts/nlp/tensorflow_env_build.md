@@ -95,6 +95,19 @@ nvidia-smi
 +-----------------------------------------------------------------------------+
 ```
 
+解决 cuda10 因为显卡驱动不支持的
+
+```bash
+conda install cudatoolkit=9.0
+```
+
+用如下代码可检测tensorflow的能使用设备情况：
+
+```python
+from tensorflow.python.client import device_lib
+print(device_lib.list_local_devices())　
+```
+
 ## 4. CPU
 
 Keras以及Tensorflow强制使用CPU
