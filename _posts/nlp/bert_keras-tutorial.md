@@ -64,6 +64,18 @@ for l in bert_model.layers:
 
 <img src="/images/nlp/bert-keras-3.png" width="800" alt="bert keras Sentiment analysis" />
 
+## 4. 指导原则
+
+有什么原则来指导Bert后面应该要接哪些层？
+
+> 答案是：用尽可能少的层来完成你的任务。
+> 
+> 比如上述情感分析只是一个二分类任务，你就取出第一个向量然后加个Dense(1)就好了，不要想着多加几层Dense，更加不要想着接个LSTM再接Dense；
+> 
+> 如果你要做序列标注（比如NER），那你就接个Dense+CRF就好，也不要多加其他东西。
+> 
+> 总之，额外加的东西尽可能少。一是因为Bert本身就足够复杂，它有足够能力应对你要做的很多任务；二来你自己加的层都是随即初始化的，加太多会对Bert的预训练权重造成剧烈扰动，容易降低效果甚至造成模型不收敛
+
 ## Reference
 
 - [《Attention is All You Need》-苏神][1]
