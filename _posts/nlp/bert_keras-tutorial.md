@@ -16,6 +16,57 @@ tags: BERT
 
 keras-bert：https://github.com/CyberZHG/keras-bert
 
+```python
+#! -*- coding:utf-8 -*-
+
+import json
+import numpy as np
+import pandas as pd
+from random import choice
+from keras_bert import load_trained_model_from_checkpoint, Tokenizer
+import re, os
+import codecs
+
+
+maxlen = 100
+config_path = '../bert/chinese_L-12_H-768_A-12/bert_config.json'
+checkpoint_path = '../bert/chinese_L-12_H-768_A-12/bert_model.ckpt'
+dict_path = '../bert/chinese_L-12_H-768_A-12/vocab.txt'
+
+
+token_dict = {}
+
+# dict_path = './bert/chinese_L-12_H-768_A-12/vocab.txt'
+with codecs.open(dict_path, 'r', 'utf8') as reader:
+    for line in reader:
+        token = line.strip()
+        token_dict[token] = len(token_dict)
+
+class OurTokenizer(Tokenizer):
+    def _tokenize(self, text):
+        R = []
+        for c in text:
+            if c in self._token_dict:
+                print(c)
+                R.append(c)
+            elif self._is_space(c):
+                R.append('[unused1]') # space类用未经训练的[unused1]表示
+            else:
+                R.append('[UNK]') # 剩余的字符是[UNK]
+        return R
+
+tokenizer = OurTokenizer(token_dict)
+tokenizer
+
+tokenizer = OurTokenizer(token_dict)
+tokenizer.tokenize(u'今天天 气不错')
+```
+output:
+
+> ```
+['[CLS]', '今', '天', '天', '[unused1]', '气', '不', '错', '[SEP]']
+```
+>
 > 这里简单解释一下Tokenizer的输出结果。首先，默认情况下，分词后句子首位会分别加上[CLS]和[SEP]标记，其中[CLS]位置对应的输出向量是能代表整句的句向量（反正Bert是这样设计的），而[SEP]则是句间的分隔符，其余部分则是单字输出（对于中文来说）
 
 ## 2. Sentiment classification
@@ -41,7 +92,7 @@ p = Dense(1, activation='sigmoid')(x)
 model = Model([x1_in, x2_in], p)
 model.compile(
     loss='binary_crossentropy',
-    optimizer=Adam(1e-5), # 用足够小的学习率
+    optimizer=Adam(1e-5), # 
     metrics=['accuracy']
 )
 model.summary()

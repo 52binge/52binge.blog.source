@@ -38,6 +38,13 @@ tags: ElasticSearch
 - [ElasticSearch查询 第四篇：匹配查询（Match）][8]
 - [Elasticsearch bool query小结 (解决should失效)][9]
 - [深入搜索 » 多字段搜索 » 多数字段][10]
+- [Stemmer Token Filter][11]
+- [Elasticsearch Reference [6.2] » Analysis » Analyzers][12]
+- [Elasticsearch Reference [6.2] » Analysis » Analyzers » Standard Analyzer][13]
+- [Elasticsearch修改分词器以及自定义分词器][14]
+- [ES 09 - Elasticsearch如何定制分词器 (自定义分词策略)][15]
+- [处理人类语言 » 将单词还原为词根 » 原形词干提取][16]
+- [elasticsearch should实现or功能，设置minimum_should_match][17]
 
 [1]: https://my.oschina.net/weiweiblog/blog/1574020
 [2]: https://mp.weixin.qq.com/s/dn1n2FGwG9BNQuJUMVmo7w
@@ -49,3 +56,10 @@ tags: ElasticSearch
 [8]: https://www.cnblogs.com/ljhdo/p/4577065.html
 [9]: https://juejin.im/post/5c180f0df265da6124155db5
 [10]: https://www.elastic.co/guide/cn/elasticsearch/guide/current/most-fields.html#most-fields
+[11]: https://www.elastic.co/guide/en/elasticsearch/reference/2.2/analysis-stemmer-tokenfilter.html
+[12]: https://www.elastic.co/guide/en/elasticsearch/reference/6.2/analysis-analyzers.html
+[13]: https://www.elastic.co/guide/en/elasticsearch/reference/6.2/analysis-standard-analyzer.html
+[14]: https://blog.csdn.net/shuimofengyang/article/details/88973597
+[15]: https://www.cnblogs.com/shoufeng/p/10562746.html
+[16]: https://www.elastic.co/guide/cn/elasticsearch/guide/current/stemming-in-situ.html
+[17]: https://my.oschina.net/u/3625378/blog/1492575

@@ -382,6 +382,53 @@ logging.config.dictConfig(conf['logging'])
 
 你可以在连接失败时插入自己的自定义过程来处理缓冲区溢出。 这将减少数据的丢失，而不是简单地丢弃数据。
 
+```yaml
+logging:
+    version: 1
+
+    formatters:
+      brief:
+        format: '%(message)s'
+      default:
+        format: '%(asctime)s %(levelname)-8s %(name)-15s %(message)s'
+        datefmt: '%Y-%m-%d %H:%M:%S'
+      fluent_fmt:
+        '()': fluent.handler.FluentRecordFormatter
+        format:
+          level: '%(levelname)s'
+          hostname: '%(hostname)s'
+          where: '%(module)s.%(funcName)s'
+
+    handlers:
+        console:
+            class : logging.StreamHandler
+            level: DEBUG
+            formatter: default
+            stream: ext://sys.stdout
+        fluent:
+            class: fluent.handler.FluentHandler
+            host: localhost
+            port: 24224
+            tag: app.follow
+            buffer_overflow_handler: overflow_handler
+            formatter: fluent_fmt
+            level: DEBUG
+        none:
+            class: logging.NullHandler
+
+    loggers:
+        amqp:
+            handlers: [none]
+            propagate: False
+        conf:
+            handlers: [none]
+            propagate: False
+        '': # root logger
+            handlers: [console, fluent]
+            level: DEBUG
+            propagate: False
+```
+
 ## Reference
 
 - [docs.fluentd.org][1]
