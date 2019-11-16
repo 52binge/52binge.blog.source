@@ -14,7 +14,7 @@ tags: Stack
 - [conda](https://conda.io/en/latest/)
 - [python > 3.6](https://www.python.org/downloads/)
 
-## 2. Data process
+## 2. Data Process
 
 - [numpy](https://numpy.org/)
 - [pandas](https://pandas.pydata.org/)
@@ -22,7 +22,7 @@ tags: Stack
 - [scipy](https://www.scipy.org/)
 - [matplotlib](https://matplotlib.org/)
 
-## 3. Deep learning
+## 3. Deep Learning
 
 - [tensorflow](https://www.tensorflow.org/)
 - [pytorch](https://pytorch.org/)
@@ -34,9 +34,9 @@ tags: Stack
 - [spacy](https://spacy.io/)
 - [bert](https://github.com/google-research/bert)
 
-## 5. System dev
+## 5. System Dev
 
-### 5.1 dev
+### 5.1 Dev
 
 - [tensorflow serving](https://www.tensorflow.org/tfx/guide/serving)
 - [flask](https://palletsprojects.com/p/flask/)
@@ -45,25 +45,25 @@ tags: Stack
 - [pyinvoke](http://docs.pyinvoke.org/en/1.3/getting-started.html)
 - [gunicorn](https://gunicorn.org/)
 
-### 5.2 libraries
+### 5.2 Libraries
 
 - [pydash](https://pydash.readthedocs.io/en/latest/api.html)
 - [dotenv](https://saurabh-kumar.com/python-dotenv/)
 - [fabric](http://www.fabfile.org/)
 - [pathlib](https://docs.python.org/3/library/pathlib.html)
 
-### 5.2 tools
+### 5.2 Tools
 
 - [Cyberduck](https://cyberduck.io/)
 
-## 6. System test
+## 6. System Test
 
 - [pytest](https://docs.pytest.org/en/latest/)
 - [nose](https://nose.readthedocs.io/en/latest/)
 - [locust](https://locust.io/)
 - [mitmproxy](https://mitmproxy.org/)
 
-## 7. Log collection
+## 7. Log Collection
 
 - [fluentd](https://github.com/fluent/fluent-logger-python)
 - [elastic](https://www.elastic.co/)
