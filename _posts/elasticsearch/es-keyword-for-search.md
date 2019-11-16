@@ -45,6 +45,7 @@ tags: ElasticSearch
 - [ES 09 - Elasticsearch如何定制分词器 (自定义分词策略)][15]
 - [处理人类语言 » 将单词还原为词根 » 原形词干提取][16]
 - [elasticsearch should实现or功能，设置minimum_should_match][17]
+- [Kibana 用户手册 » 数据探索][18]
 
 [1]: https://my.oschina.net/weiweiblog/blog/1574020
 [2]: https://mp.weixin.qq.com/s/dn1n2FGwG9BNQuJUMVmo7w
@@ -63,3 +64,4 @@ tags: ElasticSearch
 [15]: https://www.cnblogs.com/shoufeng/p/10562746.html
 [16]: https://www.elastic.co/guide/cn/elasticsearch/guide/current/stemming-in-situ.html
 [17]: https://my.oschina.net/u/3625378/blog/1492575
+[18]: https://www.elastic.co/guide/cn/kibana/current/discover.html
