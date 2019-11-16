@@ -9,68 +9,69 @@ tags: Stack
 
 <!-- more -->
 
-## 1. 基础环境
+## 1. Python env
 
-- conda
-- python > 3.6
+- [conda](https://conda.io/en/latest/)
+- [python > 3.6](https://www.python.org/downloads/)
 
-## 2. 数据处理
+## 2. Data process
 
-- numpy
-- pandas
-- scikit-learn
-- scipy
-- matplotlib
+- [numpy](https://numpy.org/)
+- [pandas](https://pandas.pydata.org/)
+- [scikit-learn](https://scikit-learn.org/)
+- [scipy](https://www.scipy.org/)
+- [matplotlib](https://matplotlib.org/)
 
-## 3. 深度学习
+## 3. Deep learning
 
-- tensorflow
-- pytorch
-- keras
+- [tensorflow](https://www.tensorflow.org/)
+- [pytorch](https://pytorch.org/)
+- [keras](https://keras.io/)
 
 ## 4. NLP
 
-- nltk
-- spacy
-- bert
+- [nltk](https://www.nltk.org/)
+- [spacy](https://spacy.io/)
+- [bert](https://github.com/google-research/bert)
 
-## 5. 系统开发
+## 5. System dev
 
-- flask
-- flask-restplus
-- pyinvoke
-- gunicorn
-- tensorflow serving
+### 5.1 dev
 
-**other tools:**
+- [tensorflow serving](https://www.tensorflow.org/tfx/guide/serving)
+- [flask](https://palletsprojects.com/p/flask/)
+- [flask-restplus](https://flask-restplus.readthedocs.io/en/stable/quickstart.html)
+- [pytest](https://docs.pytest.org/en/latest/)
+- [pyinvoke](http://docs.pyinvoke.org/en/1.3/getting-started.html)
+- [gunicorn](https://gunicorn.org/)
 
-- pydash
-- dotenv
-- fabric
+### 5.2 libraries
 
-## 6. 系统测试
+- [pydash](https://pydash.readthedocs.io/en/latest/api.html)
+- [dotenv](https://saurabh-kumar.com/python-dotenv/)
+- [fabric](http://www.fabfile.org/)
+- [pathlib](https://docs.python.org/3/library/pathlib.html)
 
-- pytest
+### 5.2 tools
+
+- [Cyberduck](https://cyberduck.io/)
+
+## 6. System test
+
+- [pytest](https://docs.pytest.org/en/latest/)
 - [nose](https://nose.readthedocs.io/en/latest/)
-- locust
-- mitmproxy
+- [locust](https://locust.io/)
+- [mitmproxy](https://mitmproxy.org/)
 
-## 7. 日志收集
+## 7. Log collection
 
 - [fluentd](https://github.com/fluent/fluent-logger-python)
 - [elastic](https://www.elastic.co/)
 
-## 8. 集成发布
+## 8. CI/CD
 
-- gitlab 
-- k8s 
-- docker
+- [gitlab](https://about.gitlab.com/)
+- [docker](https://www.docker.io/)
 - [kubernetes](https://kubernetes.io/)
-
-具体参考General:CI/CD
-
-<!--<img src="/images/devops/tech-stack-logo2.png" width="550" alt="Tech Stack" />-->
-
-<img src="/images/devops/tech-stack-logo3.png" width="550" alt="Tech Stack" />
 
 ## Reference
