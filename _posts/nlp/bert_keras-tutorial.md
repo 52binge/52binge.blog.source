@@ -133,6 +133,7 @@ for l in bert_model.layers:
 - [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding][2]
 - [深度学习教程-苏神][5] 、 [当Bert遇上Keras-苏神][6]
 - [Keras中文文档 fit_generator][7]
+- [开启NLP的大魔法阵——通过Keras-Bert操纵Bert][8]
 
 [1]: https://kexue.fm/archives/4765
 [2]: https://arxiv.org/abs/1810.04805
@@ -141,6 +142,7 @@ for l in bert_model.layers:
 [5]: https://blog.csdn.net/itplus
 [6]: https://kexue.fm/archives/6736
 [7]: https://keras.io/zh/models/model/#fit_generator
+[8]: https://zhuanlan.zhihu.com/p/80880371
 
 超牛推荐
 
