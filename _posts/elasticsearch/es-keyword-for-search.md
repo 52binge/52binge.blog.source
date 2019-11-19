@@ -46,6 +46,7 @@ tags: ElasticSearch
 - [处理人类语言 » 将单词还原为词根 » 原形词干提取][16]
 - [elasticsearch should实现or功能，设置minimum_should_match][17]
 - [Kibana 用户手册 » 数据探索][18]
+- [Elasticsearch: 权威指南 » 深入搜索 » 全文搜索 » 组合查询][19]
 
 [1]: https://my.oschina.net/weiweiblog/blog/1574020
 [2]: https://mp.weixin.qq.com/s/dn1n2FGwG9BNQuJUMVmo7w
@@ -65,3 +66,4 @@ tags: ElasticSearch
 [16]: https://www.elastic.co/guide/cn/elasticsearch/guide/current/stemming-in-situ.html
 [17]: https://my.oschina.net/u/3625378/blog/1492575
 [18]: https://www.elastic.co/guide/cn/kibana/current/discover.html
+[19]: https://www.elastic.co/guide/cn/elasticsearch/guide/current/bool-query.html
