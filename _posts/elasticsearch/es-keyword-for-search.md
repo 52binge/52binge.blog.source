@@ -47,6 +47,8 @@ tags: ElasticSearch
 - [elasticsearch should实现or功能，设置minimum_should_match][17]
 - [Kibana 用户手册 » 数据探索][18]
 - [Elasticsearch: 权威指南 » 深入搜索 » 全文搜索 » 组合查询][19]
+- [Elasticsearch Reference [6.4] » Search APIs » Request Body Search » Field Collapsing][20]
+- [ES Field Collapsing 字段折叠使用详解][21]
 
 [1]: https://my.oschina.net/weiweiblog/blog/1574020
 [2]: https://mp.weixin.qq.com/s/dn1n2FGwG9BNQuJUMVmo7w
@@ -67,3 +69,5 @@ tags: ElasticSearch
 [17]: https://my.oschina.net/u/3625378/blog/1492575
 [18]: https://www.elastic.co/guide/cn/kibana/current/discover.html
 [19]: https://www.elastic.co/guide/cn/elasticsearch/guide/current/bool-query.html
+[20]: http://s0www0elastic0co.icopy.site/guide/en/elasticsearch/reference/6.4/search-request-collapse.html
+[21]: https://blog.csdn.net/ZYC88888/article/details/83023143
