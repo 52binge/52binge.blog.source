@@ -158,6 +158,44 @@ $ systemctl list-dependencies --all nginx.service
 
 每一个 Unit 都有一个配置文件，告诉 Systemd 怎么启动这个 Unit 。
 
+### 5.2 配置文件状态
+
+```bash
+# 列出所有配置文件
+$ systemctl list-unit-files
+
+# 列出指定类型的配置文件
+$ systemctl list-unit-files --type=service
+```
+
+这个命令会输出一个列表
+
+```bash
+$ systemctl list-unit-files
+
+UNIT FILE              STATE
+chronyd.service        enabled (已启动链接)
+clamd@.service         static (该配置文件没有[Install]部分（无法执行），只能作为其他配置文件的依赖)
+clamd@scan.service     disabled (没建立启动链接)
+```
+
+从配置文件的状态无法看出，该 Unit 是否正在运行。这必须执行前面提到的systemctl status命令
+
+```bash
+$ systemctl status bluetooth.service
+```
+
+一旦修改配置文件，就要让 SystemD 重新加载配置文件，然后重新启动，否则修改不会生效。
+
+```bash
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart httpd.service
+```
+
+### 5.3 配置文件格式
+
+### 5.4 配置文件区块
+
 ## 6. Target
 
 启动计算机的时候，需要启动大量的 Unit。如果每一次启动，都要一一写明本次启动需要哪些 Unit，显然非常不方便。Systemd 的解决方案就是 Target。
