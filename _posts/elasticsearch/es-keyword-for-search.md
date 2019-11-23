@@ -9,23 +9,6 @@ tags: ElasticSearch
 
 <!-- more -->
 
-## 1. 结构化搜索
-
-## 2. 全文搜索
-
-### 3. 多词查询
-
-[match多词查询](https://www.elastic.co/guide/cn/elasticsearch/guide/current/match-multi-word.html)
-
-"minimum_should_match": "75%"
-
-### match_all
-
-### math
-
-### multi_match
-
-
 ## Reference
 
 - [ElasticSearch各种查询关键字的区别][1]

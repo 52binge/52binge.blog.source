@@ -5,11 +5,7 @@ categories: devops
 tags: Systemd
 ---
 
-
-
 <img src="/images/devops/systemd-logo.gif" width="450" alt="www.freedesktop.org" />
-
-
 
 <!-- more -->
 
@@ -18,9 +14,11 @@ Linux系统有自己的 Daemon 管理工具 Systemd 。它是 OS 的一部分，
 
 ## Reference
 
-- [阮一峰: Linux daemon (守护进程)的启动方法][1]
-- [阮一峰: Systemd 入门教程：命令篇][2]
-- [官网: systemd System and Service Manager][3]
+- [阮一峰: 计算机是如何启动的？ ✔️][6]
+- [阮一峰: Linux 的启动流程 ✔️][7]
+- [阮一峰: Linux daemon (守护进程)的启动方法 ✔️][1]
+- [阮一峰: Systemd 入门教程：命令篇 ✔️][2]
+- [Systemd Service Manager][3]
 - [Great:  Linux 系统开机启动项清理][4]
 - [CentOS 7 Systemd 入门][5]
 
@@ -29,6 +27,8 @@ Linux系统有自己的 Daemon 管理工具 Systemd 。它是 OS 的一部分，
 [3]: https://www.freedesktop.org/wiki/Software/systemd/
 [4]: https://linux.cn/article-8835-1.html
 [5]: https://zhuanlan.zhihu.com/p/29217941
+[6]: http://www.ruanyifeng.com/blog/2013/02/booting.html
+[7]: http://www.ruanyifeng.com/blog/2013/08/linux_boot_process.html
 
 **sudo**
 
