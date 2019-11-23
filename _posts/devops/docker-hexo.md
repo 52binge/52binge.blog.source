@@ -16,7 +16,7 @@ mathjax: true
 
 Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。
 
-## 4. dockerfile
+## 2. dockerfile
 
 ```bash
 FROM blair101/ubuntu-hexo-blog:v1.3
@@ -30,6 +30,14 @@ WORKDIR /blog
 EXPOSE 4000
 
 CMD hexo s
+```
+
+## 3. markdown 适配渲染问题
+
+```bash
+npm uninstall hexo-renderer-markdown-it
+npm install hexo-renderer-markdown-it-plus --save
+npm install hexo-renderer-kramed --save
 ```
 
 ## Reference
