@@ -36,6 +36,7 @@ CMD hexo s
 
 ```bash
 npm uninstall hexo-renderer-markdown-it
+npm un hexo-renderer-marked
 npm install hexo-renderer-markdown-it-plus --save
 npm install hexo-renderer-kramed --save
 ```
