@@ -134,3 +134,9 @@ CUDA_VISIBLE_DEVICES="" python3 train.py
 [5]: https://tensorflow.google.cn/install/source
 [6]: https://www.cnblogs.com/hutao722/p/9583214.html
 [7]: https://blog.csdn.net/silent56_th/article/details/72628606
+
+Good!
+
+- [教程 | 使用 PyCharm 连接服务器进行远程开发和调试][8]
+
+[8]: https://zhuanlan.zhihu.com/p/38330654
