@@ -40,9 +40,9 @@ when we meet here. we can focusing on efficient learning, way of thinking, and c
 
 ### Who am I
 
-<a class="article-myself" href="/about"> Blair Chan</a> 90s, a senior data engineer, a GTD practitioner, live in Singapore, Singapore.
+<a class="article-myself" href="/about"> Blair Chan</a> 90s, a data science engineer, nlper, GTD practitioner, live in Singapore, Singapore.
 
-<a class="article-myself" href="https://instagram.com/blair101v/"> Blair Chan</a> focus on data science, machine learning, algorithmic engineering, micro-services.
+<a class="article-myself" href="https://instagram.com/blair101v/"> Blair Chan</a> focus on python, data science, machine learning, algorithmic engineering, devops.
 
 <!--<a class="article-myself" href="/">  Libin Chan</a>-->
 <!-- <img src="/images/tech-logos/2016-10-03-6.png" width="250"  style="margin-left:100px;" /img> -->
@@ -55,8 +55,10 @@ when we meet here. we can focusing on efficient learning, way of thinking, and c
 每个人的追求和思考面都是不同的，要换位思考，尊重每一个肯为梦想而努力奋斗的人。 
 -->
 
-<img src="/images/tw/tw-2016-08-30-nz.jpg" width="500" />
+<img src="/images/tw/Auckland-2.jpg" width="500" alt="Auckland New Zealand" />
 
+<!--<img src="/images/tw/tw-2016-08-30-nz.jpg" width="500" />
+-->
 
 ### Classic line
 
