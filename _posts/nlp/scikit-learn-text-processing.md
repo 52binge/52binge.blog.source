@@ -48,7 +48,15 @@ print X.toarray()
 
 - [scikit-learn 为机器学习准备文本数据][1]
 - [学习sklearn之文本特征提取][2]
+- [Scikit-Learn Vectorizer`max_features`][3]
+
+Keras
+
+- [Keras入门（一）搭建深度神经网络（DNN）解决多分类问题][4]
 
 [1]: https://zhuanlan.zhihu.com/p/33779124
 [2]: https://zhangzirui.github.io/posts/Document-14%20%28sklearn-feature%29.md
+[3]: https://codeday.me/bug/20190429/1001523.html
+[4]: https://www.cnblogs.com/jclian91/p/9777108.html
+
 
