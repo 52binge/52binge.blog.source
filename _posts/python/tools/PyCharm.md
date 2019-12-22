@@ -5,7 +5,7 @@ categories: python
 tags: pyCharm
 ---
 
-<img src="/images/python/tools/PyCharm-logo.jpg" width="500" alt="PyCharm" />
+<img src="/images/python/tools/PyCharm-logo.jpg" width="500" alt="Pycharm Keyboard Shortcuts" />
 
 <!-- more -->
 
