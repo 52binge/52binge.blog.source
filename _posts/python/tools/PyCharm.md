@@ -11,6 +11,9 @@ tags: pyCharm
 
 No. | Shortcuts | Function
 :----:  | :----: | :----: 
+1. | Shift + option + Enter | 自动 import
+2. | CMD + Opt + t | 添加try/catch
+| |
 1 | **CMD + B** | 跳转到声明处（cmd加鼠标）
 2 | CMD + [] | 光标之前/后的位置
 3 | **SHIFT + CMD + F** , 全局搜索 | ✔️
