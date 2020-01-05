@@ -26,6 +26,8 @@ p + p {
 
 when we meet here. we can focusing on efficient learning, way of thinking, and communication skills.
 
+在让人做某一件事之前，应该先解释为什么要做这件事，及它的重要性。这样才能让人理解，才能尊重程序员的智商。
+
 <!--基于时间成本，人一生只能做好仅有的一两件事情，一直做才会走通，有巅峰期。-->
 
  <!--[Blair’s Instagram][ins]-->
