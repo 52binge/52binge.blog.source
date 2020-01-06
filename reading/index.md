@@ -48,7 +48,18 @@
 
 [w.x.1]: https://kexue.fm/archives/4118
 
-## 3. 中文分词系列
+## 3. SVD分解
+
+- [1. 自编码器与人工智能][s1]
+- [2. 为什么SVD意味着聚类？][s2]
+- [3. 连Word2Vec都只不过是个SVD？][s3]
+
+[s1]: https://kexue.fm/archives/4208
+[s2]: https://kexue.fm/archives/4216
+[s3]: https://kexue.fm/archives/4233
+
+<!--
+## 4. 中文分词系列
 
 - [1. 基于AC自动机的快速分词][z1]
 - [2. 基于切分的新词发现][z2]
@@ -69,17 +80,7 @@
 [z6]: https://kexue.fm/archives/4195
 [z7]: https://kexue.fm/archives/4245
 [z8]: https://kexue.fm/archives/4256
-
-## 4. SVD分解
-
-- [1. 自编码器与人工智能][s1]
-- [2. 为什么SVD意味着聚类？][s2]
-- [3. 连Word2Vec都只不过是个SVD？][s3]
-
-[s1]: https://kexue.fm/archives/4208
-[s2]: https://kexue.fm/archives/4216
-[s3]: https://kexue.fm/archives/4233
-
+-->
 
 ## Reference
 
