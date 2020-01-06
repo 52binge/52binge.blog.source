@@ -13,6 +13,16 @@
 - [10. Python的多进程编程技巧][r10]
 - [11. 梯度下降和EM算法：系出同源，一脉相承][r11]
 - [12. 泰迪杯赛前培训之数据挖掘与建模“慢谈”][r12]
+- [13. Linux下的误删大坑与简单的恢复技巧][r13]
+- [14. Keras中自定义复杂的loss函数][r14]
+- [15. 谈谈dropout][r15]
+- [16. 开学啦！咱们来做完形填空～（讯飞杯）][r16]
+- [17. RNN模型中输入的重要性的评估][r17]
+- [18. 训练集、验证集和测试集的意义][r18]
+- [19. 浅谈神经网络中激活函数的设计][r19]
+- [20. 更别致的词向量模型(六)：代码、分享与结语][r20]
+- [21. 果壳中的条件随机场(CRF In A Nutshell)][r21]
+- [22. 从loss的硬截断、软化到focal loss][r22]
 
 [r1]: https://kexue.fm/archives/3331
 [r2]: https://kexue.fm/archives/3390
@@ -33,6 +43,22 @@
 [r11]: https://kexue.fm/archives/4277
 [r12]: https://kexue.fm/archives/4271
 
+[r13]: https://kexue.fm/archives/4491
+
+[r14]: https://kexue.fm/archives/4493
+[r15]: https://kexue.fm/archives/4521
+
+[r16]: https://kexue.fm/archives/4564
+[r17]: https://kexue.fm/archives/4582
+[r18]: https://kexue.fm/archives/4638
+[r19]: https://kexue.fm/archives/4647
+
+[r20]: https://kexue.fm/archives/4681
+
+[r21]: https://kexue.fm/archives/4695
+[r22]: https://kexue.fm/archives/4733
+
+
 ## 2. 文本情感分类
 
 - [1. 传统模型][w1]
@@ -40,6 +66,7 @@
 - [3. 分词 OR 不分词][w3]
 - [4. 更好的损失函数][w4]
 - [x. 基于双向GRU和语言模型的视角情感分析][w.x.1] 
+- [x. 记录一次半监督的情感分析][w.x.2] 
 
 [w1]: https://kexue.fm/archives/3360
 [w2]: https://kexue.fm/archives/3414
@@ -47,8 +74,25 @@
 [w4]: https://kexue.fm/archives/4293
 
 [w.x.1]: https://kexue.fm/archives/4118
+[w.x.2]: https://kexue.fm/archives/4374
 
-## 3. SVD分解
+## 3. 不可思议的Word2Vec
+
+- [1. 数学原理][w2v_1]
+- [2. 训练好的模型][w2v_2]
+- [3. 提取关键词][w2v_3]
+- [4. 不一样的“相似”][w2v_4]
+- [5. Tensorflow版的Word2Vec][w2v_5]
+- [6. Keras版的Word2Vec][w2v_6]
+
+[w2v_1]: https://kexue.fm/archives/4299
+[w2v_2]: https://kexue.fm/archives/4304
+[w2v_3]: https://kexue.fm/archives/4316
+[w2v_4]: https://kexue.fm/archives/4368
+[w2v_5]: https://kexue.fm/archives/4402
+[w2v_6]: https://kexue.fm/archives/4515
+
+## 4. SVD分解
 
 - [1. 自编码器与人工智能][s1]
 - [2. 为什么SVD意味着聚类？][s2]
@@ -84,8 +128,13 @@
 
 ## Reference
 
-- [苏神-信息时代-page15- kexue.fm/category/Big-Data/15/][su-15]
-- [CSDN: 学习是一种态度!][su-r1]
+- [苏神-keras][tag=keras]
+- [苏神-归档 kexue.fm/content.html][su-content]
+- [苏神-信息时代-page11- kexue.fm/category/Big-Data/15/][su]
 
-[su-15]: https://kexue.fm/category/Big-Data/15
+<!--- [CSDN: 学习是一种态度!][su-r1]-->
+
+[su]: https://kexue.fm/category/Big-Data/11
 [su-r1]: https://blog.csdn.net/itplus
+[su-content]: https://kexue.fm/content.html
+[tag=keras]: https://kexue.fm/content.html?tag=keras
