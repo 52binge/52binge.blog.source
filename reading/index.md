@@ -12,7 +12,31 @@
 - [泰迪杯赛前培训之数据挖掘与建模“慢谈”][r12]
 - [获取并处理中文维基百科语料][r9]
 
-## 1. 数据科学
+> 2018.05
+ 
+## 1. Keras
+
+## 2. Minimum Entropy
+
+- [基于最小熵原理的NLP库：nlp zero (20)][minimum_entropy_4]
+- [最小熵原理（三）：“飞象过河”之句模版和语言结构 (7)][minimum_entropy_3]
+- [最小熵原理（二）：“当机立断”之词库构建 (14)][minimum_entropy_2]
+- [最小熵原理（一）：无监督学习的原理 (6)][minimum_entropy_1]
+
+[minimum_entropy_1]: https://kexue.fm/archives/5448
+[minimum_entropy_2]: https://kexue.fm/archives/5476
+[minimum_entropy_3]: https://kexue.fm/archives/5577
+[minimum_entropy_4]: https://kexue.fm/archives/5597
+
+## 3. Data Science
+
+- [分享一个slide：花式自然语言处理][18.2]
+- [《Attention is All You Need》浅读（简介+代码）][18.1]
+
+[18.1]: https://kexue.fm/archives/4765
+[18.2]: https://kexue.fm/archives/4823
+
+basic
 
 - [1. 闲聊：神经网络与深度学习][r1]
 - [2. 漫话模型|模型与选芒果][r2]
@@ -72,8 +96,7 @@
 [r21]: https://kexue.fm/archives/4695
 [r22]: https://kexue.fm/archives/4733
 
-
-## 2. 文本情感分类
+## 4. Sentiment Classification
 
 - [1. 传统模型][w1]
 - [2. 深度学习模型][w2]
@@ -90,7 +113,7 @@
 [w.x.1]: https://kexue.fm/archives/4118
 [w.x.2]: https://kexue.fm/archives/4374
 
-## 3. 不可思议的Word2Vec
+## 5. 不可思议的Word2Vec
 
 - [1. 数学原理][w2v_1]
 - [2. 训练好的模型][w2v_2]
@@ -106,7 +129,7 @@
 [w2v_5]: https://kexue.fm/archives/4402
 [w2v_6]: https://kexue.fm/archives/4515
 
-## 4. SVD分解
+## 6. SVD分解
 
 - [1. 自编码器与人工智能][s1]
 - [2. 为什么SVD意味着聚类？][s2]
