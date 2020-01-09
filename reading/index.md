@@ -6,22 +6,45 @@
 - [3. Python的多进程 multiprocessing 编程技巧][r10] ✔️✔️✔️
 - [4. Linux下的误删大坑与简单的恢复技巧][r13] ✔️
 
-**Interest**
+## Important
+
+- [4. 谈谈dropout][r15]
+- [6. 训练集、验证集和测试集的意义][r18] ✔️✔️
+- [7. 浅谈神经网络中激活函数的设计][r19] ✔️
+- [8. 更别致的词向量模型(六)：代码、分享与结语][r20]
+- [9. 重新写了之前的新词发现算法：更快更好的新词发现](https://kexue.fm/archives/6920)
+
+**Basic**
+
+- [1. 闲聊：神经网络与深度学习][r1] ✔️
+- [2. 漫话模型|模型与选芒果][r2] ✔️
+- [3. 新词发现的信息熵方法与实现][r3]
+- [4. 从Boosting学习到神经网络：看山是山？][r4]
+
+
+
+## 1. Data Science
+
+- [1. 用bert4keras做三元组抽取](https://kexue.fm/archives/7161)
+- [2. “非自回归”也不差：基于MLM的阅读理解问答](https://kexue.fm/archives/7148)
+- [3. 万能的seq2seq：基于seq2seq的阅读理解问答](https://kexue.fm/archives/7115)
+- [4. 基于Conditional Layer Normalization的条件文本生成](https://kexue.fm/archives/7124)
+- [5. 分享一个slide：花式自然语言处理][18.2]
+- [6. 《Attention is All You Need》浅读（简介+代码）][18.1]
+- [7. 为节约而生：从标准Attention到稀疏Attention](https://kexue.fm/archives/6853)
+- [8. 从语言模型到Seq2Seq：Transformer如戏，全靠Mask](https://kexue.fm/archives/6933)
+- [9. BN究竟起了什么作用？一个闭门造车的分析](https://kexue.fm/archives/6992)
+
+
+[18.1]: https://kexue.fm/archives/4765
+[18.2]: https://kexue.fm/archives/4823
+
+**久远的**
 
 - [1. 基于双向LSTM和迁移学习的seq2seq核心实体识别][r6]
 - [2. 词向量与Embedding究竟是怎么回事？][r7] 
-
-- [3. 梯度下降和EM算法：系出同源，一脉相承][r11]
-
-- [4. 谈谈dropout][r15]
-
 - [5. RNN模型中输入的重要性的评估][r17]
-- [6. 训练集、验证集和测试集的意义][r18]
-- [7. 浅谈神经网络中激活函数的设计][r19]
-
-- [8. 更别致的词向量模型(六)：代码、分享与结语][r20]
-
-- [9. 重新写了之前的新词发现算法：更快更好的新词发现](https://kexue.fm/archives/6920)
+- [3. 梯度下降和EM算法：系出同源，一脉相承][r11]
 
 **action**
 
@@ -90,28 +113,6 @@
 [minimum_entropy_4.1]: https://kexue.fm/archives/6191
 [minimum_entropy_5]: https://kexue.fm/archives/7006
 
-## 3. Data Science
-
-- [1. 用bert4keras做三元组抽取](https://kexue.fm/archives/7161)
-- [2. “非自回归”也不差：基于MLM的阅读理解问答](https://kexue.fm/archives/7148)
-- [3. 万能的seq2seq：基于seq2seq的阅读理解问答](https://kexue.fm/archives/7115)
-- [4. 基于Conditional Layer Normalization的条件文本生成](https://kexue.fm/archives/7124)
-- [5. 分享一个slide：花式自然语言处理][18.2]
-- [6. 《Attention is All You Need》浅读（简介+代码）][18.1]
-- [7. 为节约而生：从标准Attention到稀疏Attention](https://kexue.fm/archives/6853)
-- [8. 从语言模型到Seq2Seq：Transformer如戏，全靠Mask](https://kexue.fm/archives/6933)
-- [9. BN究竟起了什么作用？一个闭门造车的分析](https://kexue.fm/archives/6992)
-
-
-[18.1]: https://kexue.fm/archives/4765
-[18.2]: https://kexue.fm/archives/4823
-
-**basic**
-
-- [1. 闲聊：神经网络与深度学习][r1] ✔️
-- [2. 漫话模型|模型与选芒果][r2] ✔️
-- [3. 新词发现的信息熵方法与实现][r3]
-- [4. 从Boosting学习到神经网络：看山是山？][r4]
 
 **article**
 
