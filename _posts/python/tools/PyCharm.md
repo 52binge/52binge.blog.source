@@ -5,9 +5,11 @@ categories: python
 tags: pyCharm
 ---
 
-<img src="/images/python/tools/PyCharm-logo.jpg" width="500" alt="Pycharm Keyboard Shortcuts" />
+<img src="/images/python/tools/PyCharm_logo.jpg" width="500" alt="Pycharm Keyboard Shortcuts" />
 
 <!-- more -->
+
+## 1. Pycharm
 
 No. | Shortcuts | Function
 :----:  | :----: | :----: 
@@ -38,6 +40,18 @@ No. | Shortcuts | Function
 4 | CMD + F12 显示文件结构 | ✔️
 5 | CMD + J | 代码智能补全
 6 | ALT + F1 | 定位编辑文件所在位置
+
+## 2. Invoke Learning
+
+```bash
+PYTHONUNBUFFERED=1;
+INTERMEDIATE_DATA_PATH=/Users/blair/ghome/6E/work_project/mlar/tmp;
+PYTHONPATH=~/ghome/6E/work_project/mlar:~/ghome/6E/work_project/mlar/nn_framework
+```
+
+### environment
+
+<img src="/images/python/tools/PyCharm_invoke.png" width="800" alt="Pycharm Invoke" />
 
 ## Reference
 
