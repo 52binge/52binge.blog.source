@@ -21,12 +21,16 @@ tags: BERT
 
 BERT: Pre-training of **`Deep Bidirectional Transformers for Language Understanding`**.
 
+<img src="/images/nlp/bert/bert_su.png" width="750" alt="Bert的预训练和微调（图片来自Bert的原论文)" />
+
 ## 2. 原理篇
 
 本章将会先给大家介绍BERT的核心transformer，而transformer又是由attention组合而成. 
 
 ### 2.1 Attention机制讲解
 
+> - [苏神《Attention is All You Need》浅读（简介+代码）](https://kexue.fm/archives/4765)
+>
 > - [Attention机制讲解](https://terrifyzhao.github.io/2019/01/04/Attention机制讲解.html)
 > - [张俊林: 深度学习中的注意力模型（2017版）](https://zhuanlan.zhihu.com/p/37601161)
 
@@ -43,6 +47,9 @@ Jay Alammar's Blog
 
 ### 2.3 BERT原理
 
+> - [图示详解BERT模型的输入与输出](https://www.cnblogs.com/gczr/p/11785930.html)
+
+<img src="/images/nlp/bert/bert_input_example.png" width="600" alt="bert input" />
 
  More Reading：
 
