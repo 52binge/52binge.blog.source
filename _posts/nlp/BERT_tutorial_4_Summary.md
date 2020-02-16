@@ -57,7 +57,9 @@ Jay Alammar's Blog
 
 > [当Bert遇上Keras：这可能是Bert最简单的打开姿势](https://kexue.fm/archives/6736)
 >
-> [bert-as-service](https://github.com/hanxiao/bert-as-service)
+> [hanxiao/bert-as-service](https://github.com/hanxiao/bert-as-service)
+> 
+> [PaperWeekly: 两行代码玩转Google BERT句向量词向量](https://zhuanlan.zhihu.com/p/50582974)
 
 ## Reference
 
@@ -67,5 +69,6 @@ Jay Alammar's Blog
 
 [1]: 从语言模型到Seq2Seq：Transformer如戏，全靠Mask
 [2]: https://mp.weixin.qq.com/s/H4at_BDLwZWqlBHLjMZWRQ
+
 
 
