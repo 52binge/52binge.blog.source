@@ -27,36 +27,57 @@ tags: BERT
 > - Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context (9 Jan. 2019)
 > - XLNet: Generalized `Autoregressive` Pretraining for Language Understanding (19 Jun. 2019)
 
+## 1. Table of Contents
 
-## 1. XLNet 诞生背景
+- Unsupervised Pre-training
+- **Autogressive vs Auto-encoding**
+- Permutation Language Model (PLM)
+- Two-stream Self Attention
+- Results
 
-1. AR
-2. AE
+> Bert 的目标函数来自 Auto-encoding
 
+### 1.1 Pre-training
 
-## 2. AR与AE语言模型
+> Pre-training 是迁移学习中很重要的一项技术。在NLP中主要以词向量为主。单词我们一般可以用两种不同的方式来表示，一种方式为"one-hot encoding"，另外一种方式为分布式表示（通常也叫作词向量/Word2Vec）。 由于单词是所有文本的基础，所以如何去更好地表示单词变得尤其重要。
 
-**AR**: <span style="background-color: rgb(255, 102, 0);">Aotoregressive Lanuage Modeling</span>
+> 那如何去理解预训练呢？ 举个例子，比如我们用BERT训练了一套模型，而且已经得到了每个单词的词向量， 那这时候我们可以直接把这些词向量用在我们自己的任务上，不用自己重新训练，这就类似于迁移学习的概念。 或者通过BERT已经训练好的模型去动态地去得出上下文中的词向量。
 
-> 它指的是，依据前面(或后面)出现的tokens来预测当前时刻的token，代表模型有ELMO、GTP等。
->
-> **缺点**：它只能利用单向语义而不能同时利用上下文信息。
->
-> ELMO 通过双向都做AR 模型，然后进行拼接，但从结果来看，效果并不是太好。
->
-> **优点**： 对自然语言生成任务(NLG)友好，天然符合生成式任务的生成过程。这也是 GPT 能够编故事的原因。
+> 预训练在通常情况下既可以提升训练效率也可以提高模型效果，因为使用预训练的结果本身其实就是去试图寻找最好的最优解。
 
-**AE**: <span style="background-color: rgb(255, 102, 0);">Autoencoding Language Modeling</span>
+### 1.2 词向量技术
 
-> 通过上下文信息来预测当前被mask的token，代表有BERT。
->
-> **缺点**： 由于训练中采用了 [MASK] 标记，导致预训练与微调阶段不一致的问题。
->
-> 此外对于生成式问题， AE 模型也显得捉襟见肘，这也是目前 BERT 为数不多实现大的突破的领域。
->
-> **优点**： 能够很好的编码上下文语义信息， 在自然语言理解(NLU)相关的下游任务上表现突出。
+> 通过词向量技术我们可以把一个单词表示为向量的形式，然后接着应用在后续的模型当中。我们可以认为词向量表示的是单词的语义（semantic)。 我们可以按照不同的类别区分词向量技术。
 
+> 常用的词向量模型比如 SkipGram, CBOW, Glove 是不考虑上下文的，也就是一个单词有个固定（Fixed）的向量，不依赖于上下文的改变而改变。比如“I back my car"和 "I hurt my back"里，单词"back"在不同的语境下的含义是不一样的 。
 
+> 近2，3年很多工作的重点放在了学习考虑上下文的词向量。在这个领域产生了诸多很有突破性的进展，从ELMo，BERT， XLNet到今日刚刚发布的ALBERT，无一不是以这个为重点。利用这些模型，我们可以动态地去学出一个单词在不同上下文之间的词向量。当然，这些向量在不同的语境下的表示肯定是不一样的
+
+## 2. unsupervised learning
+
+1、easily get lots of unlabeled data；2、labeling 
+
+non-contexuailized techniques    eg.skipgram cbow glove
+
+contexualized techniques   eg.elmo bert xlnet
+
+Denoising auto encoder  去噪自动编码器，深度学习模型——学出图片或数据更有效的表示，
+
+DAE在训练中加入噪声，提高模型健壮性
+
+2、auto_regressive vs auto_encoding
+
+自回归：elmo，product role  优点：保持一致性，考虑词的依赖关系；缺点：单向的，不同同时考虑双边 
+
+自动编码： bert , mask一些单词，基本独立假设  bert存在的问题：independent assumption 优点：考虑了双向的关系；缺点：非独立假设；2、train和 test 之间存在的不一致性；
+
+3、permutation language model 排列语言模型
+
+基于elmo考虑双向问题进行改造。answer：consider all possibel factorization
+
+随机采样一定序列，attention mask，把词的顺序混排进模型(类似于数据增强，不改造模型，从数据输入上改造）；
+
+二、已知向量的信息，知道向量的位置，结合两个信息 
 ## Reference
 
 - [从bert到XLnet](https://www.cnblogs.com/Christbao/p/12347501.html)
