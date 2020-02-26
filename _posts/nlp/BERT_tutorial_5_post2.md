@@ -1,6 +1,6 @@
 ---
 title: BERT 肩膀上的 NLP 新秀： UNILM (既能阅读又能自动生成的预训练模型)
-date: 2020-02-23 18:00:21
+date: 2020-02-23 22:00:21
 categories: nlp
 tags: BERT
 ---
