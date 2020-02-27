@@ -18,7 +18,6 @@ tags: BERT
 - 论文地址：https://arxiv.org/abs/1906.08237
 - 论文代码：https://github.com/zihangdai/xlnet
 
-
 **XLNet** 带着开源的代码和 20 项 SOTA 的成绩发布了。从 BERT 到 XLNet...
 
 **XLNet** 诞生之路上最重要的三篇论文：
@@ -35,27 +34,69 @@ tags: BERT
 - Two-stream Self Attention
 - Results
 
-> Bert 的目标函数来自 Auto-encoding
+> Bert 的目标函数来自 Auto-encoding， Bert 严格来说是 DAE.
+> 
+> ELMO 严格来说无法解决双向的问题. Permutation Language Model, 但是想将 PLM 直接用在 Transformer 上，但是达不到我们的要求. 中间发生很多小问题，所以出现 Two Stream Self Attention. 
+> 
+> Transformer-XL 长文本，本讲不涉及. 很庞大的话题.
 
 ### 1.1 Pre-training
 
-> Pre-training 是迁移学习中很重要的一项技术。在NLP中主要以词向量为主。单词我们一般可以用两种不同的方式来表示，一种方式为"one-hot encoding"，另外一种方式为分布式表示（通常也叫作词向量/Word2Vec）。 由于单词是所有文本的基础，所以如何去更好地表示单词变得尤其重要。
+> Pre-training 是迁移学习中很重要的一项技术。在NLP中主要以词向量为主。
+> 
+> 单词我们一般用两种不同的方式来表示：
+> 
+> - **one-hot encoding**
+> - **分布式表示**（通常也叫作词向量/Word2Vec）
+> 
+> 由于单词是所有文本的基础，所以如何去更好地表示单词变得尤其重要.
 
-> 那如何去理解预训练呢？ 举个例子，比如我们用BERT训练了一套模型，而且已经得到了每个单词的词向量， 那这时候我们可以直接把这些词向量用在我们自己的任务上，不用自己重新训练，这就类似于迁移学习的概念。 或者通过BERT已经训练好的模型去动态地去得出上下文中的词向量。
+> 那如何去理解预训练呢？ 举个例子，比如我们用BERT训练了一套模型，而且已经得到了每个单词的词向量， 那这时候我们可以直接把这些词向量用在我们自己的任务上，不用自己重新训练，这就类似于迁移学习的概念。
 
-> 预训练在通常情况下既可以提升训练效率也可以提高模型效果，因为使用预训练的结果本身其实就是去试图寻找最好的最优解。
+> 预训练在通常情况下既可以提升训练效率也可以提高模型效果.
 
 ### 1.2 词向量技术
 
 > 通过词向量技术我们可以把一个单词表示为向量的形式，然后接着应用在后续的模型当中。我们可以认为词向量表示的是单词的语义（semantic)。 我们可以按照不同的类别区分词向量技术。
 
-> 常用的词向量模型比如 SkipGram, CBOW, Glove 是不考虑上下文的，也就是一个单词有个固定（Fixed）的向量，不依赖于上下文的改变而改变。比如“I back my car"和 "I hurt my back"里，单词"back"在不同的语境下的含义是不一样的 。
+> 常用的词向量模型比如：
+> 
+> - SkipGram, CBOW, Glove 是不考虑上下文的，1个单词有个（Fixed）的向量，不依赖上下文改变而改变.
+> 
+> 但是 “I back my car"和 "I hurt my back"里，单词"back"在不同的语境下的含义是不一样的 。
 
-> 近2，3年很多工作的重点放在了学习考虑上下文的词向量。在这个领域产生了诸多很有突破性的进展，从ELMo，BERT， XLNet到今日刚刚发布的ALBERT，无一不是以这个为重点。利用这些模型，我们可以动态地去学出一个单词在不同上下文之间的词向量。当然，这些向量在不同的语境下的表示肯定是不一样的
+> 近2，3年很多工作的重点放在了学习考虑上下文的词向量。在这个领域产生了诸多很有突破性的进展，从
+> **ELMo、 BERT、XLNet、 ALBERT**，无一不是以这个为重点。利用这些模型，我们可以动态地去学出一个单词在不同上下文之间的词向量。当然，这些向量在不同的语境下的表示肯定是不一样的
 
-## 2. unsupervised learning
+## 2. Unsupervised Learning
 
-1、easily get lots of unlabeled data；2、labeling 
+<img src="/images/nlp/bert5/XLNET-1.png" width="650" alt="Unsupervised Learning" />
+
+### 2.1 Unsupervised Pre-Training
+
+<!--<img src="/images/nlp/bert5/XLNET-2.png" width="750" alt="Unsupervised Learning" />-->
+
+<img src="/images/nlp/bert5/XLNET-3.png" width="750" alt="Unsupervised Learning" />
+
+### 2.2 Pre-Training for NLP
+
+**Non-contextualized techniques** | **Contextualized techniques**
+:----:  | :----:
+SkipGram | ELMo
+CBOW | BERT
+Glove | XLNET
+.. | ALBERT
+
+
+## 3. Autogressive vs Auto-encoding
+
+> - [深度学习基础：Autoencoders](https://zhuanlan.zhihu.com/p/34201555)
+> - [张俊林: XLNet:运行机制及和Bert的异同比较](https://zhuanlan.zhihu.com/p/70257427)
+
+### 3.1 Autogressive
+
+### 3.2 Auto-encoding
+
 
 non-contexuailized techniques    eg.skipgram cbow glove
 
