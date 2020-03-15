@@ -44,12 +44,9 @@ Jennifer's 坐标系的 vector 与 我们坐标系的 vector 的互相转换：
 
 <img src="/images/nlp/matrix/av6731067-4.png" width="550" alt="Are you ready?"/>
 
-## 2. 特征值 & 特征向量
 
+## Reference
 
-## 3. 奇异值
-
-## 4. 奇异值分解
-
-## 5. 实战
+- [【简化数据】奇异值分解(SVD)](https://blog.csdn.net/u012162613/article/details/42214205)
+- [线性代数的"基"情](http://www.heibanke.com/2016/04/08/svd_demo/)
 
