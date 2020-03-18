@@ -49,4 +49,5 @@ Jennifer's 坐标系的 vector 与 我们坐标系的 vector 的互相转换：
 
 - [【简化数据】奇异值分解(SVD)](https://blog.csdn.net/u012162613/article/details/42214205)
 - [线性代数的"基"情](http://www.heibanke.com/2016/04/08/svd_demo/)
+- [A1.1:奇异值分解到底分解了啥（SVD](https://zhuanlan.zhihu.com/p/69651700)
 
