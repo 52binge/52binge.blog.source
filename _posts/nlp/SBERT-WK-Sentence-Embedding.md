@@ -13,6 +13,7 @@ SBERT-WK: A Sentence Embedding Method by Dissecting BERT-based Word Models
 <!-- more -->
 
 - 链接：https://arxiv.org/abs/2002.06652
+- code：[Github SBERT-WK-Sentence-Embedding](https://github.com/BinWang28/SBERT-WK-Sentence-Embedding)
 - 作者：Bin Wang, C.-C. Jay Kuo
 - 单位：University of Southern California
 - 主题：Computation and Language (cs.CL); Machine Learning (cs.LG); Multimedia (cs.MM)

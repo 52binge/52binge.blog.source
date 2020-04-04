@@ -161,8 +161,8 @@
 
 ## 4. Sentiment Classification
 
-- [1. 传统模型][w1]
-- [2. 深度学习模型][w2]
+- [1. 传统模型][w1] ✔️
+- [2. 深度学习模型][w2] ✔️ [苏神推荐的CSDN深度学习的教程系列](https://blog.csdn.net/itplus/article/details/21905449)
 - [3. 分词 OR 不分词][w3]
 - [4. 更好的损失函数][w4]
 - [x. 基于双向GRU和语言模型的视角情感分析][w.x.1] 
