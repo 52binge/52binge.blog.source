@@ -42,7 +42,7 @@ when we meet here. we can focusing on efficient learning, way of thinking, and c
 
 ### Who am I
 
-<a class="article-myself" href="/about"> Blair Chan</a> 90s, a data science engineer, nlper, GTD practitioner, live in Singapore, Singapore.
+<a class="article-myself" href="/about"> Blair Chan</a> 90s, a data developer, GTD practitioner, live in Singapore, Singapore.
 
 <a class="article-myself" href="https://instagram.com/blair101v/"> Blair Chan</a> focus on python, computer science, machine learning, algorithmic engineering, devops.
 
