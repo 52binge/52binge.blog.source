@@ -14,11 +14,40 @@ OLTP (on-line transaction processing) | OLAP（On-Line Analytical Processing）
 
 ### 1. Data WareHouse
 
+> 1. 范式建模/维度建模的区别，应用场景的区别，优缺点
+> 2. IBM范式建模的七大主题是什么？其中怎样理解当事人主题
+> 3. sql 分组三类函数的区别
+> 4. 缓慢变化维你们是怎么处理的？ 拉链表的实现
+> 5. 数据分层情况/原因，解决的什么问题
+> 6. 数据抽取和同步的方法
+> 7. join的表中筛选和where中筛选有什么区别
+> 8. 手写sql，随意修改要求说出统计思路
 
-### 2. Hive
+### 2. [Hive](/2016/02/15/hadoop/hadoop-hive-brief/)
 
+> 1. hive整个调优过程做了哪些?
+> 2. hive数仓整体架构，实现过程，有哪些问题，是怎样解决的
+> 3. 元数据是怎样管理的？元数据中都包括了那些数据
+> 4. 怎样保证数据质量
+> 5. mapreduce 执行原理
+> 6. hive的窗口函数
+> 7. hive 分区和分桶具体怎么实现的？
+> 8. Hive 支持的底层数据文件类型有哪些
+> 9. 数据表的分组和分块？
+
+<!--<details>
+<summary>元数据</summary>
+元数据包括表的名字，表的列和分区及其属性，表的属性（是否为外部表等），表的数据所在目录等。
+</details>-->
+
+- [CSDN-Hive面试题收集](https://blog.csdn.net/WYpersist/article/details/80102757)
+- [Hive常见面试题1.0](https://zhuanlan.zhihu.com/p/93932766)
 
 ### 3. Hadoop
+
+> 1. hadoop的mr的shuffle过程是怎样的？
+> 2. 对于hive的性能优化有哪些经验？
+> 3. 简要介绍一下mapreduce执行时的数据流转
 
 ### 4. Python
 
@@ -59,6 +88,7 @@ class Solution:
 ### 7. AI
 
 ## Reference
+
 
 - [ETL架构师面试题（这篇文章太棒了）](https://www.cnblogs.com/tmeily/p/4593700.html)
 
