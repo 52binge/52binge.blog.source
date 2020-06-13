@@ -14,29 +14,50 @@ OLTP (on-line transaction processing) | OLAP（On-Line Analytical Processing）
 
 ### 1. Data WareHouse
 
-> 1). 范式建模/维度建模的区别，应用场景的区别，优缺点
-<details>
-<summary>3NF vs Dimensional modeling </summary>
+#### 1.1 3NF vs Dim modeling 
+
 ```
 3NF: 
 	每个属性值唯一，不具有多义性；
 	每个非主属性必须完全依赖于整个主键，而非主键的一部分；    
 	每个非主属性不能依赖于其他关系中的属性，因为这样的话，这种属性应该归到其他关系中。    
 
-维度模型:
-	是一个规范化的事实表和反规范化的一些维度表组成的
+维度模型:   是一个规范化的 事实表 和 反规范化的一些 维度表 组成的
+	
+       (1) 一种非规范化的关系模型
+       (2) 表跟表之间的关系通过 keyword 和 foreign-key 来定义
 ```
+
+#### 1.2 事实表 vs 维度表
+
+
+#### 1.3 维度建模的三种模式
+
+<details>
+<summary>3 Schema</summary>
+```
+星型模式（Star Schema）
+雪花模型（Snowflake Schema）
+星座模型（Fact Constellations Schema）
+```
+
 </details>
 
+#### 1.4 IBM范式建模7主题是什么？
 
-> 2). IBM范式建模的七大主题是什么？其中怎样理解当事人主题
+其中怎样理解当事人主题
 
-> 4. 缓慢变化维你们是怎么处理的？ 拉链表的实现
-> 5. 数据分层情况/原因，解决的什么问题
-> 6. 数据抽取和同步的方法
-> 7. join的表中筛选和where中筛选有什么区别
+#### 1.5 缓慢变化维？ 
 
-[知乎:数据仓库建模](https://zhuanlan.zhihu.com/p/74765529)
+拉链表的实现
+
+#### 1.6 数据分层情况/原因，解决
+
+#### 1.7 数据抽取和同步的方法
+
+
+- [知乎:数据仓库建模](https://zhuanlan.zhihu.com/p/74765529)
+- [BI中事实表和维度表的定义](https://blog.csdn.net/u011402596/article/details/44083987)
 
 ### 2. [Hive](/2016/02/15/hadoop/hadoop-hive-brief/)
 
