@@ -14,14 +14,29 @@ OLTP (on-line transaction processing) | OLAP（On-Line Analytical Processing）
 
 ### 1. Data WareHouse
 
-> 1. 范式建模/维度建模的区别，应用场景的区别，优缺点
-> 2. IBM范式建模的七大主题是什么？其中怎样理解当事人主题
-> 3. sql 分组三类函数的区别
+> 1). 范式建模/维度建模的区别，应用场景的区别，优缺点
+<details>
+<summary>3NF vs Dimensional modeling </summary>
+```
+3NF: 
+	每个属性值唯一，不具有多义性；
+	每个非主属性必须完全依赖于整个主键，而非主键的一部分；    
+	每个非主属性不能依赖于其他关系中的属性，因为这样的话，这种属性应该归到其他关系中。    
+
+维度模型:
+	是一个规范化的事实表和反规范化的一些维度表组成的
+```
+</details>
+
+
+> 2). IBM范式建模的七大主题是什么？其中怎样理解当事人主题
+
 > 4. 缓慢变化维你们是怎么处理的？ 拉链表的实现
 > 5. 数据分层情况/原因，解决的什么问题
 > 6. 数据抽取和同步的方法
 > 7. join的表中筛选和where中筛选有什么区别
-> 8. 手写sql，随意修改要求说出统计思路
+
+[知乎:数据仓库建模](https://zhuanlan.zhihu.com/p/74765529)
 
 ### 2. [Hive](/2016/02/15/hadoop/hadoop-hive-brief/)
 
@@ -49,13 +64,18 @@ OLTP (on-line transaction processing) | OLAP（On-Line Analytical Processing）
 > 2. 对于hive的性能优化有哪些经验？
 > 3. 简要介绍一下mapreduce执行时的数据流转
 
-### 4. Python
+### 4. SQL
+
+> 1. sql 分组三类函数的区别
+> 2. 手写sql，随意修改要求说出统计思路
+
+### 5. Python
 
 - [2018年最常见的Python面试题&答案（上篇）](https://juejin.im/post/5b6bc1d16fb9a04f9c43edc3)
 
 - [110道Python面试题](https://zhuanlan.zhihu.com/p/54430650)
 
-### 5. Leetcode
+### 6. Leetcode
 
 #### 5.1 Array & LinkedList
 
@@ -83,9 +103,6 @@ class Solution:
 ```
 </details>
 
-### 6. SQL
-
-### 7. AI
 
 ## Reference
 
