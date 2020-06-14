@@ -12,10 +12,25 @@ OLTP (on-line transaction processing) | OLAP（On-Line Analytical Processing）
 用户数量大，为操作用户 | 用户数量少，主要有技术人员与业务人员
 各种操作主要基于索引进行 | 业务问题不固定，数据库的各种操作不能完全基于索引进行
 
+DW 4 大特征:  Subject Oriented、Integrate、Non-Volatil、Time Variant .
+
 ### 1. Data WareHouse
 
-#### 1.1 3NF vs Dim modeling 
+> 1. 3NF vs Dim modeling 
+> 2. 事实表 vs 维度表
+> 3. 维度建模的三种模式
+> 4. IBM DW 7大主题？其中怎样理解当事人主题
+> 5. 缓慢变化维？ 拉链表
+> 6. 数据分层情况/原因，解决
+> 7. 数据抽取和同步的方法
 
+- [知乎:数据仓库建模](https://zhuanlan.zhihu.com/p/74765529)
+- [BI中事实表和维度表的定义](https://blog.csdn.net/u011402596/article/details/44083987)
+
+---
+
+<details>
+<summary>1.1 3NF vs Dim modeling </summary>
 ```
 3NF: 
 	每个属性值唯一，不具有多义性；
@@ -27,37 +42,43 @@ OLTP (on-line transaction processing) | OLAP（On-Line Analytical Processing）
        (1) 一种非规范化的关系模型
        (2) 表跟表之间的关系通过 keyword 和 foreign-key 来定义
 ```
-
-#### 1.2 事实表 vs 维度表
-
-
-#### 1.3 维度建模的三种模式
+</details>
 
 <details>
-<summary>3 Schema</summary>
+<summary>1.2 事实表 vs 维度表</summary>
+```
+维度表:
+  1. 维表的范围很宽（具有多个属性）
+  2. 跟事实表相比，行数相对较小，通常小于 10 万条
+  3. 内容相对固定，几乎就是一类查找表，或编码表
+事实表:
+  1. 数据量大
+  2. 列数较少
+  3. 经常发生变化
+```
+</details>
+
+<details>
+<summary>1.3 维度建模的三种模式</summary>
 ```
 星型模式（Star Schema）
 雪花模型（Snowflake Schema）
 星座模型（Fact Constellations Schema）
 ```
-
 </details>
 
-#### 1.4 IBM范式建模7主题是什么？
 
-其中怎样理解当事人主题
+<details>
+<summary>1.4 IBM 7大主题</summary>
+```
+设计数据仓库按主题划分现在有2种方案:
 
-#### 1.5 缓慢变化维？ 
+1. 当事人、地域、协议、事件、产品、资产、营销、渠道等主题划分；
+2. 客户、公共、交易、存款、贷款、银行卡、总账、中间业务、渠道等主题划分
 
-拉链表的实现
-
-#### 1.6 数据分层情况/原因，解决
-
-#### 1.7 数据抽取和同步的方法
-
-
-- [知乎:数据仓库建模](https://zhuanlan.zhihu.com/p/74765529)
-- [BI中事实表和维度表的定义](https://blog.csdn.net/u011402596/article/details/44083987)
+数据仓库面向在数据模型中典型的主题领域包括 顾客、产品、订单 和 财务 或是其他某项事务或活动。
+```
+</details>
 
 ### 2. [Hive](/2016/02/15/hadoop/hadoop-hive-brief/)
 
