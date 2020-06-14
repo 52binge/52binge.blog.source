@@ -20,8 +20,8 @@ DW 4 大特征:  Subject Oriented、Integrate、Non-Volatil、Time Variant .
 > 2. 事实表 vs 维度表
 > 3. 维度建模的三种模式
 > 4. IBM DW 7大主题？其中怎样理解当事人主题
-> 5. 缓慢变化维？ 拉链表
-> 6. 数据分层情况/原因，解决
+> 5. [缓慢变化维](https://zh.twgreatdaily.com/mrqjjnABjYh_GJGV_3je.html) 、 [拉链表 (生效时间/失效时间)](https://blog.csdn.net/qq_42696788/article/details/104989949)
+> 6. [数据分层情况/原因，解决](数据仓分层的意义及如何优雅地设计数据分层)
 > 7. 数据抽取和同步的方法
 
 - [知乎:数据仓库建模](https://zhuanlan.zhihu.com/p/74765529)
@@ -77,6 +77,16 @@ DW 4 大特征:  Subject Oriented、Integrate、Non-Volatil、Time Variant .
 2. 客户、公共、交易、存款、贷款、银行卡、总账、中间业务、渠道等主题划分
 
 数据仓库面向在数据模型中典型的主题领域包括 顾客、产品、订单 和 财务 或是其他某项事务或活动。
+```
+</details>
+
+<details>
+<summary>1.5 缓慢变化维</summary>
+```
+1. 重写维度值
+2. 插入新的维度行
+3. 添加维度列
+4. 快照方式，每天导一份 dt，定期清理历史数据
 ```
 </details>
 
