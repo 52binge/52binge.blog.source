@@ -117,9 +117,19 @@ DW 4 大特征:  Subject Oriented、Integrate、Non-Volatil、Time Variant .
 
 - [110道Python面试题](https://zhuanlan.zhihu.com/p/54430650)
 
-### 6. Leetcode
+#### 6. Project
 
-#### 5.1 Array & LinkedList
+ehxs:
+ 
+> 1). info extract
+> 2). Finance
+> 3). Sqoop, Hive, Task Scheduling， Airflow
+> 4). DMP 
+
+
+### 7. Leetcode
+
+#### 7.1 Array & LinkedList
 
 <details>
 <summary>1. 约瑟夫环</summary>
