@@ -21,9 +21,14 @@ DW 4 大特征:  Subject Oriented、Integrate、Non-Volatil、Time Variant .
 > 3. 维度建模的三种模式
 > 4. IBM DW 7大主题？其中怎样理解当事人主题
 > 5. [缓慢变化维](https://zh.twgreatdaily.com/mrqjjnABjYh_GJGV_3je.html) 、 [拉链表 (生效时间/失效时间)](https://blog.csdn.net/qq_42696788/article/details/104989949)
-> 6. [数据分层情况/原因，解决](数据仓分层的意义及如何优雅地设计数据分层)
+> 6. [数据分层情况/原因，解决](https://blog.csdn.net/QQ1131221088/article/details/89927920)
 > 7. 数据抽取和同步的方法
 
+![](/images/dataware/data-layer.png)
+
+![](https://ask.qcloudimg.com/http-save/yehe-6343589/5u2krenpem.png?imageView2/2/w/1620)
+
+- [数据仓库&面试总结](https://zhuanlan.zhihu.com/p/145087259)
 - [知乎:数据仓库建模](https://zhuanlan.zhihu.com/p/74765529)
 - [BI中事实表和维度表的定义](https://blog.csdn.net/u011402596/article/details/44083987)
 
@@ -92,7 +97,18 @@ DW 4 大特征:  Subject Oriented、Integrate、Non-Volatil、Time Variant .
 
 ### 2. [Hive](/2016/02/15/hadoop/hadoop-hive-brief/)
 
-> 1. hive整个调优过程做了哪些?
+`Input -> Mappers -> Sort,Shuffle -> Reducers -> Output`
+
+<details>
+<summary>Hive 系统架构</summary>
+<img src="/images/hadoop/hive-02.png" width="550" alt="Hive 系统架构" />
+
+</details>
+
+> 1. [hive整个调优过程做了哪些?](https://blog.csdn.net/WYpersist/article/details/80030921)
+> 2. [Hive性能调优的最佳实践](https://blog.csdn.net/jmx_bigdata/article/details/88035201)
+> 3. [Hive 图文并茂-数据仓库 ](https://www.cnblogs.com/moveofgod/p/12383384.html)
+> 4. [电商数仓项目系列一：数据仓库简介](https://blog.csdn.net/wangping623/article/details/100697280)
 > 2. hive数仓整体架构，实现过程，有哪些问题，是怎样解决的
 > 3. 元数据是怎样管理的？元数据中都包括了那些数据
 > 4. 怎样保证数据质量
@@ -102,6 +118,31 @@ DW 4 大特征:  Subject Oriented、Integrate、Non-Volatil、Time Variant .
 > 8. Hive 支持的底层数据文件类型有哪些
 > 9. 数据表的分组和分块？
 
+
+<details>
+<summary>1. Hive 原理</summary>
+```
+1. 用户提交查询等任务给Driver。
+2. 编译器获得该用户的任务Plan。
+3. 编译器Compiler根据用户任务去MetaStore中获取需要的Hive的元数据信息。
+4. 编译器Compiler得到元数据信息，对任务进行编译，先将HiveQL转换为抽象语法树，然后将抽象语法树转换成查询块，将查询块转化为逻辑的查询计划，重写逻辑查询计划，将逻辑计划转化为物理的计划（MapReduce）, 最后选择最佳的策略。
+5. 将最终的计划提交给Driver。
+6. Driver将计划Plan转交给ExecutionEngine去执行，获取元数据信息，提交给JobTracker或者SourceManager执行该任务，任务会直接读取HDFS中文件进行相应的操作。
+7. 获取执行的结果。
+8. 取得并返回执行结果。
+```
+</details>
+
+<details>
+<summary>2. hadoop处理数据的过程，有几个显著的特征</summary>
+```
+1.不怕数据多，就怕数据倾斜。
+2．对jobs数比较多的作业运行效率相对比较低，比如即使有几百行的表，如果多次关联多次汇总，产生十几个jobs，没半小时是跑不完的。map reduce作业初始化的时间是比较长的。
+3.对sum，count来说，不存在数据倾斜问题。
+4.对count(distinct ),效率较低，数据量一多，准出问题，如果是多count(distinct )效率更低
+```
+</details>
+
 <!--<details>
 <summary>元数据</summary>
 元数据包括表的名字，表的列和分区及其属性，表的属性（是否为外部表等），表的数据所在目录等。
@@ -109,6 +150,8 @@ DW 4 大特征:  Subject Oriented、Integrate、Non-Volatil、Time Variant .
 
 - [CSDN-Hive面试题收集](https://blog.csdn.net/WYpersist/article/details/80102757)
 - [Hive常见面试题1.0](https://zhuanlan.zhihu.com/p/93932766)
+
+
 
 ### 3. Hadoop
 
@@ -167,7 +210,6 @@ class Solution:
 
 
 ## Reference
-
 
 - [ETL架构师面试题（这篇文章太棒了）](https://www.cnblogs.com/tmeily/p/4593700.html)
 
