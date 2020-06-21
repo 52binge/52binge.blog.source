@@ -26,7 +26,17 @@ DW 4 大特征:  Subject Oriented、Integrate、Non-Volatil、Time Variant .
 
 ![](/images/dataware/data-layer.png)
 
+![](https://img-blog.csdnimg.cn/20190910140014944.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dhbmdwaW5nNjIz,size_16,color_FFFFFF,t_70)
+
 ![](https://ask.qcloudimg.com/http-save/yehe-6343589/5u2krenpem.png?imageView2/2/w/1620)
+
+> **数仓分层**
+>
+> - STG Stage （不做任何加工, 禁止重复进入）
+> - ODS（Operational Data Store）不做处理，存放原始数据 (该层在stage上仅数据格式到标准格式转换)
+> - DWD（Data Warehouse Summary 明细数据层）进行简单数据清洗，降维
+> - DWS（Data Warehouse Summary 服务数据层）进行轻度汇总（做宽表）
+> - ADS（Application Data Summary 数据应用层）为报表提供数据
 
 - [数据仓库&面试总结](https://zhuanlan.zhihu.com/p/145087259)
 - [知乎:数据仓库建模](https://zhuanlan.zhihu.com/p/74765529)
@@ -143,15 +153,33 @@ DW 4 大特征:  Subject Oriented、Integrate、Non-Volatil、Time Variant .
 ```
 </details>
 
-<!--<details>
-<summary>元数据</summary>
-元数据包括表的名字，表的列和分区及其属性，表的属性（是否为外部表等），表的数据所在目录等。
-</details>-->
+<details>
+<summary>4. Sqoop 问题</summary>
+```bash
+function import_data_hdfs() {
+  sqoop import \
+    -Dorg.apache.sqoop.splitter.allow_text_splitter=true --connect ${jdbc_url} --username ${jdbc_username} --password  ${jdbc_passwd} \
+    --query "${exec_sql}" \
+    --split-by ${id} -m 20 \
+    --target-dir ${target_dir} \
+    --fields-terminated-by "\001" --lines-terminated-by "\n" \
+    --hive-drop-import-delims \
+    --null-string '\\N' --null-non-string '\\N'
+  check_success
+  echo_ex "end successful import ${target_dir}. field.delim : \001"
+}
+(1) 导入导出Null存储一致性问题
+        导出数据时采用–input-null-string和–input-null-non-string
+        导入数据时采用–null-string和–null-non-string
+(2). jdbc_url
+         jdbc_url="jdbc:mysql://xxxx:3306/reportpublic?autoReconnect=true"
+(3). Map 阶段, 只有
+          原理是重写了 MR： inputformat 和 outputformat
+```
+</details>
 
 - [CSDN-Hive面试题收集](https://blog.csdn.net/WYpersist/article/details/80102757)
 - [Hive常见面试题1.0](https://zhuanlan.zhihu.com/p/93932766)
-
-
 
 ### 3. Hadoop
 
@@ -160,6 +188,54 @@ DW 4 大特征:  Subject Oriented、Integrate、Non-Volatil、Time Variant .
 > 3. 简要介绍一下mapreduce执行时的数据流转
 
 ### 4. SQL
+
+> 1. [廖雪峰:关系数据库概述](https://www.liaoxuefeng.com/wiki/1177760294764384/1179613436834240)
+
+<details>
+<summary>(1). 主键 / FOREIGN KEY</summary>
+```
+身份证号、手机 这些看上去可以唯一的字段，均不可用作主键。
+作为主键最好是完全业务无关的字段，我们一般把这个字段命名为id。
+自增整数类型
+
+没有必要的情况下，我们尽量不使用联合主键，因为它给关系表带来了复杂度的上升。
+
+由于外键约束会降低数据库的性能，大部分互联网应用程序为了追求速度，并不设置外键约束，而是仅靠应用程序自身来保证逻辑的正确性。
+```
+</details>
+
+<details>
+<summary>(2). INDEX</summary>
+```
+可以对一张表创建多个索引。索引的优点是提高了查询效率
+
+缺点是在插入、更新和删除记录时，需要同时修改索引，因此，索引越多，插入、更新和删除记录的速度就越慢。
+
+对于主键，关系数据库会自动对其创建主键索引。使用主键索引的效率是最高的，因为主键会保证绝对唯一。
+```
+</details>
+
+<details>
+<summary>(3). SQL查询</summary>
+```sql
+SELECT * FROM students WHERE score >= 80;
+SELECT id, name, gender, score FROM students ORDER BY score;
+SELECT id, name, gender, score FROM students ORDER BY score DESC LIMIT 3 OFFSET 6; 第3页
+SELECT COUNT(*) boys FROM students WHERE gender = 'M';
+
+分组查询:
+SELECT COUNT(*) num FROM students GROUP BY class_id;
+SELECT class_id, gender, COUNT(*) num FROM students GROUP BY class_id, gender;
+
+多表查询:
+
+
+连接查询:
+
+```
+</details>
+
+
 
 > 1. sql 分组三类函数的区别
 > 2. 手写sql，随意修改要求说出统计思路
@@ -170,7 +246,7 @@ DW 4 大特征:  Subject Oriented、Integrate、Non-Volatil、Time Variant .
 
 - [110道Python面试题](https://zhuanlan.zhihu.com/p/54430650)
 
-#### 6. Project
+### 6. Project
 
 ehxs:
  
