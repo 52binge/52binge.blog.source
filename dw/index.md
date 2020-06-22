@@ -183,9 +183,10 @@ function import_data_hdfs() {
 
 ### 3. Hadoop
 
-> 1. hadoop的mr的shuffle过程是怎样的？
-> 2. 对于hive的性能优化有哪些经验？
-> 3. 简要介绍一下mapreduce执行时的数据流转
+> 1. [Hadoop（六）MapReduce的入门与运行原理](https://www.cnblogs.com/frankdeng/p/9311438.html)
+> 2. hadoop的mr的shuffle过程是怎样的？
+> 3. 对于hive的性能优化有哪些经验？
+> 4. 简要介绍一下mapreduce执行时的数据流转
 
 ### 4. SQL
 
@@ -218,24 +219,45 @@ function import_data_hdfs() {
 <details>
 <summary>(3). SQL查询</summary>
 ```sql
+3.1 基础查询
+
 SELECT * FROM students WHERE score >= 80;
 SELECT id, name, gender, score FROM students ORDER BY score;
 SELECT id, name, gender, score FROM students ORDER BY score DESC LIMIT 3 OFFSET 6; 第3页
 SELECT COUNT(*) boys FROM students WHERE gender = 'M';
 
-分组查询:
+3.2 分组查询:
+
 SELECT COUNT(*) num FROM students GROUP BY class_id;
 SELECT class_id, gender, COUNT(*) num FROM students GROUP BY class_id, gender;
 
-多表查询:
+3.3 多表查询:
 
+SELECT
+    s.id sid,
+    s.name,
+    s.gender,
+    s.score,
+    c.id cid,
+    c.name cname
+FROM students s, classes c
+WHERE s.gender = 'M' AND c.id = 1;
 
-连接查询:
+使用多表查询可以获取M x N行记录；
+多表查询的结果集可能非常巨大，要小心使用。
+
+3.4 连接查询:
+
+JOIN查询需要先确定主表，然后把另一个表的数据“附加”到结果集上；
+INNER JOIN是最常用的一种JOIN查询，它的语法是SELECT ... FROM <表1> INNER JOIN <表2> ON <条件...>；
+JOIN查询仍然可以使用WHERE条件和ORDER BY排序。
 
 ```
 </details>
 
-
+<details>
+<summary>(4). 事务</summary>
+</details>
 
 > 1. sql 分组三类函数的区别
 > 2. 手写sql，随意修改要求说出统计思路

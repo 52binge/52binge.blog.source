@@ -22,29 +22,25 @@ p + p {
 
 ## About
 
-<!--世界很大，但刚刚好, 我们在这里遇见, 那就好好在一起: 聚焦 **高效学习**, **思维方式**, **沟通技巧**.-->
-
 when we meet here. we can focusing on efficient learning, way of thinking, and communication skills.
 
-在让人做某一件事之前，应该先解释为什么要做这件事，及它的重要性。这样才能让人理解，才能尊重程序员的智商。
+<!--在让人做某一件事之前，应该先解释为什么要做这件事，及它的重要性。这样才能让人理解，才能尊重程序员的智商。-->
 
-<!--基于时间成本，人一生只能做好仅有的一两件事情，一直做才会走通，有巅峰期。-->
 
  <!--[Blair’s Instagram][ins]-->
 
 <!--&nbsp; 、&nbsp;[Netease Music][wangyiyun]&nbsp;、&nbsp;[Tweet][tweet]
 -->
-<!--<img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
--->
+
 [ins]: https://www.instagram.com/blair101v/
 [wangyiyun]: https://music.163.com/#/my/m/music/playlist?id=942623425
 [tweet]: /tweet
 
-### Who am I
+### Who am I 
 
 <a class="article-myself" href="/about"> Blair Chan</a> 90s, a data developer, GTD practitioner, live in Singapore, Singapore.
 
-<a class="article-myself" href="https://instagram.com/blair101v/"> Blair Chan</a> focus on python, computer science, machine learning, algorithmic engineering, devops.
+<a class="article-myself" href="https://instagram.com/blair101v/"> Blair Chan</a> focus on python, data warehouse, computer science, machine learning.
 
 <!--<a class="article-myself" href="/">  Libin Chan</a>-->
 <!-- <img src="/images/tech-logos/2016-10-03-6.png" width="250"  style="margin-left:100px;" /img> -->
@@ -63,6 +59,8 @@ when we meet here. we can focusing on efficient learning, way of thinking, and c
 -->
 
 ### Classic line
+
+<img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 
 **友情觀：**
 
