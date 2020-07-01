@@ -188,7 +188,14 @@ function import_data_hdfs() {
 > 3. 对于hive的性能优化有哪些经验？
 > 4. 简要介绍一下mapreduce执行时的数据流转
 
-### 4. SQL
+### 4. Spark
+
+迭代式+低延迟
+
+- [Spark 2000题](https://www.jianshu.com/p/7a8fca3838a4)
+- [PySpark-DataFrame各种常用操作举例](https://blog.csdn.net/anshuai_aw1/article/details/87881079)
+
+### 5. SQL
 
 > 1. [廖雪峰:关系数据库概述](https://www.liaoxuefeng.com/wiki/1177760294764384/1179613436834240)
 
@@ -262,13 +269,13 @@ JOIN查询仍然可以使用WHERE条件和ORDER BY排序。
 > 1. sql 分组三类函数的区别
 > 2. 手写sql，随意修改要求说出统计思路
 
-### 5. Python
+### 6. Python
 
 - [2018年最常见的Python面试题&答案（上篇）](https://juejin.im/post/5b6bc1d16fb9a04f9c43edc3)
 
 - [110道Python面试题](https://zhuanlan.zhihu.com/p/54430650)
 
-### 6. Project
+### 7. Project
 
 ehxs:
  
@@ -278,9 +285,9 @@ ehxs:
 > 4). DMP 
 
 
-### 7. Leetcode
+### 8. Leetcode
 
-#### 7.1 Array & LinkedList
+**8.1 Array & LinkedList**
 
 <details>
 <summary>1. 约瑟夫环</summary>
