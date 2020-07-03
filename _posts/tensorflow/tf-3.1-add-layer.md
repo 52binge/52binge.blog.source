@@ -1,7 +1,7 @@
 ---
 title: Tensorflow 例子3 ： 添加层 def add_layer()
 toc: true
-date: 2017-09-09 09:37:21
+date: 2018-09-09 09:37:21
 categories: tensorflow
 tags: tensorflow
 ---

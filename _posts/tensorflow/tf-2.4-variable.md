@@ -1,7 +1,7 @@
 ---
 title: Variable 变量
 toc: true
-date: 2017-08-29 10:07:21
+date: 2018-08-29 10:07:21
 categories: tensorflow
 tags: tensorflow
 ---

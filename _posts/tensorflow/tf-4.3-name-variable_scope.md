@@ -1,7 +1,7 @@
 ---
 title: TensorFlow 命名方法 name_scope / variable_scope 
 toc: true
-date: 2017-10-05 12:10:21
+date: 2018-10-05 12:10:21
 categories: tensorflow
 tags: tensorflow
 ---

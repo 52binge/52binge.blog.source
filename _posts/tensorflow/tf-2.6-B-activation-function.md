@@ -1,7 +1,7 @@
 ---
 title: Activation Function 激励函数 
 toc: true
-date: 2017-09-07 14:27:21
+date: 2018-09-07 14:27:21
 categories: tensorflow
 tags: tensorflow
 ---

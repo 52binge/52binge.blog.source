@@ -1,7 +1,7 @@
 ---
 title: (转) 理解 LSTM 网络 （Understanding LSTM Networks by colah）
 toc: true
-date: 2017-10-06 16:10:21
+date: 2018-10-06 16:10:21
 categories: tensorflow
 tags: tensorflow
 ---

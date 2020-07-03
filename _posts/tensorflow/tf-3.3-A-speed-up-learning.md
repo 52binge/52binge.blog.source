@@ -1,7 +1,7 @@
 ---
 title: Tensorflow Speed Up Training
 toc: true
-date: 2017-09-12 09:10:21
+date: 2018-09-12 09:10:21
 categories: tensorflow
 tags: tensorflow
 ---

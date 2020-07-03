@@ -1,7 +1,7 @@
 ---
 title: Placeholder 传入值
 toc: true
-date: 2017-08-30 11:45:21
+date: 2018-08-30 11:45:21
 categories: tensorflow
 tags: tensorflow
 ---
