@@ -16,7 +16,6 @@ Spark 立足于内存计算、从多迭代批量处理出发
 Spark 兼顾数据仓库、流处理、图计算 等多种计算范式，大数据系统领域全栈计算平台  
 
 > - [spark.apache.org](http://spark.apache.org)
-> - [Mac上安装Spark3.0.0以及Hadoop](https://blog.csdn.net/Crazy_SunShine/article/details/103042708)
 
 <img src="/images/spark/spark-rv-1/spark-1.2.png" width="650" alt="localhost:8080" /> 
 
@@ -84,31 +83,36 @@ export PATH=$PATH:$SPARK_HOME/bin
 ### 4.1 安装 Spark
 
 ```bash
-(1). download  spark-1.5.2-bin-hadoop2.6.tgz
+(1). tar -xzvf spark-3.0.0-bin-hadoop2.7.tgz
 
-(2). tar -xzvf spark-1.5.2-bin-hadoop2.6.tgz
+(2). cd /usr/local/xsoft/spark-3.0.0-bin-hadoop3.2/
 
 (3). 配置 conf/spark-env.sh
     1) 详细复杂参数配置参见 官网 Configuration
     2) vim conf/spark-env.sh
     
-	#!/usr/bin/env bash
-	
-	export SCALA_HOME=/usr/local/Cellar/scala/2.13.3
-	export SPARK_HOME=/usr/local/xsoft/spark
-	
-	export SPARK_MASTER_IP=localhost
-	export MASTER=spark://localhost:7077
-	
-	#export SPARK_WORKER_MEMORY=2g
-	
-	#export SPARK_EXECUTOR_INSTANCES=2
-	#export SPARK_EXECUTOR_CORES=1
-	
-	#export SPARK_WORKER_MEMORY=2000m
-	#export SPARK_EXECUTOR_MEMORY=500m
-	
-	#export SPARK_LIBRARY_PATH=${SPARK_HOME}/lib
+		#!/usr/bin/env bash
+		
+		export SCALA_HOME=/usr/local/Cellar/scala/2.13.3
+		export SPARK_HOME=/usr/local/xsoft/spark
+		
+		export SPARK_MASTER_IP=localhost
+		export MASTER=spark://localhost:7077
+		
+		#export IPYTHON=1
+		export PYSPARK_PYTHON=/Users/blair/.pyenv/versions/anaconda3/envs/spark/bin/python3
+		export PYSPARK_DRIVER_PYTHON="jupyter"
+		export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
+		
+		#export SPARK_WORKER_MEMORY=2g
+		
+		#export SPARK_EXECUTOR_INSTANCES=2
+		#export SPARK_EXECUTOR_CORES=1
+		
+		#export SPARK_WORKER_MEMORY=2000m
+		#export SPARK_EXECUTOR_MEMORY=500m
+		
+       #export SPARK_LIBRARY_PATH=${SPARK_HOME}/lib
 
 (4). 配置 conf/slaves (测试可选)
 (5). 一般需要 startup ssh server.
@@ -126,7 +130,7 @@ export PATH=$PATH:$SPARK_HOME/bin
 启动后 jps 查看 会有 Master 进程存在
 
 ```bash
-➜  spark-1.5.2-bin-hadoop2.6  jps
+➜  spark  jps
 11262 Jps
 11101 Master
 11221 Worker
@@ -281,3 +285,7 @@ Spark 将分布式的内存数据抽象为弹性分布式数据集 (RDD), 并在
 [3]: /images/spark/spark-introduce-03.jpeg
 [4]: /images/spark/spark-introduce-04.jpeg
 [5]: /images/spark/spark-introduce-05.png
+
+## Reference
+
+- [Mac上安装Spark3.0.0以及Hadoop](https://blog.csdn.net/Crazy_SunShine/article/details/103042708)
