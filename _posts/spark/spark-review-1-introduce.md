@@ -7,7 +7,7 @@ tags: [spark]
 ---
 
 
-<img src="/images/spark/spark-rv-1/spark_logo_1.png" width="450" alt="Spark Logo" />
+<img src="/images/spark/spark-1.1-logo.png" width="350" alt="Spark" />
 
 <!--more-->
 
@@ -17,7 +17,7 @@ Spark 兼顾数据仓库、流处理、图计算 等多种计算范式，大数�
 
 > - [spark.apache.org](http://spark.apache.org)
 
-<img src="/images/spark/spark-rv-1/spark-1.2.png" width="650" alt="localhost:8080" /> 
+<img src="/images/spark/spark-1.2.png" width="650" alt="localhost:8080" /> 
 
 ## 1. Spark 的历史与发展
 
@@ -289,3 +289,4 @@ Spark 将分布式的内存数据抽象为弹性分布式数据集 (RDD), 并在
 ## Reference
 
 - [Mac上安装Spark3.0.0以及Hadoop](https://blog.csdn.net/Crazy_SunShine/article/details/103042708)
+- [大数据入门与实战-PySpark的使用教程](https://www.jianshu.com/p/5a42fe0eed4d)
