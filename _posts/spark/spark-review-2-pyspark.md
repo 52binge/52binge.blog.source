@@ -74,3 +74,5 @@ print("Elements in RDD -> %s" % coll)
 ## Reference
 
 - [大数据入门与实战-PySpark的使用教程](https://www.jianshu.com/p/5a42fe0eed4d)
+- [Python - lru_cache和singledispatch装饰器](https://zhuanlan.zhihu.com/p/27643991)
+- [大数据开发系列直播课 ③](https://study.163.com/course/courseMain.htm?courseId=1209979905)
