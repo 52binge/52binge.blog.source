@@ -7,7 +7,7 @@ tags: [spark]
 ---
 
 
-<img src="/images/spark/spark-2.1-logo.png" width="450" alt="Spark" />
+<img src="/images/spark/spark-3.0-rdd-logo.png" width="550" alt="Spark RDD Feature" />
 
 <!--more-->
 
