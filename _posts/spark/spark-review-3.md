@@ -128,16 +128,11 @@ words.mapPartitionsWithIndex(indexedFunc).collect()
 
 查看 spark 运行状态： http://localhost:8080/
 
-```
-URL: spark://localhost:7077
-Alive Workers: 1
-Cores in use: 8 Total, 8 Used
-Memory in use: 15.0 GiB Total, 1024.0 MiB Used
-Resources in use:
-Applications: 1 Running, 0 Completed
-Drivers: 0 Running, 0 Completed
-Status: ALIVE
-```
+<img src="/images/spark/spark-3.7.png" width="900" alt="Spark" />
+
+查看 spark Jobs 状态：http://localhost:4040/jobs/
+
+<img src="/images/spark/spark-3.6.png" width="900" alt="Spark" />
 
 > `知识摘要`:
 > 1. 如果用 Hadoop Mapreduce 来完成, 则代码写起来麻烦并繁多.
@@ -156,5 +151,6 @@ Status: ALIVE
 - [大数据入门与实战-PySpark的使用教程](https://www.jianshu.com/p/5a42fe0eed4d)
 - [Python - lru_cache和singledispatch装饰器](https://zhuanlan.zhihu.com/p/27643991)
 - [大数据开发系列直播课 ③](https://study.163.com/course/courseMain.htm?courseId=1209979905)
+- [PySpark-数据操作-DataFrame](https://www.jianshu.com/p/f79838ddb534)
 
 [株式会社XG JAPAN 日本投资 | 过来人告诉你：日本创业移民的费用和坑](https://www.youtube.com/watch?v=plLTqfBIlqg)

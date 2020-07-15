@@ -7,7 +7,7 @@ tags: [hdfs]
 ---
 
 
-<img src="/images/spark/spark-2.1-logo.png" width="450" alt="Spark" />
+<img src="/images/hadoop/hadoop-hdfs.webp" width="450" alt="Hadoop HDFS" />
 
 <!--more-->
 
