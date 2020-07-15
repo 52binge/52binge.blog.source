@@ -6,19 +6,24 @@ categories: [hadoop]
 tags: [hdfs]
 ---
 
-
 <img src="/images/hadoop/hadoop-hdfs.webp" width="450" alt="Hadoop HDFS" />
 
 <!--more-->
+
+分布式文件系统HDFS: 核心原理与操作
+
+<img src="/images/hadoop/hadoop-hdfs-1.png" width="900" alt="Hadoop HDFS" />
+
+<img src="/images/hadoop/hadoop-hdfs-2.png" width="900" alt="Hadoop HDFS" />
 
 **如何学习大数据?**
 
 > 1. 思想、架构、原理 (非常重要)
 > 2. 搭建环境 (建议: Apache版本)
 
-分布式文件系统HDFS: 核心原理与操作
-
 ## 1. 什么是大数据
+
+> Volume, Velocity, Variety, Value, Veracity
 
 商品推荐：
 
@@ -27,9 +32,8 @@ tags: [hdfs]
 
 大数据的核心问题是?
 
-> 1. 数据的存储
-> 2. 数据的计算
-
+> 1. **数据的存储**
+> 2. **数据的计算**
 
 ## 2. 分布式文件系统
 
@@ -47,7 +51,7 @@ Q2： 硬盘不够安全
 主从架构 HDFS、Yarn、Hbase、Storm、Spark、Flink 都是主从架构
 
 > 1. 存在的问题： 单点故障
-> 2. Zooker: HA (Hadoop的HA实现架构)
+> 2. Zookeeper: HA (Hadoop的HA实现架构)
 > 3. ..
 
 ```bash
@@ -65,7 +69,15 @@ Q2： 硬盘不够安全
  2. Web Console： 端口 9870
  3. Java程序
 
+<img src="/images/hadoop/hadoop-hdfs-3.png" width="800" alt="使用 Java API 上传数据到HDFS" />
+
 ## 4. HDFS 进阶
+
+ 1. 回收站
+ 2. 安全模式
+ 3. 配额
+ 4. 权限管理
+ 5. 快照
 
 ## Reference
 
