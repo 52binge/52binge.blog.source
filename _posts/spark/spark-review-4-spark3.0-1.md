@@ -40,3 +40,4 @@ tags: [spark]
 ## Reference
 
 - [云栖大会 | Apache Spark 3.0 和 Koalas 最新进展](https://www.iteblog.com/archives/2611.html)
+- [美团技术团队 - Spark性能优化指南——基础篇](https://tech.meituan.com/2016/04/29/spark-tuning-basic.html)
