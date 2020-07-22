@@ -194,6 +194,7 @@ function import_data_hdfs() {
 
 - [Spark 2000题](https://www.jianshu.com/p/7a8fca3838a4)
 - [PySpark-DataFrame各种常用操作举例](https://blog.csdn.net/anshuai_aw1/article/details/87881079)
+- [Spark 马中华](https://blog.csdn.net/zhongqi2513/category_6081152.html)
 
 ### 5. SQL
 
