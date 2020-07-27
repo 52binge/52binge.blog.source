@@ -6,17 +6,12 @@ categories: [spark]
 tags: [spark]
 ---
 
-<img src="/images/spark/spark-aura-3.2.1.jpg" width="700" />
+<img src="/images/spark/spark-aura-3.2.1.jpg" width="600" />
 
 <!-- more -->
 
 ## 1. 第1部分
 
-第一天spark内容的部分残留
-  
-> WordCountJava7
-> WordCountJava8
-  
 任务的提交：
   
 > (1). run-example SparkPi 100
@@ -26,7 +21,7 @@ tags: [spark]
 --master:
   
 ```bash
-local local[2] local\[\*\]
+local local[2] local[*]
 spark://hadoop02:7077, hadoop04:7077
 yarn
 ```
@@ -34,10 +29,8 @@ yarn
 
 HDFS 处理 myha01 这个 nameservice 的方式非常的暴力:
 
-```bash
-所有的请求，其实都会给每个 namenode 都发送, 但是只有 active 的 namenode才会进行处理，进行回复
-if (namenode.getServiceStage() == "standby") {} else : ...
-```
+> 所有的请求，其实都会给每个 namenode 都发送, 但是只有 active 的 namenode才会进行处理，进行回复
+> if (namenode.getServiceStage() == "standby") {} else : ...
   
 ## 2. 第2部分
  
@@ -51,6 +44,11 @@ if (namenode.getServiceStage() == "standby") {} else : ...
 >  Job   切分标准: 从前往后找action的算子
 >  Stage 切分标准: 从后往前找宽依赖的算子 
 >  Task
+> 
+> 在spark中，Task的类型分为2种：ShuffleMapTask和ResultTask；简单来说，DAG的最后一个阶段会为每个结果的partition生成一个ResultTask，即每个Stage里面的Task的数量是由该Stage中最后一个RDD的Partition的数量所决定的！
+> 
+> 而其余所有阶段都会生成ShuffleMapTask；之所以称之为ShuffleMapTask是因为它需要将自己的计算结果通过shuffle到下一个stage中。
+
 
 <img src="/images/spark/spark-aura-3.2.1.jpg" width="750" />
 
