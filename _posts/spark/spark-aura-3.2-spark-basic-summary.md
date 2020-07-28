@@ -18,14 +18,13 @@ tags: [spark]
 > (2). spark-shell
 > (3). spark-submit
   
---master:
+**`--master`**:
   
 ```bash
 local local[2] local[*]
 spark://hadoop02:7077, hadoop04:7077
 yarn
 ```
-
 
 HDFS 处理 myha01 这个 nameservice 的方式非常的暴力:
 
@@ -34,7 +33,7 @@ HDFS 处理 myha01 这个 nameservice 的方式非常的暴力:
   
 ## 2. 第2部分
  
- 核心功能: SparkContext, 存储体系， 执行引擎 DAGScheduler, 部署魔术
+ 核心功能: SparkContext, 存储体系, 执行引擎 DAGScheduler, 部署模式
  
  扩展功能: SQL, Streaming, GraphX, MLlib, SparkR, Pyspark
  
@@ -45,12 +44,12 @@ HDFS 处理 myha01 这个 nameservice 的方式非常的暴力:
 >  Stage 切分标准: 从后往前找宽依赖的算子 
 >  Task
 > 
-> 在spark中，Task的类型分为2种：ShuffleMapTask和ResultTask；简单来说，DAG的最后一个阶段会为每个结果的partition生成一个ResultTask，即每个Stage里面的Task的数量是由该Stage中最后一个RDD的Partition的数量所决定的！
+> 在spark中，Task的类型分为2种：ShuffleMapTask 和 ResultTask；简单来说，DAG的最后一个阶段会为每个结果的 partition 生成一个 ResultTask, 即每个Stage里面的Task的数量是由该Stage中最后一个RDD的Partition的数量所决定的！
 > 
 > 而其余所有阶段都会生成ShuffleMapTask；之所以称之为ShuffleMapTask是因为它需要将自己的计算结果通过shuffle到下一个stage中。
 
 
-<img src="/images/spark/spark-aura-3.2.1.jpg" width="750" />
+<img src="/images/spark/spark-aura-3.2.1.jpg" width="700" />
 
 **Driver Application**: 客户端驱动程序, 也可以理解为客户端应用程序，用于将任何程序转换为 RDD 和 DAG, 并与 Cluster Manager 进行通信与调度.
 
@@ -101,7 +100,7 @@ deploy-mode 主要针对 yarn: client cluster
 
 (2). 五大属性 
 
-> 分区
+> 分区 (A list of partitions)
 > 作用在每个分区之上的一个函数
 > 依赖： 宽依赖 & 窄依赖
 > KeyValueRDD 分区器
@@ -130,7 +129,7 @@ referencing a dataset in an external storage systemHDFS
 
 **WordCount DAG 有向无环图**：
 
-<img src="/images/spark/spark-aura-3.2.3.jpg" width="950" alt="WorCount DAG有向无环图" />
+<img src="/images/spark/spark-aura-3.2.3.jpg" width="850" alt="WorCount DAG有向无环图" />
 
 ## Reference
 
