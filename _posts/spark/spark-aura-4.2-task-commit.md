@@ -43,8 +43,6 @@ tags: [spark]
 
 <img src="/images/spark/spark-aura-4.4.3.jpg" width="850" />
 
-<img src="/images/spark/spark-aura-4.4.4.jpg" width="850" />
-
 <img src="/images/spark/spark-aura-4.4.5.jpg" width="850" />
 
 
