@@ -17,6 +17,40 @@ tags: [spark]
 **master** | **worker** | **executor** | **driver**
 
 
+整个 Spark 应用程序的运行分成三个阶段：
+
+**1). 编写代码，使用 spark-submit** 去交任务到集群运行,一直到我们自己编写的main方法运行为止
+
+> 1.1) 编写代码
+> 1.2) 打成 Jar
+> 1.3) 编写 spark-submit 脚本提交任务
+> 1.4) 脚本解析 和 执行 最终转到 main 方法执行 SparkSubmit
+
+**2). sparkContext 的初始化** 
+
+>  new SparkContext(sparkConf)
+>  
+>  两条线:
+>
+> **(1) 在 driver 端执行的代码**
+>
+> - init TaskScheduler ----> TaskSchedulerImpl
+> - init SchedulerBackend ----> StandAloneSchedulerBackend
+> - init DAGScheduler ----> DAGScheduler
+>
+> **(2) 在 worker 和 master 端执行的各种代码**
+> 
+> 业务功能实现:
+> 
+> - 1、 master 注册
+> - 2、 worker 负责启动 executor
+> 
+
+**3). action 算子**
+
+---
+
+
 ## 1. SparkSubmit
 
 No. | Spark 任务的提交流程   
@@ -54,11 +88,15 @@ No. | Spark 任务的提交流程 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 
 <img src="/images/spark/spark-aura-5.1.1.jpg" width="950" />
 
+spark1.x RPC AKKA
+spark2.x RPC netty
+
 # Spark的任务提交和执行流程详解：
 
 [马中华：Spark的任务提交和执行流程详解](https://blog.csdn.net/zhongqi2513/article/details/107051253)
 
 ![](https://img-blog.csdnimg.cn/20200630214023905.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3pob25ncWkyNTEz,size_16,color_FFFFFF,t_70)
+
 
 ## Reference
 
