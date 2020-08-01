@@ -58,6 +58,13 @@ tags: [spark]
 > 聊聊你理解的 OLAP 和 OLTP (使用场景、技术栈等)
 > 聊聊你对维度建模的理解
 
+## 8. 技术组件
+
+<img src="/images/dataware/dw-wy-1.11.jpg" width="950" alt="" />
+
 ## Reference
 
-- [企业级数据仓库实战](https://www.bilibili.com/video/av63753220)
+- [bilibili 企业级数据仓库实战](https://www.bilibili.com/video/av63753220)
+- [企业级数据仓库PPT分享](https://mp.weixin.qq.com/s/qDZTIj5yw2L9aYLuX6AdDA)
+- [讲师：南头居士 - 数据科学之企业级数据仓库](https://study.163.com/course/courseMain.htm?courseId=1209564814)
+- [【数据分析】- SQL面试50题 - 跟我一起打怪升级 一起成为数据科学家](https://www.bilibili.com/video/BV1q4411G7Lw/?spm_id_from=333.788.videocard.1)
