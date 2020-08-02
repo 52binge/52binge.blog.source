@@ -2,8 +2,8 @@
 title: Data Science - data warehouse 1 基础篇
 toc: true
 date: 2020-08-01 10:07:21
-categories: [spark]
-tags: [spark]
+categories: [data warehouse]
+tags: [data warehouse]
 ---
 
 <img src="/images/dataware/dw-wy-1.1.jpg" width="750" alt="" />
