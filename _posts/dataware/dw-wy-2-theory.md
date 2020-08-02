@@ -92,6 +92,20 @@ tags: [data warehouse]
 
 <img src="/images/dataware/dw-wy-2.7.jpg" width="850" alt="事实表的一致性" />
 
+## 4. 维度建模 - 常见事实表
+
+1. 事务事实表
+
+2. 周期快照事实表
+
+3. 累计快照事实表
+
+4. 无事实的事实表
+
+5. 聚集事实表
+
+<center><embed src="/images/dataware/08如何构建事实表之常见的事实表.pdf" width="950" height="700"></center>
+
 ## Reference
 
 - [bilibili 企业级数据仓库实战](https://www.bilibili.com/video/av63753220)
