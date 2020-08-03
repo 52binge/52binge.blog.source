@@ -1,8 +1,8 @@
 ---
-title: Data Science - data warehouse 2 理论篇
+title: Data Warehouse - 理论篇 1
 toc: true
 date: 2020-08-01 12:07:21
-categories: [data warehouse]
+categories: [data-warehouse]
 tags: [data warehouse]
 ---
 

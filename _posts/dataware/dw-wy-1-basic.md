@@ -1,8 +1,8 @@
 ---
-title: Data Science - data warehouse 1 基础篇
+title: Data Warehouse - 基础篇
 toc: true
 date: 2020-08-01 10:07:21
-categories: [data warehouse]
+categories: [data-warehouse]
 tags: [data warehouse]
 ---
 
