@@ -6,7 +6,7 @@ categories: [data-warehouse]
 tags: [data warehouse]
 ---
 
-<img src="/images/dataware/dw-wy-2-2-logo.png" width="450" alt="" />
+<img src="/images/hadoop/hadoop-mr-logo.png" width="450" alt="" />
 
 <!-- more -->
 
