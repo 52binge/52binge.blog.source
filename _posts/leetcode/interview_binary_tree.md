@@ -387,9 +387,66 @@ def get_k_level_number(root, k):
 
 ## 8. 求二叉树第K层的叶子节点个数
 
+```python
+void get_k_level_leaf_number(TreeNode root, int k){
+    if(root == null || k &lt;=0){
+        return 0;
+    }
+    if(root != null && k == 1){
+        if(root.left == null && root.right == null)
+            return 1;
+        else
+            return 0;
+    }
+    return get_k_level_number(root.left, k-1) + get_k_level_number(root.right, k-1);
+}
+```
+
 ## 9. 判断两棵二叉树是否结构相同
 
+给定两个二叉树，编写一个函数来检查它们是否相同。
+
+递归解法：
+
+>（1）如果两棵二叉树都为空，返回真
+>
+>（2）如果两棵二叉树一棵为空，另一棵不为空，返回假
+>
+>（3）如果两棵二叉树都不为空，如果对应的左子树和右子树都同构返回真，其他返回假
+
+```python
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if(p == null && q == null)
+            return true;
+        if(p == null || q == null)
+            return false;
+        if(p.val == q.val)
+            return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+        return false;
+    }   
+}
+
+```
+
 ## 10. 判断二叉树是不是平衡二叉树
+
+```python
+class Solution {
+    public boolean isBalanced(TreeNode root) {
+        if(root == null)
+            return true;
+        return Math.abs(maxHigh(root.left) - maxHigh(root.right)) &lt;= 1 
+            && isBalanced(root.left) && isBalanced(root.right);
+    }
+
+    public int maxHigh(TreeNode root){
+        if(root == null)
+            return 0;
+        return Math.max(maxHigh(root.left), maxHigh(root.right))+1;
+    }
+}
+```
 
 ## 11. 求二叉树的镜像
 
