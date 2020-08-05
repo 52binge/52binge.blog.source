@@ -224,11 +224,166 @@ def later_stack(self, root):
 
 [LeetCode：Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/description/)
 
+本题是让我们把二叉树的每一层节点放入到同一个列表中，最后返回各层的列表组成的总的列表。
+
+可以使用 BFS 和 DFS 解决。
+
+左边是BFS，按照层进行搜索；图右边是DFS，先一路走到底，然后再回头搜索。
+
+<img src="/images/leetcode/binary_tree-3.png" width="700" alt="" />
+
+模板2
+
+```python
+from collections import deque 
+A=deque([]) #创建一个空的双队列
+A.append(n) #从右边像队列中增加元素 ，n表示增加的元素
+A.appendleft(n) #从左边像队列中增加元素，n表示增加的元素
+A.pop() #从队列的右边删除元素，并且返回删除值
+A.popleft() #从队列的左边删除元素，并且返回删除值
+```
+
+题目描述：
+
+```
+示例：
+二叉树：[3,9,20,null,null,15,7],
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+
+返回其层次遍历结果：
+
+[
+  [3],
+  [9,20],
+  [15,7]
+]
+```
+
+Answer：
+
+```python
+from collections import deque
+
+class Solution(object):
+    def levelOrder(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[List[int]]
+        """
+        queue = collections.deque()
+        queue.append(root)
+        res = []
+        while queue:
+            size = len(queue)
+            level = []
+            for _ in range(size):
+                cur = queue.popleft()
+                if not cur:
+                    continue
+                level.append(cur.val)
+                queue.append(cur.left)
+                queue.append(cur.right)
+            if level:
+                res.append(level)
+        return res
+```
+
 ### 6.1 自下而上分层遍历
 
-### 6.2 按之字形顺序打印二叉树
+此处撰写解题思路
+
+一个队列用于保存树结构，另一个保存遍历的结果；
+利用队列的特性，层序遍历每层的结果；
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def levelOrderBottom(self, root: TreeNode) -> List[List[int]]:
+        if root == None:
+            return []
+        stack = [root]
+        result = []
+        while len(stack) != 0:
+            num = len(stack)
+            r_temp = []
+            for i in range(num):
+                node = stack.pop(0)
+                r_temp.append(node.val)
+                if node.left:
+                    stack.append(node.left)
+                if node.right:
+                    stack.append(node.right)
+            result.insert(0, r_temp)
+        return result
+```
+
+### 6.2 按之字形顺序打印二叉树 （不错code）
+
+请实现一个函数按照之字形打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从右至左的顺序打印，第三行按照从左到右的顺序打印，其他行以此类推。
+
+> 1). 设两个栈，s2存放奇数层，s1存放偶数层
+>
+> 2). 遍历s2节点的同时按照左子树、右子树的顺序加入s1，
+>
+> 3). 遍历s1节点的同时按照右子树、左子树的顺序加入s2
+
+```python
+# -*- coding:utf-8 -*-
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+class Solution:
+    def Print(self, pRoot):
+        if not pRoot:
+            return []
+        # write code here
+        curLayer = [pRoot]
+        res = []
+        cnt = 0
+        while curLayer:
+            nextLayer = []
+            tmp = []
+            for node in curLayer:
+                tmp.append(node.val)
+                if node.left:
+                    nextLayer.append(node.left)
+                if node.right:
+                    nextLayer.append(node.right)
+            if cnt == 0:
+                res.append(tmp)
+            else:
+                res.append(tmp[::-1])
+            curLayer = nextLayer
+            cnt = (cnt+1) % 2
+        return res
+```
 
 ## 7. 求二叉树第K层的节点个数
+
+```python
+def get_k_level_number(root, k): 
+    if root == None or k ==0:
+        return 0
+    
+    if root != None and k == 1:
+        return 1
+    
+    return get_k_level_number(root.left, k-1) + get_k_level_number(root.right, k-1)
+}
+```
 
 ## 8. 求二叉树第K层的叶子节点个数
 
@@ -278,6 +433,9 @@ def buildTree(self, preorder, inorder):
 ## 20. 二叉搜索树的第k个结点
 
 ## Reference
+
+- [负雪明烛](https://blog.csdn.net/fuxuemingzhu)
+- [【LeetCode】代码模板，刷题必会](https://blog.csdn.net/fuxuemingzhu/article/details/101900729)
 
 - [good blog - python_data_structure](https://www.tutorialspoint.com/python_data_structure/python_tree_traversal_algorithms.htm)
 - [python_tree_traversal_algorithms](https://www.tutorialspoint.com/python_data_structure/python_tree_traversal_algorithms.htm)
