@@ -382,24 +382,22 @@ def get_k_level_number(root, k):
         return 1
     
     return get_k_level_number(root.left, k-1) + get_k_level_number(root.right, k-1)
-}
 ```
 
 ## 8. 求二叉树第K层的叶子节点个数
 
 ```python
-void get_k_level_leaf_number(TreeNode root, int k){
-    if(root == null || k &lt;=0){
-        return 0;
-    }
-    if(root != null && k == 1){
-        if(root.left == null && root.right == null)
-            return 1;
+def get_k_level_leaf_number(root, k):
+    if root == None || k == 0:
+        return 0
+    
+    if root != None and k == 1:
+        if root.left == None and root.right == None
+            return 1
         else
-            return 0;
-    }
-    return get_k_level_number(root.left, k-1) + get_k_level_number(root.right, k-1);
-}
+            return 0
+    
+    return get_k_level_number(root.left, k-1) + get_k_level_number(root.right, k-1)
 ```
 
 ## 9. 判断两棵二叉树是否结构相同
@@ -415,46 +413,142 @@ void get_k_level_leaf_number(TreeNode root, int k){
 >（3）如果两棵二叉树都不为空，如果对应的左子树和右子树都同构返回真，其他返回假
 
 ```python
-class Solution {
-    public boolean isSameTree(TreeNode p, TreeNode q) {
-        if(p == null && q == null)
-            return true;
-        if(p == null || q == null)
-            return false;
-        if(p.val == q.val)
-            return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
-        return false;
-    }   
-}
+def isSameTree(p: TreeNode, q: TreeNode):
+    if p == None and q == None:
+        return True
+    if p == None or q == None:
+        return False
 
+    if p.val == q.val:
+        return isSameTree(p.left, q.left) and isSameTree(p.right, q.right)
+    return False
 ```
 
 ## 10. 判断二叉树是不是平衡二叉树
 
 ```python
-class Solution {
-    public boolean isBalanced(TreeNode root) {
-        if(root == null)
-            return true;
-        return Math.abs(maxHigh(root.left) - maxHigh(root.right)) &lt;= 1 
-            && isBalanced(root.left) && isBalanced(root.right);
-    }
+def isBalanced(TreeNode root):
 
-    public int maxHigh(TreeNode root){
-        if(root == null)
-            return 0;
-        return Math.max(maxHigh(root.left), maxHigh(root.right))+1;
-    }
-}
+    if root == None:
+        return True
+        
+    return abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 and \ 
+            isBalanced(root.left) and isBalanced(root.right)
+	
+    def maxHigh(root):
+        if root == None:
+            return 0
+        return max(maxHigh(root.left), maxHigh(root.right)) + 1
 ```
 
 ## 11. 求二叉树的镜像
 
+LeetCode：[Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/description/) 翻转一棵二叉树
+
+```
+翻转一棵二叉树.
+输入：
+
+     4
+   /   \
+  2     7
+ / \   / \
+1   3 6   9
+输出：
+
+     4
+   /   \
+  7     2
+ / \   / \
+9   6 3   1
+```
+
+```python
+def invertTree(root):
+    if root == None:
+        return root
+
+    node = root.left
+    root.left = invertTree(root.right)
+    root.right = invertTree(node)
+
+    return root
+```
+
 ### 11.1 对称二叉树
+
+LeetCode： [101. Symmetric Tree](https://leetcode-cn.com/problems/symmetric-tree/description/)
+
+```
+例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
+
+    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+```
+
+```python
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        return root == null || isSymmetricHelper(root.left, root.right);
+    }
+    public boolean isSymmetricHelper(TreeNode left, TreeNode right){
+        if(left == null && right == null)
+            return true;
+        if(left == null || right == null)
+            return false;
+        if(left.val != right.val)
+            return false;
+        return isSymmetricHelper(left.left, right.right) && isSymmetricHelper(left.right, right.left);
+    }
+}
+```
 
 ## 12. 求二叉树中两个节点的最低公共祖先节点
 
+LeetCode：[Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/)
+
+给定二叉树，找到树中两个给定节点的最低共同祖先（LCA）。
+
+递归解法：
+
+（1）如果两个节点分别在根节点的左子树和右子树，则返回根节点
+
+（2）如果两个节点都在左子树，则递归处理左子树；如果两个节点都在右子树，则递归处理右子树
+
+```python
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if(root == null || root == p || root == q)
+            return root;
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+        if(left != null && right != null)
+            return root;
+        return left == null ? right : left;
+    }
+}
+```
+
+### 12.1 求二叉搜索树的最近公共祖先
+
+LeetCode：[Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/)
+
+给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。
+
+百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”
+
 ## 13. 求二叉树的直径
+
+LeetCode：Diameter of Binary Tree
+
+给定一棵二叉树，你需要计算它的直径长度。一棵二叉树的直径长度是任意两个结点路径长度中的最大值。这条路径可能穿过根结点。
+
+
+
+递归解法：对于每个节点，它的最长路径等于左子树的最长路径+右子树的最长路径
 
 ## 14. 由前序遍历序列和中序遍历序列重建二叉树
 
@@ -479,15 +573,39 @@ def buildTree(self, preorder, inorder):
 
 ## 15. 判断二叉树是不是完全二叉树
 
+完全二叉树是指最后一层左边是满的，右边可能慢也不能不满，然后其余层都是满的，根据这个特性，利用层遍历。如果我们当前遍历到了NULL结点，如果后续还有非NULL结点，说明是非完全二叉树
+
 ## 16. 树的子结构
+
+输入两棵二叉树A，B，判断B是不是A的子结构。
 
 ## 17. 二叉树中和为某一值的路径
 
+剑指offer：二叉树中和为某一值的路径
+
+输入一颗二叉树和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。
+
 ## 18. 二叉树的下一个结点
+
+剑指offer：二叉树的下一个结点
+
+给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针。
 
 ## 19. 序列化二叉树
 
+剑指offer：序列化二叉树
+
+LeetCode：Serialize and Deserialize Binary Tree
+
+请实现两个函数，分别用来序列化和反序列化二叉树
+
 ## 20. 二叉搜索树的第k个结点
+
+剑指offer：二叉搜索树的第k个结点
+
+给定一棵二叉搜索树，请找出其中的第k小的结点。例如， （5，3，7，2，4，6，8）中，按结点数值大小顺序第三小结点的值为4。
+
+因为二叉搜索树按照中序遍历的顺序打印出来就是排好序的，所以，我们按照中序遍历找到第k个结点就是题目所求的结点。
 
 ## Reference
 
