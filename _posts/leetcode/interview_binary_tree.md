@@ -2,7 +2,7 @@
 title: 总结 20 道题搞定 leetcode - 二叉树
 toc: true
 date: 2020-08-03 23:07:21
-categories: [icpc]
+categories: [leetcode]
 tags: [Tree]
 ---
 
@@ -490,20 +490,17 @@ LeetCode： [101. Symmetric Tree](https://leetcode-cn.com/problems/symmetric-tre
 ```
 
 ```python
-class Solution {
-    public boolean isSymmetric(TreeNode root) {
-        return root == null || isSymmetricHelper(root.left, root.right);
-    }
-    public boolean isSymmetricHelper(TreeNode left, TreeNode right){
-        if(left == null && right == null)
-            return true;
-        if(left == null || right == null)
-            return false;
-        if(left.val != right.val)
-            return false;
-        return isSymmetricHelper(left.left, right.right) && isSymmetricHelper(left.right, right.left);
-    }
-}
+def isSymmetric(TreeNode root):
+    return root == null or isSymmetricHelper(root.left, root.right)
+    
+    def isSymmetricHelper(left: TreeNode, right: TreeNode):
+        if left == None and right == None
+            return True
+        if left == None || right == None)
+            return False
+        if left.val != right.val
+            return False
+        return isSymmetricHelper(left.left, right.right) and isSymmetricHelper(left.right, right.left);
 ```
 
 ## 12. 求二叉树中两个节点的最低公共祖先节点
