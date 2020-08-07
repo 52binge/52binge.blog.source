@@ -490,43 +490,64 @@ LeetCode： [101. Symmetric Tree](https://leetcode-cn.com/problems/symmetric-tre
 ```
 
 ```python
-def isSymmetric(TreeNode root):
-    return root == null or isSymmetricHelper(root.left, root.right)
+def isSymmetric(root: TreeNode):
+    return root == None or isSymmetricHelper(root.left, root.right)
     
     def isSymmetricHelper(left: TreeNode, right: TreeNode):
-        if left == None and right == None
+        if left == None and right == None:
             return True
-        if left == None || right == None)
+        if left == None or right == None:
             return False
-        if left.val != right.val
+        if left.val != right.val:
             return False
-        return isSymmetricHelper(left.left, right.right) and isSymmetricHelper(left.right, right.left);
+        return isSymmetricHelper(left.left, right.right) and isSymmetricHelper(left.right, right.left)
 ```
 
 ## 12. 求二叉树中两个节点的最低公共祖先节点
 
 LeetCode：[Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/)
 
+<img src="/images/leetcode/binary-tree-5.png" width="600" alt="" />
+
 给定二叉树，找到树中两个给定节点的最低共同祖先（LCA）。
 
-递归解法：
+<img src="/images/leetcode/binary-tree-6.png" width="600" alt="" />
+
+**递归解法**：
 
 （1）如果两个节点分别在根节点的左子树和右子树，则返回根节点
 
 （2）如果两个节点都在左子树，则递归处理左子树；如果两个节点都在右子树，则递归处理右子树
 
+[二叉树的最近公共祖先（后序遍历 DFS ，清晰图解）](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/solution/236-er-cha-shu-de-zui-jin-gong-gong-zu-xian-hou-xu/)
+
+**根据以上定义，若 root 是 p,q 的 最近公共祖先 ，则只可能为以下情况之一**：
+
+> 1). p 和 q 在 root 的子树中，且分列 root 的 异侧（即分别在左、右子树中）；
+> 2). p = root，且 q 在 root 的左或右子树中；
+> 3). q = root，且 p 在 root 的左或右子树中；
+>
+> 考虑通过递归对二叉树进行后序遍历，当遇到节点 p 或 q 时返回。**从底至顶回溯**，当节点 p, q 在节点 root 的异侧时，节点 root 即为最近公共祖先，则向上返回 root.
+
+
 ```python
-class Solution {
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if(root == null || root == p || root == q)
-            return root;
-        TreeNode left = lowestCommonAncestor(root.left, p, q);
-        TreeNode right = lowestCommonAncestor(root.right, p, q);
-        if(left != null && right != null)
-            return root;
-        return left == null ? right : left;
-    }
-}
+def lowestCommonAncestor(root: TreeNode, p: TreeNode, q: TreeNode):
+    # 当越过叶节点，则直接返回 null
+    # 当 rootroot 等于 p, q， 则直接返回 root
+    if root == None or root == p or root == q:
+        return root
+    
+    left = lowestCommonAncestor(root.left, p, q)
+    right = lowestCommonAncestor(root.right, p, q)
+    
+    if not left and not right: return None
+    
+    if not left: return right
+    if not right: return left
+    
+    return root
+    #if left != None and right != None:
+    #    return root
 ```
 
 ### 12.1 求二叉搜索树的最近公共祖先
