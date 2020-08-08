@@ -8,11 +8,26 @@ tags: [Tree]
 
 <!--<img src="/images/icpc/BinaryTree-1.png" width="450" alt="" />-->
 
-<img src="/images/leetcode/binary_tree-1.jpg" width="600" alt="" />
+<img src="/images/leetcode/binary_tree-2.png" width="600" alt="" />
 
 <!-- more -->
 
-## 0. 几个概念
+**easy：**
+
+> 1. 递归： [求二叉树中的节点个数] ， f(root.lchild)+ f(root.rchild) + 1 ， **✔️**
+> 2. 递归： [求二叉树(最大深度)&(最小深度)] ，max(max_depth(root.left), max_depth(root.right))+1
+> 3. 递归： [求二叉树第K层的节点个数] ， f(root.left, k-1) + f(root.right, k-1) ， ✔️
+>
+> 4. 递归： [求二叉树第K层的叶子节点个数] if(k==1 and root.left and root.right is null) return 1; ， ✔️
+> 5. 递归： [二叉树先序遍历/前序遍历]  (fIno(Node\* root) { while(1) {if else}
+> 6. 递归： [判断两棵二叉树是否结构相同] ， ✔️
+> 7. 递归： [求二叉树的镜像（反转二叉树）] ， （左右递归交换）✔️ 
+> 8. 递归： [对称二叉树] （双函数，承接上题二叉树的镜像， good） ， ✔️
+> 9. 递归： [求二叉树中两个节点的最低公共祖先节点 good] ， ✔️
+> 10. 递归： [求二叉搜索树的最近公共祖先 good] ， ✔️
+> 11. 递归： 根据前序和中序重建二叉树 ， ✔️
+
+**0. 几个概念**
 
 > 完全二叉树：若二叉树的高度是h，除第h层之外，其他（1h-1）层的节点数都达到了最大个数，并且第h层的节点都连续的集中在最左边。想到点什么没？实际上，完全二叉树和堆联系比较紧密哈
 >
@@ -552,23 +567,130 @@ def lowestCommonAncestor(root: TreeNode, p: TreeNode, q: TreeNode):
 
 ### 12.1 求二叉搜索树的最近公共祖先
 
-LeetCode：[Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/)
+LeetCode：[Lowest Common Ancestor of a Binary Search Tree](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/)
 
 给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。
 
 百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”
 
+<img src="/images/leetcode/binary-tree-7.png" width="550" alt="" />
+
+笔记：p 和 q 其中的一个在 LCA 节点的左子树上，另一个在 LCA 节点的右子树上。
+
+也有可能是下面这种情况：
+
+<img src="/images/leetcode/binary-tree-8.png" width="650" alt="" />
+
+算法:
+
+1. 从根节点开始遍历树
+2. 如果节点 p 和节点 q 都在右子树上，那么以右孩子为根节点继续 1 的操作
+3. 如果节点 p 和节点 q 都在左子树上，那么以左孩子为根节点继续 1 的操作
+4. 如果条件 2 和条件 3 都不成立，这就意味着我们已经找到节 p 和节点 q 的 LCA 了
+
+```python
+class Solution:
+    def lowestCommonAncestor(self, root, p, q):
+        """
+        :type root: TreeNode
+        :type p: TreeNode
+        :type q: TreeNode
+        :rtype: TreeNode
+        """
+        # Value of current node or parent node.
+        parent_val = root.val
+
+        # Value of p
+        p_val = p.val
+
+        # Value of q
+        q_val = q.val
+
+        # If both p and q are greater than parent
+        if p_val > parent_val and q_val > parent_val:    
+            return self.lowestCommonAncestor(root.right, p, q)
+        # If both p and q are lesser than parent
+        elif p_val < parent_val and q_val < parent_val:    
+            return self.lowestCommonAncestor(root.left, p, q)
+        # We have found the split point, i.e. the LCA node.
+        else:
+            return root
+```
+
+
+
 ## 13. 求二叉树的直径
 
-LeetCode：Diameter of Binary Tree
+LeetCode：[Diameter of Binary Tree](https://leetcode-cn.com/problems/diameter-of-binary-tree/solution/er-cha-shu-de-zhi-jing-by-leetcode-solution/)
 
 给定一棵二叉树，你需要计算它的直径长度。一棵二叉树的直径长度是任意两个结点路径长度中的最大值。这条路径可能穿过根结点。
 
-
-
 递归解法：对于每个节点，它的最长路径等于左子树的最长路径+右子树的最长路径
 
+```python
+def diameterOfBinaryTree(root):
+    ans = 1
+    def depth(node):
+        # 访问到空节点了，返回0
+        if not node: return 0
+        # 左儿子为根的子树的深度
+        L = depth(node.left)
+        # 右儿子为根的子树的深度
+        R = depth(node.right)
+        # 计算d_node即L+R+1 并更新ans
+        ans = max(ans, L+R+1)
+        # 返回该节点为根的子树的深度
+        return max(L, R) + 1
+
+    depth(root)
+    return ans - 1
+```
+
 ## 14. 由前序遍历序列和中序遍历序列重建二叉树
+
+剑指offer：重建二叉树
+
+LeetCode：[Construct Binary Tree from Preorder and Inorder Traversal](https://weiweiblog.cn/20tree/)
+
+如何遍历树, 遍历树有两种通用策略：
+
+1. 深度优先遍历（DFS）
+2. 广度优先遍历（BFS）
+
+按照高度顺序，从上往下逐层遍历节点。 先遍历上层节点再遍历下层节点。
+
+下图中按照不同的方法遍历对应子树，得到的序列都是 1-2-3-4-5。根据不同子树结构比较不同遍历方法的特点。
+
+<img src="/images/leetcode/interview-bfs_dfs.pngg" width="550" alt="" />
+
+LeetCode：[从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/)
+
+```python
+class Solution:
+    def buildTree(self, inorder: List[int], postorder: List[int]) -> TreeNode:
+        def helper(in_left, in_right):
+            # if there is no elements to construct subtrees
+            if in_left > in_right:
+                return None
+            
+            # pick up the last element as a root
+            val = postorder.pop()
+            root = TreeNode(val)
+
+            # root splits inorder list
+            # into left and right subtrees
+            index = idx_map[val]
+ 
+            # build right subtree
+            root.right = helper(index + 1, in_right)
+            # build left subtree
+            root.left = helper(in_left, index - 1)
+            return root
+        
+        # build a hashmap value -> its index
+        idx_map = {val:idx for idx, val in enumerate(inorder)} 
+        return helper(0, len(inorder) - 1)
+```
 
 前序遍历 preorder = [3,9,20,15,7]
 中序遍历 inorder = [9,3,15,20,7]
