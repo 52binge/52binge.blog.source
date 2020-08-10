@@ -6,7 +6,7 @@ categories: [data-warehouse]
 tags: [data warehouse]
 ---
 
-<img src="/images/dataware/sql-50-logo.jpg" width="550" alt="" />
+<img src="/images/sql/sql-50-logo.jpg" width="550" alt="" />
 
 <!-- more -->
 
@@ -202,10 +202,13 @@ GROUP BY st.s_id HAVING count(distinct sc.c_id) < (SELECT COUNT(distinct c_id) F
 1. and在括号外用
 2. distinct 不知道什么时候用？
 
-<img src="/images/dataware/sql-50-11.jpg" width="850" alt="" />
+<img src="/images/sql/sql-50-11.jpg" width="850" alt="" />
 
+**(12). 查询和“01”号同学所学课程完全相同的其他同学的学号(重点)**
 
-<img src="/images/dataware/sql-50-table-logo.jpg" width="800" alt="" />
+<img src="/images/sql/sql-50-12.jpg" width="800" alt="" />
+
+<img src="/images/sql/sql-50-table-logo.jpg" width="800" alt="" />
 
 
 ## Reference

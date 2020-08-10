@@ -44,6 +44,46 @@ tags: [spark]
 
 ## 2. 尽可能复用同一个RDD
 
+```scala
+map(x => x+1)
+map(x => x*2)
+
+map(x => 2 * (x+1))
+```
+
+<img src="/images/spark/spark-aura-6.2.1.png" alt="" />
+
+
+## 3. 对多次使用的RDD进行持久化
+
+```scala
+cache
+persist
+  
+val rdd2 = rdd1.map.reduce
+rdd2.cache
+  
+rdd2.sort.map()
+rdd2.groupByKey
+  
+rdd1.map.reduce.sort.map()
+rdd1.map.reduce.groupByKey
+```
+  
+> 程序运行过程中的 data 放置在 内存, 如程序运行 finish. 中间的数据会垃圾回收.
+>  
+> 如果在程序执行过程中, 生成了一些中间结果是另外一个程序需要使用的数据
+> 
+> 那么就可以把该 data persist 到内存中 或 磁盘中.
+> 
+> 另外一个程序就可以避免重复计算, 直接从磁盘或内存中进行读取.
+> 
+> 所以为了尽快的提交任务的执行效率, 尽量把重复利用的数据持久化到内存中.
+
+<img src="/images/spark/spark-aura-6.2.2.png" alt="" />
+
+
+
 
 ## Reference
 
