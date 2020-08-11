@@ -715,15 +715,112 @@ def buildTree(self, preorder, inorder):
 
 完全二叉树是指最后一层左边是满的，右边可能慢也不能不满，然后其余层都是满的，根据这个特性，利用层遍历。如果我们当前遍历到了NULL结点，如果后续还有非NULL结点，说明是非完全二叉树
 
+```python
+# from collections import deque
+# queue = deque(), queue.pop(), queue.popleft(), queue.append, queue.appendleft
+
+class Node(object):
+    def __init__(self,val=None):
+        self.val = val
+        self.left = None
+        self.right = None
+
+def check_tree(Node root):
+    if root == None:
+        return True
+
+    queue = deque()
+    queue.append(root)
+    
+    while (not queue):
+        node = queue.popleft()
+        if node is None:
+            falg = True
+        else:
+            if flag is True:
+                retrun False
+            queue.append(node.left)
+            queue.append(node.right)
+    return True
+```
+
 ## 16. 树的子结构
+
+剑指offer：[树的子结构](https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/)
+
+```
+给定的树 A:
+
+     3
+    / \
+   4   5
+  / \
+ 1   2
+给定的树 B：
+
+   4 
+  /
+ 1
+返回 true，因为 B 与 A 的一个子树拥有相同的结构和节点值。
+
+输入：A = [3,4,5,1,2], B = [4,1]
+输出：true
+```
+
+[树的子结构:](https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/solution/mian-shi-ti-26-shu-de-zi-jie-gou-xian-xu-bian-li-p/)
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+```
+
+```python
+def recur(A, root2):
+    if root2 is None: 
+        return True
+    if root1 is None or root1.val != root2.val: 
+        return False
+    return recur(root1.left, root2.left) and recur(root1.right, root2.right)
+            
+def isSubStructure(root1: TreeNode, root2: TreeNode) -> bool:
+    if root1 is None or root2 is None:
+        return False
+        
+    return IsSubtree(root1, root2) or
+           HasSubtree(root1.left, root2) or
+           HasSubtree(root1.right, root2)
+```
 
 输入两棵二叉树A，B，判断B是不是A的子结构。
 
 ## 17. 二叉树中和为某一值的路径
 
-剑指offer：二叉树中和为某一值的路径
+剑指offer：[二叉树中和为某一值的路径](https://leetcode-cn.com/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/solution/mian-shi-ti-34-er-cha-shu-zhong-he-wei-mou-yi-zh-5/)
 
-输入一颗二叉树和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。
+<img src="/images/leetcode/binary-tree-17.png" width="650" alt="" />
+
+
+```java
+class Solution:
+    def pathSum(self, root: TreeNode, sum: int) -> List[List[int]]:
+        res, path = [], []
+        def recur(root, tar):
+            if not root: return
+            path.append(root.val)
+            tar -= root.val
+            if tar == 0 and not root.left and not root.right:
+                res.append(list(path))
+            recur(root.left, tar)
+            recur(root.right, tar)
+            path.pop()
+
+        recur(root, sum)
+        return res
+```
 
 ## 18. 二叉树的下一个结点
 
@@ -731,13 +828,73 @@ def buildTree(self, preorder, inorder):
 
 给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针。
 
+```java
+public class Solution {
+    public TreeLinkNode GetNext(TreeLinkNode pNode)
+    {
+        if(pNode == null){
+            return null;
+        }
+        if(pNode.right != null){
+            TreeLinkNode node = pNode.right;
+            while(node.left != null){
+                node = node.left;
+            }
+            return node;
+        }
+        while(pNode.next != null){
+            TreeLinkNode root = pNode.next;
+            if(pNode == root.left)
+                return root;
+            pNode = root;
+        }
+        return null;
+    }
+}
+```
+
 ## 19. 序列化二叉树
 
 剑指offer：序列化二叉树
 
-LeetCode：Serialize and Deserialize Binary Tree
+LeetCode：[Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/)
 
 请实现两个函数，分别用来序列化和反序列化二叉树
+
+```java
+public class Codec {
+
+    // Encodes a tree to a single string.
+    public String serialize(TreeNode root) {
+        if(root == null)
+            return "#,";
+        StringBuffer res = new StringBuffer(root.val + ",");
+        res.append(serialize(root.left));
+        res.append(serialize(root.right));
+        return res.toString();
+    }
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        String [] d = data.split(",");
+        Queue&lt;String&gt; queue = new LinkedList&lt;&gt;();
+        for(int i = 0; i &lt; d.length; i++){
+            queue.offer(d[i]);
+        }
+        return pre(queue);
+    }
+
+    public TreeNode pre(Queue&lt;String&gt; queue){
+        String val = queue.poll();
+        if(val.equals("#"))
+            return null;
+        TreeNode node = new TreeNode(Integer.parseInt(val));
+        node.left = pre(queue);
+        node.right = pre(queue);
+        return node;
+    }
+}
+```
 
 ## 20. 二叉搜索树的第k个结点
 
@@ -746,6 +903,31 @@ LeetCode：Serialize and Deserialize Binary Tree
 给定一棵二叉搜索树，请找出其中的第k小的结点。例如， （5，3，7，2，4，6，8）中，按结点数值大小顺序第三小结点的值为4。
 
 因为二叉搜索树按照中序遍历的顺序打印出来就是排好序的，所以，我们按照中序遍历找到第k个结点就是题目所求的结点。
+
+```java
+class Solution {
+    public int kthSmallest(TreeNode root, int k) {
+        if(root == null)
+             return Integer.MIN_VALUE;
+        Stack&lt;TreeNode&gt; stack = new Stack&lt;&gt;();
+        int count = 0;
+        TreeNode p = root;
+        while(p != null || !stack.isEmpty()){
+            if(p != null){
+                stack.push(p);
+                p = p.left;
+            }else{
+                TreeNode node = stack.pop();
+                count ++;
+                if(count == k)
+                    return node.val;
+                p = node.right;
+            }
+        }
+        return Integer.MIN_VALUE;
+    }
+}
+```
 
 ## Reference
 
