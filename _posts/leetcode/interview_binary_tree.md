@@ -797,14 +797,14 @@ def isSubStructure(root1: TreeNode, root2: TreeNode) -> bool:
 
 输入两棵二叉树A，B，判断B是不是A的子结构。
 
-## 17. 二叉树中和为某一值的路径
+## 17. 二叉树中和为某一值的路径 (递归dfs先根遍历)
 
 剑指offer：[二叉树中和为某一值的路径](https://leetcode-cn.com/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/solution/mian-shi-ti-34-er-cha-shu-zhong-he-wei-mou-yi-zh-5/)
 
 <img src="/images/leetcode/binary-tree-17.png" width="650" alt="" />
 
 
-```java
+```python
 class Solution:
     def pathSum(self, root: TreeNode, sum: int) -> List[List[int]]:
         res, path = [], []
@@ -822,78 +822,125 @@ class Solution:
         return res
 ```
 
-## 18. 二叉树的下一个结点
+## 18. 二叉树的下一个节点
 
-剑指offer：二叉树的下一个结点
+剑指offer：二叉树的下一个节点
 
-给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针。
+> 给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针。
 
-```java
-public class Solution {
-    public TreeLinkNode GetNext(TreeLinkNode pNode)
-    {
-        if(pNode == null){
-            return null;
-        }
-        if(pNode.right != null){
-            TreeLinkNode node = pNode.right;
-            while(node.left != null){
-                node = node.left;
-            }
-            return node;
-        }
-        while(pNode.next != null){
-            TreeLinkNode root = pNode.next;
-            if(pNode == root.left)
-                return root;
-            pNode = root;
-        }
-        return null;
-    }
-}
+<img src="/images/leetcode/binary-tree-18.png" width="550" alt="" />
+
+**解题思路 ：** 中序遍历：左 -> 根 -> 右
+
+分3种情况：
+
+- (1) 如果当前节点为空，直接返回空；
+- (2) 如果当前节点有右子树，则返回右子树的最左子树
+- (3) 如果当前节点没有右子树，再分两种情况：
+
+>   (3.1) 看看当前节点是它的父节点的左子树，如果是，则返回它的父节点；  
+> 
+>   (3.2) **如果当前节点不是它的父节点的左子树，则把父节点赋给当前节点，再判断当前节点是不是它的父节点的左子树，直到当前节点是它的父节点的左子树，返回它的父节点。** `H 节点，是一个例子`
+
+```python
+# -*- coding:utf-8 -*-
+# class TreeLinkNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+#         self.next = None
+class Solution:
+    def GetNext(self, pNode):
+        if not pNode: return None
+        if pNode.right:
+            pNode = pNode.right
+            while pNode.left:
+                pNode = pNode.left
+            return pNode
+        else:
+            while pNode.next:
+                if pNode == pNode.next.left:
+                    return pNode.next
+                pNode = pNode.next
+        return None
 ```
 
 ## 19. 序列化二叉树
 
-剑指offer：序列化二叉树
+剑指offer：[序列化二叉树](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/solution/ceng-xu-bian-li-by-tinylife/)
 
 LeetCode：[Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/)
 
+```
+你可以将以下二叉树：
+
+    1
+   / \
+  2   3
+     / \
+    4   5
+
+序列化为 "[1,2,3,null,null,4,5]"
+
+      1
+    /    \
+   2      3
+  / \    / \
+nul nul 4  nul
+       / \
+     nul nul
+
+```
+
 请实现两个函数，分别用来序列化和反序列化二叉树
 
-```java
-public class Codec {
+```python
+class Codec:
 
-    // Encodes a tree to a single string.
-    public String serialize(TreeNode root) {
-        if(root == null)
-            return "#,";
-        StringBuffer res = new StringBuffer(root.val + ",");
-        res.append(serialize(root.left));
-        res.append(serialize(root.right));
-        return res.toString();
-    }
+    def serialize(self, root):
+        """Encodes a tree to a single string.
+        
+        :type root: TreeNode
+        :rtype: str
+        """
+        if not root: return "[]"
+        queue = collections.deque()
+        queue.append(root)
+        res = []
+        while queue:
+            node = queue.popleft()
+            if node:
+                res.append(str(node.val))
+                queue.append(node.left)
+                queue.append(node.right)
+            else: res.append("null")
+        return '[' + ','.join(res) + ']'
 
-    // Decodes your encoded data to tree.
-    public TreeNode deserialize(String data) {
-        String [] d = data.split(",");
-        Queue&lt;String&gt; queue = new LinkedList&lt;&gt;();
-        for(int i = 0; i &lt; d.length; i++){
-            queue.offer(d[i]);
-        }
-        return pre(queue);
-    }
 
-    public TreeNode pre(Queue&lt;String&gt; queue){
-        String val = queue.poll();
-        if(val.equals("#"))
-            return null;
-        TreeNode node = new TreeNode(Integer.parseInt(val));
-        node.left = pre(queue);
-        node.right = pre(queue);
-        return node;
-    }
-}
+    def deserialize(self, data):
+        """Decodes your encoded data to tree.
+        
+        :type data: str
+        :rtype: TreeNode
+        """
+        if data=='[]':
+            return None
+        vals, i = data[1:-1].split(','), 1
+        root = TreeNode(int(vals[0]))
+        queue = collections.deque()
+        queue.append(root)
+        while queue:
+            node = queue.popleft()
+            if vals[i] != "null":
+                node.left = TreeNode(int(vals[i]))
+                queue.append(node.left)
+            i += 1
+            if vals[i] != "null":
+                node.right = TreeNode(int(vals[i]))
+                queue.append(node.right)
+            i += 1
+        return root
 ```
 
 ## 20. 二叉搜索树的第k个结点
