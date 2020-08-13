@@ -943,13 +943,39 @@ class Codec:
         return root
 ```
 
-## 20. 二叉搜索树的第k个结点
+## 20. 二叉搜索树的第k大节点
 
-剑指offer：二叉搜索树的第k个结点
+剑指offer：[二叉搜索树的第k大节点](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/solution/mian-shi-ti-54-er-cha-sou-suo-shu-de-di-k-da-jie-d/)
 
 给定一棵二叉搜索树，请找出其中的第k小的结点。例如， （5，3，7，2，4，6，8）中，按结点数值大小顺序第三小结点的值为4。
 
-因为二叉搜索树按照中序遍历的顺序打印出来就是排好序的，所以，我们按照中序遍历找到第k个结点就是题目所求的结点。
+示例 1:
+
+```
+输入: root = [3,1,4,null,2], k = 1
+   3
+  / \
+ 1   4
+  \
+   2
+输出: 4
+```
+
+示例 2:
+
+```
+输入: root = [5,3,6,2,4,null,null,1], k = 3
+       5
+      / \
+     3   6
+    / \
+   2   4
+  /
+ 1
+输出: 4
+```
+
+二叉搜索树按中序遍历的顺序打印出来就是排好序的，所以，我们按照中序遍历找到第k个结点就是题目所求的结点。
 
 ```java
 class Solution {
