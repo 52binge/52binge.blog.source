@@ -1,5 +1,5 @@
 ---
-title: Spark shuffle 调优概述 公开课 马中华
+title: Spark Shuffle 调优的11条经验 (马中华)
 toc: true
 date: 2020-08-12 20:07:21
 categories: [spark]
@@ -28,6 +28,7 @@ tags: [spark]
 
 # Shuffle 调优 10点
 
+<center><embed src="/images/spark/Spark-Shuffle-Public/Shuffle-Opt.pdf" width="950" height="600"></center>
 
 ## Reference
 
