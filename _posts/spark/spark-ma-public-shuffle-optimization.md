@@ -108,7 +108,17 @@ NX 的 DP  DE  DM 大数据课程中个，也会做代码实现，运行看效�
 
 ## 4. 将reduce join转为map join
 
+reduceJoin:
 
+<img src="/images/spark/Spark-Shuffle-Public/3-reduceJoin_meitu_1.jpg" width="880" alt="reduceJoin" />
+
+mapJoin:
+
+<img src="/images/spark/Spark-Shuffle-Public/3-MapJoin.png" width="" alt="mapJoin" />
+
+## 11.
+
+2:42
 
 ## Reference
 
