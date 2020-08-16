@@ -72,6 +72,10 @@ spark 官方宣称： SPark hadoop 0.9:100 迭代计算 做一次 3：1
 
 ## 2. 调整shuffle操作的并行度
 
+> 碰运气做法： 原来的并行度导致了倾斜，调整并行度， 如果是自定义的分区规则决定必须是n个分区，n个Task
+> 
+>	依然使用默认的HasPartitoiner，那么这种碰运气的方案是有用的
+
 大量不同的Key被分配到了相同的Task造成该Task数据量过大。
 
 如果我们必须要对数据倾斜迎难而上，那么建议优先使用这种方案，因为这是处理数据倾斜最简单的一 种方案。但是也是一种属于 **碰运气的方案**。因为这种方案，并不能让你一定解决数据倾斜，甚至有可能 加重。那当然，总归，你会调整到一个合适的并行度是能解决的。前提是这种方案适用于 Hash散列的 分区方式。凑巧的是，各种分布式计算引擎，比如MapReduce，Spark 等默认都是使用 Hash散列的方 式来进行数据分区。
@@ -80,9 +84,8 @@ Spark 在做 Shuffle 时，默认使用 HashPartitioner(非Hash Shuffle)对数�
 
 如果调整 Shuffle 时的并行度，使得原本被分配到同一 Task 的不同 Key 发配到不同 Task 上处理，则可 降低原 Task 所需处理的数据量，从而缓解 `DataSkew` 造成的短板效应。
 
-
 <img src="/images/spark/Spark-Shuffle-Public/2-Shuffle.png" width="950" alt="并行度为2, 并行度为3" />
-
+	
 ### 2.5. 企业最佳实践
 
 该方案通常无法彻底解决数据倾斜，因为如果出现一些极端情况，比如某个key对应的数据量有100万， 那么无论你的task数量增加到多少，这个对应着100万数据的key肯定还是会分配到一个task中去处理， 因此注定还是会发生数据倾斜的。所以这种方案只能说是在发现数据倾斜时尝试使用的第一种手段，尝 试去用嘴简单的方法缓解数据倾斜而已，或者是和其他方案结合起来使用。
@@ -98,15 +101,21 @@ Spark 在做 Shuffle 时，默认使用 HashPartitioner(非Hash Shuffle)对数�
 ```
 你们的大宽表：有些字段的值：null   department
 select department, count(*) as total from employee group by deparment;
-底层的分区规则规则，不管是什么规则，都会把所有的 null 记录分发到同一个Task
-GM角色： select department, count(*) as total from employee group by deparment where role != "gm";
-rdd = sparkContext.xxxx()
-rdd.filter(x => true | false)  把无效数据进行过滤。
+底层的分区规则，不管是什么规则，都会把所有的 null 记录分发到同一个Task
 
-NX 的 DP  DE  DM 大数据课程中个，也会做代码实现，运行看效果。
+GM角色： 
+  select department, count(*) as total from employee group by deparment where role != "gm";
+  rdd = sparkContext.xxxx()
+  rdd.filter(x => true | false)  把无效数据进行过滤
 ```
 
 ## 4. 将reduce join转为map join
+
+> 大小表做连接, mapjoin  
+> 
+> spark中如何实现 mapjoin 的逻辑呢？ 使用 spark的广播机制！ 
+>
+> 就是可以把小表数据当做广播变量，使用广播机制，把该变量数据，广播到所有的executor里面去。 
 
 reduceJoin:
 
@@ -116,9 +125,54 @@ mapJoin:
 
 <img src="/images/spark/Spark-Shuffle-Public/3-MapJoin.png" width="" alt="mapJoin" />
 
-## 11.
+## 5. 采样倾斜 key 并分拆 join 操作
 
-2:42
+现在假设一个数据倾斜场景中的数据分为两种：
+
+> 一种是导致倾斜的数据集合：  单独处理
+> 
+> 一种是不导致倾斜的数据集合： 单独处理
+> 
+> 最后把结果合起来！ 
+
+<img src="/images/spark/Spark-Shuffle-Public/5-key-few.png" width="" alt="采样倾斜 key 并分拆 join 操作" />
+
+## 6. 两阶段聚合(局部聚合+全局聚合)
+
+<img src="/images/spark/Spark-Shuffle-Public/6-Join.png" width="" alt="两阶段聚合" />
+
+方案六： 两阶段聚合 （聚合类逻辑的通用解决方案）  纵向切分
+		原来：一次hash散列导致倾斜
+		现在：一次随机shuffle + 一次hash散列
+		
+
+## 7. 使用随机前缀和扩容 RDD 进行 join
+
+方案七： 增加随机字段/链接字段 +  扩容RDD
+	表A  表B 
+	RDD1   rdd2
+
+	两种场景：
+	1、如果 两张表做笛卡尔积
+	2、如果两张表做join，并且导致数据倾斜的某些key比较多。 
+	拆分出来单独处理（依然可能有数据倾斜 ==> 加随机前缀）
+	如果是导致倾斜的key只有一个，这个key的数据量非常。  加随机前缀  复制
+
+	1、笛卡尔积
+	2、导致倾斜的key的数据；量特别大。 不能使用单个task解决
+
+## 8. 任务横切，一分为二，单独处理
+
+
+
+## 9. 多种方案组合使用
+
+## 10. 自定义 Partitioner
+
+## 11. bitmap 求 Join
+
+<img src="/images/spark/Spark-Shuffle-Public/bitmap位图求join.png" width="990" alt="两阶段聚合" />
+
 
 ## Reference
 
