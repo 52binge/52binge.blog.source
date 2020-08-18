@@ -95,7 +95,7 @@ def del_node(head, p_del):
 > <img src="/images/leetcode/linked-list-2.gif" width="650" alt="3指针" />
 > 
 > 3. 翻转部分单链表 举例：1->2->3->4->5->null, from = 2, to = 4 结果：1->4->3->2->5->null
-> 4. [复杂链表的复制][2.5] ok， ✔️
+> 4. [复杂链表的复制](https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/) ok， ✔️
 > 7. 链表划分 （题目描述： 给定一个单链表和数值x，划分链表使得小于x的节点排在大于等于x的节点之前）
 > 9. 单链表排序
 > 10. 合并两个或k个有序链表  ok， 递归 (三元运算符).   
@@ -106,11 +106,41 @@ def del_node(head, p_del):
 
 > 链表求和
 
-## 1. 在 O(1) 时间删除链表节点
+## 2.4 复杂链表的复制
+
+Solution: 迭代. [图解 链表的深拷贝](https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/solution/lian-biao-de-shen-kao-bei-by-z1m/) 
+
+该方法的思路比较直接，对于一个结点，分别拷贝此结点、next 指针指向的结点、random 指针指向的结点， 然后进行下一个结点...如果遇到已经出现的结点，那么我们不用拷贝该结点，只需将 next 或 random 指针指向该结点即可。
+
+<img src="/images/leetcode/linked-list-2.4.jpeg" width="650" alt="" />
 
 ```python
+class Solution:
+    def copyRandomList(self, head: 'Node') -> 'Node':
+        visited = {}
+        def getClonedNode(node):
+            if node:
+                if node in visited:
+                    return visited[node]
+                else:
+                    visited[node] = Node(node.val,None,None)
+                    return visited[node]
+            return None
+        
+        if not head: return head
+        old_node = head
+        new_node = Node(old_node.val,None,None)
+        visited[old_node] = new_node
 
+        while old_node:
+            new_node.random = getClonedNode(old_node.random)
+            new_node.next = getClonedNode(old_node.next)
+            
+            old_node = old_node.next
+            new_node = new_node.next
+        return visited[head]
 ```
+
 
 ## Reference
 
