@@ -33,10 +33,6 @@ tags: [spark]
 
 ## 1. Spark 的 shuffle 调优
 
-## 2. spark的SortShuffleManager的两种模式的执行原理分析
-
-## 3. spark的HashShuffleManager的两种模式的执行原理
-
 ## 4. mapreduce的shuffle复习
 
 ## 5. 资源调优 2
