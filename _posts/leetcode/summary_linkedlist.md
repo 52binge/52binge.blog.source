@@ -60,7 +60,7 @@ def del_node(head, p_del):
     return head
 ```
 
-**easy:**
+## 1. easy 10道
 
 > 1. 在 O(1) 时间删除链表节点， ✔️ 1. head or del is null 2. del=head 3. del=tail 4. del=normal
 > 2. 删除单链表倒数第 n 个节点， ✔️
@@ -89,24 +89,20 @@ def del_node(head, p_del):
 
 > 在第 4 题两个指针相遇后，让其中一个指针回到链表的头部，另一个指针在原地，同时往前每次走一步，当它们再次相遇时，就是在环路的入口点。
 
-**medium:**
+## 2. medium 8道
 
-> 2. [反转链表](https://weiweiblog.cn/reverselist/) next=head->next, head->next=pre, pre=head, head=next; 4步 ok， ✔️
+> 1. [反转链表](https://weiweiblog.cn/reverselist/) next=head->next, head->next=pre, pre=head, head=next; 4步 ok， ✔️
 > <img src="/images/leetcode/linked-list-2.gif" width="650" alt="3指针" />
 > 
-> 3. 翻转部分单链表 举例：1->2->3->4->5->null, from = 2, to = 4 结果：1->4->3->2->5->null
-> 4. [复杂链表的复制](https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/) ok， ✔️
-> 7. 链表划分 （题目描述： 给定一个单链表和数值x，划分链表使得小于x的节点排在大于等于x的节点之前）
+> 2. 翻转部分单链表 举例：1->2->3->4->5->null, from = 2, to = 4 结果：1->4->3->2->5->null
+> 3. [复杂链表的复制](https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/) ok， ✔️
+> 4. 链表划分 （题目描述： 给定一个单链表和数值x，划分链表使得小于x的节点排在大于等于x的节点之前）
 > 9. 单链表排序
 > 10. 合并两个或k个有序链表  ok， 递归 (三元运算符).   
 > 12. 删除链表重复结点  链表1->2->3->3->4->4->5 处理后为 1->2->5. first->next=head, last, p 三针， ✔️
 > 10. 链表中环的入口结点， ✔️   
 
-**difficul:**
-
-> 链表求和
-
-## 2.4 复杂链表的复制
+### 2.3 复杂链表的复制
 
 Solution: 迭代. [图解 链表的深拷贝](https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/solution/lian-biao-de-shen-kao-bei-by-z1m/) 
 
@@ -141,6 +137,38 @@ class Solution:
         return visited[head]
 ```
 
+### 2.4 链表划分
+
+```python
+def partition(head: Node, x: int) {
+    // write your code here
+    if not head return None;
+    
+    leftDummy = Node(0)
+    rightDummy = Node(0)
+    
+    left = leftDummy, right = rightDummy;
+
+    while (head != null) {
+        if (head.val &lt; x) {
+            left.next = head;
+            left = head;
+        } else {
+            right.next = head;
+            right = head;
+        }
+        head = head.next;
+    }
+
+    right.next = null;
+    left.next = rightDummy.next;
+    return leftDummy.next;
+}
+```
+
+## 3. hard 1道
+
+> 链表求和
 
 ## Reference
 
