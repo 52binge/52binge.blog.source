@@ -1,7 +1,7 @@
 ---
 title: 总结 17 道题 LinkList
 toc: true
-date: 2020-08-19 18:07:21
+date: 2020-08-20 18:07:21
 categories: [leetcode]
 tags: [LinkList]
 ---
@@ -65,7 +65,7 @@ def del_node(head, p_del):
 > 1. 在 O(1) 时间删除链表节点， ✔️ 1. head or del is null 2. del=head 3. del=tail 4. del=normal
 > 2. 删除单链表倒数第 n 个节点， ✔️
 > 3. 求单链表的中间节点， ✔️
-> 4. 判断单链表是否存在环， ✔️ while(runner && runner->next)
+> 4. 判断单链表是否存在环， ✔️ while fast and fast->next: if fast==slow return True
 > 5. 从尾到头打印链表, 递归 ok.， ✔️
 > 6. 链表中倒数第k个结点 ok.， ✔️
 > 7. 判断两个无环单链表是否相交， ✔️ 判断 tail node is equal ?
