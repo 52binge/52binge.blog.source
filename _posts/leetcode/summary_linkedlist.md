@@ -322,9 +322,67 @@ private ListNode mergeSort(ListNode head1, ListNode head2) {
 }
 ```
 
-## 3. hard 1道
+## 3. medium 链表求和
 
-> 链表求和
+题目描述：你有两个用链表代表的整数，其中每个节点包含一个数字。数字存储按照在原来整数中相反的顺序，使得第一个数字位于链表的开头。写出一个函数将两个整数相加，用链表形式返回和。
+
+示例：
+
+> 输入：(7 -> 1 -> 6) + (5 -> 9 -> 2)，即617 + 295
+> 输出：2 -> 1 -> 9，即912
+
+解题思路：做个大循环，对每一位进行操作：
+
+当前位：(A[i]+B[i])%10
+
+进位：（A[i]+B[i]）/10
+
+---
+
+进阶：假设这些数位是正向存放的，请再做一遍. 思路： 先转数字, 相加, 再转链表
+
+> 输入：(6 -> 1 -> 7) + (2 -> 9 -> 5)，即617 + 295
+> 输出：9 -> 1 -> 2，即 912 = 912 % 10 = 9
+
+
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+```
+
+```java
+public class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode c1 = l1;
+        ListNode c2 = l2;
+        ListNode sentinel = new ListNode(0);
+        ListNode d = sentinel;
+        int sum = 0;
+        while (c1 != null || c2 != null) {
+            sum /= 10;
+            if (c1 != null) {
+                sum += c1.val;
+                c1 = c1.next;
+            }
+            if (c2 != null) {
+                sum += c2.val;
+                c2 = c2.next;
+            }
+            d.next = new ListNode(sum % 10);
+            d = d.next;
+        }
+        if (sum / 10 == 1)
+            d.next = new ListNode(1);
+        return sentinel.next;
+    }
+}
+```
 
 ## Reference
 
