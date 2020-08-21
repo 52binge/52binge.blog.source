@@ -80,9 +80,9 @@ def del_node(head, p_del):
 
 **解题思路：**
 
-> - 方法一 双指针，快指针先走k步，然后两个指针一起走，当快指针走到末尾时，慢指针的下一个位置是新的顺序的头结点，这样就可以旋转链表了。
+> - **`方法1`：** 双指针，快指针先走k步，然后两个指针一起走，当快指针走到末尾时，慢指针的下一个位置是新的顺序的头结点，这样就可以旋转链表了。
 > `m = n - k % n; ... ; newhead = cur.next; cur.next = NULL` 
-> - 方法二 先遍历整个链表获得链表长度n，然后此时把链表头和尾链接起来，在往后走n – k % n个节点就到达新链表的头结点前一个点，这时断开链表即可。
+> - **`方法2`：** 先遍历整个链表获得链表长度n，然后此时把链表头和尾链接起来，在往后走n – k % n个节点就到达新链表的头结点前一个点，这时断开链表即可。
 
 
 环路的入口点
@@ -91,16 +91,91 @@ def del_node(head, p_del):
 
 ## 2. medium 8道
 
+### 2.1 Reverse Linked List I
+
 > 1. [反转链表](https://weiweiblog.cn/reverselist/) next=head->next, head->next=pre, pre=head, head=next; 4步 ok， ✔️
 > <img src="/images/leetcode/linked-list-2.gif" width="650" alt="3指针" />
 > 
 > 2. 翻转部分单链表 举例：1->2->3->4->5->null, from = 2, to = 4 结果：1->4->3->2->5->null
 > 3. [复杂链表的复制](https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/) ok， ✔️
-> 4. 链表划分 （题目描述： 给定一个单链表和数值x，划分链表使得小于x的节点排在大于等于x的节点之前）
-> 9. 单链表排序
-> 10. 合并两个或k个有序链表  ok， 递归 (三元运算符).   
-> 12. 删除链表重复结点  链表1->2->3->3->4->4->5 处理后为 1->2->5. first->next=head, last, p 三针， ✔️
-> 10. 链表中环的入口结点， ✔️   
+> 4. 链表划分 （描述： 给定一个单链表和数值x，划分链表使得小于x的节点排在大于等于x的节点之前）
+> 5. 单链表排序， (归并) ✔️
+> 6. 合并两个或k个有序链表  ok， (递归 & 迭代循环 都可以实现)， ✔️ 
+> 7. 删除链表重复结点  链表1->2->3->3->4->4->5 处理后为 1->2->5. ✔️ 
+> ———— 设置 first ，second 指针, first == 确定不重复的, second == work p
+> 8. 链表中环的入口结点， ✔️ 
+
+### 2.2 Reverse Linked List II
+
+```
+输入: 1->2->3->4->5->NULL, m = 2, n = 4
+输出: 1->4->3->2->5->NULL
+
+必要先弄清楚链接反转的原理以及需要哪些指针。
+```
+
+举例而言，有一个三个不同节点组成的链表 `A → B → C`，需要反转结点中的链接成为 `A ← B ← C`。
+
+假设有两个指针，一个指向 A，一个指向 B。 记为 prev 和 cur。则用这两个指针实现 A 和 B 之间的链接反转：
+
+```python
+cur.next = prev
+```
+
+这样做唯一的问题是，没有办法继续下去，换而言之，这样做之后就无法再访问到结点 C。
+
+```python
+third = cur.next
+cur.next = prev
+prev = cur
+cur = third
+```
+
+<img src="/images/leetcode/linked-list-2.2.png" width="660" alt="双指针" />
+
+```python
+class Solution:
+    def reverseBetween(self, head, m, n):
+        """
+        :type head: ListNode
+        :type m: int
+        :type n: int
+        :rtype: ListNode
+        """
+
+        # Empty list
+        if not head:
+            return None
+
+        # Move the two pointers until they reach the proper starting point
+        # in the list.
+        cur, prev = head, None
+        while m > 1:
+            prev = cur
+            cur = cur.next
+            m, n = m - 1, n - 1
+
+        # The two pointers that will fix the final connections.
+        tail, con = cur, prev
+
+        # Iteratively reverse the nodes until n becomes 0.
+        while n:
+            third = cur.next
+            cur.next = prev
+            prev = cur
+            cur = third
+            n -= 1
+
+        # Adjust the final connections as explained in the algorithm
+        if con:
+            con.next = prev
+        else:
+            head = prev
+        tail.next = cur
+        return head
+```
+
+[反转链表 II](https://leetcode-cn.com/problems/reverse-linked-list-ii/solution/fan-zhuan-lian-biao-ii-by-leetcode/)
 
 ### 2.3 复杂链表的复制
 
@@ -149,8 +224,8 @@ def partition(head: Node, x: int) {
     
     left = leftDummy, right = rightDummy;
 
-    while (head != null) {
-        if (head.val &lt; x) {
+    while (head != None) {
+        if (head.val < x) {
             left.next = head;
             left = head;
         } else {
@@ -166,6 +241,87 @@ def partition(head: Node, x: int) {
 }
 ```
 
+### 2.5 单链表排序 (归并)
+
+```java
+public ListNode sortList(ListNode head) {
+    //采用归并排序
+    if (head == null || head.next == null) {
+        return head;
+    }
+    //获取中间结点
+    ListNode mid = getMid(head);
+    ListNode right = mid.next;
+    mid.next = null;
+    //合并
+    return mergeSort(sortList(head), sortList(right));
+}
+
+/**
+ * 获取链表的中间结点,偶数时取中间第一个
+ *
+ * @param head
+ * @return
+ */
+private ListNode getMid(ListNode head) {
+    if (head == null || head.next == null) {
+        return head;
+    }
+    //快慢指针
+    ListNode slow = head, quick = head;
+    //快2步，慢一步
+    while (quick.next != null && quick.next.next != null) {
+        slow = slow.next;
+        quick = quick.next.next;
+    }
+    return slow;
+}
+
+/**
+ *
+ * 归并两个有序的链表
+ *
+ * @param head1
+ * @param head2
+ * @return
+ */
+private ListNode mergeSort(ListNode head1, ListNode head2) {
+    ListNode p1 = head1, p2 = head2, head;
+   //得到头节点的指向
+    if (head1.val &lt; head2.val) {
+        head = head1;
+        p1 = p1.next;
+    } else {
+        head = head2;
+        p2 = p2.next;
+    }
+
+    ListNode p = head;
+    //比较链表中的值
+    while (p1 != null && p2 != null) {
+
+        if (p1.val &lt;= p2.val) {
+            p.next = p1;
+            p1 = p1.next;
+            p = p.next;
+        } else {
+            p.next = p2;
+            p2 = p2.next;
+            p = p.next;
+        }
+    }
+    //第二条链表空了
+    if (p1 != null) {
+        p.next = p1;
+    }
+    //第一条链表空了
+    if (p2 != null) {
+        p.next = p2;
+    }
+    return head;
+}
+```
+
 ## 3. hard 1道
 
 > 链表求和
@@ -176,3 +332,4 @@ def partition(head: Node, x: int) {
 - [【LeetCode】代码模板，刷题必会](https://blog.csdn.net/fuxuemingzhu/article/details/101900729)
 
 - [17 道 LinkList](https://weiweiblog.cn/linkedlist_summary/)
+- [力扣刷题总结之链表](https://leetcode-cn.com/circle/article/YGr54o/)
