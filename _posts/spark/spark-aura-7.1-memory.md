@@ -58,16 +58,6 @@ spark:
 
 > 普通的机制
 > bypass机制 
- 
-## 概述
-
-在执行 Spark 的应用程序时，Spark 集群会启动 Driver 和 Executor 两种 JVM 进程
-
-> 1. **`Driver`** 主控进程，负责创建 SparkContext，提交 Spark Job，并将作业转化为计算任务（Task），在各个 Executor 进程间协调任务的调度
-> 
-> 2. **`Executor`** 负责在工作节点上执行具体的 计算 Task，并将结果返回给 Driver，同时为需要持久化的 RDD 提供存储功能[1]。
-> 
-> 由于 Driver-memory 1G 的内存管理相对来说较为简单，本文主要对 Executor 的内存管理进行分析，下文中的 `Spark 内存均特指 Executor 的内存`。
 
 ## 1. Spark 的 shuffle 调优
 
@@ -135,6 +125,10 @@ No. | DataSkew Solution
 
 ## 3. spark 的内存管理宏观概述
 
+spark 作为基于内存的分布式计算引擎, 其内存管理模块在整个系统中非常重要.
+
+理解 spark 内存管理的基本原理，有助于更好的开发 spark 应用程序 和 进行性能调优.
+
 1. spark的内存模型
 2. spark的shuffle
 3. spark的资源调优
@@ -153,14 +147,93 @@ No. | `spark 的产生背景， spark 优于 mapreduce 的五大原因：`
 
 ### 3.2 application 内存
 
-application 在运行的时候，会在哪些地方产生数据，需要存储在内存中呢？ | 
+No. | 划分 | application 在运行的时候，会在哪些地方产生数据，需要存储在内存中呢？
+:----: | :---: | :---
+1. |  | 应用程序 |
+2. | 执行内存 | 全局变量，静态变量 |
+3. | 执行内存 | task 在计算的时候, 数据在内存中(128M) (有的 ptn_data > 128 有的 < 128) |
+4. | 执行内存 | mapPartitions (ptn_data => {}) <br><br> &nbsp;&nbsp;&nbsp;&nbsp; for (element <- partition) <br> &nbsp;&nbsp;&nbsp;&nbsp; code 执行过程中，使用的临时容器，临时变量 |
+5. | 执行内存 | stage0 和 stage1 之间有 shuffle，这个将要进行 shuffle 的数据存储在何地？ |
+.. |  | `数据的分区数` 
+6. | 存储内存 | 内存占用的大户： rdd.cache() 占用时间 **长 + 多** |
+7. | 存储内存 | 广播出来的大变量 sc,broadcase(list) list 会存储在所有 executor 内存中 |
+| | 
+.. | |  一种合适的内存管理策略，可以提升内存利用率，提高Task执行的成功率
+
+### 3.3 Spark 内存模型概述
+
+在执行 Spark 的应用程序时，Spark 集群会启动 Driver 和 Executor 两种 JVM 进程
+
+> 1. **`Driver`** 主控进程，负责创建 SparkContext，提交 Spark Job，并将作业转化为计算任务（Task），在各个 Executor 进程间协调任务的调度
+> 
+> 2. **`Executor`** 负责在工作节点上执行具体的 计算 Task，并将结果返回给 Driver，同时为需要持久化的 RDD 提供存储功能[1]。
+> 
+> 由于 Driver-memory 1G 的内存管理相对来说较为简单，本文主要对 Executor 的内存管理进行分析，下文中的 `Spark 内存均特指 Executor 的内存`。
+
+Spark 的应用程序2种进程 |
 :---- | :---
-1. 应用程序 |
-2. 全局变量，静态变量 |
-3. task 在计算的时候, 数据在内存中 |
-4. mapPartitions (ptn => {}) <br><br> &nbsp;&nbsp;&nbsp;&nbsp; for (element <- partition) <br> &nbsp;&nbsp;&nbsp;&nbsp; code 执行过程中，使用的临时容器，临时变量 |
+**driver**： 主控进程，必须保证不能出错, 而且也只有一个 |
+**executor**： task 的执行载体，数量也很多 |
+侧重点： executor 上的内存管理 |
+执行 task 过程中会产生哪些数据呢？ 2 3 4 5 |
+
+spark 帮助我们把应用程序执行构成当中所占用的内存分成 2 个方面：
+
+> 1. **执行内存** 2 3 4 5  必须的
+> 2. **存储内存** 6 7  可有可无
+
+### 3.4 Spark 把内存做分类的目的
+
+假如给每一个 executor 分配的内存是
+
+8G: 执行内存： 1G， 存储内存 7G 
+2G: 执行内存： 1G， 存储内存 1G 
+
+假如给每一个 executor 分配的内存是 8G |
+---- | ----
+(1). 当这个 executor 启动一个 task 执行计算的时候，处理的数据量是 2G | 
+(2). 当这个 executor 启动一个 task 执行计算的时候，处理的数据量是 6G |
+
+> 结论： 同一个程序在执行不同量级的数据的计算的时候，每个 task 执行的内存所占用的资源其实差不多一致
+>
+> `数据分区的存储`
+
+### 3.5 Spark内存的整体划分
+
+又分为2种不同类型的内存划分：
+
+No. | spark 能利用的内存有2个区域
+:---: | ---
+1. | (executor内存) JVM 内部 的 On-heap Memory （对于JVM来说叫做 堆内存）
+2. | (executor外部) JVM 外部/操作系统 的 Off-heap Memory
+
+这2个区域，又都分为2个区域：
+
+<img src="/images/spark/spark-aura-7.1-memory.png" width="700" alt="" />
+
+
+```java
+public class Test1 {
+    private List list;
+    public synchronized void test1() {
+        // visit list
+    }
+}
+Test t1 = new Test1();
+Test t2 = new Test1();
+```
+
+> 正常的情况下，一个 JVM 进程中的线程是没法从操作系统中申请内存的
+> 只能从 JVM 中申请内存
+> 但是现在**spark的task(一个线程)就可以从操作系统**，也就是说JVM之外，申请内存使用，而且还是所有的task公用的.
+
+**有什么好处？**
+
+> spark 的程序中，上面缓存的RDD，在这个应用程序中的任何地方都可以访问
 
 ## 4. spark 的静态内存模型和统一内存模型详解 + 资源调优
+
+<img src="/images/spark/spark-aura-7.1.3.png" width="850" alt="Off-Heap 内存" />
 
 spark 的2种内存管理方式：
 
@@ -185,7 +258,7 @@ spark 的2种内存管理方式：
 
 > 堆内内存 和 堆外内存 是真是存在的一个内存区域
 >
-> 执行内存和存储内心，都是堆内和堆外内存的一个逻辑区划的概念. 
+> **执行内存和存储内存，都是堆内和堆外内存的一个逻辑区划的概念.** 
 
 - [good Apache Spark 内存管理详解](https://developer.ibm.com/zh/technologies/analytics/articles/ba-cn-apache-spark-memory-management/)
 
@@ -194,6 +267,39 @@ spark 的2种内存管理方式：
 
 <img src="/images/spark/spark-aura-7.1.2.jpg" width="900" alt="" />
 
+### 4.1 spark 的静态内存模型
+
+静态内存管理图示——堆内
+
+![](https://developer.ibm.com/developer/articles/ba-cn-apache-spark-memory-management/nl/zh/images/image002.png)
+
+静态内存管理图示——堆外
+
+![](https://developer.ibm.com/developer/articles/ba-cn-apache-spark-memory-management/nl/zh/images/image003.png)
+
+### 4.2 统一内存模型
+
+统一内存管理图示——堆内
+
+![](https://developer.ibm.com/developer/articles/ba-cn-apache-spark-memory-management/nl/zh/images/image004.png)
+
+**`Execution 占用 Storage 是不会归还的`**, 反之 要归还
+
+统一内存管理图示——堆外
+
+![](https://developer.ibm.com/developer/articles/ba-cn-apache-spark-memory-management/nl/zh/images/image005.png)
+
+application 中的 job 的执行： FIFO
+
+> 把 YARN 的资源分拆成多个不同的队列
+>
+> 每个队列中的任务的执行是顺序的 FIFO 执行
+> 
+> 整个程序到底有多少个 task？ num-executors
+> 
+> 如果现在一个 executor 的 task 数量
+> 
+> 一个 executor 分配 3~5个 cpu cores.
 
 ## 5. 资源调优 2
 
@@ -273,7 +379,7 @@ spark 从 hdfs 中读取数据，使用的方式，默认情况下依然是 Text
 > 每一个application大概是： 100个executor
 
 
-## 1. mapreduce的shuffle复习
+## 6. mapreduce的shuffle复习
 
 key, value
 
@@ -283,9 +389,6 @@ ptn, key, value
 
 ptn+key
 
-## 2. spark的HashShuffleManager
-
-## 3. spark的SortShuffleManager
 
 ## Reference
 
