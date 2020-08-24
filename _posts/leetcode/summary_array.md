@@ -22,8 +22,11 @@ toc: true
 > 5. ~~次数超过一半的次数~~  ， ✔️
 > 6. ~~**丑数**, dp 只包含质因子2、3和5的数称作丑数, 1, 2, 3, 5, 6, ...~~ ， ✔️
 > 7. ~~和为S的两个数字(双指针思想)~~ ， ✔️
-> 8. 扑克牌顺子 (排序后，统计大小王数量 + 间隔)， ✔️
+> 8. [扑克牌顺子][lcof61] [Answer: (排序后，统计大小王数量 + 间隔)][lcof61-answer]， ✔️
 > 9. 构建乘积数组 (A数组，从前向后，再从后向前j-2,构造 B)， ✔️
+
+[lcof61]: https://leetcode-cn.com/problems/bu-ke-pai-zhong-de-shun-zi-lcof/
+[lcof61-answer]: https://leetcode-cn.com/problems/bu-ke-pai-zhong-de-shun-zi-lcof/solution/mian-shi-ti-61-bu-ke-pai-zhong-de-shun-zi-ji-he-se/
 
 **1.2 medium**
 
@@ -127,6 +130,19 @@ class Solution:
             if dp[i] == n3: b += 1
             if dp[i] == n5: c += 1
         return dp[-1]
+```
+
+### 1.5 扑克牌的顺子， 排序+遍历
+
+```python
+class Solution:
+    def isStraight(self, nums: List[int]) -> bool:
+        joker = 0
+        nums.sort() # 数组排序
+        for i in range(4):
+            if nums[i] == 0: joker += 1 # 统计大小王数量
+            elif nums[i] == nums[i + 1]: return False # 若有重复，提前返回 false
+        return nums[4] - nums[joker] < 5 # 最大牌 - 最小牌 < 5 则可构成顺子
 ```
 
 ## 2. Medium
