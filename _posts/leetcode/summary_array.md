@@ -16,14 +16,14 @@ toc: true
 **1.1 easy**
 
 > 1. ~~二维数组中的查找~~ ~~替换空格 if c == ' ': res.append("%20") or 从后向前，逐个赋值~~， ✔️
-> 3. [剑指 Offer 53 - I. 在排序数组中查找数字 I](https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/),   bina(\*a, len, num, isLeft)， ✔️
-> 4. 旋转数组的最小元素 while(low < high) { if(a[m] > a[high]) min[m+1,high], else [low,m]} ✔️ 
-> 5. 调整数组位数使奇数位于前面 void odds(int[] arr) ， ✔️
-> 6. 次数超过一半的次数 \* int core(int \*a, int len)， ✔️
-> 7. **丑数**, 只包含质因子2、3和5的数称作丑数, 1, 2, 3, 5, 6, ... ， ✔️
-> 8. 和为S的两个数字(双指针思想) ， ✔️
-> 9. 扑克牌顺子 (排序后，统计大小王数量 + 间隔)， ✔️
-> 10. 构建乘积数组 (A数组，从前向后，再从后向前j-2,构造 B)， ✔️
+> 2. [剑指 Offer 53 - I. 在排序数组中查找数字 I](https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/),   bina(\*a, len, num, isLeft)， ✔️
+> 3. `旋转数组的最小元素` while(low < high) { if(a[m] > a[high]) min[m+1,high], else [low,m]} ✔️ 
+> 4. ~~调整数组顺序使奇数位于偶数前面 while while~~ ， ✔️
+> 5. ~~次数超过一半的次数~~  ， ✔️
+> 6. ~~**丑数**, dp 只包含质因子2、3和5的数称作丑数, 1, 2, 3, 5, 6, ...~~ ， ✔️
+> 7. ~~和为S的两个数字(双指针思想)~~ ， ✔️
+> 8. 扑克牌顺子 (排序后，统计大小王数量 + 间隔)， ✔️
+> 9. 构建乘积数组 (A数组，从前向后，再从后向前j-2,构造 B)， ✔️
 
 **1.2 medium**
 
@@ -31,7 +31,7 @@ toc: true
 > 2. [和S连续正数序][S1] (3fun，mid = (1+sum)/2; while(start<mid), Sum(int start, int end), 双vector)， ✔️
 > 3. 约瑟夫环 LinkedList; (index = (index + m) %link.size();link.remove(index-\-);) link.get(0); ， ✔️
 > 4. [数组排成最小的数](https://www.weiweiblog.cn/printminnumber/) Arrays.sort(str, new Comparator<String>(){ public int compare(String s1, String s2)，✔️
-> 5. 数组中只出现一次的数字 , 划分2数组，num & (-num);二者与后得到的数，将num最右边的1保留下来，✔️
+> 5. ~~数组中只出现一次的数字~~ , 划分2数组，num & (-num);二者与后得到的数，将num最右边的1保留下来，✔️
 
 **1.3 important**
 
@@ -99,6 +99,34 @@ class Solution:
             else:
                 high -= 1
         return numbers[low]
+```
+
+调整数组顺序使奇数位于偶数前面 while while
+
+```python
+class Solution:
+    def exchange(self, nums: List[int]) -> List[int]:
+        i, j = 0, len(nums) - 1
+        while i < j:
+            while i < j and nums[i] & 1 == 1: i += 1
+            while i < j and nums[j] & 1 == 0: j -= 1
+            nums[i], nums[j] = nums[j], nums[i]
+        return nums
+```
+
+### 1.4 丑数
+
+```python
+class Solution:
+    def nthUglyNumber(self, n: int) -> int:
+        dp, a, b, c = [1] * n, 0, 0, 0
+        for i in range(1, n):
+            n2, n3, n5 = dp[a] * 2, dp[b] * 3, dp[c] * 5
+            dp[i] = min(n2, n3, n5)
+            if dp[i] == n2: a += 1
+            if dp[i] == n3: b += 1
+            if dp[i] == n5: c += 1
+        return dp[-1]
 ```
 
 ## 2. Medium
