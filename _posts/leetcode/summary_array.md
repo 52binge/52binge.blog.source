@@ -79,6 +79,28 @@ class Solution:
 
 > 本质上看， helper() 函数旨在查找数字 tartar 在数组 numsnums 中的 插入点 ，且若数组中存在值相同的元素，则插入到这些元素的右边。
 
+### 1.3 旋转数组的最小元素
+
+[题解](https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/solution/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-by-leetcode-s/)
+
+输入：[3,4,5,1,2]
+输出：1
+
+```python
+class Solution:
+    def minArray(self, numbers: List[int]) -> int:
+        low, high = 0, len(numbers) - 1
+        while low < high:
+            pivot = low + (high - low) // 2
+            if numbers[pivot] < numbers[high]:
+                high = pivot 
+            elif numbers[pivot] > numbers[high]:
+                low = pivot + 1
+            else:
+                high -= 1
+        return numbers[low]
+```
+
 ## 2. Medium
 
 
