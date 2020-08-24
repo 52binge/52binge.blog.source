@@ -10,6 +10,40 @@ tags: [spark]
 
 <!-- more -->
 
+## 1. SparkSQL 的基础理论
+
+## 2. SparkSQL 的编程入口
+
+## 3. Spark 的数据抽象
+
+## 4. SparkSQL 的编程基本套路
+
+## 5. DataFrame 的DSL和SQL操作方式
+
+## 6. SparkSQL 编程代码的多种方式解析
+
+## 7. SparkSQL 的数据源操作
+
+## 8. SparkSQL 基础内容复习
+
+## 9. spark 整合 yarn
+
+## 10. spark 整合 hive
+
+## 11. sparksql和hive的自定义函数
+
+## SparkCore 编程套路
+
+1. 获取编程入口
+2. 通过编程入口加载数据获得数据抽象 RDD
+3. 对 RDD 进行各种处理 (Transformation 和 Action)： 计算
+4. 对结果数据进行处理： saveAsTextFile
+5. 关闭程序入口
+
+spark 的任务执行流程
+
+Hive 的可视化工具：**DBeaver**
+
 # 1. SparkSQL 的数据源操作
 
 摘要：
