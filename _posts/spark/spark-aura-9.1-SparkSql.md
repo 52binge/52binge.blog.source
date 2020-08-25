@@ -24,6 +24,7 @@ Spark-2.x | SparkSQL+DataFrame+DataSet(正式版本), 引入 SparkSession 统一
 .. | SparkSQL:还有其他的优化
 
 [SparkSQL学习（一）SparkSQL简单使用](https://blog.csdn.net/qq_41851454/article/details/80188528)
+[SparkSQL学习 1 2 3](https://blog.csdn.net/qq_41851454/category_7640711.html)
 
 SparkSQL是Spark的一个模块，主要用于进行结构化数据的处理。它提供的最核心的编程抽象就是DataFrame.
 
@@ -77,6 +78,13 @@ spark = SparkSession \
 >   SparkSession spark
 
 ## 3. Spark 的数据抽象
+
+### 3.1 DataFrames
+
+在Spark中，DataFrame是一种以RDD为基础的分布式数据集，类似于传统数据库中的二维表格。DataFrame与RDD的主要区别在于，前者带有schema元信息，即DataFrame所表示的二维表数据集的每一列都带有名称和类型。这使得Spark SQL得以洞察更多的结构信息，从而对藏于DataFrame背后的数据源以及作用于DataFrame之上的变换进行了针对性的优化，最终达到大幅提升运行时效率的目标，反观RDD，由于无从得知所存数据元素的具体内部结构，Spark Core只能在stage层面进行简单、通用的流水线优化。
+
+<img src="/images/spark/spark-aura-9.3.1.png" width="700" alt="" />
+
 
 [云课堂](https://study.163.com/course/courseLearn.htm?courseId=1208880821#/learn/video?lessonId=1278323689&courseId=1208880821)
 
@@ -402,7 +410,7 @@ spark-submit \
 
 ## Reference
 
-
+- [SparkSQL学习 1 2 3](https://blog.csdn.net/qq_41851454/category_7640711.html)
 - [SparkSQL在有赞大数据的实践（二）](https://tech.youzan.com/sparksql-in-youzan-2/)
 - [How to convert rdd object to dataframe in spark](https://stackoverflow.com/questions/29383578/how-to-convert-rdd-object-to-dataframe-in-spark)
 - [云课堂 SparkSQL 的数据源操作](https://study.163.com/course/courseLearn.htm?courseId=1208880821#/learn/video?lessonId=1278316678&courseId=1208880821)
