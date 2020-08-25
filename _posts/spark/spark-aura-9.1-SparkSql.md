@@ -29,10 +29,13 @@ SparkSQL是Spark的一个模块，主要用于进行结构化数据的处理。�
 
 **原理**： 将SparkSQL 转化为 RDD ，然后提交到集群执行
 
-作用 | 特点
+No. | Description
 :---: | :---
-提供一个编程抽象（DataFrame）并且作为分布式SQL查询引擎。 | 1. 容易整合 <br> 2. 统一的数据访问方式
-DataFrame：它可以根据很多源进行构建 <br> 包括：结构化的数据文件，Hive中的表，外部的关系型数据库，以及RDD | 3. 兼容Hive <br> 4. 标准的数据连接
+原理 | 将SparkSQL 转化为 RDD ，然后提交到集群执行
+作用 | 提供一个编程抽象（DataFrame）并且作为分布式SQL查询引擎。 <br> DataFrame 可据很多源进行构建，包括：结构化的数据文件，Hive中的表，外部的关系型数据库，以及RDD 
+特点 | 1. 容易整合 <br> 2. 统一的数据访问方式 <br> 3. 兼容Hive <br> 4. 标准的数据连接
+
+## 2. SparkSQL 的编程入口
 
 **SparkSession:**
 
@@ -40,12 +43,42 @@ DataFrame：它可以根据很多源进行构建 <br> 包括：结构化的数�
 > 2. 允许用户通过它调用 DataFrame 和 Dataset 相关 API 来编写程序
 > 3. 减少了用户需要了解的一些概念，可以很容易的与 Spark 进行交互
 > 4. 与 Spark 交互之时不需要显示的创建 SparkConf, SparkContext 以及 SQlContext，这些对象已经封闭在 SparkSession 中
+> 5. SparkSession 提供对Hive特征的内部支持：用HiveSQL写SQL语句，访问 Hive UDFs，从Hive表中读取数据
 
 <img src="/images/spark/spark-aura-9.1.3.png" width="900" alt="" />
 
-## 2. SparkSQL 的编程入口
+### 2.1 SparkSession 的创建
+
+```python
+from pyspark.sql import SparkSession
+
+spark = SparkSession \
+    .builder \
+    .appName("Python Spark SQL basic example") \
+    .config("spark.some.config.option", "some-value") \
+    .enableHiveSupport() // 在classpath中,必须加入一个配置文件 hive-site.xml
+    .getOrCreate()
+    #   hive url       : 源数据库在哪里
+    #   hive warehouse : 真是数据在哪里
+```
+
+(1). spark-shell
+
+> spark-shell
+> 
+> spark 1.x:
+> 
+>   SparkContext sc
+>   SqlContext sqlContextS
+> 
+> spark 2.x:
+> 
+>   SparkContext sc
+>   SparkSession spark
 
 ## 3. Spark 的数据抽象
+
+[云课堂](https://study.163.com/course/courseLearn.htm?courseId=1208880821#/learn/video?lessonId=1278323689&courseId=1208880821)
 
 ## 4. SparkSQL 的编程基本套路
 
