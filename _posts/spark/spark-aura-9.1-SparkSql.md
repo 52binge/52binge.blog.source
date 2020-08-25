@@ -1,7 +1,7 @@
 ---
 title: SparkSql - 结构化数据处理 (上)
 toc: true
-date: 2020-08-15 14:07:21
+date: 2020-08-25 14:07:21
 categories: [spark]
 tags: [spark]
 ---
@@ -11,6 +11,19 @@ tags: [spark]
 <!-- more -->
 
 ## 1. SparkSQL 的基础理论
+
+Version | Title Description
+:---: | :---
+1.0以前 | Shark
+Spark-1.1 | SparkSQL(只是测试性的)  SQL
+Spark-1.3 | SparkSQL(正式版本)+Dataframe API
+Spark-1.4 | 增加窗口分析函数
+Spark-1.5 | SparkSQL 钨丝计划， UDF/UDAF
+Spark-1.6 | SparkSQL 执行的 sql 可以增加注释
+Spark-2.x | SparkSQL+DataFrame+DataSet(正式版本), 引入 SparkSession 统一编程入口
+.. | SparkSQL:还有其他的优化
+
+[SparkSQL学习（一）SparkSQL简单使用](https://blog.csdn.net/qq_41851454/article/details/80188528)
 
 ## 2. SparkSQL 的编程入口
 
@@ -338,6 +351,8 @@ spark-submit \
 
 ## Reference
 
+
+- [SparkSQL在有赞大数据的实践（二）](https://tech.youzan.com/sparksql-in-youzan-2/)
 - [How to convert rdd object to dataframe in spark](https://stackoverflow.com/questions/29383578/how-to-convert-rdd-object-to-dataframe-in-spark)
 - [云课堂 SparkSQL 的数据源操作](https://study.163.com/course/courseLearn.htm?courseId=1208880821#/learn/video?lessonId=1278316678&courseId=1208880821)
 - [大数据资料笔记整理](https://blog.csdn.net/huang66666666/category_9399107.html)
