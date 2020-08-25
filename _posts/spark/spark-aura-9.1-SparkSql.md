@@ -25,6 +25,23 @@ Spark-2.x | SparkSQL+DataFrame+DataSet(正式版本), 引入 SparkSession 统一
 
 [SparkSQL学习（一）SparkSQL简单使用](https://blog.csdn.net/qq_41851454/article/details/80188528)
 
+将SparkSQL 转化为 RDD ，然后提交到集群执行
+
+### 1.2 sparkSql 作用
+
+提供一个编程抽象（DataFrame）并且作为分布式SQL查询引擎。
+
+DataFrame：它可以根据很多源进行构建，包括：结构化的数据文件，Hive中的表，外部的关系型数据库，以及RDD
+
+将SparkSQL 转化为 RDD ，然后提交到集群执行。
+
+### 1.3 特点
+
+1. 容易整合
+2. 统一的数据访问方式
+3. 兼容Hive
+4. 标准的数据连接
+
 ## 2. SparkSQL 的编程入口
 
 ## 3. Spark 的数据抽象
