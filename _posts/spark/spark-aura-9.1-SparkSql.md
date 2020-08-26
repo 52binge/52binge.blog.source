@@ -16,6 +16,7 @@ Version | Title Description
 :---: | :---
 1.0以前 | Shark
 Spark-1.1 | SparkSQL(只是测试性的)  SQL
+Spark<1.3 | DataFrame 称为 SchemaRDD
 Spark-1.3 | SparkSQL(正式版本)+Dataframe API
 Spark-1.4 | 增加窗口分析函数
 Spark-1.5 | SparkSQL 钨丝计划， UDF/UDAF
@@ -85,8 +86,43 @@ spark = SparkSession \
 
 <img src="/images/spark/spark-aura-9.3.1.png" width="700" alt="" />
 
-
 [云课堂](https://study.163.com/course/courseLearn.htm?courseId=1208880821#/learn/video?lessonId=1278323689&courseId=1208880821)
+
+RDD/DataDrame/Dataset
+
+数据抽象：
+
+val rdd = RDD[Record]
+val rdd = RDD[String]
+
+> 对于RDD中的元素的样式，通过观察就可以得知
+>
+> HDFS                mr
+> Hive (HDFS + MYSQL) sql
+
+**RDD[Record]  == DataFrame == Table**
+
+rdd1:
+
+id | name |sex
+:---: | :---: | :---:
+1 | huangbo | 男
+
+在 Spark1.3 之前, DataFrame 被称为 SchemaRDD。 以行为单位构成的分布式数据集合，按照列赋予不同的名称。对于 select，fileter，aggregation 和 sort 等操作符的抽象.
+
+DataFrame = RDD + Schema = SchemaRDD， 内部数据无类型，统一为 Row |
+:--- | :---: 
+DataFrame 是一种特殊关系的 Dataset, **DataSet[Row] = DataFrame** |
+DataFrame 自带优化器 Catalyst，可以自动优化程序 |
+DataFrame 提供了一整套的 Data Scource API |
+
+<img src="/images/spark/spark-aura-9.3.2.png" width="800" alt="" />
+
+### 3.2 DataFrame 描述
+
+[谈谈RDD、DataFrame、Dataset的区别和各自的优势](https://www.cnblogs.com/starwater/p/6841807.html)
+
+<img src="/images/spark/spark-aura-9.3.3.png" width="900" alt="" />
 
 ## 4. SparkSQL 的编程基本套路
 
