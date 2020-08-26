@@ -16,7 +16,7 @@ toc: true
 **1.1 easy**
 
 > 1. ~~二维数组中的查找~~ ~~替换空格 if c == ' ': res.append("%20") or 从后向前，逐个赋值~~， ✔️
-> 2. [剑指 Offer 53 - I. 在排序数组中查找数字 I](https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/),   bina(\*a, len, num, isLeft)， ✔️
+> 2. [剑指 Offer 53 - I. 在排序数组中查找数字 I](https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/),   找到右面的插入位置， ✔️
 > 3. `旋转数组的最小元素` while(low < high) { if(a[m] > a[high]) min[m+1,high], else [low,m]} ✔️ 
 > 4. ~~调整数组顺序使奇数位于偶数前面 while while~~ ， ✔️
 > 5. ~~次数超过一半的次数~~  ， ✔️
@@ -24,6 +24,7 @@ toc: true
 > 7. ~~和为S的两个数字(双指针思想)~~ ， ✔️
 > 8. [扑克牌顺子][lcof61] [Answer: (排序后，统计大小王数量 + 间隔)][lcof61-answer]， ✔️
 > 9. 构建乘积数组 (A数组，从前向后，再从后向前j-2,构造 B)， ✔️
+
 
 [lcof61]: https://leetcode-cn.com/problems/bu-ke-pai-zhong-de-shun-zi-lcof/
 [lcof61-answer]: https://leetcode-cn.com/problems/bu-ke-pai-zhong-de-shun-zi-lcof/solution/mian-shi-ti-61-bu-ke-pai-zhong-de-shun-zi-ji-he-se/
@@ -67,6 +68,8 @@ class Solution:
 
 ### 1.2 在排序数组中查找数字 I, //
 
+1 2 2 2 2 2 10 100
+
 ```python
 class Solution:
     def search(self, nums: [int], target: int) -> int:
@@ -80,21 +83,29 @@ class Solution:
         return helper(target) - helper(target - 1)
 ```
 
-> 本质上看， helper() 函数旨在查找数字 tartar 在数组 numsnums 中的 插入点 ，且若数组中存在值相同的元素，则插入到这些元素的右边。
+> 本质上看， helper() 函数旨在查找数字 tar 在数组 nums 中的 插入点 ，且若数组中存在值相同的元素，则插入到这些元素的右边。
 
 ### 1.3 旋转数组的最小元素
 
 [题解](https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/solution/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-by-leetcode-s/)
 
-输入：[3,4,5,1,2]
+输入：[8,9,10,1,2,3,4,5,6,7]
 输出：1
+
+<img src="https://assets.leetcode-cn.com/solution-static/jianzhi_11/1.png" width="800" />
+
+<img src="https://assets.leetcode-cn.com/solution-static/jianzhi_11/2.png" width="800" />
+
+<img src="https://assets.leetcode-cn.com/solution-static/jianzhi_11/3.png" width="800" />
+
+<img src="https://assets.leetcode-cn.com/solution-static/jianzhi_11/4.png" width="800" />
 
 ```python
 class Solution:
     def minArray(self, numbers: List[int]) -> int:
         low, high = 0, len(numbers) - 1
         while low < high:
-            pivot = low + (high - low) // 2
+            pivot = (low + high) // 2
             if numbers[pivot] < numbers[high]:
                 high = pivot 
             elif numbers[pivot] > numbers[high]:
@@ -103,6 +114,7 @@ class Solution:
                 high -= 1
         return numbers[low]
 ```
+
 
 调整数组顺序使奇数位于偶数前面 while while
 
