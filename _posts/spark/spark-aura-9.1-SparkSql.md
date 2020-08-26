@@ -124,6 +124,13 @@ DataFrame 提供了一整套的 Data Scource API |
 
 <img src="/images/spark/spark-aura-9.3.3.png" width="900" alt="" />
 
+### 3.3 现在的 SparkSQL 的编程
+
+<img src="/images/spark/spark-aura-9.3.4.png" width="850" alt="" />
+
+<img src="/images/spark/spark-aura-9.3.5.png" width="850" alt="" />
+
+
 ## 4. SparkSQL 的编程基本套路
 
 ## 5. DataFrame 的DSL和SQL操作方式
