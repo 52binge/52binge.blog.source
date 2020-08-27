@@ -130,192 +130,44 @@ DataFrame 提供了一整套的 Data Scource API |
 
 <img src="/images/spark/spark-aura-9.3.5.png" width="850" alt="" />
 
+## 4. SparkSQL的编程基本套路
 
-## 4. SparkSQL 的编程基本套路
+[Spark2.x学习笔记：14、Spark SQL程序设计](https://cloud.tencent.com/developer/article/1010936)
 
-## 5. DataFrame 的DSL和SQL操作方式
+Steps | description
+--- | ---
+1). 创建SparkSession对象 | SparkSession封装了Spark SQL执行环境信息，是所有Spark SQL程序唯一的入口。
+2). 创建DataFrame或Dataset |  Spark SQL支持多种数据源
+3). 在DataFrame或Dataset之上进行转换和Action | Spark SQL提供了多钟转换和Action函数
+4). 返回结果 | 保存结果到HDFS中，或直接打印出来 。
+ 
+### 4.1 创建SparkSession对象
 
-## 6. SparkSQL 编程代码的多种方式解析
-
-## 7. SparkSQL 的数据源操作
-
-## 8. SparkSQL 基础内容复习
-
-## 9. spark 整合 yarn
-
-## 10. spark 整合 hive
-
-## 11. sparksql和hive的自定义函数
-
-## SparkCore 编程套路
-
-1. 获取编程入口
-2. 通过编程入口加载数据获得数据抽象 RDD
-3. 对 RDD 进行各种处理 (Transformation 和 Action)： 计算
-4. 对结果数据进行处理： saveAsTextFile
-5. 关闭程序入口
-
-spark 的任务执行流程
-
-Hive 的可视化工具：**DBeaver**
-
-# 1. SparkSQL 的数据源操作
-
-摘要：
-
-(1). sparksql 的基础理论 
-(2). sparksql 的核心编程入口 sparksession
-(3). sparksql 的核心数据抽象 dataFrame dataset
-(4). sparksql 的编程套路
-  
-  spark-shell
-  spark-submit
-  
-sparksql的重点： 创建 dataFrame 的几种方式
-
-  spark1.x：
-  
-      studentRDD.toDF
-      sqlContext.createDataFrame(studentRDD)
-      sqlContext.createDataFrame(rowRDD, schema)
-      
-  spark2.x：
-  
-      spark.read.format().load()
-  
-数据源：
-
-      支持的数据格式： csv, json, parquet, jdbc
-      load
-      save
-  
-## 1.1 [Spark SQL Guide](http://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html)
-
-
-```python
-df = spark.read.load("examples/src/main/resources/users.parquet")
-df.select("name", "favorite_color").write.save("namesAndFavColors.parquet")
-
-# parquet file 默认是这种文件方式 load
+```scala
+val spark=SparkSessin.builder
+        .master("local")
+        .appName("spark session example")
+        .getOrCreate()
 ```
 
-举个🌰: spark 安装路径 examples/src/main/resources :
+### 4.2 创建DataFrame或Dataset
 
-```bash
-# /usr/local/xsoft/spark/examples/src/main/resources [23:06:36]
-➜ ll
-total 88
-drwxr-xr-x@ 5 blair  staff   160B Jun  6 21:34 dir1
--rw-r--r--@ 1 blair  staff   130B Jun  6 21:34 employees.json
--rw-r--r--@ 1 blair  staff   240B Jun  6 21:34 full_user.avsc
--rw-r--r--@ 1 blair  staff   5.7K Jun  6 21:34 kv1.txt
--rw-r--r--@ 1 blair  staff    49B Jun  6 21:34 people.csv
--rw-r--r--@ 1 blair  staff    73B Jun  6 21:34 people.json
--rw-r--r--@ 1 blair  staff    32B Jun  6 21:34 people.txt
--rw-r--r--@ 1 blair  staff   185B Jun  6 21:34 user.avsc
--rw-r--r--@ 1 blair  staff   334B Jun  6 21:34 users.avro
--rw-r--r--@ 1 blair  staff   547B Jun  6 21:34 users.orc
--rw-r--r--@ 1 blair  staff   615B Jun  6 21:34 users.parquet
-```
+ 提供了读写各种格式数据的API，包括常见的JSON，JDBC，Parquet，HDFS
 
-## 1.2 hadoop cmd
+### 4.3 在DataFrame上进行各种操作
+ 
+![](https://ask.qcloudimg.com/http-save/yehe-1147621/1z13o8nh6p.png?imageView2/2/w/1620)
 
-```shell
-hadoop fs -mkdir -p /sparksql/input/
-hadoop fs -put people.txt people.csv people.json /sparksql/input/
-```
+> FileZilla
+>
+> [good 实际例子演示： Spark2.x学习笔记：14、Spark SQL程序设计](https://cloud.tencent.com/developer/article/1010936)
 
-## 1.3 to load a csv file
+## 5. DataFrame的DSL和SQL操作方式
 
-```python
-df = spark.read.load("examples/src/main/resources/people.csv",
-                     format="csv", sep=":", inferSchema="true", header="true")
-```
+- [DataFrame常用操作（DSL风格语法），sql风格语法](https://blog.csdn.net/toto1297488504/article/details/74907124)
+- [Spark SQL重点知识总结](https://cloud.tencent.com/developer/article/1448730)
 
-To load a parquet / json file ， [write Save Modes](http://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html#save-modes)
-
-```python
-df = spark.read.load("examples/src/main/resources/people.json", format="json")
-df.select("name", "age").write.save("namesAndAges.parquet", format="parquet")
-```
-
-> 默认情况下保存数据到 HDFS 的数据格式： .snappy.parquet
-> 
-> .snappy： 结果保存到 HDFS 上的时候自动压缩： 压缩算法： snappy
-> 
->   zip / 7z / lzo / gzip / snappy
-> 
-> .parquet： 结果使用一种列式文件存储格式保存
-> 
->   parquet / rc / orc / row column
-> 
-
-## 1.4 JDBC
-
-<img src="/images/spark/sparkSql-aura-9.1.1.jpg" width="800" alt="" />
-
-
-<img src="/images/spark/sparkSql-aura-9.1.2.jpg" width="800" alt="Jdbc mysql scala" />
-
-[JDBC To Other Databases](http://spark.apache.org/docs/latest/sql-data-sources-jdbc.html)
-
-```python
-# Note: JDBC loading and saving can be achieved via either the load/save or jdbc methods
-# Loading data from a JDBC source
-jdbcDF = spark.read \
-    .format("jdbc") \
-    .option("url", "jdbc:postgresql:dbserver") \
-    .option("dbtable", "schema.tablename") \
-    .option("user", "username") \
-    .option("password", "password") \
-    .load()
-```
-
-Run SQL on files directly
-
-```python
-df = spark.sql("SELECT * FROM parquet.`examples/src/main/resources/users.parquet`")
-```
-
-**创建 dataFrame 的3种方式**
-
-val studentRDD: RDD[Student]
-
-> 1. studentRDD.toDF
-> 2. sqlContext.createDtaFrame(studentRDD)
-> 3. 通过 StructType 来指定 Schema
-> 4. spark.read.format("json").load("path") （格式化的数据）
-
-
-## [1.5 Spark SQL Guide](http://spark.apache.org/docs/latest/sql-getting-started.html)
-
-```python
-from pyspark.sql import SparkSession
-
-spark = SparkSession \
-    .builder \
-    .appName("Python Spark SQL basic example") \
-    .config("spark.some.config.option", "some-value") \
-    .getOrCreate()
-```
-
-**Creating DataFrames**
-
-```python
-# spark is an existing SparkSession
-df = spark.read.json("examples/src/main/resources/people.json")
-# Displays the content of the DataFrame to stdout
-df.show()
-# +----+-------+
-# | age|   name|
-# +----+-------+
-# |null|Michael|
-# |  30|   Andy|
-# |  19| Justin|
-# +----+-------+
-```
-
-# 2. SparkSQL 编写代码多种方式
+## 6. SparkSQL 编写代码多种方式
 
 摘要：
   (1) sparksql 这个模块的基本理论介绍
@@ -441,18 +293,187 @@ spark-submit \
 文件格式： .parquet - 结果使用一种列式文件存储格式保存
 >    parquet， rc， 
 
-# 3. DataFrame的DSL和SQL操作方式
+**SparkCore 编程套路:**
 
-# 4. sparksql编程的基本套路
+1. 获取编程入口
+2. 通过编程入口加载数据获得数据抽象 RDD
+3. 对 RDD 进行各种处理 (Transformation 和 Action)： 计算
+4. 对结果数据进行处理： saveAsTextFile
+5. 关闭程序入口
 
-# 5. spark的数据抽象RDD,DataFrame,DataSet
+spark 的任务执行流程
 
-# 6. sparksql的编程入口
+Hive 的可视化工具：**DBeaver**
 
-# 7. sparksql的基础理论
+## 7. SparkSQL 的数据源操作
+
+摘要：
+
+(1). sparksql 的基础理论 
+(2). sparksql 的核心编程入口 sparksession
+(3). sparksql 的核心数据抽象 dataFrame dataset
+(4). sparksql 的编程套路
+  
+  spark-shell
+  spark-submit
+  
+sparksql的重点： 创建 dataFrame 的几种方式
+
+  spark1.x：
+  
+      studentRDD.toDF
+      sqlContext.createDataFrame(studentRDD)
+      sqlContext.createDataFrame(rowRDD, schema)
+      
+  spark2.x：
+  
+      spark.read.format().load()
+  
+数据源：
+
+      支持的数据格式： csv, json, parquet, jdbc
+      load
+      save
+  
+### 7.1 [Spark SQL Guide](http://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html)
+
+
+```python
+df = spark.read.load("examples/src/main/resources/users.parquet")
+df.select("name", "favorite_color").write.save("namesAndFavColors.parquet")
+
+# parquet file 默认是这种文件方式 load
+```
+
+举个🌰: spark 安装路径 examples/src/main/resources :
+
+```bash
+# /usr/local/xsoft/spark/examples/src/main/resources [23:06:36]
+➜ ll
+total 88
+drwxr-xr-x@ 5 blair  staff   160B Jun  6 21:34 dir1
+-rw-r--r--@ 1 blair  staff   130B Jun  6 21:34 employees.json
+-rw-r--r--@ 1 blair  staff   240B Jun  6 21:34 full_user.avsc
+-rw-r--r--@ 1 blair  staff   5.7K Jun  6 21:34 kv1.txt
+-rw-r--r--@ 1 blair  staff    49B Jun  6 21:34 people.csv
+-rw-r--r--@ 1 blair  staff    73B Jun  6 21:34 people.json
+-rw-r--r--@ 1 blair  staff    32B Jun  6 21:34 people.txt
+-rw-r--r--@ 1 blair  staff   185B Jun  6 21:34 user.avsc
+-rw-r--r--@ 1 blair  staff   334B Jun  6 21:34 users.avro
+-rw-r--r--@ 1 blair  staff   547B Jun  6 21:34 users.orc
+-rw-r--r--@ 1 blair  staff   615B Jun  6 21:34 users.parquet
+```
+
+### 7.2 hadoop cmd
+
+```shell
+hadoop fs -mkdir -p /sparksql/input/
+hadoop fs -put people.txt people.csv people.json /sparksql/input/
+```
+
+### 7.3 to load a csv file
+
+```python
+df = spark.read.load("examples/src/main/resources/people.csv",
+                     format="csv", sep=":", inferSchema="true", header="true")
+```
+
+To load a parquet / json file ， [write Save Modes](http://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html#save-modes)
+
+```python
+df = spark.read.load("examples/src/main/resources/people.json", format="json")
+df.select("name", "age").write.save("namesAndAges.parquet", format="parquet")
+```
+
+> 默认情况下保存数据到 HDFS 的数据格式： .snappy.parquet
+> 
+> .snappy： 结果保存到 HDFS 上的时候自动压缩： 压缩算法： snappy
+> 
+>   zip / 7z / lzo / gzip / snappy
+> 
+> .parquet： 结果使用一种列式文件存储格式保存
+> 
+>   parquet / rc / orc / row column
+> 
+
+### 7.4 JDBC
+
+<img src="/images/spark/sparkSql-aura-9.1.1.jpg" width="800" alt="" />
+
+
+<img src="/images/spark/sparkSql-aura-9.1.2.jpg" width="800" alt="Jdbc mysql scala" />
+
+[JDBC To Other Databases](http://spark.apache.org/docs/latest/sql-data-sources-jdbc.html)
+
+```python
+# Note: JDBC loading and saving can be achieved via either the load/save or jdbc methods
+# Loading data from a JDBC source
+jdbcDF = spark.read \
+    .format("jdbc") \
+    .option("url", "jdbc:postgresql:dbserver") \
+    .option("dbtable", "schema.tablename") \
+    .option("user", "username") \
+    .option("password", "password") \
+    .load()
+```
+
+Run SQL on files directly
+
+```python
+df = spark.sql("SELECT * FROM parquet.`examples/src/main/resources/users.parquet`")
+```
+
+**创建 dataFrame 的3种方式**
+
+val studentRDD: RDD[Student]
+
+> 1. studentRDD.toDF
+> 2. sqlContext.createDtaFrame(studentRDD)
+> 3. 通过 StructType 来指定 Schema
+> 4. spark.read.format("json").load("path") （格式化的数据）
+
+
+### [7.5 Spark SQL Guide](http://spark.apache.org/docs/latest/sql-getting-started.html)
+
+```python
+from pyspark.sql import SparkSession
+
+spark = SparkSession \
+    .builder \
+    .appName("Python Spark SQL basic example") \
+    .config("spark.some.config.option", "some-value") \
+    .getOrCreate()
+```
+
+**Creating DataFrames**
+
+```python
+# spark is an existing SparkSession
+df = spark.read.json("examples/src/main/resources/people.json")
+# Displays the content of the DataFrame to stdout
+df.show()
+# +----+-------+
+# | age|   name|
+# +----+-------+
+# |null|Michael|
+# |  30|   Andy|
+# |  19| Justin|
+# +----+-------+
+```
+
+
+<!--## 8. SparkSQL 基础内容复习
+
+## 9. spark 整合 yarn
+
+## 10. spark 整合 hive
+
+## 11. sparksql和hive的自定义函数-->
 
 ## Reference
 
+- [Spark SQL, DataFrame 和 Dataset 编程指南](https://spark-reference-doc-cn.readthedocs.io/zh_CN/latest/programming-guide/sql-guide.html)
+- [Spark2.x学习笔记：14、Spark SQL程序设计](https://cloud.tencent.com/developer/article/1010936)
 - [SparkSQL学习 1 2 3](https://blog.csdn.net/qq_41851454/category_7640711.html)
 - [SparkSQL在有赞大数据的实践（二）](https://tech.youzan.com/sparksql-in-youzan-2/)
 - [How to convert rdd object to dataframe in spark](https://stackoverflow.com/questions/29383578/how-to-convert-rdd-object-to-dataframe-in-spark)
