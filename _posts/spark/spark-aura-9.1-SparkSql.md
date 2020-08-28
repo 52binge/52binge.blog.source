@@ -6,7 +6,7 @@ categories: [spark]
 tags: [spark]
 ---
 
-<img src="/images/spark/SparkSql-logo-1.png" width="500" alt="" />
+<img src="/images/spark/SparkSql-logo-2.png" width="500" alt="" />
 
 <!-- more -->
 
@@ -461,14 +461,62 @@ df.show()
 # +----+-------+
 ```
 
+## 8. SparkSQL 基础内容复习
 
-<!--## 8. SparkSQL 基础内容复习
+**8.1 sparksql 基础理论**
 
-## 9. spark 整合 yarn
+1. 发展趋势
+2. SQL
+3. Stream
 
-## 10. spark 整合 hive
+**8.2 编程入口 SparkSession**
 
-## 11. sparksql和hive的自定义函数-->
+**8.3 数据抽象DataFrame DataSet**
+
+**8.4 sparksql 编程套路**
+
+  spark-shell
+  spark-submit
+  
+  sparksql的重点：创建 dataFrame 的几种方式
+  spark1.x:
+  
+    studentRDD.toDF
+    sqlContext.createDataFrame(studentRDD)
+    sqlContext.createDataFrame(rowRDD, schema)
+    
+    val schema: StructType = StructType(
+            StructField("id", IntegerType, false)
+            ...
+    )
+  
+  spark2.x:
+  
+    spark.read.format().load()
+  
+**8.5 数据源**
+
+支持的数据格式： csv, json, parquet, jdbc
+
+> load
+> save
+> mode: ignore, append, overwrite, error, ...
+
+studentDF.write.format("json").mode().save()
+
+> mapreduce hive
+> sparkcore sparksql
+>
+> kafka
+> spark
+>
+> stream + sql + 内存, 整合的平台： 将来的趋势
+
+sparkcore: 
+            
+    最底层的核心执行引擎
+    设计思路：基于批处理, 离线处理
+    基于内存
 
 ## Reference
 
