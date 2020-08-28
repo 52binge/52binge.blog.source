@@ -387,3 +387,4 @@ int bina(int *a, int len, int data) {
 - [简书： 2019 算法面试相关(leetcode)--动态规划(Dynamic Programming)](https://www.jianshu.com/p/af880bbba792)
 - [CSDN leetcode DP](https://blog.csdn.net/EbowTang/article/details/50791500)
 - [刷完700多题后的首次总结：LeetCode应该怎么刷？](https://blog.csdn.net/fuxuemingzhu/article/details/105183554)
+- [小白一路走来，连续刷题三年，谈谈我的算法学习经验](https://www.cnblogs.com/kubidemanong/p/10996134.html)
