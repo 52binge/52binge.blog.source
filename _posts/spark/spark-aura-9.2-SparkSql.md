@@ -25,7 +25,36 @@ tags: [spark]
 
 ### 1.2 Spark-Shell 测试
 
+```bash
+只能这么启动
+spark-submit --master yarn --deploy-mode client
+
+不能这么启动
+spark-submit --master yarn --deploy-mode cluster
+
+原因： spark-shell spark-submit driver
+```
+
+原来：
+
+```bash
+spark-shell
+spark-shell --master local[*]
+
+
+```
+
 ### 1.3 Spark-Submit 测试
+
+```bash
+只能这么启动
+spark-submit --master yarn --deploy-mode client
+
+也能这么启动
+spark-submit --master yarn --deploy-mode cluster
+
+原因： spark-shell spark-submit driver
+```
 
 ## 2. spark 整合 hive
 
