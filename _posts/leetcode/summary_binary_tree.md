@@ -1,5 +1,5 @@
 ---
-title: 总结 20 道题搞定 leetcode - 二叉树
+title: Summary 20 Binary Tree
 toc: true
 date: 2020-08-03 23:07:21
 categories: [leetcode]

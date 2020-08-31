@@ -1,5 +1,5 @@
 ---
-title: 总结 20 道 Array
+title: Summary 20 Array
 date: 2020-08-24 10:54:16
 tags: leetcode
 categories: icpc

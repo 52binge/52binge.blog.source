@@ -1,5 +1,5 @@
 ---
-title: 总结 17 道题 LinkList
+title: Summary 17 LinkList
 toc: true
 date: 2020-08-20 18:07:21
 categories: [leetcode]
