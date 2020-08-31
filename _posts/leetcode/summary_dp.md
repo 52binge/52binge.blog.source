@@ -10,18 +10,47 @@ toc: true
 
 <!-- more -->
 
+> 1. 爬楼梯 ， ✔️
+> 2. 不同路径 II ， ✔️
+> 3. 编辑距离 ， ✔️
 
-**1.1 easy**
+不同路径 II
 
-> 1. ~~二维数组中的查找~~ ~~替换空格 if c == ' ': res.append("%20") or 从后向前，逐个赋值~~， ✔️
-> 2. [剑指 Offer 53 - I. 在排序数组中查找数字 I](https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/),   找到右面的插入位置， ✔️
-> 3. `旋转数组的最小元素` while(low < high) { if(a[m] > a[high]) min[m+1,high], else [low,m]} ✔️ 
-> 4. ~~调整数组顺序使奇数位于偶数前面 while while~~ ， ✔️
-> 5. ~~次数超过一半的次数~~  ， ✔️
-> 6. ~~**丑数**, dp 只包含质因子2、3和5的数称作丑数, 1, 2, 3, 5, 6, ...~~ ， ✔️
-> 7. ~~和为S的两个数字(双指针思想)~~ ， ✔️
-> 8. [扑克牌顺子][lcof61] [Answer: (排序后，统计大小王数量 + 间隔)][lcof61-answer]， ✔️
-> 9. 构建乘积数组 (A数组，从前向后，再从后向前j-2,构造 B)， ✔️
+![](https://upload-images.jianshu.io/upload_images/1782258-9dbebab909d4a555.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/400/format/webp)
+
+> 如果当前没有障碍物，dp[m][n] = dp[m - 1][n] + dp[m][n - 1]
+> 如果有障碍物，则dp[m][n] = 0
+
+编辑距离
+
+> 如果单词1第i+1个字符和单词2第j+1个字符相同，那么就不用操作，则DP[i + 1][j + 1] = DP[i][j];
+> 
+> 如果不相同,则有三种可能操作，即增，删，替换。则取这三种操作的最优值，即dp[i + 1][j + 1] = 1 + Math.min(dp[i][j], Math.min(dp[i][j + 1], dp[i + 1][j]));
+
+## 1. 一维DP
+
+> 1. **连续子数组的最大和**   // dp: F[i] = max(a[i], F[i-1]+a[i]);
+
+## 2. 二维DP
+
+**布尔数组**
+
+> 1. Longest Palindromic Substring/最长回文子串 给出一个字符串S，找到一个最长的连续回文串。
+2. Interleaving String/交错字符串 输入三个字符串s1、s2和s3，判断第三个字符串s3是否由前两个字符串s1和s2交替而成且不改变s1和s2中各个字符原有的相对顺序。
+
+**数字数组**
+
+> 1. [Unique Paths II/不同路径][dp2.2.1] (初始化很重要) ， 起点到终点有多少条不同路径，向右或向下走。
+2. [Minimum Path Sum][dp2.2.2] 矩阵左上角出发到右下角，只能向右或向下走，找出哪一条路径上的数字之和最小。
+3. Edit Distance/编辑距离 求两个字符串之间的最短编辑距离，即原来的字符串至少要经过多少次操作才能够变成目标字符串，操作包括删除一个字符、插入一个字符、更新一个字符。
+4. Distinct Subsequences/不同子序列 给定S和T两个字符串，问把通过删除S中的某些字符，把S变为T有几种方法？
+
+> 补充：京东2019实习编程题-删除0或部分字符使其成为回文串 见笔试整理总结
+
+[dp2.2.1]: https://blog.csdn.net/yuanliang861/article/details/83514372
+[dp2.2.2]: https://www.cnblogs.com/grandyang/p/4353255.html
+
+## 3. 三维DP
 
 
 [lcof61]: https://leetcode-cn.com/problems/bu-ke-pai-zhong-de-shun-zi-lcof/
