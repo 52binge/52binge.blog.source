@@ -1,12 +1,12 @@
 ---
 title: Summary 20 dynamic programming
 date: 2020-08-31 10:54:16
-tags: leetcode
+tags: dp
 categories: leetcode
 toc: true
 ---
 
-<img src="/images/leetcode/DP-logo.png" width="550" />
+<img src="/images/leetcode/DP-logo.png" width="500" />
 
 <!-- more -->
 

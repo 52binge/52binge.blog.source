@@ -6,7 +6,7 @@ categories: [spark]
 tags: [spark]
 ---
 
-<img src="/images/spark/spark-summary-logo.jpg" width="550" alt="" />
+<img src="/images/spark/spark-summary-logo.jpg" width="500" alt="" />
 
 <!-- more -->
 
