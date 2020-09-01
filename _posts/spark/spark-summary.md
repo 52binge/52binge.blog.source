@@ -12,15 +12,20 @@ tags: [spark]
 
 ## 1. Spark section-0 基础 (3)
 
-1. spark的有几种部署模式，每种模式特点？
+1. spark的有几种部署模式，每种模式特点？ 
+> 1). local  2). standalone 3). Spark on yarn [(yarn-cluster和yarn-client)][1.1]
 2. Spark技术栈有哪些组件，每个组件都有什么功能，适合什么应用场景？
 3. spark有哪些组件
 
 > - master：管理集群和节点，不参与计算。
 > - worker：计算节点，进程本身不参与计算，和master汇报。
 > - Driver：运行程序的main方法，创建spark context对象。
-> - spark context：控制整个application的生命周期，包括dagsheduler和task scheduler等组件。
+> - sparkContext：控制整个application的生命周期，包括dagsheduler和task scheduler等组件。
 > - client：用户提交程序的入口。
+
+<img src="/images/spark/spark-aura-4.1.2.jpg" width="700" alt="" />
+
+[1.1]: Spark:Yarn-cluster和Yarn-client区别与联系
 
 ## 2. Spark运行细节 (13)
 
@@ -36,6 +41,13 @@ tags: [spark]
 10. Spark中数据的位置是被谁管理的？
 11. 为什么要进行序列化
 12. Spark如何处理不能被序列化的对象？
+
+### 2.1 spark工作机制
+
+> - 用户在client端提交作业后，会由Driver运行main方法并创建 sparkContext
+> - 执行add算子，形成dag图输入**dagscheduler** ， (创建job,划分Stage,提交Stage)
+> - 按照add之间的依赖关系划分stage输入task scheduler
+> - task scheduler会将stage划分为taskset分发到各个节点的executor中执行
 
 ## 3. Spark 与 Hadoop 比较(7)
 
@@ -57,3 +69,4 @@ tags: [spark]
 
 - [Spark知识点汇总](https://www.jianshu.com/p/7a8fca3838a4)
 - [Spark总结(一) 知乎](https://zhuanlan.zhihu.com/p/49169166)
+- [Spark:Yarn-cluster和Yarn-client区别与联系](https://blog.csdn.net/sdujava2011/article/details/46825637)

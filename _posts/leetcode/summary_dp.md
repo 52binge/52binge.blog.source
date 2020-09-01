@@ -16,16 +16,89 @@ toc: true
 
 不同路径 II
 
-![](https://upload-images.jianshu.io/upload_images/1782258-9dbebab909d4a555.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/400/format/webp)
+<img src="/images/leetcode/dp_robot_maze.png" width="" />
 
 > 如果当前没有障碍物，dp[m][n] = dp[m - 1][n] + dp[m][n - 1]
 > 如果有障碍物，则dp[m][n] = 0
 
+```python
+输入:
+[
+  [0,0,0],
+  [0,1,0],
+  [0,0,0]
+]
+输出: 2
+
+class Solution:
+    def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
+        #新建矩阵版
+        height, width = len(obstacleGrid),len(obstacleGrid[0])
+        store = [[0]*width for i in range(height)]
+
+        #从上到下，从左到右
+        for m in range(height):#每一行
+            for n in range(width):#每一列
+                if not obstacleGrid[m][n]: #如果这一格没有障碍物
+                    if m == n == 0: #或if not(m or n)
+                        store[m][n] = 1
+                     else:
+                        a = store[m-1][n] if m!=0 else 0 #上方格子
+                        b = store[m][n-1] if n!=0 else 0 #左方格子
+                        store[m][n] = a+b
+        return store[-1][-1]
+```
+
 编辑距离
+
+```
+给你两个单词 word1 和 word2，请你计算出将 word1 转换成 word2 所使用的最少操作数 。
+
+你可以对一个单词进行如下三种操作：
+
+插入一个字符
+删除一个字符
+替换一个字符
+
+输入：word1 = "horse", word2 = "ros"
+输出：3
+解释：
+horse -> rorse (将 'h' 替换为 'r')
+rorse -> rose (删除 'r')
+rose -> ros (删除 'e')
+```
 
 > 如果单词1第i+1个字符和单词2第j+1个字符相同，那么就不用操作，则DP[i + 1][j + 1] = DP[i][j];
 > 
 > 如果不相同,则有三种可能操作，即增，删，替换。则取这三种操作的最优值，即dp[i + 1][j + 1] = 1 + Math.min(dp[i][j], Math.min(dp[i][j + 1], dp[i + 1][j]));
+
+```python
+class Solution:
+    def minDistance(self, word1, word2):
+        n = len(word1)
+        m = len(word2)
+        
+        # 有一个字符串为空串
+        if n * m == 0:
+            return n + m
+        
+        # DP 数组
+        dp = [ [0] * (m + 1) for _ in range(n + 1)]
+        
+        # 边界状态初始化
+        for i in range(n + 1):
+            dp[i][0] = i
+        for j in range(m + 1):
+            dp[0][j] = j
+        
+        # 计算所有 DP 值
+        for i in range(0, n): # 0,1,2,3
+            for j in range(0, m):
+                dp[i+1][j+1] = ...
+                # (1,1), (1,2), (1,3)...
+        
+        return dp[n][m]
+```
 
 ## 1. 一维DP
 
