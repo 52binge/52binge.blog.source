@@ -10,7 +10,7 @@ tags: [spark]
 
 <!-- more -->
 
-## 1. Spark section-0 基础 (3)
+## 1. Spark 基础 (3)
 
 1. spark的有几种部署模式，每种模式特点？ 
 > 1). local  2). standalone 3). Spark on yarn [(yarn-cluster和yarn-client)][1.1]
@@ -48,6 +48,36 @@ tags: [spark]
 > - 执行add算子，形成dag图输入**dagscheduler** ， (创建job,划分Stage,提交Stage)
 > - 按照add之间的依赖关系划分stage输入task scheduler
 > - task scheduler会将stage划分为taskset分发到各个节点的executor中执行
+
+### 2.2 Spark应用程序的执行过程
+
+> - 构建Spark Application的运行环境（启动SparkContext）
+> - SparkContext向资源管理器（可以是Standalone、Mesos或YARN）注册并申请运行Executor资源；
+> - 资源管理器分配Executor资源，Executor运行情况将随着心跳发送到资源管理器上；
+> - SparkContext构建成DAG图，将DAG图分解成Stage，并把Taskset发送给Task Scheduler
+> - Executor向SparkContext申请Task，Task Scheduler将Task发放给Executor运行，SparkContext将应用程序代码发放给Executor。
+> - Task在Executor上运行，运行完毕释放所有资源
+
+### 2.3 driver的功能是什么？
+
+Spark作业运行时包括一个Driver进程，也是作业主进程，有main函数，且有SparkContext的实例，是程序入口点；
+
+**功能：**
+
+> 1. 向集群申请资源
+> 2. 负责了作业的调度和解析
+> 3. 生成Stage并调度Task到Executor上（包括DAGScheduler，TaskScheduler）
+
+### 2.4 Spark中Worker工作是什么？
+
+> 1. 管理当前节点内存，CPU使用状况,接收master分配过来的资源指令,通过ExecutorRunner启动程序分配任务
+> 2. worker就类似于包工头，管理分配新进程，做计算的服务，相当于process服务
+> 3. worker不会运行代码，具体运行的是Executor是可以运行具体appliaction写的业务逻辑代码
+
+### 2.5 task有几种类型？2种
+
+- resultTask类型，最后一个task
+- shuffleMapTask类型，除了最后一个task都是
 
 ## 3. Spark 与 Hadoop 比较(7)
 
