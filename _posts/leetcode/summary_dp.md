@@ -108,7 +108,9 @@ class Solution:
 
 **布尔数组**
 
-> 1. Longest Palindromic Substring/最长回文子串 给出一个字符串S，找到一个最长的连续回文串。
+1. [Longest Palindromic Substring/最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)
+
+
 2. Interleaving String/交错字符串 输入三个字符串s1、s2和s3，判断第三个字符串s3是否由前两个字符串s1和s2交替而成且不改变s1和s2中各个字符原有的相对顺序。
 
 **数字数组**
