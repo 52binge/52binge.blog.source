@@ -108,10 +108,49 @@ class Solution:
 
 **布尔数组**
 
-1. [Longest Palindromic Substring/最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)
+(1). [Longest Palindromic Substring/最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) ， $P(i,j)=P(i+1,j−1)∧(Si == Sj)$
 
+```python
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        n = len(s)
+        dp = [[False] * n for _ in range(n)]
+        ans = ""
+        # 枚举子串的长度 l+1
+        for l in range(n):
+            sub_len = l+1
+            # 枚举子串的起始位置 i，这样可以通过 j=i+l 得到子串的结束位置
+            for i in range(n):
+                j = i + l
+                if j >= len(s):
+                    break
+                if sub_len == 1:
+                    dp[i][j] = True
+                elif sub_len == 2:
+                    dp[i][j] = (s[i] == s[j])
+                else:
+                    dp[i][j] = (dp[i + 1][j - 1] and s[i] == s[j])
+                if dp[i][j] and sub_len > len(ans):
+                    ans = s[i:j+1] # "abcd"[1:2] = b
+        return ans
+```
 
-2. Interleaving String/交错字符串 输入三个字符串s1、s2和s3，判断第三个字符串s3是否由前两个字符串s1和s2交替而成且不改变s1和s2中各个字符原有的相对顺序。
+(2). Interleaving String/交错字符串 
+
+给定三个字符串 s1, s2, s3, 验证 s3 是否是由 s1 和 s2 交错组成的。
+
+```
+示例 1：
+
+输入：s1 = "aabcc", s2 = "dbbca", s3 = "aadbbcbcac"
+输出：true
+示例 2：
+
+输入：s1 = "aabcc", s2 = "dbbca", s3 = "aadbbbaccc"
+输出：false
+```
+
+(3). [剑指 Offer 46. 把数字翻译成字符串](https://leetcode-cn.com/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/)
 
 **数字数组**
 
