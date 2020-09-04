@@ -93,6 +93,30 @@ Spark作业运行时包括一个Driver进程，也是作业主进程，有main�
 
 > 相当于spark中的map算子和reduceByKey算子，区别：MR会自动进行排序的，spark要看具体partitioner
 
+### 3.1 MR和Spark相同和区别
+
+> spark用户提交的任务：application
+> 
+一个application对应一个SparkContext，app中存在多个job
+
+> 1). 每触发一次action会产生一个**`job`** -> 这些job可以并行或串行执行
+> 
+> 2). 每个job有多个**`stage`**，stage是shuffle过程中DAGSchaduler通过RDD之间的依赖关系划分job而来的
+> 
+> 3). 每个stage里面有多个**`task`**，组成 taskset 有 `TaskSchaduler` 分发到各个executor执行
+> 
+> 4). **`executor`** 生命周期和app一样的，即使没有job运行也存在，所以task可以快速启动读取内存进行计算.
+
+### 3.2 hadoop的mapreduce编程模型
+
+> 1. map task会从本地文件系统读取数据，转换成key-value形式的键值对集合
+> 2. key-value,集合,input to mapper进行业务处理过程，将其转换成需要的key-> value在输出
+> 3. 之后会进行一个partition分区操作，默认使用的是hashpartitioner
+> 4. 之后会对key进行进行sort排序，grouping分组操作将相同key的value合并分组输出
+> 5. 之后进行一个combiner归约操作，其实就是一个本地的reduce预处理，以减小后面shufle和reducer的工作量
+> 6. reduce task会通过网络将各个数据收集进行reduce处理
+> 7. 最后将数据保存或者显示，结束整个job
+
 ## 4. Spark RDD(4)
 
 ## 5. Spark 大数据问题(7)

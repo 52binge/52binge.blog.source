@@ -135,7 +135,7 @@ class Solution:
         return ans
 ```
 
-(2). Interleaving String/交错字符串 
+(2). [Interleaving String/交错字符串](https://leetcode-cn.com/problems/interleaving-string/solution/) 
 
 给定三个字符串 s1, s2, s3, 验证 s3 是否是由 s1 和 s2 交错组成的。
 
@@ -148,6 +148,34 @@ class Solution:
 
 输入：s1 = "aabcc", s2 = "dbbca", s3 = "aadbbbaccc"
 输出：false
+```
+
+解决这个问题的正确方法是动态规划。 首先如果 $|s_1| + |s_2| \neq |s_3|$, 那 $s_3$ 必然不可能由 $s_1$ 和 $s_2$ 交错组成。在 $|s_1| + |s_2| = |s_3|$时，我们可以用动态规划来求解。我们定义 $f(i,j)$ 表示 $s_1$ 的前 $i$ 个元素和 $s_2$ 的前 $j$ 个元素是否能交错组成 $s_3$ 的前 $i + j$ 个元素。如果 $s_1$ 的第 $i$ 个元素和 $s_3$ 的第 $i+j$ 个元素相等，那么 $s_1$ 的前 $i$ 个元素和 $s_2$ 的前 $j$ 个元素是否能交错组成 $s_3$ 的前 $i+j$ 个元素取决于 $s_1$ 的前 $i−1$ 个元素和 $s_2$ 的前 $j$ 个元素是否能交错组成 $s_3$ 的前 $i + j - 1$ 个元素，即此时 $f(i, j)$ 取决于 $f(i - 1, j)$，在此情况下如果 $f(i - 1, j)$ 为真，则 $f(i, j)$ 也为真。同样的，如果 $s_2$ 的第 $j$ 个元素和 $s_3$ 的第 $i + j$ 个元素相等并且 $f(i, j - 1)$ 为真，则 $f(i, j)$ 也为真。于是我们可以推导出这样的动态规划转移方程：
+
+$$
+f(i, j) = [f(i - 1, j) \, {\rm and} \, s_1(i - 1) = s_3(p)] \, {\rm or} \, [f(i, j - 1) \, {\rm and} \, s_2(j - 1) = s_3(p)]
+$$
+
+其中 $p = i + j - 1$。边界条件为 $f(0, 0) = {\rm True}$。至此，我们很容易可以给出这样一个实现：
+
+```python
+class Solution:
+    def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
+        len1=len(s1)
+        len2=len(s2)
+        len3=len(s3)
+        if(len1+len2!=len3):
+            return False
+        dp=[[False]*(len2+1) for i in range(len1+1)]
+        dp[0][0]=True
+        for i in range(1,len1+1):
+            dp[i][0]=(dp[i-1][0] and s1[i-1]==s3[i-1])
+        for i in range(1,len2+1):
+            dp[0][i]=(dp[0][i-1] and s2[i-1]==s3[i-1])
+        for i in range(1,len1+1):
+            for j in range(1,len2+1):
+                dp[i][j]=(dp[i][j-1] and s2[j-1]==s3[i+j-1]) or (dp[i-1][j] and s1[i-1]==s3[i+j-1])
+        return dp[-1][-1]
 ```
 
 (3). [剑指 Offer 46. 把数字翻译成字符串](https://leetcode-cn.com/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/)
