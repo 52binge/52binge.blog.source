@@ -10,14 +10,18 @@ toc: true
 
 <!-- more -->
 
-1、七种常见的数组排序算法整理(C语言版本)
+[颈椎病自测方法，你离颈椎病其实不远](https://zhuanlan.zhihu.com/p/56801641)
 
 
 **1.1 easy**
 
-> 1. ~~二维数组中的查找~~ ~~替换空格 if c == ' ': res.append("%20") or 从后向前，逐个赋值~~， ✔️
-> 2. [剑指 Offer 53 - I. 在排序数组中查找数字 I](https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/),   找到右面的插入位置， ✔️
-> 3. `旋转数组的最小元素` while(low < high) { if(a[m] > a[high]) min[m+1,high], else [low,m]} ✔️ 
+> 1. reverseLeftWords， ✔️
+> 2. ~~replaceSpace~~， ✔️
+> 3. ~~二维数组中的查找~~ ， ✔️
+> 4. ~~printNumbers 1~n （剑指 Offer 17.）~~ ， ✔️
+> 5. [reverseLinkedList](https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/)
+> 6. [在排序数组中查找数字 I（剑指 Offer 53 - I）](https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/),   找到右面的插入位置， ✔️
+> 7. `旋转数组的最小元素` while(low < high) { if(a[m] > a[high]) min[m+1,high], else [low,m]} ✔️ 
 > 4. ~~调整数组顺序使奇数位于偶数前面 while while~~ ， ✔️
 > 5. ~~次数超过一半的次数~~  ， ✔️
 > 6. ~~**丑数**, dp 只包含质因子2、3和5的数称作丑数, 1, 2, 3, 5, 6, ...~~ ， ✔️

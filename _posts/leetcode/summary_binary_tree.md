@@ -22,16 +22,24 @@ tags: [Tree]
 > 4. 递归： [求二叉树第K层的叶子节点个数] if(k==1 and root.left and root.right is null) return 1; ， ✔️
 > 5. 递归： [二叉树先序遍历/前序遍历]  (fIno(Node\* root) { while(1) {if else}
 > 6. 递归： [判断两棵二叉树是否结构相同] ， ✔️
-> 7. 递归： [剑指 Offer 27. 二叉树的镜像](https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/) ， （左右递归交换）✔️ 
+> 7. 递归： [二叉树的镜像（剑指 Offer 27）](https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/) ， （左右递归交换）✔️ 
 > 8. 递归： [剑指 Offer 28. 对称的二叉树] （双函数，承接上题二叉树的镜像， good） ， ✔️
-> 9. 递归： [求二叉树中两个节点的最低公共祖先节点 good] ， ✔️
-> 10. 递归： [求二叉搜索树的最近公共祖先 good] ， ✔️
-> 11. 递归： 根据前序和中序重建二叉树 ， ✔️
+
+**Medium**
+
+> 1. 递归： [求二叉树中两个节点的最低公共祖先节点 good] ， ✔️
+> 2. 递归： [求二叉搜索树的最近公共祖先 good] ， ✔️
+> 3. 递归： 根据前序和中序重建二叉树 ， ✔️
+
+```python
+class Solution:
+    def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
+```
+
 
 **hard**
 
-> 1. [297. Serialize and Deserialize Binary Tree 剑指offer：序列化二叉树
-](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) ， ✔️
+> 1. [297. Serialize and Deserialize Binary Tree 剑指offer：序列化二叉树](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) ， ✔️
 > 2. [面试题37. 序列化二叉树（层序遍历 BFS ，清晰图解）](https://leetcode-cn.com/problems/xu-lie-hua-er-cha-shu-lcof/solution/mian-shi-ti-37-xu-lie-hua-er-cha-shu-ceng-xu-bian-/ )
 
 
@@ -556,23 +564,31 @@ LeetCode：[Lowest Common Ancestor of a Binary Tree](https://leetcode.com/proble
 
 
 ```python
-def lowestCommonAncestor(root: TreeNode, p: TreeNode, q: TreeNode):
-    # 当越过叶节点，则直接返回 null
-    # 当 rootroot 等于 p, q， 则直接返回 root
-    if root == None or root == p or root == q:
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
+        # 当越过叶节点，则直接返回 null
+        # 当 rootroot 等于 p, q， 则直接返回 root
+        if root == None or root == p or root == q:
+            return root
+        
+        left = self.lowestCommonAncestor(root.left, p, q)
+        right = self.lowestCommonAncestor(root.right, p, q)
+        
+        if not left and not right: return None
+        
+        if not left: return right
+        if not right: return left
+        
         return root
-    
-    left = lowestCommonAncestor(root.left, p, q)
-    right = lowestCommonAncestor(root.right, p, q)
-    
-    if not left and not right: return None
-    
-    if not left: return right
-    if not right: return left
-    
-    return root
-    #if left != None and right != None:
-    #    return root
+        #if left != None and right != None:
+        #    return root
 ```
 
 ### 12.1 求二叉搜索树的最近公共祖先
@@ -960,7 +976,7 @@ class Codec:
 
 ## 20. 二叉搜索树的第k大节点
 
-剑指offer：[二叉搜索树的第k大节点](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/solution/mian-shi-ti-54-er-cha-sou-suo-shu-de-di-k-da-jie-d/)
+[剑指 Offer 54. 二叉搜索树的第k大节点](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/)
 
 给定一棵二叉搜索树，请找出其中的第k小的结点。例如， （5，3，7，2，4，6，8）中，按结点数值大小顺序第三小结点的值为4。
 
@@ -992,29 +1008,32 @@ class Codec:
 
 二叉搜索树按中序遍历的顺序打印出来就是排好序的，所以，我们按照中序遍历找到第k个结点就是题目所求的结点。
 
-```java
-class Solution {
-    public int kthSmallest(TreeNode root, int k) {
-        if(root == null)
-             return Integer.MIN_VALUE;
-        Stack&lt;TreeNode&gt; stack = new Stack&lt;&gt;();
-        int count = 0;
-        TreeNode p = root;
-        while(p != null || !stack.isEmpty()){
-            if(p != null){
-                stack.push(p);
-                p = p.left;
-            }else{
-                TreeNode node = stack.pop();
-                count ++;
-                if(count == k)
-                    return node.val;
-                p = node.right;
-            }
-        }
-        return Integer.MIN_VALUE;
-    }
-}
+```python
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
+class Solution:
+    def kthLargest(self, root: TreeNode, k: int) -> int:
+        def dfs(root):
+            if not root: return
+
+            dfs(root.right)
+            if self.k == 0: return
+
+            self.k -= 1
+
+            if self.k == 0:
+                self.res = root.val
+
+            dfs(root.left)
+
+        self.k = k
+        dfs(root)
+        return self.res
 ```
 
 ## Reference
