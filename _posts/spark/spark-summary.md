@@ -42,6 +42,13 @@ tags: [spark]
 11. 为什么要进行序列化
 12. Spark如何处理不能被序列化的对象？
 
+## 3. RDD(4)
+
+1. RDD机制
+2. RDD的弹性表现在哪几点？
+3. RDD有哪些缺陷？
+4. 什么是RDD宽依赖和窄依赖？
+
 ### 2.1 spark工作机制
 
 > - 用户在client端提交作业后，会由Driver运行main方法并创建 sparkContext
@@ -107,7 +114,7 @@ Spark作业运行时包括一个Driver进程，也是作业主进程，有main�
 > 
 > 4). **`executor`** 生命周期和app一样的，即使没有job运行也存在，所以task可以快速启动读取内存进行计算.
 
-### 3.2 hadoop的mapreduce编程模型
+### 3.2 mapreduce 编程模型
 
 > 1. map task会从本地文件系统读取数据，转换成key-value形式的键值对集合
 > 2. key-value,集合,input to mapper进行业务处理过程，将其转换成需要的key-> value在输出
@@ -116,6 +123,53 @@ Spark作业运行时包括一个Driver进程，也是作业主进程，有main�
 > 5. 之后进行一个combiner归约操作，其实就是一个本地的reduce预处理，以减小后面shufle和reducer的工作量
 > 6. reduce task会通过网络将各个数据收集进行reduce处理
 > 7. 最后将数据保存或者显示，结束整个job
+
+### 3.3 mr/spark 的 shuffle 差异?
+
+**high-level 角度：**
+
+> 1. 两者并没有大的差别 都是将 mapper（Spark: ShuffleMapTask）的输出进行 partition，
+> 2. 不同的 partition 送到不同的 reducer（Spark 里 reducer 可能是下一个 stage 里的 ShuffleMapTask，也可能是 ResultTask）
+> 3. Reducer 以内存作缓冲区，边 shuffle 边 aggregate 数据，等到数据 aggregate 好以后进行 reduce().
+
+**low-level 角度：**
+
+> **Hadoop MapReduce** 是 sort-based，进入 combine() 和 reduce() 的 records 必须先 sort.
+> 
+> 好处：combine/reduce() 可以处理大规模的数据, 因为其输入数据可以通过外排得到
+> 
+> (1) mapper 对每段数据先做排序
+> (2) reducer 的 shuffle 对排好序的每段数据做 归并 merge
+
+> **Spark** 默认选择的是 hash-based，通常使用 HashMap 来对 shuffle 来的数据进行 aggregate，不提前排序
+> 如果用户需要经过排序的数据：sortByKey()
+
+**实现角度：**
+
+> 1. Hadoop MapReduce 将处理流程划分出明显的几个阶段：map(), spilt, merge, shuffle, sort, reduce()
+> 2. Spark 没有这样功能明确的阶段，只有不同的 stage 和一系列的 transformation()，spill, merge, aggregate 等操作需要蕴含在 transformation() 中
+
+### 3.4 MR/Spark 的 shuffle 过程
+
+Tech | description
+:---: | ---
+**hadoop** | map端保存分片数据，通过网络收集到reduce端
+**spark** | spark的shuffle是在DAGSchedular划分Stage的时候产生的，TaskSchedule要分发Stage到各个worker的executor，减少shuffle可以提高性能
+
+### 3.5 partition 和 block 的关联
+
+> - hdfs 中的 block 是分布式存储的最小单元，等分，可设置冗余，这样设计有一部分磁盘空间的浪费，但是整齐的 block大小，便于快速找到、读取对应的内容
+>
+> - Spark中的partition是RDD的最小单元，RDD是由分布在各个节点上的partition组成的.
+> 
+> - partition是指的spark在计算过程中，生成的数据在计算空间内最小单元.
+> 
+> 同一份数据（RDD）的partion大小不一，数量不定，是根据application里的算子和最初读入的数据分块数量决定
+
+block/partition | description
+:---: | :---:
+block | 位于存储空间, block的大小是固定的
+partition | 位于计算空间, partion大小是不固定的
 
 ## 4. Spark RDD(4)
 

@@ -10,11 +10,21 @@ toc: true
 
 <!-- more -->
 
-> 1. 爬楼梯 ， ✔️
-> 2. 不同路径 II ， ✔️
-> 3. 编辑距离 ， ✔️
+> 1. 爬楼梯 climbing-stairs ， ✔️ 新建{}or[] ,滚动数组
+> 2. [不同路径 II](https://leetcode-cn.com/problems/unique-paths-ii/) ， ✔️
+> 3. [编辑距离](https://leetcode-cn.com/problems/edit-distance/) ， ✔️
+> 4. 扔鸡蛋
+> 5. 连续子数组的最大和 // dp: F[i] = max(a[i], F[i-1]+a[i]);
+> 6. [Longest Palindromic Substring/最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)
+> 7. [Edit Distance/编辑距离](https://leetcode-cn.com/problems/edit-distance/submissions/)
+> 8. Distinct Subsequences/不同子序列
+> 9. [Interleaving String/交错字符串]((https://leetcode-cn.com/problems/interleaving-string/solution/) )
+> 10. [把数字翻译成字符串](https://leetcode-cn.com/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/)
+> 11. [Leetcode 64. Minimum Path Sum, 最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/solution/zui-xiao-lu-jing-he-dong-tai-gui-hua-gui-fan-liu-c/)
+> 12. [115. Distinct Subsequences I (Hard)](https://leetcode-cn.com/problems/distinct-subsequences/)
+> 13. [940. 不同的子序列 II (Hard)](https://leetcode-cn.com/problems/distinct-subsequences-ii/)
 
-不同路径 II
+**不同路径 II：**
 
 <img src="/images/leetcode/dp_robot_maze.png" width="" />
 
@@ -42,14 +52,14 @@ class Solution:
                 if not obstacleGrid[m][n]: #如果这一格没有障碍物
                     if m == n == 0: #或if not(m or n)
                         store[m][n] = 1
-                     else:
+                    else:
                         a = store[m-1][n] if m!=0 else 0 #上方格子
                         b = store[m][n-1] if n!=0 else 0 #左方格子
                         store[m][n] = a+b
         return store[-1][-1]
 ```
 
-编辑距离
+**编辑距离：**
 
 ```
 给你两个单词 word1 和 word2，请你计算出将 word1 转换成 word2 所使用的最少操作数 。
@@ -75,6 +85,11 @@ rose -> ros (删除 'e')
 ```python
 class Solution:
     def minDistance(self, word1, word2):
+        """
+        :type word1: str
+        :type word2: str
+        :rtype: int
+        """
         n = len(word1)
         m = len(word2)
         
@@ -82,7 +97,7 @@ class Solution:
         if n * m == 0:
             return n + m
         
-        # DP 数组
+        # dp 数组
         dp = [ [0] * (m + 1) for _ in range(n + 1)]
         
         # 边界状态初始化
@@ -92,19 +107,20 @@ class Solution:
             dp[0][j] = j
         
         # 计算所有 DP 值
-        for i in range(0, n): # 0,1,2,3
-            for j in range(0, m):
-                dp[i+1][j+1] = ...
-                # (1,1), (1,2), (1,3)...
+        for i in range(1, n + 1):
+            for j in range(1, m + 1):
+                left = dp[i - 1][j] + 1
+                right = dp[i][j - 1] + 1
+                left_right = dp[i - 1][j - 1] 
+                if word1[i - 1] != word2[j - 1]:
+                    left_right += 1
+                dp[i][j] = min(left, right, left_right)
         
         return dp[n][m]
 ```
 
-## 1. 一维DP
 
-> 1. **连续子数组的最大和**   // dp: F[i] = max(a[i], F[i-1]+a[i]);
-
-## 2. 二维DP
+## 二维DP
 
 **布尔数组**
 
@@ -214,24 +230,66 @@ class Solution:
 
 **数字数组**
 
-> 1. [Unique Paths II/不同路径][dp2.2.1] (初始化很重要) ， 起点到终点有多少条不同路径，向右或向下走。
-2. [Minimum Path Sum][dp2.2.2] 矩阵左上角出发到右下角，只能向右或向下走，找出哪一条路径上的数字之和最小。
-3. Edit Distance/编辑距离 求两个字符串之间的最短编辑距离，即原来的字符串至少要经过多少次操作才能够变成目标字符串，操作包括删除一个字符、插入一个字符、更新一个字符。
-4. Distinct Subsequences/不同子序列 给定S和T两个字符串，问把通过删除S中的某些字符，把S变为T有几种方法？
 
-> 补充：京东2019实习编程题-删除0或部分字符使其成为回文串 见笔试整理总结
+1. [Leetcode 64. Minimum Path Sum, 最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/) 矩阵左上角出发到右下角，只能向右或向下走，找出哪一条路径上的数字之和最小。
 
-[dp2.2.1]: https://blog.csdn.net/yuanliang861/article/details/83514372
-[dp2.2.2]: https://www.cnblogs.com/grandyang/p/4353255.html
+给定一个包含非负整数的 m x n 网格，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。
 
-## 3. 三维DP
+说明：每次只能向下或者向右移动一步。
 
+示例:
 
-[lcof61]: https://leetcode-cn.com/problems/bu-ke-pai-zhong-de-shun-zi-lcof/
-[lcof61-answer]: https://leetcode-cn.com/problems/bu-ke-pai-zhong-de-shun-zi-lcof/solution/mian-shi-ti-61-bu-ke-pai-zhong-de-shun-zi-ji-he-se/
+```
+输入:
+[
+  [1,3,1],
+  [1,5,1],
+  [4,2,1]
+]
+输出: 7
+解释: 因为路径 1→3→1→1→1 的总和最小。
+```
 
-- [leetcode CN](https://leetcode-cn.com/interview)
-- [leetcode EN](https://leetcode.com/problemset/all/)
+### 12. 不同的子序列
+
+```
+示例 1：
+
+输入：S = "rabbbit", T = "rabbit"
+输出：3
+解释：
+
+如下图所示, 有 3 种可以从 S 中得到 "rabbit" 的方案。
+(上箭头符号 ^ 表示选取的字母)
+
+rabbbit
+^^^^ ^^
+rabbbit
+^^ ^^^^
+rabbbit
+^^^ ^^^
+```
+
+dp[i][j] 代表 T 前 i 字符串可以由 S j 字符串组成最多个数.
+
+<img src="/images/leetcode/dp-summary-12.png" width="600" />
+
+```
+[1, 1, 1, 1, 1, 1, 1, 1]
+[0, 1, 1, 2, 2, 3, 3, 3]
+[0, 0, 1, 1, 1, 1, 4, 4]
+[0, 0, 0, 0, 1, 1, 1, 5]
+5
+```
+
+所以动态方程:
+
+> 当 S[j] == T[i] , dp[i][j] = dp[i-1][j-1] + dp[i][j-1];
+>
+> 当 S[j] != T[i] , dp[i][j] = dp[i][j-1]
+
+举个例子,如示例的
+
 
 ## Reference
 
