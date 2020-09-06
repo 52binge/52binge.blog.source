@@ -16,16 +16,25 @@ tags: [Tree]
 
 > 1. 递归： [求二叉树中的节点个数] ， f(root.lchild)+ f(root.rchild) + 1 ， **✔️**
 > 2. 递归： [求二叉树(最大深度)&(最小深度)] ，max(max_depth(root.left), max_depth(root.right))+1
+> 3. 递归： [剑指 Offer 55 - II. 平衡二叉树](https://leetcode-cn.com/problems/ping-heng-er-cha-shu-lcof/)
 > 3. 递归： [求二叉树第K层的节点个数] ， f(root.left, k-1) + f(root.right, k-1) ， ✔️
 >
 > 4. 递归： [求二叉树第K层的叶子节点个数] if(k==1 and root.left and root.right is null) return 1; ， ✔️
 > 5. 递归： [二叉树先序遍历/前序遍历]  (fIno(Node\* root) { while(1) {if else}
 > 6. 递归： [判断两棵二叉树是否结构相同] ， ✔️
-> 7. 递归： [求二叉树的镜像（反转二叉树）] ， （左右递归交换）✔️ 
-> 8. 递归： [对称二叉树] （双函数，承接上题二叉树的镜像， good） ， ✔️
+> 7. 递归： [剑指 Offer 27. 二叉树的镜像](https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/) ， （左右递归交换）✔️ 
+> 8. 递归： [剑指 Offer 28. 对称的二叉树] （双函数，承接上题二叉树的镜像， good） ， ✔️
 > 9. 递归： [求二叉树中两个节点的最低公共祖先节点 good] ， ✔️
 > 10. 递归： [求二叉搜索树的最近公共祖先 good] ， ✔️
 > 11. 递归： 根据前序和中序重建二叉树 ， ✔️
+
+**hard**
+
+> 1. [297. Serialize and Deserialize Binary Tree 剑指offer：序列化二叉树
+](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) ， ✔️
+> 2. [面试题37. 序列化二叉树（层序遍历 BFS ，清晰图解）](https://leetcode-cn.com/problems/xu-lie-hua-er-cha-shu-lcof/solution/mian-shi-ti-37-xu-lie-hua-er-cha-shu-ceng-xu-bian-/ )
+
+
 
 **0. 几个概念**
 
@@ -237,7 +246,9 @@ def later_stack(self, root):
 
 ## 6. 分层遍历
 
-[LeetCode：Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/description/)
+[剑指 Offer 32 - I. 从上到下打印二叉树](https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/)
+[剑指 Offer 32 - II. 从上到下打印二叉树 II](https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof/)
+[剑指 Offer 32 - III. 从上到下打印二叉树 III - 按之字形顺序打印二叉树](https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/)
 
 本题是让我们把二叉树的每一层节点放入到同一个列表中，最后返回各层的列表组成的总的列表。
 
@@ -284,8 +295,8 @@ Answer：
 ```python
 from collections import deque
 
-class Solution(object):
-    def levelOrder(self, root):
+class Solution:
+    def levelOrder(self, root: TreeNode) -> List[List[int]]:
         """
         :type root: TreeNode
         :rtype: List[List[int]]
@@ -308,12 +319,11 @@ class Solution(object):
         return res
 ```
 
-### 6.1 自下而上分层遍历
+**按之字形顺序打印二叉树 （不错code）**
 
-此处撰写解题思路
+请实现一个函数按照之字形打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从右至左的顺序打印，第三行按照从左到右的顺序打印，其他行以此类推。
 
-一个队列用于保存树结构，另一个保存遍历的结果；
-利用队列的特性，层序遍历每层的结果；
+方法1：
 
 ```python
 # Definition for a binary tree node.
@@ -323,68 +333,44 @@ class Solution(object):
 #         self.left = None
 #         self.right = None
 
+from collections import deque
+
 class Solution:
-    def levelOrderBottom(self, root: TreeNode) -> List[List[int]]:
-        if root == None:
-            return []
-        stack = [root]
-        result = []
-        while len(stack) != 0:
-            num = len(stack)
-            r_temp = []
-            for i in range(num):
-                node = stack.pop(0)
-                r_temp.append(node.val)
-                if node.left:
-                    stack.append(node.left)
-                if node.right:
-                    stack.append(node.right)
-            result.insert(0, r_temp)
-        return result
+    def levelOrder(self, root: TreeNode) -> List[List[int]]:
+        """
+        :type root: TreeNode
+        :rtype: List[List[int]]
+        """
+        queue = collections.deque()
+        queue.append(root)
+        res = []
+        cnt = 0
+        while queue:
+            size = len(queue)
+            level = []
+            for _ in range(size):
+                cur = queue.popleft()
+                if not cur:
+                    continue
+                level.append(cur.val)
+                queue.append(cur.left)
+                queue.append(cur.right)
+            if level:
+                if cnt % 2 == 0:
+                    res.append(level)
+                else:
+                    res.append(level[::-1])
+                cnt += 1
+        return res
 ```
 
-### 6.2 按之字形顺序打印二叉树 （不错code）
-
-请实现一个函数按照之字形打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从右至左的顺序打印，第三行按照从左到右的顺序打印，其他行以此类推。
+方法2：
 
 > 1). 设两个栈，s2存放奇数层，s1存放偶数层
 >
 > 2). 遍历s2节点的同时按照左子树、右子树的顺序加入s1，
 >
 > 3). 遍历s1节点的同时按照右子树、左子树的顺序加入s2
-
-```python
-# -*- coding:utf-8 -*-
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-class Solution:
-    def Print(self, pRoot):
-        if not pRoot:
-            return []
-        # write code here
-        curLayer = [pRoot]
-        res = []
-        cnt = 0
-        while curLayer:
-            nextLayer = []
-            tmp = []
-            for node in curLayer:
-                tmp.append(node.val)
-                if node.left:
-                    nextLayer.append(node.left)
-                if node.right:
-                    nextLayer.append(node.right)
-            if cnt == 0:
-                res.append(tmp)
-            else:
-                res.append(tmp[::-1])
-            curLayer = nextLayer
-            cnt = (cnt+1) % 2
-        return res
-```
 
 ## 7. 求二叉树第K层的节点个数
 
@@ -439,21 +425,35 @@ def isSameTree(p: TreeNode, q: TreeNode):
     return False
 ```
 
-## 10. 判断二叉树是不是平衡二叉树
+## 10. 剑指 Offer 55 - II. 平衡二叉树
 
 ```python
-def isBalanced(TreeNode root):
+# -*- coding: utf-8 -*-
+"""
+    @file: isBalanceTree.py
+    @date: 2020-09-06 4:47 PM
+"""
 
-    if root == None:
-        return True
-        
-    return abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 and \ 
-            isBalanced(root.left) and isBalanced(root.right)
-	
-    def maxHigh(root):
+
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
+class Solution:
+    def isBalanced(self, root: TreeNode) -> bool:
+
+        def maxHigh(root):
+            if root == None:
+                return 0
+            return max(maxHigh(root.left), maxHigh(root.right)) + 1
+
         if root == None:
-            return 0
-        return max(maxHigh(root.left), maxHigh(root.right)) + 1
+            return True
+
+        return abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right)
 ```
 
 ## 11. 求二叉树的镜像
@@ -479,20 +479,21 @@ LeetCode：[Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree
 ```
 
 ```python
-def invertTree(root):
-    if root == None:
+class Solution:
+    def mirrorTree(self, root: TreeNode) -> TreeNode:
+        if root == None:
+            return root
+
+        node = root.left
+        root.left = self.mirrorTree(root.right)
+        root.right = self.mirrorTree(node)
+
         return root
-
-    node = root.left
-    root.left = invertTree(root.right)
-    root.right = invertTree(node)
-
-    return root
 ```
 
 ### 11.1 对称二叉树
 
-LeetCode： [101. Symmetric Tree](https://leetcode-cn.com/problems/symmetric-tree/description/)
+LeetCode： [剑指 Offer 28. 对称的二叉树 101. Symmetric Tree](https://leetcode-cn.com/problems/symmetric-tree/description/)
 
 ```
 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
@@ -505,17 +506,26 @@ LeetCode： [101. Symmetric Tree](https://leetcode-cn.com/problems/symmetric-tre
 ```
 
 ```python
-def isSymmetric(root: TreeNode):
-    return root == None or isSymmetricHelper(root.left, root.right)
-    
-    def isSymmetricHelper(left: TreeNode, right: TreeNode):
-        if left == None and right == None:
-            return True
-        if left == None or right == None:
-            return False
-        if left.val != right.val:
-            return False
-        return isSymmetricHelper(left.left, right.right) and isSymmetricHelper(left.right, right.left)
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+def isSymmetricHelper(left: TreeNode, right: TreeNode):
+    if left == None and right == None:
+        return True
+    if left == None or right == None:
+        return False
+    if left.val != right.val:
+        return False
+    return isSymmetricHelper(left.left, right.right) and isSymmetricHelper(left.right, right.left)
+
+class Solution:
+
+    def isSymmetric(self, root: TreeNode) -> bool:
+        return root == None or isSymmetricHelper(root.left, root.right)
 ```
 
 ## 12. 求二叉树中两个节点的最低公共祖先节点
@@ -696,18 +706,20 @@ class Solution:
 中序遍历 inorder = [9,3,15,20,7]
 
 ```python
-def buildTree(self, preorder, inorder):
-    if not (preorder and inorder):
-        return None
-    # 根据前序数组的第一个元素，就可以确定根节点	
-    root = TreeNode(preorder[0])
-    # 用preorder[0]去中序数组中查找对应的元素
-    mid_idx = inorder.index(preorder[0])
-    # 递归的处理前序数组的左边部分和中序数组的左边部分
-    # 递归处理前序数组右边部分和中序数组右边部分
-    root.left = self.buildTree(preorder[1:mid_idx+1],inorder[:mid_idx])
-    root.right = self.buildTree(preorder[mid_idx+1:],inorder[mid_idx+1:])
-    return root
+class Solution:
+    
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
+        if not (preorder and inorder):
+            return None
+        # 根据前序数组的第一个元素，就可以确定根节点	
+        root = TreeNode(preorder[0])
+        # 用preorder[0]去中序数组中查找对应的元素
+        mid_idx = inorder.index(preorder[0])
+        # 递归的处理前序数组的左边部分和中序数组的左边部分
+        # 递归处理前序数组右边部分和中序数组右边部分
+        root.left = self.buildTree(preorder[1:mid_idx+1],inorder[:mid_idx])
+        root.right = self.buildTree(preorder[mid_idx+1:],inorder[mid_idx+1:])
+        return root
 ```
 
 
@@ -779,20 +791,23 @@ def check_tree(Node root):
 ```
 
 ```python
-def recur(A, root2):
-    if root2 is None: 
+def recur(root1, root2):
+    if root2 is None:
         return True
-    if root1 is None or root1.val != root2.val: 
+    if root1 is None or root1.val != root2.val:
         return False
     return recur(root1.left, root2.left) and recur(root1.right, root2.right)
-            
-def isSubStructure(root1: TreeNode, root2: TreeNode) -> bool:
-    if root1 is None or root2 is None:
-        return False
-        
-    return IsSubtree(root1, root2) or
-           HasSubtree(root1.left, root2) or
-           HasSubtree(root1.right, root2)
+
+
+class Solution:
+
+    def isSubStructure(self, root1: TreeNode, root2: TreeNode) -> bool:
+        if root1 is None or root2 is None:
+            return False
+
+        return recur(root1, root2) or \
+               self.isSubStructure(root1.left, root2) or \
+               self.isSubStructure(root1.right, root2)
 ```
 
 输入两棵二叉树A，B，判断B是不是A的子结构。
