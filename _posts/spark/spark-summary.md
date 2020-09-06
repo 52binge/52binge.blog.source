@@ -204,6 +204,31 @@ RDD和它依赖的parent RDD(s)的关系有两种不同的类型
 - 窄依赖：每一个parent RDD的Partition最多被子RDD的一个Partition使用 （一父一子）
 - 宽依赖：多个子RDD的Partition会依赖同一个parent RDD的Partition （一父多子）
 
+## 5. RDD操作(13)
+
+### 5.1 cache和pesist的区别
+
+### 5.2 cache后面能不能接其他算子,它是不是action操作？
+
+可以接其他算子，但是接了算子之后，起不到缓存应有的效果，因为会重新触发cache
+cache不是action操作
+
+### 5.3 什么场景下要进行persist操作？
+以下场景会使用persist
+
+某个步骤计算非常耗时或计算链条非常长，需要进行persist持久化
+shuffle之后为什么要persist，shuffle要进性网络传输，风险很大，数据丢失重来，恢复代价很大
+shuffle之前进行persist，框架默认将数据持久化到磁盘，这个是框架自动做的。
+
+### 5.4 rdd有几种操作类型？三种！
+
+- transformation，rdd由一种转为另一种rdd
+- action
+- cronroller，控制算子(cache/persist) 对性能和效率的有很好的支持
+
+### 5.5 reduceByKey是不是action？
+
+不是，很多人都会以为是action，reduce rdd是action
 
 ## 5. Spark 大数据问题(7)
 
