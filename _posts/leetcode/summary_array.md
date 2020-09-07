@@ -23,9 +23,13 @@ toc: true
 > 6. [mergeTwoLists](https://leetcode-cn.com/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/)
 > 7. [二进制中1的个数](https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/)
 > 8. [findContinuousSequence](https://leetcode-cn.com/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/) ， 滑动window, 双指针 ✔️
+> 9. ~~调整数组顺序使奇数位于偶数前面 while while~~ nums[i], nums[j] = nums[j], nums[i]， ✔️
+> 10. **圆圈中最后剩下的数字** f(n, m) = (m % n + x) % n = (m + x) % n
+> 11. 剑指 Offer 50. 第一个只出现一次的字符 ， py 3.6 有序
+
 > 6. [在排序数组中查找数字 I（剑指 Offer 53 - I）](https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/),   找到右面的插入位置， ✔️
 > 7. `旋转数组的最小元素` while(low < high) { if(a[m] > a[high]) min[m+1,high], else [low,m]} ✔️ 
-> 4. ~~调整数组顺序使奇数位于偶数前面 while while~~ ， ✔️
+
 > 5. ~~次数超过一半的次数~~  ， ✔️
 > 6. ~~**丑数**, dp 只包含质因子2、3和5的数称作丑数, 1, 2, 3, 5, 6, ...~~ ， ✔️
 > 7. ~~和为S的两个数字(双指针思想)~~ ， ✔️
