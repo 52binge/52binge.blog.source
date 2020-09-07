@@ -20,6 +20,9 @@ toc: true
 > 3. ~~二维数组中的查找~~ ， ✔️
 > 4. ~~printNumbers 1~n （剑指 Offer 17.）~~ ， ✔️
 > 5. [reverseLinkedList](https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/)
+> 6. [mergeTwoLists](https://leetcode-cn.com/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/)
+> 7. [二进制中1的个数](https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/)
+> 8. [findContinuousSequence](https://leetcode-cn.com/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/) ， 滑动window, 双指针 ✔️
 > 6. [在排序数组中查找数字 I（剑指 Offer 53 - I）](https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/),   找到右面的插入位置， ✔️
 > 7. `旋转数组的最小元素` while(low < high) { if(a[m] > a[high]) min[m+1,high], else [low,m]} ✔️ 
 > 4. ~~调整数组顺序使奇数位于偶数前面 while while~~ ， ✔️
