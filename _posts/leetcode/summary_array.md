@@ -27,6 +27,12 @@ toc: true
 > 10. **圆圈中最后剩下的数字** f(n, m) = (m % n + x) % n = (m + x) % n
 > 11. 剑指 Offer 50. 第一个只出现一次的字符 ， py 3.6 有序
 
+### batch 2 easy
+
+1. [剑指 Offer 11. 旋转数组的最小数字](https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/)
+
+
+
 > 6. [在排序数组中查找数字 I（剑指 Offer 53 - I）](https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/),   找到右面的插入位置， ✔️
 > 7. `旋转数组的最小元素` while(low < high) { if(a[m] > a[high]) min[m+1,high], else [low,m]} ✔️ 
 
