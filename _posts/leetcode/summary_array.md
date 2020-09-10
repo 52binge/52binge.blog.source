@@ -13,7 +13,7 @@ toc: true
 [颈椎病自测方法，你离颈椎病其实不远](https://zhuanlan.zhihu.com/p/56801641)
 
 
-**1.1 easy**
+**1.1 Easy**
 
 > 1. reverseLeftWords， ✔️
 > 2. ~~replaceSpace~~， ✔️
@@ -26,6 +26,7 @@ toc: true
 > 9. ~~调整数组顺序使奇数位于偶数前面 while while~~ nums[i], nums[j] = nums[j], nums[i]， ✔️
 > 10. **圆圈中最后剩下的数字** f(n, m) = (m % n + x) % n = (m + x) % n
 > 11. 剑指 Offer 50. 第一个只出现一次的字符 ， py 3.6 有序
+> 12. 剑指 Offer 61. 扑克牌中的顺子
 
 ### batch 2 easy
 

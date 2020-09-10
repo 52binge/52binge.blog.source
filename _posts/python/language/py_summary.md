@@ -9,7 +9,7 @@ tags: [interview]
 
 <!-- more -->
 
-
+[焦国峰的随笔日记 - sort与sorted的区别](https://www.cnblogs.com/clement-jiao/p/9095699.html)
 
 
 ## Reference
