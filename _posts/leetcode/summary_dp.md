@@ -10,6 +10,16 @@ toc: true
 
 <!-- more -->
 
+使用动态规划解决问题一般分为三步：
+
+1. 表示状态
+2. 找出状态转移方程
+3. 边界处理
+
+**表示状态**
+
+分析问题的状态时，不要分析整体，只分析最后一个阶段即可！因为动态规划问题都是划分为多个阶段的，各个阶段的状态表示都是一样，而我们的最终答案在就是在最后一个阶段。
+
 > 1. 爬楼梯 climbing-stairs ， ✔️ 新建{}or[] ,滚动数组
 > 2. [不同路径 II](https://leetcode-cn.com/problems/unique-paths-ii/) ， ✔️
 > 3. [编辑距离](https://leetcode-cn.com/problems/edit-distance/) ， ✔️
