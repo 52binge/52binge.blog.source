@@ -56,6 +56,33 @@ Excellent communication skills including the ability to identify and communicate
 Strong logical thinking and analysis abilities
 Passionate, self-motivated, and takes ownership
 
+**Senior Data Engineer**
+
+1. my previous working experience and several questions about 
+2. database, sharding
+3. And a white board coding test was included as well.
+
+behavior questions:
+
+> 1. how your manager judge about you during your previous job? 
+> 2. What's your experience about a project that fails, and how would you redo the project? 
+> 3. What's your Advantages and disadvantages in your personality? 
+> 4. What's your best project and why you did better than others in your opinion? 
+> 5. What's your plan about your future career? 
+
+tech questions:
+
+> 1. a problem of **top k problem** 
+> 2. RMDB vs NoSQL DB
+> 3. Why distributed NoSQL DB cannot always support transaction?
+> 4. Level traverse a binary tree in an online white board.  
+> 5. random questions about **spark, hadoop** etc
+> 6. **How os' thread works?**
+> 7. **General DWH concepts, Spark internals, mapreduce**
+> 8. Explain the **map reduce paradigm**
+
+Overall, I did not encountered questions about the role such as **data model, SQL and ETL pipeline design**, scheduler design, BI platform design. Two mach behavior questions made me uncomfortable and difficult to answer.
+
 ## Reference
 
 - [一文带你认清数据仓库「维度模型设计」与「分层架构」](https://zhuanlan.zhihu.com/p/139011156)
