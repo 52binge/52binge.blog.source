@@ -10,6 +10,8 @@ tags: [spark]
 
 <!-- more -->
 
+[Hadoop（六）MapReduce的入门与运行原理](https://www.cnblogs.com/frankdeng/p/9311438.html)
+
 ## 1. Spark 基础 (3)
 
 1. spark的有几种部署模式，每种模式特点？ 
