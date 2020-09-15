@@ -87,3 +87,4 @@ Overall, I did not encountered questions about the role such as **data model, SQ
 
 - [一文带你认清数据仓库「维度模型设计」与「分层架构」](https://zhuanlan.zhihu.com/p/139011156)
 - [有赞数据仓库实践之路](https://tech.youzan.com/dw-in-youzan/)
+- [大数据Hadoop面试题（三）——MapReduce](https://zhuanlan.zhihu.com/p/97714898)
