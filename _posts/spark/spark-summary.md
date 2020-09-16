@@ -239,3 +239,5 @@ shuffle之前进行persist，框架默认将数据持久化到磁盘，这个是
 - [Spark知识点汇总](https://www.jianshu.com/p/7a8fca3838a4)
 - [Spark总结(一) 知乎](https://zhuanlan.zhihu.com/p/49169166)
 - [Spark:Yarn-cluster和Yarn-client区别与联系](https://blog.csdn.net/sdujava2011/article/details/46825637)
+- [Spark常用算子](https://zhuanlan.zhihu.com/p/68910426)
+- [《Spark快速大数据分析》RDD操作总结](https://zhuanlan.zhihu.com/p/52213248)
