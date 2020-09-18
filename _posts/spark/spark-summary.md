@@ -248,4 +248,7 @@ shuffle之前进行persist，框架默认将数据持久化到磁盘，这个是
 常见算子
 
 - [2.Spark常用算子讲解](https://blog.csdn.net/dream0352/article/details/62229977)
+- [PySpark 实战之弹性分布式数据库（RDD）](https://zhuanlan.zhihu.com/p/53343681)
 - [Spark32个常用算子总结](https://blog.csdn.net/Fortuna_i/article/details/81170565)
+- [Spark高频面试题总结](https://blog.csdn.net/AiBigData/article/details/102824906)
+- [Spark常见20个面试题（含大部分答案）](https://blog.csdn.net/zuolixiangfisher/article/details/88973159?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param)
