@@ -247,6 +247,9 @@ shuffle之前进行persist，框架默认将数据持久化到磁盘，这个是
 
 常见算子
 
+- [Spark RDD Operations-Transformation & Action with Example](https://data-flair.training/blogs/spark-rdd-operations-transformations-actions/)
+- [Spark RDD常用算子学习笔记详解(python版)](https://blog.csdn.net/u014204541/article/details/81130870)
+- [Spark常用的Transformation算子的简单例子](https://blog.csdn.net/dwb1015/article/details/52200809)
 - [2.Spark常用算子讲解](https://blog.csdn.net/dream0352/article/details/62229977)
 - [PySpark 实战之弹性分布式数据库（RDD）](https://zhuanlan.zhihu.com/p/53343681)
 - [Spark32个常用算子总结](https://blog.csdn.net/Fortuna_i/article/details/81170565)
