@@ -102,25 +102,50 @@ noData.collect()
 
 ### 4.6 Spark WordCount
 
-Spark WordCount Program in Scala
+```python
+from pyspark import SparkConf , SparkContext
+from operator import add
+sc.version
 
-```scala
-scala> var hFile = sc.textFile("hdfs://localhost:9000/inp")
+lines = sc.textFile("/Users/blair/ghome/github/spark3.0/pyspark/spark-src/word_count.text", 2)
 
-scala> val wc = hFile.flatMap(line => line.split(" ")).map(word => (word, 1)).reduceByKey(_ + _)
+
+lines = lines.filter(lambda x: 'New York' in x)
+#lines.take(3)
+
+words = lines.flatMap(lambda x: x.split(' '))
+
+#print(words.take(5))
+
+wco = words.map(lambda x: (x, 1))
+
+#print(wco.take(5))
+
+word_count = wco.reduceByKey(add)
+
+word_count.collect()
+
+# [
+#  ('The', 10),
+#  ('of', 33),
+#  ('New', 20),
+#  ('begins', 1),
+#  ('around', 4),
+#  ...
+# ]
 ```
 
 ### 4.7 Write to HDFS
 
 ```scala
-scala> wc.saveAsTextFile("hdfs://localhost:9000/out")
+word_count.saveAsTextFile("hdfs://localhost:9000/out")
 ```
 
 
 
 ## Reference
 
-
+- [data-flair.training/blogs](https://data-flair.training/blogs/)
 - [Spark RDD Operations-Transformation & Action with Example](https://data-flair.training/blogs/spark-rdd-operations-transformations-actions/)
 - [Spark RDD常用算子学习笔记详解(python版)](https://blog.csdn.net/u014204541/article/details/81130870)
 - [Spark常用的Transformation算子的简单例子](https://blog.csdn.net/dwb1015/article/details/52200809)
