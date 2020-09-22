@@ -110,14 +110,40 @@ We call this thread pool a driver-heartbeater.
 
 we have also learned how Spark Executors are helpful for executing tasks. The major advantage we have learned is, we can have as many executors we want. Therefore, Executors helps to enhance the Spark performance of the system. 
 
-## 4. Spark - RDD
+## 4. Spark - RDD 
 
 Spark RDD – Introduction, Features & Operations of RDD
 
+### 4.1 [resilient distributed dataset](https://data-flair.training/blogs/spark-rdd-tutorial/)
+
+> - **Resilient**, i.e. fault-tolerant with the help of RDD lineage graph(DAG) and so able to recompute missing or damaged partitions due to node failures.
+> - **Distributed**, since Data resides on multiple nodes.
+> - **Dataset** represents records of the data you work with. The user can load the data set externally which can be either JSON file, CSV file, text file or database via JDBC with no specific data structure.
+
 <img src="/images/spark/data-flair/Apache-Spark-RDD-01.jpg" width="700" alt="" />
 
-RDD (Resilient Distributed Dataset) i
+### 4.2 Why need RDD in Spark?
 
+Apache Spark evaluates RDDs lazily. It is called when needed, which saves lots of time and improves efficiency. The first time they are used in an action so that it can pipeline the transformation. Also, the programmer can call a persist method to state which RDD they want to use in future operations.
+
+### 4.3 Features of Spark RDD
+
+<img src="/images/spark/data-flair/features-of-RDD-in-spark.jpg" width="750" alt="" />
+
+## 5. Spark RDD Operations
+
+1. Transformation
+2. Actions
+
+### 5.1 Transformations
+
+**a. Narrow Transformations **
+
+**b. Wide Transformations**
+
+### 5.2 Actions
+
+## 6. Limitation of Spark RDD
 
 ## Reference
 
