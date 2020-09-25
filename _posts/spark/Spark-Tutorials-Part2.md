@@ -137,11 +137,22 @@ Apache Spark evaluates RDDs lazily. It is called when needed, which saves lots o
 
 ### 5.1 Transformations
 
-**a. Narrow Transformations **
+**a. Narrow Transformations**
+
+<img src="/images/spark/data-flair/spark-narrow-transformation-1.jpg" width="650" alt="" />
 
 **b. Wide Transformations**
 
+<img src="/images/spark/data-flair/spark-wide-transformation.jpg" width="650" alt="" />
+
+
 ### 5.2 Actions
+
+An Action in Spark returns final result of RDD computations. It triggers execution using lineage graph to load the data into original RDD.
+
+### Conclusion – Spark RDD
+
+Because of the above-stated limitations of RDD to make spark more versatile DataFrame and Dataset evolved.
 
 ## 6. Limitation of Spark RDD
 
