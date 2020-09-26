@@ -10,7 +10,24 @@ date: 2020-08-08 14:46:48
 
 - [Labs, Sea Services](https://career.seagroup.com/)
 
-**Job Description**
+Data:
+
+- [Engineer, Data](https://career.seagroup.com/position/5)
+- [Engineer, Data Platform](https://career.seagroup.com/position/10)
+
+**Job 10 Description**
+
+> Design data warehouse architecture. Setup and maintain data warehouse infrastructure.
+> 
+> Setup and maintain data warehouse applications, such as data browser, job scheduler, etc.
+> 
+> Monitor data warehouse status and hardware capacity, optimize system performance.
+> 
+> Work with stakeholders including the data engineers, data analysts, and other data users to assist with data-related technical issues and support their data infrastructure needs
+> 
+> Conduct research on trending data platform applications and solutions. Create POC (proof of concept) to innovative ideas, and come up with practical proposals
+
+**Job 5 Description**
 
 > Design and develop data pipelines to process a large amount of data from our products worldwide
 > 
