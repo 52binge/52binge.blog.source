@@ -12,6 +12,8 @@ tags: [spark]
 
 [Hadoop（六）MapReduce的入门与运行原理](https://www.cnblogs.com/frankdeng/p/9311438.html)
 
+[very good Spark原理篇之RDD特征分析讲解](https://blog.csdn.net/huahuaxiaoshao/article/details/90744552)
+
 ## 1. Spark 基础 (3)
 
 1. spark的有几种部署模式，每种模式特点？ 
@@ -108,11 +110,11 @@ Spark作业运行时包括一个Driver进程，也是作业主进程，有main�
 > 
 一个application对应一个SparkContext，app中存在多个job
 
-> 1). 每触发一次action会产生一个**`job`** -> 这些job可以并行或串行执行
+> 1). 每触发一次action会产生一个 **`job`** \-> 这些job可以并行或串行执行
 > 
-> 2). 每个job有多个**`stage`**，stage是shuffle过程中DAGSchaduler通过RDD之间的依赖关系划分job而来的
+> 2). 每个job有多个 **`stage`**，stage是shuffle过程中DAGSchaduler通过RDD之间的依赖关系划分job而来的
 > 
-> 3). 每个stage里面有多个**`task`**，组成 taskset 有 `TaskSchaduler` 分发到各个executor执行
+> 3). 每个stage里面有多个 **`task`**，组成 taskset 有 `TaskSchaduler` 分发到各个executor执行
 > 
 > 4). **`executor`** 生命周期和app一样的，即使没有job运行也存在，所以task可以快速启动读取内存进行计算.
 

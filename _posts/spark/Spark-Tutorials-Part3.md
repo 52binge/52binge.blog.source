@@ -10,6 +10,11 @@ tags: [spark]
 
 <!-- more -->
 
+- [very good Spark原理篇之RDD特征分析讲解](https://blog.csdn.net/huahuaxiaoshao/article/details/90744552)
+- [spark 基础知识整理（一）](https://www.jianshu.com/p/fb8f3b34bc30)
+- [spark 基础知识整理（二）- RDD专题](https://www.jianshu.com/p/7a8d5ee1bc44)
+- [Spark 分区(Partition)的认识、理解和应用](https://blog.csdn.net/zhangzeyuan56/article/details/80935034)
+
 ## 1. Create RDDs
 
 <img src="/images/spark/data-flair/ways-to-create-RDDs-in-spark-2.jpg" width="700" alt="" />
@@ -128,23 +133,76 @@ pairs = lines.map(lambda x: (x.split(” “)[0], x))
 No. | Operations | desc
 --- | :---: | ---
 . | **`Transformation Operations`** | 
+. | map / flatMap / mapPartitions | ...
 1. | groupByKey | The groupbykey operation generally groups all the values with the same key. <br> rdd.groupByKey()
 2. | reduceByKey(fun) | Here, the reduceByKey operation generally combines values with the same key. <br> add.reduceByKey( (x, y) => x + y)
 3. | **combineByKey**(createCombiner, mergeValue, mergeCombiners, partitioner) | CombineByKey uses a different result type, then combine those values with the same key.
-4. | mapValues(func) | Even without changing the key, mapValues operation applies a function to each value of a paired RDD of spark. <br><br> rdd.mapValues(x => x+1)
-5. | keys() | Keys() operation generally returns a spark RDD of just the keys.
-6. | values() | values() operation generally returns an RDD of just the values.
-7. | sortByKey() | Similarly, the sortByKey operation generally returns an RDD sorted by the key.
+4. | mapValues(func) | Pass each value in the key-value pair RDD through a map function without changing the keys; this also retains the original RDD’s partitioning.
+5. | keys() | Keys() Return an RDD with the keys of each tuple.
+6. | values() | Return an RDD with the values of each tuple.
+7. | **`sortByKey`**(ascending=True, numPartitions=None, keyfunc=<function RDD.<lambda>>) | Similarly, the sortByKey operation generally returns an RDD sorted by the key.
 . | **`Action Operations`** | 
 8. | countByKey() | countByKey operation, we can count the number of elements for each key.
-9. | collectAsMap()** | Here, collectAsMap() operation helps to collect the result as a map to provide easy lookup.
+9. | collectAsMap() | Here, collectAsMap() operation helps to collect the result as a map to provide easy lookup.
 10. | lookup(key) | Moreover, it returns all values associated with the provided key.
 
+[PySpark 3.0.1 documentation »](http://spark.apache.org/docs/latest/api/python/pyspark.html?highlight=mapvalues)
+
+**(1). reduceByKey(fun) & groupByKey**
+
+```python
+lines = sc.textFile("/Users/blair/ghome/github/spark3.0/pyspark/spark-src/word_count.text", 2)
+
+lines.take(3)
+words = lines.flatMap(lambda x: x.split(' '))
+print(words.take(5))
+
+wco = words.map(lambda x: (x, 1))
+print(wco.take(5))
+# word_count = wco.reduceByKey(add)
+# print("\nword_count:")
+# print(word_count.take(5))
+print("\ngroupByKey:")
+test = wco.groupByKey()
+print(test.take(2))
+# gp = test.map(lambda x: (x[0], [i for i in x[1]]))
+# gp.take(2)
+```
+
+**(2). mapValues(fun)**
+
+```python
+rdd = sc.parallelize([("a", 1), ("b", 1), ("a", 1)])
+
+sorted(rdd.groupByKey().mapValues(len).collect())
+# [('a', 2), ('b', 1)]
+sorted(rdd.groupByKey().mapValues(list).collect())
+# [('a', [1, 1]), ('b', [1])]
+```
+
+**(3). keys(), values()**
+
+```python
+m = sc.parallelize([(1, 2), (3, 4)]).keys()
+m.collect()
+[1, 3]
+
+m = sc.parallelize([(1, 2), (3, 4)]).values()
+m.collect()
+[2, 4]
+```
+
+**(4). sortBykey**
+
+- [spark combinebykey？](https://www.zhihu.com/question/33798481/answer/90849144)
+- [pyspark中combineByKey的两种理解方法](https://blog.csdn.net/mrlevo520/article/details/75579728)
 
 ## 5. RDD limitations
 
 ## Reference
 
+- [Spark原理篇之RDD特征分析讲解](https://blog.csdn.net/huahuaxiaoshao/article/details/90744552)
+- [PySpark 3.0.1 documentation »](http://spark.apache.org/docs/latest/api/python/pyspark.html?highlight=mapvalues)
 - [data-flair.training/blogs](https://data-flair.training/blogs/)
 - [Spark RDD Operations-Transformation & Action with Example](https://data-flair.training/blogs/spark-rdd-operations-transformations-actions/)
 - [Spark RDD常用算子学习笔记详解(python版)](https://blog.csdn.net/u014204541/article/details/81130870)
