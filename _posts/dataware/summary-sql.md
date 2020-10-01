@@ -10,6 +10,7 @@ tags: [SQL]
 
 <!-- more -->
 
+- [执行count(1)、count(*) 与 count(列名) 到底有什么区别](https://zhuanlan.zhihu.com/p/89299468)
 
 ## Reference
 
