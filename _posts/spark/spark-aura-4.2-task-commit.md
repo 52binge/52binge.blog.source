@@ -13,25 +13,20 @@ tags: [spark]
 **sparkcore 的任务执行流程分析：**
 
 > - 构建DAG
-> - DAGScheduler ----> DAG ---> TaskSet (Task set)
+> - DAGScheduler ---> DAG ---> TaskSet (Task set)
 > 
 > 补充:
 > 
 > 1. executor  ExecutorBacked     actor
 > 2. driver    SchedulerBackend   actor
 
-<img src="/images/spark/spark-aura-4.2.5.jpg" width="850" />
-
 <img src="/images/spark/spark-aura-4.2.7.jpg" width="850" />
-
-<!--<img src="/images/spark/spark-aura-4.2.6.jpg" width="750" />
--->
 
 ## Spark 核心概念复习
 
 2个重要的知识:
 
- 1. new SparkContext (sparkConf) sparkContext
+ 1. new SparkContext (sparkConf)
  2. collect().  action算子的提交任务机制，出发任务执行核心
 
 > HDFS - File - block - mapreduce line

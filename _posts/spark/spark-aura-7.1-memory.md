@@ -6,6 +6,8 @@ categories: [spark]
 tags: [spark]
 ---
 
+[1. Spark性能优化指南——基础篇](https://tech.meituan.com/2016/04/29/spark-tuning-basic.html)
+
 <img src="/images/spark/spark-aura-7.1-memory.png" width="500" alt="" />
 
 <!-- more -->
