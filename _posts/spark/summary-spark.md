@@ -16,6 +16,8 @@ tags: [spark]
 
 [very good Spark原理篇之RDD特征分析讲解](https://blog.csdn.net/huahuaxiaoshao/article/details/90744552)
 
+[Spark中Task数量的分析](https://www.cnblogs.com/upupfeng/p/12385979.html)
+
 ## 1. Spark 基础 (3)
 
 1. spark的有几种部署模式，每种模式特点？ 
