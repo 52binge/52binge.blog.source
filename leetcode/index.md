@@ -1,4 +1,4 @@
-[剑指](https://leetcode-cn.com/problemset/lcof/)
+# [剑指](https://leetcode-cn.com/problemset/lcof/)
 
 No. | Question | Flag
 --- | --- | ---
@@ -29,25 +29,25 @@ No. | Question | Flag
 24 | 连续子数组的最大和 | ❎
 25 | 删除链表的节点 | ❎
 26 | 平衡二叉树 <br> abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right) | ✔️ 
-27 | 对称的二叉树 | 
-28 | 包含min函数的栈 | 
+27 | 对称的二叉树 | ✔️
+28 | 包含min函数的栈 | ❎
 29 | 最小的k个数 【堆排序 的逆向思维】| ✔️
 30 | 不用加减乘除做加法  add(a ^ b, (a & b) << 1) | ❎
 31 | n个骰子的点数 | ✔️
-32 | 在排序数组中查找数字I | 
-33 | 旋转数组的最小数字 | 
-34 | 扑克牌中的顺子 | 
-35 | 顺时针打印矩阵 | 
-36 | 滑动窗口的最大值 | 
-37 | 0～n-1中缺失的数字 | 
-38 | 翻转单词顺序 | 
+32 | 在排序数组中查找数字I | ❎
+33 | 旋转数组的最小数字 | ❎
+34 | 扑克牌中的顺子 ma - mi < 5 | ❎
+35 | 顺时针打印矩阵 | ✔️
+36 | 滑动窗口的最大值 | ✔️
+37 | 0～n-1中缺失的数字 | ❎
+38 | 翻转单词顺序 | ❎
 39 | 青蛙跳台阶问题 | ❎
-40 | 二维数组中的查找 | 
+40 | 二维数组中的查找 | ❎
 41 | 斐波那契数列 | ❎
  | | 
 **medium** |  | 
  | | 
-42 | 求1+2+…+n |  
+42 | 求1+2+…+n | ❎
 43 | 数组中数字出现的次数 |  
 44 | 复杂链表的复制 |  
 45 | 数组中数字出现的次数 |  
@@ -85,7 +85,7 @@ No. | Question | Flag
 74 | 数组中的逆序对 | 
 75 | 正则表达式匹配 | 
 
-## Tree
+## 1. Tree
 
 二叉树的镜像
 
@@ -170,14 +170,14 @@ def isSymmetricHelper(left: TreeNode, right: TreeNode):
         return False
     return isSymmetricHelper(left.left, right.right) and isSymmetricHelper(left.right, right.left)
 
-
 class Solution:
-
     def isSymmetric(self, root: TreeNode) -> bool:
         return root == None or isSymmetricHelper(root.left, root.right)
 ```
 
-## LinkedList
+
+
+## 2. LinkedList
 
 7). 从尾到头打印链表
 
@@ -213,7 +213,7 @@ class Solution(object):
         return cur
 ```
 
-## Array & Sort
+## 3. Array & Sort
 
 最小的k个数
 
@@ -302,4 +302,101 @@ class Solution:
             res.append(dp[n][i] * 1.0 / sum_)
 
         return res
+```
+
+剑指 Offer 29. 顺时针打印矩阵
+
+```python
+# -*- coding: utf-8 -*-
+"""
+    @file: e.spiralOrder.py
+    @date: 2020-09-07 4:19 PM
+    @desc: 剑指 Offer 29. 顺时针打印矩阵
+    @url : https://leetcode-cn.com/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/
+"""
+
+# 输入：matrix = [
+#     [1,2,3,4],
+#     [5,6,7,8],
+#     [9,10,11,12]
+# ]
+# 输出：[
+#     1,2,3,4,
+#     8,12,11,10,
+#     9,5,6,7
+# ]
+from typing import List
+
+
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        if not matrix or not matrix[0]:
+            return list()
+
+        rows, columns = len(matrix), len(matrix[0])
+        order = list()
+        left, right, top, bottom = 0, columns - 1, 0, rows - 1
+
+        while left <= right and top <= bottom:
+            for column in range(left, right + 1):
+                order.append(matrix[top][column])
+
+            for row in range(top + 1, bottom + 1):
+                order.append(matrix[row][right])
+
+            if left < right and top < bottom:
+                for column in range(right - 1, left, -1):
+                    order.append(matrix[bottom][column])
+                for row in range(bottom, top, -1):
+                    order.append(matrix[row][left])
+
+            left, right, top, bottom = left + 1, right - 1, top + 1, bottom - 1
+
+        return order
+```
+
+## 4. sliding window
+
+剑指 Offer 59 - I. 滑动窗口的最大值 - (同理于包含 min 函数的栈)
+
+- [answ](https://leetcode-cn.com/problems/hua-dong-chuang-kou-de-zui-da-zhi-lcof/solution/mian-shi-ti-59-i-hua-dong-chuang-kou-de-zui-da-1-6/) 
+
+```python
+# -*- coding: utf-8 -*-
+import collections
+from typing import List
+
+# 输入: nums = [1,3,-1,-3,5,3,6,7], 和 k = 3
+# 输出: [3,3,5,5,6,7]
+# 解释:
+#
+#   滑动窗口的位置                最大值
+# ---------------               -----
+# [1  3  -1] -3  5  3  6  7       3
+#  1 [3  -1  -3] 5  3  6  7       3
+#  1  3 [-1  -3  5] 3  6  7       5
+#  1  3  -1 [-3  5  3] 6  7       5
+#  1  3  -1  -3 [5  3  6] 7       6
+#  1  3  -1  -3  5 [3  6  7]      7
+
+class Solution:
+    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+        if not nums or k == 0: return []
+        deque = collections.deque()
+        for i in range(k): # 未形成窗口
+            while deque and deque[-1] < nums[i]:
+                deque.pop()
+            deque.append(nums[i])
+        res = [deque[0]]
+
+        for i in range(k, len(nums)): # 形成窗口后
+            #[0~k-1], [1~k], [2~k+1]
+            if deque[0] == nums[i - k]:
+                deque.popleft()
+            while deque and deque[-1] < nums[i]:
+                deque.pop()
+            deque.append(nums[i])
+            res.append(deque[0])
+        return res
+
 ```
