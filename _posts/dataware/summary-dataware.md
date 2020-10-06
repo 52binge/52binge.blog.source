@@ -40,20 +40,62 @@ tags: [SQL]
 > [5. 漫谈系列 | 数仓第五篇NO.5 『数据质量』][0]
 > [6. 漫谈系列 | 数仓第六篇NO.6 『数据治理』][0]
 
-[0]: /
+<center><embed src="/images/dataware/建设企业级数据仓库EDW(内部资料，禁止外传).pdf" width="950" height="600"></center>
+
+[0]: /2020/10/01/dataware/summary-dataware/
 
 ### Hive
 
 - [1. 一篇文章让你了解Hive调优（文末赠书）](https://mp.weixin.qq.com/s/K8arR_TCsP-i8BK9tqD6Sg)
 - [2. 再次分享！Hive调优，数据工程师成神之路](https://mp.weixin.qq.com/s/OsT2Sgjn47HbhVyRau2vOw)
 
-### spark
+### Spark
 
+> - **RDD** 
+> 
+> [1. 基础汇总(二) - RDD专题](https://www.jianshu.com/p/7a8d5ee1bc44)
+> [2. Spark中的RDD究竟怎么理解？](https://www.zhihu.com/question/35423604)
+> 
+> **(1) partitions**
+> ---
+>   每个RDD包括多个分区, 这既是RDD的数据单位, 也是计算粒度, **`每个分区是由一个Task线程处理`**. 在RDD创建的时候可以指定分区的个数, 如果没有指定, 那么默认分区的个数是CPU的核数（standalone）.
+> 
+> 每一分区对应一个内存block, 由BlockManager分配.
+> 
+> **(2) partitioner** (分区方法)
+> 
+> 只存在于（K,V）类型的rdd中，非（K,V）类型的partitioner的值就是None。
+> 
+> 这个属性指的是RDD的partitioner函数(分片函数), 分区函数就是将数据分配到指定的分区, 这个目前实现了HashPartitioner和RangePartitioner, 只有key-value的RDD才会有分片函数, 否则为none.
+> 
+> **(3) dependencies** (依赖关系) 
+> 
+> 窄依赖：父 RDD 的 partition 至多被一个子 RDD partition 依赖（OneToOneDependency）
+> 宽依赖：父 RDD 的 partition 被多个子 RDD partitions 依赖（ShuffleDependency）
+> 
+> **(4) preferedlocations**
+> 
+> 按照“移动数据不如移动计算”原则，在spark进行任务调度的时候，优先将任务分配到数据块存储的位置
+> 
+> **(5) compute**
+> 
+> spark中的计算都是以分区为基本单位的，compute函数只是对迭代器进行复合，并不保存单次计算的结果
+> 每个 RDD 中的 compute() 调用 parentRDD.iter() 来将 parent RDDs 中的 records 一个个 拉取过来。
+> 
+> rdd的算子主要分成2类，action和transformation。这里的算子概念，可以理解成就是对数据集的变换。action会触发真正的作业提交，而transformation算子是不会立即触发作业提交的。每一个 transformation() 方法返回一个 新的RDD。只是某些transformation() 比较复杂，会包含多个子 transformation()，因而会生成多个 RDD。这就是实际 RDD 个数比我们想象的多一些 的原因。通常是，当遇到action算子时会触发一个job的提交，然后反推回去看前面的transformation算子，进而形成一张有向无环图。在DAG中又进行stage的划分，划分的依据是依赖是否是shuffle的，每个stage又可以划分成若干task。接下来的事情就是driver发送task到executor，executor自己的线程池去执行这些task，完成之后将结果返回给driver。action算子是划分不同job的依据。shuffle dependency是stage划分的依据。
+
+[Spark运行流程](https://mp.weixin.qq.com/s/pwyus1xfX7QAz5MtecveZw)
+
+28.如果对RDD进行cache操作后，数据在哪里？
+
+特别大的数据，怎么发送到excutor中？> 数据在第一执行cache算子时会被加载到各个Executor进程的内存中，第二次就会直接从内存中读取而不会区磁盘。
+
+- [Spark面试题(一)](https://zhuanlan.zhihu.com/p/49169166)
+- [大数据Spark面试题（一）](https://zhuanlan.zhihu.com/p/107354908)
 - [1. 一文详解 Spark Shuffle](https://mp.weixin.qq.com/s/VdwOwmxmOpQC3NIaxqqbmw)
 - [2. Spark-submit 参数调优完整攻略](https://mp.weixin.qq.com/s/mo2hYHT13SSMp8iSrsG5xg)
 - [3. 每个 Spark 工程师都应该知道的五种 Join 策略](https://mp.weixin.qq.com/s/HusOqNA-45lpf5GduLz-pA)
 
-<center><embed src="/images/dataware/建设企业级数据仓库EDW(内部资料，禁止外传).pdf" width="950" height="600"></center>
 
 ### hdfs
 
@@ -64,6 +106,8 @@ tags: [SQL]
 - [2020大数据/数仓/数开面试题真题总结(附答案)](https://mp.weixin.qq.com/s/pwyus1xfX7QAz5MtecveZw)
 
 ## Reference
+
+- [very good - igDataGuide/面试-all](https://github.com/Dr11ft/BigDataGuide/tree/master/%E9%9D%A2%E8%AF%95)
 
 
 
