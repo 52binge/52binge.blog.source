@@ -48,7 +48,7 @@ No. | Question | Flag
 **medium** |  | 
  | | 
 42 | 求1+2+…+n | ❎
-43 | 数组中数字出现的次数 |  
+43 | 数组中数字出现的次数 | so hard
 44 | 复杂链表的复制 |  
 45 | 数组中数字出现的次数 |  
 46 | 重建二叉树 |  
@@ -212,6 +212,22 @@ class Solution(object):
         # 每层**Recursion**函数都返回cur，也就是最后一个节点
         return cur
 ```
+
+剑指 Offer 35. 复杂链表的复制
+
+```
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
+        self.val = int(x)
+        self.next = next
+        self.random = random
+"""
+class Solution:
+    def copyRandomList(self, head: 'Node') -> 'Node':
+```
+
 
 ## 3. Array & Sort
 

@@ -53,6 +53,8 @@ tags: [SQL]
 - [2. Spark-submit 参数调优完整攻略](https://mp.weixin.qq.com/s/mo2hYHT13SSMp8iSrsG5xg)
 - [3. 每个 Spark 工程师都应该知道的五种 Join 策略](https://mp.weixin.qq.com/s/HusOqNA-45lpf5GduLz-pA)
 
+<center><embed src="/images/dataware/建设企业级数据仓库EDW(内部资料，禁止外传).pdf" width="950" height="600"></center>
+
 ### hdfs
 
 - [HDFS基本架构、原理、与应用场景、实践（附ppt）](https://mp.weixin.qq.com/s/Za1MuzKQBmuJCza400_hdg)
