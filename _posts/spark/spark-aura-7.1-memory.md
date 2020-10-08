@@ -305,12 +305,13 @@ application 中的 job 的执行： FIFO
 
 ## 5. 资源调优 2
 
-资源调优 params | description
+资源调优 params | description 参数调优建议
 :---- | :----
-&nbsp;(1) num-executors  | 一个 executor 就是一个进程
-&nbsp;(2) executor-memory |
-&nbsp;(3) total-executor-cores |  每个进程可以使用多少个 cpu core，一个executor 启动 10 个task
-&nbsp;... | ...
+&nbsp;(1) num-executors  | 一个 executor 就是一个进程, 50~100个左右的Executor进程比较合适
+&nbsp;(2) executor-memory | 每个Executor进程的内存设置4G~8G较为合适
+&nbsp;(3) total-executor-cores |  Executor的CPU core数量设置为2~4个较为合适<br><br>每个进程可以使用多少个 cpu core，一个executor 启动 10 个task
+&nbsp;driver-memory |Driver的内存通常来说不设置，或者设置1G左右应该就够了
+&nbsp;spark.default.parallelism | 该参数用于设置每个stage的默认task数量。这个参数极为重要 <br> Spark作业的默认task数量为500~1000个较为合适。很多同学常犯的一个错误就是不去设置这个参数，那么此时就会导致Spark自己根据底层HDFS的block数量来设置task的数量，默认是一个HDFS block对应一个task。<br><br> 设置该参数为num-executors * executor-cores的2~3倍较为合适
 &nbsp;(4) spark.shuffle.memoryFraction |
 &nbsp;(5) spark.storage.memoryFraction |
  ... | ...
