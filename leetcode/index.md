@@ -50,11 +50,11 @@ No. | Question | Flag
 42 | 求1+2+…+n | ❎
 43 | 数组中数字出现的次数 | so hard
 44 | 复杂链表的复制 |  
-45 | 数组中数字出现的次数 |  
-46 | 重建二叉树 |  
-47 | 礼物的最大价值 |  
-48 | 从上到下打印二叉树 |  
-49 | 丑数 |  
+45 | 数组中数字出现的次数 | ❎ 
+46 | 重建二叉树 | ❎ 
+47 | 礼物的最大价值 | ❎ 
+48 | 从上到下打印二叉树 | ❎ 
+49 | 丑数 n2, n3, n5 = dp[a] * 2, dp[b] * 3, dp[c] * 5 | ❎ 
 50 | 二叉搜索树与双向链表 |  
 51 | 股票的最大利润 |  
 52 | 栈的压入、弹出序列 |  
@@ -175,6 +175,27 @@ class Solution:
         return root == None or isSymmetricHelper(root.left, root.right)
 ```
 
+从上到下打印二叉树
+
+```python
+from collections import deque
+
+class Solution:
+    def levelOrder(self, root: TreeNode) -> List[int]:
+        queue = collections.deque()
+        queue.append(root)
+        res = []
+        while queue:
+            size = len(queue)
+            for _ in range(size):
+                cur = queue.popleft()
+                if not cur:
+                    continue
+                res.append(cur.val)
+                queue.append(cur.left)
+                queue.append(cur.right)
+        return res
+```
 
 
 ## 2. LinkedList
