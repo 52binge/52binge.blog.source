@@ -28,7 +28,21 @@ tags: [SQL]
 
 - [Good - Hive 拉链表实践](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247485525&idx=2&sn=595eab33c9b16f5a20cded2bf3c4f8ed&chksm=cf343a58f843b34e20e2fcd4cbb21f8a27451a3b235050b1c91aec1ac756dc4ad4d74216b879&scene=21#wechat_redirect)
 
+## 1. Data Modeling
 
+Title_Kimball | [深入浅出数据模型（推荐收藏）](https://mp.weixin.qq.com/s/qAitZe3BPkQNTIDAWgTsFw)
+:---: | :---:
+**流程** | 架构是自下向上，即从数据集市(主题划分)-->数据仓库--> 数据抽取，是以需求为导向的，一般使用星型模型  
+**事实表和维表** | 架构强调模型由事实表和维表组成，注重事实表与维表的设计
+**数据集市** | 数据仓库架构中，数据集市是一个逻辑概念，只是多维数据仓库中的主题域划分，并没有自己的物理存储，也可以说是虚拟的数据集市。是数据仓库的一个访问层，是按主题域组织的数据集合，用于支持部门级的决策。
+
+**数据建模的几种方式:**
+
+No. | 数据建模方式 | desc
+:---: | :---: | :---:
+1. | ER模型 | 三范式
+<br> 2. | <br> 维度建模 |  **`1. 星型模型`** <br> 2. 雪花模型 <br> **`3. 星座模型`**
+.. | .. | ..
 
 
 漫谈系列：
@@ -44,12 +58,12 @@ tags: [SQL]
 
 [0]: /2020/10/01/dataware/summary-dataware/
 
-### Hive
+## 2. Hive
 
 - [1. 一篇文章让你了解Hive调优（文末赠书）](https://mp.weixin.qq.com/s/K8arR_TCsP-i8BK9tqD6Sg)
 - [2. 再次分享！Hive调优，数据工程师成神之路](https://mp.weixin.qq.com/s/OsT2Sgjn47HbhVyRau2vOw)
 
-### Spark
+## 3. Spark
 
 > - **RDD** 
 > 
@@ -57,7 +71,7 @@ tags: [SQL]
 > [2. Spark中的RDD究竟怎么理解？](https://www.zhihu.com/question/35423604)
 > 
 > **(1) partitions**
-> ---
+> 
 >   每个RDD包括多个分区, 这既是RDD的数据单位, 也是计算粒度, **`每个分区是由一个Task线程处理`**. 在RDD创建的时候可以指定分区的个数, 如果没有指定, 那么默认分区的个数是CPU的核数（standalone）.
 > 
 > 每一分区对应一个内存block, 由BlockManager分配.
@@ -97,11 +111,11 @@ tags: [SQL]
 - [3. 每个 Spark 工程师都应该知道的五种 Join 策略](https://mp.weixin.qq.com/s/HusOqNA-45lpf5GduLz-pA)
 
 
-### hdfs
+## 4. hadoop
 
 - [HDFS基本架构、原理、与应用场景、实践（附ppt）](https://mp.weixin.qq.com/s/Za1MuzKQBmuJCza400_hdg)
 
-### classic
+## 5. classic
 
 - [2020大数据/数仓/数开面试题真题总结(附答案)](https://mp.weixin.qq.com/s/pwyus1xfX7QAz5MtecveZw)
 

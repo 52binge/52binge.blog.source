@@ -72,6 +72,11 @@ Hive Bucket, 分桶, 是指将数据以指定列的值为key进行hash, hash 到
 
 ### 5.3.3 合适的文件存储格式
 
+data warehouse
+
+1. ods: TextFile
+2. dw: ORC or ParquetFile
+
 ### 5.3.4 合适的压缩格式
 
 ## 5.4 HQL 语法和运行参数层面
