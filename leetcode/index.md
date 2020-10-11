@@ -1,16 +1,18 @@
 # [剑指](https://leetcode-cn.com/problemset/lcof/)
 
+[codebunk.com](https://codebunk.com/b/3421100160572/)
+
 No. | Question | Flag
 --- | --- | ---
 **easy** |  |  
 1 | 左旋转字符串 | ❎
 2 | 链表中倒数第k个节点 | ❎
 3 | 二叉树的深度 | ❎
-4 | 二叉树的镜像 | ✔️
-5 | 打印从1到最大的n位数 | ❎
+4 | 二叉树的镜像： `swap后+递归` | ❎
+5 | 打印从1到最大的n位数： `sum = 10 ** n` | ❎
 6 | 替换空格 | ❎
-7 | 从尾到头打印链表 | ❎
-8 | 反转链表 &nbsp;&nbsp; [**Recursion**] | ✔️ 
+7 | 从尾到头打印链表： `reversePrint(head.next) + [head.val]` | ❎
+8 | 反转链表 &nbsp;&nbsp; [**Recursion**] `head.head.next = head` (需要在写一个循环版) | ✔️ 
 9 | 二叉搜索树的第k大节点 &nbsp;&nbsp; [中序遍历 倒序] | ✔️ 
 10 | 合并两个排序的链表 | ❎
 11 | 二进制中1的个数 [n = n & (n-1)] | ❎ 
@@ -57,8 +59,8 @@ No. | Question | Flag
 49 | 丑数 n2, n3, n5 = dp[a] * 2, dp[b] * 3, dp[c] * 5 | ❎ 
 50 | 二叉搜索树与双向链表 |  
 51 | 股票的最大利润 |  
-52 | 栈的压入、弹出序列 |  
-53 | 从上到下打印二叉树 |  
+52 | 栈的压入、弹出序列 (+stack 辅助) | ❎  
+53 | 剑指 Offer 32 - III. 从上到下打印二叉树 III ， for _ in range(size) | ✔️ 
 54 | 构建乘积数组 |  
 55 | 二叉树中和为某一值的路径 |  
 56 | 把数组排成最小的数 |  
@@ -86,6 +88,48 @@ No. | Question | Flag
 75 | 正则表达式匹配 | 
 
 ## 1. Tree
+
+构造二叉树
+
+```python
+class Node:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
+def creatTree(vals):
+    nodes = []
+    for i in range(len(vals)):
+        cur_val = vals[i]
+        if cur_val is not None:
+            cur_node = Node(cur_val)
+        else:
+            cur_node = None
+        nodes.append(cur_node)
+        if i > 0:
+            # 0, 1-1/2, 2-1/2
+            par_id = (i - 1) // 2
+            if (i - 1) % 2 == 0:
+                nodes[par_id].left = cur_node
+            else:
+                nodes[par_id].right = cur_node
+    return nodes[0]
+
+def pre_out(root):
+    if not root:
+        return None
+
+    print(root.val)
+    pre_out(root.left)
+    pre_out(root.right)
+
+if __name__ == '__main__':
+    vals = [3,5,1,6,2,0,8,None,None,7,4]
+    root = creatTree(vals)
+    pre_out(root)
+```
 
 二叉树的镜像
 
@@ -194,6 +238,34 @@ class Solution:
                 res.append(cur.val)
                 queue.append(cur.left)
                 queue.append(cur.right)
+        return res
+```
+
+剑指 Offer 32 - III. 从上到下打印二叉树 III
+
+```python
+class Solution:
+    def levelOrder(self, root: TreeNode) -> List[List[int]]:
+        queue = deque()
+        queue.append(root)
+        res = []
+        cnt = 0
+        while queue:
+            size = len(queue)
+            level = []
+            for _ in range(size):
+                cur = queue.popleft()
+                if not cur:
+                    continue
+                level.append(cur.val)
+                queue.append(cur.left)
+                queue.append(cur.right)
+            if level:
+                if cnt % 2 == 0:
+                    res.append(level)
+                else:
+                    res.append(level[::-1])
+                cnt += 1
         return res
 ```
 
@@ -437,3 +509,4 @@ class Solution:
         return res
 
 ```
+

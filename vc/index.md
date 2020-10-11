@@ -55,23 +55,34 @@ Data:
 
 **Job Description**
  
-Design and manage Data warehouse plan for a product, such as: design data model, define data metric, data governance and so on
-Work with BI, business team, PM team, use data to solve problems, identify needs and opportunities
-Design,build and maintain the batch or real time data pipeline in production using Hadoop big data technology
-Define and manage SLA,Data quality for all data sets in allocated areas of ownership
+> Design and manage Data warehouse plan for a product, such as: design data model, define data metric, data governance and so on
+> 
+> Work with BI, business team, PM team, use data to solve problems, identify needs and opportunities
+> 
+> Design,build and maintain the batch or real time data pipeline in production using Hadoop big data technology
+> 
+> Define and manage SLA,Data quality for all data sets in allocated areas of ownership
 
 
 **Job Requirements**
 
-Minimum B.S. degree in Computer Science or a related technical field.
-2+ years working experience with programming languages,such as Java,Scala,Python
-Ability to write efficient SQL statements
-Familiar with Hadoop, Spark and Flink data processing, experience of TB data processing experience is a plus
-Familiar with data warehouse modeling, such as dimensional data modeling and schema design
-Understand data mining or machine learning
-Excellent communication skills including the ability to identify and communicate data driven insights
-Strong logical thinking and analysis abilities
-Passionate, self-motivated, and takes ownership
+>  Minimum B.S. degree in Computer Science or a related technical field.
+> 
+>  2+ years working experience with programming languages,such as Java,Scala,Python
+> 
+>  Ability to write efficient SQL statements
+> 
+>  Familiar with **Hadoop, Spark and Flink data processing**, experience of TB data processing experience is a plus
+> 
+>  Familiar with **data warehouse modeling, such as dimensional data modeling and schema design**
+> 
+>  Understand data mining or machine learning
+> 
+>  Excellent communication skills including the ability to identify and communicate data driven insights
+> 
+>  Strong logical thinking and analysis abilities
+> 
+>  Passionate, self-motivated, and takes ownership
 
 **Senior Data Engineer**
 

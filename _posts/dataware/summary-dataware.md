@@ -28,7 +28,33 @@ tags: [SQL]
 
 - [Good - Hive 拉链表实践](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247485525&idx=2&sn=595eab33c9b16f5a20cded2bf3c4f8ed&chksm=cf343a58f843b34e20e2fcd4cbb21f8a27451a3b235050b1c91aec1ac756dc4ad4d74216b879&scene=21#wechat_redirect)
 
-## 1. Data Modeling
+
+漫谈系列：
+
+1. [仙子紫霞  数据仓库与Python大数据  1/1 叮！致2020的一封情书，请查收！文末2019年文章精选](https://mp.weixin.qq.com/s/tJjkaWsZKbsG8klBSn2JGw)
+
+> [1. 漫谈系列 | 数仓第一篇NO.1 『基础架构』](https://mp.weixin.qq.com/s/J_PA_qhU44DX0PiCDuVaEA)
+> [2. 漫谈系列 | 数仓第二篇NO.2 『数据模型』](https://mp.weixin.qq.com/s/oKcCQx2vfnyAYlu7V0uHbg)
+> [3. 漫谈系列 | 数仓第三篇NO.3 『数据ETL』](https://mp.weixin.qq.com/s/INerSvksPi8sreSVCA2csA)
+> [4. 漫谈系列 | 数仓第四篇NO.4 『数据应用』](https://mp.weixin.qq.com/s/Y1xWwJ2Jr392eRHQeBRYZQ)
+> [5. 漫谈系列 | 数仓第五篇NO.5 『调度系统』](https://mp.weixin.qq.com/s/d5g-anyABYAcbYfP-jg4HQ)
+> [6. 漫谈系列 | 数仓第六篇NO.6 『数据治理』][0]
+> [7. 漫谈系列 | 漫谈数仓第一篇NO.7 『面试真经』](https://mp.weixin.qq.com/s/iZs7zEb-yoiSnlG2q74Fvg)
+
+<center><embed src="/images/dataware/建设企业级数据仓库EDW(内部资料，禁止外传).pdf" width="950" height="600"></center>
+
+[0]: /2020/10/01/dataware/summary-dataware/
+
+
+## 1. Data Warehouse
+
+### 1.1 dw basic 
+
+**data warehouse 逻辑分层架构：**
+
+<img src="/images/dataware/dw-logic-pic.webp" width="850" alt="" />
+
+### 1.2 data modeling
 
 Title_Kimball | [深入浅出数据模型（推荐收藏）](https://mp.weixin.qq.com/s/qAitZe3BPkQNTIDAWgTsFw)
 :---: | :---:
@@ -36,27 +62,39 @@ Title_Kimball | [深入浅出数据模型（推荐收藏）](https://mp.weixin.q
 **事实表和维表** | 架构强调模型由事实表和维表组成，注重事实表与维表的设计
 **数据集市** | 数据仓库架构中，数据集市是一个逻辑概念，只是多维数据仓库中的主题域划分，并没有自己的物理存储，也可以说是虚拟的数据集市。是数据仓库的一个访问层，是按主题域组织的数据集合，用于支持部门级的决策。
 
-**数据建模的几种方式:**
+**data modeling 的几种方式:**
 
-No. | 数据建模方式 | desc
-:---: | :---: | :---:
-1. | ER模型 | 三范式
+No. | 数据建模方式 | type | details
+:---: | :---: | :---: | :---:
+1. | ER模型 | 三范式 |
 <br> 2. | <br> 维度建模 |  **`1. 星型模型`** <br> 2. 雪花模型 <br> **`3. 星座模型`**
 .. | .. | ..
 
+#### 事实表
 
-漫谈系列：
+事实表生于业务过程，存储业务活动或事件提炼出来的性能度量。从最低的粒度级别来看，事实表行对应一个度量事件
 
-> [1. 漫谈系列 | 数仓第一篇NO.1 『基础架构』](https://mp.weixin.qq.com/s/J_PA_qhU44DX0PiCDuVaEA)
-> [2. 漫谈系列 | 数仓第二篇NO.2 『数据模型』](https://mp.weixin.qq.com/s/oKcCQx2vfnyAYlu7V0uHbg)
-> [3. 漫谈系列 | 数仓第三篇NO.3 『数据处理』][0]
-> [4. 漫谈系列 | 数仓第四篇NO.4 『数据应用』][0]
-> [5. 漫谈系列 | 数仓第五篇NO.5 『数据质量』][0]
-> [6. 漫谈系列 | 数仓第六篇NO.6 『数据治理』][0]
+#### 维度表
 
-<center><embed src="/images/dataware/建设企业级数据仓库EDW(内部资料，禁止外传).pdf" width="950" height="600"></center>
+No. | table_type | details
+:---: | :---: | :--- | :---
+1. | 事实表 | （1）事务事实表  <br> （2）周期快照事实表 <br> （3）累积快照事实表
+2. | 维度表 | （1）退化维度（DegenerateDimension）<br> （2）缓慢变化维（Slowly Changing Dimensions）| 维度的属性并不是始终不变的，它会随着时间的流逝发生缓慢的变化，这种随时间发生变化的维度我们一般称之为缓慢变化维（SCD）
 
-[0]: /2020/10/01/dataware/summary-dataware/
+### 1.3 data ETL
+
+[SQL分析函数，看这一篇就够了](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247483677&idx=1&sn=32ddbe9c8747d9cf9a821162bb9de27f&chksm=cf343310f843ba0626f8623283dd4a23dc480788d818f53713ab038f2fd8f2152f08c985507a&scene=21#wechat_redirect)
+
+### 1.4 data application
+
+No. | Tool | description
+:---: | :---: | :---:
+1. | Apache_Druid | Druid是一个用于大数据实时查询和分析的高容错、高性能开源分布式系统，用于解决如何在大规模数据集下进行快速的、交互式的查询和分析。 
+2. | Apache Kylin™ | 一个开源的分布式分析引擎，提供Hadoop/Spark之上的SQL查询接口及多维分析（OLAP）能力以支持超大规模数据，最初由eBay Inc. 开发并贡献至开源社区。它能在亚秒内查询巨大的Hive表。
+3. | Clickhouse | Clickhouse是一个用于在线分析处理（OLAP）的列式数据库管理系统（DBMS）
+4. | ADB<br>（AnalyticDB_for_MySQL） | 分析型数据库MySQL版（AnalyticDB for MySQL），是阿里巴巴自主研发的海量数据实时高并发在线分析（Realtime OLAP）云计算服务，使得您可以在毫秒级针对千亿级数据进行即时的多维分析透视和业务探索。
+
+> Ad-hoc 查询或报告（即席查询或报告）是 商业智能的一个次要的话题，它还经常与OLAP、数据仓库、数据挖掘和其他工具相提并论。
 
 ## 2. Hive
 
@@ -122,6 +160,8 @@ No. | 数据建模方式 | desc
 ## Reference
 
 - [very good - igDataGuide/面试-all](https://github.com/Dr11ft/BigDataGuide/tree/master/%E9%9D%A2%E8%AF%95)
+- [Apache Druid 简介](https://zhuanlan.zhihu.com/p/82038648)
+
 
 
 
