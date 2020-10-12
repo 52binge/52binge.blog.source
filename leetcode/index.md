@@ -11,29 +11,29 @@ No. | Question | Flag
 4 | 二叉树的镜像： `swap后+递归` | ❎
 5 | 打印从1到最大的n位数： `sum = 10 ** n` | ❎
 6 | 替换空格 | ❎
-7 | 从尾到头打印链表： `reversePrint(head.next) + [head.val]` | ❎
-8 | 反转链表 &nbsp;&nbsp; [**Recursion**] `head.head.next = head` (需要在写一个循环版) | ✔️ 
-9 | 二叉搜索树的第k大节点 &nbsp;&nbsp; [中序遍历 倒序] | ✔️ 
-10 | 合并两个排序的链表 | ❎
+7 | 从尾到头打印链表： <br>`reversePrint(head.next) + [head.val]` | ❎
+8 | 反转链表 &nbsp;&nbsp; [**Recursion**] (需要在写一个循环版) <br>`cur = self.reverseList(head.next)`<br>`head.head.next = head`<br>`head.next = None`<br>`return cur` | ✔️ 
+9 | 二叉搜索树的第k大节点 &nbsp;&nbsp; [中序遍历 倒序] <br>`dfs(root.right)`<br> `self.k -= 1` <br> `dfs(root.left)`  | ✔️ 
+10 | 合并两个排序的链表 &nbsp;&nbsp; [**Recursion**] <br> p.next = self.mergeTwoLists(l1.next, l2) | ❎
 11 | 二进制中1的个数 [n = n & (n-1)] | ❎ 
 12 | 用两个栈实现队列 | ❎
 13 | 二叉树的最近公共祖先 &nbsp;&nbsp; [**Recursion**] | ✔️ 
-14 | 和为s的连续正数序列 &nbsp;&nbsp; [sliding window]| ✔️ 
+14 | 和为s的连续正数序列 &nbsp;&nbsp; [sliding window] <br><br> input：target = 9 <br> output：[[2,3,4],[4,5]] | ✔️ 
 15 | 二叉搜索树的最近公共祖先 &nbsp;&nbsp; [**Recursion** + 剪枝] | ✔️ 
-16 | 从上到下打印二叉树II | ❎
+16 | 从上到下打印二叉树II &nbsp;&nbsp;  for _ in range(que\_size): | ❎
 17 | 数组中出现次数超过一半的数字 | ❎
-18 | 数组中重复的数字 | ❎
-19 | 和为s的两个数字 | ❎
+18 | 数组中重复的数字 set() | ❎
+19 | 和为s的两个数字  [sliding window] | ❎
 20 | 调整数组顺序使奇数位于偶数前面 | ❎
-21 | 圆圈中最后剩下的数字 | ✔️
+21 | [圆圈中最后剩下的数字](https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/) `需要在review..` | ✔️
 22 | 两个链表的第一个公共节点 | ❎
-23 | 第一个只出现一次的字符 | ❎
-24 | 连续子数组的最大和 | ❎
-25 | 删除链表的节点 | ❎
+23 | 第一个只出现一次的字符:&nbsp;&nbsp; Python 3.6 后，默认字典就是有序的，无需用 OrderedDict() | ❎
+24 | 连续子数组的最大和 `dp[i] = dp[i-1] + nums[i]` | ❎
+25 | 删除链表的节点 pre, p | ❎
 26 | 平衡二叉树 <br> abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right) | ✔️ 
 27 | 对称的二叉树 | ✔️
 28 | 包含min函数的栈 | ❎
-29 | 最小的k个数 【堆排序 的逆向思维】| ✔️
+29 | [最小的k个数 【heapq 堆排序 的逆向思维】](http://localhost:5000/leetcode/#32-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0) | ✔️
 30 | 不用加减乘除做加法  add(a ^ b, (a & b) << 1) | ❎
 31 | n个骰子的点数 | ✔️
 32 | 在排序数组中查找数字I | ❎
@@ -324,7 +324,47 @@ class Solution:
 
 ## 3. Array & Sort
 
-最小的k个数
+### 3.1 圆圈中最后剩下的数字
+
+```python
+# 输入: n = 5, m = 3
+# 输出: 3
+# 0, 1, 2, 3, 4
+# 题目中的要求可以表述为：给定一个长度为 n 的序列，每次向后数 m 个元素并删除，那么最终留下的是第几个元素？
+#
+# 这个问题很难快速给出答案。但是同时也要看到，这个问题似乎有拆分为较小子问题的潜质：如果我们知道对于一个长度 n - 1 的序列，留下的是第几个元素，那么我们就可以由此计算出长度为 n 的序列的答案。
+#
+# 算法
+#
+# 我们将上述问题建模为函数 f(n, m)，该函数的返回值为最终留下的元素的序号。
+#
+# 首先，长度为 n 的序列会先删除第 m % n 个元素，然后剩下一个长度为 n - 1 的序列。那么，我们可以递归地求解 f(n - 1, m)，就可以知道对于剩下的 n - 1 个元素，最终会留下第几个元素，我们设答案为 x = f(n - 1, m)。
+#
+# 由于我们删除了第 m % n 个元素，将序列的长度变为 n - 1。当我们知道了 f(n - 1, m) 对应的答案 x 之后，我们也就可以知道，长度为 n 的序列最后一个删除的元素，应当是从 m % n 开始数的第 x 个元素。因此有 f(n, m) = (m % n + x) % n = (m + x) % n。
+# Python 默认的递归深度不够，需要手动设置
+
+import sys
+
+# Python解释器默认对递归深度设定为998，但可以用sys.setrecursionlimit(99999999)来打破这个限制。
+sys.setrecursionlimit(100000)
+
+
+def f(n, m):
+    if n == 0:
+        return 0
+    x = f(n - 1, m)
+    return (m % n + x) % n
+
+    # return (m + x) % n
+
+
+class Solution:
+    def lastRemaining(self, n: int, m: int) -> int:
+        return f(n, m)
+```
+
+
+### 3.2 最小的k个数
 
 ```python
 import heapq
@@ -350,7 +390,7 @@ class Solution:
         return ans
 ```
 
-n个骰子的点数
+### 3.3 n个骰子的点数
 
 ```
 # 把n个骰子扔在地上，所有骰子朝上一面的点数之和为s。输入n，打印出s的所有可能的值出现的概率。
@@ -413,7 +453,7 @@ class Solution:
         return res
 ```
 
-剑指 Offer 29. 顺时针打印矩阵
+### 3.4 顺时针打印矩阵
 
 ```python
 # -*- coding: utf-8 -*-
