@@ -1,6 +1,5 @@
 # [剑指](https://leetcode-cn.com/problemset/lcof/)
 
-[codebunk.com](https://codebunk.com/b/3421100160572/)
 
 No. | Question | Flag
 --- | --- | ---
@@ -550,3 +549,7 @@ class Solution:
 
 ```
 
+## Reference
+
+[codebunk.com](https://codebunk.com/b/3421100160572/)
+[《程序员的算法趣题》-开坑记录](https://www.dattyrabbit.cn/articles/2020/08/16/1597576674555.html?utm_source=ld246.com)
