@@ -59,7 +59,7 @@ No. | Question | Flag
 50 | 二叉搜索树与双向链表 |  
 51 | 股票的最大利润 |  
 52 | 栈的压入、弹出序列 (+stack 辅助) | ❎  
-53 | 剑指 Offer 32 - III. 从上到下打印二叉树 III ， for _ in range(size) | ✔️ 
+53 | 剑指 Offer 32 - III. 从上到下打印二叉树 III | ✔️ 
 54 | 构建乘积数组 |  
 55 | 二叉树中和为某一值的路径 |  
 56 | 把数组排成最小的数 |  
@@ -88,7 +88,7 @@ No. | Question | Flag
 
 ## 1. Tree
 
-构造二叉树
+### 1.1 构造二叉树
 
 ```python
 class Node:
@@ -130,7 +130,24 @@ if __name__ == '__main__':
     pre_out(root)
 ```
 
-二叉树的镜像
+### 1.2 平衡二叉树
+
+```python
+class Solution:
+    def isBalanced(self, root: TreeNode) -> bool:
+
+        def maxHigh(root):
+            if root == None:
+                return 0
+            return max(maxHigh(root.left), maxHigh(root.right)) + 1
+
+        if root == None:
+            return True
+
+        return abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right)
+```
+
+### 1.3 二叉树的镜像
 
 ```python
 class Solution:
@@ -145,7 +162,7 @@ class Solution:
         return root
 ```
 
-二叉树的最近公共祖先
+### 1.4 二叉树的最近公共祖先
 
 ```python
 class Solution:
@@ -166,7 +183,7 @@ class Solution:
         return root
 ```
 
-二叉搜索树的最近公共祖先
+### 1.5 二叉搜索树的最近公共祖先
 
 ```python
 class TreeNode:
@@ -201,7 +218,7 @@ class Solution:
             return root
 ```
 
-对称的二叉树
+### 1.6 对称的二叉树
 
 ```python
 def isSymmetricHelper(left: TreeNode, right: TreeNode):
@@ -218,13 +235,17 @@ class Solution:
         return root == None or isSymmetricHelper(root.left, root.right)
 ```
 
-从上到下打印二叉树
+### 1.7 从上到下打印二叉树 II / III
+
+从上到下打印二叉树 II
 
 ```python
 from collections import deque
 
 class Solution:
     def levelOrder(self, root: TreeNode) -> List[int]:
+        if not root:
+            return []
         queue = collections.deque()
         queue.append(root)
         res = []
@@ -240,44 +261,49 @@ class Solution:
         return res
 ```
 
-剑指 Offer 32 - III. 从上到下打印二叉树 III
+从上到下打印二叉树 III
 
 ```python
 class Solution:
     def levelOrder(self, root: TreeNode) -> List[List[int]]:
+        if not root:
+            return []
+
         queue = deque()
-        queue.append(root)
+        queue.append([root, 0])
         res = []
-        cnt = 0
+        tmp_dict = dict()
         while queue:
-            size = len(queue)
-            level = []
-            for _ in range(size):
-                cur = queue.popleft()
-                if not cur:
-                    continue
-                level.append(cur.val)
-                queue.append(cur.left)
-                queue.append(cur.right)
-            if level:
-                if cnt % 2 == 0:
-                    res.append(level)
-                else:
-                    res.append(level[::-1])
-                cnt += 1
+            cur, level = queue.popleft()
+            if tmp_dict.get(level) is not None:
+                tmp_dict[level].append(cur.val)
+            else:
+                tmp_dict[level] = [cur.val]
+
+            if cur.left:
+                queue.append([cur.left, level + 1])
+            if cur.right:
+                queue.append([cur.right, level + 1])
+
+        for ix in range(len(tmp_dict)):
+            if ix % 2 == 1:
+                res.append(tmp_dict[ix][::-1])
+            else:
+                res.append(tmp_dict[ix])
+
         return res
 ```
 
 
 ## 2. LinkedList
 
-7). 从尾到头打印链表
+### 2.1 从尾到头打印链表
 
 ```python
 self.reversePrint(head.next) + [head.val]
 ```
 
-8). 反转链表
+### 2.2 反转链表
 
 ```python
 # 输入: 1->2->3->4->5->NULL
@@ -305,7 +331,7 @@ class Solution(object):
         return cur
 ```
 
-剑指 Offer 35. 复杂链表的复制
+### 2.3 复杂链表的复制
 
 ```
 """
