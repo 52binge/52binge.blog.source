@@ -19,7 +19,7 @@ No. | Question | Flag
 13 | 二叉树的最近公共祖先 &nbsp;&nbsp; [**Recursion**] | ✔️ 
 14 | 和为s的连续正数序列 &nbsp;&nbsp; [sliding window] <br><br> input：target = 9 <br> output：[[2,3,4],[4,5]] | ✔️ 
 15 | 二叉搜索树的最近公共祖先 &nbsp;&nbsp; [**Recursion** + 剪枝] | ✔️ 
-16 | 从上到下打印二叉树II &nbsp;&nbsp;  for _ in range(que\_size): | ❎
+16 | 从上到下打印二叉树II &nbsp;&nbsp;  `queue.append([root, 0])` 或 `for _ in range(queue_size)` | ❎
 17 | 数组中出现次数超过一半的数字 | ❎
 18 | 数组中重复的数字 set() | ❎
 19 | 和为s的两个数字  [sliding window] | ❎
@@ -54,7 +54,7 @@ No. | Question | Flag
 45 | 数组中数字出现的次数 | ❎ 
 46 | 重建二叉树 | ❎ 
 47 | 礼物的最大价值 | ❎ 
-48 | 从上到下打印二叉树 | ❎ 
+48 | 从上到下打印二叉树 III `queue.append([root, 0])` | ❎ 
 49 | 丑数 n2, n3, n5 = dp[a] * 2, dp[b] * 3, dp[c] * 5 | ❎ 
 50 | 二叉搜索树与双向链表 |  
 51 | 股票的最大利润 |  
