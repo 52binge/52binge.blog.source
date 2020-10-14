@@ -188,7 +188,7 @@ class Solution:
         return root
 ```
 
-### 1.5 二叉搜索树的最近公共祖先
+**二叉搜索树的最近公共祖先**
 
 ```python
 class TreeNode:
@@ -223,7 +223,7 @@ class Solution:
             return root
 ```
 
-### 1.6 对称的二叉树
+### 1.5 对称的二叉树
 
 ```python
 def isSymmetricHelper(left: TreeNode, right: TreeNode):
@@ -240,7 +240,7 @@ class Solution:
         return root == None or isSymmetricHelper(root.left, root.right)
 ```
 
-### 1.7 从上到下打印二叉树 II / III
+### 1.6 从上到下打印二叉树 II / III
 
 从上到下打印二叉树 II
 
@@ -266,7 +266,7 @@ class Solution:
         return res
 ```
 
-从上到下打印二叉树 III
+**从上到下打印二叉树 III**
 
 ```python
 class Solution:
@@ -299,6 +299,25 @@ class Solution:
         return res
 ```
 
+### 1.7 二叉树中和为某一值的路径
+
+```python
+class Solution:
+    def pathSum(self, root: TreeNode, sum: int) -> List[List[int]]:
+        res, path = [], []
+        def recur(root, tar):
+            if not root: return
+            path.append(root.val)
+            tar -= root.val
+            if tar == 0 and not root.left and not root.right:
+                res.append(list(path))
+            recur(root.left, tar)
+            recur(root.right, tar)
+            path.pop()
+
+        recur(root, sum)
+        return res
+```
 
 ## 2. LinkedList
 
