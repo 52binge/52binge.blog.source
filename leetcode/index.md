@@ -2,49 +2,25 @@
 
 
 No. | Question | Flag
---- | --- | ---
+:---: | --- | ---
 **easy** |  |  
-1 | 左旋转字符串 | ❎
-2 | 链表中倒数第k个节点 | ❎
-3 | 二叉树的深度 | ❎
 4 | 二叉树的镜像： `swap后+递归` | ❎
-5 | 打印从1到最大的n位数： `sum = 10 ** n` | ❎
-6 | 替换空格 | ❎
 7 | 从尾到头打印链表： <br>`reversePrint(head.next) + [head.val]` | ❎
 8 | 反转链表 &nbsp;&nbsp; [**Recursion**] (需要在写一个循环版) <br>`cur = self.reverseList(head.next)`<br>`head.head.next = head`<br>`head.next = None`<br>`return cur` | ✔️ 
 9 | 二叉搜索树的第k大节点 &nbsp;&nbsp; [中序遍历 倒序] <br>`dfs(root.right)`<br> `self.k -= 1` <br> `dfs(root.left)`  | ✔️ 
 10 | 合并两个排序的链表 &nbsp;&nbsp; [**Recursion**] <br> p.next = self.mergeTwoLists(l1.next, l2) | ❎
-11 | 二进制中1的个数 [n = n & (n-1)] | ❎ 
-12 | 用两个栈实现队列 | ❎
 13 | 二叉树的最近公共祖先 &nbsp;&nbsp; [**Recursion**] | ✔️ 
 14 | 和为s的连续正数序列 &nbsp;&nbsp; [sliding window] <br><br> input：target = 9 <br> output：[[2,3,4],[4,5]] | ✔️ 
 15 | 二叉搜索树的最近公共祖先 &nbsp;&nbsp; [**Recursion** + 剪枝] | ✔️ 
-16 | 从上到下打印二叉树II &nbsp;&nbsp;  `queue.append([root, 0])` 或 `for _ in range(queue_size)` | ❎
-17 | 数组中出现次数超过一半的数字 | ❎
-18 | 数组中重复的数字 set() | ❎
-19 | 和为s的两个数字  [sliding window] | ❎
-20 | 调整数组顺序使奇数位于偶数前面 | ❎
 21 | [圆圈中最后剩下的数字](https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/) `需要在review..` | ✔️
-22 | 两个链表的第一个公共节点 | ❎
-23 | 第一个只出现一次的字符:&nbsp;&nbsp; Python 3.6 后，默认字典就是有序的，无需用 OrderedDict() | ❎
-24 | 连续子数组的最大和 `dp[i] = dp[i-1] + nums[i]` | ❎
-25 | 删除链表的节点 pre, p | ❎
 26 | 平衡二叉树 <br> abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right) | ✔️ 
 27 | 对称的二叉树 | ✔️
 28 | 包含min函数的栈 | ❎
 29 | [最小的k个数 【heapq 堆排序 的逆向思维】](http://localhost:5000/leetcode/#32-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0) | ✔️
-30 | 不用加减乘除做加法  add(a ^ b, (a & b) << 1) | ❎
 31 | n个骰子的点数 | ✔️
-32 | 在排序数组中查找数字I | ❎
-33 | 旋转数组的最小数字 `numbers[high]` | ❎
-34 | 扑克牌中的顺子 ma - mi < 5 | ❎
 35 | 顺时针打印矩阵 | ✔️
 36 | 滑动窗口的最大值 | ✔️
 37 | 0～n-1中缺失的数字 | ❎
-38 | 翻转单词顺序 | ❎
-39 | 青蛙跳台阶问题 | ❎
-40 | 二维数组中的查找 | ❎
-41 | 斐波那契数列 | ❎
  | | 
 **medium** |  | 
  | | 
@@ -58,8 +34,6 @@ No. | Question | Flag
 49 | 丑数 n2, n3, n5 = dp[a] * 2, dp[b] * 3, dp[c] * 5 | ❎ 
 50 | 二叉搜索树与双向链表 |  
 51 | 股票的最大利润 |  
-52 | 栈的压入、弹出序列 (+stack 辅助) | ❎  
-53 | 剑指 Offer 32 - III. 从上到下打印二叉树 III | ❎ 
 54 | 构建乘积数组 | ❎ 
 55 | 二叉树中和为某一值的路径 |  
 56 | 把数组排成最小的数 |  
@@ -85,6 +59,37 @@ No. | Question | Flag
 73 | 序列化二叉树 | 
 74 | 数组中的逆序对 | 
 75 | 正则表达式匹配 | 
+
+No. | Pass Question | Flag
+:---: | --- | ---
+**pass_easy** |  | 
+1 | 左旋转字符串 | ❎
+2 | 链表中倒数第k个节点 | ❎
+3 | 二叉树的深度 | ❎
+5 | 打印从1到最大的n位数： `sum = 10 ** n` | ❎
+6 | 替换空格 | ❎
+11 | 二进制中1的个数 [n = n & (n-1)] | ❎ 
+12 | 用两个栈实现队列 | ❎
+16 | 从上到下打印二叉树II &nbsp;&nbsp;  `queue.append([root, 0])` 或 `for _ in range(queue_size)` | ❎
+17 | 数组中出现次数超过一半的数字 | ❎
+18 | 数组中重复的数字 set() | ❎
+19 | 和为s的两个数字  [sliding window] | ❎
+20 | 调整数组顺序使奇数位于偶数前面 | ❎
+22 | 两个链表的第一个公共节点 | ❎
+23 | 第一个只出现一次的字符:&nbsp;&nbsp; Python 3.6 后，默认字典就是有序的，无需用 OrderedDict() | ❎
+24 | 连续子数组的最大和 `dp[i] = dp[i-1] + nums[i]` | ❎
+25 | 删除链表的节点 pre, p | ❎
+30 | 不用加减乘除做加法  add(a ^ b, (a & b) << 1) | ❎
+32 | 在排序数组中查找数字I | ❎
+33 | 旋转数组的最小数字 `numbers[high]` | ❎
+34 | 扑克牌中的顺子 ma - mi < 5 | ❎
+38 | 翻转单词顺序 | ❎
+39 | 青蛙跳台阶问题 | ❎
+40 | 二维数组中的查找 | ❎
+41 | 斐波那契数列 | ❎
+**pass_medium** |  | 
+52 | 栈的压入、弹出序列 (+stack 辅助) | ❎  
+53 | 剑指 Offer 32 - III. 从上到下打印二叉树 III | ❎ 
 
 ## 1. Tree
 
