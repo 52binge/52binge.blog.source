@@ -32,10 +32,10 @@ No. | Question | Flag
 47 | 礼物的最大价值 | ❎ 
 48 | 从上到下打印二叉树 III `queue.append([root, 0])` | ❎ 
 49 | 丑数 n2, n3, n5 = dp[a] * 2, dp[b] * 3, dp[c] * 5 | ❎ 
-50 | 二叉搜索树与双向链表 |  
+50 | 二叉搜索树与双向链表 | ✔️  
 51 | 股票的最大利润 |  
 54 | 构建乘积数组 | ❎ 
-55 | 二叉树中和为某一值的路径 |  
+55 | **二叉树中和为某一值的路径** <br><br> `if sum == 0 and root.left is None and root.right is None` | <br><br> ✔️ 
 56 | 把数组排成最小的数 |  
 57 | 剪绳子 |  
 58 | 字符串的排列 |  
@@ -92,6 +92,29 @@ No. | Pass Question | Flag
 53 | 剑指 Offer 32 - III. 从上到下打印二叉树 III | ❎ 
 
 ## 1. Tree
+
+```python
+class Solution:
+    def treeToDoublyList(self, root: 'Node') -> 'Node':
+        def dfs(cur):
+            if not cur: return
+            dfs(cur.left) # 递归左子树
+            if self.pre: # 修改节点引用
+                self.pre.right, cur.left = cur, self.pre
+            else: # 记录头节点
+                self.head = cur
+            self.pre = cur # 保存 cur
+            dfs(cur.right) # 递归右子树
+        
+        if not root: return
+        self.pre = None
+        dfs(root)
+        self.head.left, self.pre.right = self.pre, self.head
+        return self.head
+```
+
+[题解链接](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/solution/mian-shi-ti-36-er-cha-sou-suo-shu-yu-shuang-xian-5/)
+
 
 ### 1.1 构造二叉树
 
@@ -302,21 +325,24 @@ class Solution:
 ### 1.7 二叉树中和为某一值的路径
 
 ```python
-class Solution:
-    def pathSum(self, root: TreeNode, sum: int) -> List[List[int]]:
-        res, path = [], []
-        def recur(root, tar):
-            if not root: return
-            path.append(root.val)
-            tar -= root.val
-            if tar == 0 and not root.left and not root.right:
-                res.append(list(path))
-            recur(root.left, tar)
-            recur(root.right, tar)
-            path.pop()
+def pathSum(self, root: TreeNode, sum: int) -> List[List[int]]:
 
-        recur(root, sum)
-        return res
+    if not root:
+        return []
+
+    self.path.append(root.val)
+    sum = sum - root.val
+    
+    if sum == 0 and root.left is None and root.right is None:
+        self.res.append(list(self.path))
+    
+    if root.left:
+        self.pathSum(root.left, sum)
+    if root.right:
+        self.pathSum(root.right, sum)
+    
+    self.path.pop()
+    return self.res
 ```
 
 ## 2. LinkedList
