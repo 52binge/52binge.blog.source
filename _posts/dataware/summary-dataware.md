@@ -10,6 +10,15 @@ tags: [SQL]
 
 <!-- more -->
 
+https://github.com/blair101/language/blob/master/offer/bishimianshi-20141001.cpp
+
+- [数据仓库（二）](https://www.jianshu.com/p/a145e15dedfc)
+- [数据仓库（一）](https://www.jianshu.com/p/9750703dba28)
+
+<br>
+
+---
+
 - [1. 漫画：什么是数据仓库？](https://mp.weixin.qq.com/s/XIJoE3nV7QQwGE0WLIhiRw)
 - [2. 深度 | 传统数仓和大数据数仓的区别是什么？ ✔️](https://mp.weixin.qq.com/s/Uo7UzUhCJdzXeLL8nRLefw)
 - [3.【gd】 漫谈 | 大牛带你从0到1构建数据仓库实战](https://mp.weixin.qq.com/s/iwC0iKXBFFBVwxCQPhBAxg)
