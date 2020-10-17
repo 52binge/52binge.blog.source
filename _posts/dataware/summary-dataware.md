@@ -15,6 +15,7 @@ https://github.com/blair101/language/blob/master/offer/bishimianshi-20141001.cpp
 - [数据仓库（二）](https://www.jianshu.com/p/a145e15dedfc)
 - [数据仓库（一）](https://www.jianshu.com/p/9750703dba28)
 
+
 <br>
 
 ---
@@ -53,6 +54,9 @@ https://github.com/blair101/language/blob/master/offer/bishimianshi-20141001.cpp
 <center><embed src="/images/dataware/建设企业级数据仓库EDW(内部资料，禁止外传).pdf" width="950" height="600"></center>
 
 [0]: /2020/10/01/dataware/summary-dataware/
+
+
+- [元数据管理解析以及数据仓库和主数据介绍](https://zhuanlan.zhihu.com/p/36136675)
 
 
 ## 1. Data Warehouse
