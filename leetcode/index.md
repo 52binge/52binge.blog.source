@@ -26,7 +26,7 @@ No. | Question | Flag
  | | 
 42 | 求1+2+…+n | ❎
 43 | 数组中数字出现的次数 | so hard
-44 | 复杂链表的复制 |  
+44 | 复杂链表的复制 | ❎ 
 45 | 数组中数字出现的次数 | ❎ 
 46 | 重建二叉树 | ❎ 
 47 | 礼物的最大价值 | ❎ 
@@ -38,9 +38,9 @@ No. | Question | Flag
 55 | **二叉树中和为某一值的路径** <br><br> `if sum == 0 and root.left is None and root.right is None` | <br><br> ✔️ 
 56 | 把数组排成最小的数 |  
 57 | 剪绳子 (1) n < 4 (2) n == 4 (3) n > 4, 多个 == 3 段 | ❎ 
-58 | 字符串的排列 |  
+58 | 字符串的排列 `c = list(s) res = [] def dfs(x):` | ❎  
 59 | 把数字翻译成字符串 `f[i] = f[i-1] + f[i-2]` 同 打家劫舍 | ❎  
-60 | 二叉搜索树的后序遍历序列 |  
+60 | 二叉搜索树的后序遍历序列 `def recur(i, j):` | ❎ 
 61 | 机器人的运动范围 |  
 62 | 队列的最大值 |  
 63 | 树的子结构 |  
@@ -345,6 +345,30 @@ def pathSum(self, root: TreeNode, sum: int) -> List[List[int]]:
     return self.res
 ```
 
+### 1.8 二叉搜索树的后序遍历序列
+
+```python
+class Solution:
+    def verifyPostorder(self, postorder: [int]) -> bool:
+        def recur(i, j):
+            if i >= j:
+                return True
+
+            p = i
+
+            while postorder[p] < postorder[j]:
+                p += 1
+
+            m = p
+
+            while postorder[p] > postorder[j]:
+                p += 1
+
+            return p == j and recur(i, m - 1) and recur(m, j - 1)
+
+        return recur(0, len(postorder) - 1)
+```
+
 ## 2. LinkedList
 
 ### 2.1 从尾到头打印链表
@@ -396,10 +420,43 @@ class Solution:
     def copyRandomList(self, head: 'Node') -> 'Node':
 ```
 
+## 3. String
 
-## 3. Array & Sort
+字符串全排列 permutation
 
-### 3.1 圆圈中最后剩下的数字
+```python
+# 输入：s = "abc"
+# 输出：["abc","acb","bac","bca","cab","cba"]
+
+from typing import List
+
+
+class Solution:
+
+    def permutation(self, s: str) -> List[str]:
+        c = list(s)
+        res = []
+
+        def dfs(x):
+            if x == len(c) - 1:
+                res.append(''.join(c))  # 添加排列方案
+                return
+            dic = set()
+            for i in range(x, len(c)):
+                # if c[i] in dic: continue  # 重复，因此剪枝
+                # dic.add(c[i])
+                c[i], c[x] = c[x], c[i]  # 交换，将 c[i] 固定在第 x 位
+                dfs(x + 1)               # 开启固定第 x + 1 位字符
+                c[i], c[x] = c[x], c[i]  # 恢复交换
+
+        dfs(0)
+        return res
+```
+
+
+## 4. Array & Sort
+
+### 4.1 圆圈中最后剩下的数字
 
 ```python
 # 输入: n = 5, m = 3
@@ -439,7 +496,7 @@ class Solution:
 ```
 
 
-### 3.2 最小的k个数
+### 4.2 最小的k个数
 
 ```python
 import heapq
@@ -465,7 +522,7 @@ class Solution:
         return ans
 ```
 
-### 3.3 n个骰子的点数
+### 4.3 n个骰子的点数
 
 ```
 # 把n个骰子扔在地上，所有骰子朝上一面的点数之和为s。输入n，打印出s的所有可能的值出现的概率。
@@ -528,7 +585,7 @@ class Solution:
         return res
 ```
 
-### 3.4 顺时针打印矩阵
+### 4.4 顺时针打印矩阵
 
 ```python
 # -*- coding: utf-8 -*-
@@ -579,7 +636,7 @@ class Solution:
         return order
 ```
 
-## 4. sliding window
+## 5. sliding window
 
 剑指 Offer 59 - I. 滑动窗口的最大值 - (同理于包含 min 函数的栈)
 
