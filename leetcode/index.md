@@ -29,11 +29,11 @@ No. | Question | Flag
 44 | 复杂链表的复制 | ❎ 
 45 | 数组中数字出现的次数 | ❎ 
 46 | 重建二叉树 | ❎ 
-47 | 礼物的最大价值 | ❎ 
+47 | 礼物的最大价值 `f = [len(grid[0]) * [0]] * len(grid)` | ❎ 
 48 | 从上到下打印二叉树 III `queue.append([root, 0])` | ❎ 
 49 | 丑数 n2, n3, n5 = dp[a] * 2, dp[b] * 3, dp[c] * 5 | ❎ 
-50 | 二叉搜索树与双向链表 | ✔️  
-51 | 股票的最大利润 |  
+50 | 二叉搜索树与双向链表 `self.pre = None, self.head = cur; self.pre = cur` | ✔️  
+51 | 股票的最大利润 （买卖一次）  <br>`cost, profit = float("+inf"), 0` <br> for price in prices:<br>&nbsp;&nbsp;&nbsp;&nbsp;`cost, profit = min(cost, price), max(profit, price - cost)` |  
 54 | 构建乘积数组 | ❎ 
 55 | **二叉树中和为某一值的路径** <br><br> `if sum == 0 and root.left is None and root.right is None` | <br><br> ✔️ 
 56 | 把数组排成最小的数 |  
@@ -41,17 +41,15 @@ No. | Question | Flag
 58 | 字符串的排列 `c = list(s) res = [] def dfs(x):` | ❎  
 59 | 把数字翻译成字符串 `f[i] = f[i-1] + f[i-2]` 同 打家劫舍 | ❎  
 60 | 二叉搜索树的后序遍历序列 `def recur(i, j):` | ❎ 
-61 | 机器人的运动范围 |  
+61 | 机器人的运动范围 `bfs` good | ✔️ 
 62 | 队列的最大值 |  
 63 | 树的子结构 |  
 64 | 1～n整数中1出现的次数 |  
 65 | 最长不含重复字符的子字符串 |  
 66 | 矩阵中的路径 |  
-67 | 数字序列中某一位的数字 |  
 68 | 数值的整数次方 |  
-69 | 剪绳子 |  
-70 | 把字符串转换成整数 | 
-71 | 表示数值的字符串 | 
+70 | 把字符串转换成整数 `int_max, int_min, bndry = 2 ** 31 - 1, -2 ** 31, 2 ** 31 // 10: res > bndry or res == bndry and c > '7'` | ✔️
+71 | 表示数值的字符串： [确定有限状态自动机](https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/solution/biao-shi-shu-zhi-de-zi-fu-chuan-by-leetcode-soluti/) <br> [面试题20. 表示数值的字符串（有限状态自动机，清晰图解）](https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/solution/mian-shi-ti-20-biao-shi-shu-zhi-de-zi-fu-chuan-y-2/) | 
  | | 
 **hard** |  | 
  | | 
@@ -90,6 +88,8 @@ No. | Pass Question | Flag
 **pass_medium** |  | 
 52 | 栈的压入、弹出序列 (+stack 辅助) | ❎  
 53 | 剑指 Offer 32 - III. 从上到下打印二叉树 III | ❎ 
+67 | 数字序列中某一位的数字 `找规律, pass`  | **NG**
+69 | 剪绳子II | **Not Good**, so pass.
 
 ## 1. Tree
 
@@ -369,6 +369,32 @@ class Solution:
         return recur(0, len(postorder) - 1)
 ```
 
+### 1.9 二叉搜索树与双向链表
+
+```python
+class Solution:
+    def treeToDoublyList(self, root: 'Node') -> 'Node':
+        def dfs(cur):
+            if not cur: return
+            dfs(cur.left) # 递归左子树
+            
+            if self.pre: # 修改节点引用
+                self.pre.right = cur
+                cur.left = self.pre
+            else: # 记录头节点
+                self.head = cur
+            self.pre = cur # 保存 cur
+            
+            dfs(cur.right) # 递归右子树
+        
+        if not root: return
+        self.pre = None
+        dfs(root)
+        self.head.left = self.pre
+        self.pre.right = self.head
+        return self.head
+```
+
 ## 2. LinkedList
 
 ### 2.1 从尾到头打印链表
@@ -634,6 +660,25 @@ class Solution:
             left, right, top, bottom = left + 1, right - 1, top + 1, bottom - 1
 
         return order
+```
+ 
+把字符串转换成整数（数字越界处理，清晰图解） 
+
+```python
+class Solution:
+    def strToInt(self, str: str) -> int:
+        str = str.strip()                      # 删除首尾空格
+        if not str: return 0                   # 字符串为空则直接返回
+        res, i, sign = 0, 1, 1
+        int_max, int_min, bndry = 2 ** 31 - 1, -2 ** 31, 2 ** 31 // 10
+        if str[0] == '-': sign = -1            # 保存负号
+        elif str[0] != '+': i = 0              # 若无符号位，则需从 i = 0 开始数字拼接
+        for c in str[i:]:
+            if not '0' <= c <= '9' : break     # 遇到非数字的字符则跳出
+            if res > bndry or res == bndry and c > '7': return int_max if sign == 1 else int_min # 数字越界处理
+            res = 10 * res + int(c) # 数字拼接
+        return sign * res
+
 ```
 
 ## 5. sliding window
