@@ -1,6 +1,6 @@
 
 ---
-title: Qunar Trainee Summary
+title: Qunar Trainee
 date: 2014-05-07 06:24:16
 tags: health
 categories: devops

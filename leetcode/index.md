@@ -47,7 +47,7 @@ No. | Question | Flag
 64 | 1～n整数中1出现的次数 |  
 65 | 最长不含重复字符的子字符串 |  
 66 | 矩阵中的路径 |  
-68 | 数值的整数次方 |  
+68 | 数值的整数次方  （1）当 n 为偶数 （2）当 n 为奇数 | ❎
 70 | 把字符串转换成整数 `int_max, int_min, bndry = 2 ** 31 - 1, -2 ** 31, 2 ** 31 // 10: res > bndry or res == bndry and c > '7'` | ✔️
 71 | 表示数值的字符串： [确定有限状态自动机](https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/solution/biao-shi-shu-zhi-de-zi-fu-chuan-by-leetcode-soluti/) <br> [面试题20. 表示数值的字符串（有限状态自动机，清晰图解）](https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/solution/mian-shi-ti-20-biao-shi-shu-zhi-de-zi-fu-chuan-y-2/) | 
  | | 
@@ -662,7 +662,7 @@ class Solution:
         return order
 ```
  
-把字符串转换成整数（数字越界处理，清晰图解） 
+### 4.5 把字符串转换成整数 
 
 ```python
 class Solution:
@@ -679,6 +679,21 @@ class Solution:
             res = 10 * res + int(c) # 数字拼接
         return sign * res
 
+```
+
+### 4.6 数值的整数次方 (递归+2分)
+
+```python
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        if x == 0: return 0
+        res = 1
+        if n < 0: x, n = 1 / x, -n
+        while n:
+            if n & 1: res *= x
+            x *= x
+            n >>= 1
+        return res
 ```
 
 ## 5. sliding window
