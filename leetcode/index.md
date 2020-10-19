@@ -43,10 +43,8 @@ No. | Question | Flag
 60 | 二叉搜索树的后序遍历序列 `def recur(i, j):` | ❎ 
 61 | 机器人的运动范围 `bfs` good | ✔️ 
 62 | 队列的最大值 |  
-63 | 树的子结构 |  
-64 | 1～n整数中1出现的次数 |  
-65 | 最长不含重复字符的子字符串 |  
-66 | 矩阵中的路径 |  
+65 | 最长不含重复字符的子字符串 `滑动窗口` |  
+66 | 矩阵中的路径 |  ✔️
 68 | 数值的整数次方  （1）当 n 为偶数 （2）当 n 为奇数 | ❎
 70 | 把字符串转换成整数 `int_max, int_min, bndry = 2 ** 31 - 1, -2 ** 31, 2 ** 31 // 10: res > bndry or res == bndry and c > '7'` | ✔️
 71 | 表示数值的字符串： [确定有限状态自动机](https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/solution/biao-shi-shu-zhi-de-zi-fu-chuan-by-leetcode-soluti/) <br> [面试题20. 表示数值的字符串（有限状态自动机，清晰图解）](https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/solution/mian-shi-ti-20-biao-shi-shu-zhi-de-zi-fu-chuan-y-2/) | 
@@ -55,6 +53,7 @@ No. | Question | Flag
  | | 
 72 | 数据流中的中位数 | 
 73 | 序列化二叉树 | 
+64 | 1～n整数中1出现的次数 |  
 74 | 数组中的逆序对 | 
 75 | 正则表达式匹配 | 
 
@@ -88,6 +87,7 @@ No. | Pass Question | Flag
 **pass_medium** |  | 
 52 | 栈的压入、弹出序列 (+stack 辅助) | ❎  
 53 | 剑指 Offer 32 - III. 从上到下打印二叉树 III | ❎ 
+63 | 树的子结构 | ❎  
 67 | 数字序列中某一位的数字 `找规律, pass`  | **NG**
 69 | 剪绳子II | **Not Good**, so pass.
 
