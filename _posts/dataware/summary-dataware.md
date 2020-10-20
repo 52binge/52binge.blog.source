@@ -6,11 +6,10 @@ categories: [data-warehouse]
 tags: [SQL]
 ---
 
-<img src="/images/dataware/sm-data-warehouse-logo-1.jpg" width="550" alt="" />
+<img src="/images/dataware/sm-data-warehouse-logo-1.jpg" width="580" alt="" />
 
 <!-- more -->
 
-https://github.com/blair101/language/blob/master/offer/bishimianshi-20141001.cpp
 
 - [数据仓库（二）](https://www.jianshu.com/p/a145e15dedfc)
 - [数据仓库（一）](https://www.jianshu.com/p/9750703dba28)
@@ -69,7 +68,7 @@ https://github.com/blair101/language/blob/master/offer/bishimianshi-20141001.cpp
 
 **data warehouse 逻辑分层架构：**
 
-<img src="/images/dataware/dw-logic-pic.webp" width="850" alt="" />
+<img src="/images/dataware/dw-summary-pic.jpeg" width="550" alt="" />
 
 ### 1.2 data modeling
 
