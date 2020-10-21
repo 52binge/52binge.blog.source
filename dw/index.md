@@ -276,44 +276,6 @@ JOIN查询仍然可以使用WHERE条件和ORDER BY排序。
 
 - [110道Python面试题](https://zhuanlan.zhihu.com/p/54430650)
 
-### 7. Project
-
-ehxs:
- 
-> 1). info extract
-> 2). Finance
-> 3). Sqoop, Hive, Task Scheduling， Airflow
-> 4). DMP 
-
-
-### 8. Leetcode
-
-**8.1 Array & LinkedList**
-
-<details>
-<summary>1. 约瑟夫环</summary>
-```python
-class Solution:
-    def lastRemaining(self, n: int, m: int) -> int:
-        if n < 1 or m < 1:
-            return None
-            
-        last = 0
-        for i in range(2, n + 1):
-            last = (last + m) % i
-        return last
-```
-</details>
-
-<details>
-<summary>3. 替换空格</summary>
-```python
-class Solution:
-    def replaceSpace(self, s: str) -> str:
-        return s.replace(" ","%20")
-```
-</details>
-
 
 ## Reference
 
