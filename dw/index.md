@@ -1,6 +1,5 @@
 ---
 title: Data WareHouse
-date: 2020-06-12 08:59:48
 ---
 
 OLTP (on-line transaction processing) | OLAP（On-Line Analytical Processing）
