@@ -36,7 +36,7 @@ No. | Question | Flag
 51 | 股票的最大利润 （买卖一次）  <br>`cost, profit = float("+inf"), 0` <br> for price in prices:<br>&nbsp;&nbsp;&nbsp;&nbsp;`cost, profit = min(cost, price), max(profit, price - cost)` |  
 54 | 构建乘积数组 | ❎ 
 55 | **二叉树中和为某一值的路径** <br><br> `if sum == 0 and root.left is None and root.right is None` | <br><br> ✔️ 
-56 | 把数组排成最小的数 |  
+56 | 把数组排成最小的数 `strs.sort(key=cmp_to_key(sort_rule))` | ✔️ 
 57 | 剪绳子 (1) n < 4 (2) n == 4 (3) n > 4, 多个 == 3 段 | ❎ 
 58 | 字符串的排列 `c = list(s) res = [] def dfs(x):` | ❎  
 59 | 把数字翻译成字符串 `f[i] = f[i-1] + f[i-2]` 同 打家劫舍 | ❎  
@@ -662,7 +662,30 @@ class Solution:
         return order
 ```
  
-### 4.5 把字符串转换成整数 
+### 4.5 把数组排成最小的数
+
+```python
+from functools import cmp_to_key
+from typing import List
+
+
+class Solution:
+    def minNumber(self, nums: List[int]) -> str:
+        def sort_rule(x, y):
+            a, b = x + y, y + x
+            if a > b:
+                return 1
+            elif a < b:
+                return -1
+            else:
+                return 0
+
+        strs = [str(num) for num in nums]
+        strs.sort(key=cmp_to_key(sort_rule))
+        return ''.join(strs) 
+ ```
+ 
+### 4.6 把字符串转换成整数 
 
 ```python
 class Solution:
@@ -681,7 +704,7 @@ class Solution:
 
 ```
 
-### 4.6 数值的整数次方 (递归+2分)
+### 4.7 数值的整数次方 (递归+2分)
 
 ```python
 class Solution:
@@ -742,7 +765,14 @@ class Solution:
 
 ```
 
+
 ## Reference
 
+- [成长之路 0607offer](https://blog.csdn.net/qq_24243877)
+- [知乎： [Leetcode][动态规划]相关题目汇总/分析/总结](https://zhuanlan.zhihu.com/p/35707293)
+- [简书： 2019 算法面试相关(leetcode)--动态规划(Dynamic Programming)](https://www.jianshu.com/p/af880bbba792)
+- [CSDN leetcode DP](https://blog.csdn.net/EbowTang/article/details/50791500)
+- [刷完700多题后的首次总结：LeetCode应该怎么刷？](https://blog.csdn.net/fuxuemingzhu/article/details/105183554)
+- [小白一路走来，连续刷题三年，谈谈我的算法学习经验](https://www.cnblogs.com/kubidemanong/p/10996134.html)
 [codebunk.com](https://codebunk.com/b/3421100160572/)
 [《程序员的算法趣题》-开坑记录](https://www.dattyrabbit.cn/articles/2020/08/16/1597576674555.html?utm_source=ld246.com)

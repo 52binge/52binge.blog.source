@@ -1,7 +1,7 @@
 ---
-title: Spark Summary
+title: Summary Spark
 toc: true
-date: 2020-08-31 07:07:21
+date: 2020-09-31 07:07:21
 categories: [spark]
 tags: [spark]
 ---
@@ -18,12 +18,23 @@ tags: [spark]
 
 [Spark中Task数量的分析](https://www.cnblogs.com/upupfeng/p/12385979.html)
 
-## 1. Spark 基础 (3)
+## 1. Spark 基础 (2)
 
-1. spark的有几种部署模式，每种模式特点？ 
-> 1). local  2). standalone 3). Spark on yarn [(yarn-cluster和yarn-client)][1.1]
-2. Spark技术栈有哪些组件，每个组件都有什么功能，适合什么应用场景？
-3. spark有哪些组件
+1）. spark的有几种部署模式，每种模式特点？ 
+
+> 1). local 【启动1~k个executor]】
+> 2). standalone 【分布式部署集群，自带完整的服务，资源管理和任务监控是Spark自己监控】
+> 3). Spark on yarn [(yarn-cluster和yarn-client)][1.1]
+
+> **Spark on yarn模式**
+> 
+> 1. 分布式部署集群，资源和任务监控交给yarn管理
+> 2. 粗粒度资源分配方式，包含cluster和client运行模式
+
+> - cluster 适合生产，driver运行在集群子节点，具有容错功能
+> - client 适合调试，dirver运行在客户端
+
+2）. spark有哪些组件
 
 > - master：管理集群和节点，不参与计算。
 > - worker：计算节点，进程本身不参与计算，和master汇报。
@@ -37,25 +48,21 @@ tags: [spark]
 
 ## 2. Spark运行细节 (13)
 
-1. spark工作机制
-2. Spark应用程序的执行过程
-3. driver的功能是什么？
-4. Spark中Work的主要工作是什么？
-5. task有几种类型？2种
-6. 什么是shuffle，以及为什么需要shuffle？
-7. Spark master HA 主从切换过程不会影响集群已有的作业运行，为什么？
-8. Spark并行度怎么设置比较合适
-9. Spaek程序执行，有时候默认为什么会产生很多task，怎么修改默认task执行个数？
-10. Spark中数据的位置是被谁管理的？
-11. 为什么要进行序列化
-12. Spark如何处理不能被序列化的对象？
+No. | Topic | Flag
+:---: | --- | :---:
+1. | spark工作机制 ?  <br>【`client端提交作业后->Drive,main,SparkContext->DAG...`】 |
+2. | Spark应用程序的执行过程 |
+3. | driver的功能是什么？ 【`作业主进程，有main函数，且有SparkContext的实例`】
+4. | Spark中worker的主要工作是什么？ <br><br>[`管理当前节点内存，CPU使用状况, worker就类似于包工头，管理分配新进程`]
+5. | task有几种类型？2种 【`resultTask 和 shuffleMapTask类型，除了最后一个task都是`】
+6. | 什么是shuffle，以及为什么需要shuffle？ <br><br>【某种具有共同特征的数据汇聚到一个计算节点上进行计算】
+7. | Spark master HA 主从切换过程不会影响集群已有的作业运行，为什么？ <br><br> 【因为程序在运行之前，已经申请过资源了，driver和Executors通讯，不需要和master进行通讯的】
+8. | Spark并行度怎么设置比较合适 【`spark并行度，每个core承载2~4个partition（并行度）`】
+9. | Spark程序执行，有时候默认为什么会产生很多task，怎么修改默认task执行个数？  
+10. | Spark中数据的位置是被谁管理的？ <br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【每个数据分片都对应具体物理位置，数据的位置是被blockManager管理】
+11. | 为什么要进行序列化? <br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【减少存储空间，高效存储和传输数据，缺点：使用时需要反序列化，非常消耗CPU】
+12. | Spark如何处理不能被序列化的对象？ 【封装成object】
 
-## 3. RDD(4)
-
-1. RDD机制
-2. RDD的弹性表现在哪几点？
-3. RDD有哪些缺陷？
-4. 什么是RDD宽依赖和窄依赖？
 
 ### 2.1 spark工作机制
 
@@ -91,10 +98,11 @@ Spark作业运行时包括一个Driver进程，也是作业主进程，有main�
 > 
 > **Process** 进程
 
-### 2.5 task有几种类型？2种
+ **2.4 Spark 程序执行，有时候默认为什么会产生很多task，怎么修改默认task执行个数？**
 
-- resultTask类型，最后一个task
-- shuffleMapTask类型，除了最后一个task都是
+> 1. 有很多小文件的时候，有多少个输入block就会有多少个task启动
+> 2. spark中有partition，每个partition都会对应一个task，task越多，在处理大规模数据的时候，就会越有效率
+
 
 ## 3. Spark 与 Hadoop 比较(7)
 
@@ -237,6 +245,46 @@ shuffle之前进行persist，框架默认将数据持久化到磁盘，这个是
 ### 5.5 reduceByKey是不是action？
 
 不是，很多人都会以为是action，reduce rdd是action
+
+**5.6 collect功能是什么，其底层是怎么实现的？**
+
+driver通过collect把集群中各个节点的内容收集过来汇总成结果
+collect返回结果是Array类型的，合并后Array中只有一个元素，是tuple类型（KV类型的）的。
+
+**5.7 map与flatMap的区别**
+
+map：对RDD每个元素转换，文件中的每一行数据返回一个数组对象
+flatMap：对RDD每个元素转换，然后再扁平化，将所有的对象合并为一个对象，会抛弃值为null的值
+
+**5.8 列举你常用的action？**
+
+collect，reduce,take,count,saveAsTextFile等
+
+
+**5.10 Spark累加器有哪些特点？**
+
+全局的，只增不减，记录全局集群的唯一状态
+在exe中修改它，在driver读取
+executor级别共享的，广播变量是task级别的共享
+两个application不可以共享累加器，但是同一个app不同的job可以共享
+
+**5.11 spark hashParitioner的弊端**
+
+分区原理：对于给定的key，计算其hashCode
+弊端是数据不均匀，容易导致数据倾斜
+
+**5.12 RangePartitioner分区的原理**
+
+尽量保证每个分区中数据量的均匀，而且分区与分区之间是有序的，也就是说一个分区中的元素肯定都是比另一个分区内的元素小或者大
+分区内的元素是不能保证顺序的
+简单的说就是将一定范围内的数映射到某一个分区内
+
+**5.13 Spark中的HashShufle的有哪些不足？**
+
+shuffle产生海量的小文件在磁盘上，此时会产生大量耗时的、低效的IO操作；
+容易导致内存不够用，由于内存需要保存海量的文件操作句柄和临时缓存信息
+容易出现数据倾斜，导致OOM
+
 
 ## 5. Spark 大数据问题(7)
 
