@@ -8,6 +8,8 @@ tags: [python3]
 <img src="/images/python/language/py3-sort-method.png" width="550" alt="" />
 
 
+[为Python类使用”get函数”有什么好处？](https://www.codenong.com/13852279/)
+
 <!-- more -->
 
 ```python
