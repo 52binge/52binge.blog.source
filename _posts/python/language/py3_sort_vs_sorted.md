@@ -7,9 +7,6 @@ tags: [python3]
 
 <img src="/images/python/language/py3-sort-method.png" width="550" alt="" />
 
-
-[为Python类使用”get函数”有什么好处？](https://www.codenong.com/13852279/)
-
 <!-- more -->
 
 ```python
@@ -50,3 +47,6 @@ print(''.join([str(num) for num in L2]))
 
 - [python sort vs sorted](https://realpython.com/python-sort/)
 - [python的getattr（）函数](https://zhuanlan.zhihu.com/p/51370571)
+- [python类的继承](https://www.cnblogs.com/bigberg/p/7182741.html#_label1_2)
+- [为Python类使用”get函数”有什么好处？](https://www.codenong.com/13852279/)
+
