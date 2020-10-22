@@ -34,7 +34,7 @@ tags: [spark]
 > - cluster 适合生产，driver运行在集群子节点，具有容错功能
 > - client 适合调试，dirver运行在客户端
 
-2）. spark有哪些组件
+2）. spark有5个组件 (5)
 
 > - master：管理集群和节点，不参与计算。
 > - worker：计算节点，进程本身不参与计算，和master汇报。
@@ -73,12 +73,56 @@ No. | Topic | Flag
 
 ### 2.2 Spark应用程序的执行过程
 
-> - 构建Spark Application的运行环境（启动SparkContext）
-> - SparkContext向资源管理器（可以是Standalone、Mesos或YARN）注册并申请运行Executor资源；
-> - 资源管理器分配Executor资源，Executor运行情况将随着心跳发送到资源管理器上；
-> - SparkContext构建成DAG图，将DAG图分解成Stage，并把Taskset发送给Task Scheduler
-> - Executor向SparkContext申请Task，Task Scheduler将Task发放给Executor运行，SparkContext将应用程序代码发放给Executor。
-> - Task在Executor上运行，运行完毕释放所有资源
+1 . 构建Spark Application的运行环境（启动SparkContext）
+
+2 . SparkContext向资源管理器（可以是Standalone、Mesos或YARN）注册并申请运行Executor资源；
+
+3 . 资源管理器分配Executor资源，Executor运行情况将随着心跳发送到资源管理器上；
+ 
+> YARN集群管理器会根据我们为Spark作业设置的资源参数，在各个工作节点上，启动一定数量的Executor进程，每个Executor进程都占有一定数量的内存和CPU core。
+
+4 . SparkContext构建成DAG图，将DAG图分解成Stage，并把Taskset发送给Task Scheduler
+5 . Executor向SparkContext申请Task，Task Scheduler将Task发放给Executor运行，SparkContext将应用程序代码发放给Executor。
+6 . Task在Executor上运行，运行完毕释放所有资源
+
+> 在申请到了作业执行所需的资源之后，Driver进程就会开始调度和执行我们编写的作业代码了。
+> 
+> Driver进程会将我们编写的Spark作业代码分拆为多个stage，每个stage执行一部分代码片段，并为每个stage创建一批task，然后将这些task分配到各个Executor进程中执行。
+> 
+> task是最小的计算单元，负责执行一模一样的计算逻辑（也就是我们自己编写的某个代码片段），只是每个task处理的数据不同而已。
+> 
+> 一个stage的所有task都执行完毕之后，会在各个节点本地的磁盘文件中写入计算中间结果，然后Driver就会调度运行下一个stage。
+> 
+> 下一个stage的task的输入数据就是上一个stage输出的中间结果。如此循环往复，直到将我们自己编写的代码逻辑全部执行完，并且计算完所有的数据，得到我们想要的结果为止。
+
+stage的划分
+
+> Spark是根据shuffle类算子来进行stage的划分。如果我们的代码中执行了某个shuffle类算子（比如reduceByKey、join等），那么就会在该算子处，划分出一个stage界限来。可以大致理解为，shuffle算子执行之前的代码会被划分为一个stage，shuffle算子执行以及之后的代码会被划分为下一个stage。因此一个stage刚开始执行的时候，它的每个task可能都会从上一个stage的task所在的节点，去通过网络传输拉取需要自己处理的所有key，然后对拉取到的所有相同的key使用我们自己编写的算子函数执行聚合操作（比如reduceByKey()算子接收的函数）。这个过程就是shuffle。
+
+> 当我们在代码中执行了cache/persist等持久化操作时，根据我们选择的持久化级别的不同，每个task计算出来的数据也会保存到Executor进程的内存或者所在节点的磁盘文件中。
+
+No. | Executor的内存主要分为三块
+--- | ---
+1. | 第一块是让task执行我们自己编写的代码时使用，默认是占Executor总内存的20%；
+2. | 第二块是让task通过shuffle过程拉取了上一个stage的task的输出后，进行聚合等操作时使用，默认也是占Executor总内存的20%；
+3. | 第三块是让RDD持久化时使用，默认占Executor总内存的60%。
+
+[Spark性能优化指南——基础篇](https://tech.meituan.com/2016/04/29/spark-tuning-basic.html)
+
+<img src="/images/spark/spark-basic-run-app.png" width="800" alt="" />
+
+```shell
+./bin/spark-submit \
+  --master yarn-cluster \
+  --num-executors 100 \
+  --executor-memory 6G \
+  --executor-cores 4 \
+  --driver-memory 1G \
+  --conf spark.default.parallelism=1000 \
+  --conf spark.storage.memoryFraction=0.5 \
+  --conf spark.shuffle.memoryFraction=0.3 \
+```
+
 
 ### 2.3 driver的功能是什么？
 
@@ -224,6 +268,8 @@ RDD和它依赖的parent RDD(s)的关系有两种不同的类型
 
 ### 5.1 cache和pesist的区别
 
+> .cache() == .persist(MEMORY_ONLY)
+
 ### 5.2 cache后面能不能接其他算子,它是不是action操作？
 
 可以接其他算子，但是接了算子之后，起不到缓存应有的效果，因为会重新触发cache
@@ -242,16 +288,12 @@ shuffle之前进行persist，框架默认将数据持久化到磁盘，这个是
 - action
 - cronroller，控制算子(cache/persist) 对性能和效率的有很好的支持
 
-### 5.5 reduceByKey是不是action？
-
-不是，很多人都会以为是action，reduce rdd是action
-
-**5.6 collect功能是什么，其底层是怎么实现的？**
+**5.5 collect功能是什么，其底层是怎么实现的？**
 
 driver通过collect把集群中各个节点的内容收集过来汇总成结果
 collect返回结果是Array类型的，合并后Array中只有一个元素，是tuple类型（KV类型的）的。
 
-**5.7 map与flatMap的区别**
+**5.6 map与flatMap的区别**
 
 map：对RDD每个元素转换，文件中的每一行数据返回一个数组对象
 flatMap：对RDD每个元素转换，然后再扁平化，将所有的对象合并为一个对象，会抛弃值为null的值
