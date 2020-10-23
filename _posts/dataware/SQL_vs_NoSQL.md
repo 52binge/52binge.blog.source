@@ -24,6 +24,25 @@ tags: [SQL]
 
 [执行count(1)、count(*) 与 count(列名) 到底有什么区别](https://zhuanlan.zhihu.com/p/89299468)
 
+behavior questions:
+
+> 1. how your manager judge about you during your previous job? 
+> 2. What's your experience about a project that fails, and how would you redo the project? 
+> 3. What's your Advantages and disadvantages in your personality? 
+> 4. What's your best project and why you did better than others in your opinion? 
+> 5. What's your plan about your future career? 
+
+tech questions:
+
+> 1. a problem of **top k problem** 
+> 2. RMDB vs NoSQL DB
+> 3. Why distributed NoSQL DB cannot always support transaction?
+> 4. Level traverse a binary tree in an online white board.  
+> 5. random questions about **spark, hadoop** etc
+> 6. **How os' thread works?**
+> 7. **General DWH concepts, Spark internals, mapreduce**
+> 8. Explain the **map reduce paradigm**
+
 ## Reference
 
 - [什么是事务？事务的四个特性以及事务的隔离级别](https://cloud.tencent.com/developer/article/1133074)
