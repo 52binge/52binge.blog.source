@@ -1,4 +1,12 @@
-数据清理中，处理缺失值的方法是?
+---
+title: 数据清理中，处理缺失值的方法是?
+date: 2019-08-10 10:06:16
+categories: machine-learning
+tags: [estimation]
+toc: true
+---
+
+<img class="img-fancy" src="/images/ml/metric/data-pre-processing.jpg" width="600" border="0" alt="data pre-processing"/>
 
 > 由于调查、编码和录入误差，数据中可能存在一些无效值和缺失值，需要给予适当的处理。常用的处理方法有：估算，整例删除，变量删除和成对删除。
 
