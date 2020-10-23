@@ -330,6 +330,17 @@ shuffle产生海量的小文件在磁盘上，此时会产生大量耗时的、�
 
 ## 5. Spark 大数据问题(7)
 
+No. | Title
+--- | ---
+1. | [如何使用Spark解决TopN问题？](https://blog.csdn.net/oopsoom/article/details/25815443)
+2. | [如何使用Spark解决分组排序问题？](https://blog.csdn.net/huitoukest/article/details/51273143) `lines.groupByKey(), values.toList.sortWith`
+3. | [给定a、b两个文件，各存放50亿个url，每个url各占64字节，内存限制是4G，让你找出a、b文件共同的url?](https://www.jianshu.com/p/7a8fca3838a4) <br><br> Solution： 划分小文件 `Hash` &  `Bloomfilter`
+4. | 有一个1G大小的一个文件，里面每一行是一个词，词的大小不超过16字节，内存限制大小是1M，要求返回频数最高的100个词 <br><br> (1). hash(x)%5000 5000个小文件 <br>(2). 统计每个小文件词频
+5. | 现有海量日志数据保存在一个超级大的文件中，该文件无法直接读入内存，要求从中提取某天出访问百度次数最多的那个IP &nbsp;&nbsp;&nbsp;&nbsp;`分而治之+Hash, Hash(IP)%1024`
+6. | 在2.5亿个整数中找出不重复的整数，注，内存不足以容纳这2.5亿个整数 <br><br> 方案1：采用2-Bitmap <br> 方案2：划分小文件,在小文件中找出不重复的整数，并排序。然后再进行归并，注意去除重复的元素
+7. | 腾讯面试题：给40亿个不重复的unsignedint的整数，没排过序的，然后再给一个数，如何快速判断这个数是否在那40亿个数当中? <br><br> 申请512M的内存，一个bit位代表一个unsignedint值。读入40亿个数，设置相应的bit位，读入要查询的数，查看相应bit位是否为1，为1表示存在，为0表示不存在
+
+
 ## Reference
 
 - [Spark知识点汇总](https://www.jianshu.com/p/7a8fca3838a4)
