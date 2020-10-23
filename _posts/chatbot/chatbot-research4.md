@@ -1,7 +1,7 @@
 ---
 title: Chatbot Research 4 - 深度学习知识回顾
 toc: true
-date: 2017-08-14 14:00:21
+date: 2018-08-14 14:00:21
 categories: chatbot
 tags: Chatbot
 mathjax: true
