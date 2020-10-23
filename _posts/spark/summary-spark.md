@@ -10,13 +10,13 @@ tags: [spark]
 
 <!-- more -->
 
-[Hadoop（六）MapReduce的入门与运行原理](https://www.cnblogs.com/frankdeng/p/9311438.html)
-
-[2020 大数据/数仓/数开 Interview Questions](https://mp.weixin.qq.com/s/pwyus1xfX7QAz5MtecveZw)
-
-[very good Spark原理篇之RDD特征分析讲解](https://blog.csdn.net/huahuaxiaoshao/article/details/90744552)
-
-[Spark中Task数量的分析](https://www.cnblogs.com/upupfeng/p/12385979.html)
+No. | Title | Article
+:---: | --- | ---
+1. | 蓦然大数据开发| [知乎， 公众号：旧时光大数据](https://www.zhihu.com/people/ai-yo-ai-yo-33-50/posts)
+2. | 蓦然大数据开发 | [大数据Hadoop（三）——MapReduce](https://zhuanlan.zhihu.com/p/97714898)
+3. | Data Warehouse | [2020 大数据/数仓/数开 Interview Questions](https://mp.weixin.qq.com/s/pwyus1xfX7QAz5MtecveZw)
+4. | Spark RDD | [very good Spark原理篇之RDD特征分析讲解](https://blog.csdn.net/huahuaxiaoshao/article/details/90744552)
+5. | Spark Task | [Spark中Task数量的分析](https://www.cnblogs.com/upupfeng/p/12385979.html)
 
 ## 1. Spark 基础 (2)
 
@@ -342,6 +342,10 @@ No. | Title
 
 
 ## Reference
+
+[大数据Hadoop面试题（三）——MapReduce](https://zhuanlan.zhihu.com/p/97714898)
+
+---
 
 - [Spark知识点汇总](https://www.jianshu.com/p/7a8fca3838a4)
 - [Spark总结(一) 知乎](https://zhuanlan.zhihu.com/p/49169166)
