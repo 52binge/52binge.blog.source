@@ -27,21 +27,21 @@ Spark-2.x | SparkSQL+DataFrame+DataSet(正式版本), 引入 SparkSession 统一
 [SparkSQL学习（一）SparkSQL简单使用](https://blog.csdn.net/qq_41851454/article/details/80188528)
 [SparkSQL学习 1 2 3](https://blog.csdn.net/qq_41851454/category_7640711.html)
 
-SparkSQL是Spark的一个模块，主要用于进行结构化数据的处理。它提供的最核心的编程抽象就是DataFrame.
+**SparkSQL** 是 Spark的一个模块，主要用于进行`结构化数据的处理`。它提供的最核心的编程抽象就是DataFrame.
 
 **原理**： 将SparkSQL 转化为 RDD ，然后提交到集群执行
 
-No. | Description
-:---: | :---
-原理 | 将SparkSQL 转化为 RDD ，然后提交到集群执行
-作用 | 提供一个编程抽象（DataFrame）并且作为分布式SQL查询引擎。 <br> DataFrame 可据很多源进行构建，包括：结构化的数据文件，Hive中的表，外部的关系型数据库，以及RDD 
-特点 | 1. 容易整合 <br> 2. 统一的数据访问方式 <br> 3. 兼容Hive <br> 4. 标准的数据连接
+No. | &nbsp;&nbsp;Title&nbsp;&nbsp; | Description
+:---: | :---: | :---
+1. | 原理 | 将 SparkSQL 转化为 RDD ，然后提交到集群执行
+2. | 作用 | 提供一个编程抽象（DataFrame）并且作为分布式SQL查询引擎。 <br> DataFrame 可据很多源进行构建，包括：结构化的数据文件，Hive中的表，MYSQL，以及RDD 
+<br>3. | <br>特点 | 1. 容易整合 <br> 2. 统一的数据访问方式 <br> 3. 兼容Hive <br> 4. 标准的数据连接
 
 ## 2. SparkSQL 的编程入口
 
 **SparkSession:**
 
-> 1. 为用户提供一个统一的切入点使用Spark 各项功能
+> 1. 为用户提供一个统一的切入点使用 Spark 各项功能
 > 2. 允许用户通过它调用 DataFrame 和 Dataset 相关 API 来编写程序
 > 3. 减少了用户需要了解的一些概念，可以很容易的与 Spark 进行交互
 > 4. 与 Spark 交互之时不需要显示的创建 SparkConf, SparkContext 以及 SQlContext，这些对象已经封闭在 SparkSession 中
@@ -82,7 +82,7 @@ spark = SparkSession \
 
 ### 3.1 DataFrames
 
-在Spark中，DataFrame是一种以RDD为基础的分布式数据集，类似于传统数据库中的二维表格。DataFrame与RDD的主要区别在于，前者带有schema元信息，即DataFrame所表示的二维表数据集的每一列都带有名称和类型。这使得Spark SQL得以洞察更多的结构信息，从而对藏于DataFrame背后的数据源以及作用于DataFrame之上的变换进行了针对性的优化，最终达到大幅提升运行时效率的目标，反观RDD，由于无从得知所存数据元素的具体内部结构，Spark Core只能在stage层面进行简单、通用的流水线优化。
+在Spark中，DataFrame是一种以RDD为基础的分布式数据集，类似于传统数据库中的二维表格。DataFrame与RDD的主要区别在于，前者带有schema元信息，即DataFrame所表示的二维表数据集的每一列都带有名称和类型。这使得Spark SQL得以洞察更多的结构信息，从而对藏于DataFrame背后的数据源以及作用于DataFrame之上的变换进行了针对性的优化，最终达到大幅提升运行时效率的目标，`反观RDD，由于无从得知所存数据元素的具体内部结构，Spark Core只能在stage层面进行简单、通用的流水线优化`。
 
 <img src="/images/spark/spark-aura-9.3.1.png" width="700" alt="" />
 
@@ -108,7 +108,7 @@ id | name |sex
 :---: | :---: | :---:
 1 | huangbo | 男
 
-在 Spark1.3 之前, DataFrame 被称为 SchemaRDD。 以行为单位构成的分布式数据集合，按照列赋予不同的名称。对于 select，fileter，aggregation 和 sort 等操作符的抽象.
+在 Spark1.3 之前, DataFrame 被称为 SchemaRDD。 以行为单位构成的分布式数据集合，按照列赋予不同的名称。对于 select，filter，aggregation 和 sort 等操作符的抽象.
 
 DataFrame = RDD + Schema = SchemaRDD， 内部数据无类型，统一为 Row |
 :--- | :---: 

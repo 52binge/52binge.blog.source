@@ -17,6 +17,44 @@ No. | Title | Article
 3. | Data Warehouse | [2020 大数据/数仓/数开 Interview Questions](https://mp.weixin.qq.com/s/pwyus1xfX7QAz5MtecveZw)
 4. | Spark RDD | [very good Spark原理篇之RDD特征分析讲解](https://blog.csdn.net/huahuaxiaoshao/article/details/90744552)
 5. | Spark Task | [Spark中Task数量的分析](https://www.cnblogs.com/upupfeng/p/12385979.html)
+6. | Spark 腾讯总结 | [Spark 腾讯计算机组总结(一)](https://zhuanlan.zhihu.com/p/49169166)
+| | |
+| | **Spark性能优化指南** |
+1. | dev | [Spark性能优化指南——基础篇](https://tech.meituan.com/2016/04/29/spark-tuning-basic.html)
+2. | shuffle | [Spark性能优化指南——高级篇（8）](https://tech.meituan.com/2016/05/12/spark-tuning-pro.html) 
+| | **蓦然大数据开发**  |
+1. | Spark | [大数据Spark题（一）](https://zhuanlan.zhihu.com/p/107354908) 
+2. | Spark | [大数据Spark题（二）](https://zhuanlan.zhihu.com/p/107355676) 
+3. | Spark | [大数据Spark题（三）](https://zhuanlan.zhihu.com/p/107358759) 
+4. | Spark | [大数据Spark题（四）](https://zhuanlan.zhihu.com/p/107359082) 
+5. | Spark | [大数据Spark题（五）— 几种常见的数据倾斜情况及调优方式](https://zhuanlan.zhihu.com/p/107359523) 
+6. | Spark | [大数据Spark题（六）— Shuffle配置调优](https://zhuanlan.zhihu.com/p/107365488) 
+7. | Spark | [大数据Spark题（七）— 程序开发调优](https://zhuanlan.zhihu.com/p/107366035)
+8. | Spark | [大数据Spark题（八）— 运行资源调优](https://zhuanlan.zhihu.com/p/107367271)
+
+## 0. Top Questions
+
+**1. spark的优化怎么做？ （☆☆☆☆☆）**
+
+spark调优比较复杂，但是大体可以分为三个方面来进行
+
+No. | Title | Answer
+:---: | --- | ---
+1 | Platform| 防止不必要的jar包分发，提高数据的本地性，选择高效的存储格式如**parquet**
+2 | Application | 过滤操作符的优化降低过多小任务，降低单条记录的资源开销，处理数据倾斜，复用RDD进行缓存，作业并行化执行等等
+3 | JVM 层面 | 设置合适的资源量，设置合理的JVM，启用高效的序列化方法如kyro，增大off head内存等等
+
+**2. 介绍一下join操作优化经验？（☆☆☆☆☆）**
+
+
+No. | Spark性能优化指南—高级篇(8) | 优缺点
+:---: | --- | :---:
+1. | Hive ETL预处理数据 | 治标不治本，Hive ETL中还是会发生数据倾斜
+2. | 过滤少数导致倾斜的key | 适用场景不多，大多情况:导致倾斜的key还是多的，并不是少数
+<br>3. | <br>提高shuffle操作的并行度 | reduceByKey(1000) <br>spark.sql.shuffle.partitions，shuffle task的并行度，默认200 <br><br> 总结：实现起来简单，可以缓解和减轻 Data Skew 的影响
+4. | 两阶段聚合（局部聚合+全局聚合） 
+5. | 将reduce join转为map join | 这个方案只适用1个大表和1个小表情况。需将小表进行广播
+6. | 采样倾斜key并分拆join操作
 
 ## 1. Spark 基础 (2)
 
