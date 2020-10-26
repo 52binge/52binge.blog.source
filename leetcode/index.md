@@ -13,14 +13,14 @@ No. | Question | Flag
 &nbsp; | [2.1 字符串解码 [a]2[bc]](https://leetcode-cn.com/problems/decode-string/)
 &nbsp; | s = "3[a]2[bc]"
 (3). | Digit 
- &nbsp; | [3.1 回文数](https://leetcode-cn.com/problems/palindrome-number/)
+ &nbsp; | [3.1 回文数](https://leetcode-cn.com/problems/palindrome-number/)  &nbsp;&nbsp;&nbsp;&nbsp;模拟 123321 -> 2332 -> 33 | ❎
 (4). | DP 
-&nbsp; | [4.1 栅栏涂色](https://leetcode-cn.com/problems/paint-fence/)
+&nbsp; | [4.1 栅栏涂色](https://leetcode-cn.com/problems/paint-fence/) &nbsp;&nbsp; `dp[i] = dp[i-2]*(k-1) + dp[i-1]*(k-1)`
 &nbsp; | [4.2 区域和检索](https://leetcode-cn.com/problems/range-sum-query-immutable/)
 &nbsp; | [4.3 零钱兑换](https://leetcode-cn.com/problems/coin-change/)
-&nbsp; | [4.4 除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/)
+&nbsp; | [4.4 除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/) | ❎
 (5). | hash 
-&nbsp; | [5.1 两数之和](https://leetcode-cn.com/problems/two-sum/)
+&nbsp; | [5.1 两数之和](https://leetcode-cn.com/problems/two-sum/) | ❎
 (6). | linkedList 
 - | [6.1 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/) | ❎
 - | [6.2 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/) 
