@@ -4,8 +4,8 @@ title: Coding
 
 <!--# [Sea](https://leetcode-cn.com/company/shopee/)-->
 
-No. | Question
-:---: | ---
+No. | Question | Flag
+:---: | --- | :---:
 (1). | **binary-search** 
 &nbsp; | [1.1 二分查找](https://leetcode-cn.com/problems/binary-search/)
 &nbsp; | [1.2 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
@@ -26,7 +26,7 @@ No. | Question
 - | [6.2 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/)
 - | [6.3 两数相加](https://leetcode-cn.com/problems/add-two-numbers/)
 - | [6.4 复制带随机指针的链表](https://leetcode-cn.com/problems/copy-list-with-random-pointer/)
-- | [6.5 LRUCache](https://leetcode-cn.com/company/shopee/)
+- | [6.5 LRUCache](https://leetcode-cn.com/company/shopee/) | class DLinkedNode
 - | [6.6 删除链表的倒数第N个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/)
 - | [6.7 排序链表](https://leetcode-cn.com/problems/sort-list/)
 (7). | stack 
