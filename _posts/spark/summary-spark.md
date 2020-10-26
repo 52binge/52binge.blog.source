@@ -18,6 +18,7 @@ No. | Title | Article
 4. | Spark RDD | [very good Spark原理篇之RDD特征分析讲解](https://blog.csdn.net/huahuaxiaoshao/article/details/90744552)
 5. | Spark Task | [Spark中Task数量的分析](https://www.cnblogs.com/upupfeng/p/12385979.html)
 6. | Spark 腾讯总结 | [Spark 腾讯计算机组总结(一)](https://zhuanlan.zhihu.com/p/49169166)
+7. | 大数据学习指南 | [Github 大数据学习指南](https://github.com/Dr11ft/BigDataGuide/)
 | | |
 | | **Spark性能优化指南** |
 1. | dev | [Spark性能优化指南——基础篇](https://tech.meituan.com/2016/04/29/spark-tuning-basic.html)
@@ -44,17 +45,75 @@ No. | Title | Answer
 2 | Application | 过滤操作符的优化降低过多小任务，降低单条记录的资源开销，处理数据倾斜，复用RDD进行缓存，作业并行化执行等等
 3 | JVM 层面 | 设置合适的资源量，设置合理的JVM，启用高效的序列化方法如kyro，增大off head内存等等
 
-**2. 介绍一下join操作优化经验？（☆☆☆☆☆）**
+> Lineage
 
+**2. Spark性能优化指南—高级篇(8) （☆☆☆☆☆）**
+
+Data Skew 发生的原理
+
+> Data Skew 的原理很简单：在进行shuffle的时候，必须将各个节点上相同的**key**拉取到某个节点上的一个task来进行处理，比如**按照key进行聚合或join等操作**。此时如果某个**key**对应的数据量特别大的话，就会发生 Data Skew。
 
 No. | Spark性能优化指南—高级篇(8) | 优缺点
 :---: | --- | :---:
 1. | Hive ETL预处理数据 | 治标不治本，Hive ETL中还是会发生数据倾斜
 2. | 过滤少数导致倾斜的key | 适用场景不多，大多情况:导致倾斜的key还是多的，并不是少数
 <br>3. | <br>提高shuffle操作的并行度 | reduceByKey(1000) <br>spark.sql.shuffle.partitions，shuffle task的并行度，默认200 <br><br> 总结：实现起来简单，可以缓解和减轻 Data Skew 的影响
-4. | 两阶段聚合（局部聚合+全局聚合） 
+4. | <br> 两阶段聚合（局部聚合+全局聚合） | 随机前缀=>原1个Task的数据，现分多Task, 后去掉前缀, 在全局聚合 <br><br>  仅仅适用于聚合类的shuffle操作，适用范围相对较窄
 5. | 将reduce join转为map join | 这个方案只适用1个大表和1个小表情况。需将小表进行广播
-6. | 采样倾斜key并分拆join操作
+6. | 采样倾斜key并分拆join操作 | 如果导致倾斜的key特别多的话，，那么这种方式也不适合
+7. | 使用随机前缀和扩容RDD进行join | 该方案更多的是缓解数据倾斜，而不是彻底避免数据倾斜。<br> 而且需要对整个RDD进行扩容，对内存资源要求很高
+8. | 多种方案组合使用 | 
+
+No. | 调优概述
+:---: | :---:
+1. | 大多数Spark作业的性能主要就是消耗在了shuffle环节，因为该环节包含了大量的磁盘IO、序列化、网络数据传输等操作。因此，如果要让作业的性能更上一层楼，就有必要对shuffle过程进行调优。但是也必须提醒大家的是，影响一个Spark作业性能的因素，主要还是`代码开发、资源参数以及数据倾斜`，shuffle调优只能在整个Spark的性能调优中占到一小部分而已。因此大家务必把握住调优的基本原则，千万不要舍本逐末。下面我们就给大家详细讲解shuffle的原理，以及相关参数的说明，同时给出各个参数的调优建议。
+2. | [shuffle相关参数调优](https://tech.meituan.com/2016/05/12/spark-tuning-pro.html)
+
+
+将reduce join转为map join:
+
+```java
+// 首先将数据量比较小的RDD的数据，collect到Driver中来。
+List<Tuple2<Long, Row>> rdd1Data = rdd1.collect()
+// 然后使用Spark的广播功能，将小RDD的数据转换成广播变量，这样每个Executor就只有一份RDD的数据。
+// 可以尽可能节省内存空间，并且减少网络传输性能开销。
+final Broadcast<List<Tuple2<Long, Row>>> rdd1DataBroadcast = sc.broadcast(rdd1Data);
+```
+
+**3. RDD的弹性表现在哪几点？（☆☆☆☆☆）**
+
+1）自动的进行内存和磁盘的存储切换；
+2）基于Lineage的高效容错；
+3）task如果失败会自动进行特定次数的重试；
+4）stage如果失败会自动进行特定次数的重试，而且只会计算失败的分片；
+5）checkpoint和persist，数据计算之后持久化缓存；
+6）数据调度弹性，DAG TASK调度和资源无关；
+7）数据分片的高度弹性。
+
+**4. Spark 开发调优 （☆☆☆☆☆）**
+
+No. | Spark性能优化指南—基础篇(8) | 优缺点
+:---: | --- | :---:
+&nbsp;**开发调优 1 ~ 3:** 重复利用一个RDD | 重复利用一个RDD
+:---- | :---:
+(1). 避免创建重复 RDD  |
+(2). 尽可能复用同一个 RDD |
+(3). 对多次使用的 RDD 进行持久化 |
+**开发调优 4 ~ 6:** 提高任务处理的性能 | **提高任务处理的性能**
+(4). 尽量避免使用 shuffle 类算子 |
+(5). 使用 map-side 预聚合的 shuffle 操作 |
+(6). 使用高性能算子 |
+ | 
+(7). 广播大变量  (减轻网络负担) |
+(8). 使用 Kryo 优化序列化性能 |
+(9). 优化数据结构 |
+
+> 总结： 如果说有某一个 RDD 会在一个程序中被多次使用，那么就应该不要重复创建，要多次使用这一个RDD (不可变的)，既然要重复利用一个RDD，就应该把这个 RDD 进行持久化. （最好在内存中）
+>
+> cache persist 持久化数据到磁盘或内存 unpersist
+> 如何把持久化到磁盘或内存中的数据给删除掉呢？
+> 
+> rdd.
 
 ## 1. Spark 基础 (2)
 
