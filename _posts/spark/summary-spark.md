@@ -45,7 +45,7 @@ No. | Title | Answer
 2 | Application | 过滤操作符的优化降低过多小任务，降低单条记录的资源开销，处理数据倾斜，复用RDD进行缓存，作业并行化执行等等
 3 | JVM 层面 | 设置合适的资源量，设置合理的JVM，启用高效的序列化方法如kyro，增大off head内存等等
 
-> Lineage
+> Lineage, cognitive ability
 
 **2. Spark性能优化指南—高级篇(8) （☆☆☆☆☆）**
 

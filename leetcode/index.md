@@ -6,42 +6,42 @@ title: Coding
 
 No. | Question | Flag
 :---: | --- | :---:
-(1). | **binary-search** 
+(1). | **binary-search** |
 &nbsp; | [1.1 二分查找](https://leetcode-cn.com/problems/binary-search/) | ❎
 &nbsp; | [1.2 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | ❎
-(2). | DFS 
-&nbsp; | [2.1 字符串解码 [a]2[bc]](https://leetcode-cn.com/problems/decode-string/)
-&nbsp; | s = "3[a]2[bc]"
-(3). | Digit 
+(2). | DFS |
+&nbsp; | [2.1 字符串解码 [a]2[bc]](https://leetcode-cn.com/problems/decode-string/) |
+&nbsp; | s = "3[a]2[bc]" |
+(3). | Digit |
  &nbsp; | [3.1 回文数](https://leetcode-cn.com/problems/palindrome-number/)  &nbsp;&nbsp;&nbsp;&nbsp;模拟 123321 -> 2332 -> 33 | ❎
-(4). | DP 
-&nbsp; | [4.1 栅栏涂色](https://leetcode-cn.com/problems/paint-fence/) &nbsp;&nbsp; `dp[i] = dp[i-2]*(k-1) + dp[i-1]*(k-1)`
-&nbsp; | [4.2 区域和检索](https://leetcode-cn.com/problems/range-sum-query-immutable/)
-&nbsp; | [4.3 零钱兑换](https://leetcode-cn.com/problems/coin-change/)
+(4). | DP |
+&nbsp; | [4.1 栅栏涂色](https://leetcode-cn.com/problems/paint-fence/) &nbsp;&nbsp; `dp[i] = dp[i-2]*(k-1) + dp[i-1]*(k-1)` | ✔️
+&nbsp; | [4.2 区域和检索](https://leetcode-cn.com/problems/range-sum-query-immutable/) | ❎
+&nbsp; | [4.3 Coin Change [零钱兑换]](https://leetcode-cn.com/problems/coin-change/) &nbsp;&nbsp;   `dp[x] = min(dp[x], dp[x - coin] + 1)` <br><br> $F(i)= min\_{j=0…n−1} F(i−c\_j)+1$ `dp = [float('inf')] * (amount + 1)` | ✔️
 &nbsp; | [4.4 除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/) | ❎
-(5). | hash 
+(5). | hash |
 &nbsp; | [5.1 两数之和](https://leetcode-cn.com/problems/two-sum/) | ❎
-(6). | linkedList 
-- | [6.1 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/) | ❎
-- | [6.2 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/) 
-- | [6.3 两数相加](https://leetcode-cn.com/problems/add-two-numbers/)
-- | [6.4 复制带随机指针的链表](https://leetcode-cn.com/problems/copy-list-with-random-pointer/)
+(6). | linkedList |
+- | [6.1 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/) `romantic` | ❎
+- | [6.2 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/) `hash` | ❎
+- | [6.3 两数相加](https://leetcode-cn.com/problems/add-two-numbers/) `LinkNode 模拟`| ❎
+- | [6.4 复制带随机指针的链表](https://leetcode-cn.com/problems/copy-list-with-random-pointer/) ✔️ | ❎
 - | [6.5 LRUCache](https://leetcode-cn.com/company/shopee/) class DLinkedNode | ✔️
 - | [6.6 删除链表的倒数第N个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/) | ❎
-- | [6.7 排序链表](https://leetcode-cn.com/problems/sort-list/)
-(7). | stack 
-- | [7.1 有效的括号](https://leetcode-cn.com/problems/valid-parentheses/)
-(8). | string 
-- | [8.1 字符串相加](https://leetcode-cn.com/problems/add-strings/)
-- | [8.2 比较版本号](https://leetcode-cn.com/problems/compare-version-numbers/)
-- | [8.3 字符串解码](https://leetcode-cn.com/problems/decode-string/)
-- | [8.4 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
-- | [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/)
-- | [8.6 全排列](https://leetcode-cn.com/problems/permutations/)
-(9). | tree 
-- | [9.1 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
-- | [9.2 二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
-- | [9.3 二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/)
+- | [6.7 排序链表](https://leetcode-cn.com/problems/sort-list/) | ✔️
+(7). | stack |
+- | [7.1 有效的括号](https://leetcode-cn.com/problems/valid-parentheses/) |
+(8). | string |
+- | [8.1 字符串相加](https://leetcode-cn.com/problems/add-strings/) |
+- | [8.2 比较版本号](https://leetcode-cn.com/problems/compare-version-numbers/) |
+- | [8.3 字符串解码](https://leetcode-cn.com/problems/decode-string/) |
+- | [8.4 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) |
+- | [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) |
+- | [8.6 全排列](https://leetcode-cn.com/problems/permutations/) |
+(9). | tree |
+- | [9.1 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) |
+- | [9.2 二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) |
+- | [9.3 二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/) |
 
 
 ```
@@ -52,6 +52,44 @@ No. | Question | Flag
 # 1 5 8 5 1 3 4 6 7
 ```
 
+--- 
+
+very good good:
+
+```python
+# -*- coding: utf-8 -*-
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+# 在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。
+#
+# 示例 1:
+#
+# 输入: 4->2->1->3
+# 输出: 1->2->3->4
+class Solution:
+    def sortList(self, head: ListNode) -> ListNode:
+        if not head or not head.next: return head # termination.
+        # cut the LinkedList at the mid index.
+        slow, fast = head, head.next
+        while fast and fast.next:
+            fast, slow = fast.next.next, slow.next
+        mid, slow.next = slow.next, None # save and cut.
+        # recursive for cutting.
+        left, right = self.sortList(head), self.sortList(mid)
+        # merge `left` and `right` linked list and return it.
+        h = res = ListNode(0)
+        while left and right:
+            if left.val < right.val: h.next, left = left, left.next
+            else: h.next, right = right, right.next
+            h = h.next
+        h.next = left if left else right
+        return res.next
+
+```
 
 # [剑指](https://leetcode-cn.com/problemset/lcof/)
 
