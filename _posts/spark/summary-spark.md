@@ -12,6 +12,7 @@ tags: [spark]
 
 No. | Title | Article
 :---: | --- | ---
+0. | 大数据杀招 | [Spark高频](https://mp.weixin.qq.com/s/UPtxoGWZIvPE0KHoOs_tBw)
 1. | 蓦然大数据开发| [知乎， 公众号：旧时光大数据](https://www.zhihu.com/people/ai-yo-ai-yo-33-50/posts)
 2. | 蓦然大数据开发 | [大数据Hadoop（三）——MapReduce](https://zhuanlan.zhihu.com/p/97714898)
 3. | Data Warehouse | [2020 大数据/数仓/数开 Interview Questions](https://mp.weixin.qq.com/s/pwyus1xfX7QAz5MtecveZw)
