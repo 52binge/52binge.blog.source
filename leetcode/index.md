@@ -30,14 +30,14 @@ No. | Question | Flag
 - | [6.6 删除链表的倒数第N个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/) | ❎
 - | [6.7 排序链表](https://leetcode-cn.com/problems/sort-list/) | ✔️
 (7). | stack |
-- | [7.1 有效的括号](https://leetcode-cn.com/problems/valid-parentheses/) |
+- | [7.1 有效的括号](https://leetcode-cn.com/problems/valid-parentheses/) `if i == ')' and len(stack)> 0 and stack[-1] == '(': stack.pop()` | ❎
 (8). | string |
-- | [8.1 字符串相加](https://leetcode-cn.com/problems/add-strings/) |
-- | [8.2 比较版本号](https://leetcode-cn.com/problems/compare-version-numbers/) |
-- | [8.3 字符串解码](https://leetcode-cn.com/problems/decode-string/) |
-- | [8.4 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) |
-- | [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) |
-- | [8.6 全排列](https://leetcode-cn.com/problems/permutations/) |
+- | [8.1 字符串相加](https://leetcode-cn.com/problems/add-strings/) 给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和 | ✔️ 
+- | [8.2 比较版本号](https://leetcode-cn.com/problems/compare-version-numbers/) | ❎
+- | ~~[8.3 字符串解码](https://leetcode-cn.com/problems/decode-string/)~~ | ❎
+- | [8.4 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) sliding window | ✔️
+- | [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) ， 模拟复杂 [见题解](https://leetcode-cn.com/problems/next-greater-element-iii/solution/xia-yi-ge-geng-da-yuan-su-iii-by-leetcode/) | ✔️
+- | [8.6 全排列](https://leetcode-cn.com/problems/permutations/) | ❎
 (9). | tree |
 - | [9.1 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) |
 - | [9.2 二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) |
@@ -89,6 +89,61 @@ class Solution:
         h.next = left if left else right
         return res.next
 
+```
+
+字符串相加
+
+```python
+class Solution:
+    def addStrings(self, num1: str, num2: str) -> str:
+
+        num1 = "".join(list(reversed(num1)))
+        num2 = "".join(list(reversed(num2)))
+
+        diff2 = len(num1) - len(num2)
+
+        diff1 = diff2 * -1
+
+        num1 = num1 + ("0" * diff1)
+        num2 = num2 + ("0" * diff2)
+
+        res = ""
+        carry = 0
+
+        for i in range(len(num1)):
+            d1 = int(num1[i])
+            d2 = int(num2[i])
+
+            tmp = carry + d1 + d2
+            res += str(tmp % 10)
+
+            carry = tmp // 10
+
+        if carry > 0:
+            res += str(carry % 10)
+
+        return "".join(list(reversed(res)))
+```
+
+无重复字符的最长子串
+
+```python
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        # 哈希集合，记录每个字符是否出现过
+        occ = set()
+        n = len(s)
+
+        r = -1 # rk init -1
+        ans = 0
+
+        for l in range(n):
+            if l != 0:
+                occ.remove(s[l-1])
+
+            while r+1 < n and s[r+1] not in occ:
+                occ.add(s[r+1])
+                r += 1
 ```
 
 # [剑指](https://leetcode-cn.com/problemset/lcof/)
