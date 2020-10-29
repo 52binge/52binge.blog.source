@@ -11,7 +11,7 @@ No. | Question | Flag
 &nbsp; | [1.2 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | ❎
 (2). | DFS |
 &nbsp; | [2.1 字符串解码 [a]2[bc]](https://leetcode-cn.com/problems/decode-string/) |
-&nbsp; | s = "3[a]2[bc]" |
+&nbsp; | s = "3[a]2[bc]" | ✔️
 (3). | Digit |
  &nbsp; | [3.1 回文数](https://leetcode-cn.com/problems/palindrome-number/)  &nbsp;&nbsp;&nbsp;&nbsp;模拟 123321 -> 2332 -> 33 | ❎
 (4). | DP |
@@ -39,9 +39,9 @@ No. | Question | Flag
 - | [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) ， 模拟复杂 [见题解](https://leetcode-cn.com/problems/next-greater-element-iii/solution/xia-yi-ge-geng-da-yuan-su-iii-by-leetcode/) | ✔️
 - | [8.6 全排列](https://leetcode-cn.com/problems/permutations/) | ❎
 (9). | tree |
-- | [9.1 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) |
-- | [9.2 二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) |
-- | [9.3 二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/) |
+- | [9.1 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) `i = inorder.index(preorder[0])` | ❎
+- | [9.2 二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) `while while` | ❎
+- | [9.3 二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/) | ❎
 
 
 ```
@@ -52,7 +52,27 @@ No. | Question | Flag
 # 1 5 8 5 1 3 4 6 7
 ```
 
---- 
+---
+
+字符串解码 
+
+```python
+class Solution:
+    def decodeString(self, s: str) -> str:
+        stack, res, multi = [], "", 0
+        for c in s:
+            if c == '[':
+                stack.append([multi, res])
+                res, multi = "", 0
+            elif c == ']':
+                cur_multi, last_res = stack.pop()
+                res = last_res + cur_multi * res
+            elif '0' <= c <= '9':
+                multi = multi * 10 + int(c)            
+            else:
+                res += c
+        return res
+``` 
 
 very good good:
 
@@ -144,6 +164,34 @@ class Solution:
             while r+1 < n and s[r+1] not in occ:
                 occ.add(s[r+1])
                 r += 1
+```
+
+二叉树的中序遍历
+
+```python
+class Solution:
+
+    def __init__(self):
+        self.res = []
+
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        if not root:
+            return []
+
+        stack = list()
+
+        while stack or root:
+            while root:
+                stack.append(root)
+                root = root.left
+
+            root = stack.pop()
+
+            self.res.append(root.val)
+
+            root = root.right
+
+        return self.res
 ```
 
 # [剑指](https://leetcode-cn.com/problemset/lcof/)
