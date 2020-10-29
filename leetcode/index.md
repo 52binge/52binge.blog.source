@@ -10,8 +10,8 @@ No. | Question | Flag
 &nbsp; | [1.1 二分查找](https://leetcode-cn.com/problems/binary-search/) | ❎
 &nbsp; | [1.2 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | ❎
 (2). | DFS |
-&nbsp; | [2.1 字符串解码 [a]2[bc]](https://leetcode-cn.com/problems/decode-string/) |
-&nbsp; | s = "3[a]2[bc]" | ✔️
+&nbsp; | [2.1 字符串解码 [a]2[bc]](https://leetcode-cn.com/problems/decode-string/) | ✔️
+&nbsp; | s = "3[a]2[bc]" | 
 (3). | Digit |
  &nbsp; | [3.1 回文数](https://leetcode-cn.com/problems/palindrome-number/)  &nbsp;&nbsp;&nbsp;&nbsp;模拟 123321 -> 2332 -> 33 | ❎
 (4). | DP |
