@@ -26,7 +26,7 @@ No. | Question | Flag
 - | [6.2 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/) `hash` | ❎
 - | [6.3 两数相加](https://leetcode-cn.com/problems/add-two-numbers/) `LinkNode 模拟`| ❎
 - | [6.4 复制带随机指针的链表](https://leetcode-cn.com/problems/copy-list-with-random-pointer/) ✔️ | ❎
-- | [6.5 LRUCache](https://leetcode-cn.com/company/shopee/) class DLinkedNode | ✔️
+- | [6.5 LRUCache](https://leetcode-cn.com/company/shopee/) class DLinkedNode(4), `removeTail`, `moveToHead`, `addToHead `, `removeNode` | ✔️
 - | [6.6 删除链表的倒数第N个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/) | ❎
 - | [6.7 排序链表](https://leetcode-cn.com/problems/sort-list/) | ✔️
 (7). | stack |
@@ -54,7 +54,7 @@ No. | Question | Flag
 
 ---
 
-字符串解码 
+<img src="/images/leetcode/stack-string-decoding.jpg" width="600" alt="字符串解码 " />
 
 ```python
 class Solution:
@@ -72,6 +72,83 @@ class Solution:
             else:
                 res += c
         return res
+```
+
+**LRUCache**
+
+<img src="/images/leetcode/lc-146-lru.jpg" width="800" alt="" />
+
+```python
+class DLinkedNode:
+    def __init__(self, key=0, value=0):
+        self.key = key
+        self.value = value
+        self.prev = None
+        self.next = None
+        
+class LRUCache:
+    def __init__(self, capacity: int):
+        self.head = DLinkedNode()
+        self.tail = DLinkedNode()
+        self.head.next = self.tail
+        self.tail.prev = self.head
+        self.capacity = capacity
+        self.size = 0
+        self.cache = {}
+
+    def get(self, key: int) -> int:
+        if key not in self.cache:
+            return -1
+        # 如果 key 存在，先通过哈希表定位，再移到头部
+        node = self.cache[key]
+        self.moveToHead(node)
+        return node.value
+
+    def put(self, key: int, value: int) -> None:
+        if key not in self.cache:
+            # 如果 key 不存在，创建一个新的节点
+            node = DLinkedNode(key, value)
+            # 添加进哈希表
+            self.cache[key] = node
+            # 添加至双向链表的头部
+            self.addToHead(node)
+            self.size += 1
+            if self.size > self.capacity:
+                # 如果超出容量，删除双向链表的尾部节点
+                removed = self.removeTail()
+                # 删除哈希表中对应的项
+                self.cache.pop(removed.key)
+                self.size -= 1
+        else:
+            # 如果 key 存在，先通过哈希表定位，再修改 value，并移到头部
+            node = self.cache[key]
+            node.value = value
+            self.moveToHead(node)
+
+
+    def addToHead(self, node):
+        node.prev = self.head
+        node.next = self.head.next
+        self.head.next.prev = node
+        self.head.next = node
+
+    def removeNode(self, node):
+        node.prev.next = node.next
+        node.next.prev = node.prev
+
+    def moveToHead(self, node):
+        self.removeNode(node)
+        self.addToHead(node)
+
+    def removeTail(self):
+        node = self.tail.prev
+        self.removeNode(node)
+        return node
+
+# Your LRUCache object will be instantiated and called as such:
+# obj = LRUCache(capacity)
+# param_1 = obj.get(key)
+# obj.put(key,value)
 ```
 
 very good sortList:
