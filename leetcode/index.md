@@ -13,7 +13,7 @@ No. | Question | Flag
 &nbsp; | [2.1 字符串解码 [a]2[bc]](https://leetcode-cn.com/problems/decode-string/) | ✔️
 &nbsp; | s = "3[a]2[bc]" | 
 (3). | Digit |
- &nbsp; | [3.1 回文数](https://leetcode-cn.com/problems/palindrome-number/)  &nbsp;&nbsp;&nbsp;&nbsp;模拟 123321 -> 2332 -> 33 | ❎
+ &nbsp; | [3.1 回文数](https://leetcode-cn.com/problems/palindrome-number/) 禁止整数转字符串， &nbsp;&nbsp;&nbsp;&nbsp;模拟 123321 -> 2332 -> 33 | ❎
 (4). | DP |
 &nbsp; | [4.1 栅栏涂色](https://leetcode-cn.com/problems/paint-fence/) &nbsp;&nbsp; `dp[i] = dp[i-2]*(k-1) + dp[i-1]*(k-1)` | ✔️
 &nbsp; | [4.2 区域和检索](https://leetcode-cn.com/problems/range-sum-query-immutable/) | ❎
@@ -32,11 +32,11 @@ No. | Question | Flag
 (7). | stack |
 - | [7.1 有效的括号](https://leetcode-cn.com/problems/valid-parentheses/) `if i == ')' and len(stack)> 0 and stack[-1] == '(': stack.pop()` | ❎
 (8). | string |
-- | [8.1 字符串相加](https://leetcode-cn.com/problems/add-strings/) 给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和 | ✔️ 
+- | [8.1 字符串相加](https://leetcode-cn.com/problems/add-strings/) 给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和 <br> `num1 = "".join(list(reversed(num1)))`, `num1 = num1 + ("0" * diff1) num2 = num2 + ("0" * diff2) | ✔️ 
 - | [8.2 比较版本号](https://leetcode-cn.com/problems/compare-version-numbers/) | ❎
 - | ~~[8.3 字符串解码](https://leetcode-cn.com/problems/decode-string/)~~ | ❎
-- | [8.4 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) sliding window | ✔️
-- | [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) ， 模拟复杂 [见题解](https://leetcode-cn.com/problems/next-greater-element-iii/solution/xia-yi-ge-geng-da-yuan-su-iii-by-leetcode/) | ✔️
+- | [8.4 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) sliding window, `[l, r]` | ✔️
+- | [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) ， 模拟复杂 [见题解](https://leetcode-cn.com/problems/next-greater-element-iii/solution/xia-yi-ge-geng-da-yuan-su-iii-by-leetcode/) <br> `1,5,8,5,7,6,4,3,1` => `1,5,8,5(i-1),7,6,4(j),3,1` => `1,5,8,4,7,6,5,3,1` | ✔️
 - | [8.6 全排列](https://leetcode-cn.com/problems/permutations/) | ❎
 (9). | tree |
 - | [9.1 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) `i = inorder.index(preorder[0])` | ❎
@@ -189,39 +189,6 @@ class Solution:
 
 ```
 
-字符串相加
-
-```python
-class Solution:
-    def addStrings(self, num1: str, num2: str) -> str:
-
-        num1 = "".join(list(reversed(num1)))
-        num2 = "".join(list(reversed(num2)))
-
-        diff2 = len(num1) - len(num2)
-
-        diff1 = diff2 * -1
-
-        num1 = num1 + ("0" * diff1)
-        num2 = num2 + ("0" * diff2)
-
-        res = ""
-        carry = 0
-
-        for i in range(len(num1)):
-            d1 = int(num1[i])
-            d2 = int(num2[i])
-
-            tmp = carry + d1 + d2
-            res += str(tmp % 10)
-
-            carry = tmp // 10
-
-        if carry > 0:
-            res += str(carry % 10)
-
-        return "".join(list(reversed(res)))
-```
 
 无重复字符的最长子串
 
@@ -231,17 +198,16 @@ class Solution:
         # 哈希集合，记录每个字符是否出现过
         occ = set()
         n = len(s)
-
         r = -1 # rk init -1
         ans = 0
-
         for l in range(n):
             if l != 0:
                 occ.remove(s[l-1])
-
             while r+1 < n and s[r+1] not in occ:
                 occ.add(s[r+1])
                 r += 1
+            ans = max(ans, r - l + 1)
+        return ans
 ```
 
 二叉树的中序遍历
