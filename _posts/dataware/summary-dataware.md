@@ -16,6 +16,9 @@ tags: [SQL]
 
 ---
 
+[Hadoop的元数据治理--Apache Atlas](https://www.jiqizhixin.com/articles/2019-09-16-12)
+
+
 
 > - [3.【good】 漫谈 | 大牛带你从0到1构建数据仓库实战](https://mp.weixin.qq.com/s/iwC0iKXBFFBVwxCQPhBAxg)
 > - [8.【good】数仓深度 | 数据模型设计（推荐收藏）](https://mp.weixin.qq.com/s/_WHI-1gjW0iaQeKW0TfMDA)
@@ -333,6 +336,41 @@ JOIN查询仍然可以使用WHERE条件和ORDER BY排序。
 
 ```
 </details>
+
+
+## Questions
+
+No. | Title | desc
+--- | --- | ---
+1. | 数仓建模工具哪一个好? | powerDesigner 勉强推一个吧
+2. | DWS 轻度聚合及（汇总 == group by） | 是按照 Topic 划分的
+3. | DWD join 成宽表 by ODS |  事实表基本都在 DWD 层.
+4. | App 层也是在 Hive 中么? | 尽量不要
+5. | 数据仓库的数据质量如何保障? | 需要从源头管控，业务系统进行细致的字段的校验
+6. | 如何保证你的计算的指标结果准确性？ | 1. 有测试人员 2. 我们公司有做小样本数据集的抽取开发
+7. | 数据存储格式 | orc / Parquet
+8. | 数据压缩方式 | snappy / LZO
+9. | 数据存储格式 + 压缩 | 服务器的磁盘空间可以变为原来的 1/3
+10. | | beeline 客户端支持远程连接
+11. | lzo 支持切分么？ | snappy 不支持切分, 给lzo文件建立索引后，则支持切分
+
+> create_time, update_time, 使用拉链表解决历史数据变更的问题
+
+```
+# 设置输出数据格式压缩成为LZO
+
+SET hive.exec.compress.output=true;
+SET mapreduce.output.fileoutputformat.compress=true;
+set mapred.output.compression.codec=com.hadoop.compression.lzo.LzopCodec;
+
+#插入数据到目标表里面去
+insert overwrite table ods_user_login partition(part_date)
+select plat_id,server_id,channel_id,user_id,role_id,role_name,client_ip,event_time,op_type,online_time,operating_system,operating_version,device_brand,device_type,from_unixtime(event_time,'yyyy-MM-dd') as part_date 
+from tmp_ods_user_login;
+
+#给lzo文件建立索引：便于以后多个mapTask来对文件进行处理
+hadoop jar /kkb/install/hadoop-2.6.0-cdh5.14.2/share/hadoop/common/hadoop-lzo-0.4.20.jar  com.hadoop.compression.lzo.DistributedLzoIndexer /user/hive/warehouse/game_center.db/ods_user_login/
+```
 
 ## Reference
 
