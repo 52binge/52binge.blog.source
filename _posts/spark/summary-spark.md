@@ -14,8 +14,9 @@ No. | Title | Article
 :---: | --- | ---
 0 | kaikeba | sparkSQL底层实现原理
 0. | 大数据杀招 | [Spark高频](https://mp.weixin.qq.com/s/UPtxoGWZIvPE0KHoOs_tBw)
-1. | SparkSql - 结构化数据处理 (上) | [SparkSql - 结构化数据处理 (上)](http://localhost:5000/2020/08/25/spark/spark-aura-9.1-SparkSql/)
-2. | 简书 | [RDD、DataFrame和DataSet的区别](https://www.jianshu.com/p/c0181667daa0)
+0. | SparkSql - 结构化数据处理 (上) | [SparkSql - 结构化数据处理 (上)](http://localhost:5000/2020/08/25/spark/spark-aura-9.1-SparkSql/)
+0. | [Apache Parquet和Apache Avro](https://www.jianshu.com/p/dacb91e2c1b1) |
+0. | 简书 | [RDD、DataFrame和DataSet的区别](https://www.jianshu.com/p/c0181667daa0)
 1. | 蓦然大数据开发| [知乎， 公众号：旧时光大数据](https://www.zhihu.com/people/ai-yo-ai-yo-33-50/posts)
 2. | 蓦然大数据开发 | [大数据Hadoop（三）——MapReduce](https://zhuanlan.zhihu.com/p/97714898)
 3. | Data Warehouse | [2020 大数据/数仓/数开 Interview Questions](https://mp.weixin.qq.com/s/pwyus1xfX7QAz5MtecveZw)
