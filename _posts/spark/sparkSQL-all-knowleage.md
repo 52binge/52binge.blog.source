@@ -1,6 +1,6 @@
 ---
 title: SparkSQL 底层实现原理
-date: 2010-10-17 15:28:21
+date: 2020-10-17 15:28:21
 categories: [spark]
 tags: [sparkSQL]
 ---
@@ -441,7 +441,7 @@ spark.sql("select * from person order by age desc").show
 - DataSet是分布式的数据集合，Dataset提供了==强类型支持==，也是在RDD的每行数据加了类型约束。
 - DataSet是在Spark1.6中添加的新的接口。它集中了RDD的优点（强类型和可以用强大lambda函数）以及使用了Spark SQL优化的执行引擎。
 
-## 6.2 RDD、DataFrame、DataSet的区别
+## 6.2 DataFrame、DataSet区别
 
 - 假设RDD中的两行数据长这样
 
@@ -471,7 +471,7 @@ DataSet包含了DataFrame的功能，Spark2.0中两者统一，DataFrame表示�
 （2）并且是面向对象的编程接口
 ```
 
-## 6.3 DataFrame与DataSet互相转换
+## 6.3 DataFrame与DataSet互转
 
 - 1、把一个DataFrame转换成DataSet
   - val dataSet=dataFrame.as[强类型]
@@ -490,7 +490,7 @@ DataSet包含了DataFrame的功能，Spark2.0中两者统一，DataFrame表示�
 
 
 
-#### 6.4 构建DataSet
+## 6.4 构建DataSet
 
 - 1、 通过sparkSession调用createDataset方法
 
@@ -520,7 +520,7 @@ DataSet包含了DataFrame的功能，Spark2.0中两者统一，DataFrame表示�
 
 
 
-## 6.4. RDD以及DataFrame以及DataSet的关系
+## 6.5 RDD以及DataFrame以及DataSet的关系
 
 ![sparkSQL](1%E3%80%81sparkSQL%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE.assets/sparkSQL.png)
 

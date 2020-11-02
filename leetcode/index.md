@@ -225,10 +225,10 @@ No. | Question | Flag
 **easy** |  |  
 4 | 二叉树的镜像： `swap后+递归` | ❎
 7 | 从尾到头打印链表： <br>`reversePrint(head.next) + [head.val]` | ❎
-8 | 反转链表 &nbsp;&nbsp; [**Recursion**] (需要在写一个循环版) <br>`cur = self.reverseList(head.next)`<br>`head.head.next = head`<br>`head.next = None`<br>`return cur` | ✔️ 
-9 | 二叉搜索树的第k大节点 &nbsp;&nbsp; [中序遍历 倒序] <br>`dfs(root.right)`<br> `self.k -= 1` <br> `dfs(root.left)`  | ✔️ 
-10 | 合并两个排序的链表 &nbsp;&nbsp; [**Recursion**] <br> p.next = self.mergeTwoLists(l1.next, l2) | ❎
-13 | 二叉树的最近公共祖先 &nbsp;&nbsp; [**Recursion**] | ✔️ 
+8 | [反转链表](https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/) &nbsp;&nbsp; (循环版 双指针) <img src="/images/leetcode/linkedlist-reverseList.gif" width="600" alt="" /> | ❎
+9 | [二叉搜索树的第k大节点](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/) &nbsp;&nbsp; [中序遍历 倒序] <br>`dfs(root.right)`<br> `self.k -= 1` <br> `dfs(root.left)`  | ✔️❎ 
+10 | [合并两个排序的链表](https://leetcode-cn.com/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/) &nbsp;&nbsp; [**Recursion**] <br> p.next = self.mergeTwoLists(l1.next, l2) | ❎
+13 | [二叉树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/) &nbsp;&nbsp; [**Recursion**] | ✔️ 
 14 | 和为s的连续正数序列 &nbsp;&nbsp; [sliding window] <br><br> input：target = 9 <br> output：[[2,3,4],[4,5]] | ✔️ 
 15 | 二叉搜索树的最近公共祖先 &nbsp;&nbsp; [**Recursion** + 剪枝] | ✔️ 
 21 | [圆圈中最后剩下的数字](https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/) `需要在review..` | ✔️
