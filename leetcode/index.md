@@ -230,6 +230,11 @@ No. | Question | Flag
 &nbsp; | [1.4 二叉搜索树的第k大节点](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/) &nbsp;&nbsp; [中序遍历 倒序, 右-中-左]  | ✔️❎ 
 good | [1.5 二叉树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/) &nbsp;&nbsp; [**Recursion**] 后序遍历+路径回溯 | ✔️ 
 good | [1.6 二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof) &nbsp;&nbsp; [**Recursion** + 剪枝] | ✔️ 
+&nbsp; | 1.7 二叉树中和为某一值的路径 | 
+&nbsp; | 1.8 二叉搜索树的后序遍历序列 |
+&nbsp; | 1.9 二叉搜索树与双向链表 |
+additional | 求二叉树第K层的节点个数 [**Recursion**] ，root != None and k==1，返回1  <br>  f(root.left, k-1) + f(root.right, k-1) | ❎
+additional | 求二叉树第K层的叶子节点个数 [**Recursion**]  <br> if(k==1 and root.left and root.right is null) return 1; | ✔️❎
 (2). | Stack |
 &nbsp; | 28. 包含min函数的栈 | ❎
 &nbsp; | 29. [最小的k个数 【heapq 堆排序 的逆向思维】](http://localhost:5000/leetcode/#32-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0) | ✔️
@@ -237,8 +242,14 @@ good | [1.6 二叉搜索树的最近公共祖先](https://leetcode-cn.com/proble
 &nbsp; | 7. 从尾到头打印链表： <br>`reversePrint(head.next) + [head.val]` | ❎
 &nbsp; | 8. [反转链表](https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/) &nbsp;&nbsp; (循环版 双指针) <img src="/images/leetcode/linkedlist-reverseList.gif" width="600" alt="" /> | ❎
 &nbsp; | 10. [合并两个排序的链表](https://leetcode-cn.com/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/) &nbsp;&nbsp; [**Recursion**] <br> p.next = self.mergeTwoLists(l1.next, l2) | ❎
+additional | 旋转单链表 (F1. 环 F2. 走n-k%n 断开) <br> 举例： 给定 1->2->3->4->5->6->NULL, K=3 <br> 则4->5->6->1->2->3->NULL |  ✔️
+additional | 翻转部分单链表 <br> 举例：1->2->3->4->5->null, from = 2, to = 4 结果：1->4->3->2->5->null
+additional | 链表划分 （描述： 给定一个单链表和数值x，划分链表使得小于x的节点排在大于等于x的节点之前）
+additional | 删除链表重复结点 链表1->2->3->3->4->4->5 处理后为 1->2->5. | ✔️
+additional | 输入：(7 -> 1 -> 6) + (5 -> 9 -> 2)，即617 + 295 <br> 输出：2 -> 1 -> 9，即912 |
 (4). | **DP** |
 &nbsp; | 31. n个骰子的点数 | ✔️
+&nbsp; | [Summary 20 dynamic programming](/2020/08/31/leetcode/summary_dp/) |
 (5). | 模拟 |
 &nbsp; | 21. [圆圈中最后剩下的数字](https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/) `需要在review..` | ✔️
 &nbsp; | 35. 顺时针打印矩阵 | ✔️
