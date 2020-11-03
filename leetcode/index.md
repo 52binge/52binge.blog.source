@@ -217,29 +217,34 @@ class Solution:
         return self.res
 ```
 
-# [剑指](https://leetcode-cn.com/problemset/lcof/)
+# [剑指,Table](https://leetcode-cn.com/problemset/lcof/)
 
 
 No. | Question | Flag
 :---: | --- | ---
 **easy** |  |  
-4 | 二叉树的镜像： `swap后+递归` | ❎
-7 | 从尾到头打印链表： <br>`reversePrint(head.next) + [head.val]` | ❎
-8 | [反转链表](https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/) &nbsp;&nbsp; (循环版 双指针) <img src="/images/leetcode/linkedlist-reverseList.gif" width="600" alt="" /> | ❎
-9 | [二叉搜索树的第k大节点](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/) &nbsp;&nbsp; [中序遍历 倒序] <br>`dfs(root.right)`<br> `self.k -= 1` <br> `dfs(root.left)`  | ✔️❎ 
-10 | [合并两个排序的链表](https://leetcode-cn.com/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/) &nbsp;&nbsp; [**Recursion**] <br> p.next = self.mergeTwoLists(l1.next, l2) | ❎
-13 | [二叉树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/) &nbsp;&nbsp; [**Recursion**] | ✔️ 
-14 | 和为s的连续正数序列 &nbsp;&nbsp; [sliding window] <br><br> input：target = 9 <br> output：[[2,3,4],[4,5]] | ✔️ 
-15 | 二叉搜索树的最近公共祖先 &nbsp;&nbsp; [**Recursion** + 剪枝] | ✔️ 
-21 | [圆圈中最后剩下的数字](https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/) `需要在review..` | ✔️
-26 | 平衡二叉树 <br> abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right) | ✔️ 
-27 | 对称的二叉树 | ✔️
-28 | 包含min函数的栈 | ❎
-29 | [最小的k个数 【heapq 堆排序 的逆向思维】](http://localhost:5000/leetcode/#32-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0) | ✔️
-31 | n个骰子的点数 | ✔️
-35 | 顺时针打印矩阵 | ✔️
-36 | 滑动窗口的最大值 | ✔️
-37 | 0～n-1中缺失的数字 | ❎
+(1). | **Tree** |
+&nbsp; | [1.1 平衡二叉树](https://leetcode-cn.com/problems/ping-heng-er-cha-shu-lcof) <br> abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right) | ❎
+&nbsp; | [1.2 对称的二叉树](https://leetcode-cn.com/problems/dui-cheng-de-er-cha-shu-lcof) | ❎
+&nbsp; | [1.3 二叉树的镜像](https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof)： `swap后+递归` | ❎
+&nbsp; | [1.4 二叉搜索树的第k大节点](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/) &nbsp;&nbsp; [中序遍历 倒序, 右-中-左]  | ✔️❎ 
+good | [1.5 二叉树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/) &nbsp;&nbsp; [**Recursion**] 后序遍历+路径回溯 | ✔️ 
+good | [1.6 二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof) &nbsp;&nbsp; [**Recursion** + 剪枝] | ✔️ 
+(2). | Stack |
+&nbsp; | 28. 包含min函数的栈 | ❎
+&nbsp; | 29. [最小的k个数 【heapq 堆排序 的逆向思维】](http://localhost:5000/leetcode/#32-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0) | ✔️
+(3). | linkedList |
+&nbsp; | 7. 从尾到头打印链表： <br>`reversePrint(head.next) + [head.val]` | ❎
+&nbsp; | 8. [反转链表](https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/) &nbsp;&nbsp; (循环版 双指针) <img src="/images/leetcode/linkedlist-reverseList.gif" width="600" alt="" /> | ❎
+&nbsp; | 10. [合并两个排序的链表](https://leetcode-cn.com/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/) &nbsp;&nbsp; [**Recursion**] <br> p.next = self.mergeTwoLists(l1.next, l2) | ❎
+(4). | **DP** |
+&nbsp; | 31. n个骰子的点数 | ✔️
+(5). | 模拟 |
+&nbsp; | 21. [圆圈中最后剩下的数字](https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/) `需要在review..` | ✔️
+&nbsp; | 35. 顺时针打印矩阵 | ✔️
+&nbsp; | 14. 和为s的连续正数序列 &nbsp;&nbsp; [sliding window] <br><br> input：target = 9 <br> output：[[2,3,4],[4,5]] | ✔️ 
+&nbsp; | 36. 滑动窗口的最大值 | ✔️
+&nbsp; | 37. 0～n-1中缺失的数字 | ❎
  | | 
 **medium** |  | 
  | | 
@@ -334,8 +339,7 @@ class Solution:
 
 [题解链接](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/solution/mian-shi-ti-36-er-cha-sou-suo-shu-yu-shuang-xian-5/)
 
-
-### 1.1 构造二叉树
+**1.0 构造二叉树**
 
 ```python
 class Node:
@@ -377,7 +381,7 @@ if __name__ == '__main__':
     pre_out(root)
 ```
 
-### 1.2 平衡二叉树
+### 1.1 平衡二叉树
 
 ```python
 class Solution:
@@ -392,6 +396,23 @@ class Solution:
             return True
 
         return abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right)
+```
+
+### 1.2 对称的二叉树
+
+```python
+def isSymmetricHelper(left: TreeNode, right: TreeNode):
+    if left == None and right == None:
+        return True
+    if left == None or right == None:
+        return False
+    if left.val != right.val:
+        return False
+    return isSymmetricHelper(left.left, right.right) and isSymmetricHelper(left.right, right.left)
+
+class Solution:
+    def isSymmetric(self, root: TreeNode) -> bool:
+        return root == None or isSymmetricHelper(root.left, root.right)
 ```
 
 ### 1.3 二叉树的镜像
@@ -463,23 +484,6 @@ class Solution:
         # We have found the split point, i.e. the LCA node.
         else:
             return root
-```
-
-### 1.5 对称的二叉树
-
-```python
-def isSymmetricHelper(left: TreeNode, right: TreeNode):
-    if left == None and right == None:
-        return True
-    if left == None or right == None:
-        return False
-    if left.val != right.val:
-        return False
-    return isSymmetricHelper(left.left, right.right) and isSymmetricHelper(left.right, right.left)
-
-class Solution:
-    def isSymmetric(self, root: TreeNode) -> bool:
-        return root == None or isSymmetricHelper(root.left, root.right)
 ```
 
 ### 1.6 从上到下打印二叉树 II / III
