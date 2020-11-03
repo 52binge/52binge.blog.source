@@ -229,8 +229,8 @@ No. | Question | Flag
 &nbsp; | [1.3 二叉树的镜像](https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof)： `swap后+递归` | ❎
 &nbsp; | [1.4 二叉搜索树的第k大节点](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/) &nbsp;&nbsp; [中序遍历 倒序, 右-中-左]  | ✔️❎ 
 good | [1.5 二叉树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/) &nbsp;&nbsp; [**Recursion**] 后序遍历+路径回溯 | ✔️ 
-good | [1.6 二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof) &nbsp;&nbsp; [**Recursion** + 剪枝] | ✔️ 
-&nbsp; | 1.7 二叉树中和为某一值的路径 | 
+good | [1.6 二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof) &nbsp;&nbsp; [**Recursion** + 剪枝 | ✔️ 
+good | 1.7 二叉树中和为某一值的路径 | 
 &nbsp; | 1.8 二叉搜索树的后序遍历序列 |
 &nbsp; | 1.9 二叉搜索树与双向链表 |
 additional | 求二叉树第K层的节点个数 [**Recursion**] ，root != None and k==1，返回1  <br>  f(root.left, k-1) + f(root.right, k-1) | ❎
