@@ -47,8 +47,8 @@ spark调优比较复杂，但是大体可以分为三个方面来进行
 No. | Title | Answer
 :---: | --- | ---
 1 | Platform| 提高数据的本地性，选择高效的存储格式如**parquet**
-2 | Application | 过滤操作符的优化降低过多小任务，降低单条记录的资源开销，处理数据倾斜，复用RDD进行缓存，作业并行化执行等等
-3 | JVM 层面 | 设置合适的资源量，设置合理的JVM，启用高效的序列化方法如kyro，增大off head内存等等
+2 | Application | 处理 Data Skew，复用RDD进行缓存，作业并行化执行等等
+3 | JVM 层面 | 启用高效的序列化方法如kyro，增大off head内存等等
 
 > Lineage, cognitive ability
 
