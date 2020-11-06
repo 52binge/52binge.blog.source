@@ -236,8 +236,8 @@ good | [1.7 二叉树中和为某一值的路径](https://leetcode-cn.com/proble
 additional | 求二叉树第K层的节点个数 [**Recursion**] ，root != None and k==1，返回1  <br>  f(root.left, k-1) + f(root.right, k-1) | ❎
 additional | 求二叉树第K层的叶子节点个数 [**Recursion**]  <br> if(k==1 and root.left and root.right is null) return 1; | ✔️❎
 (2). | Stack |
-&nbsp; | 28. 包含min函数的栈 | ❎
-&nbsp; | 29. [最小的k个数 【heapq 堆排序 的逆向思维】](http://localhost:5000/leetcode/#32-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0) | ✔️
+&nbsp; | [28. 包含min函数的栈](https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/) | ❎
+&nbsp; | [29. 最小的k个数【堆排的逆向】](http://localhost:5000/leetcode/#32-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0) `heapq.heappop(hp),heapq.heappush(hp, -arr[i])` | ✔️
 (3). | linkedList |
 &nbsp; | 7. 从尾到头打印链表： <br>`reversePrint(head.next) + [head.val]` | ❎
 &nbsp; | 8. [反转链表](https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/) &nbsp;&nbsp; (循环版 双指针) <img src="/images/leetcode/linkedlist-reverseList.gif" width="600" alt="" /> | ❎
@@ -248,13 +248,13 @@ additional | 链表划分 （描述： 给定一个单链表和数值x，划分�
 additional | 删除链表重复结点 链表1->2->3->3->4->4->5 处理后为 1->2->5. | ✔️
 additional | 输入：(7 -> 1 -> 6) + (5 -> 9 -> 2)，即617 + 295 <br> 输出：2 -> 1 -> 9，即912 |
 (4). | **DP** |
-&nbsp; | 31. n个骰子的点数 | ✔️
+&nbsp; | [31. n个骰子的点数](https://leetcode-cn.com/problems/nge-tou-zi-de-dian-shu-lcof) | ✔️
 &nbsp; | [Summary 20 dynamic programming](/2020/08/31/leetcode/summary_dp/) |
 (5). | 模拟 |
-&nbsp; | 21. [圆圈中最后剩下的数字](https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/) `需要在review..` | ✔️
-&nbsp; | 35. 顺时针打印矩阵 | ✔️
-&nbsp; | 14. 和为s的连续正数序列 &nbsp;&nbsp; [sliding window] <br><br> input：target = 9 <br> output：[[2,3,4],[4,5]] | ✔️ 
-&nbsp; | 36. 滑动窗口的最大值 | ✔️
+&nbsp; | [21. 圆圈中最后剩下的数字](https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/) <br><br> 1. 当数到最后一个结点不足m个时，需要跳到第一个结点继续数 <br> 2. 每轮都是上一轮被删结点的下一个结点开始数 m 个 <br>3. 寻找 f(n,m) 与 f(n-1,m) 关系 <br> 4. A： f(n,m)=(m+x)%n  <br> 5. Python 深度不够手动设置 sys.setrecursionlimit(100000) <br> [东大 Lucien 题解,讲得最清楚的那个。官方讲解有误](https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/solution/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-by-lee/)  | <br><br><br><br>✔️❎
+&nbsp; | 35. 顺时针打印矩阵 `left, right, top, bottom = 0, columns - 1, 0, rows - 1` | ✔️❎
+&nbsp; | 14. 和为s的连续正数序列 &nbsp;&nbsp; [sliding window] <br><br> input：target = 9 <br> output：[[2,3,4],[4,5]] | ✔️❎ 
+&nbsp; | 36. 滑动窗口的最大值  (同理于包含 min 函数的栈) | ✔️
 &nbsp; | 37. 0～n-1中缺失的数字 | ❎
  | | 
 **medium** |  | 
@@ -682,47 +682,7 @@ class Solution:
 
 ## 4. Array & Sort
 
-### 4.1 圆圈中最后剩下的数字
-
-```python
-# 输入: n = 5, m = 3
-# 输出: 3
-# 0, 1, 2, 3, 4
-# 题目中的要求可以表述为：给定一个长度为 n 的序列，每次向后数 m 个元素并删除，那么最终留下的是第几个元素？
-#
-# 这个问题很难快速给出答案。但是同时也要看到，这个问题似乎有拆分为较小子问题的潜质：如果我们知道对于一个长度 n - 1 的序列，留下的是第几个元素，那么我们就可以由此计算出长度为 n 的序列的答案。
-#
-# 算法
-#
-# 我们将上述问题建模为函数 f(n, m)，该函数的返回值为最终留下的元素的序号。
-#
-# 首先，长度为 n 的序列会先删除第 m % n 个元素，然后剩下一个长度为 n - 1 的序列。那么，我们可以递归地求解 f(n - 1, m)，就可以知道对于剩下的 n - 1 个元素，最终会留下第几个元素，我们设答案为 x = f(n - 1, m)。
-#
-# 由于我们删除了第 m % n 个元素，将序列的长度变为 n - 1。当我们知道了 f(n - 1, m) 对应的答案 x 之后，我们也就可以知道，长度为 n 的序列最后一个删除的元素，应当是从 m % n 开始数的第 x 个元素。因此有 f(n, m) = (m % n + x) % n = (m + x) % n。
-# Python 默认的递归深度不够，需要手动设置
-
-import sys
-
-# Python解释器默认对递归深度设定为998，但可以用sys.setrecursionlimit(99999999)来打破这个限制。
-sys.setrecursionlimit(100000)
-
-
-def f(n, m):
-    if n == 0:
-        return 0
-    x = f(n - 1, m)
-    return (m % n + x) % n
-
-    # return (m + x) % n
-
-
-class Solution:
-    def lastRemaining(self, n: int, m: int) -> int:
-        return f(n, m)
-```
-
-
-### 4.2 最小的k个数
+### 4.1 最小的k个数
 
 ```python
 import heapq
@@ -748,7 +708,7 @@ class Solution:
         return ans
 ```
 
-### 4.3 n个骰子的点数
+### 4.2 n个骰子的点数
 
 ```
 # 把n个骰子扔在地上，所有骰子朝上一面的点数之和为s。输入n，打印出s的所有可能的值出现的概率。
@@ -811,17 +771,9 @@ class Solution:
         return res
 ```
 
-### 4.4 顺时针打印矩阵
+### 4.3 顺时针打印矩阵
 
 ```python
-# -*- coding: utf-8 -*-
-"""
-    @file: e.spiralOrder.py
-    @date: 2020-09-07 4:19 PM
-    @desc: 剑指 Offer 29. 顺时针打印矩阵
-    @url : https://leetcode-cn.com/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/
-"""
-
 # 输入：matrix = [
 #     [1,2,3,4],
 #     [5,6,7,8],
@@ -862,7 +814,7 @@ class Solution:
         return order
 ```
  
-### 4.5 把数组排成最小的数
+### 4.4 把数组排成最小的数
 
 ```python
 from functools import cmp_to_key
@@ -885,7 +837,7 @@ class Solution:
         return ''.join(strs) 
  ```
  
-### 4.6 把字符串转换成整数 
+### 4.5 把字符串转换成整数 
 
 ```python
 class Solution:
@@ -964,6 +916,7 @@ class Solution:
         return res
 
 ```
+      
 
 
 ## Reference
