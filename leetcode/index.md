@@ -9,6 +9,7 @@ No. | Question | Flag
 (1). | **binary-search** |
 &nbsp; | [1.1 二分查找](https://leetcode-cn.com/problems/binary-search/) | ❎
 &nbsp; | [1.2 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | ❎
+&nbsp; | [162. 寻找峰值](https://leetcode-cn.com/problems/find-peak-element/) nums[-1] = nums[n] = -∞ | ❎
 (2). | DFS |
 &nbsp; | [2.1 字符串解码 [a]2[bc]](https://leetcode-cn.com/problems/decode-string/) | ✔️
 &nbsp; | s = "3[a]2[bc]" | 
@@ -236,29 +237,49 @@ good | [1.7 二叉树中和为某一值的路径](https://leetcode-cn.com/proble
 additional | 求二叉树第K层的节点个数 [**Recursion**] ，root != None and k==1，返回1  <br>  f(root.left, k-1) + f(root.right, k-1) | ❎
 additional | 求二叉树第K层的叶子节点个数 [**Recursion**]  <br> if(k==1 and root.left and root.right is null) return 1; | ✔️❎
 (2). | Stack |
+&nbsp; | [394. 字符串解码 [a]2[bc]](https://leetcode-cn.com/problems/decode-string/) | ✔️
 &nbsp; | [28. 包含min函数的栈](https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/) | ❎
-&nbsp; | [29. 最小的k个数【堆排的逆向】](http://localhost:5000/leetcode/#32-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0) `heapq.heappop(hp),heapq.heappush(hp, -arr[i])` | ✔️
+&nbsp; | [29. 最小的k个数【堆排的逆向】](http://localhost:5000/leetcode/#32-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0) `heapq.heappop(hp),heapq.heappush(hp, -arr[i])` | ✔️❎
+&nbsp; | 36. 滑动窗口的最大值  (同理于包含 min 函数的栈) deque.popleft(),双端队列+单调 | ✔️❎
+&nbsp; | [59 II. 队列的最大值](https://leetcode-cn.com/problems/dui-lie-de-zui-da-zhi-lcof/) , `维护个单调的deque` <br> &nbsp;&nbsp; import queue, queue.deque(), queue.Queue(), deq[0], deq[-1] | ✔️❎
 (3). | linkedList |
 &nbsp; | 7. 从尾到头打印链表： <br>`reversePrint(head.next) + [head.val]` | ❎
 &nbsp; | 8. [反转链表](https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/) &nbsp;&nbsp; (循环版 双指针) <img src="/images/leetcode/linkedlist-reverseList.gif" width="600" alt="" /> | ❎
 &nbsp; | 10. [合并两个排序的链表](https://leetcode-cn.com/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/) &nbsp;&nbsp; [**Recursion**] <br> p.next = self.mergeTwoLists(l1.next, l2) | ❎
 additional | 旋转单链表 (F1. 环 F2. 走n-k%n 断开) <br> 举例： 给定 1->2->3->4->5->6->NULL, K=3 <br> 则4->5->6->1->2->3->NULL |  ✔️
-additional | 翻转部分单链表 <br> 举例：1->2->3->4->5->null, from = 2, to = 4 结果：1->4->3->2->5->null
-additional | 链表划分 （描述： 给定一个单链表和数值x，划分链表使得小于x的节点排在大于等于x的节点之前）
-additional | 删除链表重复结点 链表1->2->3->3->4->4->5 处理后为 1->2->5. | ✔️
-additional | 输入：(7 -> 1 -> 6) + (5 -> 9 -> 2)，即617 + 295 <br> 输出：2 -> 1 -> 9，即912 |
+addition | 翻转部分单链表 <br> 举例：1->2->3->4->5->null, from = 2, to = 4 结果：1->4->3->2->5->null
+addition | 链表划分 （描述： 给定一个单链表和数值x，划分链表使得小于x的节点排在大于等于x的节点之前）
+addition | 删除链表重复结点 链表1->2->3->3->4->4->5 处理后为 1->2->5. | ✔️
+addition | 输入：(7 -> 1 -> 6) + (5 -> 9 -> 2)，即617 + 295 <br> 输出：2 -> 1 -> 9，即912 |
 (4). | **DP** |
 &nbsp; | [31. n个骰子的点数](https://leetcode-cn.com/problems/nge-tou-zi-de-dian-shu-lcof) | ✔️
 &nbsp; | [Summary 20 dynamic programming](/2020/08/31/leetcode/summary_dp/) |
-(5). | 模拟 |
+(4.1) | **DP表示状态** |
+easy | 1. climbing-stairs ， 新建{}or[] ,滚动数组 <br> 2. 连续子数组的最大和 | ❎
+addition | [63. 不同路径 II](https://leetcode-cn.com/problems/unique-paths-ii/), `store = [[0]*n for i in range(m)]` 二维初始化 | ❎
+<br> addition | Edit Distance/编辑距离【word1 转换成 word2】<br>&nbsp;&nbsp; 1. dp = [ [0] * (m + 1) for _ in range(n + 1)] <br>&nbsp;&nbsp; 2. dp[i][j] = min(A,B,C) | <br> ✔️❎
+addition | [5. Longest Palindromic Substring/最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) |
+addition | Distinct Subsequences/不同子序列 |
+addition | Interleaving String/交错字符串 |
+addition | 把数字翻译成字符串 |
+addition | Leetcode 64. Minimum Path Sum, 最小路径和 |
+addition | 115. Distinct Subsequences I (Hard) |
+addition | 940. 不同的子序列 II (Hard) |
+(5). | DFS / BFS |
+&nbsp; | [66. 矩阵中的路径](https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/) , `经典好题` |  ✔️❎ 
+&nbsp; | [61. 机器人的运动范围](https://leetcode-cn.com/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof) `bfs` good <br> &nbsp;&nbsp; `from queue import Queue, q.get() q.pup()` | ✔️❎ 
+(6). | sliding Window |
+&nbsp; | 65. 最长不含重复字符的子字符串 `滑动窗口` | ✔️❎ 
+&nbsp; | 14. 和为s的连续正数序列 &nbsp;&nbsp; [sliding window] <br><br> input：target = 9 <br> output：[[2,3,4],[4,5]] | ✔️❎ 
+(7). | 模拟 |
 &nbsp; | [21. 圆圈中最后剩下的数字](https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/) <br><br> 1. 当数到最后一个结点不足m个时，需要跳到第一个结点继续数 <br> 2. 每轮都是上一轮被删结点的下一个结点开始数 m 个 <br>3. 寻找 f(n,m) 与 f(n-1,m) 关系 <br> 4. A： f(n,m)=(m+x)%n  <br> 5. Python 深度不够手动设置 sys.setrecursionlimit(100000) <br> [东大 Lucien 题解,讲得最清楚的那个。官方讲解有误](https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/solution/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-by-lee/)  | <br><br><br><br>✔️❎
 &nbsp; | 35. 顺时针打印矩阵 `left, right, top, bottom = 0, columns - 1, 0, rows - 1` | ✔️❎
-&nbsp; | 14. 和为s的连续正数序列 &nbsp;&nbsp; [sliding window] <br><br> input：target = 9 <br> output：[[2,3,4],[4,5]] | ✔️❎ 
-&nbsp; | 36. 滑动窗口的最大值  (同理于包含 min 函数的栈) | ✔️
-&nbsp; | 37. 0～n-1中缺失的数字 | ❎
+&nbsp; | 56. 把数组排成最小的数, sorted vs sort, `strs.sort(key=cmp_to_key(sort_rule))` | ✔️❎  
+&nbsp; | 70. 把字符串转换成整数 <br>&nbsp;&nbsp;&nbsp;&nbsp; int_max, int_min, bndry = 2**31-1, -2**31, 2**31//10 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bndry=2147483647//10=214748364 ，则以下两种情况越界<br>&nbsp;&nbsp;&nbsp;&nbsp; res > bndry or res == bndry and c >'7' | ✔️❎
  | | 
 **medium** |  | 
  | | 
+37 | 0～n-1中缺失的数字 | ❎
 42 | 求1+2+…+n | ❎
 43 | 数组中数字出现的次数 | so hard
 44 | 复杂链表的复制 | ❎ 
@@ -271,17 +292,11 @@ additional | 输入：(7 -> 1 -> 6) + (5 -> 9 -> 2)，即617 + 295 <br> 输出�
 51 | 股票的最大利润 （买卖一次）  <br>`cost, profit = float("+inf"), 0` <br> for price in prices:<br>&nbsp;&nbsp;&nbsp;&nbsp;`cost, profit = min(cost, price), max(profit, price - cost)` |  
 54 | 构建乘积数组 | ❎ 
 55 | **二叉树中和为某一值的路径** | <br> ✔️❎ 
-56 | 把数组排成最小的数 `strs.sort(key=cmp_to_key(sort_rule))` | ✔️ 
 57 | 剪绳子 (1) n < 4 (2) n == 4 (3) n > 4, 多个 == 3 段 | ❎ 
 58 | 字符串的排列 `c = list(s) res = [] def dfs(x):` | ❎  
 59 | 把数字翻译成字符串 `f[i] = f[i-1] + f[i-2]` 同 打家劫舍 | ❎  
 60 | 二叉搜索树的后序遍历序列 `def recur(i, j):` | ❎ 
-61 | 机器人的运动范围 `bfs` good | ✔️ 
-62 | 队列的最大值 |  
-65 | 最长不含重复字符的子字符串 `滑动窗口` |  
-66 | 矩阵中的路径 |  ✔️
 68 | 数值的整数次方  （1）当 n 为偶数 （2）当 n 为奇数 | ❎
-70 | 把字符串转换成整数 `int_max, int_min, bndry = 2 ** 31 - 1, -2 ** 31, 2 ** 31 // 10: res > bndry or res == bndry and c > '7'` | ✔️
 71 | 表示数值的字符串： [确定有限状态自动机](https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/solution/biao-shi-shu-zhi-de-zi-fu-chuan-by-leetcode-soluti/) <br> [面试题20. 表示数值的字符串（有限状态自动机，清晰图解）](https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/solution/mian-shi-ti-20-biao-shi-shu-zhi-de-zi-fu-chuan-y-2/) | 
  | | 
 **hard** |  | 
