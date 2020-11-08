@@ -4,28 +4,30 @@ title: Coding
 
 <!--# [Sea](https://leetcode-cn.com/company/shopee/)-->
 
+## 4 Review
+
 No. | Question | Flag
 :---: | --- | :---:
 (1). | **binary-search** |
-&nbsp; | [1.1 二分查找](https://leetcode-cn.com/problems/binary-search/) | ❎
-&nbsp; | [1.2 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | ❎
-&nbsp; | [162. 寻找峰值](https://leetcode-cn.com/problems/find-peak-element/) nums[-1] = nums[n] = -∞ | ❎
-(2). | DFS |
+&nbsp; | [1.1 二分查找](https://leetcode-cn.com/problems/binary-search/), while l <= r | ❎
+&nbsp; | [1.2 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/), def binSearch(nums, t, flag), return r+1 or | ❎
+&nbsp; | [162. 寻找峰值](https://leetcode-cn.com/problems/find-peak-element/) nums[-1] = nums[n] = -∞ , l=mid+1, r=mid| ❎
+(2). | DFS / Stack |
 &nbsp; | [2.1 字符串解码 [a]2[bc]](https://leetcode-cn.com/problems/decode-string/) | ✔️
 &nbsp; | s = "3[a]2[bc]" | 
 (3). | Digit |
- &nbsp; | [3.1 回文数](https://leetcode-cn.com/problems/palindrome-number/) 禁止整数转字符串， &nbsp;&nbsp;&nbsp;&nbsp;模拟 123321 -> 2332 -> 33 | ❎
+ &nbsp; | [3.1 回文数](https://leetcode-cn.com/problems/palindrome-number/) [禁止整数转字符串]， &nbsp;&nbsp;&nbsp;&nbsp;模拟 123321 -> 2332 -> 33 | ❎
 (4). | DP |
-&nbsp; | [4.1 栅栏涂色](https://leetcode-cn.com/problems/paint-fence/) &nbsp;&nbsp; `dp[i] = dp[i-2]*(k-1) + dp[i-1]*(k-1)` | ✔️❎
+`good` | [4.1 栅栏涂色](https://leetcode-cn.com/problems/paint-fence/) &nbsp;&nbsp; `dp[i] = dp[i-2]*(k-1) + dp[i-1]*(k-1)` | ✔️❎
 &nbsp; | [4.2 区域和检索](https://leetcode-cn.com/problems/range-sum-query-immutable/) | ❎
-&nbsp; | [4.3 Coin Change [零钱兑换]](https://leetcode-cn.com/problems/coin-change/) &nbsp;&nbsp;   `dp[x] = min(dp[x], dp[x - coin] + 1)` <br><br> $F(i)= min\_{j=0…n−1} F(i−c\_j)+1$ `dp = [float('inf')] * (amount + 1)` | ✔
+`good`<br><br>hard | [4.3 Coin Change [零钱兑换]](https://leetcode-cn.com/problems/coin-change/) &nbsp;&nbsp;   `dp[x] = min(dp[x], dp[x - coin] + 1)` <br><br> $F(i)= min\_{j=0…n−1} F(i−c\_j)+1$ `dp = [float('inf')] * (amount + 1)` | ✔
 &nbsp; | [4.4 除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/) | ❎
 (5). | hash |
-&nbsp; | [5.1 两数之和](https://leetcode-cn.com/problems/two-sum/) | ❎
+&nbsp; | [5.1 两数之和](https://leetcode-cn.com/problems/two-sum/), enumerate hash[num] = i | ❎
 (6). | linkedList |
 - | [6.1 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/) `romantic` | ❎
 - | [6.2 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/) `hash` | ❎
-- | [6.3 两数相加](https://leetcode-cn.com/problems/add-two-numbers/) `LinkNode 模拟`| ❎
+- | [6.3 两数相加](https://leetcode-cn.com/problems/add-two-numbers/) `LinkNode 模拟` head = ListNode(0), cur = head, carry = 0 | ❎
 - | [6.4 复制带随机指针的链表](https://leetcode-cn.com/problems/copy-list-with-random-pointer/) ✔️ | ❎
 - | [6.5 LRUCache](https://leetcode-cn.com/company/shopee/) class DLinkedNode(4), `removeTail`, `moveToHead`, `addToHead `, `removeNode` | ✔️
 - | [6.6 删除链表的倒数第N个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/) | ❎
@@ -33,15 +35,15 @@ No. | Question | Flag
 (7). | stack |
 - | [7.1 有效的括号](https://leetcode-cn.com/problems/valid-parentheses/) `if i == ')' and len(stack)> 0 and stack[-1] == '(': stack.pop()` | ❎
 (8). | string |
-- | [8.1 字符串相加](https://leetcode-cn.com/problems/add-strings/) 给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和 <br> `num1 = "".join(list(reversed(num1)))`, `num1 = num1 + ("0" * diff1) num2 = num2 + ("0" * diff2) | ✔️️❎ 
+<br>reversed | [8.1 字符串相加](https://leetcode-cn.com/problems/add-strings/) 给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和 <br> `num1 = "".join(list(reversed(num1)))`,<br> `num1 = num1 + ("0" * diff1) num2 = num2 + ("0" * diff2)` | ✔️️❎ 
 - | [8.2 比较版本号](https://leetcode-cn.com/problems/compare-version-numbers/) | ❎
 - | ~~[8.3 字符串解码](https://leetcode-cn.com/problems/decode-string/)~~ | ❎
 - | [8.4 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) sliding window, `[l, r]` | ✔️❎️
-- | [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) ， 模拟复杂 [见题解](https://leetcode-cn.com/problems/next-greater-element-iii/solution/xia-yi-ge-geng-da-yuan-su-iii-by-leetcode/) <br> `1,5,8,5,7,6,4,3,1` => `1,5,8,5(i-1),7,6,4(j),3,1` => `1,5,8,4,7,6,5,3,1` | ✔️️❎
-- | [8.6 全排列](https://leetcode-cn.com/problems/permutations/) | ❎
+- | [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) ， 模拟复杂 [见题解](https://leetcode-cn.com/problems/next-greater-element-iii/solution/xia-yi-ge-geng-da-yuan-su-iii-by-leetcode/) <br> `1,5,8,4,7,6,5,3,1` <br> => decreasing elem found `1,5,8,4(i-1),7,6,5(j),3,1` (found j, just larger a[i-1])<br> => `1,5,8,5,7,6,4,3,1` => `1,5,8,5,1,3,4,6,7` (reverse these elements) | ✔️️❎
+- | [8.6 全排列](https://leetcode-cn.com/problems/permutations/) def dfs(ix =0): for i in range(first, n): swap(nums[ix], nums[i])| ❎
 (9). | tree |
 - | [9.1 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) `i = inorder.index(preorder[0])` | ❎
-- | [9.2 二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) `while while` | ❎
+- | [9.2 二叉树的中序遍历 (非递归)](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) `while while` | ❎
 - | [9.3 二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/) | ❎
 
 
@@ -247,12 +249,12 @@ additional | 求二叉树第K层的叶子节点个数 [**Recursion**]  <br> if(k
 &nbsp; | 8. [反转链表](https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/) &nbsp;&nbsp; (循环版 双指针) <img src="/images/leetcode/linkedlist-reverseList.gif" width="600" alt="" /> | ❎
 &nbsp; | 10. [合并两个排序的链表](https://leetcode-cn.com/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/) &nbsp;&nbsp; [**Recursion**] <br> p.next = self.mergeTwoLists(l1.next, l2) | ❎
 additional | 旋转单链表 (F1. 环 F2. 走n-k%n 断开) <br> 举例： 给定 1->2->3->4->5->6->NULL, K=3 <br> 则4->5->6->1->2->3->NULL |  ✔️
-addition | 翻转部分单链表 <br> 举例：1->2->3->4->5->null, from = 2, to = 4 结果：1->4->3->2->5->null
-addition | 链表划分 （描述： 给定一个单链表和数值x，划分链表使得小于x的节点排在大于等于x的节点之前）
+addition | 翻转部分单链表 <br> 举例：1->2->3->4->5->null, from = 2, to = 4 结果：1->4->3->2->5->null |
+addition | 链表划分 （描述： 给定一个单链表和数值x，划分链表使得小于x的节点排在大于等于x的节点之前）|
 addition | 删除链表重复结点 链表1->2->3->3->4->4->5 处理后为 1->2->5. | ✔️
 addition | 输入：(7 -> 1 -> 6) + (5 -> 9 -> 2)，即617 + 295 <br> 输出：2 -> 1 -> 9，即912 |
 (4). | **DP** |
-&nbsp; | [31. n个骰子的点数](https://leetcode-cn.com/problems/nge-tou-zi-de-dian-shu-lcof) | ✔️
+&nbsp; | [31. n个骰子的点数](https://leetcode-cn.com/problems/nge-tou-zi-de-dian-shu-lcof) dp[i][j] ，表示投掷完 i 枚骰子后，点数 j 的出现次数 | ✔️
 &nbsp; | [Summary 20 dynamic programming](/2020/08/31/leetcode/summary_dp/) |
 (4.1) | **DP表示状态** |
 easy | 1. climbing-stairs ， 新建{}or[] ,滚动数组 <br> 2. 连续子数组的最大和 | ❎
@@ -931,7 +933,49 @@ class Solution:
         return res
 
 ```
-      
+     
+quickSort
+ 
+```cpp
+void quickSort(int a[], int left, int right) {
+    if(left < right) { // exit. good idea!
+        int l = left, r = right, x = a[l];
+        while(1) {
+            while(l < r && a[r] >= x) r--;
+            while(l < r && a[l] <= x) l++;
+            if(l >= r) break;
+            swap(a[r], a[l]);
+        }
+        swap(a[left], a[l]);
+        quickSort(a, left, l-1);
+        quickSort(a, l+1, right);
+    }
+}
+
+void mergeSort(int a[], int l, int r) { //  8, 5, 4, 9, 2, 3, 6
+    if(l >= r) return;   // exit.
+    int mid = (l+r) / 2; // overflow  <->  l + (r-l)/2
+    mergeSort(a, l, mid);
+    mergeSort(a, mid+1, r);  
+    int *arr = new int[r-l+1];  
+    int k = 0;
+    int i = l, j = mid + 1;
+    while(i <= mid && j <= r) {  
+        if(a[i] <= a[j]) {
+            arr[k++] = a[i++]; 
+        }
+        else {
+            arr[k++] = a[j++]; // ans += (mid-i+1);  
+        }
+    }
+    while(i <= mid) arr[k++] = a[i++];
+    while(j <= r) arr[k++] = a[j++];
+    for(int i = l; i <= r; i++) {
+        a[i] = arr[i-l];
+    }
+    delete []arr;
+}
+```
 
 
 ## Reference
