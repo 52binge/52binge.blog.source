@@ -13,14 +13,14 @@ No. | Question | Flag
 &nbsp; | [1.2 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/), def binSearch(nums, t, flag), return r+1 or | ❎
 &nbsp; | [162. 寻找峰值](https://leetcode-cn.com/problems/find-peak-element/) nums[-1] = nums[n] = -∞ , l=mid+1, r=mid| ❎
 (2). | DFS / Stack |
-&nbsp; | [2.1 字符串解码 [a]2[bc]](https://leetcode-cn.com/problems/decode-string/) | ✔️
+&nbsp; | [2.1 字符串解码 [a]2[bc]](https://leetcode-cn.com/problems/decode-string/) | ✔️❎
 &nbsp; | s = "3[a]2[bc]" | 
 (3). | Digit |
  &nbsp; | [3.1 回文数](https://leetcode-cn.com/problems/palindrome-number/) [禁止整数转字符串]， &nbsp;&nbsp;&nbsp;&nbsp;模拟 123321 -> 2332 -> 33 | ❎
 (4). | DP |
 `good` | [4.1 栅栏涂色](https://leetcode-cn.com/problems/paint-fence/) &nbsp;&nbsp; `dp[i] = dp[i-2]*(k-1) + dp[i-1]*(k-1)` | ✔️❎
 &nbsp; | [4.2 区域和检索](https://leetcode-cn.com/problems/range-sum-query-immutable/) | ❎
-`good`<br><br>hard | [4.3 Coin Change [零钱兑换]](https://leetcode-cn.com/problems/coin-change/) &nbsp;&nbsp;   `dp[x] = min(dp[x], dp[x - coin] + 1)` <br><br> $F(i)= min\_{j=0…n−1} F(i−c\_j)+1$ `dp = [float('inf')] * (amount + 1)` | ✔
+`good`<br><br><br>`float('inf')`<br><br><br>hard | [4.3 Coin Change [零钱兑换]](https://leetcode-cn.com/problems/coin-change/) &nbsp;&nbsp;`dp[0] = 0`, `dp[x] = min(dp[x], dp[x - coin] + 1)` <br><br> $F(i)= min\_{j=0…n−1} F(i−c\_j)+1$ `dp = [float('inf')] * (amount + 1)` <br><br> 输入：coins = [1, 2, 5], amount = 11<br>输出：3 <br>解释：11 = 5 + 5 + 1 | ✔️❎
 &nbsp; | [4.4 除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/) | ❎
 (5). | hash |
 &nbsp; | [5.1 两数之和](https://leetcode-cn.com/problems/two-sum/), enumerate hash[num] = i | ❎
@@ -29,9 +29,9 @@ No. | Question | Flag
 - | [6.2 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/) `hash` | ❎
 - | [6.3 两数相加](https://leetcode-cn.com/problems/add-two-numbers/) `LinkNode 模拟` head = ListNode(0), cur = head, carry = 0 | ❎
 - | [6.4 复制带随机指针的链表](https://leetcode-cn.com/problems/copy-list-with-random-pointer/) ✔️ | ❎
-- | [6.5 LRUCache](https://leetcode-cn.com/company/shopee/) class DLinkedNode(4), `removeTail`, `moveToHead`, `addToHead `, `removeNode` | ✔️
+- | [6.5 LRUCache](https://leetcode-cn.com/company/shopee/) class DLinkedNode(4), `removeTail`, `moveToHead`, `addToHead `, `removeNode` | ✔️❎
 - | [6.6 删除链表的倒数第N个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/) | ❎
-- | [6.7 排序链表](https://leetcode-cn.com/problems/sort-list/) | ✔️
+- | [6.7 排序链表](https://leetcode-cn.com/problems/sort-list/) | ✔️❎
 (7). | stack |
 - | [7.1 有效的括号](https://leetcode-cn.com/problems/valid-parentheses/) `if i == ')' and len(stack)> 0 and stack[-1] == '(': stack.pop()` | ❎
 (8). | string |
@@ -239,7 +239,7 @@ good | [1.7 二叉树中和为某一值的路径](https://leetcode-cn.com/proble
 additional | 求二叉树第K层的节点个数 [**Recursion**] ，root != None and k==1，返回1  <br>  f(root.left, k-1) + f(root.right, k-1) | ❎
 additional | 求二叉树第K层的叶子节点个数 [**Recursion**]  <br> if(k==1 and root.left and root.right is null) return 1; | ✔️❎
 (2). | Stack |
-&nbsp; | [394. 字符串解码 [a]2[bc]](https://leetcode-cn.com/problems/decode-string/) | ✔️
+&nbsp; | [394. 字符串解码 [a]2[bc]](https://leetcode-cn.com/problems/decode-string/) | ❎
 &nbsp; | [28. 包含min函数的栈](https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/) | ❎
 &nbsp; | [29. 最小的k个数【堆排的逆向】](http://localhost:5000/leetcode/#32-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0) `heapq.heappop(hp),heapq.heappush(hp, -arr[i])` | ✔️❎
 &nbsp; | 36. 滑动窗口的最大值  (同理于包含 min 函数的栈) deque.popleft(),双端队列+单调 | ✔️❎
@@ -248,7 +248,7 @@ additional | 求二叉树第K层的叶子节点个数 [**Recursion**]  <br> if(k
 &nbsp; | 7. 从尾到头打印链表： <br>`reversePrint(head.next) + [head.val]` | ❎
 &nbsp; | 8. [反转链表](https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/) &nbsp;&nbsp; (循环版 双指针) <img src="/images/leetcode/linkedlist-reverseList.gif" width="600" alt="" /> | ❎
 &nbsp; | 10. [合并两个排序的链表](https://leetcode-cn.com/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/) &nbsp;&nbsp; [**Recursion**] <br> p.next = self.mergeTwoLists(l1.next, l2) | ❎
-additional | 旋转单链表 (F1. 环 F2. 走n-k%n 断开) <br> 举例： 给定 1->2->3->4->5->6->NULL, K=3 <br> 则4->5->6->1->2->3->NULL |  ✔️
+addition | 旋转单链表 (F1. 环 F2. 走n-k%n 断开) <br> 举例： 给定 1->2->3->4->5->6->NULL, K=3 <br> 则4->5->6->1->2->3->NULL |  ✔️
 addition | 翻转部分单链表 <br> 举例：1->2->3->4->5->null, from = 2, to = 4 结果：1->4->3->2->5->null |
 addition | 链表划分 （描述： 给定一个单链表和数值x，划分链表使得小于x的节点排在大于等于x的节点之前）|
 addition | 删除链表重复结点 链表1->2->3->3->4->4->5 处理后为 1->2->5. | ✔️
@@ -260,13 +260,12 @@ addition | 输入：(7 -> 1 -> 6) + (5 -> 9 -> 2)，即617 + 295 <br> 输出：2
 easy | 1. climbing-stairs ， 新建{}or[] ,滚动数组 <br> 2. 连续子数组的最大和 | ❎
 addition | [63. 不同路径 II](https://leetcode-cn.com/problems/unique-paths-ii/), `store = [[0]*n for i in range(m)]` 二维初始化 | ❎
 <br> addition | Edit Distance/编辑距离【word1 转换成 word2】<br>&nbsp;&nbsp; 1. dp = [ [0] * (m + 1) for _ in range(n + 1)] <br>&nbsp;&nbsp; 2. dp[i][j] = min(A,B,C) | <br> ✔️❎
-addition | [5. Longest Palindromic Substring/最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) |
-addition | Distinct Subsequences/不同子序列 |
-addition | Interleaving String/交错字符串 |
-addition | 把数字翻译成字符串 |
-addition | Leetcode 64. Minimum Path Sum, 最小路径和 |
-addition | 115. Distinct Subsequences I (Hard) |
-addition | 940. 不同的子序列 II (Hard) |
+addition | [5. Longest Palindromic Substring/最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) <br>&nbsp;&nbsp; dp[i][j] = (dp[i+1][j-1] and s[i]==s[j])  | ✔️❎
+good | [把数字翻译成字符串](https://leetcode-cn.com/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/) | Fib ✔️❎
+addition | Leetcode 64. Minimum Path Sum, 最小路径和 `grid[i][j] = min(grid[i - 1][j], grid[i][j - 1]) + grid[i][j]` | ❎
+addition | 115. Distinct Subsequences I | Hard
+addition | 940. 不同的子序列 II | Hard
+addition | Interleaving String/交错字符串 | Hard
 (5). | DFS / BFS |
 &nbsp; | [66. 矩阵中的路径](https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/) , `经典好题` |  ✔️❎ 
 &nbsp; | [61. 机器人的运动范围](https://leetcode-cn.com/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof) `bfs` good <br> &nbsp;&nbsp; `from queue import Queue, q.get() q.pup()` | ✔️❎ 
