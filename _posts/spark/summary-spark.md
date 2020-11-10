@@ -10,6 +10,21 @@ tags: [spark]
 
 <!-- more -->
 
+资源参数参考示例
+
+```bash
+./bin/spark-submit \
+  --master yarn
+  --deploy-mode cluster
+  --num-executors 100 \
+  --executor-memory 6G \
+  --executor-cores 4 \
+  --driver-memory 1G \
+  --conf spark.default.parallelism=1000 \    Task总数
+  --conf spark.storage.memoryFraction=0.5 \  存储内存
+  --conf spark.shuffle.memoryFraction=0.3 \  执行内存
+```
+
 No. | Title | Article
 :---: | --- | ---
 0 | kaikeba | sparkSQL底层实现原理
