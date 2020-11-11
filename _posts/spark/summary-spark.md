@@ -43,6 +43,7 @@ No. | Title | Article
 | | **Spark性能优化指南** |
 1. | dev | [Spark性能优化指南——基础篇](https://tech.meituan.com/2016/04/29/spark-tuning-basic.html)
 2. | shuffle | [Spark性能优化指南——高级篇（8）](https://tech.meituan.com/2016/05/12/spark-tuning-pro.html) 
+3. | Spark 1.6 后引入统一内存管理 | [Apache Spark 内存管理详解](https://developer.ibm.com/zh/technologies/analytics/articles/ba-cn-apache-spark-memory-management/)
 | | **蓦然大数据开发**  |
 1. | Spark | [大数据Spark题（一）](https://zhuanlan.zhihu.com/p/107354908) 
 2. | Spark | [大数据Spark题（二）](https://zhuanlan.zhihu.com/p/107355676) 
