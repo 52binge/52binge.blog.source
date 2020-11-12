@@ -10,7 +10,6 @@ tags: [spark]
 
 <!-- more -->
 
-资源参数参考示例
 
 ```bash
 ./bin/spark-submit \
@@ -24,6 +23,21 @@ tags: [spark]
   --conf spark.storage.memoryFraction=0.5 \  存储内存
   --conf spark.shuffle.memoryFraction=0.3 \  执行内存
 ```
+
+> - A list of partitions
+> - A function for computing each split
+> - A list of dependencies on other RDDs
+> - Optionally, a Partitioner for key-value RDDs (e.g. to say that the RDD is hash-partitioned)
+> - Optionally, a list of preferred locations to compute each split on (block locations for an HDFS file) 
+
+> Stage是一个TaskSet，将Stage根据分区数划分成一个个的Task
+> 
+> 
+> DataFrame和DataSet可以相互转化，df.as[ElementType]这样可以把DataFrame转化为DataSet，ds.toDF()这样可以把DataSet转化为DataFrame
+> 
+> DataSet可以在编译时检查类型, DataSet以Catalyst逻辑执行计划表示，并且数据以编码的二进制形式被存储，不需要反序列化就可以执行sorting、shuffle等操作。
+
+repartition vs coalesce vs coalesce in sql
 
 No. | Title | Article
 :---: | --- | ---
