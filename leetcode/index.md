@@ -15,11 +15,11 @@ No. | Question | Flag
 &nbsp; | [309. Best Time to Buy and Sell Stock with Coo](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown), [题解：最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/solution/zui-jia-mai-mai-gu-piao-shi-ji-han-leng-dong-qi-4/)
 &nbsp; | [53. Maximum Subarray](https://leetcode-cn.com/problems/maximum-subarray/) | ❎
 (3). | 模拟 |
-&nbsp; | [31. Next Permutation](https://leetcode-cn.com/problems/next-permutation)
+&nbsp; | [31. Next Permutation](https://leetcode-cn.com/problems/next-permutation) == [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) | ❎
 &nbsp; | [406. Queue Reconstruction by Height](https://leetcode-cn.com/problems/queue-reconstruction-by-height)
 (2). | DFS / Stack |
 &nbsp; | [79. Word Search](https://leetcode-cn.com/problems/word-search)
-&nbsp; | [200. Number of Islands](https://leetcode-cn.com/problems/number-of-islands/)
+&nbsp; | [200. Number of Islands](https://leetcode-cn.com/problems/number-of-islands/) | ❎
 &nbsp; | [56. Merge Intervals](https://leetcode-cn.com/problems/merge-intervals/)
 | |
 &nbsp; | [148. Sort List](https://leetcode-cn.com/problems/sort-list)
