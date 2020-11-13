@@ -4,6 +4,32 @@ title: Coding
 
 <!--# [Sea](https://leetcode-cn.com/company/shopee/)-->
 
+[HOT100](https://leetcode-cn.com/problemset/leetcode-hot-100/)
+
+No. | Question | Flag
+:---: | --- | :---:
+1 | [15. 3Sum](https://leetcode-cn.com/problems/3sum) | ❎
+2 | [309. Best Time to Buy and Sell Stock with Coo](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown)
+&nbsp; | [31. Next Permutation](https://leetcode-cn.com/problems/next-permutation)
+&nbsp; | [406. Queue Reconstruction by Height](https://leetcode-cn.com/problems/queue-reconstruction-by-height)
+&nbsp; | [79. Word Search](https://leetcode-cn.com/problems/word-search)
+&nbsp; | [148. Sort List](https://leetcode-cn.com/problems/sort-list)
+&nbsp; | &nbsp; | &nbsp;
+&nbsp; | [739. 每日温度](https://leetcode-cn.com/problems/daily-temperatures/)
+&nbsp; | [21.	合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists)  
+&nbsp; | [221. 最大正方形](https://leetcode-cn.com/problems/maximal-square/)
+&nbsp; | [53. 最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)
+&nbsp; | [253. 会议室 II](https://leetcode-cn.com/problems/meeting-rooms-ii)
+&nbsp; | [64.	最小路径和](https://leetcode-cn.com/problems/minimum-path-sum) |
+&nbsp; | [96. 不同的二叉搜索树](https://leetcode-cn.com/problems/unique-binary-search-trees/)
+&nbsp; | [200. 岛屿数量](https://leetcode-cn.com/problems/number-of-islands/)
+&nbsp; | [56. 合并区间](https://leetcode-cn.com/problems/merge-intervals/)
+&nbsp; | [215. 数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
+&nbsp; | [287. 寻找重复数](https://leetcode-cn.com/problems/find-the-duplicate-number/)
+&nbsp; | [142. 环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii/)
+&nbsp; | [33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/)
+
+
 ## 4 Review
 
 No. | Question | Flag
