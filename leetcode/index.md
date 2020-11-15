@@ -36,7 +36,7 @@ No. | Question | Flag
 &nbsp; | [142. Linked List Cycle II](https://leetcode-cn.com/problems/linked-list-cycle-ii/)
 
 
-## 4 Review
+## Review shop
 
 No. | Question | Flag
 :---: | --- | :---:
@@ -44,8 +44,13 @@ No. | Question | Flag
 &nbsp; | [1.1 二分查找](https://leetcode-cn.com/problems/binary-search/), while l <= r | ❎
 &nbsp; | [1.2 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/), def binSearch(nums, t, flag), return r+1 or | ❎
 addition | [162. 寻找峰值](https://leetcode-cn.com/problems/find-peak-element/) nums[-1] = nums[n] = -∞ , l=mid+1, r=mid| ❎
+&nbsp; | [278. First Bad Version](https://leetcode-cn.com/problems/first-bad-version/) , if isBadVersion(mid): right = mid - 1 | ❎
+Array | [88. Merge Sorted Array](https://leetcode-cn.com/problems/merge-sorted-array/), 逆向双指针 | ❎
+双指针 | [15. 3Sum](https://leetcode-cn.com/problems/3sum/)， for for while | 
+双指针 | 11. 盛最多水的容器 | ❎
 (2). | DFS / Stack |
 &nbsp; | [2.1 字符串解码 "3[a2[c]]" == "accacc"](https://leetcode-cn.com/problems/decode-string/), `stack == [(3, ""), (2,"a")]` | ✔️❎
+&nbsp; | [215. 数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) from heapq import heapify, heappush, heappop |
 (3). | Digit, 模拟 |
  &nbsp; | [3.1 回文数](https://leetcode-cn.com/problems/palindrome-number/) [禁止整数转字符串]， &nbsp;&nbsp;&nbsp;&nbsp;模拟 123321 -> 2332 -> 33 | ❎
  &nbsp; | [470. 用 Rand7() 实现 Rand10()](https://leetcode-cn.com/problems/implement-rand10-using-rand7/) , [题解: 等概率多次调用](https://leetcode-cn.com/problems/implement-rand10-using-rand7/solution/xiang-xi-fen-xi-fei-chang-jing-dian-de-ti-mu-deng-/) | 
@@ -54,18 +59,22 @@ addition | [162. 寻找峰值](https://leetcode-cn.com/problems/find-peak-elemen
 &nbsp; | [4.2 区域和检索](https://leetcode-cn.com/problems/range-sum-query-immutable/) | ❎
 `good`<br><br><br>`float('inf')`<br><br><br>hard | [4.3 Coin Change [零钱兑换]](https://leetcode-cn.com/problems/coin-change/) &nbsp;&nbsp;`dp[0] = 0`, `dp[x] = min(dp[x], dp[x - coin] + 1)` <br><br> $F(i)= min\_{j=0…n−1} F(i−c\_j)+1$ `dp = [float('inf')] * (amount + 1)` <br><br> 输入：coins = [1, 2, 5], amount = 11<br>输出：3 <br>解释：11 = 5 + 5 + 1 | ✔️❎
 &nbsp; | [4.4 除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/) | ❎
+&nbsp; | [279. 完全平方数](https://leetcode-cn.com/problems/perfect-squares/), numSquares(n)=min(numSquares(n-k) + 1)∀k∈square | ✔️❎
 (5). | hash |
 &nbsp; | [5.1 两数之和](https://leetcode-cn.com/problems/two-sum/), enumerate hash[num] = i | ❎
 (6). | linkedList |
 - | [6.1 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/) `romantic` | ❎
 - | [6.2 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/) `hash` | ❎
-- | [6.3 两数相加](https://leetcode-cn.com/problems/add-two-numbers/) `LinkNode 模拟` head = ListNode(0), cur = head, carry = 0 | ❎
+- | [6.3 两数相加 I](https://leetcode-cn.com/problems/add-two-numbers/) `LinkNode 模拟` head = ListNode(0), cur = head, carry = 0 | ❎
+- | [445. Add Two Numbers II](https://leetcode-cn.com/problems/add-two-numbers-ii/), 链表求和, stack | ❎
 - | [6.4 复制带随机指针的链表](https://leetcode-cn.com/problems/copy-list-with-random-pointer/) ✔️ | ❎
 - | [6.5 LRUCache](https://leetcode-cn.com/company/shopee/) class DLinkedNode(4), `removeTail`, `moveToHead`, `addToHead `, `removeNode` | ✔️❎
 - | [6.6 删除链表的倒数第N个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/) | ❎
 - | [6.7 排序链表](https://leetcode-cn.com/problems/sort-list/) | ✔️❎
+- | [面试题 02.05. 链表求和 I](https://leetcode-cn.com/problems/sum-lists-lcci/) | ❎
 (7). | stack |
 - | [7.1 有效的括号](https://leetcode-cn.com/problems/valid-parentheses/) `if i == ')' and len(stack)> 0 and stack[-1] == '(': stack.pop()` | ❎
+- | [402. 移掉K位数字](https://leetcode-cn.com/problems/remove-k-digits/) |
 (8). | string |
 <br>reversed | [8.1 字符串相加](https://leetcode-cn.com/problems/add-strings/) 给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和 <br> `num1 = "".join(list(reversed(num1)))`,<br> `num1 = num1 + ("0" * diff1) num2 = num2 + ("0" * diff2)` | ✔️️❎ 
 - | [8.2 比较版本号](https://leetcode-cn.com/problems/compare-version-numbers/) | ❎
@@ -78,16 +87,172 @@ addition | [162. 寻找峰值](https://leetcode-cn.com/problems/find-peak-elemen
 - | [9.2 二叉树的中序遍历 (非递归)](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) `while while` | ❎
 - | [9.3 二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/) | ❎
 
+### 3sum
+
+```python
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        n = len(nums)
+        nums.sort()
+        ans = list()
+        
+        # 枚举 a
+        for first in range(n):
+            # 需要和上一次枚举的数不相同
+            if first > 0 and nums[first] == nums[first - 1]:
+                continue
+            # c 对应的指针初始指向数组的最右端
+            third = n - 1
+            target = -nums[first]
+            # 枚举 b
+            for second in range(first + 1, n):
+                # 需要和上一次枚举的数不相同
+                if second > first + 1 and nums[second] == nums[second - 1]:
+                    continue
+                # 需要保证 b 的指针在 c 的指针的左侧
+                while second < third and nums[second] + nums[third] > target:
+                    third -= 1
+                # 如果指针重合，随着 b 后续的增加
+                # 就不会有满足 a+b+c=0 并且 b<c 的 c 了，可以退出循环
+                if second == third:
+                    break
+                if nums[second] + nums[third] == target:
+                    ans.append([nums[first], nums[second], nums[third]])
+        
+        return ans
+```
+
+### 402. 移掉K位数字
+
+```python
+class Solution:
+    def removeKdigits(self, num: str, k: int) -> str:
+        numStack = []
+        
+        # 构建单调递增的数字串
+        for digit in num:
+            while k and numStack and numStack[-1] > digit:
+                numStack.pop()
+                k -= 1
+        
+            numStack.append(digit)
+        
+        # 如果 K > 0，删除末尾的 K 个字符
+        finalStack = numStack[:-k] if k else numStack
+        
+        # 抹去前导零
+        return "".join(finalStack).lstrip('0') or "0"
+```
+
+### 241. 为运算表达式设计优先级
+
+解题思路
+
+对于一个形如 x op y（op 为运算符，x 和 y 为数） 的算式而言，**它的结果组合取决于 x 和 y 的结果组合数**，而 x 和 y 又可以写成形如 x op y 的算式。
+
+因此，该问题的子问题就是 x op y 中的 x 和 y：以运算符分隔的左右两侧算式解。
+
+然后我们来进行 **分治算法三步走**：
+
+1. 分解：按运算符分成左右两部分，分别求解
+2. 解决：实现一个递归函数，输入算式，返回算式解
+3. 合并：根据运算符合并左右两部分的解，得出最终解
+
+
+```python
+class Solution:
+    def diffWaysToCompute(self, input: str) -> List[int]:
+        # 如果只有数字，直接返回
+        if input.isdigit():
+            return [int(input)]
+
+        res = []
+        for i, char in enumerate(input):
+            if char in ['+', '-', '*']:
+                # 1.分解：遇到运算符，计算左右两侧的结果集
+                # 2.解决：diffWaysToCompute 递归函数求出子问题的解
+                left = self.diffWaysToCompute(input[:i])
+                right = self.diffWaysToCompute(input[i+1:])
+                # 3.合并：根据运算符合并子问题的解
+                for l in left:
+                    for r in right:
+                        if char == '+':
+                            res.append(l + r)
+                        elif char == '-':
+                            res.append(l - r)
+                        else:
+                            res.append(l * r)
+
+        return res
+```
+
+
+### 279. 完全平方数
+
+Recursion
+
+```python
+class Solution(object):
+    def numSquares(self, n):
+        square_nums = [i**2 for i in range(1, int(math.sqrt(n))+1)]
+
+        def minNumSquares(k):
+            """ recursive solution """
+            # bottom cases: find a square number
+            if k in square_nums:
+                return 1
+            min_num = float('inf')
+
+            # Find the minimal value among all possible solutions
+            for square in square_nums:
+                if k < square:
+                    break
+                new_num = minNumSquares(k-square) + 1
+                min_num = min(min_num, new_num)
+            return min_num
+
+        return minNumSquares(n)
+```
+
+DP
+
+```python
+class Solution(object):
+    def numSquares(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        square_nums = [i**2 for i in range(0, int(math.sqrt(n))+1)]
+        
+        dp = [float('inf')] * (n+1)
+        # bottom case
+        dp[0] = 0
+        
+        for i in range(1, n+1):
+            for square in square_nums:
+                if i < square:
+                    break
+                dp[i] = min(dp[i], dp[i-square] + 1)
+        
+        return dp[-1]
 
 ```
-# 1 5 8 4 7 6 5 3 1
-#
-# 1 5 8 5 7 6 4 3 1
-#
-# 1 5 8 5 1 3 4 6 7
-```
 
----
+### 96. 不同的二叉搜索树
+
+```python
+class Solution:
+    def numTrees(self, n):
+        G = [0]*(n+1)
+        G[0], G[1] = 1, 1
+
+        for i in range(2, n+1):
+            for j in range(1, i+1):
+                G[i] += G[j-1] * G[i-j]
+
+        return G[n]
+```
 
 <img src="/images/leetcode/stack-string-decoding.jpg" width="600" alt="字符串解码 " />
 
