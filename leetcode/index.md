@@ -4,7 +4,7 @@ title: Coding
 
 <!--# [Sea](https://leetcode-cn.com/company/shopee/)-->
 
-[HOT100](https://leetcode-cn.com/problemset/leetcode-hot-100/)
+## [HOT100](https://leetcode-cn.com/problemset/leetcode-hot-100/)
 
 No. | Question | Flag
 :---: | --- | :---:
@@ -18,10 +18,9 @@ No. | Question | Flag
 &nbsp; | [31. Next Permutation](https://leetcode-cn.com/problems/next-permutation) == [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) | ❎
 &nbsp; | [406. Queue Reconstruction by Height](https://leetcode-cn.com/problems/queue-reconstruction-by-height)
 (2). | DFS / Stack |
-&nbsp; | [79. Word Search](https://leetcode-cn.com/problems/word-search)
+&nbsp; | [79. Word Search](https://leetcode-cn.com/problems/word-search) | ❎
 &nbsp; | [200. Number of Islands](https://leetcode-cn.com/problems/number-of-islands/) | ❎
-&nbsp; | [56. Merge Intervals](https://leetcode-cn.com/problems/merge-intervals/)
-| |
+&nbsp; | [56. Merge Intervals](https://leetcode-cn.com/problems/merge-intervals/) ， Sort + 遍历, 替换结果 | ❎
 &nbsp; | [148. Sort List](https://leetcode-cn.com/problems/sort-list)
 &nbsp; | &nbsp; | &nbsp;
 &nbsp; | [739. Daily Temperatures](https://leetcode-cn.com/problems/daily-temperatures/)
@@ -35,6 +34,24 @@ No. | Question | Flag
 (6). | LinkedList |
 &nbsp; | [142. Linked List Cycle II](https://leetcode-cn.com/problems/linked-list-cycle-ii/)
 
+**56. 合并区间**
+
+```python
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        intervals.sort(key=lambda x: x[0])
+
+        merged = []
+        for interval in intervals:
+            # 如果列表为空，或者当前区间与上一区间不重合，直接添加
+            if not merged or merged[-1][1] < interval[0]:
+                merged.append(interval)
+            else:
+                # 否则的话，我们就可以与上一区间进行合并
+                merged[-1][1] = max(merged[-1][1], interval[1])
+
+        return merged
+```
 
 ## Review shop
 
@@ -45,9 +62,10 @@ No. | Question | Flag
 &nbsp; | [1.2 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/), def binSearch(nums, t, flag), return r+1 or | ❎
 addition | [162. 寻找峰值](https://leetcode-cn.com/problems/find-peak-element/) nums[-1] = nums[n] = -∞ , l=mid+1, r=mid| ❎
 &nbsp; | [278. First Bad Version](https://leetcode-cn.com/problems/first-bad-version/) , if isBadVersion(mid): right = mid - 1 | ❎
+hard | [410. Split Array Largest Sum](https://leetcode-cn.com/problems/split-array-largest-sum/) Input: nums = [7,2,5,10,8], m = 2. Output: 18 <br> 「使……最大值尽可能小」是二分搜索题目常见的问法 | ❎
 Array | [88. Merge Sorted Array](https://leetcode-cn.com/problems/merge-sorted-array/), 逆向双指针 | ❎
 双指针 | [15. 3Sum](https://leetcode-cn.com/problems/3sum/)， for for while | 
-双指针 | 11. 盛最多水的容器 | ❎
+双指针 | [11. 盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water) | ❎
 (2). | DFS / Stack |
 &nbsp; | [2.1 字符串解码 "3[a2[c]]" == "accacc"](https://leetcode-cn.com/problems/decode-string/), `stack == [(3, ""), (2,"a")]` | ✔️❎
 &nbsp; | [215. 数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) from heapq import heapify, heappush, heappop |
