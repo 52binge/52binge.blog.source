@@ -66,6 +66,7 @@ hard | [410. Split Array Largest Sum](https://leetcode-cn.com/problems/split-arr
 Array | [88. Merge Sorted Array](https://leetcode-cn.com/problems/merge-sorted-array/), 逆向双指针 | ❎
 双指针 | [15. 3Sum](https://leetcode-cn.com/problems/3sum/)， for for while | 
 双指针 | [11. 盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water) | ❎
+hard, merge+index | [315. Count of Smaller Numbers After Self](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/) | hard
 (2). | DFS / Stack |
 &nbsp; | [2.1 字符串解码 "3[a2[c]]" == "accacc"](https://leetcode-cn.com/problems/decode-string/), `stack == [(3, ""), (2,"a")]` | ✔️❎
 &nbsp; | [215. 数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) from heapq import heapify, heappush, heappop |
