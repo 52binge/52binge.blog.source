@@ -63,7 +63,7 @@ No. | Question | Flag
 addition | [162. 寻找峰值](https://leetcode-cn.com/problems/find-peak-element/) nums[-1] = nums[n] = -∞ , l=mid+1, r=mid| ❎
 &nbsp; | [278. First Bad Version](https://leetcode-cn.com/problems/first-bad-version/) , if isBadVersion(mid): right = mid - 1 | ❎
 hard | [410. Split Array Largest Sum](https://leetcode-cn.com/problems/split-array-largest-sum/) Input: nums = [7,2,5,10,8], m = 2. Output: 18 <br> 「使……最大值尽可能小」是二分搜索题目常见的问法 | ❎
-Array | [88. Merge Sorted Array](https://leetcode-cn.com/problems/merge-sorted-array/), 逆向双指针 | ❎
+逆向双指针 | [88. Merge Sorted Array](https://leetcode-cn.com/problems/merge-sorted-array/) nums1 = [1,2,3,0,0,0], nums2 = [2,5,6] | ❎
 双指针 | [15. 3Sum](https://leetcode-cn.com/problems/3sum/)， for for while | 
 双指针 | [11. 盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water) | ❎
 hard, merge+index | [315. Count of Smaller Numbers After Self](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/) | hard
