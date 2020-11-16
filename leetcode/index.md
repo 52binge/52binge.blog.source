@@ -16,15 +16,15 @@ No. | Question | Flag
 &nbsp; | [53. Maximum Subarray](https://leetcode-cn.com/problems/maximum-subarray/) | ❎
 (3). | 模拟 |
 &nbsp; | [31. Next Permutation](https://leetcode-cn.com/problems/next-permutation) == [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) | ❎
-&nbsp; | [406. Queue Reconstruction by Height](https://leetcode-cn.com/problems/queue-reconstruction-by-height)
+Array | [406. Queue Reconstruction by Height](https://leetcode-cn.com/problems/queue-reconstruction-by-height)， people.sort(key=lambda x:(-x[0], x[1])), 插入法 | ✔️❎
 (2). | DFS / Stack |
 &nbsp; | [79. Word Search](https://leetcode-cn.com/problems/word-search) | ❎
 &nbsp; | [200. Number of Islands](https://leetcode-cn.com/problems/number-of-islands/) | ❎
 &nbsp; | [56. Merge Intervals](https://leetcode-cn.com/problems/merge-intervals/) ， Sort + 遍历, 替换结果 | ❎
-&nbsp; | [148. Sort List](https://leetcode-cn.com/problems/sort-list)
+&nbsp; | [148. Sort List](https://leetcode-cn.com/problems/sort-list) | ✔️❎
 &nbsp; | &nbsp; | &nbsp;
 &nbsp; | [739. Daily Temperatures](https://leetcode-cn.com/problems/daily-temperatures/)
-&nbsp; | [21. Merge Two Sorted Lists](https://leetcode-cn.com/problems/merge-two-sorted-lists)  
+&nbsp; | [21. Merge Two Sorted Lists](https://leetcode-cn.com/problems/merge-two-sorted-lists) | ❎
 &nbsp; | [221. Maximal Square](https://leetcode-cn.com/problems/maximal-square/)
 &nbsp; | [253. Meeting Rooms II](https://leetcode-cn.com/problems/meeting-rooms-ii)
 &nbsp; | [64. Minimum Path Sum](https://leetcode-cn.com/problems/minimum-path-sum) |
@@ -79,6 +79,7 @@ hard, merge+index | [315. Count of Smaller Numbers After Self](https://leetcode-
 `good`<br><br><br>`float('inf')`<br><br><br>hard | [4.3 Coin Change [零钱兑换]](https://leetcode-cn.com/problems/coin-change/) &nbsp;&nbsp;`dp[0] = 0`, `dp[x] = min(dp[x], dp[x - coin] + 1)` <br><br> $F(i)= min\_{j=0…n−1} F(i−c\_j)+1$ `dp = [float('inf')] * (amount + 1)` <br><br> 输入：coins = [1, 2, 5], amount = 11<br>输出：3 <br>解释：11 = 5 + 5 + 1 | ✔️❎
 &nbsp; | [4.4 除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/) | ❎
 &nbsp; | [279. 完全平方数](https://leetcode-cn.com/problems/perfect-squares/), numSquares(n)=min(numSquares(n-k) + 1)∀k∈square | ✔️❎
+&nbsp; | [44. Wildcard Matching](https://leetcode-cn.com/problems/wildcard-matching/) Input: s = "aa", p = "*" Output: true , Input: s = "cb", p = "?a" Output: false |
 (5). | hash |
 &nbsp; | [5.1 两数之和](https://leetcode-cn.com/problems/two-sum/), enumerate hash[num] = i | ❎
 (6). | linkedList |
@@ -91,6 +92,8 @@ hard, merge+index | [315. Count of Smaller Numbers After Self](https://leetcode-
 - | [6.6 删除链表的倒数第N个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/) | ❎
 - | [6.7 排序链表](https://leetcode-cn.com/problems/sort-list/) | ✔️❎
 - | [面试题 02.05. 链表求和 I](https://leetcode-cn.com/problems/sum-lists-lcci/) | ❎
+hard | [25. Reverse Nodes in k-Group](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/) |
+hard | [23. Merge k Sorted Lists](https://leetcode-cn.com/problems/merge-k-sorted-lists/) |
 (7). | stack |
 - | [7.1 有效的括号](https://leetcode-cn.com/problems/valid-parentheses/) `if i == ')' and len(stack)> 0 and stack[-1] == '(': stack.pop()` | ❎
 - | [402. 移掉K位数字](https://leetcode-cn.com/problems/remove-k-digits/) |
@@ -105,6 +108,7 @@ hard, merge+index | [315. Count of Smaller Numbers After Self](https://leetcode-
 - | [9.1 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) `i = inorder.index(preorder[0])` | ❎
 - | [9.2 二叉树的中序遍历 (非递归)](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) `while while` | ❎
 - | [9.3 二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/) | ❎
+hard | [124. Binary Tree Maximum Path Sum](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/) |
 
 ### 3sum
 
