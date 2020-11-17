@@ -11,10 +11,13 @@ No. | Question | Flag
 (1). | **binary-search** |
 &nbsp; | [15. 3Sum](https://leetcode-cn.com/problems/3sum) == TwoSum | ❎
 &nbsp; | [33. Search in Rotated Sorted Array](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/) | ❎
+&nbsp; | |
+Array | ~~[283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes)， easy~~ | ❎  
 (4). | DP |
 &nbsp; | [309. Best Time to Buy and Sell Stock with Coo](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown), [题解：最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/solution/zui-jia-mai-mai-gu-piao-shi-ji-han-leng-dong-qi-4/)
 &nbsp; | [53. Maximum Subarray](https://leetcode-cn.com/problems/maximum-subarray/) | ❎
 &nbsp; | [221. Maximal Square](https://leetcode-cn.com/problems/maximal-square/) | ❎
+&nbsp; | [64. Minimum Path Sum](https://leetcode-cn.com/problems/minimum-path-sum) ， 格子 DP | ❎
 (3). | 模拟 |
 &nbsp; | [31. Next Permutation](https://leetcode-cn.com/problems/next-permutation) == [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) | ❎
 Array | [406. Queue Reconstruction by Height](https://leetcode-cn.com/problems/queue-reconstruction-by-height)， people.sort(key=lambda x:(-x[0], x[1])), 插入法 | ✔️❎
@@ -22,17 +25,42 @@ Array | [406. Queue Reconstruction by Height](https://leetcode-cn.com/problems/q
 &nbsp; | [79. Word Search](https://leetcode-cn.com/problems/word-search) | ❎
 &nbsp; | [200. Number of Islands](https://leetcode-cn.com/problems/number-of-islands/) | ❎
 &nbsp; | [56. Merge Intervals](https://leetcode-cn.com/problems/merge-intervals/) ， Sort + 遍历, 替换结果 | ❎
-&nbsp; | [148. Sort List](https://leetcode-cn.com/problems/sort-list) | ✔️❎
 &nbsp; | &nbsp; | &nbsp;
 &nbsp; | [739. Daily Temperatures](https://leetcode-cn.com/problems/daily-temperatures/)
 &nbsp; | [21. Merge Two Sorted Lists](https://leetcode-cn.com/problems/merge-two-sorted-lists) | ❎
-&nbsp; | [253. Meeting Rooms II](https://leetcode-cn.com/problems/meeting-rooms-ii)
-&nbsp; | [64. Minimum Path Sum](https://leetcode-cn.com/problems/minimum-path-sum) |
-&nbsp; | [96. Unique Binary Search Trees](https://leetcode-cn.com/problems/unique-binary-search-trees/)
-&nbsp; | [215. Kth Largest Element in an Array](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
+&nbsp; | [253. Meeting Rooms II](https://leetcode-cn.com/problems/meeting-rooms-ii) , heapq or 拆数组模拟 | ❎
+&nbsp; | [96. Unique Binary Search Trees](https://leetcode-cn.com/problems/unique-binary-search-trees/)  | ❎
+&nbsp; | [215. Kth Largest Element in an Array](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) | ❎
 &nbsp; | [287. Find the Duplicate Number](https://leetcode-cn.com/problems/find-the-duplicate-number/)
 (6). | LinkedList |
-&nbsp; | [142. Linked List Cycle II](https://leetcode-cn.com/problems/linked-list-cycle-ii/)
+&nbsp; | [142. Linked List Cycle II](https://leetcode-cn.com/problems/linked-list-cycle-ii/) | ✔️
+&nbsp; | [148. Sort List](https://leetcode-cn.com/problems/sort-list) | ✔️❎
+Page3 | |
+&nbsp; | 33 搜索旋转排序数组 |  
+&nbsp; | 121 买卖股票的最佳时机 |  
+&nbsp; | 300 最长上升子序列  | ❎
+&nbsp; | [226 翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree) | 
+&nbsp; | [207. Course Schedule](https://leetcode-cn.com/problems/course-schedule) | 
+&nbsp; | [78. Subsets](https://leetcode-cn.com/problems/subsets) | medium
+&nbsp; | [234. Palindrome Linked List](https://leetcode-cn.com/problems/palindrome-linked-list) | easy
+&nbsp; | [543. Diameter of Binary Tree](https://leetcode-cn.com/problems/diameter-of-binary-tree) | easy
+&nbsp; | [48. Rotate Image](https://leetcode-cn.com/problems/rotate-image) | medium
+&nbsp; | [39. Combination Sum](https://leetcode-cn.com/problems/combination-sum) | medium
+&nbsp; | [139. Word Break](https://leetcode-cn.com/problems/word-break) | medium
+&nbsp; | [337. House Robber III](https://leetcode-cn.com/problems/house-robber-iii) | medium
+&nbsp; | [152. Maximum Product Subarray - 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray) | medium
+&nbsp; | [416 分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum) | medium
+&nbsp; | [198 打家劫舍](https://leetcode-cn.com/problems/house-robber) | easy
+&nbsp; | [236 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree) | medium
+&nbsp; | [617 合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees) | easy
+&nbsp; | [55	 跳跃游戏](https://leetcode-cn.com/problems/jump-game) | medium
+&nbsp; | [75 Sort Colors](https://leetcode-cn.com/problems/sort-colors) | 
+&nbsp; | [538 Convert BST to Greater Tree](https://leetcode-cn.com/problems/convert-bst-to-greater-tree) |  
+medium | [114	二叉树展开为链表](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list) |  
+&nbsp; | [621	任务调度器](https://leetcode-cn.com/problems/task-scheduler) |  
+&nbsp; | [560	和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k) |  
+&nbsp; | [142	环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii) | 
+medium | [240	搜索二维矩阵 II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii) |  
 
 **56. 合并区间**
 
