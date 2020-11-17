@@ -18,6 +18,7 @@ Array | ~~[283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes)， ea
 &nbsp; | [53. Maximum Subarray](https://leetcode-cn.com/problems/maximum-subarray/) | ❎
 &nbsp; | [221. Maximal Square](https://leetcode-cn.com/problems/maximal-square/) | ❎
 &nbsp; | [64. Minimum Path Sum](https://leetcode-cn.com/problems/minimum-path-sum) ， 格子 DP | ❎
+&nbsp; | [198 打家劫舍](https://leetcode-cn.com/problems/house-robber) , max(dp[i - 2] + nums[i], dp[i - 1]) | ❎
 (3). | 模拟 |
 &nbsp; | [31. Next Permutation](https://leetcode-cn.com/problems/next-permutation) == [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) | ❎
 Array | [406. Queue Reconstruction by Height](https://leetcode-cn.com/problems/queue-reconstruction-by-height)， people.sort(key=lambda x:(-x[0], x[1])), 插入法 | ✔️❎
@@ -43,16 +44,15 @@ Page3 | |
 &nbsp; | [207. Course Schedule](https://leetcode-cn.com/problems/course-schedule) | 
 &nbsp; | [78. Subsets](https://leetcode-cn.com/problems/subsets) | medium
 &nbsp; | [234. Palindrome Linked List](https://leetcode-cn.com/problems/palindrome-linked-list) | easy
-&nbsp; | [543. Diameter of Binary Tree](https://leetcode-cn.com/problems/diameter-of-binary-tree) | easy
+&nbsp; | [543. Diameter of Binary Tree](https://leetcode-cn.com/problems/diameter-of-binary-tree), 好题 | easy
 &nbsp; | [48. Rotate Image](https://leetcode-cn.com/problems/rotate-image) | medium
 &nbsp; | [39. Combination Sum](https://leetcode-cn.com/problems/combination-sum) | medium
 &nbsp; | [139. Word Break](https://leetcode-cn.com/problems/word-break) | medium
 &nbsp; | [337. House Robber III](https://leetcode-cn.com/problems/house-robber-iii) | medium
 &nbsp; | [152. Maximum Product Subarray - 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray) | medium
 &nbsp; | [416 分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum) | medium
-&nbsp; | [198 打家劫舍](https://leetcode-cn.com/problems/house-robber) | easy
 &nbsp; | [236 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree) | medium
-&nbsp; | [617 合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees) | easy
+&nbsp; | ~~[617 合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees)~~ | ❎
 &nbsp; | [55	 跳跃游戏](https://leetcode-cn.com/problems/jump-game) | medium
 &nbsp; | [75 Sort Colors](https://leetcode-cn.com/problems/sort-colors) | 
 &nbsp; | [538 Convert BST to Greater Tree](https://leetcode-cn.com/problems/convert-bst-to-greater-tree) |  
