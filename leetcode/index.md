@@ -40,11 +40,8 @@ Page3 | |
 &nbsp; | 33 搜索旋转排序数组 |  
 &nbsp; | 121 买卖股票的最佳时机 |  
 &nbsp; | 300 最长上升子序列  | ❎
-&nbsp; | [226 翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree) | 
 &nbsp; | [207. Course Schedule](https://leetcode-cn.com/problems/course-schedule) | 
 &nbsp; | [78. Subsets](https://leetcode-cn.com/problems/subsets) | medium
-&nbsp; | [234. Palindrome Linked List](https://leetcode-cn.com/problems/palindrome-linked-list) | easy
-&nbsp; | [543. Diameter of Binary Tree](https://leetcode-cn.com/problems/diameter-of-binary-tree), 好题 | easy
 &nbsp; | [48. Rotate Image](https://leetcode-cn.com/problems/rotate-image) | medium
 &nbsp; | [39. Combination Sum](https://leetcode-cn.com/problems/combination-sum) | medium
 &nbsp; | [139. Word Break](https://leetcode-cn.com/problems/word-break) | medium
@@ -52,7 +49,6 @@ Page3 | |
 &nbsp; | [152. Maximum Product Subarray - 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray) | medium
 &nbsp; | [416 分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum) | medium
 &nbsp; | [236 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree) | medium
-&nbsp; | ~~[617 合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees)~~ | ❎
 &nbsp; | [55	 跳跃游戏](https://leetcode-cn.com/problems/jump-game) | medium
 &nbsp; | [75 Sort Colors](https://leetcode-cn.com/problems/sort-colors) | 
 &nbsp; | [538 Convert BST to Greater Tree](https://leetcode-cn.com/problems/convert-bst-to-greater-tree) |  
@@ -60,7 +56,12 @@ medium | [114	二叉树展开为链表](https://leetcode-cn.com/problems/flatten
 &nbsp; | [621	任务调度器](https://leetcode-cn.com/problems/task-scheduler) |  
 &nbsp; | [560	和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k) |  
 &nbsp; | [142	环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii) | 
-medium | [240	搜索二维矩阵 II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii) |  
+&nbsp; | [240	搜索二维矩阵 II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii) | ❎ 
+&nbsp; | [234. Palindrome Linked List](https://leetcode-cn.com/problems/palindrome-linked-list)， 递归(可以反向) or vals == vals[::-1] | ✔️❎
+&nbsp; | [543. Diameter of Binary Tree](https://leetcode-cn.com/problems/diameter-of-binary-tree), 好题 self.ans = max(self.ans, L+R) | ✔️❎
+&nbsp; | ~~[226 翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree)~~ | ❎
+&nbsp; | ~~[617 合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees)~~ | ❎
+
 
 **56. 合并区间**
 
