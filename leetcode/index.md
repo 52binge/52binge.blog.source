@@ -12,8 +12,9 @@ No. | Question | Flag
 &nbsp; | [15. 3Sum](https://leetcode-cn.com/problems/3sum) == TwoSum | ❎
 &nbsp; | [33. Search in Rotated Sorted Array](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/) | ❎
 &nbsp; | |
-Array | ~~[283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes)， easy~~ | ❎  
-(4). | DP |
+Array | ~~[283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes)， 冒泡思想~~ | ❎  
+&nbsp; | [48. Rotate Image](https://leetcode-cn.com/problems/rotate-image), n\*n matrix, 上三角【`转置+reverse()`】,  matrix[i].reverse() | ✔️❎
+(2). | DP |
 &nbsp; | [309. Best Time to Buy and Sell Stock with Coo](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown), [题解：最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/solution/zui-jia-mai-mai-gu-piao-shi-ji-han-leng-dong-qi-4/)
 &nbsp; | [53. Maximum Subarray](https://leetcode-cn.com/problems/maximum-subarray/) | ❎
 &nbsp; | [221. Maximal Square](https://leetcode-cn.com/problems/maximal-square/) | ❎
@@ -23,7 +24,7 @@ Array | ~~[283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes)， ea
 &nbsp; | [31. Next Permutation](https://leetcode-cn.com/problems/next-permutation) == [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) | ❎
 Array | [406. Queue Reconstruction by Height](https://leetcode-cn.com/problems/queue-reconstruction-by-height)， people.sort(key=lambda x:(-x[0], x[1])), 插入法 | ✔️❎
 全排列 | [39. Combination Sum](https://leetcode-cn.com/problems/combination-sum) ， [经典好题](https://leetcode-cn.com/problems/combination-sum/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/)| ✔️
-(2). | DFS / Stack |
+(4). | DFS / BFS / Tree / Stack |
 &nbsp; | [79. Word Search](https://leetcode-cn.com/problems/word-search) | ❎
 &nbsp; | [200. Number of Islands](https://leetcode-cn.com/problems/number-of-islands/) | ❎
 &nbsp; | [56. Merge Intervals](https://leetcode-cn.com/problems/merge-intervals/) ， Sort + 遍历, 替换结果 | ❎
@@ -34,6 +35,7 @@ Array | [406. Queue Reconstruction by Height](https://leetcode-cn.com/problems/q
 &nbsp; | [96. Unique Binary Search Trees](https://leetcode-cn.com/problems/unique-binary-search-trees/)  | ❎
 &nbsp; | [215. Kth Largest Element in an Array](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) | ❎
 &nbsp; | [287. Find the Duplicate Number](https://leetcode-cn.com/problems/find-the-duplicate-number/)
+Tree | [114	二叉树展开为链表](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list), prev.right = curr | ❎ 
 (6). | LinkedList |
 &nbsp; | [142. Linked List Cycle II](https://leetcode-cn.com/problems/linked-list-cycle-ii/) | ✔️
 &nbsp; | [148. Sort List](https://leetcode-cn.com/problems/sort-list) | ✔️❎
@@ -43,7 +45,6 @@ Page3 | |
 &nbsp; | 300 最长上升子序列  | ❎
 &nbsp; | [207. Course Schedule](https://leetcode-cn.com/problems/course-schedule) | 
 &nbsp; | [78. Subsets](https://leetcode-cn.com/problems/subsets) | medium
-&nbsp; | [48. Rotate Image](https://leetcode-cn.com/problems/rotate-image)， 转置+reverse() | ✔️❎
 &nbsp; | [139. Word Break](https://leetcode-cn.com/problems/word-break) | medium
 &nbsp; | [337. House Robber III](https://leetcode-cn.com/problems/house-robber-iii) | medium
 &nbsp; | [152. Maximum Product Subarray - 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray) | medium
@@ -52,7 +53,6 @@ Page3 | |
 &nbsp; | [55	跳跃游戏](https://leetcode-cn.com/problems/jump-game) | medium
 &nbsp; | [75 Sort Colors](https://leetcode-cn.com/problems/sort-colors), 2遍 单指针, 1遍双指针 | ❎
 &nbsp; | [538 Convert BST to Greater Tree](https://leetcode-cn.com/problems/convert-bst-to-greater-tree) |  
-medium | [114	二叉树展开为链表](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list), prev.right = curr | ❎ 
 &nbsp; | [621	任务调度器](https://leetcode-cn.com/problems/task-scheduler) |  
 前缀和<br>哈希优化 | [560. Subarray Sum Equals K](https://leetcode-cn.com/problems/subarray-sum-equals-k) <br> &nbsp;&nbsp; num_times = collections.defaultdict(int), cur_sum - target in nums_time  | ✔️❎
 &nbsp; | [142	环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii) | 
