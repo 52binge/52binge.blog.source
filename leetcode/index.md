@@ -22,6 +22,7 @@ Array | ~~[283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes)， ea
 (3). | 模拟 |
 &nbsp; | [31. Next Permutation](https://leetcode-cn.com/problems/next-permutation) == [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) | ❎
 Array | [406. Queue Reconstruction by Height](https://leetcode-cn.com/problems/queue-reconstruction-by-height)， people.sort(key=lambda x:(-x[0], x[1])), 插入法 | ✔️❎
+全排列 | [39. Combination Sum](https://leetcode-cn.com/problems/combination-sum) ， [经典好题](https://leetcode-cn.com/problems/combination-sum/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/)| ✔️
 (2). | DFS / Stack |
 &nbsp; | [79. Word Search](https://leetcode-cn.com/problems/word-search) | ❎
 &nbsp; | [200. Number of Islands](https://leetcode-cn.com/problems/number-of-islands/) | ❎
@@ -42,19 +43,18 @@ Page3 | |
 &nbsp; | 300 最长上升子序列  | ❎
 &nbsp; | [207. Course Schedule](https://leetcode-cn.com/problems/course-schedule) | 
 &nbsp; | [78. Subsets](https://leetcode-cn.com/problems/subsets) | medium
-&nbsp; | [48. Rotate Image](https://leetcode-cn.com/problems/rotate-image) | medium
-&nbsp; | [39. Combination Sum](https://leetcode-cn.com/problems/combination-sum) | medium
+&nbsp; | [48. Rotate Image](https://leetcode-cn.com/problems/rotate-image)， 转置+reverse() | ✔️❎
 &nbsp; | [139. Word Break](https://leetcode-cn.com/problems/word-break) | medium
 &nbsp; | [337. House Robber III](https://leetcode-cn.com/problems/house-robber-iii) | medium
 &nbsp; | [152. Maximum Product Subarray - 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray) | medium
 &nbsp; | [416 分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum) | medium
 &nbsp; | [236 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree) | medium
-&nbsp; | [55	 跳跃游戏](https://leetcode-cn.com/problems/jump-game) | medium
-&nbsp; | [75 Sort Colors](https://leetcode-cn.com/problems/sort-colors) | 
+&nbsp; | [55	跳跃游戏](https://leetcode-cn.com/problems/jump-game) | medium
+&nbsp; | [75 Sort Colors](https://leetcode-cn.com/problems/sort-colors), 2遍 单指针, 1遍双指针 | ❎
 &nbsp; | [538 Convert BST to Greater Tree](https://leetcode-cn.com/problems/convert-bst-to-greater-tree) |  
-medium | [114	二叉树展开为链表](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list) |  
+medium | [114	二叉树展开为链表](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list), prev.right = curr | ❎ 
 &nbsp; | [621	任务调度器](https://leetcode-cn.com/problems/task-scheduler) |  
-&nbsp; | [560	和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k) |  
+前缀和<br>哈希优化 | [560. Subarray Sum Equals K](https://leetcode-cn.com/problems/subarray-sum-equals-k) <br> &nbsp;&nbsp; num_times = collections.defaultdict(int), cur_sum - target in nums_time  | ✔️❎
 &nbsp; | [142	环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii) | 
 &nbsp; | [240	搜索二维矩阵 II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii) | ❎ 
 &nbsp; | [234. Palindrome Linked List](https://leetcode-cn.com/problems/palindrome-linked-list)， 递归(可以反向) or vals == vals[::-1] | ✔️❎
