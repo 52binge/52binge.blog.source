@@ -20,6 +20,7 @@ Array | ~~[283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes)， �
 &nbsp; | [221. Maximal Square](https://leetcode-cn.com/problems/maximal-square/) | ❎
 &nbsp; | [64. Minimum Path Sum](https://leetcode-cn.com/problems/minimum-path-sum) ， 格子 DP | ❎
 &nbsp; | [198 打家劫舍](https://leetcode-cn.com/problems/house-robber) , max(dp[i - 2] + nums[i], dp[i - 1]) | ❎
+背包 | [416 分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum), 0-1背包 变体 | medium
 (3). | 模拟 |
 &nbsp; | [31. Next Permutation](https://leetcode-cn.com/problems/next-permutation) == [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) | ❎
 Array | [406. Queue Reconstruction by Height](https://leetcode-cn.com/problems/queue-reconstruction-by-height)， people.sort(key=lambda x:(-x[0], x[1])), 插入法 | ✔️❎
@@ -48,7 +49,6 @@ Page3 | |
 &nbsp; | [139. Word Break](https://leetcode-cn.com/problems/word-break) | medium
 &nbsp; | [337. House Robber III](https://leetcode-cn.com/problems/house-robber-iii) | medium
 &nbsp; | [152. Maximum Product Subarray - 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray) | medium
-&nbsp; | [416 分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum) | medium
 &nbsp; | [236 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree) | medium
 &nbsp; | [55	跳跃游戏](https://leetcode-cn.com/problems/jump-game) | medium
 &nbsp; | [75 Sort Colors](https://leetcode-cn.com/problems/sort-colors), 2遍 单指针, 1遍双指针 | ❎
