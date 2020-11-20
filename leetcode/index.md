@@ -21,11 +21,13 @@ Array | ~~[283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes)， �
 &nbsp; | [64. Minimum Path Sum](https://leetcode-cn.com/problems/minimum-path-sum) ， 格子 DP | ❎
 &nbsp; | [198 打家劫舍](https://leetcode-cn.com/problems/house-robber) , max(dp[i - 2] + nums[i], dp[i - 1]) | ❎
 背包 | [416 分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum), 0-1背包 变体 | medium
+树形DP | [337. House Robber III](https://leetcode-cn.com/problems/house-robber-iii)， 偷不偷 | ✔️
 (3). | 模拟 |
 &nbsp; | [31. Next Permutation](https://leetcode-cn.com/problems/next-permutation) == [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) | ❎
 Array | [406. Queue Reconstruction by Height](https://leetcode-cn.com/problems/queue-reconstruction-by-height)， people.sort(key=lambda x:(-x[0], x[1])), 插入法 | ✔️❎
 全排列 | [39. Combination Sum](https://leetcode-cn.com/problems/combination-sum) ， [经典好题](https://leetcode-cn.com/problems/combination-sum/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/)| ✔️
 (4). | DFS / BFS / Tree / Stack |
+&nbsp; | [78. Subsets](https://leetcode-cn.com/problems/subsets), 经典dfs | ❎
 &nbsp; | [79. Word Search](https://leetcode-cn.com/problems/word-search) | ❎
 &nbsp; | [200. Number of Islands](https://leetcode-cn.com/problems/number-of-islands/) | ❎
 &nbsp; | [56. Merge Intervals](https://leetcode-cn.com/problems/merge-intervals/) ， Sort + 遍历, 替换结果 | ❎
@@ -45,9 +47,7 @@ Page3 | |
 &nbsp; | 121 买卖股票的最佳时机 |  
 &nbsp; | 300 最长上升子序列  | ❎
 &nbsp; | [207. Course Schedule](https://leetcode-cn.com/problems/course-schedule) | 
-&nbsp; | [78. Subsets](https://leetcode-cn.com/problems/subsets) | medium
 &nbsp; | [139. Word Break](https://leetcode-cn.com/problems/word-break) | medium
-&nbsp; | [337. House Robber III](https://leetcode-cn.com/problems/house-robber-iii) | medium
 &nbsp; | [152. Maximum Product Subarray - 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray) | medium
 &nbsp; | [236 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree) | medium
 &nbsp; | [55	跳跃游戏](https://leetcode-cn.com/problems/jump-game) | medium
@@ -80,6 +80,31 @@ class Solution:
                 merged[-1][1] = max(merged[-1][1], interval[1])
 
         return merged
+```
+
+**337. House Robber III** （偷,不偷）[题解](https://leetcode-cn.com/problems/house-robber-iii/solution/san-chong-fang-fa-jie-jue-shu-xing-dong-tai-gui-hu/)
+
+我们使用一个大小为 2 的数组来表示 int[] res = new int[2] 0 代表不偷，1 代表偷
+任何一个节点能偷到的最大钱的状态可以定义为
+
+> - 当前节点选择不偷：当前节点能偷到的最大钱数 = 左孩子能偷到的钱 + 右孩子能偷到的钱
+> - 当前节点选择偷：当前节点能偷到的最大钱数 = 左孩子选择自己不偷时能得到的钱 + 右孩子选择不偷时能得到的钱 + 当前节点的钱数
+
+```python
+class Solution:
+    def rob(self, root: TreeNode) -> int:
+        def _rob(root):
+            if not root: return 0, 0  # 偷，不偷
+
+            left = _rob(root.left)
+            right = _rob(root.right)
+            # 偷当前节点, 则左右子树都不能偷
+            v1 = root.val + left[1] + right[1]
+            # 不偷当前节点, 则取左右子树中最大的值
+            v2 = max(left) + max(right)
+            return v1, v2
+
+        return max(_rob(root))
 ```
 
 ## Review shop
