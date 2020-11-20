@@ -47,7 +47,7 @@ Page3 | |
 &nbsp; | 121 买卖股票的最佳时机 |  
 &nbsp; | 300 最长上升子序列  | ❎
 &nbsp; | [207. Course Schedule](https://leetcode-cn.com/problems/course-schedule) | 
-&nbsp; | [139. Word Break](https://leetcode-cn.com/problems/word-break) | medium
+&nbsp; | [139. Word Break](https://leetcode-cn.com/problems/word-break) ， [好题目，3种解法](https://leetcode-cn.com/problems/word-break/solution/shou-hui-tu-jie-san-chong-fang-fa-dfs-bfs-dong-tai/) |
 &nbsp; | [152. Maximum Product Subarray - 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray) | medium
 &nbsp; | [236 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree) | medium
 &nbsp; | [55	跳跃游戏](https://leetcode-cn.com/problems/jump-game) | medium
