@@ -48,12 +48,12 @@ Page3 | |
 &nbsp; | 300 最长上升子序列  | ❎
 &nbsp; | [207. Course Schedule](https://leetcode-cn.com/problems/course-schedule) | 
 &nbsp; | [139. Word Break](https://leetcode-cn.com/problems/word-break) ， [好题目，3种解法](https://leetcode-cn.com/problems/word-break/solution/shou-hui-tu-jie-san-chong-fang-fa-dfs-bfs-dong-tai/) |
-&nbsp; | [152. Maximum Product Subarray - 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray) | medium
+&nbsp; | [152. Maximum Product Subarray - 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray) ， DP | medium
 &nbsp; | [236 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree) | medium
-&nbsp; | [55	跳跃游戏](https://leetcode-cn.com/problems/jump-game) | medium
+&nbsp; | [55	跳跃游戏](https://leetcode-cn.com/problems/jump-game)， 贪心 | medium
 &nbsp; | [75 Sort Colors](https://leetcode-cn.com/problems/sort-colors), 2遍 单指针, 1遍双指针 | ❎
-&nbsp; | [538 Convert BST to Greater Tree](https://leetcode-cn.com/problems/convert-bst-to-greater-tree) |  
-&nbsp; | [621	任务调度器](https://leetcode-cn.com/problems/task-scheduler) |  
+&nbsp; | [538 Convert BST to Greater Tree](https://leetcode-cn.com/problems/convert-bst-to-greater-tree)， 反序中序遍历 |  
+&nbsp; | [621	任务调度器](https://leetcode-cn.com/problems/task-scheduler)， 优先队列 |  
 前缀和<br>哈希优化 | [560. Subarray Sum Equals K](https://leetcode-cn.com/problems/subarray-sum-equals-k) <br> &nbsp;&nbsp; num_times = collections.defaultdict(int), cur_sum - target in nums_time  | ✔️❎
 &nbsp; | [142	环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii) | 
 &nbsp; | [240	搜索二维矩阵 II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii) | ❎ 
