@@ -4,28 +4,31 @@ title: Coding
 
 <!--# [Sea](https://leetcode-cn.com/company/shopee/)-->
 
+[LCP 18. 早餐组合](https://leetcode-cn.com/problems/2vYnGI/)
+[LCP 19. 秋叶收藏集](https://leetcode-cn.com/problems/UlBDOe/)
+
 ## [HOT100](https://leetcode-cn.com/problemset/leetcode-hot-100/)
 
 No. | Question | Flag
 :---: | --- | :---:
 (1). | **binary-search** |
-&nbsp; | [15. 3Sum](https://leetcode-cn.com/problems/3sum) == TwoSum | ❎
+good | [15. 3Sum](https://leetcode-cn.com/problems/3sum) == TwoSum， for for while | ❎
 &nbsp; | [33. Search in Rotated Sorted Array](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/) | ❎
 &nbsp; | |
 Array | ~~[283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes)， 冒泡思想~~ | ❎  
 &nbsp; | [48. Rotate Image](https://leetcode-cn.com/problems/rotate-image), n\*n matrix, 上三角【`转置+reverse()`】,  matrix[i].reverse() | ✔️❎
-(2). | DP |
+(2). | **Dynamic programming**, DP |
 &nbsp; | [309. Best Time to Buy and Sell Stock with Coo](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown), [题解：最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/solution/zui-jia-mai-mai-gu-piao-shi-ji-han-leng-dong-qi-4/)
-&nbsp; | [53. Maximum Subarray](https://leetcode-cn.com/problems/maximum-subarray/) | ❎
-&nbsp; | [221. Maximal Square](https://leetcode-cn.com/problems/maximal-square/) | ❎
-&nbsp; | [64. Minimum Path Sum](https://leetcode-cn.com/problems/minimum-path-sum) ， 格子 DP | ❎
-&nbsp; | [198 打家劫舍](https://leetcode-cn.com/problems/house-robber) , max(dp[i - 2] + nums[i], dp[i - 1]) | ❎
-背包 | [416 分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum), 0-1背包 变体 | medium
-树形DP | [337. House Robber III](https://leetcode-cn.com/problems/house-robber-iii)， 偷不偷 | ✔️
+&nbsp; | ~~[53. Maximum Subarray](https://leetcode-cn.com/problems/maximum-subarray/)， 连续的最大子序和~~ | ❎
+&nbsp; | ~~[64. Minimum Path Sum 二维格子的最小路径和](https://leetcode-cn.com/problems/minimum-path-sum)~~ ， 格子 DP（向左和向下走） | ❎
+<br>good | [221. Maximal Square](https://leetcode-cn.com/problems/maximal-square/) 最大的正方形 ， dp = [[0] * columns for _ in range(rows)] <br>&nbsp;&nbsp; `dp[i][j] = min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]) + 1` | <br>❎
+&nbsp; | ~~[198 打家劫舍](https://leetcode-cn.com/problems/house-robber)~~ , max(dp[i - 2] + nums[i], dp[i - 1]) | ❎
+`背包` | [416 分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum), 0-1背包 变体 | medium
+树形DP | [337. House Robber III](https://leetcode-cn.com/problems/house-robber-iii)， 偷不偷 | ✔️好题
 (3). | 模拟 |
 &nbsp; | [31. Next Permutation](https://leetcode-cn.com/problems/next-permutation) == [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) | ❎
 Array | [406. Queue Reconstruction by Height](https://leetcode-cn.com/problems/queue-reconstruction-by-height)， people.sort(key=lambda x:(-x[0], x[1])), 插入法 | ✔️❎
-全排列 | [39. Combination Sum](https://leetcode-cn.com/problems/combination-sum) ， [经典好题](https://leetcode-cn.com/problems/combination-sum/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/)| ✔️
+`全排列` | [39. Combination Sum](https://leetcode-cn.com/problems/combination-sum) ， [经典好题:题解](https://leetcode-cn.com/problems/combination-sum/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/)| ✔️
 (4). | DFS / BFS / Tree / Stack |
 &nbsp; | [78. Subsets](https://leetcode-cn.com/problems/subsets), 经典dfs | ❎
 &nbsp; | [79. Word Search](https://leetcode-cn.com/problems/word-search) | ❎
@@ -37,10 +40,10 @@ Array | [406. Queue Reconstruction by Height](https://leetcode-cn.com/problems/q
 &nbsp; | [253. Meeting Rooms II](https://leetcode-cn.com/problems/meeting-rooms-ii) , heapq or 拆数组模拟 | ❎
 &nbsp; | [96. Unique Binary Search Trees](https://leetcode-cn.com/problems/unique-binary-search-trees/)  | ❎
 &nbsp; | [215. Kth Largest Element in an Array](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) | ❎
-&nbsp; | [287. Find the Duplicate Number](https://leetcode-cn.com/problems/find-the-duplicate-number/)
 Tree | [114	二叉树展开为链表](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list), prev.right = curr | ❎ 
 (6). | LinkedList |
-&nbsp; | [142. Linked List Cycle II](https://leetcode-cn.com/problems/linked-list-cycle-ii/) | ✔️
+&nbsp; | [142. Linked List Cycle II](https://leetcode-cn.com/problems/linked-list-cycle-ii/) | ❎
+&nbsp; | [287. Find the Duplicate Number](https://leetcode-cn.com/problems/find-the-duplicate-number/)， 转为环形链表II-龟兔判圈 | ❎
 &nbsp; | [148. Sort List](https://leetcode-cn.com/problems/sort-list) | ✔️❎
 Page3 | |
 &nbsp; | 33 搜索旋转排序数组 |  
@@ -49,13 +52,12 @@ Page3 | |
 &nbsp; | [207. Course Schedule](https://leetcode-cn.com/problems/course-schedule) | 
 &nbsp; | [139. Word Break](https://leetcode-cn.com/problems/word-break) ， [好题目，3种解法](https://leetcode-cn.com/problems/word-break/solution/shou-hui-tu-jie-san-chong-fang-fa-dfs-bfs-dong-tai/) |
 &nbsp; | [152. Maximum Product Subarray - 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray) ， DP | medium
-&nbsp; | [236 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree) | medium
-&nbsp; | [55	跳跃游戏](https://leetcode-cn.com/problems/jump-game)， 贪心 | medium
+&nbsp; | [55	跳跃游戏](https://leetcode-cn.com/problems/jump-game)， 贪心 | ❎
 &nbsp; | [75 Sort Colors](https://leetcode-cn.com/problems/sort-colors), 2遍 单指针, 1遍双指针 | ❎
 &nbsp; | [538 Convert BST to Greater Tree](https://leetcode-cn.com/problems/convert-bst-to-greater-tree)， 反序中序遍历 |  
-&nbsp; | [621	任务调度器](https://leetcode-cn.com/problems/task-scheduler)， 优先队列 |  
+&nbsp; | [621	任务调度器](https://leetcode-cn.com/problems/task-scheduler)， 桶排序思想 | ❎ 
 前缀和<br>哈希优化 | [560. Subarray Sum Equals K](https://leetcode-cn.com/problems/subarray-sum-equals-k) <br> &nbsp;&nbsp; num_times = collections.defaultdict(int), cur_sum - target in nums_time  | ✔️❎
-&nbsp; | [142	环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii) | 
+&nbsp; | [142	环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii) | ❎
 &nbsp; | [240	搜索二维矩阵 II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii) | ❎ 
 &nbsp; | [234. Palindrome Linked List](https://leetcode-cn.com/problems/palindrome-linked-list)， 递归(可以反向) or vals == vals[::-1] | ✔️❎
 &nbsp; | [543. Diameter of Binary Tree](https://leetcode-cn.com/problems/diameter-of-binary-tree), 好题 self.ans = max(self.ans, L+R) | ✔️❎
@@ -63,7 +65,7 @@ Page3 | |
 &nbsp; | ~~[617 合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees)~~ | ❎
 
 
-**56. 合并区间**
+### 56. Merge Intervals
 
 ```python
 class Solution:
@@ -82,7 +84,9 @@ class Solution:
         return merged
 ```
 
-**337. House Robber III** （偷,不偷）[题解](https://leetcode-cn.com/problems/house-robber-iii/solution/san-chong-fang-fa-jie-jue-shu-xing-dong-tai-gui-hu/)
+### 337. House Robber III
+
+偷,不偷 [题解](https://leetcode-cn.com/problems/house-robber-iii/solution/san-chong-fang-fa-jie-jue-shu-xing-dong-tai-gui-hu/)
 
 我们使用一个大小为 2 的数组来表示 int[] res = new int[2] 0 代表不偷，1 代表偷
 任何一个节点能偷到的最大钱的状态可以定义为
@@ -105,6 +109,17 @@ class Solution:
             return v1, v2
 
         return max(_rob(root))
+```
+
+621 任务调度器， leastInterval 
+
+```python
+class Solution:
+    def leastInterval(self, tasks: List[str], n: int) -> int:
+        tnum=[]
+        for i in set(tasks):tnum.append(tasks.count(i))
+        maxt=max(tnum)
+        return max((n+1)*(maxt-1)+tnum.count(maxt),len(tasks))
 ```
 
 ## Review shop
