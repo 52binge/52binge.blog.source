@@ -39,6 +39,8 @@ tags: [spark]
 
 repartition vs coalesce vs coalesce in sql
 
+[Hive数仓建表该选用ORC还是Parquet，压缩选LZO还是Snappy？](https://zhuanlan.zhihu.com/p/257917645)
+
 No. | Title | Article
 :---: | --- | ---
 0 | kaikeba | sparkSQL底层实现原理
