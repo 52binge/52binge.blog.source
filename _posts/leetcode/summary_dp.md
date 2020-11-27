@@ -1,6 +1,6 @@
 ---
 title: Summary 20 dynamic programming
-date: 2020-08-31 10:54:16
+date: 2019-08-31 10:54:16
 tags: dp
 categories: leetcode
 toc: true
