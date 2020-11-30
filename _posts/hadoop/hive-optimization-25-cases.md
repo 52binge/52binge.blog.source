@@ -1,7 +1,7 @@
 ---
-title: 全宇宙最强的25条Hive性能调优实战
+title: Hive Optimize 25 Items
 toc: true
-date: 2020-08-18 08:07:21
+date: 2020-04-18 08:07:21
 categories: [spark]
 tags: [spark]
 ---

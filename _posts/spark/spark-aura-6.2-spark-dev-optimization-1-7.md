@@ -1,5 +1,5 @@
 ---
-title: Spark 开发调优 10 条
+title: Spark dev Optimize 10 Items
 toc: true
 date: 2020-08-10 10:07:21
 categories: [spark]

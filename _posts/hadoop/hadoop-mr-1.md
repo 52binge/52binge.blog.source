@@ -1,5 +1,5 @@
 ---
-title: Hadoop Tutorial 2 - MapReduce
+title: Hadoop Review 2 - MapReduce
 toc: true
 date: 2020-07-15 23:07:21
 categories: [hadoop]

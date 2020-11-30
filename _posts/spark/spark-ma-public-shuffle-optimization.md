@@ -1,5 +1,5 @@
 ---
-title: Spark Shuffle 调优的11条经验 (马中华)
+title: Spark Shuffle Optimize 10 items
 toc: true
 date: 2020-08-12 20:07:21
 categories: [spark]
