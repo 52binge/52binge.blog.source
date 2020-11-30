@@ -1224,21 +1224,24 @@ class Solution:
      
 quickSort
  
-```cpp
-void quickSort(int a[], int left, int right) {
-    if(left < right) { // exit. good idea!
-        int l = left, r = right, x = a[l];
-        while(1) {
-            while(l < r && a[r] >= x) r--;
-            while(l < r && a[l] <= x) l++;
-            if(l >= r) break;
-            swap(a[r], a[l]);
-        }
-        swap(a[left], a[l]);
-        quickSort(a, left, l-1);
-        quickSort(a, l+1, right);
-    }
-}
+```python
+def quickSort(a, left, right):
+    if left < right:
+        l, r, x = left, right, a[l]
+        while True
+            while l < r and a[r] >= x:
+                r--
+            while l < r and a[l] <= x:
+                l++
+
+            if l >= r:
+                break
+                
+            a[r], a[l] = a[l], a[r]
+
+        a[left], a[l] = a[l], a[left]
+        quickSort(a, left, l-1)
+        quickSort(a, l+1, right)
 
 void mergeSort(int a[], int l, int r) { //  8, 5, 4, 9, 2, 3, 6
     if(l >= r) return;   // exit.
