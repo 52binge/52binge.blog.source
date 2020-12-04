@@ -1,6 +1,6 @@
 ---
 title: Data WareHouse Questions
-date: 2020-06-10 07:11:21
+date: 2018-06-10 07:11:21
 categories: devops
 tags: Stack
 ---

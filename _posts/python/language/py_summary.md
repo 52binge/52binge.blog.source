@@ -1,6 +1,6 @@
 ---
 title: Summary Python
-date: 2020-09-03 10:07:21
+date: 2018-09-03 10:07:21
 categories: [python]
 tags: [interview]
 ---

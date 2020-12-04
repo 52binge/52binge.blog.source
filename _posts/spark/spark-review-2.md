@@ -1,7 +1,7 @@
 ---
 title: Spark Intrduce 2 - RDD
 toc: true
-date: 2020-07-07 20:07:21
+date: 2018-07-07 20:07:21
 categories: [spark]
 tags: [spark]
 ---

@@ -1,6 +1,6 @@
 ---
 title: Summary SQL - Leetcode
-date: 2020-09-06 10:54:16
+date: 2018-09-06 10:54:16
 tags: leetcode
 categories: leetcode
 toc: true

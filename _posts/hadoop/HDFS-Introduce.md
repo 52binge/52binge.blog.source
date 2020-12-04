@@ -1,7 +1,7 @@
 ---
 title: Hadoop Tutorial - HDFS
 toc: true
-date: 2020-07-15 20:07:21
+date: 2018-07-15 20:07:21
 categories: [hadoop]
 tags: [hdfs]
 ---

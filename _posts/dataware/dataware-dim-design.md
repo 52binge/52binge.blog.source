@@ -1,6 +1,6 @@
 ---
 title: DataWare 维度设计
-date: 2020-06-09 17:11:21
+date: 2018-06-09 17:11:21
 categories: devops
 tags: Stack
 ---

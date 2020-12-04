@@ -1,6 +1,6 @@
 ---
 title: python 的 getattr() 函数
-date: 2020-08-13 10:07:21
+date: 2018-08-13 10:07:21
 categories: [python]
 tags: [getattr]
 ---
