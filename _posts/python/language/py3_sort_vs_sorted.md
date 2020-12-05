@@ -1,6 +1,6 @@
 ---
 title: 怎么理解 Python3 的 cmp_to_key函数？
-date: 2020-10-20 10:07:21
+date: 2019-10-20 10:07:21
 categories: [python]
 tags: [python3]
 ---
