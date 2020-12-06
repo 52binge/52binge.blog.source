@@ -1,8 +1,8 @@
 ---
+top:  6
 title: Developer's manual
 date: 2019-10-20 17:11:21
 categories: devops
-top:  3
 tags: developer   
 mathjax: true
 ---

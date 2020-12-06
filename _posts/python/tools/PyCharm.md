@@ -1,4 +1,5 @@
 ---
+top: 3
 title: Pycharm Keyboard Shortcuts（Mac）
 date: 2019-12-22 17:00:21
 categories: python

@@ -1,4 +1,5 @@
 ---
+top: 1
 title: Language Model and Perplexity
 toc: true
 date: 2019-06-16 11:00:21

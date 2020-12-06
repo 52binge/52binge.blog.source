@@ -1,7 +1,8 @@
 ---
+top: 1
 title: ElasticSearch 各种查询关键字的区别
 date: 2019-10-31 11:00:21
-categories: nlp
+categories: elastic
 tags: ElasticSearch
 ---
 
