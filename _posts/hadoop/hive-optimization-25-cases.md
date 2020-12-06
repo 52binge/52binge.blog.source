@@ -1,5 +1,4 @@
 ---
-top: 1
 title: Hive Optimize 25 Items
 toc: true
 date: 2020-04-18 08:07:21
