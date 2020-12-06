@@ -7,6 +7,12 @@ title: Coding
 [LCP 18. 早餐组合](https://leetcode-cn.com/problems/2vYnGI/)
 [LCP 19. 秋叶收藏集](https://leetcode-cn.com/problems/UlBDOe/)
 
+```
+f[i][0]: 手上持有股票的最大收益
+f[i][1]: 手上不持有股票, 并且处于冷冻期的最大收益
+f[i][2]: 手上持有股票, 并且不处于冷冻期的最大收益
+```
+
 ## [HOT100](https://leetcode-cn.com/problemset/leetcode-hot-100/)
 
 No. | Question | Flag
@@ -18,7 +24,7 @@ good | [15. 3Sum](https://leetcode-cn.com/problems/3sum) == TwoSum， for for wh
 Array | ~~[283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes)， 冒泡思想~~ | ❎  
 &nbsp; | [48. Rotate Image](https://leetcode-cn.com/problems/rotate-image), n\*n matrix, 上三角【`转置+reverse()`】,  matrix[i].reverse() | ✔️❎
 (2). | **Dynamic programming**, DP |
-&nbsp; | [309. Best Time to Buy and Sell Stock with Coo](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown), [题解：最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/solution/zui-jia-mai-mai-gu-piao-shi-ji-han-leng-dong-qi-4/)
+&nbsp; | [309. Best Time to Buy and Sell Stock with Coo](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown), [题解：最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/solution/zui-jia-mai-mai-gu-piao-shi-ji-han-leng-dong-qi-4/) <br> 1. f[i][0]: 手上持有股票的最大收益 <br> 2. f[i][1]: 手上不持有股票, 并且处于冷冻期的最大收益 <br> 3. f[i][2]: 手上不持有股票, 并且不处于冷冻期的最大收益 | ❎
 &nbsp; | ~~[53. Maximum Subarray](https://leetcode-cn.com/problems/maximum-subarray/)， 连续的最大子序和~~ | ❎
 &nbsp; | ~~[64. Minimum Path Sum 二维格子的最小路径和](https://leetcode-cn.com/problems/minimum-path-sum)~~ ， 格子 DP（向左和向下走） | ❎
 <br>good | [221. Maximal Square](https://leetcode-cn.com/problems/maximal-square/) 最大的正方形 ， dp = [[0] * columns for _ in range(rows)] <br>&nbsp;&nbsp; `dp[i][j] = min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]) + 1` | <br>❎
@@ -128,17 +134,17 @@ No. | Question | Flag
 :---: | --- | :---:
 (1). | **binary-search** |
 &nbsp; | [1.1 二分查找](https://leetcode-cn.com/problems/binary-search/), while l <= r | ❎
-&nbsp; | [1.2 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/), def binSearch(nums, t, flag), return r+1 or | ❎
+&nbsp; | [1.2 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/), def binSearch(nums, t, flag), mid=r-1 or l+1, return r+1 or l-1 | ❎
 addition | [162. 寻找峰值](https://leetcode-cn.com/problems/find-peak-element/) nums[-1] = nums[n] = -∞ , l=mid+1, r=mid| ❎
 &nbsp; | [278. First Bad Version](https://leetcode-cn.com/problems/first-bad-version/) , if isBadVersion(mid): right = mid - 1 | ❎
 hard | [410. Split Array Largest Sum](https://leetcode-cn.com/problems/split-array-largest-sum/) Input: nums = [7,2,5,10,8], m = 2. Output: 18 <br> 「使……最大值尽可能小」是二分搜索题目常见的问法 | ❎
 逆向双指针 | [88. Merge Sorted Array](https://leetcode-cn.com/problems/merge-sorted-array/) nums1 = [1,2,3,0,0,0], nums2 = [2,5,6] | ❎
 双指针 | [15. 3Sum](https://leetcode-cn.com/problems/3sum/)， for for while | 
-双指针 | [11. 盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water) | ❎
+双指针 | [11. 盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water) , 移动 l 和 r 较小的一方才可能增加 area | ❎
 hard, merge+index | [315. Count of Smaller Numbers After Self](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/) | hard
 (2). | DFS / Stack |
-&nbsp; | [2.1 字符串解码 "3[a2[c]]" == "accacc"](https://leetcode-cn.com/problems/decode-string/), `stack == [(3, ""), (2,"a")]` | ✔️❎
-&nbsp; | [215. 数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) from heapq import heapify, heappush, heappop |
+&nbsp; | [2.1 字符串解码 "3[a2[c]]" == "accacc"](https://leetcode-cn.com/problems/decode-string/), `stack == [(3, ""), (2,"a")]` <img src="/images/leetcode/stack-string-decoding.jpg" width="500" alt="" /> | ✔️❎
+&nbsp; | [215. 数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) from heapq import heapify, heappush, heappop <br> &nbsp; python中的heap是小根堆:  heapify(hp) , heappop(hp), heappush(hp, v) |
 (3). | Digit, 模拟 |
  &nbsp; | [3.1 回文数](https://leetcode-cn.com/problems/palindrome-number/) [禁止整数转字符串]， &nbsp;&nbsp;&nbsp;&nbsp;模拟 123321 -> 2332 -> 33 | ❎
  &nbsp; | [470. 用 Rand7() 实现 Rand10()](https://leetcode-cn.com/problems/implement-rand10-using-rand7/) , [题解: 等概率多次调用](https://leetcode-cn.com/problems/implement-rand10-using-rand7/solution/xiang-xi-fen-xi-fei-chang-jing-dian-de-ti-mu-deng-/) | 
@@ -178,6 +184,25 @@ hard | [23. Merge k Sorted Lists](https://leetcode-cn.com/problems/merge-k-sorte
 - | [9.2 二叉树的中序遍历 (非递归)](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) `while while` | ❎
 - | [9.3 二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/) | ❎
 hard | [124. Binary Tree Maximum Path Sum](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/) |
+
+
+[sales-person 销售员](https://leetcode-cn.com/problems/sales-person/)
+
+```sql
+SELECT
+    s.name
+FROM
+    salesperson s
+WHERE
+    s.sales_id NOT IN (SELECT
+            o.sales_id
+        FROM
+            orders o
+                LEFT JOIN
+            company c ON o.com_id = c.com_id
+        WHERE
+            c.name = 'RED')
+```
 
 ### 3sum
 
@@ -511,7 +536,6 @@ class Solution:
 
 # [剑指,Table](https://leetcode-cn.com/problemset/lcof/)
 
-
 No. | Question | Flag
 :---: | --- | ---
 **easy** |  |  
@@ -633,6 +657,17 @@ No. | Pass Question | Flag
 
 ## 1. Tree
 
+No. | Question | Flag
+:---: | --- | ---
+1.1 | 平衡二叉树
+1.2 | 对称的二叉树
+1.3 | 二叉树的镜像
+1.4 | 二叉树的最近公共祖先
+1.6 | 从上到下打印二叉树 II / III
+1.7 | 二叉树中和为某一值的路径
+1.8 | 二叉搜索树的后序遍历序列
+1.9 | 二叉搜索树与双向链表
+
 ```python
 class Solution:
     def treeToDoublyList(self, root: 'Node') -> 'Node':
@@ -697,7 +732,7 @@ if __name__ == '__main__':
     pre_out(root)
 ```
 
-### 1.1 平衡二叉树
+**1.1 平衡二叉树**
 
 ```python
 class Solution:
@@ -714,7 +749,7 @@ class Solution:
         return abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right)
 ```
 
-### 1.2 对称的二叉树
+**1.2 对称的二叉树**
 
 ```python
 def isSymmetricHelper(left: TreeNode, right: TreeNode):
@@ -731,7 +766,7 @@ class Solution:
         return root == None or isSymmetricHelper(root.left, root.right)
 ```
 
-### 1.3 二叉树的镜像
+**1.3 二叉树的镜像**
 
 ```python
 class Solution:
@@ -746,7 +781,7 @@ class Solution:
         return root
 ```
 
-### 1.4 二叉树的最近公共祖先
+**1.4 二叉树的最近公共祖先**
 
 ```python
 class Solution:
@@ -802,7 +837,7 @@ class Solution:
             return root
 ```
 
-### 1.6 从上到下打印二叉树 II / III
+**1.6 从上到下打印二叉树 II / III**
 
 从上到下打印二叉树 II
 
@@ -861,7 +896,7 @@ class Solution:
         return res
 ```
 
-### 1.7 二叉树中和为某一值的路径
+**1.7 二叉树中和为某一值的路径**
 
 ```python
 def pathSum(self, root: TreeNode, sum: int) -> List[List[int]]:
@@ -884,7 +919,7 @@ def pathSum(self, root: TreeNode, sum: int) -> List[List[int]]:
     return self.res
 ```
 
-### 1.8 二叉搜索树的后序遍历序列
+**1.8 二叉搜索树的后序遍历序列**
 
 ```python
 class Solution:
@@ -908,7 +943,7 @@ class Solution:
         return recur(0, len(postorder) - 1)
 ```
 
-### 1.9 二叉搜索树与双向链表
+**1.9 二叉搜索树与双向链表**
 
 ```python
 class Solution:
@@ -936,7 +971,7 @@ class Solution:
 
 ## 2. LinkedList
 
-### 2.1 复杂链表的复制
+**2.1 复杂链表的复制**
 
 ```
 """
@@ -987,7 +1022,7 @@ class Solution:
 
 ## 4. Array & Sort
 
-### 4.1 最小的k个数
+**4.1 最小的k个数**
 
 ```python
 import heapq
@@ -1013,7 +1048,7 @@ class Solution:
         return ans
 ```
 
-### 4.2 n个骰子的点数
+**4.2 n个骰子的点数**
 
 ```
 # 把n个骰子扔在地上，所有骰子朝上一面的点数之和为s。输入n，打印出s的所有可能的值出现的概率。
