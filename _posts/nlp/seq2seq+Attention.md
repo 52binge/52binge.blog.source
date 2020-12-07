@@ -28,19 +28,19 @@ tags: seq2seq+Attention
 
 编码器的作用是把一个不定长的输入序列变换成一个定长的背景变量 $c$，并在该背景变量中编码输入序列信息。常用的编码器是循环神经网络。
 
-让我们考虑批量大小为 1 的时序数据样本。假设输入序列是 $x\_1,\ldots,x\_T$, 例如 $x\_i$ 是输入句子中的第 $i$ 个词。在时间步 $t$，循环神经网络将输入 $x\_t$ 的特征向量 $x\_t$ 和上个时间步的隐藏状态 $\boldsymbol{h}\_{t-1}$ 变换为当前时间步的隐藏状态 $h\_t$。我们可以用函数 $f$ 表达循环神经网络隐藏层的变换：
+让我们考虑批量大小为 1 的时序数据样本。假设输入序列是 $x_1,\ldots,x_T$, 例如 $x_i$ 是输入句子中的第 $i$ 个词。在时间步 $t$，循环神经网络将输入 $x_t$ 的特征向量 $x_t$ 和上个时间步的隐藏状态 $\boldsymbol{h}_{t-1}$ 变换为当前时间步的隐藏状态 $h_t$。我们可以用函数 $f$ 表达循环神经网络隐藏层的变换：
 
 $$
-\boldsymbol{h}\_t = f(\boldsymbol{x}\_t, \boldsymbol{h}\_{t-1}).
+\boldsymbol{h}_t = f(\boldsymbol{x}_t, \boldsymbol{h}_{t-1}).
 $$
 
 接下来编码器通过自定义函数 $q$ 将各个时间步的隐藏状态变换为背景变量
 
 $$
-\boldsymbol{c} =  q(\boldsymbol{h}\_1, \ldots, \boldsymbol{h}\_T).
+\boldsymbol{c} =  q(\boldsymbol{h}_1, \ldots, \boldsymbol{h}_T).
 $$
 
-例如，当选择 $q(\boldsymbol{h}\_1, \ldots, \boldsymbol{h}\_T) = \boldsymbol{h}\_T$ 时，背景变量是输入序列最终时间步的隐藏状态 $\boldsymbol{h}\_T$。
+例如，当选择 $q(\boldsymbol{h}_1, \ldots, \boldsymbol{h}_T) = \boldsymbol{h}_T$ 时，背景变量是输入序列最终时间步的隐藏状态 $\boldsymbol{h}_T$。
 
 以上描述的编码器是一个单向的 RNN，每个时间步的隐藏状态只取决于该时间步及之前的输入子序列。我们也可以使用 Bi-RNN 构造编码器。这种情况下，编码器每个时间步的隐藏状态同时取决于该时间步之前和之后的子序列（包括当前时间步的输入），并编码了整个序列的信息。
 
@@ -48,15 +48,15 @@ $$
 
 ### 1.2 decode 解码器
 
-Encode 编码器输出的背景变量 $c$ 编码了整个输入序列 $x\_1, \ldots, x\_T$ 的信息。给定训练样本中的输出序列 $y\_1, y\_2, \ldots, y\_{T'}$，对每个时间步 $t'$（符号与输入序列或编码器的时间步 $t$ 有区别）， 解码器输出 $y\_{t'}$ 的条件概率将基于之前的输出序列 $y\_1,\ldots,y\_{t'-1}$ 和背景变量 $c$，**即** $\mathbb{P}(y\_{t'} \mid y\_1, \ldots, y\_{t'-1}, \boldsymbol{c})$。
+Encode 编码器输出的背景变量 $c$ 编码了整个输入序列 $x_1, \ldots, x_T$ 的信息。给定训练样本中的输出序列 $y_1, y_2, \ldots, y_{T'}$，对每个时间步 $t'$（符号与输入序列或编码器的时间步 $t$ 有区别）， 解码器输出 $y_{t'}$ 的条件概率将基于之前的输出序列 $y_1,\ldots,y_{t'-1}$ 和背景变量 $c$，**即** $\mathbb{P}(y_{t'} \mid y_1, \ldots, y_{t'-1}, \boldsymbol{c})$。
 
-为此，我们可以使用`另一个RNN`作为解码器。 在输出序列的时间步 $t^\prime$，解码器将上一时间步的输出 $y\_{t^\prime-1}$ 以及背景变量 $c$ 作为输入，并将它们与上一时间步的隐藏状态 $\boldsymbol{h}\_{t^\prime-1}$ 变换为当前时间步的隐藏状态 $\boldsymbol{h}\_{t^\prime}$。因此，我们可以用函数 $g$ 表达解码器隐藏层的变换：
+为此，我们可以使用`另一个RNN`作为解码器。 在输出序列的时间步 $t^\prime$，解码器将上一时间步的输出 $y_{t^\prime-1}$ 以及背景变量 $c$ 作为输入，并将它们与上一时间步的隐藏状态 $\boldsymbol{h}_{t^\prime-1}$ 变换为当前时间步的隐藏状态 $\boldsymbol{h}_{t^\prime}$。因此，我们可以用函数 $g$ 表达解码器隐藏层的变换：
 
 $$
-\boldsymbol{h}\_{t^\prime} = g(y\_{t^\prime-1}, \boldsymbol{c}, \boldsymbol{h}\_{t^\prime-1}).
+\boldsymbol{h}_{t^\prime} = g(y_{t^\prime-1}, \boldsymbol{c}, \boldsymbol{h}_{t^\prime-1}).
 $$
 
-有了decode的隐藏状态后，我们可以使用自定义的输出层和 softmax 运算来计算 $\mathbb{P}(y\_{t^\prime} \mid y\_1, \ldots, y\_{t^\prime-1}, \boldsymbol{c})$，例如基于当前时间步的解码器隐藏状态 $\boldsymbol{h}\_{t^\prime}$、上一时间步的输出 $y\_{t^\prime-1}$ 以及背景变量 $c$ 来计算当前时间步输出 $y\_{t^\prime}$ 的概率分布。
+有了decode的隐藏状态后，我们可以使用自定义的输出层和 softmax 运算来计算 $\mathbb{P}(y_{t^\prime} \mid y_1, \ldots, y_{t^\prime-1}, \boldsymbol{c})$，例如基于当前时间步的解码器隐藏状态 $\boldsymbol{h}_{t^\prime}$、上一时间步的输出 $y_{t^\prime-1}$ 以及背景变量 $c$ 来计算当前时间步输出 $y_{t^\prime}$ 的概率分布。
 
 ### 1.3 train 模型训练
 
@@ -64,15 +64,15 @@ $$
 
 $$
 \begin{split}\begin{aligned}
-\mathbb{P}(y\_1, \ldots, y\_{T'} \mid x\_1, \ldots, x\_T)
-&= \prod\_{t'=1}^{T'} \mathbb{P}(y\_{t'} \mid y\_1, \ldots, y\_{t'-1}, x\_1, \ldots, x\_T)\\\\
-&= \prod\_{t'=1}^{T'} \mathbb{P}(y\_{t'} \mid y\_1, \ldots, y\_{t'-1}, \boldsymbol{c}),
+\mathbb{P}(y_1, \ldots, y_{T'} \mid x_1, \ldots, x_T)
+&= \prod_{t'=1}^{T'} \mathbb{P}(y_{t'} \mid y_1, \ldots, y_{t'-1}, x_1, \ldots, x_T)\\\\
+&= \prod_{t'=1}^{T'} \mathbb{P}(y_{t'} \mid y_1, \ldots, y_{t'-1}, \boldsymbol{c}),
 \end{aligned}\end{split}
 $$
 
 并得到该输出序列的损失
 
-$$ - \log\mathbb{P}(y\_1, \ldots, y\_{T'} \mid x\_1, \ldots, x\_T) = -\sum\_{t'=1}^{T'} \log \mathbb{P}(y\_{t'} \mid y\_1,  \ldots, y\_{t'-1}, \boldsymbol{c}),
+$$ - \log\mathbb{P}(y_1, \ldots, y_{T'} \mid x_1, \ldots, x_T) = -\sum_{t'=1}^{T'} \log \mathbb{P}(y_{t'} \mid y_1,  \ldots, y_{t'-1}, \boldsymbol{c}),
 $$
 
 <img src="/images/chatbot/seq2seq-6.png" width="800" />
@@ -115,58 +115,58 @@ e向量仅作为RNN的初始化状态传入decode模型。接下来就是标准�
 在“编码器—解码器（seq2seq）”, 解码器在时间步 $t'$ 的隐藏状态
 
 $$
-\boldsymbol{s}\_{t'} = g(\boldsymbol{y}\_{t'-1}, \boldsymbol{c}, \boldsymbol{s}\_{t'-1})
+\boldsymbol{s}_{t'} = g(\boldsymbol{y}_{t'-1}, \boldsymbol{c}, \boldsymbol{s}_{t'-1})
 $$
 
 在 Attention机制 中, 解码器的每一时间步将使用可变的背景变量$c$
 
 $$
-\boldsymbol{s}\_{t'} = g(\boldsymbol{y}\_{t'-1}, \boldsymbol{c}\_{t'}, \boldsymbol{s}\_{t'-1}).
+\boldsymbol{s}_{t'} = g(\boldsymbol{y}_{t'-1}, \boldsymbol{c}_{t'}, \boldsymbol{s}_{t'-1}).
 $$
 
-关键是如何计算背景变量 $\boldsymbol{c}\_{t'}$ 和如何利用它来更新隐藏状态 $\boldsymbol{s}\_{t'}$。以下将分别描述这两个关键点。
+关键是如何计算背景变量 $\boldsymbol{c}_{t'}$ 和如何利用它来更新隐藏状态 $\boldsymbol{s}_{t'}$。以下将分别描述这两个关键点。
 
 ### 3.1 计算背景变量 c
 
 $$
-\boldsymbol{c}\_{t'} = \sum\_{t=1}^T \alpha\_{t' t} \boldsymbol{h}\_t,
+\boldsymbol{c}_{t'} = \sum_{t=1}^T \alpha_{t' t} \boldsymbol{h}_t,
 $$
 
-其中给定 $t'$ 时，权重 $\alpha\_{t' t}$ 在 $t=1,\ldots,T$ 的值是一个概率分布。为了得到概率分布，可以使用 softmax 运算:
+其中给定 $t'$ 时，权重 $\alpha_{t' t}$ 在 $t=1,\ldots,T$ 的值是一个概率分布。为了得到概率分布，可以使用 softmax 运算:
 
 $$
-\alpha\_{t' t} = \frac{\exp(e\_{t' t})}{ \sum\_{k=1}^T \exp(e\_{t' k}) },\quad t=1,\ldots,T.
+\alpha_{t' t} = \frac{\exp(e_{t' t})}{ \sum_{k=1}^T \exp(e_{t' k}) },\quad t=1,\ldots,T.
 $$
 
-现在，我们需要定义如何计算上式中 softmax 运算的输入 $e\_{t' t}$。由于 $e\_{t' t}$ 同时取决于decode的时间步 $t'$ 和encode的时间步 $t$，我们不妨以解码器在时间步 $t'−1$ 的隐藏状态 $\boldsymbol{s}\_{t' - 1}$ 与编码器在时间步 $t$ 的隐藏状态 $h\_t$ 为输入，并通过函数 $a$ 计算 $e\_{t' t}$：
+现在，我们需要定义如何计算上式中 softmax 运算的输入 $e_{t' t}$。由于 $e_{t' t}$ 同时取决于decode的时间步 $t'$ 和encode的时间步 $t$，我们不妨以解码器在时间步 $t'−1$ 的隐藏状态 $\boldsymbol{s}_{t' - 1}$ 与编码器在时间步 $t$ 的隐藏状态 $h_t$ 为输入，并通过函数 $a$ 计算 $e_{t' t}$：
 
 $$
-e\_{t' t} = a(\boldsymbol{s}\_{t' - 1}, \boldsymbol{h}\_t).
+e_{t' t} = a(\boldsymbol{s}_{t' - 1}, \boldsymbol{h}_t).
 $$
 
 这里函数 a 有多种选择，如果两个输入向量长度相同，一个简单的选择是计算它们的内积 $a(\boldsymbol{s}, \boldsymbol{h})=\boldsymbol{s}^\top \boldsymbol{h}$。而最早提出Attention机制的论文则将输入连结后通过含单隐藏层的多层感知机MLP 变换 
 
 $$
-a(\boldsymbol{s}, \boldsymbol{h}) = \boldsymbol{v}^\top \tanh(\boldsymbol{W}\_s \boldsymbol{s} + \boldsymbol{W}\_h \boldsymbol{h}),
+a(\boldsymbol{s}, \boldsymbol{h}) = \boldsymbol{v}^\top \tanh(\boldsymbol{W}_s \boldsymbol{s} + \boldsymbol{W}_h \boldsymbol{h}),
 $$
 
-其中 $v、W\_s、W\_h$ 都是可以学习的模型参数。
+其中 $v、W_s、W_h$ 都是可以学习的模型参数。
 
 ### 3.2 更新隐藏状态
 
 以门控循环单元为例，在解码器中我们可以对门控循环单元的设计稍作修改。解码器在时间步 $t'$ 的隐藏状态为
 
 $$
-\boldsymbol{s}\_{t'} = \boldsymbol{z}\_{t'} \odot \boldsymbol{s}\_{t'-1}  + (1 - \boldsymbol{z}\_{t'}) \odot \tilde{\boldsymbol{s}}\_{t'},
+\boldsymbol{s}_{t'} = \boldsymbol{z}_{t'} \odot \boldsymbol{s}_{t'-1}  + (1 - \boldsymbol{z}_{t'}) \odot \tilde{\boldsymbol{s}}_{t'},
 $$
 
 其中的重置门、更新门和候选隐含状态分别为 :
 
 $$
 \begin{split}\begin{aligned}
-\boldsymbol{r}\_{t'} &= \sigma(\boldsymbol{W}\_{yr} \boldsymbol{y}\_{t'-1} + \boldsymbol{W}\_{sr} \boldsymbol{s}\_{t' - 1} + \boldsymbol{W}\_{cr} \boldsymbol{c}\_{t'} + \boldsymbol{b}\_r),\\\\
-\boldsymbol{z}\_{t'} &= \sigma(\boldsymbol{W}\_{yz} \boldsymbol{y}\_{t'-1} + \boldsymbol{W}\_{sz} \boldsymbol{s}\_{t' - 1} + \boldsymbol{W}\_{cz} \boldsymbol{c}\_{t'} + \boldsymbol{b}\_z),\\\\
-\tilde{\boldsymbol{s}}\_{t'} &= \text{tanh}(\boldsymbol{W}\_{ys} \boldsymbol{y}\_{t'-1} + \boldsymbol{W}\_{ss} (\boldsymbol{s}\_{t' - 1} \odot \boldsymbol{r}\_{t'}) + \boldsymbol{W}\_{cs} \boldsymbol{c}\_{t'} + \boldsymbol{b}\_s),
+\boldsymbol{r}_{t'} &= \sigma(\boldsymbol{W}_{yr} \boldsymbol{y}_{t'-1} + \boldsymbol{W}_{sr} \boldsymbol{s}_{t' - 1} + \boldsymbol{W}_{cr} \boldsymbol{c}_{t'} + \boldsymbol{b}_r),\\\\
+\boldsymbol{z}_{t'} &= \sigma(\boldsymbol{W}_{yz} \boldsymbol{y}_{t'-1} + \boldsymbol{W}_{sz} \boldsymbol{s}_{t' - 1} + \boldsymbol{W}_{cz} \boldsymbol{c}_{t'} + \boldsymbol{b}_z),\\\\
+\tilde{\boldsymbol{s}}_{t'} &= \text{tanh}(\boldsymbol{W}_{ys} \boldsymbol{y}_{t'-1} + \boldsymbol{W}_{ss} (\boldsymbol{s}_{t' - 1} \odot \boldsymbol{r}_{t'}) + \boldsymbol{W}_{cs} \boldsymbol{c}_{t'} + \boldsymbol{b}_s),
 \end{aligned}\end{split}
 $$
 

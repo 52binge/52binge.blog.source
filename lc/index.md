@@ -139,7 +139,7 @@ addition | [162. 寻找峰值](https://leetcode-cn.com/problems/find-peak-elemen
 &nbsp; | [278. First Bad Version](https://leetcode-cn.com/problems/first-bad-version/) , if isBadVersion(mid): right = mid - 1 | ❎
 hard | [410. Split Array Largest Sum](https://leetcode-cn.com/problems/split-array-largest-sum/) Input: nums = [7,2,5,10,8], m = 2. Output: 18 <br> 「使……最大值尽可能小」是二分搜索题目常见的问法 | ❎
 逆向双指针 | [88. Merge Sorted Array](https://leetcode-cn.com/problems/merge-sorted-array/) nums1 = [1,2,3,0,0,0], nums2 = [2,5,6] | ❎
-双指针 | [15. 3Sum](https://leetcode-cn.com/problems/3sum/)， for for while | 
+双指针 | [15. 3Sum](https://leetcode-cn.com/problems/3sum/)， for for while , second & third 两边夹 | 
 双指针 | [11. 盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water) , 移动 l 和 r 较小的一方才可能增加 area | ❎
 hard, merge+index | [315. Count of Smaller Numbers After Self](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/) | hard
 (2). | DFS / Stack |
@@ -151,10 +151,10 @@ hard, merge+index | [315. Count of Smaller Numbers After Self](https://leetcode-
 (4). | DP |
 `good` | [4.1 栅栏涂色](https://leetcode-cn.com/problems/paint-fence/) &nbsp;&nbsp; `dp[i] = dp[i-2]*(k-1) + dp[i-1]*(k-1)` | ✔️❎
 &nbsp; | [4.2 区域和检索](https://leetcode-cn.com/problems/range-sum-query-immutable/) | ❎
-`good`<br><br><br>`float('inf')`<br><br><br>hard | [4.3 Coin Change [零钱兑换]](https://leetcode-cn.com/problems/coin-change/) &nbsp;&nbsp;`dp[0] = 0`, `dp[x] = min(dp[x], dp[x - coin] + 1)` <br><br> $F(i)= min\_{j=0…n−1} F(i−c\_j)+1$ `dp = [float('inf')] * (amount + 1)` <br><br> 输入：coins = [1, 2, 5], amount = 11<br>输出：3 <br>解释：11 = 5 + 5 + 1 | ✔️❎
-&nbsp; | [4.4 除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/) | ❎
-&nbsp; | [279. 完全平方数](https://leetcode-cn.com/problems/perfect-squares/), numSquares(n)=min(numSquares(n-k) + 1)∀k∈square | ✔️❎
-&nbsp; | [44. Wildcard Matching](https://leetcode-cn.com/problems/wildcard-matching/) Input: s = "aa", p = "*" Output: true , Input: s = "cb", p = "?a" Output: false |
+`good`<br><br><br>`float('inf')`<br><br><br>good | [4.3 Coin Change [零钱兑换]](https://leetcode-cn.com/problems/coin-change/) &nbsp;&nbsp;`dp[0] = 0`, `dp[x] = min(dp[x], dp[x - coin] + 1)` <br><br> $F(i)= min\_{j=0…n−1} F(i−c\_j)+1$ `dp = [float('inf')] * (amount + 1)` <br><br> 输入：coins = [1, 2, 5], amount = 11<br>输出：3 <br>解释：11 = 5 + 5 + 1 <br> Tips: float('inf') + 1 = inf | ✔️❎
+&nbsp; | [4.4 除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/) , [0]\*len,  range(len(nums)-2, -1, -1) | ❎
+&nbsp; | [279. 完全平方数](https://leetcode-cn.com/problems/perfect-squares/), numSquares(n)=min(numSquares(n-k) + 1)∀k∈square <br> 与 Coin Change 非常类似，但不完全 | ✔️❎
+hard | [44. Wildcard Matching](https://leetcode-cn.com/problems/wildcard-matching/) Input: s = "aa", p = "*" Output: true , Input: s = "cb", p = "?a" Output: false |
 (5). | hash |
 &nbsp; | [5.1 两数之和](https://leetcode-cn.com/problems/two-sum/), enumerate hash[num] = i | ❎
 (6). | linkedList |
@@ -573,7 +573,7 @@ addition | 输入：(7 -> 1 -> 6) + (5 -> 9 -> 2)，即617 + 295 <br> 输出：2
 easy | 1. climbing-stairs ， 新建{}or[] ,滚动数组 <br> 2. 连续子数组的最大和 | ❎
 addition | [63. 不同路径 II](https://leetcode-cn.com/problems/unique-paths-ii/), `store = [[0]*n for i in range(m)]` 二维初始化 | ❎
 <br> addition | Edit Distance/编辑距离【word1 转换成 word2】<br>&nbsp;&nbsp; 1. dp = [ [0] * (m + 1) for _ in range(n + 1)] <br>&nbsp;&nbsp; 2. dp[i][j] = min(A,B,C) | <br> ✔️❎
-addition | [5. Longest Palindromic Substring/最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) <br>&nbsp;&nbsp; dp[i][j] = (dp[i+1][j-1] and s[i]==s[j])  | ✔️❎
+addition | [5. Longest Palindromic Substring/最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) <br>&nbsp;&nbsp;枚举子串的长度 l+1,从小问题到大问题,   dp[i][j] = (dp[i+1][j-1] and s[i]==s[j])  | ✔️❎
 good | [把数字翻译成字符串](https://leetcode-cn.com/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/) | Fib ✔️❎
 addition | Leetcode 64. Minimum Path Sum, 最小路径和 `grid[i][j] = min(grid[i - 1][j], grid[i][j - 1]) + grid[i][j]` | ❎
 addition | 115. Distinct Subsequences I | Hard
