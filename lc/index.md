@@ -163,7 +163,7 @@ hard | [44. Wildcard Matching](https://leetcode-cn.com/problems/wildcard-matchin
 - | [6.3 两数相加 I](https://leetcode-cn.com/problems/add-two-numbers/) `LinkNode 模拟` head = ListNode(0), cur = head, carry = 0 | ❎
 - | [445. Add Two Numbers II](https://leetcode-cn.com/problems/add-two-numbers-ii/), 链表求和, stack+post_p <br> while s1 or s2 or carry != 0: | ❎
 - | [6.4 复制带随机指针的链表](https://leetcode-cn.com/problems/copy-list-with-random-pointer/) <br> &nbsp;&nbsp; 1. while, 2. while (random pointers) 3. while (ptr_old_list） | ❎
-- | [6.5 LRUCache](https://leetcode-cn.com/problems/lru-cache/) class DLinkedNode(4), `removeTail`, `moveToHead`, `addToHead `, `removeNode` | ✔️❎
+✔️✔️✔️✔️ | [6.5 LRUCache](https://leetcode-cn.com/problems/lru-cache/) class DLinkedNode(4), `removeTail`, `moveToHead`, `addToHead `, `removeNode` | ✔️❎
 - | [6.6 删除链表的倒数第N个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/) | ❎
 匪夷所思 | [6.7 排序链表](https://leetcode-cn.com/problems/sort-list/), slow, fast = head, head.next, mid, slow.next=slow.next, None | ✔️❎
 - | ~~[面试题 02.05. 链表求和 I](https://leetcode-cn.com/problems/sum-lists-lcci/)~~ | ❎
@@ -171,10 +171,10 @@ hard | [25. Reverse Nodes in k-Group](https://leetcode-cn.com/problems/reverse-n
 hard | [23. Merge k Sorted Lists](https://leetcode-cn.com/problems/merge-k-sorted-lists/) |
 (7). | stack |
 - | [7.1 有效的括号](https://leetcode-cn.com/problems/valid-parentheses/) `if i == ')' and len(stack)> 0 and stack[-1] == '(': stack.pop()` | ❎
-- | [402. 移掉K位数字](https://leetcode-cn.com/problems/remove-k-digits/) |
+- | [402. 移掉K位数字](https://leetcode-cn.com/problems/remove-k-digits/) <img src="/images/leetcode/remove-k-1224.png" width="500" alt="" /> | ❎
 (8). | string |
 <br>reversed | [8.1 字符串相加](https://leetcode-cn.com/problems/add-strings/) 给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和 <br> `num1 = "".join(list(reversed(num1)))`,<br> `num1 = num1 + ("0" * diff1) num2 = num2 + ("0" * diff2)` | ✔️️❎ 
-- | [8.2 比较版本号](https://leetcode-cn.com/problems/compare-version-numbers/) | ❎
+- | [8.2 比较版本号](https://leetcode-cn.com/problems/compare-version-numbers/) , split then compare ..| ❎
 - | ~~[8.3 字符串解码](https://leetcode-cn.com/problems/decode-string/)~~ | ❎
 - | [8.4 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) sliding window, `[l, r]` | ✔️❎️
 - | [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) ， 模拟复杂 [见题解](https://leetcode-cn.com/problems/next-greater-element-iii/solution/xia-yi-ge-geng-da-yuan-su-iii-by-leetcode/) <br> `1,5,8,4,7,6,5,3,1` <br> => decreasing elem found `1,5,8,4(i-1),7,6,5(j),3,1` (found j, just larger a[i-1])<br> => `1,5,8,5,7,6,4,3,1` => `1,5,8,5,1,3,4,6,7` (reverse these elements) | ✔️️❎
