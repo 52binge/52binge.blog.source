@@ -162,11 +162,11 @@ hard | [44. Wildcard Matching](https://leetcode-cn.com/problems/wildcard-matchin
 - | [6.2 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/) `hash` | ❎
 - | [6.3 两数相加 I](https://leetcode-cn.com/problems/add-two-numbers/) `LinkNode 模拟` head = ListNode(0), cur = head, carry = 0 | ❎
 - | [445. Add Two Numbers II](https://leetcode-cn.com/problems/add-two-numbers-ii/), 链表求和, stack+post_p <br> while s1 or s2 or carry != 0: | ❎
-- | [6.4 复制带随机指针的链表](https://leetcode-cn.com/problems/copy-list-with-random-pointer/) ✔️ | ❎
-- | [6.5 LRUCache](https://leetcode-cn.com/company/shopee/) class DLinkedNode(4), `removeTail`, `moveToHead`, `addToHead `, `removeNode` | ✔️❎
+- | [6.4 复制带随机指针的链表](https://leetcode-cn.com/problems/copy-list-with-random-pointer/) <br> &nbsp;&nbsp; 1. while, 2. while (random pointers) 3. while (ptr_old_list） | ❎
+- | [6.5 LRUCache](https://leetcode-cn.com/problems/lru-cache/) class DLinkedNode(4), `removeTail`, `moveToHead`, `addToHead `, `removeNode` | ✔️❎
 - | [6.6 删除链表的倒数第N个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/) | ❎
-- | [6.7 排序链表](https://leetcode-cn.com/problems/sort-list/) | ✔️❎
-- | [面试题 02.05. 链表求和 I](https://leetcode-cn.com/problems/sum-lists-lcci/) | ❎
+匪夷所思 | [6.7 排序链表](https://leetcode-cn.com/problems/sort-list/), slow, fast = head, head.next, mid, slow.next=slow.next, None | ✔️❎
+- | ~~[面试题 02.05. 链表求和 I](https://leetcode-cn.com/problems/sum-lists-lcci/)~~ | ❎
 hard | [25. Reverse Nodes in k-Group](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/) |
 hard | [23. Merge k Sorted Lists](https://leetcode-cn.com/problems/merge-k-sorted-lists/) |
 (7). | stack |
