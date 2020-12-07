@@ -176,9 +176,9 @@ hard | [23. Merge k Sorted Lists](https://leetcode-cn.com/problems/merge-k-sorte
 <br>reversed | [8.1 字符串相加](https://leetcode-cn.com/problems/add-strings/) 给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和 <br> `num1 = "".join(list(reversed(num1)))`,<br> `num1 = num1 + ("0" * diff1) num2 = num2 + ("0" * diff2)` | ✔️️❎ 
 - | [8.2 比较版本号](https://leetcode-cn.com/problems/compare-version-numbers/) , split then compare ..| ❎
 - | ~~[8.3 字符串解码](https://leetcode-cn.com/problems/decode-string/)~~ | ❎
-- | [8.4 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) sliding window, `[l, r]` | ✔️❎️
+- | [8.4 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) sliding window, `[l, r]`, occ=set(), occ.remove(elem) | ✔️❎️
 - | [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) ， 模拟复杂 [见题解](https://leetcode-cn.com/problems/next-greater-element-iii/solution/xia-yi-ge-geng-da-yuan-su-iii-by-leetcode/) <br> `1,5,8,4,7,6,5,3,1` <br> => decreasing elem found `1,5,8,4(i-1),7,6,5(j),3,1` (found j, just larger a[i-1])<br> => `1,5,8,5,7,6,4,3,1` => `1,5,8,5,1,3,4,6,7` (reverse these elements) | ✔️️❎
-- | [8.6 全排列](https://leetcode-cn.com/problems/permutations/) def dfs(ix =0): for i in range(first, n): swap(nums[ix], nums[i])| ❎
+- | [8.6 全排列](https://leetcode-cn.com/problems/permutations/) def backtrack(first=0): for i in range(first, n): swap(nums[first], nums[i])  <img src="/images/leetcode/permute.png" width="600" alt="" /> | ❎
 (9). | tree |
 - | [9.1 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) `i = inorder.index(preorder[0])` | ❎
 - | [9.2 二叉树的中序遍历 (非递归)](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) `while while` | ❎
