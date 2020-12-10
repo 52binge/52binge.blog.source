@@ -46,6 +46,8 @@ heapq  | 堆 |
 &nbsp; | [215. Kth Largest Element in an Array](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) | ❎
 贪心 | 维护最大距离 |
 &nbsp; | [55	跳跃游戏](https://leetcode-cn.com/problems/jump-game)， 贪心 | ❎
+Linked | LinkedList |
+&nbsp; | [234. Palindrome Linked List](https://leetcode-cn.com/problems/palindrome-linked-list)， 巧妙递归+front_point or vals == vals[::-1] | ✔️❎
 
 ## [HOT100](https://leetcode-cn.com/problemset/leetcode-hot-100/)
 
@@ -73,8 +75,7 @@ Tree | [114	二叉树展开为链表](https://leetcode-cn.com/problems/flatten-b
 &nbsp; | [139. Word Break](https://leetcode-cn.com/problems/word-break) ， [好题目，3种解法](https://leetcode-cn.com/problems/word-break/solution/shou-hui-tu-jie-san-chong-fang-fa-dfs-bfs-dong-tai/) |
 &nbsp; | [538 Convert BST to Greater Tree](https://leetcode-cn.com/problems/convert-bst-to-greater-tree)， 反序中序遍历 |  
 前缀和<br>哈希优化 | [560. Subarray Sum Equals K](https://leetcode-cn.com/problems/subarray-sum-equals-k) <br> &nbsp;&nbsp; num_times = collections.defaultdict(int), cur_sum - target in nums_time  | ✔️❎
-&nbsp; | [240	搜索二维矩阵 II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii) | ❎ 
-&nbsp; | [234. Palindrome Linked List](https://leetcode-cn.com/problems/palindrome-linked-list)， 递归(可以反向) or vals == vals[::-1] | ✔️❎
+&nbsp; | ~~[240	搜索二维矩阵 II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii)~~ | ❎ 
 &nbsp; | [543. Diameter of Binary Tree](https://leetcode-cn.com/problems/diameter-of-binary-tree), 好题 self.ans = max(self.ans, L+R) | ✔️❎
 &nbsp; | ~~[226 翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree)~~ | ❎
 &nbsp; | ~~[617 合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees)~~ | ❎
