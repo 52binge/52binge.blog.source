@@ -29,7 +29,7 @@ DP | Tree DP, 偷不偷 |
 &nbsp; | [221. Maximal Square 最大的正方形](https://leetcode-cn.com/problems/maximal-square/) <br> &nbsp;&nbsp; dp = [[0] * columns for _ in range(rows)] &nbsp; <br> &nbsp;&nbsp; dp[i][j] = min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]) + 1
 一维DP | 子序列 |
 &nbsp; | [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/), dp[i] = max(dp[i], dp[j] + 1)
-&nbsp; | [152. Maximum Product Subarray - 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray) ， DP | medium
+&nbsp; | [152. Maximum Product Subarray - 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray), pre_max ,pre_min,num | ❎
 DFS | 二维格子 |
 &nbsp; | [79. Word Search](https://leetcode-cn.com/problems/word-search) | ❎
 &nbsp; | ~~[200. Number of Islands](https://leetcode-cn.com/problems/number-of-islands/)~~ | ❎
