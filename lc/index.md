@@ -27,16 +27,21 @@ DP | Tree DP, 偷不偷 |
 &nbsp; | [337. House Robber III](https://leetcode-cn.com/problems/house-robber-iii)， 偷不偷 | ✔️好题
 二维DP | 二维格子 DP |
 &nbsp; | [221. Maximal Square 最大的正方形](https://leetcode-cn.com/problems/maximal-square/) <br> &nbsp;&nbsp; dp = [[0] * columns for _ in range(rows)] &nbsp; <br> &nbsp;&nbsp; dp[i][j] = min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]) + 1
-DP | 子序列 |
+一维DP | 子序列 |
 &nbsp; | [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/), dp[i] = max(dp[i], dp[j] + 1)
+&nbsp; | [152. Maximum Product Subarray - 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray) ， DP | medium
 DFS | 二维格子 |
 &nbsp; | [79. Word Search](https://leetcode-cn.com/problems/word-search) | ❎
 &nbsp; | ~~[200. Number of Islands](https://leetcode-cn.com/problems/number-of-islands/)~~ | ❎
 DFS | 全排列 |
 &nbsp; | [39. 组合总和](https://leetcode-cn.com/problems/combination-sum/), [2,3,6,7] = [7], [2,2,3]， [DFS 树状图](https://leetcode-cn.com/problems/combination-sum/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/) | ❎
 &nbsp; | [78. Subsets 子集](https://leetcode-cn.com/problems/subsets/), 放不放 dfs(ix=0)， 搜索+回溯 | ❎
-| | |
+stack | 单调stack| |
 &nbsp; | [739. Daily Temperatures](https://leetcode-cn.com/problems/daily-temperatures/)
+heapq  | 堆 |
+&nbsp; | [215. Kth Largest Element in an Array](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) | ❎
+贪心 | 维护最大距离 |
+&nbsp; | [55	跳跃游戏](https://leetcode-cn.com/problems/jump-game)， 贪心 | ❎
 
 ## [HOT100](https://leetcode-cn.com/problemset/leetcode-hot-100/)
 
@@ -56,7 +61,6 @@ Array | ~~[283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes)， �
 &nbsp; | ~~[56. Merge Intervals](https://leetcode-cn.com/problems/merge-intervals/) ， Sort+遍历, 替换结果~~<br>&nbsp; intervals.sort(`key=lambda x: x[0]`) <br>&nbsp; merged[-1][1] = max(merged[-1][1], interval[1]) | ❎
 &nbsp; | ~~[21. Merge Two Sorted Lists](https://leetcode-cn.com/problems/merge-two-sorted-lists)~~ | ❎
 卡特兰 | ~~[96. Unique Binary Search Trees](https://leetcode-cn.com/problems/unique-binary-search-trees/)~~ , 2(2n+1)/n+1 | ❎
-&nbsp; | [215. Kth Largest Element in an Array](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) | ❎
 Tree | [114	二叉树展开为链表](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list), prev.right = curr | ❎ 
 (6). | LinkedList |
 &nbsp; | ~~[142. Linked List Cycle II](https://leetcode-cn.com/problems/linked-list-cycle-ii/)~~， 转为环形链表II-龟兔判圈 | ❎
@@ -65,8 +69,6 @@ Tree | [114	二叉树展开为链表](https://leetcode-cn.com/problems/flatten-b
 Page3 | |
 &nbsp; | 300 最长上升子序列 ，dp[i]=max(dp[j])+1 | ❎
 &nbsp; | [139. Word Break](https://leetcode-cn.com/problems/word-break) ， [好题目，3种解法](https://leetcode-cn.com/problems/word-break/solution/shou-hui-tu-jie-san-chong-fang-fa-dfs-bfs-dong-tai/) |
-&nbsp; | [152. Maximum Product Subarray - 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray) ， DP | medium
-&nbsp; | [55	跳跃游戏](https://leetcode-cn.com/problems/jump-game)， 贪心 | ❎
 &nbsp; | [75 Sort Colors](https://leetcode-cn.com/problems/sort-colors), 2遍 单指针, 1遍双指针 | ❎
 &nbsp; | [538 Convert BST to Greater Tree](https://leetcode-cn.com/problems/convert-bst-to-greater-tree)， 反序中序遍历 |  
 &nbsp; | [621	任务调度器](https://leetcode-cn.com/problems/task-scheduler)， 桶排序思想 | ❎ 
