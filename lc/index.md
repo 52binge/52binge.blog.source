@@ -40,6 +40,8 @@ DFS | 二维格子 |
 DFS | 全排列 |
 &nbsp; | [39. 组合总和](https://leetcode-cn.com/problems/combination-sum/), [2,3,6,7] = [7], [2,2,3]， [DFS 树状图](https://leetcode-cn.com/problems/combination-sum/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/) | ❎
 &nbsp; | [78. Subsets 子集](https://leetcode-cn.com/problems/subsets/), 放不放 dfs(ix=0)， 搜索+回溯 | ❎
+&nbsp; | Tree |
+&nbsp; | [543. Diameter of Binary Tree](https://leetcode-cn.com/problems/diameter-of-binary-tree), height = return max(L, R) + 1 | ❎
 stack | 单调stack| |
 &nbsp; | [739. Daily Temperatures](https://leetcode-cn.com/problems/daily-temperatures/)
 heapq  | 堆 |
@@ -48,6 +50,7 @@ heapq  | 堆 |
 &nbsp; | [55	跳跃游戏](https://leetcode-cn.com/problems/jump-game)， 贪心 | ❎
 Linked | LinkedList |
 &nbsp; | [234. Palindrome Linked List](https://leetcode-cn.com/problems/palindrome-linked-list)， 巧妙递归+front_point or vals == vals[::-1] | ✔️❎
+
 
 ## [HOT100](https://leetcode-cn.com/problemset/leetcode-hot-100/)
 
@@ -76,7 +79,6 @@ Tree | [114	二叉树展开为链表](https://leetcode-cn.com/problems/flatten-b
 &nbsp; | [538 Convert BST to Greater Tree](https://leetcode-cn.com/problems/convert-bst-to-greater-tree)， 反序中序遍历 |  
 前缀和<br>哈希优化 | [560. Subarray Sum Equals K](https://leetcode-cn.com/problems/subarray-sum-equals-k) <br> &nbsp;&nbsp; num_times = collections.defaultdict(int), cur_sum - target in nums_time  | ✔️❎
 &nbsp; | ~~[240	搜索二维矩阵 II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii)~~ | ❎ 
-&nbsp; | [543. Diameter of Binary Tree](https://leetcode-cn.com/problems/diameter-of-binary-tree), 好题 self.ans = max(self.ans, L+R) | ✔️❎
 &nbsp; | ~~[226 翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree)~~ | ❎
 &nbsp; | ~~[617 合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees)~~ | ❎
 
