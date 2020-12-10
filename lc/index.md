@@ -12,6 +12,10 @@ No. | Question | Flag
 Meeting | Meeting Rooms 系列 |
 &nbsp; | 252 [Meeting Rooms I](https://leetcode-cn.com/problems/meeting-rooms-ii), Sort | ❎
 &nbsp; | 253 [Meeting Rooms II](https://leetcode-cn.com/problems/meeting-rooms-ii) , heapq or 拆数组模拟
+Array | 指针, 冒泡 |
+&nbsp; | [75 Sort Colors](https://leetcode-cn.com/problems/sort-colors), 2遍 单指针固定增加 | ❎
+Array | Sort idea, 模拟 |
+&nbsp; | [621	任务调度器](https://leetcode-cn.com/problems/task-scheduler)， 桶思想 + 模拟计算 | ❎ 
 Array | 搜索旋转排序数组 |
 &nbsp; | [33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/), nums[0] <= nums[mid] | ❎
 Array | 单调性有关 | 
@@ -66,12 +70,8 @@ Tree | [114	二叉树展开为链表](https://leetcode-cn.com/problems/flatten-b
 &nbsp; | ~~[142. Linked List Cycle II](https://leetcode-cn.com/problems/linked-list-cycle-ii/)~~， 转为环形链表II-龟兔判圈 | ❎
 &nbsp; | ~~[287. Find the Duplicate Number](https://leetcode-cn.com/problems/find-the-duplicate-number/)~~， 转为环形链表II-龟兔判圈 | ❎
 匪夷 | ~~[148. Sort List](https://leetcode-cn.com/problems/sort-list)~~ | ✔️❎
-Page3 | |
-&nbsp; | 300 最长上升子序列 ，dp[i]=max(dp[j])+1 | ❎
 &nbsp; | [139. Word Break](https://leetcode-cn.com/problems/word-break) ， [好题目，3种解法](https://leetcode-cn.com/problems/word-break/solution/shou-hui-tu-jie-san-chong-fang-fa-dfs-bfs-dong-tai/) |
-&nbsp; | [75 Sort Colors](https://leetcode-cn.com/problems/sort-colors), 2遍 单指针, 1遍双指针 | ❎
 &nbsp; | [538 Convert BST to Greater Tree](https://leetcode-cn.com/problems/convert-bst-to-greater-tree)， 反序中序遍历 |  
-&nbsp; | [621	任务调度器](https://leetcode-cn.com/problems/task-scheduler)， 桶排序思想 | ❎ 
 前缀和<br>哈希优化 | [560. Subarray Sum Equals K](https://leetcode-cn.com/problems/subarray-sum-equals-k) <br> &nbsp;&nbsp; num_times = collections.defaultdict(int), cur_sum - target in nums_time  | ✔️❎
 &nbsp; | [240	搜索二维矩阵 II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii) | ❎ 
 &nbsp; | [234. Palindrome Linked List](https://leetcode-cn.com/problems/palindrome-linked-list)， 递归(可以反向) or vals == vals[::-1] | ✔️❎
