@@ -11,7 +11,7 @@ No. | Question | Flag
 :---: | --- | :---:
 Meeting | Meeting Rooms 系列 |
 &nbsp; | 252 [Meeting Rooms I](https://leetcode-cn.com/problems/meeting-rooms-ii), Sort | ❎
-&nbsp; | 253 [Meeting Rooms II](https://leetcode-cn.com/problems/meeting-rooms-ii) , heapq or 拆数组模拟
+&nbsp; | 253 [Meeting Rooms II](https://leetcode-cn.com/problems/meeting-rooms-ii) , heapq or 拆数组模拟 |
 Array | 指针, 冒泡 |
 &nbsp; | [75 Sort Colors](https://leetcode-cn.com/problems/sort-colors), 2遍 单指针固定增加 | ❎
 Array | Sort idea, 模拟 |
@@ -22,17 +22,16 @@ Array | 单调性有关 |
 &nbsp; | [406. Queue Reconstruction by Height](https://leetcode-cn.com/problems/queue-reconstruction-by-height) <br>&nbsp;&nbsp;people.sort(key=lambda x:(-x[0], x[1])), 插入法, tmp[:] | ❎
 Stock | 股票买卖系列 |
 &nbsp; | [121. 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/) , inf = int(1e9), int max = sys.maxsize (python3)| ❎
-&nbsp; | [122. 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/), 分状态讨论 <br> &nbsp; dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i]); <br> &nbsp; dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] - prices[i]);
-| 
+&nbsp; | [122. 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/), 分状态讨论 <br> &nbsp; dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i]); <br> &nbsp; dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] - prices[i]); | 
 &nbsp; | [309. Best Time to Buy and Sell Stock with Coo](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown), [题解：最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/solution/zui-jia-mai-mai-gu-piao-shi-ji-han-leng-dong-qi-4/) <br> 1. f[i][0]: 手上持有股票的最大收益 <br> 2. f[i][1]: 手上不持有股票, 并且处于冷冻期的最大收益 <br> 3. f[i][2]: 手上不持有股票, 并且不处于冷冻期的最大收益 | ❎
 0-1 | 背包 |
 &nbsp; | [416 分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum), 0-1背包 变体 | medium
 DP | Tree DP, 偷不偷 | 
 &nbsp; | [337. House Robber III](https://leetcode-cn.com/problems/house-robber-iii)， 偷不偷 | ✔️好题
 二维DP | 二维格子 DP |
-&nbsp; | [221. Maximal Square 最大的正方形](https://leetcode-cn.com/problems/maximal-square/) <br> &nbsp;&nbsp; dp = [[0] * columns for _ in range(rows)] &nbsp; <br> &nbsp;&nbsp; dp[i][j] = min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]) + 1
+&nbsp; | [221. Maximal Square 最大的正方形](https://leetcode-cn.com/problems/maximal-square/) <br> &nbsp;&nbsp; dp = [[0] * columns for _ in range(rows)] &nbsp; <br> &nbsp;&nbsp; dp[i][j] = min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]) + 1 |
 一维DP | 子序列 |
-&nbsp; | [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/), dp[i] = max(dp[i], dp[j] + 1)
+&nbsp; | [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/), dp[i] = max(dp[i], dp[j] + 1) |
 &nbsp; | [152. Maximum Product Subarray - 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray), pre_max ,pre_min,num | ❎
 DFS | 二维格子 |
 &nbsp; | [79. Word Search](https://leetcode-cn.com/problems/word-search) | ❎
@@ -40,17 +39,23 @@ DFS | 二维格子 |
 DFS | 全排列 |
 &nbsp; | [39. 组合总和](https://leetcode-cn.com/problems/combination-sum/), [2,3,6,7] = [7], [2,2,3]， [DFS 树状图](https://leetcode-cn.com/problems/combination-sum/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/) | ❎
 &nbsp; | [78. Subsets 子集](https://leetcode-cn.com/problems/subsets/), 放不放 dfs(ix=0)， 搜索+回溯 | ❎
+| |
+&nbsp; | [139. Word Break](https://leetcode-cn.com/problems/word-break) ， [好题目，3种解法](https://leetcode-cn.com/problems/word-break/solution/shou-hui-tu-jie-san-chong-fang-fa-dfs-bfs-dong-tai/) |
 &nbsp; | Tree |
 &nbsp; | [543. Diameter of Binary Tree](https://leetcode-cn.com/problems/diameter-of-binary-tree), height = return max(L, R) + 1 | ❎
-stack | 单调stack| |
-&nbsp; | [739. Daily Temperatures](https://leetcode-cn.com/problems/daily-temperatures/)
+stack | 单调stack |
+&nbsp; | [739. Daily Temperatures](https://leetcode-cn.com/problems/daily-temperatures/) |
 heapq  | 堆 |
 &nbsp; | [215. Kth Largest Element in an Array](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) | ❎
 贪心 | 维护最大距离 |
 &nbsp; | [55	跳跃游戏](https://leetcode-cn.com/problems/jump-game)， 贪心 | ❎
 Linked | LinkedList |
-&nbsp; | [234. Palindrome Linked List](https://leetcode-cn.com/problems/palindrome-linked-list)， 巧妙递归+front_point or vals == vals[::-1] | ✔️❎
-
+&nbsp; | [234. Palindrome Linked List](https://leetcode-cn.com/problems/palindrome-linked-list), 巧妙递归+front_point or vals == vals[::-1] | ✔️❎
+&nbsp; | [114. Flatten Binary Tree to Linked List](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/), prev.left=None, prev.right=curr | ❎
+| |
+Tree | [538 Convert BST to Greater Tree](https://leetcode-cn.com/problems/convert-bst-to-greater-tree), 反中序遍, def dfs(root: TreeNode): nonlocal total | ❎ 
+&nbsp; | Sliding Window |
+前缀和<br>哈希优化 | [560. 和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k) <br> &nbsp;&nbsp; num_times = collections.defaultdict(int), cur_sum - target in nums_time  | ❎
 
 ## [HOT100](https://leetcode-cn.com/problemset/leetcode-hot-100/)
 
@@ -70,14 +75,10 @@ Array | ~~[283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes)， �
 &nbsp; | ~~[56. Merge Intervals](https://leetcode-cn.com/problems/merge-intervals/) ， Sort+遍历, 替换结果~~<br>&nbsp; intervals.sort(`key=lambda x: x[0]`) <br>&nbsp; merged[-1][1] = max(merged[-1][1], interval[1]) | ❎
 &nbsp; | ~~[21. Merge Two Sorted Lists](https://leetcode-cn.com/problems/merge-two-sorted-lists)~~ | ❎
 卡特兰 | ~~[96. Unique Binary Search Trees](https://leetcode-cn.com/problems/unique-binary-search-trees/)~~ , 2(2n+1)/n+1 | ❎
-Tree | [114	二叉树展开为链表](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list), prev.right = curr | ❎ 
 (6). | LinkedList |
 &nbsp; | ~~[142. Linked List Cycle II](https://leetcode-cn.com/problems/linked-list-cycle-ii/)~~， 转为环形链表II-龟兔判圈 | ❎
 &nbsp; | ~~[287. Find the Duplicate Number](https://leetcode-cn.com/problems/find-the-duplicate-number/)~~， 转为环形链表II-龟兔判圈 | ❎
 匪夷 | ~~[148. Sort List](https://leetcode-cn.com/problems/sort-list)~~ | ✔️❎
-&nbsp; | [139. Word Break](https://leetcode-cn.com/problems/word-break) ， [好题目，3种解法](https://leetcode-cn.com/problems/word-break/solution/shou-hui-tu-jie-san-chong-fang-fa-dfs-bfs-dong-tai/) |
-&nbsp; | [538 Convert BST to Greater Tree](https://leetcode-cn.com/problems/convert-bst-to-greater-tree)， 反序中序遍历 |  
-前缀和<br>哈希优化 | [560. Subarray Sum Equals K](https://leetcode-cn.com/problems/subarray-sum-equals-k) <br> &nbsp;&nbsp; num_times = collections.defaultdict(int), cur_sum - target in nums_time  | ✔️❎
 &nbsp; | ~~[240	搜索二维矩阵 II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii)~~ | ❎ 
 &nbsp; | ~~[226 翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree)~~ | ❎
 &nbsp; | ~~[617 合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees)~~ | ❎
