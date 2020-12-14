@@ -41,6 +41,7 @@ tags: [spark]
 repartition vs coalesce vs coalesce in sql
 
 > 宽依赖:父RDD的一个分区会被子RDD的多个分区依赖(涉及到shuffle)
+> MapReduce数据读取并写入HDFS流程实际上是有10步
 
 No. | Title | Article
 :---: | --- | ---
