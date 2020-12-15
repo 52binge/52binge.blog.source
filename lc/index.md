@@ -548,7 +548,7 @@ additional | 求二叉树第K层的叶子节点个数 [**Recursion**]  <br> if(k
 (2). | Stack |
 &nbsp; | [394. 字符串解码 [a]2[bc]](https://leetcode-cn.com/problems/decode-string/) | ❎
 &nbsp; | [28. 包含min函数的栈](https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/) | ❎
-&nbsp; | [29. 最小的k个数【堆排的逆向】](http://localhost:5000/leetcode/#32-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0) `heapq.heappop(hp),heapq.heappush(hp, -arr[i])` | ✔️❎
+&nbsp; | [29. 最小的k个数【堆排的逆向】](https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/) `heapq.heappop(hp),heapq.heappush(hp, -arr[i])` | ✔️❎
 &nbsp; | 36. 滑动窗口的最大值  (同理于包含 min 函数的栈) deque.popleft(),双端队列+单调 | ✔️❎
 &nbsp; | [59 II. 队列的最大值](https://leetcode-cn.com/problems/dui-lie-de-zui-da-zhi-lcof/) , `维护个单调的deque` <br> &nbsp;&nbsp; import queue, queue.deque(), queue.Queue(), deq[0], deq[-1] | ✔️❎
 (3). | linkedList |
