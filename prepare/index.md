@@ -42,9 +42,25 @@ cur = queue.pop()
 
 6. Explain the map reduce paradigm.
 
-> 在复习
+> Hadoop 是能对大量数据进行分布式处理的软件框架
+> 
+> 包括 Hdfs，MapReduce，Yarn
+
+**Spark:** [RDD计算时是把数据全部加载至内存么?](https://blog.csdn.net/zc19921215/article/details/82858585)
+
+[good - 博客园 Spark Shuffle](https://www.cnblogs.com/xiashiwendao/p/12210944.html)
+
+Shuffle的本质: 
+
+> Stage是以shuffle作为分界的! Shuffle不过是偷偷的帮你加上了个类似saveAsLocalDiskFile的动作。
+
+如果是M/R的话:
+
+> 每个Stage其实就是上面说的那样，一套数据被N个嵌套的函数处理(也就是你的transform动作)。遇到了Shuffle,就被切开来。Shuffle本质上是把数据按规则临时都落到磁盘上，相当于完成了一个saveAsTextFile的动作，不过是存本地磁盘。然后被切开的下一个Stage则以本地磁盘的这些数据作为数据源，重走上面的流程。
 
 7. several questions about database, sharding, RMDB vs NoSQL DB, Why distributed NoSQL DB cannot always support transaction? 
+
+> TiDB, 也是可以支持事务的，只是开销非常大
  
 8. leetcode: solve a problem of top k problem in an online white board
 
@@ -78,6 +94,21 @@ class Solution:
  
 9. Level traverse a binary tree in an online white board.
 
+## OS
+
+1. [进程与线程的区别](https://blog.csdn.net/mxsgoden/article/details/8821936)
+
+> 1. 进程是操作系统分配资源的单位
+> 2. 线程(Thread)是进程的一个实体，是CPU调度和分派的基本单位
+> 
+> 线程和进程的关系是：线程是属于进程的，线程运行在进程空间内，同一进程所产生的线程共享同一内存空间，当进程退出时该进程所产生的线程都会被强制退出并清除。线程可与属于同一进程的其它线程共享进程所拥有的全部资源，但是其本身基本上不拥有系统资源，只拥有一点在运行中必不可少的信息(如程序计数器、一组寄存器和栈)。
+
+2. 虚拟内存是怎么调度的?
+
+3. LRU 是什么? 复杂度?
+
+4. HTTP和HTTPS的区别?
+
 ## question
 
 - [Hive中order by，sort by，distribute by，cluster by的区别](https://blog.csdn.net/lzm1340458776/article/details/43306115)
@@ -93,12 +124,8 @@ class Solution:
 3. 网卡上数据如何流转
 4. hashmap琏表转红黑树为什么是8
 5. 快排归并手撕
-6. sort by 和 order by 区别
 7. 数据库相关
 8. 虚拟内存
-9. 手撕代码：topk小元素
-10. LRU是什么，复杂度是多少
-11. Java基础 + 项目经验
 12. 多线程优化
 13. MySQL数据库引擎
 14. 事物隔离级别，如何处理幻读
@@ -153,9 +180,6 @@ JVM 的优化: Hadoop 每次 MapReduce 操作，启动一个 Task 便会启动�
 
 1. 二叉树层序遍历；
 2. 找出数组里三个数相乘最大的那个（有正有负）
-3. 进程和线程的区别
-4. 虚拟内存是怎么调度的
-5. HTTP和HTTPS的区别
 6. 做题：两个十六进制数的加法
 7. 大数据处理的一些技术细节（看看经验等），比如hive里的一些基本语法和数据倾斜的优化等
 

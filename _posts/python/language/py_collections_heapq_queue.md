@@ -131,5 +131,36 @@ a.insert(2, 220)
 print(a)
 ```
 
+## 4. 进制转换 bin, oct, hex, int('0b10000', 2)
+
+```python
+# -*- coding: UTF-8 -*-
+ 
+# Filename : test.py
+# author by : www.runoob.com
+ 
+# 获取用户输入十进制数
+dec = int(input("输入数字："))
+ 
+print("十进制数为：", dec)
+print("转换为二进制为：", bin(dec))
+print("转换为八进制为：", oct(dec))
+print("转换为十六进制为：", hex(dec))
+
+int(hex(2*a),16)
+```
+
+十进制 与 二进制 的互相转换
+
+```python
+In [1]: a = 16
+
+In [9]: bin(a)
+Out[9]: '0b10000'
+
+In [10]: int('0b10000', 2)
+Out[10]: 16
+```
+
 ## Reference
 
