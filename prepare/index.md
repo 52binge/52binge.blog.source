@@ -1,26 +1,89 @@
 ## Pre
 
-> 1. hashmap questions
-> 
-> 2. What is the difference between optimistic and pessimistic locks?
+1. hashmap questions
+ 
+> [HashMap面试指南](https://zhuanlan.zhihu.com/p/76735726)
+> [HashMap常见面试题整理](https://www.cnblogs.com/zengcongcong/p/11295349.html)
+> [shopee 后端面试题目](https://blog.csdn.net/gendlee1991/article/details/105759780)
+ 
+2. What is the difference between optimistic and pessimistic locks?
+
+> [你了解乐观锁和悲观锁吗？](https://www.cnblogs.com/kismetv/p/10787228.html)
 >
-> 3. The coding test had 2 questions, were about heaps and double-ended queues.
-> 
-> 4. there was a question on writing an SQL query and command line applications.
-> 
-> 5. General DWH concepts, Spark internals, mapreduce. They also had few questions on coding which were focused on data structures & algorithms. The interviewers look at how you're thought process.
-> 
-> 6. Explain the map reduce paradigm.
-> 
-> 7. several questions about database, sharding. 
-> 
-> 8. At last I was required to solve a problem of top k problem in an online white board
-> 
-> 9. RMDB vs NoSQL DB 
-> 
-> 10. Why distributed NoSQL DB cannot always support transaction? 
-> 
-> 11. Level traverse a binary tree in an online white board.
+> 1、CAS（Compare And Swap）
+> 2、版本号机制
+> 3、乐观锁加锁吗？
+> 4、CAS有哪些缺点？
+
+3. The coding test had 2 questions, were about heaps and double-ended queues.
+
+```python
+# from heapq import heappush, nsmallest, nlargest, ...
+heap = []
+for i in range(3):
+    heappush(heap, i)
+# heappop(heap)：弹出堆中最小的元素
+# heapify(heap)：将列表转换为堆
+# heapreplace(heap, x)：弹出堆中最小的元素，然后将新元素插入
+# nlargest(n, iter)、nsmallest(n, iter)：用来寻找任何可迭代对象iter中的前n个最大的或前n个最小的元素
+
+queue = collections.deque()
+queue.append(5)
+queue.appendleft(10)
+cur = queue.popleft()
+cur = queue.pop()
+```
+ 
+4. there was a question on writing an SQL query and command line applications.
+
+> 在复习
+
+5. General DWH concepts, Spark internals, mapreduce. They also had few questions on coding which were focused on data structures & algorithms. The interviewers look at how you're thought process.
+
+6. Explain the map reduce paradigm.
+
+> 在复习
+
+7. several questions about database, sharding, RMDB vs NoSQL DB, Why distributed NoSQL DB cannot always support transaction? 
+ 
+8. leetcode: solve a problem of top k problem in an online white board
+
+```python
+# return heapq.nsmallest(k, arr)
+
+import heapq
+class Solution:
+    def smallestK(self, arr: List[int], k: int) -> List[int]:
+        if k>len(arr) or k==0:
+            return []
+        heap = []
+        for i in arr[:k]:
+            heapq.heappush(heap, -i)
+        for i in arr[k:]:
+            if i < -heap[0]:
+                heapq.heappop(heap)
+                heapq.heappush(heap, -i)
+        result = []
+        for i in range(k):
+            result.append(-heapq.heappop(heap))
+        return result[::-1]
+```
+
+扩展: 
+
+> 1). 692. 前K个高频单词
+> 2). 347. 前 K 个高频元素
+> 3). 215. Kth Largest Element in an Array
+> 4). 面试题 17.14. 最小K个数 (排序)
+ 
+9. Level traverse a binary tree in an online white board.
+
+## question
+
+- [Hive中order by，sort by，distribute by，cluster by的区别](https://blog.csdn.net/lzm1340458776/article/details/43306115)
+
+> order by会对输入做全局排序，因此只有一个Reducer
+> sort by不是全局排序，其在数据进入reducer前完成排序
 
 
 ## info
@@ -118,6 +181,7 @@ A等待 2MSL,保证B收到了消息,否则重说一次我知道了。
 
 ## Reference
 
+- [0086 shopee面试题汇总](https://blog.csdn.net/gendlee1991/article/details/105759780)
 - [good - 新加坡Singapore Data infra 经验分享](https://www.aiwaner.cn/singapore-shopee.html)
 - [一亩三分地 - Shopee新加坡面经](https://www.1point3acres.com/bbs/interview/shopee-data-engineer-591386.html)
 - [2020 年 Shopee 秋招面经](https://leetcode-cn.com/circle/discuss/ej0oh6/view/oDT1B0/)
