@@ -49,7 +49,7 @@ No. | Title | Article
 0. | 大数据杀招 | [Spark高频](https://mp.weixin.qq.com/s/UPtxoGWZIvPE0KHoOs_tBw), &nbsp;&nbsp; [Container Executor task之间的关系](https://www.cnblogs.com/yanghaolie/p/6909640.html) 
 0. | 大数据杀招 | [漫画 全面解释Spark企业调优点](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247494393&idx=1&sn=4869549081ca75250b6dfdc84af43418&chksm=cf37d8f4f84051e2d8fd073f21d18fd97f9f9ec95317ccde679fffd0349e8fee0e8bf3a8c9e6&scene=21#wechat_redirect)
 0. | Hive杀招 |  [再次分享！Hive调优，数据工程师成神之路](http://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247493676&idx=1&sn=1658835f7c595cce105022e70640e020&chksm=cf37da21f8405337445ce6d8edbe4640b1a6dbd7903dfd6ac7cd2edbd83394a372bd2e3b9997&scene=21#wechat_redirect)
-0 | 大数据面试杀招 | [Hadoop](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247493886&idx=1&sn=2cee4ece5c7cc87895d9e1a1b2fb440f&chksm=cf37daf3f84053e51cd0323f1ec9114ca0ec159a9451dd53a4afde5a7c6f1cf48f12d7999ef0&scene=21#wechat_redirect)
+0 | Hadoop面试杀招 | [Hadoop高频考点，正在刷新你的认知！](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247493886&idx=1&sn=2cee4ece5c7cc87895d9e1a1b2fb440f&chksm=cf37daf3f84053e51cd0323f1ec9114ca0ec159a9451dd53a4afde5a7c6f1cf48f12d7999ef0&scene=21#wechat_redirect)
 0. | SparkSql - 结构化数据处理 (上) | [SparkSql - 结构化数据处理 (上)](http://localhost:5000/2020/08/25/spark/spark-aura-9.1-SparkSql/)
 0. | [Apache Parquet和Apache Avro](https://www.jianshu.com/p/dacb91e2c1b1) |
 0. | 简书 | [RDD、DataFrame和DataSet的区别](https://www.jianshu.com/p/c0181667daa0)

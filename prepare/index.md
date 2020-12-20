@@ -2,7 +2,12 @@
 
 No. | Question | Flag
 :---: | --- | :---:
-1. | hashmap questions <br> hashmap琏表转红黑树为什么是8 | [HashMap面试指南](https://zhuanlan.zhihu.com/p/76735726) <br> [HashMap面试题整理](https://www.cnblogs.com/zengcongcong/p/11295349.html) <br> [shopee 后端面试题目](https://blog.csdn.net/gendlee1991/article/details/105759780)
+1. | hashmap questions <br> [哈希冲突解决方法](https://blog.csdn.net/weixin_44560940/article/details/95762569) : 关键字值不同的元素可能会映象到哈希表的同一地址上就会发生哈希冲突<br> [大厂面试必问！HashMap 怎样解决hash冲突？](https://blog.csdn.net/bjmsb/article/details/107919872) <br> [为什么 Map 桶中超过 8 个才转为红黑树？](https://www.jianshu.com/p/fdf3d24fe3e8) |<br> [HashMap指南](https://zhuanlan.zhihu.com/p/76735726) <br> [HashMap面试](https://www.cnblogs.com/zengcongcong/p/11295349.html)
+
+[shop大数据面试](https://blog.csdn.net/gendlee1991/article/details/105759780)
+
+No. | Question | Flag
+:---: | --- | :---:
 2. | What is the difference between optimistic and pessimistic locks? |
 
 > 数据库锁机制（乐观锁和悲观锁、表锁和行锁）
@@ -118,16 +123,14 @@ No. | Question | Flag
 
 No. | Question | Flag
 :---: | --- | :---:
-10. | 事务的特性有哪些 并分别解释 |
-11. | MySQL隔离级别有哪些? <br> MySQL默认的隔离级别 -> 可重复读 => 可幻读吗 |
-12. | 如何解决哈希冲突 （拉链法，线性探测法…拓展巴拉巴拉） |
-13. | SQL的索引采用什么数据结构？（B+树） |
-7. | 数据库相关 |
-15. | Redis 数据过期策略 |
-16. | 聚簇索引和非聚簇索引 |
-17. | 主键和索引的区别
-17. | 脏读、不可重复读、幻读解释一下
-17. | 解决了脏读和不可重复读但没解决幻读的是哪个隔离级别
+0. | 幻读： InnoDB MVCC 的实现，通过保存数据在某个时间点的快照来实现的 | ❎
+1. | 事务4个特性ACID 有哪些 并分别解释? <br><br> &nbsp;&nbsp;事务是指是程序中一系列严密的逻辑操作，而且所有操作必须全部成功完成. <br><br> A原子性： 事务是数据库的逻辑工作单位，不可分割<br>C一致性： 数据库从一个一致性状态变到另一个一致性状态 <br>I 隔离性：一个事务的执行不能其它事务干扰 <br> D持久性：  一个事务一旦提交，它对数据库中的数据的改变就应该是永久性的，不能回滚 | <br><br><br><br> ❎
+2. | [MySQL隔离级别有哪些?](https://zhuanlan.zhihu.com/p/79382923) <br> 1. Read Uncommitted（读取未提交内容）- &nbsp;&nbsp;也称为 脏读(Dirty Read) - **RollBack** <br>2. Read Committed（读取提交内容）- &nbsp;&nbsp;一个事务只能看见已经提交事务所做的改变 <br>3. Repeatable Read（可重读） - &nbsp;&nbsp;同一事务并发读同样结果. InnoDB MVCC 解决幻读 <br>4. Serializable（可串行化）- &nbsp;&nbsp; 事务排序解决 幻读问题<br><br> 1. 脏读(Drity Read): 某事务已更新了数据，RollBack了操作，则后一个事务所读取的数据就会是不正确.<br>2. 不可重复读: 在一事务的两次查询数据不一致，可能中间插入了一个事务更新原有的数据.<br>3. 幻读(Phantom Read): 在一事务的两次查询中数据笔数不一致. 另一事务却在此插入了新的几列数据. | <br><br><br><br> ❎
+3. | SQL的索引采用什么数据结构？（B+树） | ❎
+4. | 聚簇索引InnoDB / 非聚簇索引Myisam | ❎
+5. | **主键和索引的区别？** <br> 1. 主键是为了标识数据库记录唯一性，不允许记录重复，且键值不能为空，主键也是一个特殊索引. <br>2. 索引可提高查询速度，它相当于字典的目录，可通过它很快查询到想要的结果，而不需要进行全表扫描. <br>3. 主键也可以由多个字段组成，组成复合主键，同时主键肯定也是唯一索引. | ❎
+6. | [Redis的过期策略和内存淘汰策略不要搞混淆](https://cloud.tencent.com/developer/article/1643921) <br><br> 1. Redis的过期策略 - 在程序中可以设置Redis中缓存的key的过期时间.  <br>&nbsp;&nbsp;1.1 定时过期 - 会占用大量的CPU <br>&nbsp;&nbsp;1.2 惰性过期 - 占用内存多 <br>&nbsp;&nbsp;1.3 定期过期：每隔一定的时间，会扫描一定数量expires key <br><br>2. Redis的内存淘汰策略是指内存不足时，怎么处理需要新写入且需要申请额外空间的数据. | <br><br><br><br>❎
+7. | 如何解决哈希冲突 （拉链法，线性探测法…拓展巴拉巴拉） |
 
 **MySQL的存储引擎：**
 
@@ -149,31 +152,51 @@ No. | Question | Flag
 2. | Move Zeroes for i in range(len(nums)): | ❎
 3. | 二叉树层序遍历 | ❎
 4. | 删除排序链表中的重复元素 II， dummyHead = ListNode(0), dummyHead.next = head | ❎
-5. | 如何实现LRU |
+5. | [如何实现LRU](http://localhost:5000/lc/#review-shop), 双向链表+Dict+Size+Cap <br> class DLinkedNode(4), removeTail, moveToHead, addToHead, removeNode | ✔️❎
 6. | [125. 验证回文串](https://leetcode-cn.com/problems/valid-palindrome/), while, while left < right and not s[left].isalnum(): <br><br> 扩展: [5. 最长回文子串 dp](https://leetcode-cn.com/problems/longest-palindromic-substring/), 枚举长度 <br> &nbsp; for l in range(n): for i in n: dp[i][j] = (dp[i + 1][j - 1] and s[i] == s[j]) | <br>❎
 7. | 判断二叉树是否对称 <br> &nbsp; class TreeNode: def \_\_init\_\_(self, x): <br> &nbsp; isSymmetricHelper(left.left, right.right) and isSymmetricHelper(left.right, right.left) | <br>❎
-8. | [98. 验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/) | ❎
+8. | [98. 验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/), while stack or root: while root | ❎
 9. | 找出数组里三个数相乘最大的那个（有正有负）| ❎
 10. | 做题：两个十六进制数的加法 | ❎
 11. | [93. 复原IP地址](https://leetcode-cn.com/problems/restore-ip-addresses/), ".".join(['1','2','3','4']) == '1.2.3.4',&nbsp; ord("a") = 97 &nbsp; if 0 < addr <= 0xFF: | ✔️❎
 12. | [202. 快乐数](https://leetcode-cn.com/problems/happy-number/), divmod(79, 10) = 7,9;  while n > 0: n, digit = divmod(n, 10) | ❎
 13. | 快排归并手撕 | ❎
-14. | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) dp = [[0] * (n + 1) for _ in range(m + 1)] <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if text1[i - 1] == text2[j - 1]: dp[i][j] = dp[i-1][j-1] + 1 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else: dp[i][j] = max(dp[i-1][j], dp[i][j-1]) | ❎
+14. | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) dp = [[0] * (n + 1) for _ in range(m + 1)] <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if text1[i - 1] == text2[j - 1]: dp[i][j] = dp[i-1][j-1] + 1 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else: dp[i][j] = max(dp[i-1][j], dp[i][j-1]) | <br>❎
 15. | [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/), occ=set(); for: while r+1 < n and s[r+1] not in occ: | ❎
 16. | 405-数字转换为十六进制数, bin(dec), oct(dec), hex(dec), int('0b10000', 2) | ❎
 17. | [67. 二进制求和](https://leetcode-cn.com/problems/add-binary/)， for i, j in zip(a[::-1], b[::-1]):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s = int(i) + int(j) + carry, r = str(s % 2) + r, carry = s // 2 | ❎
-18. | 2个有序数组，维护中位数 |
+18. | [4. 寻找两个正序数组的中位数 - hard](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/) ,二分查找 O(log (m+n))  <br> A: 1 3 4 9 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑<br>B: `1 2 3` 4 5 6 7 8 9<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑| <br>✔️<br>❎
 19. | [剑指 Offer 55 - II. 平衡二叉树](https://leetcode-cn.com/problems/ping-heng-er-cha-shu-lcof/) <br> &nbsp; (1). abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 <br> &nbsp; (2). self.isBalanced(root.left) and self.isBalanced(root.right) | <br>❎
 20. | [155. 最小栈](https://leetcode-cn.com/problems/min-stack/), self.stack = [], self.min_stack = [float('inf')] | ❎
 21. | 非递归单链表反转 现场手写 | ❎
-22. | [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/), i = inorder.index(preorder[0]) | ❎
+22. | [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/), i = inorder.index(preorder[0]) | ❎ 
 23. | 全排列, def dfs(x): if x == len(c) - 1: res.append(''.join(c)) <br> &nbsp;&nbsp;&nbsp;&nbsp; for i in range(first, n): | ❎
-24. | [1262. 可被三整除的最大和](https://leetcode-cn.com/problems/greatest-sum-divisible-by-three/) |
-25. | [哈希冲突解决方法](https://blog.csdn.net/weixin_44560940/article/details/95762569) : 关键字值不同的元素可能会映象到哈希表的同一地址上就会发生哈希冲突<br> [大厂面试必问！HashMap 怎样解决hash冲突？](https://blog.csdn.net/bjmsb/article/details/107919872) |
-26. | 哈希表某个桶中数据被删除怎么办
+24. | [1262. 可被三整除的最大和](https://leetcode-cn.com/problems/greatest-sum-divisible-by-three/), [题解](https://leetcode-cn.com/problems/greatest-sum-divisible-by-three/solution/ti-jie-5265-ke-bei-san-zheng-chu-de-zui-da-he-by-z/)<br> &nbsp;&nbsp;贪心+逆向思维：<br> &nbsp;&nbsp; a = [x for x in nums if x % 3 == 0] <br> &nbsp;&nbsp; b = sorted([x for x in nums if x % 3 == 1], reverse=True)<br>&nbsp;&nbsp; c = sorted([x for x in nums if x % 3 == 2], reverse=True) | <br><br>❎
 27. | 两千万个文件找最小的一千个（答错了，应该用大顶堆，答成了小顶堆）| ❎
 28. | 10亿个数中找出最大的10000个数? <br><br> &nbsp;&nbsp;&nbsp;&nbsp; 将1亿个数据分成100份，每份100万个数据，找到每份数据中最大的10000个，最后在剩下的100*10000个数据里面找出最大的10000个 | <br> 分治法
 29. | 1000个数据，查找出现次数最多的k个数字 <br><br> 我们首先一样是要把这十亿个数分成很多份。例如 1000份，每份 10万。然后使用 HashMap<int,int> 来统计。在每一次的统计中，我们可以找出最大的100个数？ 这样100\*10000 可以 快排序 解决 | 1. 分治法HashMap <br><br> 2. 位图法Bitmap |
+30. | [239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/), [题解](https://leetcode-cn.com/problems/sliding-window-maximum/solution/hua-dong-chuang-kou-zui-da-zhi-by-leetcode-3/) 双端队列 <br> &nbsp;(1). # init deque and output: &nbsp;&nbsp;while deq and nums[i] > nums[`deq[-1]`]: deq.pop() <br> &nbsp;(2). # build output: &nbsp;&nbsp;&nbsp;&nbsp;for i in range(k, n): | <br> ✔️❎
+
+### 3.0 LRU
+
+```python
+class DLinkedNode:
+    def __init__(self, key=0, value=0):
+        self.key = key
+        self.value = value
+        self.prev = None
+        self.next = None
+        
+class LRUCache:
+    def __init__(self, capacity: int):
+        self.head = DLinkedNode()
+        self.tail = DLinkedNode()
+        self.head.next = self.tail
+        self.tail.prev = self.head
+        self.capacity = capacity
+        self.size = 0
+        self.cache = {}
+```
 
 
 ### 3.1 quickSort
@@ -353,6 +376,99 @@ class Solution:
         return res
 ```
 
+### 1262. 可被三整除的最大和
+
+```
+输入：nums = [3,6,5,1,8]
+输出：18
+解释：选出数字 3, 6, 1 和 8，它们的和是 18（可被 3 整除的最大和）。
+```
+
+方法二：贪心 + 逆向思维
+
+我们把数组中的数分成三部分 a，b 和 c，它们分别包含所有被 3 除余 0，1，2 的数。显然，我们可以选取 a 中所有的数，而对于 b 和 c 中的数，我们需要根据不同的情况选取不同数量的数。
+
+> 我们设 tot 为数组 nums 中所有元素的和，此时 tot 会有三种情况：
+>
+> tot 是 3 的倍数，那么我们不需要丢弃任何数；
+>
+> tot 模 3 余 1，此时我们有两种选择：要么丢弃 b 中最小的 1 个数，要么丢弃 c 中最小的 2 个>
+> tot 模 3 余 2，此时我们有两种选择：要么丢弃 b 中最小的 2 个数，要么丢弃 c 中最小的 1 个数。
+
+```python
+class Solution:
+    def maxSumDivThree(self, nums: List[int]) -> int:
+        a = [x for x in nums if x % 3 == 0]
+        b = sorted([x for x in nums if x % 3 == 1], reverse=True)
+        c = sorted([x for x in nums if x % 3 == 2], reverse=True)
+        tot = sum(nums)
+        ans = 0
+
+        if tot % 3 == 0:
+            ans = tot
+        if tot % 3 == 1:
+            if len(b) >= 1:
+                ans = max(ans, tot - b[-1])
+            if len(c) >= 2:
+                ans = max(ans, tot - sum(c[-2:]))
+        elif tot % 3 == 2:
+            if len(b) >= 2:
+                ans = max(ans, tot - sum(b[-2:]))
+            if len(c) >= 1:
+                ans = max(ans, tot - c[-1])
+
+        return ans
+```
+
+### 4. 寻找两个正序数组的中位数
+
+[题解：二分查找](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/xun-zhao-liang-ge-you-xu-shu-zu-de-zhong-wei-s-114/)
+
+```python
+class Solution:
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        def getKthElement(k):
+            """
+            - 主要思路：要找到第 k (k>1) 小的元素，那么就取 pivot1 = nums1[k/2-1] 和 pivot2 = nums2[k/2-1] 进行比较
+            - 这里的 "/" 表示整除
+            - nums1 中小于等于 pivot1 的元素有 nums1[0 .. k/2-2] 共计 k/2-1 个
+            - nums2 中小于等于 pivot2 的元素有 nums2[0 .. k/2-2] 共计 k/2-1 个
+            - 取 pivot = min(pivot1, pivot2)，两个数组中小于等于 pivot 的元素共计不会超过 (k/2-1) + (k/2-1) <= k-2 个
+            - 这样 pivot 本身最大也只能是第 k-1 小的元素
+            - 如果 pivot = pivot1，那么 nums1[0 .. k/2-1] 都不可能是第 k 小的元素。把这些元素全部 "删除"，剩下的作为新的 nums1 数组
+            - 如果 pivot = pivot2，那么 nums2[0 .. k/2-1] 都不可能是第 k 小的元素。把这些元素全部 "删除"，剩下的作为新的 nums2 数组
+            - 由于我们 "删除" 了一些元素（这些元素都比第 k 小的元素要小），因此需要修改 k 的值，减去删除的数的个数
+            """
+            
+            index1, index2 = 0, 0
+            while True:
+                # 特殊情况
+                if index1 == m:
+                    return nums2[index2 + k - 1]
+                if index2 == n:
+                    return nums1[index1 + k - 1]
+                if k == 1:
+                    return min(nums1[index1], nums2[index2])
+
+                # 正常情况
+                newIndex1 = min(index1 + k // 2 - 1, m - 1) # k=6, 2
+                newIndex2 = min(index2 + k // 2 - 1, n - 1) # k=6, 2
+                pivot1, pivot2 = nums1[newIndex1], nums2[newIndex2]
+                if pivot1 <= pivot2:
+                    k -= newIndex1 - index1 + 1
+                    index1 = newIndex1 + 1
+                else:
+                    k -= newIndex2 - index2 + 1
+                    index2 = newIndex2 + 1
+        
+        m, n = len(nums1), len(nums2)
+        totalLength = m + n
+        if totalLength % 2 == 1:
+            return getKthElement((totalLength + 1) // 2)
+        else:
+            return (getKthElement(totalLength // 2) + getKthElement(totalLength // 2 + 1)) / 2
+```
+
 [经验分享](https://www.aiwaner.cn/singapore-shopee.html)
 
 **Operating System**
@@ -382,7 +498,7 @@ class Solution:
 > 
 > HTTPS协议的主要作用可以分为两种：一种是建立一个信息安全通道，来保证数据传输的安全；另一种就是确认网站的真实性。
 
-## 4. hadoop, hive
+## 4. hadoop, hive, spark
 
 - [Hive中order by，sort by，distribute by，cluster by的区别](https://blog.csdn.net/lzm1340458776/article/details/43306115)
 
@@ -391,15 +507,12 @@ class Solution:
 > 
 > distribute by是控制在map端如何拆分数据给reduce端的, sort by为每个reduce产生一个排序文件
 
-
-## 5. [Shopee大数据](https://www.shuzhiduo.com/A/6pdDQVbKzw/)
-
 1 Hadoop和spark的主要区别
 2 Hadoop中一个大文件进行排序，如何保证整体有序？sort只会保证单个节点的数据有序
 3 Hive中有哪些udf
 4 Hadoop中文件put get的过程详细描述
-5 Java中有哪些GC算法
-6 Java中的弱引用 强引用和软引用分别在哪些场景中使用
+5 [Java中有哪些GC算法?](https://www.cnblogs.com/Tpf386/p/11210483.html) [1. 标记-清除算法 2. 复制算法 3. 标记-整理算法 4. 分代收集算法]
+6 [Java中的弱引用 强引用和软引用分别在哪些场景中使用](https://blog.csdn.net/aitangyong/article/details/39453365)
 7 Hadoop和spark的主要区别-这个问题基本都会问到
 
 **(1). Hadoop和spark的主要区别**
@@ -416,9 +529,9 @@ class Solution:
 > 
 > Hadoop 中的类 TotalOrderPartitioner
 
-## 6. 网络 TCP
+## 5. 网络 TCP
 
-### 6.1 三次握手
+### 5.1 三次握手
 
 TCP 的三次握手, 四次挥手:  TCP 协议是如何建立和释放连接的？
 
@@ -428,7 +541,7 @@ TCP 的三次握手, 四次挥手:  TCP 协议是如何建立和释放连接的�
 第二次握手：B收到了A的信息，然后对A说：我可以听得到你说话啊，你能听得到我说话吗？（ACK=x+1，seq=y）
 第三次握手：A收到了B的信息，然后说可以的，我要给你发信息啦！（ack=y+1）
 
-### 6.2 四次挥手
+### 5.2 四次挥手
 
 四次挥手释放连接:
 
@@ -441,9 +554,33 @@ A等待 2MSL,保证B收到了消息,否则重说一次我知道了。
 
 TCP四次挥手中的TIME_WAIT状态
 
-## 7. Spark
+## 6. Spark
 
 1. 不指定语言，写一个WordCount的MapReduce
+
+> 1. lines = sc.textFile(...)
+> 2. lines.flatMap(lambda x: x.split(' '))
+> 3. wco = words.map(lambda x: (x, 1))
+> 4. word_count = wco.reduceByKey(add)
+> 5. word_count.collect()
+
+```python
+lines = sc.textFile("/Users/blair/ghome/github/spark3.0/pyspark/spark-src/word_count.text", 2)
+
+lines = lines.filter(lambda x: 'New York' in x)
+#lines.take(3)
+
+words = lines.flatMap(lambda x: x.split(' '))
+
+wco = words.map(lambda x: (x, 1))
+
+#print(wco.take(5))
+
+word_count = wco.reduceByKey(add)
+
+word_count.collect()
+```
+
 2. 你能用SQL语句实现上述的MapReduce吗？
 
 ```sql
@@ -478,6 +615,7 @@ Spark有哪些聚合类的算子,我们应该尽量避免什么类型的算子�
 
 ## Reference
 
+- [Shopee大数据](https://www.shuzhiduo.com/A/6pdDQVbKzw/)
 - [0086 shopee面试题汇总](https://blog.csdn.net/gendlee1991/article/details/105759780)
 - [good - 新加坡Singapore Data infra 经验分享](https://www.aiwaner.cn/singapore-shopee.html)
 - [一亩三分地 - Shopee新加坡面经](https://www.1point3acres.com/bbs/interview/shopee-data-engineer-591386.html)
@@ -491,6 +629,7 @@ other:
 - [各大公司近期 data engineer 面经大全](https://1o24bbs.com/t/topic/4022)
 - [求职面试分享 [2019.07.28]](https://www.chasedream.com/show.aspx?id=27223&cid=29)
 - [面圈网](http://www.mianshigee.com/company/Shopee)
+- [shop大数据面试](https://blog.csdn.net/gendlee1991/article/details/105759780)
 
 没看的:
 
