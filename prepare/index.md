@@ -124,6 +124,10 @@ No. | Question | Flag
 13. | SQL的索引采用什么数据结构？（B+树） |
 7. | 数据库相关 |
 15. | Redis 数据过期策略 |
+16. | 聚簇索引和非聚簇索引 |
+17. | 主键和索引的区别
+17. | 脏读、不可重复读、幻读解释一下
+17. | 解决了脏读和不可重复读但没解决幻读的是哪个隔离级别
 
 **MySQL的存储引擎：**
 
@@ -143,27 +147,211 @@ No. | Question | Flag
 :---: | --- | :---:
 1. | 股票最大利润 cost, profit = float("+inf"), 0 | ❎
 2. | Move Zeroes for i in range(len(nums)): | ❎
-3. | 二叉树层序遍历； | ❎
+3. | 二叉树层序遍历 | ❎
 4. | 删除排序链表中的重复元素 II， dummyHead = ListNode(0), dummyHead.next = head | ❎
 5. | 如何实现LRU |
-6. | 回文串判断 |
-7. | 判断二叉树是否对称 |
-8. | 如何判断一个二叉树是否是二叉搜索树 |
-7. | 找出数组里三个数相乘最大的那个（有正有负） |
-8. | 做题：两个十六进制数的加法 |
-9. | [93. 复原IP地址](https://leetcode-cn.com/problems/restore-ip-addresses/) |
-10. | [202. 快乐数](https://leetcode-cn.com/problems/happy-number/) |
-11. | 快排归并手撕 |
-14. | 手撕代码：两个字符串的最大公共子串
-15. | 请你找出其中不含有重复字符的最长子串的长度。
-16. | 405-数字转换为十六进制数
-17. | 二进制加法
-18. | 2个有序数组，维护中位数
-19. | 算法：判断是不是平衡二叉树
-20. | [155. 最小栈](https://leetcode-cn.com/problems/min-stack/) |
-21. | 大文件找出排名前1000的数据 |
-22. | 1000个数据，查找出现次数最多的k个数字 |
-23. | 非递归单链表反转 现场手写
+6. | [125. 验证回文串](https://leetcode-cn.com/problems/valid-palindrome/), while, while left < right and not s[left].isalnum(): <br><br> 扩展: [5. 最长回文子串 dp](https://leetcode-cn.com/problems/longest-palindromic-substring/), 枚举长度 <br> &nbsp; for l in range(n): for i in n: dp[i][j] = (dp[i + 1][j - 1] and s[i] == s[j]) | <br>❎
+7. | 判断二叉树是否对称 <br> &nbsp; class TreeNode: def \_\_init\_\_(self, x): <br> &nbsp; isSymmetricHelper(left.left, right.right) and isSymmetricHelper(left.right, right.left) | <br>❎
+8. | [98. 验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/) | ❎
+9. | 找出数组里三个数相乘最大的那个（有正有负）| ❎
+10. | 做题：两个十六进制数的加法 | ❎
+11. | [93. 复原IP地址](https://leetcode-cn.com/problems/restore-ip-addresses/), ".".join(['1','2','3','4']) == '1.2.3.4',&nbsp; ord("a") = 97 &nbsp; if 0 < addr <= 0xFF: | ✔️❎
+12. | [202. 快乐数](https://leetcode-cn.com/problems/happy-number/), divmod(79, 10) = 7,9;  while n > 0: n, digit = divmod(n, 10) | ❎
+13. | 快排归并手撕 | ❎
+14. | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) dp = [[0] * (n + 1) for _ in range(m + 1)] <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if text1[i - 1] == text2[j - 1]: dp[i][j] = dp[i-1][j-1] + 1 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else: dp[i][j] = max(dp[i-1][j], dp[i][j-1]) | ❎
+15. | [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/), occ=set(); for: while r+1 < n and s[r+1] not in occ: | ❎
+16. | 405-数字转换为十六进制数, bin(dec), oct(dec), hex(dec), int('0b10000', 2) | ❎
+17. | [67. 二进制求和](https://leetcode-cn.com/problems/add-binary/)， for i, j in zip(a[::-1], b[::-1]):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s = int(i) + int(j) + carry, r = str(s % 2) + r, carry = s // 2 | ❎
+18. | 2个有序数组，维护中位数 |
+19. | [剑指 Offer 55 - II. 平衡二叉树](https://leetcode-cn.com/problems/ping-heng-er-cha-shu-lcof/) <br> &nbsp; (1). abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 <br> &nbsp; (2). self.isBalanced(root.left) and self.isBalanced(root.right) | <br>❎
+20. | [155. 最小栈](https://leetcode-cn.com/problems/min-stack/), self.stack = [], self.min_stack = [float('inf')] | ❎
+21. | 非递归单链表反转 现场手写 | ❎
+22. | [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/), i = inorder.index(preorder[0]) | ❎
+23. | 全排列, def dfs(x): if x == len(c) - 1: res.append(''.join(c)) <br> &nbsp;&nbsp;&nbsp;&nbsp; for i in range(first, n): | ❎
+24. | [1262. 可被三整除的最大和](https://leetcode-cn.com/problems/greatest-sum-divisible-by-three/) |
+25. | [哈希冲突解决方法](https://blog.csdn.net/weixin_44560940/article/details/95762569) : 关键字值不同的元素可能会映象到哈希表的同一地址上就会发生哈希冲突<br> [大厂面试必问！HashMap 怎样解决hash冲突？](https://blog.csdn.net/bjmsb/article/details/107919872) |
+26. | 哈希表某个桶中数据被删除怎么办
+27. | 两千万个文件找最小的一千个（答错了，应该用大顶堆，答成了小顶堆）| ❎
+28. | 10亿个数中找出最大的10000个数? <br><br> &nbsp;&nbsp;&nbsp;&nbsp; 将1亿个数据分成100份，每份100万个数据，找到每份数据中最大的10000个，最后在剩下的100*10000个数据里面找出最大的10000个 | <br> 分治法
+29. | 1000个数据，查找出现次数最多的k个数字 <br><br> 我们首先一样是要把这十亿个数分成很多份。例如 1000份，每份 10万。然后使用 HashMap<int,int> 来统计。在每一次的统计中，我们可以找出最大的100个数？ 这样100\*10000 可以 快排序 解决 | 1. 分治法HashMap <br><br> 2. 位图法Bitmap |
+
+
+### 3.1 quickSort
+
+```python
+def quickSort(nums, left, right):
+    if left < right:
+        l, r = left, right
+        x = nums[l]
+        while True:
+            while l < r and nums[r] >= x:
+                r -= 1
+            while l < r and nums[l] <= x:
+                l += 1
+            if l >= r:
+                break
+            nums[l], nums[r] = nums[r], nums[l]
+
+        nums[left], nums[l] = nums[l], nums[left]
+
+        quickSort(nums, left, l - 1)
+        quickSort(nums, l + 1, right)
+
+    return nums
+```
+
+### 3.2 mergeSort
+
+```python
+def mergeSort(nums, l, r):
+    if l >= r:
+        return
+    mid = (l + r) // 2
+    mergeSort(nums, l, mid)
+    mergeSort(nums, mid + 1, r)
+    arr = [0] * (r - l + 1)
+
+    k, i, j = 0, l, mid + 1
+
+    while i <= mid and j <= r:
+        if nums[i] <= nums[j]:
+            arr[k] = nums[i]
+            k, i = k + 1, i + 1
+        else:
+            arr[k] = nums[j]  # ans += (mid+1-i);
+            k, j = k + 1, j + 1
+    while i <= mid:
+        arr[k] = nums[i]
+        k, i = k + 1, i + 1
+    while j <= r:
+        arr[k] = nums[j]
+        k, j = k + 1, j + 1
+
+    for i in range(l, r+1):
+        nums[i] = arr[i - l]
+```
+
+### 3.3 isValidBST
+
+```python
+class Solution:
+    def isValidBST(self, root):
+        stack, pre = [], float('-inf')
+        while stack or root:
+            while root:
+                stack.append(root)
+                root = root.left
+            root = stack.pop()
+            # 如果中序遍历得到的节点的值小于等于前一个 inorder，说明不是二叉搜索树
+            if root.val <= pre:
+                return False
+            pre = root.val
+            root = root.right
+
+        return True
+```
+
+```python
+class Solution:
+    def isValidBST(self, root):
+        def helper(node, lower = float('-inf'), upper = float('inf')):
+            if not node:
+                return True
+            val = node.val
+            if val <= lower or val >= upper:
+                return False
+
+            if not helper(node.right, val, upper):
+                return False
+            if not helper(node.left, lower, val):
+                return False
+            return True
+        return helper(root)
+```
+
+### 3.4 isHappy
+
+```python
+def isHappy(self, n: int) -> bool:  
+    def get_next(number):
+        total_sum = 0
+        while number > 0:
+            number, digit = divmod(number, 10)
+            total_sum += digit ** 2
+        return total_sum
+
+    slow_runner = n
+    fast_runner = get_next(n)
+    while fast_runner != 1 and slow_runner != fast_runner:
+        slow_runner = get_next(slow_runner)
+        fast_runner = get_next(get_next(fast_runner))
+    return fast_runner == 1
+```
+
+### 93. 复原IP地址
+
+```python
+class Solution:
+    def restoreIpAddresses(self, s: str) -> List[str]:
+        SEG_COUNT = 4
+        ans = list()
+        segments = [0] * SEG_COUNT
+        
+        def dfs(segId: int, segStart: int):
+            # 如果找到了 4 段 IP 地址并且遍历完了字符串，那么就是一种答案
+            if segId == SEG_COUNT:
+                if segStart == len(s):
+                    ipAddr = ".".join(str(seg) for seg in segments)
+                    ans.append(ipAddr)
+                return
+            
+            # 如果还没有找到 4 段 IP 地址就已经遍历完了字符串，那么提前回溯
+            if segStart == len(s):
+                return
+
+            # 由于不能有前导零，如果当前数字为 0，那么这一段 IP 地址只能为 0
+            if s[segStart] == "0":
+                segments[segId] = 0
+                dfs(segId + 1, segStart + 1)
+            
+            # 一般情况，枚举每一种可能性并递归
+            addr = 0
+            for segEnd in range(segStart, len(s)):
+                addr = addr * 10 + (ord(s[segEnd]) - ord("0"))
+                if 0 < addr <= 0xFF:
+                    segments[segId] = addr
+                    dfs(segId + 1, segEnd + 1)
+                else:
+                    break
+        
+
+        dfs(0, 0)
+        return ans
+```
+
+### 46. 全排列
+
+```python
+class Solution:
+    def permute(self, nums):
+
+        def backtrack(first=0):
+            # 所有数都填完了
+            if first == n:
+                res.append(nums[:])
+            for i in range(first, n):
+                # 动态维护数组
+                nums[first], nums[i] = nums[i], nums[first]
+                # 继续递归填下一个数
+                backtrack(first + 1)
+                # 撤销操作
+                nums[first], nums[i] = nums[i], nums[first]
+
+        n = len(nums)
+        res = []
+        backtrack(first=0)
+        return res
+```
 
 [经验分享](https://www.aiwaner.cn/singapore-shopee.html)
 
@@ -214,12 +402,19 @@ No. | Question | Flag
 6 Java中的弱引用 强引用和软引用分别在哪些场景中使用
 7 Hadoop和spark的主要区别-这个问题基本都会问到
 
-记住3点最重要的不同之处：
+**(1). Hadoop和spark的主要区别**
 
-spark消除了冗余的 HDFS 读写: Hadoop 每次 shuffle 操作后，必须写到磁盘，而 Spark 在 shuffle 后不一定落盘，可以 cache 到内存中，以便迭代时使用。如果操作复杂，很多的 shufle 操作，那么 Hadoop 的读写 IO 时间会大大增加，也是 Hive 更慢的主要原因了。
-spark消除了冗余的 MapReduce 阶段: Hadoop 的 shuffle 操作一定连着完整的 MapReduce 操作，冗余繁琐。而 Spark 基于 RDD 提供了丰富的算子操作，且 reduce 操作产生 shuffle 数据，可以缓存在内存中。
-JVM 的优化: Hadoop 每次 MapReduce 操作，启动一个 Task 便会启动一次 JVM，基于进程的操作。而 Spark 每次 MapReduce 操作是基于线程的，只在启动 Executor 是启动一次 JVM，内存的 Task 操作是在线程复用的。每次启动 JVM 的时间可能就需要几秒甚至十几秒，那么当 Task 多了，这个时间 Hadoop 不知道比 Spark 慢了多。
+> spark消除了冗余的 HDFS 读写: Hadoop 每次 shuffle 操作后，必须写到磁盘，而 Spark 在 shuffle 后不一定落盘，可以 cache 到内存中，以便迭代时使用。如果操作复杂，很多的 shufle 操作，那么 Hadoop 的读写 IO 时间会大大增加，也是 Hive 更慢的主要原因了。
+> 
+> spark消除了冗余的 MapReduce 阶段: Hadoop 的 shuffle 操作一定连着完整的 MapReduce 操作，冗余繁琐。而 Spark 基于 RDD 提供了丰富的算子操作，且 reduce 操作产生 shuffle 数据，可以缓存在内存中。
+>
+> JVM 的优化: Hadoop 每次 MapReduce 操作，启动一个 Task 便会启动一次 JVM，基于进程的操作。而 Spark 每次 MapReduce 操作是基于线程的，只在启动 Executor 是启动一次 JVM，内存的 Task 操作是在线程复用的。每次启动 JVM 的时间可能就需要几秒甚至十几秒，那么当 Task 多了，这个时间 Hadoop 不知道比 Spark 慢了多。
 
+**(2). Hadoop中一个大文件进行排序，如何保证整体有序？**
+
+> 一个文件有key值从1到10000的数据，我们用两个分区，将1到5000的key发送到partition1，然后由reduce1处理，5001到10000的key发动到partition2然后由reduce2处理，reduce1的key是按照1到5000的升序排序，reduce2的key是按照5001到10000的升序排序，这就保证了整个MapReduce程序的全局排序。
+> 
+> Hadoop 中的类 TotalOrderPartitioner
 
 ## 6. 网络 TCP
 
