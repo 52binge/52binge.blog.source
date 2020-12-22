@@ -34,13 +34,13 @@ DP | Tree DP, 偷不偷 |
 &nbsp; | [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/), dp[i] = max(dp[i], dp[j] + 1) |
 &nbsp; | [152. Maximum Product Subarray - 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray), pre_max ,pre_min,num | ❎
 DFS | 二维格子 |
-&nbsp; | [79. Word Search](https://leetcode-cn.com/problems/word-search) | ❎
+&nbsp; | [79. Word Search](https://leetcode-cn.com/problems/word-search), 单词搜索 <br> &nbsp;&nbsp;DFS 回溯, visited = set() visited.add((i,j)), visited.remove((i,j)) | ❎
 &nbsp; | ~~[200. Number of Islands](https://leetcode-cn.com/problems/number-of-islands/)~~ | ❎
 DFS | 全排列 |
-&nbsp; | [39. 组合总和](https://leetcode-cn.com/problems/combination-sum/), [2,3,6,7] = [7], [2,2,3]， [DFS 树状图](https://leetcode-cn.com/problems/combination-sum/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/) | ❎
+&nbsp; | [39. 组合总和](https://leetcode-cn.com/problems/combination-sum/), [2,3,6,7] = [7], [2,2,3]， [DFS 树状图](https://leetcode-cn.com/problems/combination-sum/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/) <br><br> &nbsp;dfs(candidates, index, path + [candidates[index]], target - candidates[index]) | ❎
 &nbsp; | [78. Subsets 子集](https://leetcode-cn.com/problems/subsets/), 放不放 dfs(ix=0)， 搜索+回溯 | ❎
 | |
-&nbsp; | [139. Word Break](https://leetcode-cn.com/problems/word-break) ， [好题目，3种解法](https://leetcode-cn.com/problems/word-break/solution/shou-hui-tu-jie-san-chong-fang-fa-dfs-bfs-dong-tai/) |
+&nbsp; | [139. Word Break](https://leetcode-cn.com/problems/word-break) ， [好题目，3种解法](https://leetcode-cn.com/problems/word-break/solution/shou-hui-tu-jie-san-chong-fang-fa-dfs-bfs-dong-tai/), for i in n: for j=i+1 |
 &nbsp; | Tree |
 &nbsp; | [543. Diameter of Binary Tree](https://leetcode-cn.com/problems/diameter-of-binary-tree), height = return max(L, R) + 1 | ❎
 stack | 单调stack |
@@ -145,7 +145,7 @@ hard, merge+index | [315. Count of Smaller Numbers After Self](https://leetcode-
 (4). | DP |
 `good` | [4.1 栅栏涂色](https://leetcode-cn.com/problems/paint-fence/) &nbsp;&nbsp; `dp[i] = dp[i-2]*(k-1) + dp[i-1]*(k-1)` | ✔️❎
 &nbsp; | [4.2 区域和检索](https://leetcode-cn.com/problems/range-sum-query-immutable/) | ❎
-`good`<br><br><br>`float('inf')`<br><br><br>good | [4.3 Coin Change [零钱兑换]](https://leetcode-cn.com/problems/coin-change/) &nbsp;&nbsp;`dp[0] = 0`, `dp[x] = min(dp[x], dp[x - coin] + 1)` <br><br> $F(i)= min\_{j=0…n−1} F(i−c\_j)+1$ `dp = [float('inf')] * (amount + 1)` <br><br> 输入：coins = [1, 2, 5], amount = 11<br>输出：3 <br>解释：11 = 5 + 5 + 1 <br> Tips: float('inf') + 1 = inf | ✔️❎
+`good`<br><br><br>`float('inf')`<br><br><br>good | [4.3 Coin Change [零钱兑换]](https://leetcode-cn.com/problems/coin-change/) &nbsp;&nbsp;`dp[0] = 0`, `dp[x] = min(dp[x], dp[x - coin] + 1)` <br><br> $F(i)= min_{j=0…n−1} F(i−c_j)+1$ `dp = [float('inf')] * (amount + 1)` <br><br> 输入：coins = [1, 2, 5], amount = 11<br>输出：3 <br>解释：11 = 5 + 5 + 1 <br> Tips: float('inf') + 1 = inf | ✔️❎
 &nbsp; | [4.4 除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/) , [0]\*len,  range(len(nums)-2, -1, -1) | ❎
 &nbsp; | [279. 完全平方数](https://leetcode-cn.com/problems/perfect-squares/), numSquares(n)=min(numSquares(n-k) + 1)∀k∈square <br> 与 Coin Change 非常类似，但不完全 | ✔️❎
 hard | [44. Wildcard Matching](https://leetcode-cn.com/problems/wildcard-matching/) Input: s = "aa", p = "*" Output: true , Input: s = "cb", p = "?a" Output: false |
