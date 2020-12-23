@@ -14,7 +14,7 @@ date: 2016-07-16 16:59:48
 > <div class="tweetimg"><img src="/images/tw/en-Shuping-Yang.png" width="600" /></div>
 
 
-> `2017.05.20` Qianjiang New Town's Light Show
+> `2017.05.20` I and my sister at Qianjiang New Town's Light Show. 
 > 
 > <div class="tweetimg"><img src="/images/tw/tw-me-sister.jpeg" width="600"/></div>
 
