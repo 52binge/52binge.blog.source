@@ -9,6 +9,10 @@ No. | desc | Flag
 6. | [字节跳动大数据研发实习超详细面经（已拿offer）](https://blog.csdn.net/m0_48634217/article/details/107057534) |
 7. | [字节跳动大数据开发工程师技术中台一二三面+hr面](https://www.nowcoder.com/discuss/451878?channel=-2&source_id=discuss_terminal_discuss_sim)
 8. | [字节跳动大数据岗](https://www.nowcoder.com/discuss/204836)
+9. | [【数仓面试题】使用Hive窗口函数替换union all处理分组汇总（小计，总计）](https://zhuanlan.zhihu.com/p/148466975) | 
+10. | [字节跳动数仓面试 三道题-JAVA编程+hive窗口](https://blog.csdn.net/qq_41828180/article/details/106213841]) |
+11. | [经典sql题目（使用窗口函数解决）](https://blog.csdn.net/zhangshk_/article/details/82756557)
+12. | [2020 BAT大厂数据分析面试经验：“高频面经”之数据分析篇](https://www.pythonf.cn/read/86716)
 
 ## Hadoop, HDFS, MR, Yarn Job
 
