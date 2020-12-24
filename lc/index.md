@@ -122,11 +122,25 @@ class Solution:
         return max((n+1)*(maxt-1)+tnum.count(maxt),len(tasks))
 ```
 
+179. 最大数
+
+```python
+class LargerNumKey(str):
+    def __lt__(x, y):
+        return x+y > y+x
+        
+class Solution:
+    def largestNumber(self, nums):
+        largest_num = ''.join(sorted(map(str, nums), key=LargerNumKey))
+        return '0' if largest_num[0] == '0' else largest_num
+```
+
 ## Review shop
 
 No. | Question | Flag
 :---: | --- | :---:
 (1). | **binary-search** |
+&nbsp; | [179. 最大数](https://leetcode-cn.com/problems/largest-number), sorted(iter, key=your\_sort\_class, \_\_lt\_\_) | ❎ 
 &nbsp; | [1.1 二分查找](https://leetcode-cn.com/problems/binary-search/), while l <= r | ❎
 &nbsp; | [1.2 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/), def binSearch(nums, t, flag), mid=r-1 or l+1, return r+1 or l-1 | ❎
 addition | [162. 寻找峰值](https://leetcode-cn.com/problems/find-peak-element/) nums[-1] = nums[n] = -∞ , l=mid+1, r=mid| ❎

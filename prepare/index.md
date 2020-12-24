@@ -1,3 +1,15 @@
+
+No. | desc | Flag
+:---: | --- | :---:
+1. | [花未全开*月未圆](https://www.cnblogs.com/tesla-turing/p/13276589.html) |
+2. | [数仓大法好！跨境电商 Shopee 的实时数仓之路](https://developer.aliyun.com/article/765329) |
+3. | [2020年大厂面试题-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688808) |
+4. | [179. 最大数](https://leetcode-cn.com/problems/largest-number/) |
+5. | [大数据研发工程师（两年）字节跳动面经](https://juejin.cn/post/6844904181254340621) |
+6. | [字节跳动大数据研发实习超详细面经（已拿offer）](https://blog.csdn.net/m0_48634217/article/details/107057534) |
+7. | [字节跳动大数据开发工程师技术中台一二三面+hr面](https://www.nowcoder.com/discuss/451878?channel=-2&source_id=discuss_terminal_discuss_sim)
+8. | [字节跳动大数据岗](https://www.nowcoder.com/discuss/204836)
+
 ## Hadoop, HDFS, MR, Yarn Job
 
 [七、介绍一下HDFS读写流程](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247493886&idx=1&sn=2cee4ece5c7cc87895d9e1a1b2fb440f&chksm=cf37daf3f84053e51cd0323f1ec9114ca0ec159a9451dd53a4afde5a7c6f1cf48f12d7999ef0&scene=21#wechat_redirect)
