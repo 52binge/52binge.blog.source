@@ -396,23 +396,24 @@ InnoDB是MySQL目前默认的存储引擎，底层使用了B+树作为数据结�
 
 No. | Question | Flag
 :---: | --- | :---:
+&nbsp; | [25. K 个一组翻转链表](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/) 1->2->3->4->5 当 k = 3 时，应当返回: 3->2->1->4->5 <br> &nbsp;  def reverse(self, head: ListNode, tail: ListNode): prev=tail.next p=head <br> &nbsp; def reverseKGroup(head, k): hair = ListNode(0) while head: <br> &nbsp; (1) 查看剩余部分长度是否大于等于 k (2). 把子链表重新接回原链表 | <br>hard
 1. | 股票最大利润 cost, profit = float("+inf"), 0 | ❎
-2. | Move Zeroes for i in range(len(nums)): | ❎
-3. | 二叉树层序遍历 | ❎
-4. | 删除排序链表中的重复元素 II， dummyHead = ListNode(0), dummyHead.next = head | ❎
+2. | [Move Zeroes](https://leetcode-cn.com/problems/move-zeroes/) for i in range(len(nums)): if nums[i]: swap(nums[i], nums[j]) | ❎
+3. | ~~二叉树层序遍历~~ | ❎
+4. | [83. 删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/), while cur and cur.next: <br>[82. 删除排序链表中的重复元素 II - 删除所有含有重复数字的节点](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/) <br> &nbsp; dHead = ListNode(0), dHead.next = head, pre,cur = dHead,head; <br>&nbsp; `while cur: pre.next = cur.next` 跳过重复部分 | ❎
 5. | [如何实现LRU](http://localhost:5000/lc/#review-shop), 双向链表+Dict+Size+Cap <br> class DLinkedNode(4), removeTail, moveToHead, addToHead, removeNode | ✔️❎
 6. | [125. 验证回文串](https://leetcode-cn.com/problems/valid-palindrome/), while, while left < right and not s[left].isalnum(): <br><br> 扩展: [5. 最长回文子串 dp](https://leetcode-cn.com/problems/longest-palindromic-substring/), 枚举长度 <br> &nbsp; for l in range(n): for i in n: dp[i][j] = (dp[i + 1][j - 1] and s[i] == s[j]) | <br>❎
 7. | 判断二叉树是否对称 <br> &nbsp; class TreeNode: def \_\_init\_\_(self, x): <br> &nbsp; isSymmetricHelper(left.left, right.right) and isSymmetricHelper(left.right, right.left) | <br>❎
 8. | [98. 验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/), while stack or root: while root | ❎
 9. | 找出数组里三个数相乘最大的那个（有正有负）| ❎
 10. | 做题：两个十六进制数的加法 | ❎
-11. | [93. 复原IP地址](https://leetcode-cn.com/problems/restore-ip-addresses/), ".".join(['1','2','3','4']) == '1.2.3.4',&nbsp; ord("a") = 97 &nbsp; if 0 < addr <= 0xFF: | ✔️❎
-12. | [202. 快乐数](https://leetcode-cn.com/problems/happy-number/), divmod(79, 10) = 7,9;  while n > 0: n, digit = divmod(n, 10) | ❎
+11. | [93. 复原IP地址](https://leetcode-cn.com/problems/restore-ip-addresses/), `".".join(['1','2','3','4']) == '1.2.3.4'`,&nbsp; `ord("a") = 97` <br> &nbsp; if 0 < addr <= 0xFF（11111111==255): | ✔️❎
+12. | [202. 快乐数](https://leetcode-cn.com/problems/happy-number/), `divmod(79, 10) = 7,9;  while n > 0: n, digit = divmod(n, 10)` | ❎
 13. | 快排归并手撕 | ❎
 14. | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) dp = [[0] * (n + 1) for _ in range(m + 1)] <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if text1[i - 1] == text2[j - 1]: dp[i][j] = dp[i-1][j-1] + 1 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else: dp[i][j] = max(dp[i-1][j], dp[i][j-1]) | <br>❎
-15. | [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/), occ=set(); for: while r+1 < n and s[r+1] not in occ: | ❎
+15. | [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/), occ=set(); <br>&nbsp; for l in range(n): remove(i-1), while r+1 < n and s[r+1] not in occ: add(r+1) | ❎
 16. | 405-数字转换为十六进制数, bin(dec), oct(dec), hex(dec), int('0b10000', 2) | ❎
-17. | [67. 二进制求和](https://leetcode-cn.com/problems/add-binary/)， for i, j in zip(a[::-1], b[::-1]):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s = int(i) + int(j) + carry, r = str(s % 2) + r, carry = s // 2 | ❎
+17. | [67. 二进制求和](https://leetcode-cn.com/problems/add-binary/)， for i, j in zip(a[::-1], b[::-1]):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s = int(i) + int(j) + carry, r = str(s % 2) + r, carry = s // 2 <br><br> list(zip([1,2,3], [4,5,6])) == [(1, 4), (2, 5), (3, 6)]| <br>❎
 18. | [4. 寻找两个正序数组的中位数 - hard](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/) ,二分查找 O(log (m+n))  <br> A: 1 3 4 9 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑<br>B: `1 2 3` 4 5 6 7 8 9<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑| <br>✔️<br>❎
 19. | [剑指 Offer 55 - II. 平衡二叉树](https://leetcode-cn.com/problems/ping-heng-er-cha-shu-lcof/) <br> &nbsp; (1). abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 <br> &nbsp; (2). self.isBalanced(root.left) and self.isBalanced(root.right) | <br>❎
 20. | [155. 最小栈](https://leetcode-cn.com/problems/min-stack/), self.stack = [], self.min_stack = [float('inf')] | ❎
