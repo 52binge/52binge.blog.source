@@ -1,18 +1,193 @@
 
 No. | desc | Flag
 :---: | --- | :---:
-1. | [花未全开*月未圆](https://www.cnblogs.com/tesla-turing/p/13276589.html) |
-2. | [数仓大法好！跨境电商 Shopee 的实时数仓之路](https://developer.aliyun.com/article/765329) |
-3. | [2020年大厂面试题-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688808) |
-4. | [179. 最大数](https://leetcode-cn.com/problems/largest-number/) |
-5. | [大数据研发工程师（两年）字节跳动面经](https://juejin.cn/post/6844904181254340621) |
-6. | [字节跳动大数据研发实习超详细面经（已拿offer）](https://blog.csdn.net/m0_48634217/article/details/107057534) |
-7. | [字节跳动大数据开发工程师技术中台一二三面+hr面](https://www.nowcoder.com/discuss/451878?channel=-2&source_id=discuss_terminal_discuss_sim)
-8. | [字节跳动大数据岗](https://www.nowcoder.com/discuss/204836)
+2. | [数仓大法好！跨境电商 Shopee 的实时数仓之路](https://developer.aliyun.com/article/765329) | ❎
+3. | [2020年大厂面试题-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688808)  <br><br> 1.手写"连续活跃登陆"等类似场景的sql - 好题目 | <br>✔️
+4. | [179. 最大数](https://leetcode-cn.com/problems/largest-number/)<br> &nbsp;&nbsp; `class LargerNumKey(str): def __lt__(x, y): return x+y > y+x` <br> &nbsp;&nbsp; `largest_num = ''.join(sorted(map(str, nums), key=LargerNumKey))`|
 9. | [【数仓面试题】使用Hive窗口函数替换union all处理分组汇总（小计，总计）](https://zhuanlan.zhihu.com/p/148466975) | 
 10. | [字节跳动数仓面试 三道题-JAVA编程+hive窗口](https://blog.csdn.net/qq_41828180/article/details/106213841]) |
 11. | [经典sql题目（使用窗口函数解决）](https://blog.csdn.net/zhangshk_/article/details/82756557)
 12. | [2020 BAT大厂数据分析面试经验：“高频面经”之数据分析篇](https://www.pythonf.cn/read/86716)
+
+> [Hive 分析函数lead、lag实例应用](https://blog.csdn.net/kent7306/article/details/50441967)
+
+
+No. | desc | Flag
+:---: | --- | :---:
+&nbsp; | [大数据研发工程师（两年）字节跳动面经](https://juejin.cn/post/6844904181254340621) | |
+1. | 数据不一致有没有遇到过，怎么解决的? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **回答：** 1. 指标体系,数仓 2. 规则引擎，复用逻辑 | 
+2. | 一道sql的题，一张表，用户id和登录日期，查找连续两天登陆的用户 <br> &nbsp;&nbsp; `and (a.pdate = date_sub(b.pdate,1) or a.pdate = date_add(b.pdate,1))` | 
+3. | 怎么定位性能问题对应的是哪段sql? <br><br> 1. spark driver log 看 执行慢的stage（99%） <br> 2. spark ui 上看 该stage 的task 执行完成比率 <br> 3. spark ui 上看 该stage 对应的 continer id 和 所属job <br> 4. spark ui 上看 sql 的执行计划 和 执行计划图，最终定位到是哪段sql | <br><br>❎
+4. | [遇到spark性能问题怎么解决的？](https://juejin.cn/post/6844903942766198798) &nbsp;&nbsp;&nbsp;&nbsp; 1. 提交参数 2. 开发调优 3. Shuffle调优 4. 小文件 |
+5. | [121. 买卖股票的最佳时机 I](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/) <br> &nbsp;&nbsp;&nbsp;&nbsp; maxprofit = max(price - minprice, maxprofit), minprice = min(price, minprice) <br>[122. 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/), <br> 贪心: tmp = prices[i] - prices[i - 1], if tmp > 0: profit += tmp <br> DP： dp[i][0] = max(dp[i-1][0], dp[i-1][1]+prices[i]) <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dp[i][1] = max(dp[i-1][1], dp[i-1][0]-prices[i]) | 
+6. | linux 求一个文件出现某个单词的行数 linux做完用spark写<br> &nbsp;&nbsp;spark: long numAs = logData.filter(s -> s.contains("a")).count(); |
+7. | cache和persisit 的区别? <br><br> cache只有一个默认的缓存级别MEMORY_ONLY，即将数据持久化到内存中. <br> persist可以通过传递一个 StorageLevel 对象来设置缓存的存储级别. | ❎
+8. | 有优化过Spark执行性能吗，怎么优化的, [超全spark性能优化总结](https://zhuanlan.zhihu.com/p/108454557) | 
+9. | spark on service 用过吗， spark context有退出的问题遇到过吗？ 这个知道没用过，所以没答出来，不过通过这个问题能看出来字节大佬还真挺厉害的，三面面试官对技术都这么了解
+10. | spark dataframe比rdd性能好，为啥? <br><br> DataFrame运行效率优于RDD，因为它规定了具体的结构对数据加以约束. 由于DataFrame具有定义好的结构, Spark可以在作业运行时应用许多性能增强的方法. 如果你能够使用RDD完美地编写程序，也可以通过RDD实现相同的性能. <br><br> Spark SQL的核心是Catalyst优化器，它以一种新颖的方式利用高级编程语言功能（例如Scala的模式匹配和quasiquotes）来构建可扩展的查询优化器, 它很容易添加优化规则 |
+11. | 堆外内存是干什么用的 netty。结点直接交互数据，spark 最新feature 弃用jvm，直接c++调用内存，都是堆外, Spark 2.x 执行内存和存储内存 相互之间 能 占用 <br> 1. (executor内存) JVM 内部 的 On-heap Memory （对于JVM来说叫做 堆内存）<br> 2. (executor外部) JVM 外部/操作系统 的 Off-heap Memory |
+12. | 知道什么是 whole stage codengen吗 <br> 面向接口编程太耗时间，主要是方法递归调用，虚函数调用 可以将一个stage的所有task整理成一个方法，并且生成动态字节码 并结合 |
+13. | 加强数仓和业务的学习 加强底层原理的学习
+14. | 我机智的回答：想深入业务 和 技术原理. 想优先考虑： data warehouse (高并发和实时流经验欠缺) |
+&nbsp; | [字节跳动大数据研发实习超详细面经（已拿offer）](https://blog.csdn.net/m0_48634217/article/details/107057534) |
+1. | leetcode: 二叉树层序遍历，按层换行输出 | ❎
+2. | 线程的状态及状态之间的装换 |
+3. | B+树的特点? <br><br> B+树是一种树数据结构，通常用于数据库和操作系统的文件系统中。B+树的特点是能够保持数据稳定有序，其插入与修改拥有较稳定的对数时间复杂度。B+树元素自底向上插入，这与二叉树恰好相反。 <br><br> B树是为磁盘或其他直接存取的辅助存储设备而设计的一种平衡搜索树。B树类似于红黑树，但它们在降低磁盘I/O操作数方面要更好一些。|
+4. | Redis支持的数据结构? 为什么性能高？ 为什么是单线程? <br> 答： 将数据存储在内存，读取时候不需要进行磁盘的 IO，单线程也保证了系统没有线程的上下文切换。<br><br> String：缓存、计数器、分布式锁等。<br>List：链表、队列、微博关注人时间轴列表等。<br>Hash：用户信息、Hash 表等。<br>Set：去重、赞、踩、共同好友等。<br>Zset：访问量排行榜、点击量排行榜等。Zset 是有序的链表结构，其底层数据结构是跳跃表 skiplist  |
+5. | 场景题：如何从百亿条IP信息中得出访问量前10的IP地址 `哈希分治法` <br> 1. ipv4 地址是一个 32 位的整数，可以用 uint 保存。 <br> 2. 我先设计一个哈希函数，把100个G的文件分成10000份，每份大约是 10MB，可以加载进内存了 |
+6. | 场景设计题：你自己如何设计一个分布式系统，实现对百亿条数据进行分组并求和 |
+7. | Spark shuffle机制? |
+8. | 编程题：一个数组有正数有负数，调整数组中的数使得正负交替 <br> 1. 空间 O(1) <br> 2. 保持原来的顺序 - 时间复杂度O(n^2) ， `if (i % 2 == 0 && arr[i] < 0) continue;` <br> 3. 不用保持原来的顺序, O(n) |
+9. | [医院排队候诊模型](https://blog.csdn.net/zhongyuchen/article/details/78602167) 假设一个医院，M个医生，N个病人，每个病人看病时长已知。写一个函数，做医生和病人的分配，要求医生负载尽量均衡。 |
+10. | [5 分钟理解 https 工作流程](https://www.jianshu.com/p/a68ca86183d7) |
+11. | Kafka如何保证生产者不丢失数据，消费端不丢失数据 |
+&nbsp; | [字节跳动大数据岗](https://www.nowcoder.com/discuss/204836) , 2019.07 |
+1. | 除了使用hive、spark。基本统计框架，自己实现一个word统计算法？ 我说了类似与mapreducer算法
+2. | 问了MapReduce执行流程以及问了RDD属性和问了一些transformation和action算子
+3. | hive能读取txt文件吗？以及读取哪些类型文件，若不能该怎么让其能读？ <br> load data local inpath '/usr/testFile/result.csv' overwrite into table biao; | ❎
+4. | 各个文件分布在不同的分布式系统中，如何快速的实现某个字段前三？
+5. | [124. 二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/), [51. N 皇后](https://leetcode-cn.com/problems/n-queens/)， `def backtrack(row: int) if: else: for 回溯` | Hard
+6. | [225. 用队列实现栈](https://leetcode-cn.com/problems/implement-stack-using-queues/) , `for _ in range(n): self.queue.append(self.queue.popleft())` |
+7. | [小和问题和逆序对问题](https://blog.csdn.net/qq_34761012/article/details/104859991) <br> main: `smallSum(arr,start,mid)+smallSum(arr,mid+1,end)+merge(arr,start,mid,end)` <br>core : `Sum=Sum+arr[l]*(end-r+1)` | ❎
+&nbsp; | [字节跳动大数据开发工程师技术中台一二三面+hr面](https://www.nowcoder.com/discuss/451878?channel=-2&source_id=discuss_terminal_discuss_sim)  |
+
+
+```sql
+select distinct a.uid 
+  from tb_log a 
+  left join tb_log b 
+    on a.uid = b.uid 
+   and (a.pdate = date_sub(b.pdate,1) or a.pdate = date_add(b.pdate,1))
+```
+
+[122. 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
+
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        size = len(prices)
+        # dp 数组
+        dp = [[0, 0] for _ in range(size)]
+        # 初始化
+        dp[0][0] = 0
+        dp[0][1] = -prices[0]
+        for i in range(1, size):
+            # 状态转移
+            dp[i][0] = max(dp[i-1][0], dp[i-1][1]+prices[i])
+            dp[i][1] = max(dp[i-1][1], dp[i-1][0]-prices[i])
+        
+        return dp[size-1][0]
+```
+
+写sql, 求一个省份下的uv最高的城市 主要考察窗口函数
+
+```sql
+select 
+  province, 
+  city 
+from 
+  (
+    select 
+      province, 
+      city, 
+      row_number() over(
+        partition by province 
+        order by 
+          uv desc
+      ) rank 
+    from 
+      (
+        select 
+          province, 
+          city, 
+          count(distinct uid) uv 
+        from 
+          tb_log 
+        where 
+          pdate = {date} 
+        group by 
+          province, 
+          city
+      ) a
+  ) a1 
+where 
+  a1.rank = 1
+```
+
+124. 二叉树中的最大路径和
+
+```python
+class Solution:
+    def __init__(self):
+        self.maxSum = float("-inf")
+
+    def maxPathSum(self, root: TreeNode) -> int:
+        def maxGain(node):
+            if not node:
+                return 0
+
+            # 递归计算左右子节点的最大贡献值
+            # 只有在最大贡献值大于 0 时，才会选取对应子节点
+            leftGain = max(maxGain(node.left), 0)
+            rightGain = max(maxGain(node.right), 0)
+            
+            # 节点的最大路径和取决于该节点的值与该节点的左右子节点的最大贡献值
+            priceNewpath = node.val + leftGain + rightGain
+            
+            # 更新答案
+            self.maxSum = max(self.maxSum, priceNewpath)
+        
+            # 返回节点的最大贡献值
+            return node.val + max(leftGain, rightGain)
+   
+        maxGain(root)
+        return self.maxSum
+```
+
+N 皇后
+
+```python
+class Solution:
+    def solveNQueens(self, n: int) -> List[List[str]]:
+        def generateBoard():
+            board = list()
+            for i in range(n):
+                row[queens[i]] = "Q"
+                board.append("".join(row))
+                row[queens[i]] = "."
+            return board
+
+        def backtrack(row: int):
+            if row == n:
+                board = generateBoard()
+                solutions.append(board)
+            else:
+                for i in range(n):
+                    if i in columns or row - i in diagonal1 or row + i in diagonal2:
+                        continue
+                    queens[row] = i
+                    columns.add(i)
+                    diagonal1.add(row - i)
+                    diagonal2.add(row + i)
+                    backtrack(row + 1)
+                    columns.remove(i)
+                    diagonal1.remove(row - i)
+                    diagonal2.remove(row + i)
+                    
+        solutions = list()
+        queens = [-1] * n
+        columns = set()
+        diagonal1 = set()
+        diagonal2 = set()
+        row = ["."] * n
+        backtrack(0)
+        return solutions
+```
+
+[Java线程的5种状态及状态之间转换](https://blog.csdn.net/u013129944/article/details/73741161)
+
+<img src="/images/dataware/thread-status.jpg" width="800" alt="Java线程的5种状态及状态之间转换" />
+
 
 ## Hadoop, HDFS, MR, Yarn Job
 

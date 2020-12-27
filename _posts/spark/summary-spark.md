@@ -16,14 +16,20 @@ tags: [spark]
 ./bin/spark-submit \
   --master yarn
   --deploy-mode cluster
-  --num-executors 100 \
+  --num-executors 100 \ # 总共申请的executor数目，普通任务十几个或者几十个足够了
   --executor-memory 6G \
-  --executor-cores 4 \
-  --driver-memory 1G \
-  --conf spark.default.parallelism=1000 \    Task总数
+  --executor-cores 4 \ # 每个executor内的核数，即每个executor中的任务task数目，此处设置为2
+  --driver-memory 1G \ # driver内存大小，一般没有广播变量(broadcast)时，设置1~4g足够
+  --conf spark.default.parallelism=1000 \    # Task总数
+ # Spark作业的默认为500~1000个比较合适,如果不设置，spark会根据底层HDFS的block数量设置task的数量，这样会导致并行度偏少，资源利用不充分。该参数设为num-executors * executor-cores的2~3倍比较合适
   --conf spark.storage.memoryFraction=0.5 \  存储内存
-  --conf spark.shuffle.memoryFraction=0.3 \  执行内存
+  --conf spark.shuffle.memoryFraction=0.3 \  执行内存 # shuffle过程中一个task拉取到上个stage的task的输出后，进行聚合操作时能够使用的Executor内存的比例，默认是0.2，如果shuffle聚合时使用的内存超出了这个20%的限制，多余数据会被溢写到磁盘文件中去，降低shuffle性能
+ #
+ # —-spark.yarn.executor.memoryOverhead 1G ： executor执行的时候，用的内存可能会超过executor-memory，
+ # 所以会为executor额外预留一部分内存，spark.yarn.executor.memoryOverhead即代表这部分内存
 ```
+
+尽量保证每轮Stage里每个task处理的数据量>128M
 
 > - A list of partitions
 > - A function for computing each split
