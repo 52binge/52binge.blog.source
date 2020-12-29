@@ -1,16 +1,83 @@
 
 No. | desc | Flag
 :---: | --- | :---:
-2. | [数仓大法好！跨境电商 Shopee 的实时数仓之路](https://developer.aliyun.com/article/765329) | ❎
-3. | [2020年大厂面试题-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688808)  <br><br> 1.手写"连续活跃登陆"等类似场景的sql - 好题目 | <br>✔️
-4. | [179. 最大数](https://leetcode-cn.com/problems/largest-number/)<br> &nbsp;&nbsp; `class LargerNumKey(str): def __lt__(x, y): return x+y > y+x` <br> &nbsp;&nbsp; `largest_num = ''.join(sorted(map(str, nums), key=LargerNumKey))`|
-9. | [【数仓面试题】使用Hive窗口函数替换union all处理分组汇总（小计，总计）](https://zhuanlan.zhihu.com/p/148466975) | 
-10. | [字节跳动数仓面试 三道题-JAVA编程+hive窗口](https://blog.csdn.net/qq_41828180/article/details/106213841]) |
-11. | [经典sql题目（使用窗口函数解决）](https://blog.csdn.net/zhangshk_/article/details/82756557)
-12. | [2020 BAT大厂数据分析面试经验：“高频面经”之数据分析篇](https://www.pythonf.cn/read/86716)
+1. | [2020 BAT大厂数据分析面试经验：“高频面经”之数据分析篇](https://blog.csdn.net/qq_36936730/article/details/104302799) |
+2. | [2020年大厂面试题-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688808)  <br><br> 1.手写"连续活跃登陆"等类似场景的sql - 好题目 | <br>✔️
+3. | [数仓大法好！跨境电商 Shopee 的实时数仓之路](https://developer.aliyun.com/article/765329) | ❎
+4. | [【数仓面试题】使用Hive窗口函数替换union all处理分组汇总（小计，总计）](https://zhuanlan.zhihu.com/p/148466975) | 
+5. | [字节跳动数仓面试 三道题-JAVA编程+hive窗口](https://blog.csdn.net/qq_41828180/article/details/106213841]) |
+6. | [经典sql题目（使用窗口函数解决）](https://blog.csdn.net/zhangshk_/article/details/82756557)
 
 > [Hive 分析函数lead、lag实例应用](https://blog.csdn.net/kent7306/article/details/50441967)
 
+Spark比MapReduce运行速度快的原因主要有以下几点：
+
+> 1. task启动时间比较快，Spark是fork出线程；而MR是启动一个新的进程；
+> 2. 更快的shuffles，Spark只有在shuffle的时候才会将数据放在磁盘，而MR却不是。
+> 3. 更快的工作流：典型的MR工作流是由很多MR作业组成的，他们之间的数据交互需要把数据持久化到磁盘才可以；而Spark支持DAG以及pipelining，在没有遇到shuffle完全可以不把数据缓存到磁盘。
+缓存：虽然目前HDFS也支持缓存，但是一般来说，Spark的缓存功能更加高效，特别是在SparkSQL中，我们可以将数据以列式的形式储存在内存中。
+> 4. 所有的这些原因才使得Spark相比Hadoop拥有更好的性能表现；在比较短的作业确实能快上100倍，但是在真实的生产环境下，一般只会快 2.5x ~ 3x！
+
+手写"连续活跃登陆"等类似场景的sql
+
+```sql
+select 
+  * 
+from 
+  (
+    select 
+      user_id, date_id, 
+      lead(date_id, 1) over(partition by user_id order by date_id) as last_date_id 
+      # lead 参数1为列名，参数2为往下第n行（可选，默认为1)
+    from 
+      (
+        select 
+          user_id, date_id 
+        from 
+          wedw_dw.tmp_log 
+        where 
+          date_id >= '2020-08-10' and user_id is not null and length(user_id)> 0 
+        group by user_id, date_id order by user_id, date_id
+      ) t
+  ) t1
+where datediff(last_date_id,date_id)=1
+```
+
+## 2020年大厂面试题-数据仓库篇
+
+No. | [2020年大厂面试题-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688808) | Flag
+:---: | --- | :---:
+1. | 手写"连续活跃登陆"等类似场景的sql | ❎
+<br><br>2. | left semi join和left join区别? <br><br>`left semi join` 是 in(keySet) 的关系，遇到右表重复记录，左表会跳过；当右表不存在的时候，左表数据不会显示; 相当于SQL的in语句. <br>`left join`: 当右表不存在的时候，则会显示NULL |　<br><br>❎
+<br><br><br>3. | 维度建模 和 范式建模(3NF模型) 的区别? <br><br> 维度建模是面向分析场景的，主要关注点在于快速、灵活: **星型模型 & 雪花模型 & 星系模型** <br><br> 3NF的最终目的就是为了降低数据冗余，保障数据一致性: <br> (2.1) 原子性 - 数据不可分割 <br> (2.2) 基于第一个条件，实体属性完全依赖于主键 <br> (2.3) 消除传递依赖 - 任何非主属性不依赖于其他非主属性 | <br><br><br>❎
+<br><br><br> 4. | 数据漂移如何解决 ? <br><br>通常是指ods表的同一个业务日期数据中包含了前一天或后一天凌晨附近的数据或者丢失当天变更的数据，这种现象就叫做漂移，且在大部分公司中都会遇到的场景<br><br> 1. 多获取后一天的数据，保障数据只多不少 <br>2. 通过多个时间戳字段来限制时间获取相对准确的数据 log_time, modified_time, proc_time <br> &nbsp;&nbsp;&nbsp;&nbsp; modified_time 过滤非当天的数据，这样确保数据不会因为系统问题被遗漏 | <br><br><br>❎
+5. | 拉链表如何设计，拉链表出现数据回滚的需求怎么解决 ? <br><br> 拉链表使用的场景：<br>1. 数据量大，且表中部分字段会更新，比如用户地址、产品描述信息、订单状态等等<br>2. 需要查看某一个时间段的历史快照信息<br>3. 变化比例和频率不是很大 |
+6. | 以 LEFT JOIN 为例： 谈谈 在使用 LEFT JOIN 时，ON 和 WHERE 过滤条件的区别如下： <br><br> 1. on 条件是在生成临时表时使用的条件，它不管 on 中的条件是否为真，都会返回左边表中的记录 <br> 2. where 条件是在临时表生成好后，再对临时表进行过滤的条件。| ❎
+7. | 公共层(CDM:dwd和dws) 和 数据集市层的区别和特点？ <br><br> 分为dwd层和dws层，主要存放`明细事实数据、维表数据 及 公共指标汇总数据`，其中明细事实数据、维表数据一般是根据ods层数据加工生成的，公共指标汇总数据一般是基于维表和明细事实数据加工生成的.<br><br> 采用维度模型方法作为理论基础，更多采用一些`维度退化的手段，将维度退化到事实表中`，减少事实表和维度表之间的关联。同时在汇总层，加强指标的维度退化，采用更多的宽表化手段构建公共指标数据层. <br><br> Data Mart: 就是满足特定部门或者用户的需求，按照多维方式存储。面向决策分析的数据立方体 |
+8. | 从原理上说一下mpp和mr的区别 ? <br> 1. MPP跑的是SQL,而Hadoop底层处理是MapReduce程序 <br> 2. 扩展程度：MPP扩展一般是扩展到100左右,因为MPP始终还是DB,一定要考虑到C(Consistency) | ❎
+9. | Kimball和Inmon的相同和不同？ Inmon： 不强调事实表和维度表的概念， 类似 3NF | ❎
+10. | 缓慢变化维（Slowly Changing Dimension）处理方式 ?  <br>1. 重写覆盖 <br>2. 增加新行(注意事实表关联更新) <br>3. 快照 (每天保留全量的快照数据，通过空间换时间) <br>4. 历史拉链 (拉链表的处理方式，即通过时间标示当前有效记录) | ❎
+11. | 数据质量/元数据管理/指标体系建设/数据驱动 | 略
+12. | [hive的row_number()、rank()和dense_rank()的区别以及具体使用](https://blog.csdn.net/qq_20641565/article/details/52841345) | ❎
+13. | [Hive窗口函数怎么设置窗口大小？](https://blog.csdn.net/qq_41106844/article/details/108415566), between 1 PRECEDING and 1 FOLLOWING | ✔️
+14. | Hive 四个by的区别 |
+15. | 怎么验证Hive SQL的正确性 ？ <br> 1. 如果只是校验sql的语法正确性，可以通过explain或者执行一下就可以
+16. | Hive数据选择的什么压缩格式 ? |
+17. | Hive SQL如何转化MR任务 ? <br> HiveSQL ->AST(抽象语法树) -> QB(查询块) ->OperatorTree（操作树）->优化后的操作树->mapreduce任务树->优化后的mapreduce任务树 |
+18. | join操作底层 MR 是怎么执行的？ 根据join对应的key进行分区shuffle，然后执行mapreduce那套流程. |
+19. | Parquet数据格式内部结构? |
+&nbsp; | [2020 BAT大厂数据分析面试经验：“高频面经”之数据分析篇](https://blog.csdn.net/qq_36936730/article/details/104302799) |
+1. | Mysql中索引是什么？建立索引的目的？ |
+2. | sql语句执行顺序？ from-on-join-where-group by-avg,sum-having |
+3. | 数据库与数据仓库的区别? |
+4. | OLTP和OLAP的区别？ |
+5. | 行存储和列存储的区别? <br><br> 行存储：传统数据库的存储方式，同一张表内的数据放在一起，插入更新很快。缺点是每次查询即使只涉及几列，也要把所有数据读取<br>列存储：OLAP等情况下，将数据按照列存储会更高效，每一列都可以成为索引，投影很高效。缺点是查询是选择完成时，需要对选择的列进行重新组装。<br><br>当你的核心业务是 OLTP 时，一个行式数据库，再加上优化操作，可能是个最好的选择。<br>当你的核心业务是 OLAP 时，一个列式数据库，绝对是更好的选择 |
+6. | Hive执行流程？ |
+7. | Hive HDFS HBase区别？ <br> Hbase是Hadoop database，即Hadoop数据库.<br>&nbsp;&nbsp; 它是一个适合于非结构化数据存储的数据库，HBase基于列的而不是基于行的模式. |
+8. | 数仓中ODS、DW、DM(Data Mart) 概念及区别？ |
+9. | 窗口函数是什么？实现原理？ <br><br> 窗口函数又名开窗函数，属于分析函数的一种。用于解决复杂报表统计需求的功能强大的函数。窗口函数用于计算基于组的某种聚合值，它和聚合函数的不同之处是：`对于每个组返回多行`，而聚合函数对于每个组只返回一行.<br><br> 下面列举一些常用窗口函数：<br><br>1. 获取数据排名的：ROW_NUMBER() RAND() DEBSE_RANK() PERCENT_RANK()<br>2. 获取分组内的第一名或者最后一名等：FIRST_VALUE() LAST_VALUE() LEAD() LAG()<br>3. 累计分布：vCUME_DIST() NTH_VALUE() NTILE() |
+
+## 大数据研发工程师
 
 No. | desc | Flag
 :---: | --- | :---:
@@ -32,7 +99,7 @@ No. | desc | Flag
 &nbsp; | [字节跳动大数据研发实习超详细面经（已拿offer）](https://blog.csdn.net/m0_48634217/article/details/107057534) |
 1. | leetcode: 二叉树层序遍历，按层换行输出 | ❎
 2. | 线程的状态及状态之间的装换 |
-3. | B+树的特点? <br><br> B+树是一种树数据结构，通常用于数据库和操作系统的文件系统中。B+树的特点是能够保持数据稳定有序，其插入与修改拥有较稳定的对数时间复杂度。B+树元素自底向上插入，这与二叉树恰好相反。 <br><br> B树是为磁盘或其他直接存取的辅助存储设备而设计的一种平衡搜索树。B树类似于红黑树，但它们在降低磁盘I/O操作数方面要更好一些。|
+3. | B+树的特点? <br><br> B+树是一种树数据结构，通常用于`数据库和操作系统`的文件系统中。B+树的特点是能够保持数据稳定有序，其`插入与修改`拥有较稳定的对数时间复杂度。B+树元素自底向上插入，这与二叉树恰好相反。 <br><br> B树是为磁盘或其他直接存取的辅助存储设备而设计的一种平衡搜索树。B树类似于红黑树，但它们在降低磁盘I/O操作数方面要更好一些。|
 4. | Redis支持的数据结构? 为什么性能高？ 为什么是单线程? <br> 答： 将数据存储在内存，读取时候不需要进行磁盘的 IO，单线程也保证了系统没有线程的上下文切换。<br><br> String：缓存、计数器、分布式锁等。<br>List：链表、队列、微博关注人时间轴列表等。<br>Hash：用户信息、Hash 表等。<br>Set：去重、赞、踩、共同好友等。<br>Zset：访问量排行榜、点击量排行榜等。Zset 是有序的链表结构，其底层数据结构是跳跃表 skiplist  |
 5. | 场景题：如何从百亿条IP信息中得出访问量前10的IP地址 `哈希分治法` <br> 1. ipv4 地址是一个 32 位的整数，可以用 uint 保存。 <br> 2. 我先设计一个哈希函数，把100个G的文件分成10000份，每份大约是 10MB，可以加载进内存了 |
 6. | 场景设计题：你自己如何设计一个分布式系统，实现对百亿条数据进行分组并求和 |
@@ -407,14 +474,14 @@ No. | Question | Flag
 8. | [98. 验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/), while stack or root: while root | ❎
 9. | 找出数组里三个数相乘最大的那个（有正有负）| ❎
 10. | 做题：两个十六进制数的加法 | ❎
-11. | [93. 复原IP地址](https://leetcode-cn.com/problems/restore-ip-addresses/), `".".join(['1','2','3','4']) == '1.2.3.4'`,&nbsp; `ord("a") = 97` <br> &nbsp; if 0 < addr <= 0xFF（11111111==255): | ✔️❎
+11. | [93. 复原IP地址](https://leetcode-cn.com/problems/restore-ip-addresses/), `".".join(['1','2','3','4']) == '1.2.3.4'`,&nbsp; `ord("a") = 97` <br> &nbsp; dfs(seg\_id, seg\_start) for seg\_end in range(seg\_start, len(s)): <br> &nbsp;&nbsp; if 0 < addr <= 0xFF（11111111==255): | ✔️❎
 12. | [202. 快乐数](https://leetcode-cn.com/problems/happy-number/), `divmod(79, 10) = 7,9;  while n > 0: n, digit = divmod(n, 10)` | ❎
-13. | 快排归并手撕 | ❎
+13. | 快排归并手撕 for i in range(l, r+1): nums[i] = arr[i - l] | ❎
 14. | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) dp = [[0] * (n + 1) for _ in range(m + 1)] <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if text1[i - 1] == text2[j - 1]: dp[i][j] = dp[i-1][j-1] + 1 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else: dp[i][j] = max(dp[i-1][j], dp[i][j-1]) | <br>❎
 15. | [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/), occ=set(); <br>&nbsp; for l in range(n): remove(i-1), while r+1 < n and s[r+1] not in occ: add(r+1) | ❎
 16. | 405-数字转换为十六进制数, bin(dec), oct(dec), hex(dec), int('0b10000', 2) | ❎
 17. | [67. 二进制求和](https://leetcode-cn.com/problems/add-binary/)， for i, j in zip(a[::-1], b[::-1]):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s = int(i) + int(j) + carry, r = str(s % 2) + r, carry = s // 2 <br><br> list(zip([1,2,3], [4,5,6])) == [(1, 4), (2, 5), (3, 6)]| <br>❎
-18. | [4. 寻找两个正序数组的中位数 - hard](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/) ,二分查找 O(log (m+n))  <br> A: 1 3 4 9 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑<br>B: `1 2 3` 4 5 6 7 8 9<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑| <br>✔️<br>❎
+18. | [4. 寻找两个正序数组的中位数 - hard](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/) , 二分查找 O(log (m+n)) , k/2-1=7/2−1=2 <br> def getKthElement(k): <br> A: 1 3 4 9 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑<br>B: `1 2 3` 4 5 6 7 8 9<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑<br>k=k-k/2=4, 下一个位置是 k/2-1 = 4/2-1 = 1 | <br>✔️<br>❎
 19. | [剑指 Offer 55 - II. 平衡二叉树](https://leetcode-cn.com/problems/ping-heng-er-cha-shu-lcof/) <br> &nbsp; (1). abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 <br> &nbsp; (2). self.isBalanced(root.left) and self.isBalanced(root.right) | <br>❎
 20. | [155. 最小栈](https://leetcode-cn.com/problems/min-stack/), self.stack = [], self.min_stack = [float('inf')] | ❎
 21. | 非递归单链表反转 现场手写 | ❎
