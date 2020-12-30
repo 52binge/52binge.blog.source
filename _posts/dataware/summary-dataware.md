@@ -256,7 +256,7 @@ function import_data_hdfs() {
 > 
 > **(1) partitions**
 > 
->   每个RDD包括多个分区, 这既是RDD的数据单位, 也是计算粒度, **`每个分区是由一个Task线程处理`**. 在RDD创建的时候可以指定分区的个数, 如果没有指定, 那么默认分区的个数是CPU的核数（standalone）.
+>   每个RDD包括多个分区, 这既是RDD的数据单位, 也是计算粒度, **`每个分区是由一个Task线程处理`**. 在RDD创建的时候可以指定分区的个数.
 > 
 > 每一分区对应一个内存block, 由BlockManager分配.
 > 
