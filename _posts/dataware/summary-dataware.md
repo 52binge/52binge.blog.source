@@ -13,7 +13,6 @@ tags: [SQL]
 
 No. | desc | Flag
 :---: | --- | :---:
-&nbsp; | [hive的row_number()、rank()和dense_rank()的区别以及具体使用](https://blog.csdn.net/qq_20641565/article/details/52841345) |
 1. | [花未全开*月未圆](https://www.cnblogs.com/tesla-turing/p/13276589.html) <br><br>1.1 presto 是Facebook开源的，完全基于内存的并⾏计算(MPP)，分布式SQL交互式查询引擎<br>1.2 数据治理: 在ETL过程中开发人员会对数据清洗这其实就是治理的一部分<br>1.3 元数据是记录数仓中模型的定义、各层级的映射关系、监控数仓的数据状态及 ETL 的任务运行状态 <br><br> 1.4 DW-DM层是采用Kimball的总线式的数据仓库架构，针对部门（比如财务部门）或者某一主题（比如商户、用户），通过维度建模（推荐星型模型），构建一致性维度，原子粒度的数据是DW层，按照实体或者主题经过一定的汇总，建设数据集市模型。数据集市可以为OLAP提供服务。
 
 No. | Title | desc

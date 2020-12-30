@@ -47,6 +47,7 @@ where datediff(last_date_id,date_id)=1
 
 No. | [2020年大厂面试题-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688808) | Flag
 :---: | --- | :---:
+0. | [Hive SQL count（distinct）效率问题及优化](https://article.itxueyuan.com/a93Dg) |
 1. | 手写"连续活跃登陆"等类似场景的sql | ❎
 <br><br>2. | left semi join和left join区别? <br><br>`left semi join` 是 in(keySet) 的关系，遇到右表重复记录，左表会跳过；当右表不存在的时候，左表数据不会显示; 相当于SQL的in语句. <br>`left join`: 当右表不存在的时候，则会显示NULL |　<br><br>❎
 <br><br><br>3. | 维度建模 和 范式建模(3NF模型) 的区别? <br><br> 维度建模是面向分析场景的，主要关注点在于快速、灵活: **星型模型 & 雪花模型 & 星系模型** <br><br> 3NF的最终目的就是为了降低数据冗余，保障数据一致性: <br> (2.1) 原子性 - 数据不可分割 <br> (2.2) 基于第一个条件，实体属性完全依赖于主键 <br> (2.3) 消除传递依赖 - 任何非主属性不依赖于其他非主属性 | <br><br><br>❎

@@ -13,22 +13,6 @@ tags: [spark]
 
 [good - Spark会把数据都载入到内存么？](https://www.jianshu.com/p/b70fe63a77a8)
 
-> spark的执行模型的方式，它的特点无非就是多个任务之间数据通信不需要借助硬盘而是通过内存，大大提高了程序的执行效率。而hadoop由于本身的模型特点，多个任务之间数据通信是必须借助硬盘落地的。那么spark的特点就是数据交互不会走硬盘。只能说多个任务的数据交互不走硬盘，但是spark的shuffle过程和hadoop一样仍然必须走硬盘的。
-> 
-> 所谓Shuffle不过是把处理流程切分，给切分的上一段(我们称为Stage M)加个存储到磁盘的Action动作，把切分的下一段(Stage M+1)数据源变成Stage M存储的磁盘文件。每个Stage都可以走我上面的描述，让每条数据都可以被N个嵌套的函数处理，最后通过用户指定的动作进行存储。
-> 
-> **我们做Cache/Persist意味着什么？**
-> 
-> 其实就是给某个Stage加上了一个saveAsMemoryBlockFile的动作，然后下次再要数据的时候，就不用算了。这些存在内存的数据就表示了某个RDD处理后的结果。这个才是说为啥Spark是内存计算引擎的地方。在MR里，你是要放到HDFS里的，但Spark允许你把中间结果放内存里。
-> 
-> 所以结论是：Spark并不是基于内存的技术！它其实是一种可以有效地使用内存LRU策略的技术
-> 
-> Spark只有在shuffle的时候才会将数据放在磁盘，而MR却不是
-
-1). [reduceByKey(func, numPartitions=None)](https://blog.csdn.net/weixin_41804049/article/details/80373741?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control), Spark可以在每个分区移动数据之前将待输出数据与一个共用的key结合
-
-2). groupByKey(numPartitions=None), 不能自定义函数，我们需要先用groupByKey生成RDD，然后才能对此RDD通过map进行自定义函数操作
-
 ```bash
 ./bin/spark-submit \
   --master yarn
@@ -97,6 +81,24 @@ No. | Title | Article
 6. | Spark | [大数据Spark题（六）— Shuffle配置调优](https://zhuanlan.zhihu.com/p/107365488) 
 7. | Spark | [大数据Spark题（七）— 程序开发调优](https://zhuanlan.zhihu.com/p/107366035)
 8. | Spark | [大数据Spark题（八）— 运行资源调优](https://zhuanlan.zhihu.com/p/107367271)
+
+[Spark 创建RDD、DataFrame各种情况的默认分区数](https://blog.csdn.net/dkl12/article/details/81663018)
+
+> 1). [reduceByKey(func, numPartitions=None)](https://blog.csdn.net/weixin_41804049/article/details/80373741?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control), Spark可以在每个分区移动数据之前将待输出数据与一个共用的key结合
+>
+> 2). groupByKey(numPartitions=None), 不能自定义函数，我们需要先用groupByKey生成RDD，然后才能对此RDD通过map进行自定义函数操作
+
+> spark的执行模型的方式，它的特点无非就是多个任务之间数据通信不需要借助硬盘而是通过内存，大大提高了程序的执行效率。而hadoop由于本身的模型特点，多个任务之间数据通信是必须借助硬盘落地的。那么spark的特点就是数据交互不会走硬盘。只能说多个任务的数据交互不走硬盘，但是spark的shuffle过程和hadoop一样仍然必须走硬盘的。
+> 
+> 所谓Shuffle不过是把处理流程切分，给切分的上一段(我们称为Stage M)加个存储到磁盘的Action动作，把切分的下一段(Stage M+1)数据源变成Stage M存储的磁盘文件。每个Stage都可以走我上面的描述，让每条数据都可以被N个嵌套的函数处理，最后通过用户指定的动作进行存储。
+> 
+> **我们做Cache/Persist意味着什么？**
+> 
+> 其实就是给某个Stage加上了一个saveAsMemoryBlockFile的动作，然后下次再要数据的时候，就不用算了。这些存在内存的数据就表示了某个RDD处理后的结果。这个才是说为啥Spark是内存计算引擎的地方。在MR里，你是要放到HDFS里的，但Spark允许你把中间结果放内存里。
+> 
+> 所以结论是：Spark并不是基于内存的技术！它其实是一种可以有效地使用内存LRU策略的技术
+> 
+> Spark只有在shuffle的时候才会将数据放在磁盘，而MR却不是
 
 ## 0. Top Questions
 
