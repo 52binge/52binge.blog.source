@@ -21,7 +21,7 @@ tags: [spark]
   --executor-memory 6G \
   --executor-cores 4 \ # 每个executor内的核数，即每个executor中的任务task数目，此处设置为2
   --driver-memory 1G \ # driver内存大小，一般没有广播变量(broadcast)时，设置1~4g足够
-  --conf spark.default.parallelism=1000 \    # Task总数
+  --conf spark.default.parallelism=1000 \    # Task总数, Maybe也可认为是 Partitions数
  # Spark作业的默认为500~1000个比较合适,如果不设置，spark会根据底层HDFS的block数量设置task的数量，这样会导致并行度偏少，资源利用不充分。该参数设为num-executors * executor-cores的2~3倍比较合适
   --conf spark.storage.memoryFraction=0.5 \  存储内存
   --conf spark.shuffle.memoryFraction=0.3 \  执行内存 # shuffle过程中一个task拉取到上个stage的task的输出后，进行聚合操作时能够使用的Executor内存的比例，默认是0.2，如果shuffle聚合时使用的内存超出了这个20%的限制，多余数据会被溢写到磁盘文件中去，降低shuffle性能
@@ -60,6 +60,7 @@ No. | Title | Article
 0. | SparkSql - 结构化数据处理 (上) | [SparkSql - 结构化数据处理 (上)](http://localhost:5000/2020/08/25/spark/spark-aura-9.1-SparkSql/)
 0. | [Apache Parquet和Apache Avro](https://www.jianshu.com/p/dacb91e2c1b1) |
 0. | 简书 | [RDD、DataFrame和DataSet的区别](https://www.jianshu.com/p/c0181667daa0)
+0. | [persist、cache和checkpoint的区别与联系](https://blog.csdn.net/Vector97/article/details/103446974) | 
 1. | 蓦然大数据开发| [知乎， 公众号：旧时光大数据](https://www.zhihu.com/people/ai-yo-ai-yo-33-50/posts)
 2. | 蓦然大数据开发 | [大数据Hadoop（三）——MapReduce](https://zhuanlan.zhihu.com/p/97714898)
 3. | Data Warehouse | [2020 大数据/数仓/数开 Interview Questions](https://mp.weixin.qq.com/s/pwyus1xfX7QAz5MtecveZw)
@@ -251,13 +252,15 @@ No. | Topic | Flag
 > 
 > task是最小的计算单元，负责执行一模一样的计算逻辑（也就是我们自己编写的某个代码片段），只是每个task处理的数据不同而已。
 > 
-> 一个stage的所有task都执行完毕之后，会在各个节点本地的磁盘文件中写入计算中间结果，然后Driver就会调度运行下一个stage。
+> 一个stage的所有task都执行完毕之后，会在`各个节点本地的磁盘文件中写入计算中间结果`，然后Driver就会调度运行下一个stage。
 > 
 > 下一个stage的task的输入数据就是上一个stage输出的中间结果。如此循环往复，直到将我们自己编写的代码逻辑全部执行完，并且计算完所有的数据，得到我们想要的结果为止。
 
 stage的划分
 
-> Spark是根据shuffle类算子来进行stage的划分。如果我们的代码中执行了某个shuffle类算子（比如reduceByKey、join等），那么就会在该算子处，划分出一个stage界限来。可以大致理解为，shuffle算子执行之前的代码会被划分为一个stage，shuffle算子执行以及之后的代码会被划分为下一个stage。因此一个stage刚开始执行的时候，它的每个task可能都会从上一个stage的task所在的节点，去通过网络传输拉取需要自己处理的所有key，然后对拉取到的所有相同的key使用我们自己编写的算子函数执行聚合操作（比如reduceByKey()算子接收的函数）。这个过程就是shuffle。
+> Spark是根据shuffle类算子来进行stage的划分。如果我们的代码中执行了某个shuffle类算子（比如reduceByKey、join等），那么就会在该算子处，划分出一个stage界限来。可以大致理解为，shuffle算子执行之前的代码会被划分为一个stage，shuffle算子执行以及之后的代码会被划分为下一个stage。
+> 
+> `因此一个stage刚开始执行的时候，它的每个task可能都会从上一个stage的task所在的节点，去通过网络传输拉取需要自己处理的所有key，然后对拉取到的所有相同的key使用我们自己编写的算子函数执行聚合操作（比如reduceByKey()算子接收的函数）`。这个过程就是shuffle。
 
 > 当我们在代码中执行了cache/persist等持久化操作时，根据我们选择的持久化级别的不同，每个task计算出来的数据也会保存到Executor进程的内存或者所在节点的磁盘文件中。
 
@@ -439,7 +442,7 @@ cache不是action操作
 以下场景会使用persist
 
 某个步骤计算非常耗时或计算链条非常长，需要进行persist持久化
-shuffle之后为什么要persist，shuffle要进性网络传输，风险很大，数据丢失重来，恢复代价很大
+`shuffle之后为什么要persist，shuffle要进性网络传输`，风险很大，数据丢失重来，恢复代价很大
 shuffle之前进行persist，框架默认将数据持久化到磁盘，这个是框架自动做的。
 
 ### 5.4 rdd有几种操作类型？三种！
@@ -518,6 +521,7 @@ No. | Title
 - [Spark常见面试问题有哪些？](https://zhuanlan.zhihu.com/p/164541531)
 - [Spark学习痛点和路线图](https://zhuanlan.zhihu.com/p/166477801)
 - [Spark面试题(一)](https://zhuanlan.zhihu.com/p/49169166)
+- [每个 Spark 工程师都应该知道的五种 Join 策略](https://mp.weixin.qq.com/s/HusOqNA-45lpf5GduLz-pA)
 
 常见算子
 

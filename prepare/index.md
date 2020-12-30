@@ -1,6 +1,7 @@
 
 No. | desc | Flag
 :---: | --- | :---:
+0. | [大数据常见面试题之spark sql](https://blog.csdn.net/sun_0128/article/details/107858345) |
 1. | [2020 BAT大厂数据分析面试经验：“高频面经”之数据分析篇](https://blog.csdn.net/qq_36936730/article/details/104302799) |
 2. | [2020年大厂面试题-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688808)  <br><br> 1.手写"连续活跃登陆"等类似场景的sql - 好题目 | <br>✔️
 3. | [数仓大法好！跨境电商 Shopee 的实时数仓之路](https://developer.aliyun.com/article/765329) | ❎
@@ -60,7 +61,7 @@ No. | [2020年大厂面试题-数据仓库篇](https://my.oschina.net/u/4631230/
 10. | 缓慢变化维（Slowly Changing Dimension）处理方式 ?  <br>1. 重写覆盖 <br>2. 增加新行(注意事实表关联更新) <br>3. 快照 (每天保留全量的快照数据，通过空间换时间) <br>4. 历史拉链 (拉链表的处理方式，即通过时间标示当前有效记录) | ❎
 11. | 数据质量/元数据管理/指标体系建设/数据驱动 | 略
 12. | [hive的row_number()、rank()和dense_rank()的区别以及具体使用](https://blog.csdn.net/qq_20641565/article/details/52841345) | ❎
-13. | [Hive窗口函数怎么设置窗口大小？](https://blog.csdn.net/qq_41106844/article/details/108415566), between 1 PRECEDING and 1 FOLLOWING | ✔️
+13. | [Hive窗口函数怎么设置窗口大小？](https://blog.csdn.net/qq_41106844/article/details/108415566), between 1 preceding and 1 following | ✔️
 14. | Hive 四个by的区别 |
 15. | 怎么验证Hive SQL的正确性 ？ <br> 1. 如果只是校验sql的语法正确性，可以通过explain或者执行一下就可以
 16. | Hive数据选择的什么压缩格式 ? |
@@ -329,7 +330,7 @@ No. | Question | Flag
 > 数据库锁机制（乐观锁和悲观锁、表锁和行锁）
 > [你了解乐观锁和悲观锁吗？](https://www.cnblogs.com/kismetv/p/10787228.html)
 >
-> 1、CAS（Compare And Swap）
+> 1、CAS（Compare And Swap） - CAS只能保证单个变量操作的原子性
 > 2、版本号机制
 > 3、乐观锁加锁吗？
 > 4、CAS有哪些缺点？
@@ -441,7 +442,7 @@ No. | Question | Flag
 :---: | --- | :---:
 0. | 幻读： InnoDB MVCC 的实现，通过保存数据在某个时间点的快照来实现的 | ❎
 1. | 事务4个特性ACID 有哪些 并分别解释? <br><br> &nbsp;&nbsp;事务是指是程序中一系列严密的逻辑操作，而且所有操作必须全部成功完成. <br><br> A原子性： 事务是数据库的逻辑工作单位，不可分割<br>C一致性： 数据库从一个一致性状态变到另一个一致性状态 <br>I 隔离性：一个事务的执行不能其它事务干扰 <br> D持久性：  一个事务一旦提交，它对数据库中的数据的改变就应该是永久性的，不能回滚 | <br><br><br><br> ❎
-2. | [MySQL隔离级别有哪些?](https://zhuanlan.zhihu.com/p/79382923) <br> 1. Read Uncommitted（读取未提交内容）- &nbsp;&nbsp;也称为 脏读(Dirty Read) - **RollBack** <br>2. Read Committed（读取提交内容）- &nbsp;&nbsp;一个事务只能看见已经提交事务所做的改变 <br>3. Repeatable Read（可重读） - &nbsp;&nbsp;同一事务并发读同样结果. InnoDB MVCC 解决幻读 <br>4. Serializable（可串行化）- &nbsp;&nbsp; 事务排序解决 幻读问题<br><br> 1. 脏读(Drity Read): 某事务已更新了数据，RollBack了操作，则后一个事务所读取的数据就会是不正确.<br>2. 不可重复读: 在一事务的两次查询数据不一致，可能中间插入了一个事务更新原有的数据.<br>3. 幻读(Phantom Read): 在一事务的两次查询中数据笔数不一致. 另一事务却在此插入了新的几列数据. | <br><br><br><br> ❎
+2. | [MySQL隔离级别有哪些?](https://zhuanlan.zhihu.com/p/79382923) <br><br>SQL标准定义了4类隔离级别，包括了一些具体规则，用来限定事务内外的哪些改变是可见的，哪些是不可见的。低级别的隔离级一般支持更高的并发处理，并拥有更低的系统开销。<br><br> 1. Read Uncommitted（读取未提交内容）- &nbsp;&nbsp;也称为 脏读(Dirty Read) - **RollBack** <br>2. Read Committed（读取提交内容）- &nbsp;&nbsp;一个事务只能看见已经提交事务所做的改变 <br>3. Repeatable Read（可重读） - &nbsp;&nbsp;同一事务并发读同样结果. InnoDB MVCC 解决幻读 <br>4. Serializable（可串行化）- &nbsp;&nbsp; 事务排序解决 幻读问题<br><br> 1. 脏读(Drity Read): 某事务已更新了数据，RollBack了操作，则后一个事务所读取的数据就会是不正确.<br>2. 不可重复读: 在一事务的两次查询数据不一致，可能中间插入了一个事务更新原有的数据.<br>3. 幻读(Phantom Read): 在一事务的两次查询中数据笔数不一致. 另一事务却在此插入了新的几列数据. | <br><br><br><br> ❎
 3. | SQL的索引采用什么数据结构？（B+树） | ❎
 4. | 聚簇索引InnoDB / 非聚簇索引Myisam | ❎
 5. | **主键和索引的区别？** <br> 1. 主键是为了标识数据库记录唯一性，不允许记录重复，且键值不能为空，主键也是一个特殊索引. <br>2. 索引可提高查询速度，它相当于字典的目录，可通过它很快查询到想要的结果，而不需要进行全表扫描. <br>3. 主键也可以由多个字段组成，组成复合主键，同时主键肯定也是唯一索引. | ❎

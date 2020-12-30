@@ -407,8 +407,11 @@ hadoop jar /kkb/install/hadoop-2.6.0-cdh5.14.2/share/hadoop/common/hadoop-lzo-0.
 
 ## Reference
 
+- [Hive存储格式对比](https://blog.csdn.net/xueyao0201/article/details/79103973)
 - [very good - igDataGuide/面试-all](https://github.com/Dr11ft/BigDataGuide/tree/master/%E9%9D%A2%E8%AF%95)
 - [Apache Druid 简介](https://zhuanlan.zhihu.com/p/82038648)
+- [操作系统之堆和栈的区别](https://www.cnblogs.com/George1994/p/6399895.html)
+- [漫谈数据仓库之拉链表（原理、设计以及在Hive中的实现）](https://blog.csdn.net/zhaodedong/article/details/54177686)
 
 
 
