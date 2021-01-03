@@ -395,6 +395,7 @@ ptn+key
 
 ## Reference
 
+- [从一个sql任务理解spark内存模型](https://zhuanlan.zhihu.com/p/134135758)
 - [Apache Spark 内存管理详解](https://developer.ibm.com/zh/technologies/analytics/articles/ba-cn-apache-spark-memory-management/)
 - [Spark学习之路 （十一）SparkCore的调优之Spark内存模型](https://blog.csdn.net/zhanaolu4821/article/details/102932209)
 - [云课堂 SparkSQL 的数据源操作](https://study.163.com/course/courseLearn.htm?courseId=1208880821#/learn/video?lessonId=1278316678&courseId=1208880821)

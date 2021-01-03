@@ -1,6 +1,8 @@
 
 No. | desc | Flag
 :---: | --- | :---:
+0. | [客户信息表、合同信息表和还款计划表分别是什么？玩不透老板会怀疑我的能力？](https://zhuanlan.zhihu.com/p/130761566) |
+0. | [字节跳动-数据仓库高级工程师面试](https://mp.weixin.qq.com/s/7dHu2QcmU2xvFtGUEp13Fg) |
 0. | [大数据常见面试题之spark sql](https://blog.csdn.net/sun_0128/article/details/107858345) |
 1. | [2020 BAT大厂数据分析面试经验：“高频面经”之数据分析篇](https://blog.csdn.net/qq_36936730/article/details/104302799) |
 2. | [2020年大厂面试题-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688808)  <br><br> 1.手写"连续活跃登陆"等类似场景的sql - 好题目 | <br>✔️
