@@ -59,8 +59,7 @@ No. | Title | Article
 0 | Hadoop面试杀招 | [Hadoop高频考点，正在刷新你的认知！](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247493886&idx=1&sn=2cee4ece5c7cc87895d9e1a1b2fb440f&chksm=cf37daf3f84053e51cd0323f1ec9114ca0ec159a9451dd53a4afde5a7c6f1cf48f12d7999ef0&scene=21#wechat_redirect)
 0. | SparkSql - 结构化数据处理 (上) | [SparkSql - 结构化数据处理 (上)](http://localhost:5000/2020/08/25/spark/spark-aura-9.1-SparkSql/)
 0. | [Apache Parquet和Apache Avro](https://www.jianshu.com/p/dacb91e2c1b1) |
-0. | 简书 | [RDD、DataFrame和DataSet的区别](https://www.jianshu.com/p/c0181667daa0)
-0. | [persist、cache和checkpoint的区别与联系](https://blog.csdn.net/Vector97/article/details/103446974) | 
+0. | RDD是分布式的Java对象的集合 <br> DataFrame是分布式的Row对象的集合 | [RDD、DataFrame和DataSet的区别](https://www.jianshu.com/p/c0181667daa0) <br> [persist、cache和checkpoint的区别与联系](https://blog.csdn.net/Vector97/article/details/103446974) 
 1. | 蓦然大数据开发| [知乎， 公众号：旧时光大数据](https://www.zhihu.com/people/ai-yo-ai-yo-33-50/posts)
 2. | 蓦然大数据开发 | [大数据Hadoop（三）——MapReduce](https://zhuanlan.zhihu.com/p/97714898)
 3. | Data Warehouse | [2020 大数据/数仓/数开 Interview Questions](https://mp.weixin.qq.com/s/pwyus1xfX7QAz5MtecveZw)
@@ -73,6 +72,13 @@ No. | Title | Article
 1. | dev | [Spark性能优化指南——基础篇](https://tech.meituan.com/2016/04/29/spark-tuning-basic.html)
 2. | shuffle | [Spark性能优化指南——高级篇（8）](https://tech.meituan.com/2016/05/12/spark-tuning-pro.html) 
 3. | Spark 1.6 后引入统一内存管理 | [Apache Spark 内存管理详解](https://developer.ibm.com/zh/technologies/analytics/articles/ba-cn-apache-spark-memory-management/)
+
+
+<details>
+<summary>蓦然大数据开发 More Info 请点击</summary>
+
+No. | Title | Article
+:---: | --- | ---
 | | **蓦然大数据开发**  |
 1. | Spark | [大数据Spark题（一）](https://zhuanlan.zhihu.com/p/107354908) 
 2. | Spark | [大数据Spark题（二）](https://zhuanlan.zhihu.com/p/107355676) 
@@ -82,6 +88,8 @@ No. | Title | Article
 6. | Spark | [大数据Spark题（六）— Shuffle配置调优](https://zhuanlan.zhihu.com/p/107365488) 
 7. | Spark | [大数据Spark题（七）— 程序开发调优](https://zhuanlan.zhihu.com/p/107366035)
 8. | Spark | [大数据Spark题（八）— 运行资源调优](https://zhuanlan.zhihu.com/p/107367271)
+
+</details>
 
 [Spark 创建RDD、DataFrame各种情况的默认分区数](https://blog.csdn.net/dkl12/article/details/81663018)
 

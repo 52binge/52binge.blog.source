@@ -13,6 +13,8 @@ tags: [spark]
 
 有两种方式使用SparkSQL
 
+[Spark SQL性能调优以及原理图](https://blog.csdn.net/huang66666666/article/details/86558454)
+
 1. 是直接写sql语句，这个需要有元数据库支持，例如Hive等
 2. 通过Dataset/DataFrame编写Spark应用程序。
 
