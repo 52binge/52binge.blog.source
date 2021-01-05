@@ -33,3 +33,61 @@ INNER JOIN
 ON t1.s_id = t3.s_id
 where t1.s_score > t2.s_score
 ```
+
+## DISTINCT
+
+
+```sql
+SELECT DISTINCT column1, column2, ...
+FROM table_name;
+
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 AND condition2 AND condition3 ...;
+```
+
+```sql
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+
+SELECT MIN(column_name), MAX(column_name), COUNT, AVG, SUM
+FROM table_name
+WHERE condition;
+```
+
+## BETWEEN ... AND
+
+```sql
+SELECT column_name(s)
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
+
+SELECT *
+FROM Orders
+LEFT JOIN Customers
+
+SELECT column_name(s)
+FROM table1
+INNER JOIN table2
+ON table1.column_name = table2.column_name;
+```
+
+## HAVING
+
+
+```sql
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5;
+```
+
+## UNION
+
+```sql
+SELECT City FROM Customers
+UNION
+SELECT City FROM Suppliers
+ORDER BY City;
+```
+
