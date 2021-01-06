@@ -4,7 +4,12 @@ No. | desc | Flag
 0. | [客户信息表、合同信息表和还款计划表分别是什么？玩不透老板会怀疑我的能力？](https://zhuanlan.zhihu.com/p/130761566) |
 0. | [字节跳动-数据仓库高级工程师面试](https://mp.weixin.qq.com/s/7dHu2QcmU2xvFtGUEp13Fg) |
 &nbsp; | detail |
-1. | [星型模型和雪花型模型比较](http://blog.csdn.net/nisjlvhudy/article/details/7889422) |
+1. | [星型模型和雪花型模型比较](http://blog.csdn.net/nisjlvhudy/article/details/7889422) <br> `星型模型因为数据的冗余所以很多统计查询不需要做外部的连接，因此一般情况下效率比雪花型模型要高` |
+
+> 星形模型加载维度表，不需要再维度之间添加附属模型，因此ETL就相对简单，而且可以实现高度的并行化
+
+No. | desc | Flag
+:---: | --- | :---:
 2. | [事实表，维度，度量，指标之间的关系](https://blog.csdn.net/zhuwinmin/article/details/54944894) |
 3. | [面试必知的Spark SQL几种Join实现](https://database.51cto.com/art/202009/626552.htm) |
 
@@ -33,7 +38,7 @@ No. | desc | Flag
 
 ## power-design
 
- 1. 协议 - 之用申请，签署了之用协议，才产生借据， 借据号 的信息在这里. 
+ 1. 协议 - 支用申请，签署了支用协议，才产生借据， 借据号 的信息在这里. 
  2. 事件 - 还款，借款
  3. 产品 - 业务流程 ， 只有维度表
  4. 客户 - 用户信息, 非常多, 人行征信信息， 个人资产信息
@@ -54,7 +59,7 @@ No. | desc | Flag
 
 **DWD - 这些流水表都在这层.** 
 
-(1). 授信之用后，就会产生借据号
+(1). 授信支用后，就会产生借据号
 
 还款事实表 - 借据号(可以关联到用户和产品), 还款流水号, 还款金额(本金，利息，手续费), user\_id, product\_id, custom\_id
 
@@ -65,3 +70,4 @@ No. | desc | Flag
 > 每天拉昨天新增的流水
 >
 > 很多问题是上游数据的问题，还有需求的问题
+

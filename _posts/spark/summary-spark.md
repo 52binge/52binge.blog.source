@@ -23,7 +23,7 @@ tags: [spark]
   --executor-memory 6G \
   --executor-cores 4 \ # 每个executor内的核数，即每个executor中的任务task数目，此处设置为2
   --driver-memory 1G \ # driver内存大小，一般没有广播变量(broadcast)时，设置1~4g足够
-  --conf spark.default.parallelism=1000 \    # Task总数, Maybe也可认为是 Partitions数
+  --conf spark.default.parallelism=1000 \    # 默认每个 satge 的 Task总数
  # Spark作业的默认为500~1000个比较合适,如果不设置，spark会根据底层HDFS的block数量设置task的数量，这样会导致并行度偏少，资源利用不充分。该参数设为num-executors * executor-cores的2~3倍比较合适
   --conf spark.storage.memoryFraction=0.5 \  存储内存
   --conf spark.shuffle.memoryFraction=0.3 \  执行内存 # shuffle过程中一个task拉取到上个stage的task的输出后，进行聚合操作时能够使用的Executor内存的比例，默认是0.2，如果shuffle聚合时使用的内存超出了这个20%的限制，多余数据会被溢写到磁盘文件中去，降低shuffle性能
@@ -49,8 +49,8 @@ tags: [spark]
 
 repartition vs coalesce vs coalesce in sql
 
-> 宽依赖:父RDD的一个分区会被子RDD的多个分区依赖(涉及到shuffle)
-> MapReduce数据读取并写入HDFS流程实际上是有10步
+> [Spark算子：RDD基本转换操作(2)–coalesce、repartition](http://lxw1234.com/archives/2015/07/341.htm)
+> 一般情况下增大rdd的partition数量使用repartition，`减少partition数量时使用coalesce`
 
 No. | Title | Article
 :---: | --- | ---
@@ -62,8 +62,6 @@ No. | Title | Article
 0. | SparkSql - 结构化数据处理 (上) | [SparkSql - 结构化数据处理 (上)](http://localhost:5000/2020/08/25/spark/spark-aura-9.1-SparkSql/)
 0. | [Apache Parquet和Apache Avro](https://www.jianshu.com/p/dacb91e2c1b1) |
 0. | RDD是分布式的Java对象的集合 <br> DataFrame是分布式的Row对象的集合 | [RDD、DataFrame和DataSet的区别](https://www.jianshu.com/p/c0181667daa0) <br> [persist、cache和checkpoint的区别与联系](https://blog.csdn.net/Vector97/article/details/103446974) 
-1. | 蓦然大数据开发| [知乎， 公众号：旧时光大数据](https://www.zhihu.com/people/ai-yo-ai-yo-33-50/posts)
-2. | 蓦然大数据开发 | [大数据Hadoop（三）——MapReduce](https://zhuanlan.zhihu.com/p/97714898)
 3. | Data Warehouse | [2020 大数据/数仓/数开 Interview Questions](https://mp.weixin.qq.com/s/pwyus1xfX7QAz5MtecveZw)
 4. | Spark RDD | [very good Spark原理篇之RDD特征分析讲解](https://blog.csdn.net/huahuaxiaoshao/article/details/90744552)
 5. | Spark Task | [Spark中Task数量的分析](https://www.cnblogs.com/upupfeng/p/12385979.html)
@@ -82,6 +80,8 @@ No. | Title | Article
 No. | Title | Article
 :---: | --- | ---
 | | **蓦然大数据开发**  |
+1. | 蓦然大数据开发| [知乎， 公众号：旧时光大数据](https://www.zhihu.com/people/ai-yo-ai-yo-33-50/posts)
+2. | 蓦然大数据开发 | [大数据Hadoop（三）——MapReduce](https://zhuanlan.zhihu.com/p/97714898)
 1. | Spark | [大数据Spark题（一）](https://zhuanlan.zhihu.com/p/107354908) 
 2. | Spark | [大数据Spark题（二）](https://zhuanlan.zhihu.com/p/107355676) 
 3. | Spark | [大数据Spark题（三）](https://zhuanlan.zhihu.com/p/107358759) 
@@ -105,7 +105,7 @@ No. | Title | Article
 > 
 > **我们做Cache/Persist意味着什么？**
 > 
-> 其实就是给某个Stage加上了一个saveAsMemoryBlockFile的动作，然后下次再要数据的时候，就不用算了。这些存在内存的数据就表示了某个RDD处理后的结果。这个才是说为啥Spark是内存计算引擎的地方。在MR里，你是要放到HDFS里的，但Spark允许你把中间结果放内存里。
+> 其实就是给某个Stage加上了一个saveAsMemoryBlockFile的动作，然后下次再要数据的时候，就不用算了。这些存在内存的数据就表示了某个RDD处理后的结果。这个才是说为啥Spark是内存计算引擎的地方。在MR里，你是要放到HDFS里的，但`Spark允许你把中间结果放内存里`。
 > 
 > 所以结论是：Spark并不是基于内存的技术！它其实是一种可以有效地使用内存LRU策略的技术
 > 
@@ -519,7 +519,7 @@ No. | Title
 
 ## Reference
 
-[大数据Hadoop面试题（三）——MapReduce](https://zhuanlan.zhihu.com/p/97714898)
+[Spark算子：RDD基本转换操作(2)–coalesce、repartition](http://lxw1234.com/archives/2015/07/341.htm)
 
 ---
 
@@ -533,13 +533,5 @@ No. | Title
 - [Spark面试题(一)](https://zhuanlan.zhihu.com/p/49169166)
 - [每个 Spark 工程师都应该知道的五种 Join 策略](https://mp.weixin.qq.com/s/HusOqNA-45lpf5GduLz-pA)
 
-常见算子
 
-- [Spark RDD Operations-Transformation & Action with Example](https://data-flair.training/blogs/spark-rdd-operations-transformations-actions/)
-- [Spark RDD常用算子学习笔记详解(python版)](https://blog.csdn.net/u014204541/article/details/81130870)
-- [Spark常用的Transformation算子的简单例子](https://blog.csdn.net/dwb1015/article/details/52200809)
-- [2.Spark常用算子讲解](https://blog.csdn.net/dream0352/article/details/62229977)
-- [PySpark 实战之弹性分布式数据库（RDD）](https://zhuanlan.zhihu.com/p/53343681)
-- [Spark32个常用算子总结](https://blog.csdn.net/Fortuna_i/article/details/81170565)
-- [Spark高频面试题总结](https://blog.csdn.net/AiBigData/article/details/102824906)
-- [Spark常见20个面试题（含大部分答案）](https://blog.csdn.net/zuolixiangfisher/article/details/88973159?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param)
+
