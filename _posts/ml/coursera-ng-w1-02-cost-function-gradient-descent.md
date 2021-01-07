@@ -16,20 +16,20 @@ Linear Regression Cost Function & Gradient descent
 
 ## 2. Cost Function
 
-> Choose $\theta\_0，\theta\_1$ so that $h_{\theta} (x) $ is close to $y$ for our training examples ${(x, y)}$
+> Choose $\theta_0，\theta_1$ so that $h_{\theta} (x)$ is close to $y$ for our training examples ${(x, y)}$
 
 Title | fmt
 :-------: | :-------:
-Hypothesis | $h\_{\theta}  (x) = \theta\_0 + \theta\_1 x$
-Parameters | $\theta\_0 、\theta\_1$
-Cost Function | $J(\theta\_0，\theta\_1) = {\frac {1} {2m}} \sum\_{i=1}^m (h_{\theta} (x^{i}) - (y^{i}))^2$
-Goal | $minimize J(\theta\_0，\theta\_1)$
+Hypothesis | $h_{\theta}  (x) = \theta_0 + \theta_1 x$
+Parameters | $\theta_0 、\theta_1$
+Cost Function | $J(\theta_0，\theta_1) = {\frac {1} {2m}} \sum_{i=1}^m (h_{\theta} (x^{i}) - (y^{i}))^2$
+Goal | $minimize J(\theta_0，\theta_1)$
 
 ## 3. Simplified Fmt 
 
-> $\theta\_0$ = 0
+> $\theta_0$ = 0
 
-**hypothesis function $h\_{\theta} (x)$  cost function $J(\theta\_1)$**
+**hypothesis function $h_{\theta} (x)$  cost function $J(\theta_1)$**
 
 ![cost][3]
 
@@ -62,9 +62,9 @@ Goal | $minimize J(\theta\_0，\theta\_1)$
 
 ![Gradient descent][9]
 
-## 8. Gradient descent only $ \theta\_{1} $
+## 8. Gradient descent only $ \theta_{1} $
 
-![Gradient descent for one param : $ \theta\_{1} $][10]
+![Gradient descent for one param : $ \theta_{1} $][10]
 
 ![Gradient descent][11]
 
