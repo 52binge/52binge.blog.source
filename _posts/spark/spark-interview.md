@@ -1,4 +1,5 @@
 ---
+top: 9
 title: Spark Review Summary
 toc: true
 date: 2021-01-08 07:07:21
@@ -17,36 +18,33 @@ tags: [spark]
 
 No. | Title | Article
 :---: | --- | ---
-1. | RDD 属性？  5大属性
-2. | 算子分为哪几类(RDD支持哪几种类型的操作) &nbsp;&nbsp;&nbsp;&nbsp; 1. Transformation （lazy模式）2. Action
-3. | 创建rdd的几种方式
-4. | spark运行流程
-5. | Spark中coalesce与repartition的区别
-6. | sortBy 和 sortByKey的区别
-7. | map和mapPartitions的区别
-8. | 数据存入Redis  优先使用map mapPartitions  foreach  foreachPartions哪个
-9. | reduceByKey和groupBykey的区别
-10. | cache和checkPoint的比较 <br><br> 1. 都是做 RDD 持久化的 | 
-11. | 简述map和flatMap的区别和应用场景
-12. | 计算曝光数和点击数
-13. | 分别列出几个常用的transformation和action算子
-14. | 按照需求使用spark编写以下程序，要求使用scala语言
-15. | spark应用程序的执行命令是什么？
-16. | spark应用程序的执行命令是什么？
-17. | Spark应用执行有哪些模式，其中哪几种是集群模式
+1. | RDD 属性？  5大属性 | ❎
+2. | 算子分为哪几类(RDD支持哪几种类型的操作) &nbsp;&nbsp;&nbsp;&nbsp; 1. Transformation （lazy模式）2. Action | ❎
+3. | 创建rdd的几种方式 | ❎
+4. | spark运行流程 | ❎
+5. | Spark中coalesce与repartition的区别 | ❎
+6. | sortBy 和 sortByKey的区别 | ❎
+7. | map和mapPartitions的区别 | ❎
+8. | 数据存入Redis  优先使用map mapPartitions  foreach  foreachPartions哪个 | ❎
+9. | reduceByKey和groupBykey的区别 | ❎
+10. | [cache和checkPoint的比较](/2021/01/08/spark/spark-interview/#10-cache%E5%92%8Ccheckpoint%E7%9A%84%E6%AF%94%E8%BE%83) : 都是做 RDD 持久化的 | ❎
+11. | 简述map和flatMap的区别和应用场景 <br> &nbsp;&nbsp;&nbsp;&nbsp; map是对每个元素进行操做，flatmap是对每个元素操做后并压平. | ❎
+12. | 计算曝光数和点击数 |
+13. | 分别列出几个常用的transformation和action算子 | ❎
+17. | Spark应用执行有哪些模式，其中哪几种是集群模式 | ❎
 18. | 请说明spark中广播变量的用途 ? <br><br> 使用广播变量，每个 Executor 的内存中，只驻留一份变量副本，而不是对 每个 task 都传输一次大变量，省了很多的网络传输， 对性能提升具有很大帮助， 而且会通过高效的广播算法来减少传输代价。
 20. | 写出你用过的spark中的算子，其中哪些会产生shuffle过程
 21. | Spark中rdd与partition的区别
-22. | 请写出创建Dateset的几种方式
-23. | 描述一下RDD，DataFrame，DataSet的区别？
-24. | 描述一下Spark中stage是如何划分的？描述一下shuffle的概念
-25. | Spark 在yarn上运行需要做哪些关键的配置工作？如何kill -个Spark在yarn运行中Application
-26. | 通常来说，Spark与MapReduce相比，Spark运行效率更高。请说明效率更高来源于Spark内置的哪些机制？并请列举常见spark的运行模式？
-27. | RDD中的数据在哪？
-28. | 如果对RDD进行cache操作后，数据在哪里？ <br><br> 第一次执行cache算子时数据会被加载到各个Executor进程的内存. <br> 第二次就会直接从内存中读取而不会区磁盘.
+22. | [请写出创建Dateset的几种方式](https://www.cnblogs.com/lyy-blog/p/9814662.html) <br> 1. 常用的方式通过sparksession读取外部文件或者数据生成dataset <br> 2. 通过调用createDataFrame生成Dataset
+23. | 描述一下 RDD，DataFrame，DataSet 的区别？ <br><br> DataSet 结合了 RDD 和 DataFrame 的优势，并带来的一个新的概念 Encoder。<br> 当序列化数据时，Encoder 产生字节码与 off-heap 进行交互，可以达到按需访问数据的效果，而不用反序列化整个对象。Spark 尚未提供自定义 Encoder 的 API，可是将来会加入 <br> <img src="/images/spark/rdd-df-ds.jpg" width="700" alt="" /> <br><br> [Apache spark DataFrame & Dataset](https://spark.apache.org/docs/2.1.0/sql-programming-guide.html#datasets-and-dataframes) |
+24. | 描述一下Spark中stage是如何划分的？描述一下shuffle的概念 | ✔️❎
+25. | [Spark 在yarn上运行需要做哪些关键的配置工作？](https://www.cnblogs.com/bigdata1024/p/12116621.html) <br> [如何kill -个Spark在yarn运行中Application](https://blog.csdn.net/power0405hf/article/details/50457960): `yarn application -kill <appId>` <br> 但是这样会导致端口在一段时间（24小时）内被占用
+26. | 通常来说，Spark与MapReduce相比，Spark运行效率更高。请说明效率更高来源于Spark内置的哪些机制？并请列举常见spark的运行模式？ | ❎
+27. | [RDD中的数据在哪？](https://blog.csdn.net/qq_31598113/article/details/70832701)<br> 不可变的意思是RDD中的每个分区数据是 **only-read** <br> RDD要做逻辑分区（这里的分区类似hadoop中的逻辑切片split），每个分区可单独在集群节点计算 | ❎
+28. | 如果对RDD进行cache操作后，数据在哪里？ <br><br> 1. 执行cache算子时数据会被加载到各个Executor进程的内存. <br> 2. 第二次使用 会直接从内存中读取而不会区磁盘.
 29. | Spark中Partition的数量由什么决定?  答： 和MR一样，但是Spark默认最少有两个分区.
-30. | Spark判断Shuffle的依据?
-35. | Sparkcontext的作用?
+30. | ~~Spark判断Shuffle的依据?~~ | ❎
+35. | ~~Sparkcontext的作用?~~ | ❎
 36. | 离线分析什么时候用sparkcore和sparksql
 37. | 简述宽依赖和窄依赖概念，groupByKey,reduceByKey,map,filter,union五种操作哪些会导致宽依赖，哪些会导致窄依赖?
 38. | 数据倾斜可能会导致哪些问题，如何监控和排查，在设计之初，要考虑哪些来避免
@@ -62,8 +60,67 @@ No. | Title | Article
 48. | Spark on Yarn作业执行流程？yarn-client和yarn-cluster有什么区别？
 49. | Flatmap底层编码实现？
 
+```python
+# spark, df are from the previous example
+# Print the schema in a tree format
+df.printSchema()
+# root
+# |-- age: long (nullable = true)
+# |-- name: string (nullable = true)
 
-### 1. RDD 属性
+# Select only the "name" column
+df.select("name").show()
+# +-------+
+# |   name|
+# +-------+
+# |Michael|
+# |   Andy|
+# | Justin|
+# +-------+
+
+# Select everybody, but increment the age by 1
+df.select(df['name'], df['age'] + 1).show()
+# +-------+---------+
+# |   name|(age + 1)|
+# +-------+---------+
+# |Michael|     null|
+# |   Andy|       31|
+# | Justin|       20|
+# +-------+---------+
+
+# Select people older than 21
+df.filter(df['age'] > 21).show()
+# +---+----+
+# |age|name|
+# +---+----+
+# | 30|Andy|
+# +---+----+
+
+# Count people by age
+df.groupBy("age").count().show()
+# +----+-----+
+# | age|count|
+# +----+-----+
+# |  19|    1|
+# |null|    1|
+# |  30|    1|
+# +----+-----+
+
+# Register the DataFrame as a SQL temporary view
+df.createOrReplaceTempView("people")
+
+sqlDF = spark.sql("SELECT * FROM people")
+sqlDF.show()
+# +----+-------+
+# | age|   name|
+# +----+-------+
+# |null|Michael|
+# |  30|   Andy|
+# |  19| Justin|
+# +----+-------+
+```
+
+## 1. RDD 属性
 
 > - A list of partitions
 > - A function for computing each split
@@ -86,7 +143,7 @@ No. | Title | Flag
 
 尽量保证每轮Stage里每个task处理的数据量>128M
 
-### 1.2 RDD支持的操作
+## 2. RDD支持的操作
 
 No. | Title | Flag
 :---: | --- | ---
@@ -96,7 +153,7 @@ No. | Title | Flag
 
 > 当执行action之后，数据类型不再是rdd了，数据就会存储到指定文件系统中，或者直接打印结 果或者收集起来.
 
-### 1.3 创建rdd的几种方式
+## 3. 创建rdd的几种方式
 
 1.集合并行化创建(有数据)
 
@@ -119,18 +176,144 @@ val rdd2 = sc.textFile(“file:///root/words.txt”)
 
 > 调用Transformation类的方法，生成新的RDD
 
-### 1.6 sortBy / sortByKey区别
+## 5. coalesce, repartition区别
+
+> 1. repartition 底层调用的就是 coalesce 方法：`coalesce(numPartitions, shuffle = true)`
+> 2. repartition 一定会发生 shuffle，coalesce 根据传入的参数来判断是否发生 shuffle
+
+> 一般情况下**增大 rdd 的 partition 数量**使用 repartition，减少 partition 数量时使用coalesce
+
+## 6. sortBy / sortByKey区别
 
 > sortBy既可以作用于RDD[K] ，还可以作用于RDD[(k,v)]
 >
 > sortByKey  只能作用于 RDD[K,V] 类型上
 
+sortBy : `sortBy(lambda x:x[2],ascending = False)`
 
+```python
+#任务：有一批学生信息表格，包括name,age,score, 找出score排名前3的学生, score相同可以任取
+students = [("LiLei",18,87),("HanMeiMei",16,77),("DaChui",16,66),("Jim",18,77),("RuHua",18,50)]
+rdd_students = sc.parallelize(students)
+rdd_sorted = rdd_students.sortBy(lambda x:x[2],ascending = False)
+# [(‘LiLei’, 18, 87), (‘HanMeiMei’, 16, 77), (‘Jim’, 18, 77)]
+```
+
+sortByKey : `sortByKey().map(lambda x:x[0])` 
+
+```python
+#任务：按从小到大排序并返回序号, 大小相同的序号可以不同
+data = [1,7,8,5,3,18,34,9,0,12,8]
+
+rdd_data = sc.parallelize(data)
+
+rdd_sorted = rdd_data.map(lambda x:(x,1)).sortByKey().map(lambda x:x[0]) 
+# [0, 1, 3, 5, 7, 8, 8, 9, 12, 18, 34]
+```
+
+## 7. map和mapPartitions的区别
+
+<img src="/images/spark/spark-map-vs-mapPartitions.jpg" width="500" alt="" />
+
+## 8. 数据存入Redis  优先使用什么算子?
+
+`foreachPartions`
+
+1. map 
+2. mapPartitions  
+3. foreach  
+4. foreachPartions
+
+```python
+from pyspark import SparkFiles
+path = os.path.join(tempdir, "test.txt")
+with open(path, "w") as testFile:
+   _ = testFile.write("100")
+sc.addFile(path)
+def func(iterator):
+   with open(SparkFiles.get("test.txt")) as testFile:
+       fileVal = int(testFile.readline())
+       return [x * fileVal for x in iterator]
+sc.parallelize([1, 2, 3, 4]).mapPartitions(func).collect()
+[100, 200, 300, 400]
+```
+
+> 使用 foreachPartions
+>
+>   1. map mapPartitions   是转换类的算子， 有返回值
+>   2. 写mysql,redis 的链接
+
+[pyspark.html](https://spark.apache.org/docs/latest/api/python/pyspark.html?highlight=foreach)
+
+```python
+# foreach(f)[source]
+# Applies a function to all elements of this RDD.
+
+def f(x): print(x)
+sc.parallelize([1, 2, 3, 4, 5]).foreach(f)
+foreachPartition(f)[source]
+
+#Applies a function to each partition of this RDD.
+
+def f(iterator):
+    for x in iterator:
+         print(x)
+sc.parallelize([1, 2, 3, 4, 5]).foreachPartition(f)
+```
+
+## 9. reduceByKey和groupBykey区别
+
+> reduceByKey会传一个聚合函数， 至关于  groupByKey + mapValues
+>
+> reduceByKey 会有一个分区内聚合，而groupByKey没有  最核心的区别  
+>
+> 结论：reduceByKey有分区内聚合，更高效，优先选择使用reduceByKey
+
+## 10. cache和checkPoint的比较
+
+都是作 RDD 持久化的
+
+> 1.缓存，是在触发action以后，把数据写入到内存或者磁盘中。不会截断血缘关系
+>
+>（设置缓存级别为memory_only：内存不足，只会部分缓存或者没有缓存，缓存会丢失,memory_and_disk :内存不足，会使用磁盘）
+>
+> 2.checkpoint 也是在触发action以后，执行任务。单独再启动一个job，负责写入数据到hdfs中。（把rdd中的数据，以二进制文本的方式写入到hdfs中，有几个分区，就有几个二进制文件）
+>
+> 3.某一个RDD被checkpoint以后，他的父依赖关系会被删除，血缘关系被截断，该RDD转换成了CheckPointRDD，之后再对该rdd的全部操做，都是从hdfs中的checkpoint的具体目录来读取数据。缓存以后，rdd的依赖关系仍是存在的。
+
+
+
+## 15. 描述一下Spark中stage划分的？
+
+描述一下shuffle的概念
+
+## 16. Spark 在yarn上运行须要作哪些关键的配置工做？如何kill -个Spark在yarn运行中Application
+
+## 17. Spark vs MapReduce
+
+Spark运行效率更高。请说明效率更高来源于Spark内置的哪些机制？并请列举常见spark的运行模式？
+
+## 18. RDD中的数据在哪？
+
+## 19. 若是对RDD进行cache操做后，数据在哪里？
+
+## 20. Spark中Partition的数量由什么决定
+
+## 21. Spark判断Shuffle的依据?
+
+## 22. 离线分析何时用sparkcore和sparksq
+
+## 23. 数据倾斜可能会致使哪些问题，如何监控和排查，在设计之初，要考虑哪些来避免
+
+## 24. 有一千万条短信，有重复，以文本文件的形式保存，一行一条数据，请用五分钟时间，找出重复出现最多的前10条
+
+## 25. 现有一文件，格式以下，请用spark统计每一个单词出现的次数
 
 ## Reference
 
 - [good - Spark分区 partition 详解](https://blog.csdn.net/qq_22473611/article/details/107822168)
 - [good - 2020大数据/数仓/数开面试题真题总结(附答案)](https://mp.weixin.qq.com/s/pwyus1xfX7QAz5MtecveZw)
+- [2020大数据/数仓/数开面试题真题总结(附答案)](https://www.shangmayuan.com/a/b5776271f2194b89b6ea2a14.html)
 
 other:
 
