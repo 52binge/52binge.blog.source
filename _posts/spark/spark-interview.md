@@ -25,18 +25,18 @@ No. | Title | Article
 5. | Spark中coalesce与repartition的区别 | ❎
 6. | sortBy 和 sortByKey的区别 | ❎
 7. | map和mapPartitions的区别 | ❎
-8. | 数据存入Redis  优先使用map mapPartitions  foreach  foreachPartions哪个 | ❎
+8. | 数据存入Redis  优先使用map mapPartitions  foreach  foreachPartions ? <br> def f(x): print(x) <br> sc.parallelize([1, 2, 3, 4, 5]).foreach(f) | ❎
 9. | reduceByKey和groupBykey的区别 | ❎
 10. | [cache和checkPoint的比较](/2021/01/08/spark/spark-interview/#10-cache%E5%92%8Ccheckpoint%E7%9A%84%E6%AF%94%E8%BE%83) : 都是做 RDD 持久化的 | ❎
 11. | 简述map和flatMap的区别和应用场景 <br> &nbsp;&nbsp;&nbsp;&nbsp; map是对每个元素进行操做，flatmap是对每个元素操做后并压平. | ❎
 12. | 计算曝光数和点击数 |
 13. | 分别列出几个常用的transformation和action算子 | ❎
 17. | Spark应用执行有哪些模式，其中哪几种是集群模式 | ❎
-18. | 请说明spark中广播变量的用途 ? <br><br> 使用广播变量，每个 Executor 的内存中，只驻留一份变量副本，而不是对 每个 task 都传输一次大变量，省了很多的网络传输， 对性能提升具有很大帮助， 而且会通过高效的广播算法来减少传输代价。
-20. | 写出你用过的spark中的算子，其中哪些会产生shuffle过程
-21. | Spark中rdd与partition的区别
-22. | [请写出创建Dateset的几种方式](https://www.cnblogs.com/lyy-blog/p/9814662.html) <br> 1. 常用的方式通过sparksession读取外部文件或者数据生成dataset <br> 2. 通过调用createDataFrame生成Dataset
-23. | 描述一下 RDD，DataFrame，DataSet 的区别？ <br><br> DataSet 结合了 RDD 和 DataFrame 的优势，并带来的一个新的概念 Encoder。<br> 当序列化数据时，Encoder 产生字节码与 off-heap 进行交互，可以达到按需访问数据的效果，而不用反序列化整个对象。Spark 尚未提供自定义 Encoder 的 API，可是将来会加入 <br> <img src="/images/spark/rdd-df-ds.jpg" width="700" alt="" /> <br><br> [Apache spark DataFrame & Dataset](https://spark.apache.org/docs/2.1.0/sql-programming-guide.html#datasets-and-dataframes) |
+18. | [请说明spark中广播变量的用途 ?](https://www.cnblogs.com/Lee-yl/p/9777857.html)（1）broadcast (不能改)（2）accumulator, sc.accumulator(0) <br><br> 使用广播变量，每个 Executor 的内存中，只驻留一份变量副本，而不是对 每个 task 都传输一次大变量，省了很多的网络传输， 对性能提升具有很大帮助， 而且会通过高效的广播算法来减少传输代价.<br><br>mapper = `{'dog':1, 'cat':12}`, bc=sc.broadcast(mapper), bc: `{'dog':1, 'cat':2}` <br><br> mapper = `{'pig': 3}` , bc.unpersist(), sc.broadcast(mapper).value <br><br> [2.2 rdd-programming-guide.html#broadcast-variables](https://spark.apache.org/docs/2.2.0/rdd-programming-guide.html#broadcast-variables) | <br><br><br><br>❎
+20. | [Spark高频考点](https://mp.weixin.qq.com/s/UPtxoGWZIvPE0KHoOs_tBw): 写出你用过的spark中的算子，其中哪些会产生shuffle过程 <br><br>1. reduceBykey 2. groupByKey 3. …ByKey | ❎
+21. | [good - Spark学习之路 （三）Spark之RDD](https://www.cnblogs.com/qingyunzong/p/8899715.html)  扎心了老铁 | ❎
+22. | [请写出创建Dateset的几种方式](https://spark.apache.org/docs/2.1.0/sql-programming-guide.html#sql) <br> 1. 常用的方式通过sparksession读取外部文件或者数据生成dataset <br> 2. 通过调用createDataFrame生成Dataset <br><br> df.select(df[`'name'`], df[`'age'`] + 1).show() <br> df.filter(df[`'age'`] > 21).show() <br> df.groupBy(`"age"`).count().show() <br><br> df.createOrReplaceTempView(`"people"`) <br> sqlDF = spark.sql(`"SELECT * FROM people"`) <br> sqlDF.show() <br><br> teenNames = `teenagers.rdd`.map(lambda p: "Name: " + p.name).collect() | <br><br><br><br>❎
+23. | 描述一下 RDD，DataFrame，DataSet 的区别？ <br><br> DataSet 结合了 RDD 和 DataFrame 的优势，并带来的一个新的概念 Encoder。<br> 当序列化数据时，Encoder 产生字节码与 off-heap 进行交互，可以达到按需访问数据的效果，而不用反序列化整个对象。Spark 尚未提供自定义 Encoder 的 API，可是将来会加入 <br> <img src="/images/spark/rdd-df-ds.jpg" width="700" alt="" /> <br><br> [Apache spark DataFrame & Dataset](https://spark.apache.org/docs/2.1.0/sql-programming-guide.html#datasets-and-dataframes) | <br><br><br><br><br><br>❎
 24. | 描述一下Spark中stage是如何划分的？描述一下shuffle的概念 | ✔️❎
 25. | [Spark 在yarn上运行需要做哪些关键的配置工作？](https://www.cnblogs.com/bigdata1024/p/12116621.html) <br> [如何kill -个Spark在yarn运行中Application](https://blog.csdn.net/power0405hf/article/details/50457960): `yarn application -kill <appId>` <br> 但是这样会导致端口在一段时间（24小时）内被占用
 26. | 通常来说，Spark与MapReduce相比，Spark运行效率更高。请说明效率更高来源于Spark内置的哪些机制？并请列举常见spark的运行模式？ | ❎
@@ -281,6 +281,10 @@ sc.parallelize([1, 2, 3, 4, 5]).foreachPartition(f)
 >
 > 3.某一个RDD被checkpoint以后，他的父依赖关系会被删除，血缘关系被截断，该RDD转换成了CheckPointRDD，之后再对该rdd的全部操做，都是从hdfs中的checkpoint的具体目录来读取数据。缓存以后，rdd的依赖关系仍是存在的。
 
+## spark broadcast
+
+```python
+```
 
 
 ## 15. 描述一下Spark中stage划分的？
