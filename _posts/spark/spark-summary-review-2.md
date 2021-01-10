@@ -1,23 +1,27 @@
 ---
-top: 9
-title: Spark Review Summary
+top: 8
+title: Spark Review Summary 2
 toc: true
 date: 2021-01-08 07:07:21
 categories: [spark]
 tags: [spark]
 ---
 
-<img src="/images/spark/spark-summary-logo.jpg" width="500" alt="" />
+<img src="/images/spark/spark-summary-logo-1.jpg" width="500" alt="" />
 
 <!-- more -->
 
-[good - Spark会把数据都载入到内存么？](https://www.jianshu.com/p/b70fe63a77a8)
-
+> [good - Spark会把数据都载入到内存么？](https://www.jianshu.com/p/b70fe63a77a8)
 
 ## Spark
 
-No. | Title | Article
+No. | Title | Flag
 :---: | --- | ---
+0. | kaike - sparkSQL底层实现原理 | 
+0. | [SparkSql - 结构化数据处理 (上)](/2019/08/25/spark/spark-aura-9.1-SparkSql/) |
+0. | [Spark Container Executor task之间的关系](https://www.cnblogs.com/yanghaolie/p/6909640.html) |
+0. | [Spark 漫画 全面解释Spark企业调优点](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247494393&idx=1&sn=4869549081ca75250b6dfdc84af43418&chksm=cf37d8f4f84051e2d8fd073f21d18fd97f9f9ec95317ccde679fffd0349e8fee0e8bf3a8c9e6&scene=21#wechat_redirect) |
+&nbsp; | |
 1. | RDD 属性？  5大属性 | ❎
 2. | 算子分为哪几类(RDD支持哪几种类型的操作) &nbsp;&nbsp;&nbsp;&nbsp; 1. Transformation （lazy模式）2. Action | ❎
 3. | 创建rdd的几种方式 | ❎
@@ -41,71 +45,22 @@ No. | Title | Article
 25. | [Spark 在yarn上运行需要做哪些关键的配置工作？](https://www.cnblogs.com/bigdata1024/p/12116621.html) <br> [如何kill -个Spark在yarn运行中Application](https://blog.csdn.net/power0405hf/article/details/50457960): `yarn application -kill <appId>` <br> 但是这样会导致端口在一段时间（24小时）内被占用
 26. | 通常来说，Spark与MapReduce相比，Spark运行效率更高。请说明效率更高来源于Spark内置的哪些机制？并请列举常见spark的运行模式？ | ❎
 27. | [RDD中的数据在哪？](https://blog.csdn.net/qq_31598113/article/details/70832701)<br> 不可变的意思是RDD中的每个分区数据是 **only-read** <br> RDD要做逻辑分区（这里的分区类似hadoop中的逻辑切片split），每个分区可单独在集群节点计算 | ❎
-28. | 如果对RDD进行cache操作后，数据在哪里？ <br><br> 1. 执行cache算子时数据会被加载到各个Executor进程的内存. <br> 2. 第二次使用 会直接从内存中读取而不会区磁盘.
-29. | Spark中Partition的数量由什么决定?  答： 和MR一样，但是Spark默认最少有两个分区.
+28. | 如果对RDD进行cache操作后，数据在哪里？ <br><br> 1. 执行cache算子时数据会被加载到各个Executor进程的内存. <br> 2. 第二次使用 会直接从内存中读取而不会区磁盘. | <br>❎
+29. | Spark中Partition的数量由什么决定?  答： 和MR一样，但是Spark默认最少有两个分区. | ❎
 30. | ~~Spark判断Shuffle的依据?~~ | ❎
 35. | ~~Sparkcontext的作用?~~ | ❎
-36. | 离线分析什么时候用sparkcore和sparksql
-37. | 简述宽依赖和窄依赖概念，groupByKey,reduceByKey,map,filter,union五种操作哪些会导致宽依赖，哪些会导致窄依赖?
-38. | 数据倾斜可能会导致哪些问题，如何监控和排查，在设计之初，要考虑哪些来避免
-39. | 简述宽依赖和窄依赖概念，groupByKey,reduceByKey,map,filter,union五种操作哪些会导致宽依赖，哪些会导致窄依赖
-40. | 数据倾斜可能会导致哪些问题，如何监控和排查，在设计之初，要考虑哪些来避免
+36. | **Spark SQL** 在 **Spark Core** 的基础上针对结构化数据处理进行很多优化和改进. | ❎
+37. | 简述宽依赖和窄依赖概念，groupByKey,reduceByKey,map,filter,union五种操作 | ❎
+38. | 数据倾斜可能会导致哪些问题，如何监控和排查，在设计之初，要考虑哪些来避免 | ❎
+39. | 简述宽依赖和窄依赖概念，groupByKey,reduceByKey,map,filter,union五种操作. | ❎
 41. | 有一千万条短信，有重复，以文本文件的形式保存，一行一条数据，请用五分钟时间，找出重复出现最多的前10条
-42. | 现有一文件，格式如下，请用spark统计每个单词出现的次数
-43. | 共享变量和累加器
-44. | 当 Spark 涉及到数据库的操作时，如何减少 Spark 运行中的数据库连接数？<br> > 使用 foreachPartition 代替 foreach，在 foreachPartition 内获取数据库的连接。
+42. | 现有一文件，格式如下，请用spark统计每个单词出现的次数 | ❎
 45. | 特别大的数据，怎么发送到excutor中？
-46. | spark调优都做过哪些方面？
-47. | spark任务为什么会被yarn kill掉？
-48. | Spark on Yarn作业执行流程？yarn-client和yarn-cluster有什么区别？
-49. | Flatmap底层编码实现？
+46. | spark调优都做过哪些方面？ 要非常具体的场景 | ❎
+47. | spark任务为什么会被yarn kill掉？ | ❎
+48. | Spark on Yarn作业执行流程？yarn-client和yarn-cluster有什么区别？ | ❎
 
 ```python
-# spark, df are from the previous example
-# Print the schema in a tree format
-df.printSchema()
-# root
-# |-- age: long (nullable = true)
-# |-- name: string (nullable = true)
-
-# Select only the "name" column
-df.select("name").show()
-# +-------+
-# |   name|
-# +-------+
-# |Michael|
-# |   Andy|
-# | Justin|
-# +-------+
-
-# Select everybody, but increment the age by 1
-df.select(df['name'], df['age'] + 1).show()
-# +-------+---------+
-# |   name|(age + 1)|
-# +-------+---------+
-# |Michael|     null|
-# |   Andy|       31|
-# | Justin|       20|
-# +-------+---------+
-
-# Select people older than 21
-df.filter(df['age'] > 21).show()
-# +---+----+
-# |age|name|
-# +---+----+
-# | 30|Andy|
-# +---+----+
-
-# Count people by age
-df.groupBy("age").count().show()
-# +----+-----+
-# | age|count|
-# +----+-----+
-# |  19|    1|
-# |null|    1|
-# |  30|    1|
-# +----+-----+
-
 # Register the DataFrame as a SQL temporary view
 df.createOrReplaceTempView("people")
 
@@ -281,37 +236,6 @@ sc.parallelize([1, 2, 3, 4, 5]).foreachPartition(f)
 >
 > 3.某一个RDD被checkpoint以后，他的父依赖关系会被删除，血缘关系被截断，该RDD转换成了CheckPointRDD，之后再对该rdd的全部操做，都是从hdfs中的checkpoint的具体目录来读取数据。缓存以后，rdd的依赖关系仍是存在的。
 
-## spark broadcast
-
-```python
-```
-
-
-## 15. 描述一下Spark中stage划分的？
-
-描述一下shuffle的概念
-
-## 16. Spark 在yarn上运行须要作哪些关键的配置工做？如何kill -个Spark在yarn运行中Application
-
-## 17. Spark vs MapReduce
-
-Spark运行效率更高。请说明效率更高来源于Spark内置的哪些机制？并请列举常见spark的运行模式？
-
-## 18. RDD中的数据在哪？
-
-## 19. 若是对RDD进行cache操做后，数据在哪里？
-
-## 20. Spark中Partition的数量由什么决定
-
-## 21. Spark判断Shuffle的依据?
-
-## 22. 离线分析何时用sparkcore和sparksq
-
-## 23. 数据倾斜可能会致使哪些问题，如何监控和排查，在设计之初，要考虑哪些来避免
-
-## 24. 有一千万条短信，有重复，以文本文件的形式保存，一行一条数据，请用五分钟时间，找出重复出现最多的前10条
-
-## 25. 现有一文件，格式以下，请用spark统计每一个单词出现的次数
 
 ## Reference
 

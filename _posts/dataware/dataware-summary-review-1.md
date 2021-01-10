@@ -1,6 +1,6 @@
 ---
-top: 9
-title: Summary Data Warehouse
+top: 7
+title: DataWare Review Summary 1
 toc: true
 date: 2020-10-01 09:07:21
 categories: [data-warehouse]
