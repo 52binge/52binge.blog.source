@@ -17,7 +17,7 @@ tags: [spark]
 
 No. | Title | Flag
 :---: | --- | ---
-0. | kaike - sparkSQL底层实现原理 | 
+0. | kaike - sparkSQL底层实现原理<br>[spark.sql.shuffle.partitions和 spark.default.parallelism 的区别](https://blog.csdn.net/weixin_43179522/article/details/107942679)<br>[SparkSQL并行度参数设置方法](https://blog.csdn.net/xiaoduan_/article/details/79809262) | 
 0. | [SparkSql - 结构化数据处理 (上)](/2019/08/25/spark/spark-aura-9.1-SparkSql/) |
 0. | [Spark Container Executor task之间的关系](https://www.cnblogs.com/yanghaolie/p/6909640.html) |
 0. | [Spark 漫画 全面解释Spark企业调优点](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247494393&idx=1&sn=4869549081ca75250b6dfdc84af43418&chksm=cf37d8f4f84051e2d8fd073f21d18fd97f9f9ec95317ccde679fffd0349e8fee0e8bf3a8c9e6&scene=21#wechat_redirect) |
