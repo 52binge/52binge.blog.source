@@ -13,14 +13,6 @@ No. | desc | Flag
 
 > [Hive 分析函数lead、lag实例应用](https://blog.csdn.net/kent7306/article/details/50441967)
 
-Spark比MapReduce运行速度快的原因主要有以下几点：
-
-> 1. task启动时间比较快，Spark是fork出线程；而MR是启动一个新的进程；
-> 2. 更快的shuffles，Spark只有在shuffle的时候才会将数据放在磁盘，而MR却不是。
-> 3. 更快的工作流：典型的MR工作流是由很多MR作业组成的，他们之间的数据交互需要把数据持久化到磁盘才可以；而Spark支持DAG以及pipelining，在没有遇到shuffle完全可以不把数据缓存到磁盘。
-缓存：虽然目前HDFS也支持缓存，但是一般来说，Spark的缓存功能更加高效，特别是在SparkSQL中，我们可以将数据以列式的形式储存在内存中。
-> 4. 所有的这些原因才使得Spark相比Hadoop拥有更好的性能表现；在比较短的作业确实能快上100倍，但是在真实的生产环境下，一般只会快 2.5x ~ 3x！
-
 手写"连续活跃登陆"等类似场景的sql
 
 ```sql
