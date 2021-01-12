@@ -28,7 +28,7 @@ No. | Title | Flag
 4. | spark运行流程 | ❎
 5. | Spark中coalesce与repartition的区别 | ❎
 6. | sortBy 和 sortByKey的区别 | ❎
-7. | map和mapPartitions的区别 | ❎
+7. | map和mapPartitions的区别 <br> sc.parallelize([1, 2, 3, 4]).mapPartitions(func).collect() | ❎
 8. | 数据存入Redis  优先使用map mapPartitions  foreach  foreachPartions ? <br> def f(x): print(x) <br> sc.parallelize([1, 2, 3, 4, 5]).foreach(f) | ❎
 9. | reduceByKey和groupBykey的区别 | ❎
 10. | [cache和checkPoint的比较](/2021/01/08/spark/spark-interview/#10-cache%E5%92%8Ccheckpoint%E7%9A%84%E6%AF%94%E8%BE%83) : 都是做 RDD 持久化的 | ❎
@@ -61,7 +61,7 @@ No. | Title | Flag
 48. | Spark on Yarn作业执行流程？yarn-client和yarn-cluster有什么区别？ | ❎
 49. | [spark中的cache() persist() checkpoint()之间的区别](https://blog.csdn.net/ljp812184246/article/details/53897613) <br><br> 1. checkpoint 的 RDD 会被计算两次 <br> 2. rdd.persist(StorageLevel.DISK_ONLY), partition 由 blockManager 管理, blockManager stop, cache 到磁盘上 RDD 也会被清空 <br>  3. checkpoint 将 RDD 持久化到 HDFS 或本地文件夹, 可以被下一个 driver program 使用. | <br><br> ❎
 50. | [spark算子调优四：repartition解决SparkSQL低并行度问题](https://blog.csdn.net/m0_37294838/article/details/91407028) <br><br> 你自己通过spark.default.parallelism参数指定的并行度，只会在没有spark sql的stage中生效 <br><br> hive表，对应了一个hdfs文件，有20个block;你自己设置了spark.default.parallelish参数为100；你的第一个stage的并行度，是不受你设置的参数控制的，就只有20task | 
-51. | [very good 多弗朗明哥 -【大数据】Spark性能优化和故障处理](https://www.cnblogs.com/dflmg/p/10430181.html) | 
+51. | [very good 多弗朗明哥 -【大数据】Spark性能优化和故障处理](https://www.cnblogs.com/dflmg/p/10430181.html) <br><br> 算子调优三：filter与coalesce的配合使用<br>算子调优四：repartition解决SparkSQL低并行度问题<br>算子调优五：reduceByKey本地聚合 | 
 
 ```python
 # Register the DataFrame as a SQL temporary view
