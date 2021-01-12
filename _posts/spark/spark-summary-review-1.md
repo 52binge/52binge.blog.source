@@ -126,10 +126,10 @@ Data Skew 发生的原理
 > Data Skew 的原理很简单：在进行shuffle的时候，必须将各个节点上相同的**key**拉取到某个节点上的一个task来进行处理，比如**按照key进行聚合或join等操作**。此时如果某个**key**对应的数据量特别大的话，就会发生 Data Skew。
 
 No. | Spark性能优化指南—高级篇(8) | 优缺点 | Flag
-:---: | --- | :---: | :---:
+:---: | --- | :--- | :---:
 1. | Hive ETL预处理数据 | 治标不治本，Hive ETL中还是会发生数据倾斜 | ❎
 2. | 过滤少数导致倾斜的key | 适用场景不多，大多情况:导致倾斜的key还是多的，并不是少数 | ❎
-<br>3. | <br>提高shuffle操作的并行度 | reduceByKey(1000) <br>spark.sql.shuffle.partitions，shuffle task的并行度，默认200 <br><br> 总结：实现起来简单，可以缓解和减轻 Data Skew 的影响 | ❎
+<br>3. | <br>提高shuffle操作的并行度 | reduceByKey(1000) <br><br>rdd: `spark.default.parallelism`<br><br>SQL: `spark.sql.shuffle.partitions`,shuffle task 默200 <br><br> 总结：实现起来简单，可以缓解和减轻 Data Skew 的影响 | ❎
 4. | <br> 两阶段聚合（局部聚合+全局聚合） | 随机前缀=>原1个Task的数据，现分多Task, 后去掉前缀, 在全局聚合 <br><br>  仅仅适用于聚合类的shuffle操作，适用范围相对较窄 | good
 5. | **将reduce join转为map join** | 这个方案只适用1个大表和1个小表情况。需将小表进行广播 | good
 6. | 采样倾斜key并分拆join操作 | 如果导致倾斜的key特别多的话，，那么这种方式也不适合 | ✔️
