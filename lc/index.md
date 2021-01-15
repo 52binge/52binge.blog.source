@@ -10,18 +10,18 @@ title: Coding
 No. | Question | Flag
 :---: | --- | :---:
 Meeting | Meeting Rooms 系列 |
-`easy` | 252 [Meeting Rooms I](https://leetcode-cn.com/problems/meeting-rooms), Sort, `right = intervals[0][-1]` | ❎
-&nbsp; | 253 [Meeting Rooms II](https://leetcode-cn.com/problems/meeting-rooms-ii) , **heapq** <br> &nbsp; intervals.sort(key= lambda x: x[0]) <br> &nbsp; heapq.heappush(free_rooms, intervals[0][1]), for i in intervals[1:] re heap_len | <br>❎
+`easy` | 252 [Meeting Rooms I](https://leetcode-cn.com/problems/meeting-rooms), Sort, `right = intervals[0][-1]` for : if x<right: return False | ❎
+&nbsp; | 253 [Meeting Rooms II](https://leetcode-cn.com/problems/meeting-rooms-ii) , **heapq** 中的 free_rooms 代表房间个数 <br> &nbsp; intervals.sort(key= lambda x: x[0]) <br> &nbsp; heapq.heappush(free_rooms, intervals[0][1]), for i in intervals[1:] re heap_len | <br>❎
 Array | 指针, 冒泡 |
-&nbsp; | [75 Sort Colors](https://leetcode-cn.com/problems/sort-colors), 2遍 单指针固定增加, nums[i], nums[p] = nums[p], nums[i] | ❎
+&nbsp; | [75 Sort Colors](https://leetcode-cn.com/problems/sort-colors), 2遍 单指针固定增加, <br>if nums[i] == 0: nums[i], nums[p] = nums[p], nums[i] | ❎
 Array | Sort idea, 模拟 |
 &nbsp; | [621	任务调度器](https://leetcode-cn.com/problems/task-scheduler)， 桶思想 + 模拟计算 | ❎ 
-Array | 搜索旋转排序数组 , 双if |
-&nbsp; | [33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/), nums[0] <= nums[mid] if nums[0] <= target < nums[mid]: | ❎
+Array | 搜索旋转排序数组 nums = [4,5,6,7,0,1,2], target = 0 , `双if 判断位置` |
+&nbsp; | [33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/), nums[0] <= nums[mid] if nums[0] <= target < nums[mid]: <br> while l <= r: mid = (l + r) // 2 if nums[mid] == target: return mid | ❎
 Array | 单调性有关 | 
 &nbsp; | [406. 根据身高重建队列 Queue Reconstruction by Height](https://leetcode-cn.com/problems/queue-reconstruction-by-height) <br>&nbsp;&nbsp;people.sort(key=lambda x:(-x[0], x[1])), 插空法, ans[p[1],p[1]]=[p] ,&nbsp; tmp[:] | ❎
 Stock | 股票买卖系列 |
-&nbsp; | [121. 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/) , inf = int(1e9), int max = sys.maxsize (python3)| ❎
+&nbsp; | [121. 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/) , inf = int(1e9), int max = sys.maxsize <br> &nbsp; maxprofit = max(price - minprice, maxprofit) | ❎
 &nbsp; | [122. 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/), 贪心简单 & DP 分状态讨论 <br> &nbsp; dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i]); <br> &nbsp; dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] - prices[i]); | 
 &nbsp; | [309. Best Time to Buy and Sell Stock with Coo](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown), [题解：最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/solution/zui-jia-mai-mai-gu-piao-shi-ji-han-leng-dong-qi-4/) <br> 1. f[i][0]: 手上持有股票的最大收益 <br> 2. f[i][1]: 手上不持有股票, 并且处于冷冻期的最大收益 <br> 3. f[i][2]: 手上不持有股票, 并且不处于冷冻期的最大收益 | ❎
 0-1 | 背包 |
