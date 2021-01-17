@@ -4,22 +4,68 @@ title: Coding
 
 <!--# [Sea](https://leetcode-cn.com/company/shopee/)-->
 
-[LCP 18. 早餐组合](https://leetcode-cn.com/problems/2vYnGI/)
-[LCP 19. 秋叶收藏集](https://leetcode-cn.com/problems/UlBDOe/)
+[LCP 18. 早餐组合](https://leetcode-cn.com/problems/2vYnGI/), [LCP 19. 秋叶收藏集](https://leetcode-cn.com/problems/UlBDOe/), [sort与sorted的区别](https://www.cnblogs.com/clement-jiao/p/9095699.htm)
+
+```python
+# "abc".zfill(5)  00abc
+# result.append(-heapq.heappop(heap))  return result[::-1]
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+```
+
+## Data Engineer
+
+No. | Question | Flag
+:---: | --- | :---:
+&nbsp; | [840. Magic Squares In Grid](https://leetcode-cn.com/problems/magic-squares-in-grid/) | ❎
+&nbsp; | [25. K 个一组翻转链表](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/) 1->2->3->4->5 当 k = 3 时，应当返回: 3->2->1->4->5 <br> &nbsp;  def reverse(self, head: ListNode, tail: ListNode): prev=tail.next p=head <br> &nbsp; def reverseKGroup(head, k): hair = ListNode(0) while head: <br> &nbsp; (1) 查看剩余部分长度是否大于等于 k (2). 把子链表重新接回原链表 | <br>hard
+1. | 股票最大利润 cost, profit = float("+inf"), 0 | ❎
+2. | [Move Zeroes](https://leetcode-cn.com/problems/move-zeroes/) for i in range(len(nums)): if nums[i]: swap(nums[i], nums[j]) | ❎
+3. | ~~二叉树层序遍历~~ | ❎
+4. | [83. 删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/), while cur and cur.next: <br>[82. 删除排序链表中的重复元素 II - 删除所有含有重复数字的节点](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/) <br> &nbsp; dHead = ListNode(0), dHead.next = head, pre,cur = dHead,head; <br>&nbsp; `while cur: pre.next = cur.next` 跳过重复部分 | ❎
+5. | [如何实现LRU](http://localhost:5000/lc/#review-shop), 双向链表+Dict+Size+Cap <br> class DLinkedNode(4), removeTail, moveToHead, addToHead, removeNode | ✔️❎
+6. | [125. 验证回文串](https://leetcode-cn.com/problems/valid-palindrome/), while, while left < right and not s[left].isalnum(): <br><br> 扩展: [5. 最长回文子串 dp](https://leetcode-cn.com/problems/longest-palindromic-substring/), 枚举长度 <br> &nbsp; for l in range(n): for i in n: dp[i][j] = (dp[i + 1][j - 1] and s[i] == s[j]) | <br>❎
+7. | 判断二叉树是否对称 <br> &nbsp; class TreeNode: def \_\_init\_\_(self, x): <br> &nbsp; isSymmetricHelper(left.left, right.right) and isSymmetricHelper(left.right, right.left) | <br>❎
+8. | [98. 验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/), while stack or root: while root | ❎
+9. | 找出数组里三个数相乘最大的那个（有正有负）| ❎
+10. | 做题：两个十六进制数的加法 | ❎
+11. | [93. 复原IP地址](https://leetcode-cn.com/problems/restore-ip-addresses/), `".".join(['1','2','3','4']) == '1.2.3.4'`,&nbsp; `ord("a") = 97` <br> &nbsp; dfs(seg\_id, seg\_start) for seg\_end in range(seg\_start, len(s)): <br> &nbsp;&nbsp; if 0 < addr <= 0xFF（11111111==255): | ✔️❎
+12. | [202. 快乐数](https://leetcode-cn.com/problems/happy-number/), `divmod(79, 10) = 7,9;  while n > 0: n, digit = divmod(n, 10)` | ❎
+13. | 快排归并手撕 for i in range(l, r+1): nums[i] = arr[i - l] | ❎
+14. | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) dp = [[0] * (n + 1) for _ in range(m + 1)] <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if text1[i - 1] == text2[j - 1]: dp[i][j] = dp[i-1][j-1] + 1 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else: dp[i][j] = max(dp[i-1][j], dp[i][j-1]) | <br>❎
+15. | [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/), occ=set(); <br>&nbsp; for l in range(n): remove(i-1), while r+1 < n and s[r+1] not in occ: add(r+1) | ❎
+16. | 405-数字转换为十六进制数, bin(dec), oct(dec), hex(dec), int('0b10000', 2) | ❎
+17. | [67. 二进制求和](https://leetcode-cn.com/problems/add-binary/)， for i, j in zip(a[::-1], b[::-1]):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s = int(i) + int(j) + carry, r = str(s % 2) + r, carry = s // 2 <br><br> list(zip([1,2,3], [4,5,6])) == [(1, 4), (2, 5), (3, 6)]| <br>❎
+18. | [4. 寻找两个正序数组的中位数 - hard](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/) , 二分查找 O(log (m+n)) , k/2-1=7/2−1=2 <br> def getKthElement(k): <br> A: 1 3 4 9 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑<br>B: `1 2 3` 4 5 6 7 8 9<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑<br>k=k-k/2=4, 下一个位置是 k/2-1 = 4/2-1 = 1 | <br>✔️<br>❎
+19. | [剑指 Offer 55 - II. 平衡二叉树](https://leetcode-cn.com/problems/ping-heng-er-cha-shu-lcof/) <br> &nbsp; (1). abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 <br> &nbsp; (2). self.isBalanced(root.left) and self.isBalanced(root.right) | <br>❎
+20. | ~~[155. 最小栈](https://leetcode-cn.com/problems/min-stack/), self.stack = [], self.min_stack = [float('inf')]~~ | ❎
+21. | 非递归单链表反转 现场手写 | ❎
+22. | ~~[105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/), i = inorder.index(preorder[0])~~ | ❎ 
+23. | 全排列, def dfs(x): if x == len(c) - 1: res.append(''.join(c)) <br> &nbsp;&nbsp;&nbsp;&nbsp; for i in range(first, n): | ❎
+24. | [1262. 可被三整除的最大和](https://leetcode-cn.com/problems/greatest-sum-divisible-by-three/), [题解](https://leetcode-cn.com/problems/greatest-sum-divisible-by-three/solution/ti-jie-5265-ke-bei-san-zheng-chu-de-zui-da-he-by-z/)<br> &nbsp;&nbsp;贪心+逆向思维：<br> &nbsp;&nbsp; a = [x for x in nums if x % 3 == 0] <br> &nbsp;&nbsp; b = sorted([x for x in nums if x % 3 == 1], reverse=True)<br>&nbsp;&nbsp; c = sorted([x for x in nums if x % 3 == 2], reverse=True) | <br><br>❎
+27. | 两千万个文件找最小的一千个（答错了，应该用大顶堆，答成了小顶堆）| ❎
+28. | 10亿个数中找出最大的10000个数? <br><br> &nbsp;&nbsp;&nbsp;&nbsp; 将1亿个数据分成100份，每份100万个数据，找到每份数据中最大的10000个，最后在剩下的100*10000个数据里面找出最大的10000个 | <br> 分治法
+29. | 1000个数据，查找出现次数最多的k个数字 <br><br> 我们首先一样是要把这十亿个数分成很多份。例如 1000份，每份 10万。然后使用 HashMap<int,int> 来统计。在每一次的统计中，我们可以找出最大的100个数？ 这样100\*10000 可以 快排序 解决 | 1. 分治法HashMap <br><br> 2. 位图法Bitmap |
+30. | [239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/), [题解](https://leetcode-cn.com/problems/sliding-window-maximum/solution/hua-dong-chuang-kou-zui-da-zhi-by-leetcode-3/) 双端队列 <br> &nbsp;(1). # init deque and output: &nbsp;&nbsp;while deq and nums[i] > nums[`deq[-1]`]: deq.pop() <br> &nbsp;(2). # build output: &nbsp;&nbsp;&nbsp;&nbsp;for i in range(k, n): | <br> ✔️❎
+
+## HOT
 
 No. | Question | Flag
 :---: | --- | :---:
 Meeting | Meeting Rooms 系列 |
-`easy` | 252 [Meeting Rooms I](https://leetcode-cn.com/problems/meeting-rooms), Sort, `right = intervals[0][-1]` for : if x<right: return False | ❎
-&nbsp; | 253 [Meeting Rooms II](https://leetcode-cn.com/problems/meeting-rooms-ii) , **heapq** 中的 free_rooms 代表房间个数 <br> &nbsp; intervals.sort(key= lambda x: x[0]) <br> &nbsp; heapq.heappush(free_rooms, intervals[0][1]), for i in intervals[1:] re heap_len | <br>❎
+~~easy~~ | ~~252 [Meeting Rooms I](https://leetcode-cn.com/problems/meeting-rooms)~~, Sort, `right = intervals[0][-1]` for : if x<right: return False | ❎
+<br> **heapq** | 253 [Meeting Rooms II](https://leetcode-cn.com/problems/meeting-rooms-ii) , **heapq** 中的 free_rooms 代表房间个数 <br> &nbsp; intervals.sort(key= lambda x: x[0]) <br> &nbsp; heapq.heappush(free_rooms, intervals[0][1]), for i in intervals[1:] re len(free_rms) | <br>❎
 Array | 指针, 冒泡 |
-&nbsp; | [75 Sort Colors](https://leetcode-cn.com/problems/sort-colors), 2遍 单指针固定增加, <br>if nums[i] == 0: nums[i], nums[p] = nums[p], nums[i] | ❎
+&nbsp; | ~~[75 Sort Colors](https://leetcode-cn.com/problems/sort-colors), 2遍 单指针固定增加~~, <br>if nums[i] == 0: nums[i], nums[p] = nums[p], nums[i] | ❎
 Array | Sort idea, 模拟 |
-&nbsp; | [621	任务调度器](https://leetcode-cn.com/problems/task-scheduler)， 桶思想 + 模拟计算 | ❎ 
-Array | 搜索旋转排序数组 nums = [4,5,6,7,0,1,2], target = 0 , `双if 判断位置` |
-&nbsp; | [33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/), nums[0] <= nums[mid] if nums[0] <= target < nums[mid]: <br> while l <= r: mid = (l + r) // 2 if nums[mid] == target: return mid | ❎
-Array | 单调性有关 | 
-&nbsp; | [406. 根据身高重建队列 Queue Reconstruction by Height](https://leetcode-cn.com/problems/queue-reconstruction-by-height) <br>&nbsp;&nbsp;people.sort(key=lambda x:(-x[0], x[1])), 插空法, ans[p[1],p[1]]=[p] ,&nbsp; tmp[:] | ❎
+&nbsp; | ~~[621	任务调度器](https://leetcode-cn.com/problems/task-scheduler)~~， `桶思想 + 模拟计算` 两个相同种类的任务间必须有长度为整数 n 的冷却时间<br>for i in set(tasks):tnum.append(tasks.count(i)) maxt=max(tnum) | ❎ 
+Array | ~~搜索旋转排序数组 nums = [4,5,6,7,0,1,2], target = 0~~ , `双if 判断位置` |
+&nbsp; | ~~[33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/)~~, nums[0] <= nums[mid] if nums[0] <= target < nums[mid]: <br> while l <= r: mid = (l + r) // 2 if nums[mid] == target: return mid | ❎
+Array | 单调性有关 | ✔️
+**插空法** | [406. 根据身高重建队列 Queue Reconstruction by Height](https://leetcode-cn.com/problems/queue-reconstruction-by-height) <br>&nbsp;&nbsp;people.sort(key=lambda x:(-x[0], x[1])), 插空法, ans[p[1],p[1]]=[p] ,&nbsp; tmp[:] | ❎
 Stock | 股票买卖系列 |
 &nbsp; | [121. 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/) , inf = int(1e9), int max = sys.maxsize <br> &nbsp; maxprofit = max(price - minprice, maxprofit) | ❎
 &nbsp; | [122. 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/), 贪心简单 & DP 分状态讨论 <br> &nbsp; dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i]); <br> &nbsp; dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] - prices[i]); | 
@@ -29,7 +75,7 @@ Stock | 股票买卖系列 |
 DP | Tree DP, 偷不偷 | 
 &nbsp; | [337. House Robber III](https://leetcode-cn.com/problems/house-robber-iii)， 偷不偷 | ✔️
 二维DP | 二维格子 DP |
-&nbsp; | [221. Maximal Square 最大的正方形](https://leetcode-cn.com/problems/maximal-square/) <br> &nbsp;&nbsp; dp = [[0] * columns for _ in range(rows)] &nbsp; <br> &nbsp;&nbsp; dp[i][j] = min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]) + 1 |
+&nbsp; | [221. Maximal Square 最大的正方形](https://leetcode-cn.com/problems/maximal-square/) if i == 0 or j == 0: dp[i][j] = 1 边界<br> &nbsp;&nbsp; dp = [[0] * columns for _ in range(rows)] &nbsp; <br> &nbsp;&nbsp; dp[i][j] = min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]) + 1 |
 一维DP | 子序列 |
 &nbsp; | [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/), dp[0]=1; j in range(i): dp[i] = max(dp[i], dp[j] + 1) | ❎
 &nbsp; | [152. Maximum Product Subarray - 乘积最大的连续子数组](https://leetcode-cn.com/problems/maximum-product-subarray), pre_max ,pre_min,num <br> &nbsp;&nbsp;dp[i] = max(nums[i] * pre_max, nums[i] * pre_min, nums[i]) | ❎
@@ -40,7 +86,7 @@ DFS | 全排列 |
 &nbsp; | [39. 组合总和](https://leetcode-cn.com/problems/combination-sum/), [2,3,6,7] = [7], [2,2,3]， [DFS 树状图](https://leetcode-cn.com/problems/combination-sum/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/) <br><br> &nbsp;dfs(candidates, index, path + [candidates[index]], target - candidates[index]) | ❎
 &nbsp; | [78. Subsets 子集](https://leetcode-cn.com/problems/subsets/), 放不放 dfs(ix=0)， 搜索+回溯 | ❎
 | |
-Bool DP | [139. Word Break](https://leetcode-cn.com/problems/word-break) ， [好题目，3种解法](https://leetcode-cn.com/problems/word-break/solution/shou-hui-tu-jie-san-chong-fang-fa-dfs-bfs-dong-tai/), for i in n: for j in (i+1,n+1) | ❎
+Bool DP | [139. Word Break](https://leetcode-cn.com/problems/word-break) ， [好题目，3种解法](https://leetcode-cn.com/problems/word-break/solution/shou-hui-tu-jie-san-chong-fang-fa-dfs-bfs-dong-tai/), for i in n: for j in (i+1,n+1)  if(dp[i] and (s[i:j] in wordDict)): dp[j]=True | ❎
 &nbsp; | Tree |
 &nbsp; | [543. Diameter of Binary Tree](https://leetcode-cn.com/problems/diameter-of-binary-tree), height = return max(L, R) + 1 | ❎
 stack | 单调stack - 后进先出 |
@@ -62,13 +108,13 @@ Tree | [538 Convert BST to Greater Tree](https://leetcode-cn.com/problems/conver
 No. | Question | Flag
 :---: | --- | :---:
 (1). | **binary-search** |
-good | [15. 3Sum](https://leetcode-cn.com/problems/3sum) == TwoSum， nums.sort(), for for while, `second_ix & third_ix 双指针两边夹` | ❎
+good | [15. 3Sum](https://leetcode-cn.com/problems/3sum) == TwoSum， nums.sort(), for for while second < third, `sec_ix & thd_ix ` | ❎
 Array | ~~[283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes)， 冒泡思想~~ | ❎  
 &nbsp; | [48. Rotate Image](https://leetcode-cn.com/problems/rotate-image), n\*n matrix, 上三角【`转置+reverse()`】,  matrix[i].reverse() | ✔️❎
 (2). | **Dynamic programming**, DP |
 &nbsp; | ~~[53. Maximum Subarray](https://leetcode-cn.com/problems/maximum-subarray/)， 连续的最大子序和~~ | ❎
 &nbsp; | ~~[64. Minimum Path Sum 二维格子的最小路径和](https://leetcode-cn.com/problems/minimum-path-sum)~~ ， 格子 DP（向左和向下走） | ❎
-&nbsp; | ~~[198 打家劫舍](https://leetcode-cn.com/problems/house-robber)~~ , max(dp[i - 2] + nums[i], dp[i - 1]) | ❎
+&nbsp; | ~~[198 打家劫舍](https://leetcode-cn.com/problems/house-robber)~~ , dp = [0] * size, dp[0], dp[1], dp[i]=max(dp[i - 2] + nums[i], dp[i - 1]) | ❎
 (3). | 模拟 |
 &nbsp; | [31. Next Permutation](https://leetcode-cn.com/problems/next-permutation) == [8.5 下一个更大元素 III](https://leetcode-cn.com/problems/next-greater-element-iii/) | ❎
 (4). | DFS / BFS / Tree / Stack |
@@ -79,8 +125,8 @@ Array | ~~[283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes)， �
 &nbsp; | ~~[142. Linked List Cycle II](https://leetcode-cn.com/problems/linked-list-cycle-ii/)~~， 转为环形链表II-龟兔判圈 | ❎
 &nbsp; | ~~[287. Find the Duplicate Number](https://leetcode-cn.com/problems/find-the-duplicate-number/)~~， 转为环形链表II-龟兔判圈 | ❎
 匪夷 | ~~[148. Sort List](https://leetcode-cn.com/problems/sort-list)~~ | ✔️❎
-&nbsp; | ~~[240	搜索二维矩阵 II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii)~~ | ❎ 
-&nbsp; | ~~[226 翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree)~~ | ❎
+&nbsp; | ~~[240	搜索二维矩阵 II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii)~~ , while col < width and row >= 0: | ❎ 
+&nbsp; | ~~[226 翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree)~~ <br> &nbsp;&nbsp; root.left, root.right = root.right, root.left | ❎
 &nbsp; | ~~[617 合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees)~~, new_root = TreeNode(t1.val + t2.val) | ❎
 
 

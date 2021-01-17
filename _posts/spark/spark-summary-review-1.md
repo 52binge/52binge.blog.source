@@ -443,11 +443,18 @@ RDD和它依赖的parent RDD(s)的关系有两种不同的类型
 cache不是action操作
 
 ### 5.3 什么场景下要进行persist操作？
-以下场景会使用persist
 
-某个步骤计算非常耗时或计算链条非常长，需要进行persist持久化
-`shuffle之后为什么要persist，shuffle要进性网络传输`，风险很大，数据丢失重来，恢复代价很大
-shuffle之前进行persist，框架默认将数据持久化到磁盘，这个是框架自动做的。
+> spark所有复杂一点的算法都会有persist身影,spark默认数据放在内存，spark很多内容都是放在内存的，非常适合高速迭代，1000个步骤 只有第一个输入数据，中间不产生临时数据，但分布式系统风险很高，所以容易出错，就要容错，rdd出错或者分片可以根据血统算出来，如果没有对父rdd进行persist 或cache的化，就要重头做。
+
+
+No. | 以下场景会使用persist  | Article
+:---: | --- | ---
+1）| 某个步骤计算非常耗时，需要进行persist持久化 ；
+2）| 计算链条非常长，重新恢复要算很多步骤，很好使，persist ；
+3）| checkpoint所在的rdd要持久化persist， lazy级别，框架发现有checnkpoint，checkpoint时单独触发一个job，需要重算一遍，**checkpoint前 要持久化，写个rdd.cache或者rdd.persist，将结果保存起来，再写checkpoint操作**，这样执行起来会非常快，不需要重新计算rdd链条了。checkpoint之前一定会进行persist；<br><br>**sc.setCheckpointDir("hdfs://lijie:9000/checkpoint0727")** <br> rdd.cache() <br> rdd.checkpoint()
+4）| shuffle之后为什么要persist，shuffle要进性网络传输，风险很大，数据丢失重来，恢复代价很大 ；
+5）| shuffle之前进行persist，框架默认将数据持久化到磁盘，这个是框架自动做的。
+
 
 ### 5.4 rdd有几种操作类型？三种！
 

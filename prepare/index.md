@@ -1,6 +1,93 @@
 
 No. | desc | Flag
 :---: | --- | :---:
+1. | 简历上的NLP项目 |
+2. | 基础python知识： |
+&nbsp; | dict，list，set和tuple的区别？底层实现是hash/list/数组？  <br><br> 1. list 被实现为长度可变的数组，每次都会分配略大的内存防止频繁的申请分配内存，连续的一块的内存 <br> 2. tuple 本身为一个结构体，结构体里面有一个二级指针，这是常量二级指针，可以形成一个`指针数组` <br>3. **set** : `允许空值的dict`, 对dict有进行优化，在插入和删除元素的复杂度为常数级别，最坏也是O(n) <br> 4. dict 底层使用的哈希表, 哈希表平均查找时间复杂度O(1) <br> &nbsp;&nbsp;  [dict的key是不可变对象，因为要确保经过hash算法之后得到的地址唯一](https://www.codenong.com/cs106215357/) <br> &nbsp;&nbsp; py3.6+ dict是insert ordered，原来是根据hash值,乱序的，pop不一定是最后一个插入的键值对 | ❎
+&nbsp; | 函数定义的时候参数前的*和**分别是什么意思，有什么区别？ <br> &nbsp;&nbsp; fun(1,2,3,4), tuple `1, (2,3,4)` / fun(1,a=2,b=3) dict `1, {a:2, b:3}1. ` | ❎
+&nbsp; | 给变量a赋值int(1)，内存占4字节，后来又给a赋值str(1)，内存占1字节。请问两次赋值之间发生了什么？ <br> [python按引用赋值和深、浅拷贝 - [-5,256] 小整数优化](https://www.cnblogs.com/f-ck-need-u/p/10123145.html)， python int 占用 24~28 字节, 动态 | ❎
+&nbsp; | 编码类型UTF-8，unicode，gbk任选两种说一下区别？ <br><br> &nbsp;&nbsp;Unicode不是一个新的编码规则，而是一套字符集, Unicode 只是一个符号集，它只规定了符号的二进制代码，却没有规定这个二进制代码应该如何存储.<br><br> &nbsp;&nbsp;UTF-8编码: 编码规则就是UTF-8。UTF-8采用1-4个字符进行传输和存储数据，是一种针对Unicode的可变长度字符编码，又称万国码. <br><br> &nbsp;&nbsp; Unicode符号范围（十六进制）, UTF-8编码方式(二进制) | ❎
+&nbsp; | is和==的区别 ? Answ: is 用于判断两个变量是否引用,会对比其中两个变量的地址 | ❎
+&nbsp; | [选一个module（比如numpy，pandas……）它的整体框架，主要应用场景，底层架构，（优缺点）](https://zhuanlan.zhihu.com/p/23151859?refer=xmucpp) <br><br>pd.DataFrame(`{'A':[434,54],'B':[4,56]}`,index = [1,2]) <br><br> Pandas 主要数据结构是一维数据(Series)、二维数据（DataFrame），这两种数据结构能满足金融、统计、社会等领域中大多典型用例。Pandas 是基于 NumPy 开发，可以与其它第三方计算支持库完美集成. <br><br> Pandas缺点：处理大数据集的速度非常慢。 在默认设置下，Pandas只使用单个CPU内核，在单进程模式下运行函数。 |
+3. | **Leetcode** |
+&nbsp; | — 输入一个数据流（可以先对数据做预处理，任何预处理都可以，只要得到的数据和原数据是一一映射即可，考官举了一个例子是可以用时间戳），对每一个元素判断是否之前出现过。在尽量减小内存和时间的情况下，如果要求完全精确，如何做？如果允许出现误差，如何做，误差可以控制在多少范围内？
+&nbsp; | — 两个有序数组，大小分别是m和n，求整体的中位数，要求时间复杂度O(log(m+n))
+&nbsp; | 编程题：大数求和 | ❎
+
+```python
+def big_data_add(a, b):
+    # 1.先获取两个中最大的长度，然后将短进行补充，使长度一致
+    max_len = len(a) if len(a) > len(b) else len(b)
+ 
+    a = a.zfill(max_len) # "abc".zfill(5)  00abc
+    b = b.zfill(max_len)
+
+    a = list(a)
+    b = list(b)
+    result = [0 for i in range(max_len+1)]   # 这里加1主要是考虑到两数加起来可能比之前的数还多一位
+ 
+    for i in range(max_len-1, -1, -1):
+        temp = int(a[i]) + int(b[i])
+        if temp >= 10:
+            # 这里result是i+1  是因为result的长度比max_len长度长
+            result[i+1] += temp % 10
+            result[i] += temp // 10
+        else:
+            result[i+1] += temp
+ 
+    return result
+
+```
+
+2个有序数据的中位数： 2分查找
+
+```python
+class Solution:
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        def getKthElement(k):
+            """
+            - 主要思路：要找到第 k (k>1) 小的元素，那么就取 pivot1 = nums1[k/2-1] 和 pivot2 = nums2[k/2-1] 进行比较
+            - 这里的 "/" 表示整除
+            - nums1 中小于等于 pivot1 的元素有 nums1[0 .. k/2-2] 共计 k/2-1 个
+            - nums2 中小于等于 pivot2 的元素有 nums2[0 .. k/2-2] 共计 k/2-1 个
+            - 取 pivot = min(pivot1, pivot2)，两个数组中小于等于 pivot 的元素共计不会超过 (k/2-1) + (k/2-1) <= k-2 个
+            - 这样 pivot 本身最大也只能是第 k-1 小的元素
+            - 如果 pivot = pivot1，那么 nums1[0 .. k/2-1] 都不可能是第 k 小的元素。把这些元素全部 "删除"，剩下的作为新的 nums1 数组
+            - 如果 pivot = pivot2，那么 nums2[0 .. k/2-1] 都不可能是第 k 小的元素。把这些元素全部 "删除"，剩下的作为新的 nums2 数组
+            - 由于我们 "删除" 了一些元素（这些元素都比第 k 小的元素要小），因此需要修改 k 的值，减去删除的数的个数
+            """
+            
+            ix1, ix2 = 0, 0
+            while True:
+                # 特殊情况
+                if ix1 == m:
+                    return nums2[ix2 + k - 1]
+                if ix2 == n:
+                    return nums1[ix1 + k - 1]
+                if k == 1:
+                    return min(nums1[ix1], nums2[ix2])
+
+                # 正常情况
+                newIndex1 = min(ix1 + k // 2 - 1, m - 1)
+                newIndex2 = min(ix2 + k // 2 - 1, n - 1)
+                pivot1, pivot2 = nums1[newIndex1], nums2[newIndex2]
+                if pivot1 <= pivot2:
+                    k = k - (newIndex1 - ix1 + 1)
+                    ix1 = newIndex1 + 1
+                else:
+                    k = k - (newIndex2 - ix2 + 1)
+                    ix2 = newIndex2 + 1
+        
+        m, n = len(nums1), len(nums2)
+        totalLength = m + n
+        if totalLength % 2 == 1:
+            return getKthElement((totalLength + 1) // 2)
+        else:
+            return (getKthElement(totalLength // 2) + getKthElement(totalLength // 2 + 1)) / 2
+```
+
+No. | desc | Flag
+:---: | --- | :---:
 0. | [客户信息表、合同信息表和还款计划表分别是什么？玩不透老板会怀疑我的能力？](https://zhuanlan.zhihu.com/p/130761566) |
 0. | [字节跳动-数据仓库高级工程师面试](https://mp.weixin.qq.com/s/7dHu2QcmU2xvFtGUEp13Fg) |
 0. | [大数据常见面试题之spark sql](https://blog.csdn.net/sun_0128/article/details/107858345) |
@@ -74,8 +161,8 @@ No. | desc | Flag
 2. | 问了MapReduce执行流程以及问了RDD属性和问了一些transformation和action算子
 3. | hive能读取txt文件吗？以及读取哪些类型文件，若不能该怎么让其能读？ <br> load data local inpath '/usr/testFile/result.csv' overwrite into table biao; | ❎
 4. | 各个文件分布在不同的分布式系统中，如何快速的实现某个字段前三？
-5. | [124. 二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/), [51. N 皇后](https://leetcode-cn.com/problems/n-queens/)， `def backtrack(row: int) if: else: for 回溯` | Hard
-6. | [225. 用队列实现栈](https://leetcode-cn.com/problems/implement-stack-using-queues/) , `for _ in range(n): self.queue.append(self.queue.popleft())` |
+5. | [124. 二叉树最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/), self.maxSum = float("-inf") leftGain = max(maxGain(node.left), 0) <br> [51. N 皇后](https://leetcode-cn.com/problems/n-queens/)， `def backtrack(row: int) if: else: for 回溯` | Hard
+6. | [225. 用队列实现栈](https://leetcode-cn.com/problems/implement-stack-using-queues/) , self.queue = collections.deque() , push 后，在 reverse 过来 <br> `self.queue.append(x) for _ in range(n): self.queue.append(self.queue.popleft())` | ❎
 7. | [小和问题和逆序对问题](https://blog.csdn.net/qq_34761012/article/details/104859991) <br> main: `smallSum(arr,start,mid)+smallSum(arr,mid+1,end)+merge(arr,start,mid,end)` <br>core : `Sum=Sum+arr[l]*(end-r+1)` | ❎
 &nbsp; | [字节跳动大数据开发工程师技术中台一二三面+hr面](https://www.nowcoder.com/discuss/451878?channel=-2&source_id=discuss_terminal_discuss_sim)  |
 
@@ -419,40 +506,6 @@ InnoDB是MySQL目前默认的存储引擎，底层使用了B+树作为数据结�
 事务支持：前者支持事务；后者不支持事务
 对于写多的场景，由于MyiSAM需要频繁的锁表，性能开销比InnoDB大得多
 对于读多写少的场景，由于InnoDB每次操作都需要在事务中，MyiSAM的性能可能会比前者好
-
-## 3. Leetcode
-
-No. | Question | Flag
-:---: | --- | :---:
-&nbsp; | [25. K 个一组翻转链表](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/) 1->2->3->4->5 当 k = 3 时，应当返回: 3->2->1->4->5 <br> &nbsp;  def reverse(self, head: ListNode, tail: ListNode): prev=tail.next p=head <br> &nbsp; def reverseKGroup(head, k): hair = ListNode(0) while head: <br> &nbsp; (1) 查看剩余部分长度是否大于等于 k (2). 把子链表重新接回原链表 | <br>hard
-1. | 股票最大利润 cost, profit = float("+inf"), 0 | ❎
-2. | [Move Zeroes](https://leetcode-cn.com/problems/move-zeroes/) for i in range(len(nums)): if nums[i]: swap(nums[i], nums[j]) | ❎
-3. | ~~二叉树层序遍历~~ | ❎
-4. | [83. 删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/), while cur and cur.next: <br>[82. 删除排序链表中的重复元素 II - 删除所有含有重复数字的节点](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/) <br> &nbsp; dHead = ListNode(0), dHead.next = head, pre,cur = dHead,head; <br>&nbsp; `while cur: pre.next = cur.next` 跳过重复部分 | ❎
-5. | [如何实现LRU](http://localhost:5000/lc/#review-shop), 双向链表+Dict+Size+Cap <br> class DLinkedNode(4), removeTail, moveToHead, addToHead, removeNode | ✔️❎
-6. | [125. 验证回文串](https://leetcode-cn.com/problems/valid-palindrome/), while, while left < right and not s[left].isalnum(): <br><br> 扩展: [5. 最长回文子串 dp](https://leetcode-cn.com/problems/longest-palindromic-substring/), 枚举长度 <br> &nbsp; for l in range(n): for i in n: dp[i][j] = (dp[i + 1][j - 1] and s[i] == s[j]) | <br>❎
-7. | 判断二叉树是否对称 <br> &nbsp; class TreeNode: def \_\_init\_\_(self, x): <br> &nbsp; isSymmetricHelper(left.left, right.right) and isSymmetricHelper(left.right, right.left) | <br>❎
-8. | [98. 验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/), while stack or root: while root | ❎
-9. | 找出数组里三个数相乘最大的那个（有正有负）| ❎
-10. | 做题：两个十六进制数的加法 | ❎
-11. | [93. 复原IP地址](https://leetcode-cn.com/problems/restore-ip-addresses/), `".".join(['1','2','3','4']) == '1.2.3.4'`,&nbsp; `ord("a") = 97` <br> &nbsp; dfs(seg\_id, seg\_start) for seg\_end in range(seg\_start, len(s)): <br> &nbsp;&nbsp; if 0 < addr <= 0xFF（11111111==255): | ✔️❎
-12. | [202. 快乐数](https://leetcode-cn.com/problems/happy-number/), `divmod(79, 10) = 7,9;  while n > 0: n, digit = divmod(n, 10)` | ❎
-13. | 快排归并手撕 for i in range(l, r+1): nums[i] = arr[i - l] | ❎
-14. | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) dp = [[0] * (n + 1) for _ in range(m + 1)] <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if text1[i - 1] == text2[j - 1]: dp[i][j] = dp[i-1][j-1] + 1 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else: dp[i][j] = max(dp[i-1][j], dp[i][j-1]) | <br>❎
-15. | [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/), occ=set(); <br>&nbsp; for l in range(n): remove(i-1), while r+1 < n and s[r+1] not in occ: add(r+1) | ❎
-16. | 405-数字转换为十六进制数, bin(dec), oct(dec), hex(dec), int('0b10000', 2) | ❎
-17. | [67. 二进制求和](https://leetcode-cn.com/problems/add-binary/)， for i, j in zip(a[::-1], b[::-1]):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s = int(i) + int(j) + carry, r = str(s % 2) + r, carry = s // 2 <br><br> list(zip([1,2,3], [4,5,6])) == [(1, 4), (2, 5), (3, 6)]| <br>❎
-18. | [4. 寻找两个正序数组的中位数 - hard](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/) , 二分查找 O(log (m+n)) , k/2-1=7/2−1=2 <br> def getKthElement(k): <br> A: 1 3 4 9 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑<br>B: `1 2 3` 4 5 6 7 8 9<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑<br>k=k-k/2=4, 下一个位置是 k/2-1 = 4/2-1 = 1 | <br>✔️<br>❎
-19. | [剑指 Offer 55 - II. 平衡二叉树](https://leetcode-cn.com/problems/ping-heng-er-cha-shu-lcof/) <br> &nbsp; (1). abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 <br> &nbsp; (2). self.isBalanced(root.left) and self.isBalanced(root.right) | <br>❎
-20. | [155. 最小栈](https://leetcode-cn.com/problems/min-stack/), self.stack = [], self.min_stack = [float('inf')] | ❎
-21. | 非递归单链表反转 现场手写 | ❎
-22. | [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/), i = inorder.index(preorder[0]) | ❎ 
-23. | 全排列, def dfs(x): if x == len(c) - 1: res.append(''.join(c)) <br> &nbsp;&nbsp;&nbsp;&nbsp; for i in range(first, n): | ❎
-24. | [1262. 可被三整除的最大和](https://leetcode-cn.com/problems/greatest-sum-divisible-by-three/), [题解](https://leetcode-cn.com/problems/greatest-sum-divisible-by-three/solution/ti-jie-5265-ke-bei-san-zheng-chu-de-zui-da-he-by-z/)<br> &nbsp;&nbsp;贪心+逆向思维：<br> &nbsp;&nbsp; a = [x for x in nums if x % 3 == 0] <br> &nbsp;&nbsp; b = sorted([x for x in nums if x % 3 == 1], reverse=True)<br>&nbsp;&nbsp; c = sorted([x for x in nums if x % 3 == 2], reverse=True) | <br><br>❎
-27. | 两千万个文件找最小的一千个（答错了，应该用大顶堆，答成了小顶堆）| ❎
-28. | 10亿个数中找出最大的10000个数? <br><br> &nbsp;&nbsp;&nbsp;&nbsp; 将1亿个数据分成100份，每份100万个数据，找到每份数据中最大的10000个，最后在剩下的100*10000个数据里面找出最大的10000个 | <br> 分治法
-29. | 1000个数据，查找出现次数最多的k个数字 <br><br> 我们首先一样是要把这十亿个数分成很多份。例如 1000份，每份 10万。然后使用 HashMap<int,int> 来统计。在每一次的统计中，我们可以找出最大的100个数？ 这样100\*10000 可以 快排序 解决 | 1. 分治法HashMap <br><br> 2. 位图法Bitmap |
-30. | [239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/), [题解](https://leetcode-cn.com/problems/sliding-window-maximum/solution/hua-dong-chuang-kou-zui-da-zhi-by-leetcode-3/) 双端队列 <br> &nbsp;(1). # init deque and output: &nbsp;&nbsp;while deq and nums[i] > nums[`deq[-1]`]: deq.pop() <br> &nbsp;(2). # build output: &nbsp;&nbsp;&nbsp;&nbsp;for i in range(k, n): | <br> ✔️❎
 
 ### 3.0 LRU
 
