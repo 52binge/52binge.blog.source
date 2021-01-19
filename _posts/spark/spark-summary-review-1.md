@@ -53,7 +53,7 @@ repartition vs coalesce vs coalesce in sql
 No. | Title | Article
 :---: | --- | ---
 0. | Hive杀招 |  [再次分享！Hive调优，数据工程师成神之路](http://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247493676&idx=1&sn=1658835f7c595cce105022e70640e020&chksm=cf37da21f8405337445ce6d8edbe4640b1a6dbd7903dfd6ac7cd2edbd83394a372bd2e3b9997&scene=21#wechat_redirect)
-0 | Hadoop面试杀招 | [Hadoop高频考点，正在刷新你的认知！](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247493886&idx=1&sn=2cee4ece5c7cc87895d9e1a1b2fb440f&chksm=cf37daf3f84053e51cd0323f1ec9114ca0ec159a9451dd53a4afde5a7c6f1cf48f12d7999ef0&scene=21#wechat_redirect)
+0 | HadoopReview杀招 | [Hadoop高频考点，正在刷新你的认知！](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247493886&idx=1&sn=2cee4ece5c7cc87895d9e1a1b2fb440f&chksm=cf37daf3f84053e51cd0323f1ec9114ca0ec159a9451dd53a4afde5a7c6f1cf48f12d7999ef0&scene=21#wechat_redirect)
 0. | [Apache Parquet和Apache Avro](https://www.jianshu.com/p/dacb91e2c1b1) |
 0. | RDD是分布式的Java对象的集合 <br> DataFrame是分布式的Row对象的集合 | [RDD、DataFrame和DataSet的区别](https://www.jianshu.com/p/c0181667daa0) <br> [persist、cache和checkpoint的区别与联系](https://blog.csdn.net/Vector97/article/details/103446974) 
 3. | Data Warehouse | [2020 大数据/数仓/数开 Interview Questions](https://mp.weixin.qq.com/s/pwyus1xfX7QAz5MtecveZw)
