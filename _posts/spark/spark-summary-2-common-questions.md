@@ -1,6 +1,6 @@
 ---
 top: 8
-title: Spark Review Summary 2
+title: Spark Summary 2 - Q&A
 toc: true
 date: 2021-01-08 07:07:21
 categories: [spark]
@@ -21,6 +21,7 @@ No. | Title | Flag
 0. | [SparkSql - 结构化数据处理 (上)](/2019/08/25/spark/spark-aura-9.1-SparkSql/) |
 0. | [Spark Container Executor task之间的关系](https://www.cnblogs.com/yanghaolie/p/6909640.html) |
 0. | [Spark 漫画 全面解释Spark企业调优点](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247494393&idx=1&sn=4869549081ca75250b6dfdc84af43418&chksm=cf37d8f4f84051e2d8fd073f21d18fd97f9f9ec95317ccde679fffd0349e8fee0e8bf3a8c9e6&scene=21#wechat_redirect) |
+0 | [Spark内核及调优](https://www.bilibili.com/video/BV1fE411E7Ak?p=26) |
 &nbsp; | |
 1. | RDD 属性？  5大属性 | ❎
 2. | 算子分为哪几类(RDD支持哪几种类型的操作) &nbsp;&nbsp;&nbsp;&nbsp; 1. Transformation （lazy模式）2. Action | ❎
