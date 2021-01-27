@@ -4,7 +4,8 @@ title: Coding
 
 <!--# [Sea](https://leetcode-cn.com/company/shopee/)-->
 
-[LCP 18. 早餐组合](https://leetcode-cn.com/problems/2vYnGI/), [LCP 19. 秋叶收藏集](https://leetcode-cn.com/problems/UlBDOe/), [sort与sorted的区别](https://www.cnblogs.com/clement-jiao/p/9095699.htm)
+- [Leetcode 分类总结](https://lefttree.gitbooks.io/leetcode-categories/content/DP/1d_dp.html)
+- [LCP 18. 早餐组合](https://leetcode-cn.com/problems/2vYnGI/), [LCP 19. 秋叶收藏集](https://leetcode-cn.com/problems/UlBDOe/), [sort与sorted的区别](https://www.cnblogs.com/clement-jiao/p/9095699.htm)
 
 ```python
 # "abc".zfill(5)  00abc
