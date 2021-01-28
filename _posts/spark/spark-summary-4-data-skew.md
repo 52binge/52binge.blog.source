@@ -80,7 +80,125 @@ When **each task of stage1** starts to run, it will first perform shuffle read o
 
 After `stage1 executes the reduceByKey operator, it calculates the final wordCounts RDD`, and then executes the collect operator to pull all the data to the Driver for us to traverse and print out.
 
+## 4. data skew - distribution of keys 
 
+No. | View the data distribution of keys that cause data skew
+:---: | :---
+1. | If the data skew caused by the group by and join statements in Spark SQL, then query the key distribution of the table used in SQL Happening. 
+2. | If the data skew is caused by the shuffle operator on Spark RDD, you can view the key distribution in the Spark job, such as `RDD.countByKey()`.  Then, collect/take, see the distribution of the keys.
+
+> For example, Word Count
+>
+> we can first sample 10% of the sample data for pairs, then use the countByKey operator to count the number of occurrences of each key, and finally traverse and print the number of occurrences of each key in the sample data on the client.
+
+```scala
+val sampledPairs = pairs.sample(false, 0.1)
+val sampledWordCounts = sampledPairs.countByKey()
+sampledWordCounts.foreach(println(_))
+```
+
+No. | solutions of the data skew
+:---: | :---
+1. | Improve the parallelism of shuffle operations <br><br> 在对RDD执行shuffle算子时，给shuffle算子传入一个参数，比如reduceByKey(1000)，该参数就设置了这个shuffle算子执行时shuffle read task的数量<br><br>Spark SQL中的shuffle类语句，比如group by、join等，需要设置一个参数，即spark.sql.shuffle.partitions，该参数代表了shuffle read task的并行度，该值默认是200，对于很多场景来说都有点过小。 <br><br> Experience： cannot completely solve the data skew，such as the amount of data a key is 1 million.
+2. | Two-stage aggregation (local aggregation + global aggregation) <br><br> **disadvantages**: only solve aggregate shuffle operations. If it is a shuffle operation of the `join` class, other solutions have to be used.
+3. | Convert reduce join to map join <br><br>**advantages**: The effect is very good for data skew caused by the join operation, because shuffle and data skew will not happen at all. <br> **disadvantages**: only suitable for `a large table and a small table`. After all, we need to broadcast the small table, which `consumes more memory resources`. <br>The driver and each Executor will have a full amount of data of a small RDD in the memory. <br> If the RDD data we broadcast is relatively large, such as 10G or more, then memory overflow may occur. Therefore, it is not suitable for the situation where both are large tables.| 
+
+<img src="/images/spark/spark-data-skew-reduce-by-key.png" width="" alt="Data skew only occurs during the shuffle process." />
+
+```java
+// 第一步，给RDD中的每个key都打上一个随机前缀。
+JavaPairRDD<String, Long> randomPrefixRdd = rdd.mapToPair(
+        new PairFunction<Tuple2<Long,Long>, String, Long>() {
+            private static final long serialVersionUID = 1L;
+            @Override
+            public Tuple2<String, Long> call(Tuple2<Long, Long> tuple)
+                    throws Exception {
+                Random random = new Random();
+                int prefix = random.nextInt(10);
+                return new Tuple2<String, Long>(prefix + "_" + tuple._1, tuple._2);
+            }
+        });
+  
+// 第二步，对打上随机前缀的key进行局部聚合。
+JavaPairRDD<String, Long> localAggrRdd = randomPrefixRdd.reduceByKey(
+        new Function2<Long, Long, Long>() {
+            private static final long serialVersionUID = 1L;
+            @Override
+            public Long call(Long v1, Long v2) throws Exception {
+                return v1 + v2;
+            }
+        });
+  
+// 第三步，去除RDD中每个key的随机前缀。
+JavaPairRDD<Long, Long> removedRandomPrefixRdd = localAggrRdd.mapToPair(
+        new PairFunction<Tuple2<String,Long>, Long, Long>() {
+            private static final long serialVersionUID = 1L;
+            @Override
+            public Tuple2<Long, Long> call(Tuple2<String, Long> tuple)
+                    throws Exception {
+                long originalKey = Long.valueOf(tuple._1.split("_")[1]);
+                return new Tuple2<Long, Long>(originalKey, tuple._2);
+            }
+        });
+  
+// 第四步，对去除了随机前缀的RDD进行全局聚合。
+JavaPairRDD<Long, Long> globalAggrRdd = removedRandomPrefixRdd.reduceByKey(
+        new Function2<Long, Long, Long>() {
+            private static final long serialVersionUID = 1L;
+            @Override
+            public Long call(Long v1, Long v2) throws Exception {
+                return v1 + v2;
+            }
+        });
+
+```
+
+## 5. Convert reduce join to map join
+
+<img src="/images/spark/spark-data-skew-5-join.png" width="750" alt="the smaller RDD directly into the Driver memory through the collect operator, and then create a Broadcast variable" />
+
+code:
+
+```java
+// 首先将数据量比较小的RDD的数据，collect到Driver中来。
+List<Tuple2<Long, Row>> rdd1Data = rdd1.collect()
+// 然后使用Spark的广播功能，将小RDD的数据转换成广播变量，这样每个Executor就只有一份RDD的数据。
+// 可以尽可能节省内存空间，并且减少网络传输性能开销。
+final Broadcast<List<Tuple2<Long, Row>>> rdd1DataBroadcast = sc.broadcast(rdd1Data);
+  
+// 对另外一个RDD执行map类操作，而不再是join类操作。
+JavaPairRDD<String, Tuple2<String, Row>> joinedRdd = rdd2.mapToPair(
+        new PairFunction<Tuple2<Long,String>, String, Tuple2<String, Row>>() {
+            private static final long serialVersionUID = 1L;
+            @Override
+            public Tuple2<String, Tuple2<String, Row>> call(Tuple2<Long, String> tuple)
+                    throws Exception {
+                // 在算子函数中，通过广播变量，获取到本地Executor中的rdd1数据。
+                List<Tuple2<Long, Row>> rdd1Data = rdd1DataBroadcast.value();
+                // 可以将rdd1的数据转换为一个Map，便于后面进行join操作。
+                Map<Long, Row> rdd1DataMap = new HashMap<Long, Row>();
+                for(Tuple2<Long, Row> data : rdd1Data) {
+                    rdd1DataMap.put(data._1, data._2);
+                }
+                // 获取当前RDD数据的key以及value。
+                String key = tuple._1;
+                String value = tuple._2;
+                // 从rdd1数据Map中，根据key获取到可以join到的数据。
+                Row rdd1Value = rdd1DataMap.get(key);
+                return new Tuple2<String, String>(key, new Tuple2<String, Row>(value, rdd1Value));
+            }
+        });
+  
+// 这里得提示一下。
+// 上面的做法，仅仅适用于rdd1中的key没有重复，全部是唯一的场景。
+// 如果rdd1中有多个相同的key，那么就得用flatMap类的操作，在进行join的时候不能用map，而是得遍历rdd1所有数据进行join。
+// rdd2中每条数据都可能会返回多条join后的数据。
+```
+
+> 方案实践经验：曾经开发一个数据需求的时候，发现一个join导致了数据倾斜。优化之前，作业的执行时间大约是60分钟左右；使用该方案优化之后，执行时间缩短到10分钟左右，性能提升了6倍。
+> 
+> Other Solution 1: Use Hive ETL to preprocess data
+> Other Solution 2: Filter a few keys that cause skew
 
 ## Reference
 
