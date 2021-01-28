@@ -21,7 +21,18 @@ No. | Question | Flag
 4. | [178. Rank Scores](https://leetcode-cn.com/problems/rank-scores/),  摘要: [专用窗口函数rank, dense_rank, row_number有什么区别呢？](https://leetcode-cn.com/problems/rank-scores/solution/tu-jie-sqlmian-shi-ti-jing-dian-pai-ming-wen-ti-by/) <br><br> [《通俗易懂的学会：SQL窗口函数》](https://mp.weixin.qq.com/s?__biz=MzAxMTMwNTMxMQ==&mid=2649247566&idx=1&sn=f9c7018c299498673b38221db2ecd5cd&chksm=835fc77eb4284e68b7528fd7f75eedb8868a6740704af8559f8a5cbdd2867a49ffa21bf4e531&token=426730634&lang=zh_CN#rd)<br><br> &nbsp;&nbsp; select score, **dense_rank() over(order by Score desc)** as Ranking from Scores;
  | 
 5. | [180. Consecutive Numbers](https://leetcode-cn.com/problems/consecutive-numbers/), <br> &nbsp;&nbsp; `l1.Id=l2.Id-1 AND l2.Id=l3.Id-1 AND l1.Num=l2.Num AND l2.Num=l3.Num` | ❎
-6. | [184. Department Highest Salary](https://leetcode-cn.com/problems/department-highest-salary/), (Employee.DepartmentId , Salary) IN | ❎
+6. | [185 Department Top Three Salaries](https://leetcode-cn.com/problems/department-top-three-salaries), dense_rank() over (partition by x order by y desc) | ❎  
+7. | [184. Department Highest Salary](https://leetcode-cn.com/problems/department-highest-salary/), (Employee.DepartmentId , Salary) IN | ❎
+8. | .. | ..
+9. | [196. Delete Duplicate Emails](https://leetcode-cn.com/problems/delete-duplicate-emails/), &nbsp;&nbsp; ["delete" 和 ">" 的解释，推荐！](https://leetcode-cn.com/problems/delete-duplicate-emails/solution/dui-guan-fang-ti-jie-zhong-delete-he-de-jie-shi-by/) | ❎
+10. | [181. Employees Earning More Than Their Managers](https://leetcode-cn.com/problems/employees-earning-more-than-their-managers/), 1. 笛卡尔积+WHERE 2. 自连接+ON | ❎
+
+```sql
+DELETE p1 FROM Person p1,
+    Person p2
+WHERE
+    p1.Email = p2.Email AND p1.Id > p2.Id
+```
 
 ### 176. Second Highest Salary
 
@@ -108,6 +119,28 @@ WHERE
 ;
 ```
 
+### 185. Department Top Three Salaries
+
+```sql
+# Write your MySQL query statement below
+SELECT 
+    t2.Name as Department, 
+    t1.Name as Employee, 
+    t1.Salary
+FROM
+(
+SELECT DepartmentId,Name,Salary
+FROM (
+   SELECT *, 
+          dense_rank() over (partition by DepartmentId
+                       order by Salary desc) as ranking
+   FROM Employee) as a
+WHERE ranking <= 3
+) t1
+JOIN Department t2
+ON t1.DepartmentId = t2.Id
+```
+
 ### 184. Department Highest Salary
 
 ```sql
@@ -127,6 +160,19 @@ WHERE
             Employee
         GROUP BY DepartmentId
 	)
+;
+```
+
+
+### 181. Employees Earning More Than Their Managers
+
+
+```sql
+SELECT
+     a.NAME AS Employee
+FROM Employee AS a JOIN Employee AS b
+     ON a.ManagerId = b.Id
+     AND a.Salary > b.Salary
 ;
 ```
 
