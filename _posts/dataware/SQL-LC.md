@@ -26,6 +26,9 @@ No. | Question | Flag
 8. | .. | ..
 9. | [196. Delete Duplicate Emails](https://leetcode-cn.com/problems/delete-duplicate-emails/), &nbsp;&nbsp; ["delete" 和 ">" 的解释，推荐！](https://leetcode-cn.com/problems/delete-duplicate-emails/solution/dui-guan-fang-ti-jie-zhong-delete-he-de-jie-shi-by/) | ❎
 10. | [181. Employees Earning More Than Their Managers](https://leetcode-cn.com/problems/employees-earning-more-than-their-managers/), 1. 笛卡尔积+WHERE 2. 自连接+ON | ❎
+11. | [1179. Reformat Department Table](https://leetcode-cn.com/problems/reformat-department-table/), CASE WHEN condition1 THEN result1 END  |
+12. | [182. Duplicate Emails](https://leetcode-cn.com/problems/duplicate-emails/), 使用 GROUP BY 和 HAVING 条件 | ❎
+13. | [197. Rising Temperature](https://leetcode-cn.com/problems/rising-temperature/), JOIN ... ON DATEDIFF(w1.recordDate, w2.recordDate) = 1 | 
 
 ```sql
 DELETE p1 FROM Person p1,
@@ -176,9 +179,75 @@ FROM Employee AS a JOIN Employee AS b
 ;
 ```
 
+### 1179. Reformat Department Table
+
+```sql
+# Write your MySQL query statement below
+select id,
+    sum(case month when 'Jan' then revenue end) as Jan_Revenue,
+    sum(case month when 'Feb' then revenue end) as Feb_Revenue,
+    sum(case month when 'Mar' then revenue end) as Mar_Revenue,
+    sum(case month when 'Apr' then revenue end) as Apr_Revenue,
+    sum(case month when 'May' then revenue end) as May_Revenue,
+    sum(case month when 'Jun' then revenue end) as Jun_Revenue,
+    sum(case month when 'Jul' then revenue end) as Jul_Revenue,
+    sum(case month when 'Aug' then revenue end) as Aug_Revenue,
+    sum(case month when 'Sep' then revenue end) as Sep_Revenue,
+    sum(case month when 'Oct' then revenue end) as Oct_Revenue,
+    sum(case month when 'Nov' then revenue end) as Nov_Revenue,
+    sum(case month when 'Dec' then revenue end) as Dec_Revenue
+from Department
+group by id
+```
+
+CASE WHEN condition1 THEN result1 END 
+
+```sql
+CASE
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    WHEN conditionN THEN resultN
+    ELSE result
+END;
+
+SELECT CustomerName, City, Country
+FROM Customers
+ORDER BY
+(CASE
+    WHEN City IS NULL THEN Country
+    ELSE City
+END);
+
+CASE case_value
+    WHEN when_value THEN statement_list
+    [WHEN when_value THEN statement_list] ...
+    [ELSE statement_list]
+END CASE
+
+CASE
+    WHEN search_condition THEN statement_list
+    [WHEN search_condition THEN statement_list] ...
+    [ELSE statement_list]
+END CASE
+```
+
+### 197. Rising Temperature
+
+```sql
+SELECT
+    w1.id AS 'Id'
+FROM
+    weather as w1
+        JOIN
+    weather as w2 
+ON DATEDIFF(w1.recordDate, w2.recordDate) = 1
+AND w1.Temperature > w2.Temperature;
+```
+
 ## Reference
 
 - [Mysql自定义变量的使用](https://www.jianshu.com/p/357a02fb2d64)
 - [常见的SQL面试题：经典50题 - 知乎](https://zhuanlan.zhihu.com/p/38354000)
+- [Spark SQL 和 传统 SQL 的区别](https://blog.csdn.net/Han_Lin_/article/details/86541482)
 
 

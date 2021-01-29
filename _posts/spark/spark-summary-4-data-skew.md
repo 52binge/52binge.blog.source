@@ -105,53 +105,54 @@ No. | solutions of the data skew
 
 <img src="/images/spark/spark-data-skew-reduce-by-key.png" width="" alt="Data skew only occurs during the shuffle process." />
 
-```java
-// 第一步，给RDD中的每个key都打上一个随机前缀。
-JavaPairRDD<String, Long> randomPrefixRdd = rdd.mapToPair(
-        new PairFunction<Tuple2<Long,Long>, String, Long>() {
-            private static final long serialVersionUID = 1L;
-            @Override
-            public Tuple2<String, Long> call(Tuple2<Long, Long> tuple)
-                    throws Exception {
-                Random random = new Random();
-                int prefix = random.nextInt(10);
-                return new Tuple2<String, Long>(prefix + "_" + tuple._1, tuple._2);
-            }
-        });
-  
-// 第二步，对打上随机前缀的key进行局部聚合。
-JavaPairRDD<String, Long> localAggrRdd = randomPrefixRdd.reduceByKey(
-        new Function2<Long, Long, Long>() {
-            private static final long serialVersionUID = 1L;
-            @Override
-            public Long call(Long v1, Long v2) throws Exception {
-                return v1 + v2;
-            }
-        });
-  
-// 第三步，去除RDD中每个key的随机前缀。
-JavaPairRDD<Long, Long> removedRandomPrefixRdd = localAggrRdd.mapToPair(
-        new PairFunction<Tuple2<String,Long>, Long, Long>() {
-            private static final long serialVersionUID = 1L;
-            @Override
-            public Tuple2<Long, Long> call(Tuple2<String, Long> tuple)
-                    throws Exception {
-                long originalKey = Long.valueOf(tuple._1.split("_")[1]);
-                return new Tuple2<Long, Long>(originalKey, tuple._2);
-            }
-        });
-  
-// 第四步，对去除了随机前缀的RDD进行全局聚合。
-JavaPairRDD<Long, Long> globalAggrRdd = removedRandomPrefixRdd.reduceByKey(
-        new Function2<Long, Long, Long>() {
-            private static final long serialVersionUID = 1L;
-            @Override
-            public Long call(Long v1, Long v2) throws Exception {
-                return v1 + v2;
-            }
-        });
-
+```python
+import sys
+import random 
+from pyspark import SparkContext, SparkConf
+from operator import add
+# sc, random.randint(0,2) # 0 or 1 0r 2
 ```
+
+<details>
+<summary>WordCounts reduceByKey More Info...</summary>
+
+```python
+# read data from text file and split each line into words
+input_file = sc.textFile("/Users/blair/Desktop/input.txt", 2)
+words=input_file.flatMap(lambda line: line.split(" "))
+# words.collect() # ['China', 'Singapore', 'bbb', 'Singapore', 'hello', 'haha', 'hello', 'world'] 
+# words.first()
+```
+
+
+```python
+# count the occurrence of each word
+wordCounts = words.map(lambda word: (f'{random.randint(0,2)}_{word}', 1)).reduceByKey(add)
+wordCounts.take(10)
+```
+
+    [('0_Singapore', 3),
+     ('2_bbb', 1),
+     ('0_hello', 1),
+     ('2_haha', 1),
+     ('0_world', 1),
+     ('1_ShangHai', 1),
+     ('0_China', 1),
+     ('2_Singapore', 4),
+     ('1_Singapore', 1),
+     ('2_hello', 1)]
+
+
+```python
+words_recover = wordCounts.map(lambda x: (x[0][x[0].find('_')+1:], x[1]))
+
+word_count_ret = words_recover.reduceByKey(add)
+word_count_ret.take(5)
+```
+</details>
+
+    [('world', 1), ('ShangHai', 1), ('China', 1), ('Singapore', 8), ('bbb', 1)]
+
 
 ## 5. Convert reduce join to map join
 
