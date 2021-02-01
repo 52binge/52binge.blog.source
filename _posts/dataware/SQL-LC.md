@@ -244,10 +244,44 @@ ON DATEDIFF(w1.recordDate, w2.recordDate) = 1
 AND w1.Temperature > w2.Temperature;
 ```
 
+
+
+<details>
+<summary>EVT Topic</summary>
+## Data Warehouse
+
+建模： 说白了就是表字段设计
+
+1. 了解业务场景
+
+
+平台维度
+  平台的收入，平台订单完成率 平台订单数量变化
+最近7日，15日，30日，60日，90日
+
+建模
+
+主题确定，维度退化，轻度聚合
+
+如何把建模说的高大上一些：
+
+atlas
+
+jdbc会把tinyint 认为是java.sql.Types.BIT，然后sqoop就会转为Boolean了。
+在连接上加上一句话tinyInt1isBit=false
+
+Mysql中存在tinyint(1)时，在数据导入到HDFS时，该字段默认会被转化为boolean数据类型。导致数据内容丢失。
+
+tinyInt1isBit=false
+
+[sqoop从mysql导入hive中tinyint类型变成了boolean类型的问题](https://blog.csdn.net/qq_36579777/article/details/86475680?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control)
+</details>
+
 ## Reference
 
 - [Mysql自定义变量的使用](https://www.jianshu.com/p/357a02fb2d64)
 - [常见的SQL面试题：经典50题 - 知乎](https://zhuanlan.zhihu.com/p/38354000)
 - [Spark SQL 和 传统 SQL 的区别](https://blog.csdn.net/Han_Lin_/article/details/86541482)
+- [MySQL root密码忘记，原来还有更优雅的解法！](https://www.cnblogs.com/ivictor/p/9243259.html)
 
 

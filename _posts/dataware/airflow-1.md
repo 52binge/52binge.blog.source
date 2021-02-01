@@ -147,8 +147,22 @@ AIRFLOW_CTX_EXECUTION_DATE=2021-01-24T00:00:00+00:00
 [2021-01-24 20:04:35,972] {taskinstance.py:1142} INFO - Marking task as SUCCESS. dag_id=example_hello_world_dag, task_id=sleep_task, execution_date=20210124T000000, start_date=20210124T120430, end_date=20210124T120435
 ```
 
+#### airflow如何设置Dag和Dag之间的依赖啊？
+
+1. 可以自己写一个脚本来检测父dag的状态，来达到dag之间的依赖
+2. ExternalTaskSensor 高级特性，监工
+
 ## Reference
 
+- [AirFlow高阶，两个启动时间不同DAG中的任务依赖关联demo](https://blog.csdn.net/qq_37714755/article/details/110134616)
+- [【 airflow 实战系列】 基于 python 的调度和监控工作流的平台](https://cloud.tencent.com/developer/article/1004927?from=information.detail.airflow%20dag%E4%B9%8B%E9%97%B4%E4%BE%9D%E8%B5%96)
+- [用户画像—Airflow作业调度(ETL)](https://zhuanlan.zhihu.com/p/78847089)
+- [闲聊调度系统 Apache Airflow](https://zhuanlan.zhihu.com/p/100526494)
+- [十三、回填任务--BackfillJob](https://zhuanlan.zhihu.com/p/128672715)
+- [ETL principles](https://zhuanlan.zhihu.com/p/264805569)
+- [Airflow 使用及原理分析](https://zhuanlan.zhihu.com/p/90282578)
+- [data engineer 使用luigi 还是 airflow比较好？](https://www.zhihu.com/question/46573431)
+- [airflow官方教程——一个简单案例](https://zhuanlan.zhihu.com/p/74339976)
 - [Airflow 中文文档](https://airflow.apachecn.org/#/zh/tutorial)
 - [AirFlow常用命令](https://www.cnblogs.com/cord/p/9437556.html)
 - [[AirFlow]AirFlow使用指南三 第一个DAG示例](https://developer.aliyun.com/article/632137)
