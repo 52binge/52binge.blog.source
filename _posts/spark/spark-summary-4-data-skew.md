@@ -203,8 +203,11 @@ JavaPairRDD<String, Tuple2<String, Row>> joinedRdd = rdd2.mapToPair(
 
 ## Reference
 
+- [Hive数仓建表该选用ORC还是Parquet，压缩选LZO还是Snappy？](https://zhuanlan.zhihu.com/p/257917645)
 - [Spark实践 -- 性能优化基础](https://www.cnblogs.com/stillcoolme/p/10576563.html)
-
+- [尚硅谷2021迎新版大数据Spark从入门到精通](https://www.bilibili.com/video/BV11A411L7CK?p=184)
+- [尚硅谷大数据电商数仓V3.0版本教程（数据仓库项目开发实战）](https://www.bilibili.com/video/BV1Hp4y1z7aZ?p=79)
+- [Spark Sql 与 MySql 使用 group by 的差别](https://blog.csdn.net/sinat_36231857/article/details/88819553)
 
 
 

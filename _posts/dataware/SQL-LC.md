@@ -29,6 +29,52 @@ No. | Question | Flag
 11. | [1179. Reformat Department Table](https://leetcode-cn.com/problems/reformat-department-table/), CASE WHEN condition1 THEN result1 END  |
 12. | [182. Duplicate Emails](https://leetcode-cn.com/problems/duplicate-emails/), 使用 GROUP BY 和 HAVING 条件 | ❎
 13. | [197. Rising Temperature](https://leetcode-cn.com/problems/rising-temperature/), JOIN ... ON DATEDIFF(w1.recordDate, w2.recordDate) = 1 | 
+14. | [601. Human Traffic of Stadium](https://leetcode-cn.com/problems/human-traffic-of-stadium/) | 未
+15. | ~~[183. 从不订购的客户](https://leetcode-cn.com/problems/customers-who-never-order/)~~ NOT IN | ❎
+16. | [627. Swap Salary 变更性别](https://leetcode-cn.com/problems/swap-salary/)， sex=`CASE WHEN sex='m' THEN 'f' ELSE 'm' END`; | ❎
+17. | [626. Exchange Seats 换座位](https://leetcode-cn.com/problems/exchange-seats/), (CASE WHEN MOD(id,2) END) AS id FROM table1, 5  | ❎
+
+### 627. Swap Salary 变更性别
+
+```sql
+UPDATE salary
+SET
+    sex = 
+        CASE
+            WHEN sex='m' THEN 'f'
+            ELSE 'm'
+        END;
+
+学习要点：     
+SELECT OrderID, Quantity,
+CASE 
+  WHEN Quantity > 30 THEN 'The quantity is greater than 30'
+  WHEN Quantity = 30 THEN 'The quantity is 30'
+  ELSE 'The quantity is under 30'
+END AS QuantityText
+FROM OrderDetails;
+```
+
+### 626. Exchange Seats 换座位
+
+```sql
+SELECT
+    (CASE
+        WHEN MOD(id, 2) != 0 AND counts != id THEN id + 1
+        WHEN MOD(id, 2) != 0 AND counts = id THEN id
+        ELSE id - 1
+    END) AS id,
+    student
+FROM
+    seat,
+    (SELECT
+        COUNT(*) AS counts
+    FROM
+        seat) AS seat_counts
+ORDER BY id ASC;
+```
+
+---
 
 ```sql
 DELETE p1 FROM Person p1,

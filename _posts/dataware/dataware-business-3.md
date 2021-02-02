@@ -92,3 +92,6 @@ DWS：按照借据号 Group, 借据号是最小的粒度了.
 ## Reference
 
 - [浅谈银行数据仓库：金融主题层建设篇](https://www.infoq.cn/article/gsmwfqq7kjsg0k9adwqr)
+- [数据仓库-建模实践](https://www.bilibili.com/video/BV1Cz4y1k7y4/?spm_id_from=333.788.videocard.0)
+- [独一无二的数据仓库建模指南（升级版）](https://www.bilibili.com/video/av45576201/)
+- [大数据项目之离线数仓2.0项目实战教程](https://www.bilibili.com/video/BV1t54y1r7Mc?p=156)
