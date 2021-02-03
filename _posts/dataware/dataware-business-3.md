@@ -95,6 +95,23 @@ hadoop - Sqoop导入将TINYINT转换为BOOLEAN
 jdbc:mysql://127.0.0.1:3306/nfl?tinyInt1isBit=false
 
 comment '任务日志-临时表，用于将数据通过动态分区载入ods_task_log中' ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n' STORED AS TEXTFILE; load data local inpath '/kkb/datas/gamecenter/ods_task_log.txt' overwrite into table tmp_ods_task_log; set hive.exec.dynamic.partition=true; set hive.exec.dynamic.partition.mode=nostrict; set hive.exec.max.dynamic.partitions.pernode=1000; insert overwrite table ods_task_log partition(part_date) select plat_id,server_id,channel_id,user_id,role_id,role_name,event_time,task_type,task_id,cost_time,op_type,level_limit,award_exp,award_monetary,award_item,death_count,award_attribute, from_unixtime(event_time,'yyyy-MM-dd') as part_date from tmp_ods_task_log; "
+
+
+```python
+a = [
+    {"row_id": 2, "text": "t1"},
+    {"row_id": 1, "text": "t2"},
+    {"row_id": 2, "text": "t3"},
+    {"row_id": 2, "text": "t1"}
+]
+
+ret = pydash.group_by(a, ["row_id"])
+ret
+
+# {2: [{'row_id': 2, 'text': 't1'}, {'row_id': 2, 'text': 't3'}], 1: [{'row_id': 1, 'text': 't2'}]}
+```
+
+[pydash_groyp_by](https://pydash.readthedocs.io/en/latest/api.html?highlight=group%20by#pydash.collections.group_by)
 </details>
 
 ## Reference
