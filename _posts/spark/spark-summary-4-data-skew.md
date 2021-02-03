@@ -204,6 +204,7 @@ JavaPairRDD<String, Tuple2<String, Row>> joinedRdd = rdd2.mapToPair(
 ## Reference
 
 - [https://github.com/wwcom614/Spark/blob/master/src/main/scala/com/ww/rdd/performance_optimize/BroadcastMapJoins.scala](https://github.com/wwcom614/Spark/blob/master/src/main/scala/com/ww/rdd/performance_optimize/BroadcastMapJoins.scala)
+- [每个Spark工程师都应该知道的](https://mp.weixin.qq.com/s/HusOqNA-45lpf5GduLz-pA)
 - [Spark的五种JOIN策略解析](https://blog.csdn.net/jmx_bigdata/article/details/109480551?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs)
 - [SparkSQL中的三种Join及其具体实现（broadcast join、shuffle hash join和sort merge join](https://blog.csdn.net/wlk_328909605/article/details/82933552?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs)
 - [Spark Join——Broadcast Join、Shuffle Hash Join、Sort Merge Join](https://blog.csdn.net/lb812913059/article/details/83313853?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs)
