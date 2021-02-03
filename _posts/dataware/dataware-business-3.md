@@ -87,6 +87,14 @@ DWS：按照借据号 Group, 借据号是最小的粒度了.
 
 不同渠道，产品，利率段
 放款金额，不同区间的，用户数
+
+
+分隔符 \n -> 001
+通过mysql自动识别Hive表结构
+hadoop - Sqoop导入将TINYINT转换为BOOLEAN
+jdbc:mysql://127.0.0.1:3306/nfl?tinyInt1isBit=false
+
+comment '任务日志-临时表，用于将数据通过动态分区载入ods_task_log中' ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n' STORED AS TEXTFILE; load data local inpath '/kkb/datas/gamecenter/ods_task_log.txt' overwrite into table tmp_ods_task_log; set hive.exec.dynamic.partition=true; set hive.exec.dynamic.partition.mode=nostrict; set hive.exec.max.dynamic.partitions.pernode=1000; insert overwrite table ods_task_log partition(part_date) select plat_id,server_id,channel_id,user_id,role_id,role_name,event_time,task_type,task_id,cost_time,op_type,level_limit,award_exp,award_monetary,award_item,death_count,award_attribute, from_unixtime(event_time,'yyyy-MM-dd') as part_date from tmp_ods_task_log; "
 </details>
 
 ## Reference

@@ -160,12 +160,12 @@ word_count_ret.take(5)
 
 code:
 
-```java
+```python
 // 首先将数据量比较小的RDD的数据，collect到Driver中来。
-List<Tuple2<Long, Row>> rdd1Data = rdd1.collect()
+rdd1Data = rdd1.collect()
 // 然后使用Spark的广播功能，将小RDD的数据转换成广播变量，这样每个Executor就只有一份RDD的数据。
 // 可以尽可能节省内存空间，并且减少网络传输性能开销。
-final Broadcast<List<Tuple2<Long, Row>>> rdd1DataBroadcast = sc.broadcast(rdd1Data);
+rdd1DataBroadcast = sc.broadcast(rdd1Data)
   
 // 对另外一个RDD执行map类操作，而不再是join类操作。
 JavaPairRDD<String, Tuple2<String, Row>> joinedRdd = rdd2.mapToPair(
@@ -203,6 +203,11 @@ JavaPairRDD<String, Tuple2<String, Row>> joinedRdd = rdd2.mapToPair(
 
 ## Reference
 
+- [https://github.com/wwcom614/Spark/blob/master/src/main/scala/com/ww/rdd/performance_optimize/BroadcastMapJoins.scala](https://github.com/wwcom614/Spark/blob/master/src/main/scala/com/ww/rdd/performance_optimize/BroadcastMapJoins.scala)
+- [Spark的五种JOIN策略解析](https://blog.csdn.net/jmx_bigdata/article/details/109480551?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs)
+- [SparkSQL中的三种Join及其具体实现（broadcast join、shuffle hash join和sort merge join](https://blog.csdn.net/wlk_328909605/article/details/82933552?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs)
+- [Spark Join——Broadcast Join、Shuffle Hash Join、Sort Merge Join](https://blog.csdn.net/lb812913059/article/details/83313853?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.baidujs)
+- [spark sql优化：小表大表关联优化 & union替换or & broadcast join](https://blog.csdn.net/zhuiqiuuuu/article/details/79290926)
 - [Hive数仓建表该选用ORC还是Parquet，压缩选LZO还是Snappy？](https://zhuanlan.zhihu.com/p/257917645)
 - [Spark实践 -- 性能优化基础](https://www.cnblogs.com/stillcoolme/p/10576563.html)
 - [尚硅谷2021迎新版大数据Spark从入门到精通](https://www.bilibili.com/video/BV11A411L7CK?p=184)
