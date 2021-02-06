@@ -323,6 +323,10 @@ tinyInt1isBit=false
 [sqoop从mysql导入hive中tinyint类型变成了boolean类型的问题](https://blog.csdn.net/qq_36579777/article/details/86475680?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control)
 </details>
 
+```
+mysql.server restart --init-file=/Users/blair/init.sql
+```
+
 ## Reference
 
 - [Mysql自定义变量的使用](https://www.jianshu.com/p/357a02fb2d64)
