@@ -8,13 +8,240 @@ tags: [sparkSQL]
 
 <img src="/images/spark/spark-sql-core-structure.jpeg" width="650" alt="" />
 
-
 <!-- more -->
-
 
 ## 1. SparkSQL 发展
 
+<details><summary>SparkSQL 发展史</summary>
+
+Version | Title Description
+:---: | :---
+1.0以前 | Shark
+Spark-1.1 | SparkSQL(只是测试性的)  SQL
+Spark<1.3 | DataFrame 称为 SchemaRDD
+Spark-1.3 | SparkSQL(正式版本)+Dataframe API
+Spark-1.4 | 增加窗口分析函数
+Spark-1.5 | SparkSQL 钨丝计划， UDF/UDAF
+Spark-1.6 | SparkSQL 执行的 sql 可以增加注释
+Spark-2.x | SparkSQL+DataFrame+DataSet(正式版本), 引入 SparkSession 统一编程入口
+
+No. | &nbsp;&nbsp;Title&nbsp;&nbsp; | SparkSQL 主要用于进行`结构化数据的处理`。它提供的最核心的编程抽象就是DataFrame.
+:---: | :---: | :---
+1. | 原理 | 将 SparkSQL 转化为 RDD ，然后提交到集群执行
+2. | 作用 | 提供一个编程抽象（DataFrame）并且作为分布式SQL查询引擎。 <br> DataFrame 可据很多源进行构建，包括：结构化的数据文件，Hive中的表，MYSQL，以及RDD 
+3. | 特点 | 1. 容易整合 &nbsp; 2. 统一的数据访问方式 &nbsp; 3. 兼容Hive &nbsp; 4. 标准的数据连接
+.. | spark 1.x | SparkContext sc / SqlContext sqlContextS
+.. | spark 2.x | SparkContext sc / SparkSession spark
+
+</details>
+
+### 1.1 SparkSession 创建
+
+```python
+from pyspark.sql import SparkSession
+
+spark = SparkSession \
+    .builder \
+    .appName("Python Spark SQL basic example") \
+    .config("spark.some.config.option", "some-value") \
+    .enableHiveSupport() // 在classpath中,必须加入一个配置文件 hive-site.xml
+    .getOrCreate()
+    #   hive url       : 源数据库在哪里
+    #   hive warehouse : 真是数据在哪里
+```
+
+<details><summary>SparkSQL 数据抽象</summary> 
+
+### 1.2 SparkSQL 数据抽象
+
+在Spark中，DataFrame是一种以RDD为基础的分布式数据集，类似于传统数据库中的二维表格。DataFrame与RDD的主要区别在于，前者带有schema元信息，即DataFrame所表示的二维表数据集的每一列都带有名称和类型。这使得Spark SQL得以洞察更多的结构信息，从而对藏于DataFrame背后的数据源以及作用于DataFrame之上的变换进行了针对性的优化，最终达到大幅提升运行时效率的目标。
+
+<img src="/images/spark/spark-aura-9.3.1.png" width="700" alt="RDD[Record] == DataFrame == Table, DataFrame 是一种特殊关系的 Dataset, DataSet[Row] = DataFrame" />
+
+<img src="/images/spark/spark-aura-9.3.2.png" width="600" alt="SparkSQL 引入了 DataSet, 提供了编译时类型检测, 面向对象编程API
+" />
+
+[谈谈RDD、DataFrame、Dataset的区别和各自的优势](https://www.cnblogs.com/starwater/p/6841807.html)
+
+<img src="/images/spark/spark-aura-9.3.3.png" width="700" alt="" />
+
+</details>
+
 ## 2. SparkSQL 使用
+
+<details><summary>SparkSQL 一些网络链接</summary> 
+
+No. | Title Author | Desc
+--- | --- | ---
+2. | Apache SparkSQL | [Spark SQL Guide](http://spark.apache.org/docs/latest/sql-getting-started.html)
+3. | SparkSQL | [Spark2.x学习笔记：14、Spark SQL程序设计](https://cloud.tencent.com/developer/article/1010936)
+4. | DataFrame | [good 实际例子演示： Spark2.x学习笔记：14、Spark SQL程序设计](https://cloud.tencent.com/developer/article/1010936)
+5. | DataFrame | [DataFrame常用操作（DSL风格语法），sql风格语法](https://blog.csdn.net/toto1297488504/article/details/74907124)
+6. | SparkSQL | [Spark SQL重点知识总结](https://cloud.tencent.com/developer/article/1448730)
+7. | Create DataFrame | spark1.x：studentRDD.toDF / sqlContext.createDataFrame(studentRDD) / sqlContext.createDataFrame(rowRDD, schema) <br> spark2.x：spark.read.format().load()
+
+</details>
+
+<details><summary>SparkSQL 编写代码多种方式</summary> 
+
+```scala
+// This code works perfectly from Spark 2.x with Scala 2.11
+
+// Import necessary classes
+import org.apache.spark.sql.{Row, SparkSession}
+import org.apache.spark.sql.types.{DoubleType, StringType, StructField, StructType}
+
+// Create SparkSession Object, and Here it's spark
+val spark: SparkSession = SparkSession.builder.master("local").getOrCreate
+val sc = spark.sparkContext // Just used to create test RDDs
+
+// Just used to create test RDDs, Let's an RDD to make it DataFrame
+val rdd = sc.parallelize(
+  Seq(
+    ("first", Array(2.0, 1.0, 2.1, 5.4)),
+    ("test", Array(1.5, 0.5, 0.9, 3.7)),
+    ("choose", Array(8.0, 2.9, 9.1, 2.5))
+  )
+)
+```
+
+**Method 1:** 
+
+Using SparkSession.createDataFrame(RDD obj).
+
+```scala
+val dfWithoutSchema = spark.createDataFrame(rdd)
+
+dfWithoutSchema.show()
++------+--------------------+
+|    _1|                  _2|
++------+--------------------+
+| first|[2.0, 1.0, 2.1, 5.4]|
+|  test|[1.5, 0.5, 0.9, 3.7]|
+|choose|[8.0, 2.9, 9.1, 2.5]|
++------+--------------------+
+```
+
+**Method 2:**
+
+Using SparkSession.createDataFrame(RDD obj) and specifying column names.
+
+```scala
+val dfWithSchema = spark.createDataFrame(rdd).toDF("id", "vals")
+
+dfWithSchema.show()
++------+--------------------+
+|    id|                vals|
++------+--------------------+
+| first|[2.0, 1.0, 2.1, 5.4]|
+|  test|[1.5, 0.5, 0.9, 3.7]|
+|choose|[8.0, 2.9, 9.1, 2.5]|
++------+--------------------+
+```
+
+**Method 3 (Actual answer to the question)**
+
+This way requires the input rdd should be of type RDD[Row].
+
+```scala
+val rowsRdd: RDD[Row] = sc.parallelize(
+  Seq(
+    Row("first", 2.0, 7.0),
+    Row("second", 3.5, 2.5),
+    Row("third", 7.0, 5.9)
+  )
+)
+```
+
+create the schema
+
+```scala
+val schema = new StructType()
+  .add(StructField("id", StringType, true))
+  .add(StructField("val1", DoubleType, true))
+  .add(StructField("val2", DoubleType, true))
+```
+
+Now apply both rowsRdd and schema to createDataFrame()
+
+```scala
+val df = spark.createDataFrame(rowsRdd, schema)
+
+df.show()
++------+----+----+
+|    id|val1|val2|
++------+----+----+
+| first| 2.0| 7.0|
+|second| 3.5| 2.5|
+| third| 7.0| 5.9|
++------+----+----+
+```
+
+[Submitting Applications](http://spark.apache.org/docs/latest/submitting-applications.html)
+
+```bash
+spark-submit \
+--class com.aura.sparksql.StructTypeDFTest \
+--master spark://hadoop02:7077 \
+--driver-memory 512M \
+--executor-memory 512M \
+--total-executor-cores 2 \
+/home/hadoop/original-spark232_1805-1.0-SNAPSHOT.jar \
+/student_sql_out/
+```
+
+</details>
+
+<details><summary>SparkSQL 的数据源操作: to load a json file</summary> 
+
+```python
+df = spark.read.load("examples/src/main/resources/people.json", format="json")
+# Displays the content of the DataFrame to stdout
+df.show()
+# +----+-------+
+# | age|   name|
+# +----+-------+
+# |null|Michael|
+# |  30|   Andy|
+# |  19| Justin|
+# +----+-------+
+df.select("name", "age").write.save("namesAndAges.parquet", format="parquet")
+# Run SQL on files directly
+df = spark.sql("SELECT * FROM parquet.`examples/src/main/resources/users.parquet`")
+```
+
+> 默认情况下保存数据到 HDFS 的数据格式： .snappy.parquet
+> .snappy： 结果保存到 HDFS 上的时候自动压缩： 压缩算法： snappy
+> .parquet： 结果使用一种列式文件存储格式保存
+> parquet / rc / orc / row column
+
+```python
+df = spark.read.load("examples/src/main/resources/users.parquet")
+df.select("name", "favorite_color").write.save("namesAndFavColors.parquet")
+
+# parquet file 默认是这种文件方式 load
+```
+
+举个🌰: spark 安装路径 examples/src/main/resources :
+
+```bash
+# /usr/local/xsoft/spark/examples/src/main/resources [23:06:36]
+➜ ll
+total 88
+drwxr-xr-x@ 5 blair  staff   160B Jun  6 21:34 dir1
+-rw-r--r--@ 1 blair  staff   130B Jun  6 21:34 employees.json
+-rw-r--r--@ 1 blair  staff   240B Jun  6 21:34 full_user.avsc
+-rw-r--r--@ 1 blair  staff   5.7K Jun  6 21:34 kv1.txt
+-rw-r--r--@ 1 blair  staff    49B Jun  6 21:34 people.csv
+-rw-r--r--@ 1 blair  staff    73B Jun  6 21:34 people.json
+-rw-r--r--@ 1 blair  staff    32B Jun  6 21:34 people.txt
+-rw-r--r--@ 1 blair  staff   185B Jun  6 21:34 user.avsc
+-rw-r--r--@ 1 blair  staff   334B Jun  6 21:34 users.avro
+-rw-r--r--@ 1 blair  staff   547B Jun  6 21:34 users.orc
+-rw-r--r--@ 1 blair  staff   615B Jun  6 21:34 users.parquet
+```
+
+</details>
 
 ## 3. SparkSQL 调优
 
@@ -63,6 +290,8 @@ spark.sql("SELECT * FROM people").show()
 ## 4. SparkSQL 运行过程
 
 ## 5. Catalyst
+
+- [Apache Spark RDD vs DataFrame vs DataSet](https://data-flair.training/blogs/apache-spark-rdd-vs-dataframe-vs-dataset/#:~:text=DataFrame%20%E2%80%93%20A%20DataFrame%20is%20a,table%20in%20a%20relational%20database.)
 
 
 No. | Link
