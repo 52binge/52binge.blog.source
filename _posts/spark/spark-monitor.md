@@ -1,12 +1,11 @@
 ---
-top: 8
-title: Spark 任务监控
+title: Spark Monitor
 date: 2021-02-06 15:28:21
 categories: [spark]
 tags: [sparkSQL]
 ---
 
-<img src="/images/spark/spark-sql-core-structure.jpeg" width="650" alt="" />
+<img src="/images/spark/spark-monitor-2.png" width="650" alt="" />
 
 
 <!-- more -->

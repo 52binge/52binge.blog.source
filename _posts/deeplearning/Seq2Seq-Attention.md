@@ -1,5 +1,4 @@
 ---
-top: 1
 title: Seq2Seq and Attention
 toc: true
 date: 2019-06-17 10:00:21
