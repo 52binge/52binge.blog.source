@@ -11,8 +11,10 @@ tags: [sparkSQL]
 <!-- more -->
 
 
+
 ## Reference
 
+- [ganglia监控的搭建部署](https://blog.51cto.com/elain/634728)
 - [前标签：Hadoop+Spark](https://www.cnblogs.com/yy3b2007com/tag/Hadoop%2BSpark/default.html?page=2)
 - [通过Spark Rest 服务监控Spark任务执行情况](https://www.cnblogs.com/Swidasya/p/7482679.html)
 - [spark任务监控](http://ixiaosi.art/2019/01/23/spark/spark%E4%BB%BB%E5%8A%A1%E7%9B%91%E6%8E%A7/)

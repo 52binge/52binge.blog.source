@@ -28,6 +28,7 @@ tags: [spark]
  #
  # —-spark.yarn.executor.memoryOverhead 1G ： executor执行的时候，用的内存可能会超过executor-memory，
  # 所以会为executor额外预留一部分内存，spark.yarn.executor.memoryOverhead即代表这部分内存
+ # 默认的 spark.executor.memoryOverhead=6144（6G） 有点浪费
 ```
 
 尽量保证每轮Stage里每个task处理的数据量>128M

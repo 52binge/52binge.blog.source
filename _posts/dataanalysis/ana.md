@@ -99,3 +99,5 @@ Called by HR & explained the process of selection. The coding test too, data cle
 - [glassdoor](https://www.glassdoor.sg/Interview/Shopee-Interview-Questions-E1263091.htm)
 - [da新鲜虾皮挂经](https://www.1point3acres.com/bbs/thread-713284-1-1.html)
 - [首页 > 笔经面经 > shopee凉经](https://www.nowcoder.com/discuss/123193?type=0&order=0&pos=23&page=1)
+- [数据分析岗Python笔试题](https://www.jianshu.com/p/0977397232dc)
+- [数据分析面试题之Pandas中的groupby](https://segmentfault.com/a/1190000017072120)

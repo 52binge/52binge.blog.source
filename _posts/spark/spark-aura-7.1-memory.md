@@ -113,19 +113,6 @@ Data Skew | description
 <br> (3). 如何定位导致 DataSkew 的代码 | > 某个 task 执行特别慢的情况 <br> > 某个 task 莫名其妙内存溢出的情况
 <br> (4). 查看导致 DataSkew 的 key 的数据分布情况 | > 测试 <br> > 采样
 
-**DataSkew Solution：**
-
-No. | DataSkew Solution
-:----: | :---
-方案1 | 使用 Hive ETL 预处理数据
-方案2 | 调整shuffle操作的并行度
-方案3 | 将reduce join转为map join
-方案4 | 过滤少数导致倾斜的key <br><br> &nbsp;&nbsp;> 导致那些倾斜的 key 没有用，过滤掉
-方案5 | 采样倾斜 key 并分拆 join 操作 <br><br> > 导致那些倾斜的 key 有用, 并且不多 <br> &nbsp;&nbsp; select ... <br> &nbsp;&nbsp; union <br> &nbsp;&nbsp; select ...
-<br> 方案6 | **两阶段聚合(局部聚合+全局聚合)** <br> <br>sum count max min distinct avg <br> 注意与 map-side 预聚合 区分 ，两种方式 殊途同归
-方案7 | **使用随机前缀和扩容 RDD 进行 join**  <br><br> 不能使用 mapjoin 但是使用 reducejoin 又出现了数据倾斜的解决方案 <br> 笛卡尔积的方案
-方案8 | 任务横切，一分为二，单独处理
-
 ## 3. spark 的内存管理宏观概述
 
 spark 作为基于内存的分布式计算引擎, 其内存管理模块在整个系统中非常重要.
@@ -159,7 +146,7 @@ No. | 划分 | application 在运行的时候，会在哪些地方产生数据�
 5. | 执行内存 | stage0 和 stage1 之间有 shuffle，这个将要进行 shuffle 的数据存储在何地？ |
 .. |  | `数据的分区数` 
 6. | 存储内存 | 内存占用的大户： rdd.cache() 占用时间 **长 + 多** |
-7. | 存储内存 | 广播出来的大变量 sc,broadcase(list) list 会存储在所有 executor 内存中 |
+7. | 存储内存 | 广播出来的大变量 sc,broadcast(list) list 会存储在所有 executor 内存中 |
 | | 
 .. | |  一种合适的内存管理策略，可以提升内存利用率，提高Task执行的成功率
 

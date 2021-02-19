@@ -1,7 +1,7 @@
 ---
-top: 8
+top: 7
 title: SparkSQL - Parquet
-date: 2021-02-12 15:28:21
+date: 2021-01-12 15:28:21
 categories: [spark]
 tags: [sparkSQL]
 ---
@@ -30,3 +30,4 @@ http://dongxicheng.org/mapreduce-nextgen/columnar-storage-parquet-and-orc/
 - [Parquet文件格式解析](https://blog.csdn.net/weixin_46628206/article/details/105050558)
 - [spark读取parquet文件，分配的任务个数](https://blog.csdn.net/dkk2014/article/details/106479677)
 - [Spark+Parquet分片规则](https://blog.csdn.net/zhao897426182/article/details/78349846)
+- [[看图说话] 基于Spark UI性能优化与调试——初级篇](https://www.cnblogs.com/xing901022/p/6445254.html)
