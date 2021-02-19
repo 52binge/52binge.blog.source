@@ -102,7 +102,9 @@ SELECT IFNULL(
     (SELECT DISTINCT Salary
     FROM Employee
     ORDER BY Salary DESC LIMIT 1 OFFSET 1),
-         NULL) AS SecondHighestSalary 
+         NULL) AS SecondHighestSalary
+
+学习要点： OFFSET 
 ```
 
 ### 177. Nth Highest Salary
@@ -290,6 +292,19 @@ ON DATEDIFF(w1.recordDate, w2.recordDate) = 1
 AND w1.Temperature > w2.Temperature;
 ```
 
+## concat_ws
+
+```sql
+SELECT CONCAT_WS("-", "SQL", "Tutorial", "is", "fun!") AS ConcatenatedString;
+
+# output:
+#
+# ConcatenatedString
+# SQL-Tutorial-is-fun!        
+```
+
+
+
 
 
 <details>
@@ -329,9 +344,16 @@ mysql.server restart --init-file=/Users/blair/init.sql
 
 ## Reference
 
+- [hive lateral view 与 explode详解](https://blog.csdn.net/bitcarmanlee/article/details/51926530)
+- [w3schools sql](https://www.w3schools.com/sql/func_mysql_concat_ws.asp)
 - [Mysql自定义变量的使用](https://www.jianshu.com/p/357a02fb2d64)
 - [常见的SQL面试题：经典50题 - 知乎](https://zhuanlan.zhihu.com/p/38354000)
 - [Spark SQL 和 传统 SQL 的区别](https://blog.csdn.net/Han_Lin_/article/details/86541482)
 - [MySQL root密码忘记，原来还有更优雅的解法！](https://www.cnblogs.com/ivictor/p/9243259.html)
+
+[hive 行转列 lateral view explode](https://blog.csdn.net/weixin_38987362/article/details/80702388?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control)
+[Hive Lateral view介绍](https://blog.csdn.net/youziguo/article/details/6837368?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control)
+
+[缓慢变化维的10种方式](https://juejin.cn/post/6844904137419669517)
 
 
