@@ -44,7 +44,9 @@ No. | [2020年大厂-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688
 8. | 数仓中ODS、DW、DM(Data Mart) 概念及区别？ |
 9. | 窗口函数是什么？实现原理？ <br><br> 窗口函数又名开窗函数，属于分析函数的一种。用于解决复杂报表统计需求的功能强大的函数。窗口函数用于计算基于组的某种聚合值，它和聚合函数的不同之处是：`对于每个组返回多行`，而聚合函数对于每个组只返回一行.<br><br> 下面列举一些常用窗口函数：<br><br>1. 获取数据排名的：ROW_NUMBER() RAND() DEBSE_RANK() PERCENT_RANK()<br>2. 获取分组内的第一名或者最后一名等：FIRST_VALUE() LAST_VALUE() LEAD() LAG()<br>3. 累计分布：vCUME_DIST() NTH_VALUE() NTILE() |
 
-漫谈系列：
+
+<details>
+<summary>漫谈系列：</summary>
 
 1. [仙子紫霞  数据仓库与Python大数据  1/1 叮！致2020的一封情书，请查收！文末2019年文章精选](https://mp.weixin.qq.com/s/tJjkaWsZKbsG8klBSn2JGw)
 
@@ -64,60 +66,14 @@ No. | [2020年大厂-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688
 - [元数据管理解析以及数据仓库和主数据介绍](https://zhuanlan.zhihu.com/p/36136675)
 
 
-## 1. Data Warehouse
-
-OLTP (on-line transaction processing) | OLAP（On-Line Analytical Processing）
-:-------: | :-------:
-数据在系统中产生 | 本身不产生数据，基础数据来源于产生系统
-基于交易的处理系统 | 基于查询的分析系统
-牵扯的数据量很小 | 牵扯的数据量庞大 (复杂查询经常使用全表扫描等)
-对响应时间要求非常高 | 响应时间与具体查询有很大关系
-用户数量大，为操作用户 | 用户数量少，主要有技术人员与业务人员
-各种操作主要基于索引进行 | 业务问题不固定，数据库的各种操作不能完全基于索引进行
-
-DW 4 大特征:  Subject Oriented、Integrate、Non-Volatil、Time Variant .
-
-> **数仓分层**
->
-> - STG Stage （不做任何加工, 禁止重复进入）
-> - ODS（Operational Data Store）不做处理，存放原始数据 (该层在stage上仅数据格式到标准格式转换)
-> - DWD（Data Warehouse Summary 明细数据层）进行简单数据清洗，降维
-> - DWS（Data Warehouse Summary 服务数据层）进行轻度汇总（做宽表）
-> - ADS（Application Data Summary 数据应用层）为报表提供数据
-
-### 1.1 dw basic 
-
-**data warehouse 逻辑分层架构：**
-
-<img src="/images/dataware/dw-summary-pic.jpeg" width="550" alt="" />
-
-### 1.2 data modeling
-
-Title_Kimball | [深入浅出数据模型（推荐收藏）](https://mp.weixin.qq.com/s/qAitZe3BPkQNTIDAWgTsFw)
-:---: | :---:
-**流程** | 架构是自下向上，即从数据集市(主题划分)-->数据仓库--> 数据抽取，是以需求为导向的，一般使用星型模型  
-**事实表和维表** | 架构强调模型由事实表和维表组成，注重事实表与维表的设计
-**数据集市** | 数据仓库架构中，数据集市是一个逻辑概念，只是多维数据仓库中的主题域划分，并没有自己的物理存储，也可以说是虚拟的数据集市。是数据仓库的一个访问层，是按主题域组织的数据集合，用于支持部门级的决策。
-
-**data modeling 的几种方式:**
-
-No. | 数据建模方式 | type | details
-:---: | :---: | :---: | :---:
-1. | ER模型 | 三范式 |
-<br> 2. | <br> 维度建模 |  **`1. 星型模型`** <br> 2. 雪花模型 <br> **`3. 星座模型`**
-.. | .. | ..
-
-#### 事实表
-
-事实表生于业务过程，存储业务活动或事件提炼出来的性能度量。从最低的粒度级别来看，事实表行对应一个度量事件
-
-#### 维度表
-
 No. | table_type | details
 :---: | :---: | :--- | :---
 1. | 事实表 | （1）事务事实表  <br> （2）周期快照事实表 <br> （3）累积快照事实表
 2. | 维度表 | （1）退化维度（DegenerateDimension）<br> （2）缓慢变化维（Slowly Changing Dimensions）| 维度的属性并不是始终不变的，它会随着时间的流逝发生缓慢的变化，这种随时间发生变化的维度我们一般称之为缓慢变化维（SCD）
 
+</details>
+
 ## Reference
 
+- [【社招】快手_数据仓库_面试题整理](https://blog.csdn.net/weixin_43619485/article/details/107164729)
 - [2020年大厂面试题-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688808) 
