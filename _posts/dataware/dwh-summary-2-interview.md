@@ -13,7 +13,7 @@ tags: [SQL]
 
 No. | [2020年大厂-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688808) | Flag
 :---: | --- | :---:
-0. | [Hive SQL count（distinct）效率问题及优化](https://article.itxueyuan.com/a93Dg) |
+0. | [Hive SQL count（distinct）效率问题及优化](https://article.itxueyuan.com/a93Dg) <br>set mapreduce.map.memory.mb=48192;<br>set mapreduce.reduce.memory.mb=48192;<br>set mapred.reduce.tasks=1000；<br><br>select count（distinct account） from...where...<br><br> 加入distinct，map阶段不能用combine消重，数据输出为（k，v）形式然后在reduce阶段进行消重<br>Hive在处理COUNT这种“全聚合(full aggregates)”计算时，忽略指定的Reduce Task数，而强制使用1 <br><br> insert overwrite table temp select id，account，count(1) as num from tablename group by id，account； <br> <img src="/images/hadoop/map-reduce-combine.png" width="780" alt="" /> <br>[MapReduce流程简单解析](https://blog.csdn.net/yuzhuzhong/article/details/51476353)| ❎
 1. | 手写"连续活跃登陆"等类似场景的sql | ❎
 <br><br>2. | left semi join和left join区别? <br><br>`left semi join` 是 in(keySet) 的关系，遇到右表重复记录，左表会跳过；当右表不存在的时候，左表数据不会显示; 相当于SQL的in语句. <br>`left join`: 当右表不存在的时候，则会显示NULL |　<br><br>❎
 <br><br><br>3. | 维度建模 和 范式建模(3NF模型) 的区别? <br><br> 维度建模是面向分析场景的，主要关注点在于快速、灵活: **星型模型 & 雪花模型 & 星系模型** <br><br> 3NF的最终目的就是为了降低数据冗余，保障数据一致性: <br> (2.1) 原子性 - 数据不可分割 <br> (2.2) 基于第一个条件，实体属性完全依赖于主键 <br> (2.3) 消除传递依赖 - 任何非主属性不依赖于其他非主属性 | <br><br><br>❎
@@ -45,18 +45,24 @@ No. | [2020年大厂-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688
 9. | 窗口函数是什么？实现原理？ <br><br> 窗口函数又名开窗函数，属于分析函数的一种。用于解决复杂报表统计需求的功能强大的函数。窗口函数用于计算基于组的某种聚合值，它和聚合函数的不同之处是：`对于每个组返回多行`，而聚合函数对于每个组只返回一行.<br><br> 下面列举一些常用窗口函数：<br><br>1. 获取数据排名的：ROW_NUMBER() RAND() DEBSE_RANK() PERCENT_RANK()<br>2. 获取分组内的第一名或者最后一名等：FIRST_VALUE() LAST_VALUE() LEAD() LAG()<br>3. 累计分布：vCUME_DIST() NTH_VALUE() NTILE() |
 
 
+
+
 <details>
-<summary>漫谈系列：</summary>
+<summary>漫谈系列</summary>
 
-1. [仙子紫霞  数据仓库与Python大数据  1/1 叮！致2020的一封情书，请查收！文末2019年文章精选](https://mp.weixin.qq.com/s/tJjkaWsZKbsG8klBSn2JGw)
-
-> [1. 漫谈系列 | 数仓第一篇NO.1 『基础架构』](https://mp.weixin.qq.com/s/J_PA_qhU44DX0PiCDuVaEA)
-> [2. 漫谈系列 | 数仓第二篇NO.2 『数据模型』](https://mp.weixin.qq.com/s/oKcCQx2vfnyAYlu7V0uHbg)
-> [3. 漫谈系列 | 数仓第三篇NO.3 『数据ETL』](https://mp.weixin.qq.com/s/INerSvksPi8sreSVCA2csA)
-> [4. 漫谈系列 | 数仓第四篇NO.4 『数据应用』](https://mp.weixin.qq.com/s/Y1xWwJ2Jr392eRHQeBRYZQ)
-> [5. 漫谈系列 | 数仓第五篇NO.5 『调度系统』](https://mp.weixin.qq.com/s/d5g-anyABYAcbYfP-jg4HQ)
-> [6. 漫谈系列 | 数仓第六篇NO.6 『数据治理』][0]
-> [7. 漫谈系列 | 漫谈数仓第一篇NO.7 『面试真经』](https://mp.weixin.qq.com/s/iZs7zEb-yoiSnlG2q74Fvg)
+> [1. 漫谈系列 - 数仓第一篇NO.1 『基础架构』](https://mp.weixin.qq.com/s/J_PA_qhU44DX0PiCDuVaEA)
+> 
+> [2. 漫谈系列 - 数仓第二篇NO.2 『数据模型』](https://mp.weixin.qq.com/s/oKcCQx2vfnyAYlu7V0uHbg)
+> 
+> [3. 漫谈系列 - 数仓第三篇NO.3 『数据ETL』](https://mp.weixin.qq.com/s/INerSvksPi8sreSVCA2csA)
+> 
+> [4. 漫谈系列 - 数仓第四篇NO.4 『数据应用』](https://mp.weixin.qq.com/s/Y1xWwJ2Jr392eRHQeBRYZQ)
+> 
+> [5. 漫谈系列 - 数仓第五篇NO.5 『调度系统』](https://mp.weixin.qq.com/s/d5g-anyABYAcbYfP-jg4HQ)
+> 
+> [6. 漫谈系列 - 数仓第六篇NO.6 『数据治理』][0]
+> 
+> [7. 漫谈系列 - 漫谈数仓第一篇NO.7 『面试真经』](https://mp.weixin.qq.com/s/iZs7zEb-yoiSnlG2q74Fvg)
 
 <center><embed src="/images/dataware/建设企业级数据仓库EDW(内部资料，禁止外传).pdf" width="950" height="600"></center>
 
