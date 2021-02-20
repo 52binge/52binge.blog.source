@@ -75,5 +75,6 @@ No. | table_type | details
 
 ## Reference
 
+- [SQL 窗口函数的优化和执行](https://mp.weixin.qq.com/s/zdHHg6MmydiUpTopn_sniA)
 - [【社招】快手_数据仓库_面试题整理](https://blog.csdn.net/weixin_43619485/article/details/107164729)
 - [2020年大厂面试题-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688808) 
