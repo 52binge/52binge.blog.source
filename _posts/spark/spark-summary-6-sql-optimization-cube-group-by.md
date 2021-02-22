@@ -244,6 +244,7 @@ With the GROUPING_ID column, we can use the `HAVING` clause to filter the query 
 
 ## Reference
 
+- [Spark的分区》、《通过spark.default.parallelism谈Spark并行度》、重要 | Spark分区并行度决定机制](https://cloud.tencent.com/developer/article/1676544)
 - [spark的groupping set的优化](https://zhuanlan.zhihu.com/p/124245519)
 - [Spark SQL / Catalyst 内部原理 与 RBO](https://www.jianshu.com/p/83a70a160607)
 - [Spark权威指南—— DataFrame API笔记](https://zhuanlan.zhihu.com/p/150963974)

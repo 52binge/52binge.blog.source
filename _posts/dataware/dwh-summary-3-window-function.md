@@ -149,4 +149,8 @@ No. | title | example
 
 - [SQL 窗口函数的优化和执行](https://zhuanlan.zhihu.com/p/80051518)
 - [【社招】快手_数据仓库_面试题整理](https://blog.csdn.net/weixin_43619485/article/details/107164729)
-- [2020年大厂面试题-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688808) 
+- [2020年大厂面试题-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688808)
+- [『 Spark 』14. 一次 Spark SQL 性能提升10倍的经历](http://bigdatastudy.net/show.aspx?id=450&cid=9)
+- [Spark教程-Spark 性能优化——和 shuffle 搏斗](http://bigdatastudy.net/show.aspx?id=544&cid=9)
+- [spark中的spark Shuffle详解1](http://bigdatastudy.net/show.aspx?id=531&cid=9)
+- [Spark-SQL性能优化](https://blog.csdn.net/S_Running_snail/article/details/89282009) 

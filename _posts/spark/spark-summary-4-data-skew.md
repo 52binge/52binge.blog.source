@@ -1,5 +1,4 @@
 ---
-top: 8
 title: Spark - Data Skew Advanced
 toc: true
 date: 2021-01-27 07:07:21

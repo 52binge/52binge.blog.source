@@ -14,6 +14,15 @@ tags: [spark]
 
 ## Spark 
 
+No. | Title | Desc
+:---: | --- | ---
+1. | coalesce | 无论是在RDD中还是DataSet，默认情况下coalesce不会产生shuffle，此时通过coalesce创建的RDD分区数小于等于父RDD的分区数。 
+2. | repartition | **1）增加分区数** <br>- repartition触发shuffle，shuffle的情况下可以增加分区数.<br>- coalesce默认不触发shuffle，即调用该算子增加分区数，实际情况是分区数仍是当前的分区数.
+ |  | 
+3. | union | val rdd4 = rdd1.union(rdd3) - res: Array[Int] = Array(1,2,3,4,5,6,7,8,9,12,14,16,18) <br> 多数情况: 通过union生成的RDD的分区数为父RDD的分区数之和
+4. | Join | join(otherDataset, [numTasks])是连接操作，将输入数据集(K,V)和另外一个数据集(K,W)进行Join， 得到(K, (V,W))；该操作是对于相同K的V和W集合进行笛卡尔积 操作，也即V和W的所有组合 <br><br>val rdd5 = rdd0.join(rdd0)<br> res3: Array[(Char,(Int, Int))] = Array((d,(9,8)), (c,(6,6)), (c,(6,7))) <br><br>rdd 算子： leftOuterJoin, fullOuterJoin, .. <br>[spark sql 之join等函数用法](https://blog.csdn.net/zhousishuo/article/details/73292428)
+5. | cogroup | cogroup(otherDataset, [numTasks])是将输入数据集(K, V)和另外一个数据集(K, W)进行cogroup，得到一个格式为(K, Seq[V], Seq[W])的数据集<br><br> val rdd6 = rdd0.cogroup(rdd0)<br>res: Array[(Int, (Iterable[Int], Iterable[Int]))] = Array((1,(ArrayBuffer(1, 2, 3),ArrayBuffer(1, 2, 3))), (2,(ArrayBuffer(1, 2, 3),ArrayBuffer(1, 2, 3))))<br><br> [spark的union和join操作演示](https://blog.csdn.net/baolibin528/article/details/50319545?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&dist_request_id=0edc445c-b5ab-4005-b8cb-dafcf3725516&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control)
+
 No. | Title | Flag
 :---: | --- | ---
 0. | kaike - sparkSQL底层实现原理<br>[spark.sql.shuffle.partitions和 spark.default.parallelism 的区别](https://blog.csdn.net/abc33880238/article/details/102100570)<br>[SparkSQL并行度参数设置方法](https://blog.csdn.net/xiaoduan_/article/details/79809262) | 
