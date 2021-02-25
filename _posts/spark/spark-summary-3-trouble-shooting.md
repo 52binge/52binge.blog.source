@@ -1,6 +1,6 @@
 ---
 top: 8
-title: Spark - 性能调优 & troubleshooting
+title: Spark - troubleshooting
 toc: true
 date: 2021-01-21 07:07:21
 categories: [spark]
@@ -28,7 +28,20 @@ No. | Title Author | Link & Solutions
 --- | --- | --- 
 0. | GROUPING SETS| spark.sql.files.maxPartitionBytes 默认128M, 单个分区读取的最大文件大小 <br>（对于大部分的Parquet压缩表来说，这个默认设置其实会导致性能问题）<br><br>在Hadoop里，任务的并发默认是以hdfs block为单位的，而Spark里多了一种选择，即以RowGroup为基本单位: spark 处理parquet 文件时，一个row group 只能由一个task来处理<br><br>row group是需要调优的spark参数,重要一点,就是控制任务的并发度:<br>set parquet.block.size=16M<br>set spark.sql.files.maxPartitionBytes=16M
 1. | 较多的 DataFrame join 操作时 | 调大此参数：spark.sql.autoBroadcastJoinThreshold，默认10M，可设置为 100M
-1. | 华为开发者<br>SparkCore<br><br>知乎大数据<br>SparkSQL | [开发者指南 > 组件成功案例 > Spark > 案例10：Spark Core调优 > 经验总结](https://support-it.huawei.com/docs/zh-cn/fusioninsight-all/developer_guide/zh-cn_topic_0171822910.html) <br><br>[Spark基础：Spark SQL调优](https://zhuanlan.zhihu.com/p/148758337) <br><br> **1. Cache 缓存** <br>&nbsp;&nbsp;1.1 spark.catalog.cacheTable("t") 或 df.cache() <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Spark SQL会把需要的列压缩后缓存，避免使用和GC的压力<br>&nbsp;&nbsp;1.2 spark.sql.inMemoryColumnarStorage.compressed 默认true <br> &nbsp;&nbsp;1.3 spark.sql.inMemoryColumnarStorage.batchSize 默认10000 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 控制列缓存时的数量，避免OOM风险。<br> 引申要点： 行式存储 & 列式存储 优缺点 <br> **2. 其他配置** <br>&nbsp;&nbsp;2.1 spark.sql.autoBroadcastJoinThreshold <br>&nbsp;&nbsp;2.2 spark.sql.shuffle.partitions 默认200，配置join和agg的时候的分区数 <br>&nbsp;&nbsp;2.3 spark.sql.broadcastTimeout 默认300秒，广播join时广播等待的时间 <br>&nbsp;&nbsp;2.4 spark.sql.files.maxPartitionBytes 默认128MB，单个分区读取的最大文件大小<br>&nbsp;&nbsp;2.5 spark.sql.files.openCostInBytes <br>parquet.block.size<br>**3. 广播 hash join - BHJ** <br>&nbsp;&nbsp; 3.1 当系统 spark.sql.autoBroadcastJoinThreshold 判断满足条件，会自动使用BHJ <br><br>[华为云Stack全景图 > 开发者指南 > SQL和DataFrame调优 > Spark SQL join优化](https://support-it.huawei.com/docs/zh-cn/fusioninsight-all/developer_guide/zh-cn_topic_0171822912.html) <br><br> <details><summary>spark不会</summary> 注意spark不会确保每次选择广播表都是正确的，因为有的场景比如 full outer join 是不支持BHJ的。手动指定广播: broadcast(spark.table("src")).join(spark.table("records"), "key").show() </details>
+2. | 华为开发者<br>SparkCore<br><br>知乎大数据<br>SparkSQL | [开发者指南 > 组件成功案例 > Spark > 案例10：Spark Core调优 > 经验总结](https://support-it.huawei.com/docs/zh-cn/fusioninsight-all/developer_guide/zh-cn_topic_0171822910.html) <br><br>[Spark基础：Spark SQL调优](https://zhuanlan.zhihu.com/p/148758337) <br><br> **1. Cache 缓存** <br>&nbsp;&nbsp;1.1 spark.catalog.cacheTable("t") 或 df.cache() <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Spark SQL会把需要的列压缩后缓存，避免使用和GC的压力<br>&nbsp;&nbsp;1.2 spark.sql.inMemoryColumnarStorage.compressed 默认true <br> &nbsp;&nbsp;1.3 spark.sql.inMemoryColumnarStorage.batchSize 默认10000 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 控制列缓存时的数量，避免OOM风险。<br> 引申要点： 行式存储 & 列式存储 优缺点 <br> **2. 其他配置** <br>&nbsp;&nbsp;2.1 spark.sql.autoBroadcastJoinThreshold <br>&nbsp;&nbsp;2.2 spark.sql.shuffle.partitions 默认200，配置join和agg的时候的分区数 <br>&nbsp;&nbsp;2.3 spark.sql.broadcastTimeout 默认300秒，广播join时广播等待的时间 <br>&nbsp;&nbsp;2.4 spark.sql.files.maxPartitionBytes 默认128MB，单个分区读取的最大文件大小<br>&nbsp;&nbsp;2.5 spark.sql.files.openCostInBytes <br>parquet.block.size<br>**3. 广播 hash join - BHJ** <br>&nbsp;&nbsp; 3.1 当系统 spark.sql.autoBroadcastJoinThreshold 判断满足条件，会自动使用BHJ <br><br>[华为云Stack全景图 > 开发者指南 > SQL和DataFrame调优 > Spark SQL join优化](https://support-it.huawei.com/docs/zh-cn/fusioninsight-all/developer_guide/zh-cn_topic_0171822912.html) <br><br> <details><summary>spark不会</summary> 注意spark不会确保每次选择广播表都是正确的，因为有的场景比如 full outer join 是不支持BHJ的。手动指定广播: broadcast(spark.table("src")).join(spark.table("records"), "key").show() </details>
+| 开发小知识 |
+0. | NULL, AVG/NOT IN | select avg(amount) as a_mount from orders <br> amount (150, 150, null) avg = 150 不是 100 <br>select * from stores where tag not in ("") |
+1. | 判断 null | coalesce(null, "")
+| 常见问题 |
+3. | <br>定位性能问题对应的sql | 1. spark driver log 看 执行慢的stage（99%） <br>2. spark ui 上看 该stage 的task 执行完成比率<br>3. spark ui 上看 该stage 对应的 continer id 和 所属job<br>4. spark ui 上看 sql 的执行计划 和 执行计划图，最终定位到是哪段sql
+4. | 一道sql的题，一张表，用户id和登录日期，查找连续两天登陆的用户 |  left join tb_log b on a.uid = b.uid on a.uid = b.uid
+5. | 写sql。求一个省份下的uv最高的城市 主要考察窗口函数 | select province,city,row_nnumber()over(partition by province order by uv desc ) rank
+6. | 数据不一致遇到过吗，是什么原因?  
+7. | 知道什么是 whole stage codengen吗 | 面向接口编程太耗时间，主要是方法递归调用，虚函数调用 可以将一个stage的所有task整理成一个方法，并且生成动态字节码 并结合
+8. | spark 3.0 特性 | 待学
+<br>9. | <br> wordCount | lines=sc.textFile(path) <br>words = lines.flatMap(lambda x: x.split(' '))<br> wco = words.map(lambda x: (x, 1))<br>word_count = wco.reduceByKey(add)
+10. | [数仓开发需要了解的5大SQL分析函数](https://jiamaoxiang.top/2020/11/26/%E6%95%B0%E4%BB%93%E5%BC%80%E5%8F%91%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%845%E5%A4%A7SQL%E5%88%86%E6%9E%90%E5%87%BD%E6%95%B0/)<br>[干货：一文读懂数据仓库设计方案](https://www.huaweicloud.com/articles/82b67712cabc74252eb3efe12aff7914.html) |
+
 
 ```SQL
 SELECT 

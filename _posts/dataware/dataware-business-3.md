@@ -93,6 +93,14 @@ DWS：按照借据号 Group, 借据号是最小的粒度了.
 放款金额，不同区间的，用户数
 
 
+
+数据不一致有没有遇到过，怎么解决的。
+回答：遇到过，最常见，同一个指标，多个人多个团队出，口径不一致；或者相同逻辑多个地方维护，复制粘贴，改一个地方另一个地方忘记改
+追问解决办法：
+指标体系，复用数据：按照业务线将一个业务线设计到的所有维度和指标统一建模到一张hive表，上层所有应用或者对商分暴露的表都是同源的，且直接取不用再计算
+规则引擎，复用逻辑：相同的字段加工逻辑抽离到规则引擎中进行配置，保证一处修改，处处运行
+
+
 分隔符 \n -> 001
 通过mysql自动识别Hive表结构
 hadoop - Sqoop导入将TINYINT转换为BOOLEAN
@@ -124,3 +132,11 @@ ret
 - [数据仓库-建模实践](https://www.bilibili.com/video/BV1Cz4y1k7y4/?spm_id_from=333.788.videocard.0)
 - [独一无二的数据仓库建模指南（升级版）](https://www.bilibili.com/video/av45576201/)
 - [大数据项目之离线数仓2.0项目实战教程](https://www.bilibili.com/video/BV1t54y1r7Mc?p=156)
+- [胡明昊 - 围绕数据建模，谈金融数仓建设的核心](https://dbaplus.cn/news-73-3373-1.html)
+- [TeraData金融数据模型（银行十大主题划分）](https://www.infoq.cn/article/gsmwfqq7kjsg0k9adwqr)
+- [知乎：数据仓库架构及数据模型介绍](https://zhuanlan.zhihu.com/p/138437941)
+
+Wechat:
+
+- [数据分析师成长体系漫谈 - 数仓模型设计](https://mp.weixin.qq.com/s?src=11&timestamp=1614150249&ver=2909&signature=q-8CPXUTMbkBKDNtPxCF0ZXHj**GuKsKmk6dNjX5mIOYdWw9wDV5Vb7ss*H4MSbW-8InolSiOs2xXcVonlrpbTYHm11oTRpWvWUh-owybeoH4pDilHP*07sAZNR3Sit8&new=1)
+- [大白话系列：HIVE中数据倾斜原理及优化方案](https://zhuanlan.zhihu.com/p/334742254)
