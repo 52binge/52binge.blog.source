@@ -32,6 +32,8 @@ No. | Title Author | Link & Solutions
 | `开发小知识` |
 0. | NULL, AVG/NOT IN | select avg(amount) as a_mount from orders <br> amount (150, 150, null) avg = 150 不是 100 <br>select * from stores where tag not in ("") 
 1. | NVL(expr1,expr2) | NVL(expr1,expr2) NVL(UnitsOnOrder,0) <br> other simlar: IFNULL(UnitsOnOrder, 0) / coalesce(null, "") <br> NULLIF(exp1,expr2)函数的作用是如果exp1和exp2相等则返回空(NULL)
+2. | IF( expr1 , expr2 , expr3 ) | expr1 的值为 TRUE，则返回值为 expr2 <br> expr1 的值为FALSE，则返回值为 expr3
+3. | IFNULL( expr1 , expr2 ) | if expr1 not null, return  expr1 |
 | `常见问题` |
 3. | <br>定位性能问题对应的sql | 1. spark driver log 看 执行慢的stage（99%） <br>2. spark ui 上看 该stage 的task 执行完成比率<br>3. spark ui 上看 该stage 对应的 continer id 和 所属job<br>4. spark ui 上看 sql 的执行计划 和 执行计划图，最终定位到是哪段sql
 4. | 一道sql的题，一张表，用户id和登录日期，查找连续两天登陆的用户 |  left join tb_log b on a.uid = b.uid on a.uid = b.uid
@@ -129,8 +131,8 @@ No. | Title | Flag
 
 - [数仓开发需要了解的5大SQL分析函数](https://jiamaoxiang.top/2020/11/26/%E6%95%B0%E4%BB%93%E5%BC%80%E5%8F%91%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%845%E5%A4%A7SQL%E5%88%86%E6%9E%90%E5%87%BD%E6%95%B0/)
 - [干货：一文读懂数据仓库设计方案](https://www.huaweicloud.com/articles/82b67712cabc74252eb3efe12aff7914.html) |
-
-
+- [使用Hive窗口函数替换union all处理分组汇总（小计，总计）](https://zhuanlan.zhihu.com/p/148466975)
+<br>
 - [Spark实践 -- 性能优化基础](https://www.cnblogs.com/stillcoolme/p/10576563.html)
 - [Spark项目实战-troubleshooting之控制shuffle reduce端缓冲大小以避免OOM](https://blog.csdn.net/Anbang713/article/details/82844499)
 - [结合源码谈谈 - 通过spark.default.parallelism谈Spark并行度](https://developer.aliyun.com/article/766699)
