@@ -16,7 +16,7 @@ tags: [data warehouse]
 No. | Question | Flag
 :---: | --- | :---:
 1. | ~~[175. Combine Two Tables](https://leetcode-cn.com/problems/combine-two-tables/)~~ | ❎
-2. | [176. Second Highest Salary](https://leetcode-cn.com/problems/second-highest-salary/), **ORDER BY, OFFSET, IFNULL(xxx, NULL)** | ✔️
+2. | [176. Second Highest Salary](https://leetcode-cn.com/problems/second-highest-salary/), **ORDER BY, OFFSET, IFNULL(xxx, NULL)** <br> SELECT DISTINCT Salary FROM Employee <br> ORDER BY Salary DESC LIMIT 1 OFFSET 1 | ✔️
 <br>3. | [177. Nth Highest Salary](https://leetcode-cn.com/problems/nth-highest-salary/), **CREATE FUNCTION func_name RETURNS INT** <br><br> [6种方案诠释MySQL通用查询策略](https://leetcode-cn.com/problems/nth-highest-salary/solution/mysql-zi-ding-yi-bian-liang-by-luanz/), BEGIN RETURN xxx/select END, SET | <br>✔️
 4. | [178. Rank Scores](https://leetcode-cn.com/problems/rank-scores/),  摘要: [专用窗口函数rank, dense_rank, row_number有什么区别呢？](https://leetcode-cn.com/problems/rank-scores/solution/tu-jie-sqlmian-shi-ti-jing-dian-pai-ming-wen-ti-by/) <br><br> [《通俗易懂的学会：SQL窗口函数》](https://mp.weixin.qq.com/s?__biz=MzAxMTMwNTMxMQ==&mid=2649247566&idx=1&sn=f9c7018c299498673b38221db2ecd5cd&chksm=835fc77eb4284e68b7528fd7f75eedb8868a6740704af8559f8a5cbdd2867a49ffa21bf4e531&token=426730634&lang=zh_CN#rd)<br><br> &nbsp;&nbsp; select score, **dense_rank() over(order by Score desc)** as Ranking from Scores;
  | 

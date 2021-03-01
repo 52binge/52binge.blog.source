@@ -73,6 +73,7 @@ DWS：按照借据号 Group, 借据号是最小的粒度了.
 <details>
 <summary>EVT Topic</summary>
 
+```
 授信流水, 几十万，上百万
 支用流水, 
 放款流水, 
@@ -92,7 +93,7 @@ DWS：按照借据号 Group, 借据号是最小的粒度了.
 不同渠道，产品，利率段
 放款金额，不同区间的，用户数
 
-
+支付流水 1.5亿+ & 还款流水 根据流水号 Join 存快照
 
 数据不一致有没有遇到过，怎么解决的。
 回答：遇到过，最常见，同一个指标，多个人多个团队出，口径不一致；或者相同逻辑多个地方维护，复制粘贴，改一个地方另一个地方忘记改
@@ -107,6 +108,7 @@ hadoop - Sqoop导入将TINYINT转换为BOOLEAN
 jdbc:mysql://127.0.0.1:3306/nfl?tinyInt1isBit=false
 
 comment '任务日志-临时表，用于将数据通过动态分区载入ods_task_log中' ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n' STORED AS TEXTFILE; load data local inpath '/kkb/datas/gamecenter/ods_task_log.txt' overwrite into table tmp_ods_task_log; set hive.exec.dynamic.partition=true; set hive.exec.dynamic.partition.mode=nostrict; set hive.exec.max.dynamic.partitions.pernode=1000; insert overwrite table ods_task_log partition(part_date) select plat_id,server_id,channel_id,user_id,role_id,role_name,event_time,task_type,task_id,cost_time,op_type,level_limit,award_exp,award_monetary,award_item,death_count,award_attribute, from_unixtime(event_time,'yyyy-MM-dd') as part_date from tmp_ods_task_log; "
+```
 
 
 ```python

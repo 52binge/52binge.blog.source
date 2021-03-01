@@ -21,20 +21,20 @@ class TreeNode:
 
 No. | Question | Flag
 :---: | --- | :---:
-&nbsp; | [840. Magic Squares In Grid](https://leetcode-cn.com/problems/magic-squares-in-grid/) | ❎
+&nbsp; | [840. Magic Squares In Grid](https://leetcode-cn.com/problems/magic-squares-in-grid/) <br> for i in range(len(grid)-2):<br>&nbsp;&nbsp;for j in range(len(grid[i])-2):<br>&nbsp;&nbsp;&nbsp;&nbsp;subset.append(grid[i][j:j+3])<br>&nbsp;&nbsp;&nbsp;&nbsp;subset.append(grid[i+1][j:j+3])<br>&nbsp;&nbsp;&nbsp;&nbsp;subset.append(grid[i+2][j:j+3])| <br><br>❎
 &nbsp; | [25. K 个一组翻转链表](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/) 1->2->3->4->5 当 k = 3 时，应当返回: 3->2->1->4->5 <br> &nbsp;  def reverse(self, head: ListNode, tail: ListNode): prev=tail.next p=head <br> &nbsp; def reverseKGroup(head, k): hair = ListNode(0) while head: <br> &nbsp; (1) 查看剩余部分长度是否大于等于 k (2). 把子链表重新接回原链表 | <br>hard
-1. | 股票最大利润 cost, profit = float("+inf"), 0 | ❎
-2. | [Move Zeroes](https://leetcode-cn.com/problems/move-zeroes/) for i in range(len(nums)): if nums[i]: swap(nums[i], nums[j]) | ❎
-3. | ~~二叉树层序遍历~~ | ❎
-4. | [83. 删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/), while cur and cur.next: <br>[82. 删除排序链表中的重复元素 II - 删除所有含有重复数字的节点](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/) <br> &nbsp; dHead = ListNode(0), dHead.next = head, pre,cur = dHead,head; <br>&nbsp; `while cur: pre.next = cur.next` 跳过重复部分 | ❎
+1. | [股票最大利润(买卖一次)](https://leetcode-cn.com/problems/gu-piao-de-zui-da-li-run-lcof/) <br> cost, profit = float("+inf"), 0 <br> cost = min(cost, price); profit = max(profit, price - cost)| ❎
+2. | [Move Zeroes](https://leetcode-cn.com/problems/move-zeroes/) for i in range(len(nums)): <br>if nums[i]: swap(nums[i], nums[j]) | ❎
+3. | [102. 二叉树的层序遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)<br>from collections import deque<br>queue = collections.deque(); queue.append(root); while queue: size = len(queue)<br>cur = queue.popleft()<br>queue.append(cur.left)<br>queue.append(cur.right) | <br><br>❎
+4. | [83. 删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/)<br> while cur and cur.next: if ... : cur.next = cur.next.next<br>[82. 删除排序链表中的重复元素 II - 删除所有含有重复数字的节点](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/) <br> dHead = ListNode(0), dHead.next = head <br> pre,cur = dHead,head; <br>`while cur: pre.next = cur.next` 跳过重复部分 | <br><br>❎
 5. | [如何实现LRU](http://localhost:5000/lc/#review-shop), 双向链表+Dict+Size+Cap <br> class DLinkedNode(4), removeTail, moveToHead, addToHead, removeNode | ✔️❎
-6. | [125. 验证回文串](https://leetcode-cn.com/problems/valid-palindrome/), while, while left < right and not s[left].isalnum(): <br><br> 扩展: [5. 最长回文子串 dp](https://leetcode-cn.com/problems/longest-palindromic-substring/), 枚举长度 <br> &nbsp; for l in range(n): for i in n: dp[i][j] = (dp[i + 1][j - 1] and s[i] == s[j]) | <br>❎
-7. | 判断二叉树是否对称 <br> &nbsp; class TreeNode: def \_\_init\_\_(self, x): <br> &nbsp; isSymmetricHelper(left.left, right.right) and isSymmetricHelper(left.right, right.left) | <br>❎
-8. | [98. 验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/), while stack or root: while root | ❎
-9. | 找出数组里三个数相乘最大的那个（有正有负）| ❎
+6. | [125. 验证回文串](https://leetcode-cn.com/problems/valid-palindrome/), while left < right: while left < right and not s[left].isalnum(): <br><br> 扩展: [5. 最长回文子串 dp](https://leetcode-cn.com/problems/longest-palindromic-substring/), 枚举长度 <br> &nbsp; for l in range(n): for i in n: dp[i][j] = (dp[i + 1][j - 1] and s[i] == s[j]) | <br>❎
+7. | [101. 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/) <br> &nbsp; class TreeNode: def \_\_init\_\_(self, x): <br> &nbsp; isSymmetricHelper(left.left, right.right) and isSymmetricHelper(left.right, right.left) | <br>❎
+8. | [98. 验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/), <br>stack, inorder = [], float('-inf')<br>while stack or root: while root | <br>❎
+9. | [找出数组里三个数相乘最大的那个（有正有负）](https://leetcode-cn.com/problems/maximum-product-of-three-numbers/solution/), nums.sort() <br> a = nums[-1] \* nums[-2] \* nums[-3]<br>b = nums[0] \* nums[1] \* nums[-1] | <br>❎
 10. | 做题：两个十六进制数的加法 | ❎
-11. | [93. 复原IP地址](https://leetcode-cn.com/problems/restore-ip-addresses/), `".".join(['1','2','3','4']) == '1.2.3.4'`,&nbsp; `ord("a") = 97` <br> &nbsp; dfs(seg\_id, seg\_start) for seg\_end in range(seg\_start, len(s)): <br> &nbsp;&nbsp; if 0 < addr <= 0xFF（11111111==255): | ✔️❎
-12. | [202. 快乐数](https://leetcode-cn.com/problems/happy-number/), `divmod(79, 10) = 7,9;  while n > 0: n, digit = divmod(n, 10)` | ❎
+11. | [93. 复原IP地址](https://leetcode-cn.com/problems/restore-ip-addresses/), `".".join(['1','2','3','4']) == '1.2.3.4'`,&nbsp; `ord("a") = 97` <br> &nbsp; dfs(seg\_id, seg\_start) for seg\_end in range(seg\_start, len(s)): <br> &nbsp;&nbsp; if 0 < addr <= 0xFF（11111111==255): | <br>✔️❎
+12. | [202. 快乐数](https://leetcode-cn.com/problems/happy-number/), `divmod(79, 10) = (7,9);`  <br>while n > 0: <br>&nbsp;&nbsp;n, digit = divmod(n, 10)<br>&nbsp;&nbsp;total_sum += digit \*\* 2 | <br>❎
 13. | 快排归并手撕 for i in range(l, r+1): nums[i] = arr[i - l] | ❎
 14. | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) dp = [[0] * (n + 1) for _ in range(m + 1)] <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if text1[i - 1] == text2[j - 1]: dp[i][j] = dp[i-1][j-1] + 1 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else: dp[i][j] = max(dp[i-1][j], dp[i][j-1]) | <br>❎
 15. | [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/), occ=set(); <br>&nbsp; for l in range(n): remove(i-1), while r+1 < n and s[r+1] not in occ: add(r+1) | ❎
@@ -44,7 +44,7 @@ No. | Question | Flag
 19. | [剑指 Offer 55 - II. 平衡二叉树](https://leetcode-cn.com/problems/ping-heng-er-cha-shu-lcof/) <br> &nbsp; (1). abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 <br> &nbsp; (2). self.isBalanced(root.left) and self.isBalanced(root.right) | <br>❎
 20. | ~~[155. 最小栈](https://leetcode-cn.com/problems/min-stack/), self.stack = [], self.min_stack = [float('inf')]~~ | ❎
 21. | 非递归单链表反转 现场手写 | ❎
-22. | ~~[105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/), i = inorder.index(preorder[0])~~ | ❎ 
+22. | ~~[105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/) <br> root = TreeNode(preorder[0]) <br> i = inorder.index(preorder[0])~~ | <br>❎ 
 23. | 全排列, def dfs(x): if x == len(c) - 1: res.append(''.join(c)) <br> &nbsp;&nbsp;&nbsp;&nbsp; for i in range(first, n): | ❎
 24. | [1262. 可被三整除的最大和](https://leetcode-cn.com/problems/greatest-sum-divisible-by-three/), [题解](https://leetcode-cn.com/problems/greatest-sum-divisible-by-three/solution/ti-jie-5265-ke-bei-san-zheng-chu-de-zui-da-he-by-z/)<br> &nbsp;&nbsp;贪心+逆向思维：<br> &nbsp;&nbsp; a = [x for x in nums if x % 3 == 0] <br> &nbsp;&nbsp; b = sorted([x for x in nums if x % 3 == 1], reverse=True)<br>&nbsp;&nbsp; c = sorted([x for x in nums if x % 3 == 2], reverse=True) | <br><br>❎
 27. | 两千万个文件找最小的一千个（答错了，应该用大顶堆，答成了小顶堆）| ❎
@@ -64,6 +64,7 @@ Array | 指针, 冒泡 |
 Array | Sort idea, 模拟 |
 &nbsp; | ~~[621	任务调度器](https://leetcode-cn.com/problems/task-scheduler)~~， `桶思想 + 模拟计算` 两个相同种类的任务间必须有长度为整数 n 的冷却时间<br>for i in set(tasks):tnum.append(tasks.count(i)) maxt=max(tnum) | ❎ 
 Array | ~~搜索旋转排序数组 nums = [4,5,6,7,0,1,2], target = 0~~ , `双if 判断位置` |
+Array | [剑指 Offer 11. 旋转数组的最小数字](https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/) |
 &nbsp; | ~~[33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/)~~, nums[0] <= nums[mid] if nums[0] <= target < nums[mid]: <br> while l <= r: mid = (l + r) // 2 if nums[mid] == target: return mid | ❎
 Array | 单调性有关 | ✔️
 **插空法** | [406. 根据身高重建队列 Queue Reconstruction by Height](https://leetcode-cn.com/problems/queue-reconstruction-by-height) <br>&nbsp;&nbsp;people.sort(key=lambda x:(-x[0], x[1])), 插空法, ans[p[1],p[1]]=[p] ,&nbsp; tmp[:] | ❎
