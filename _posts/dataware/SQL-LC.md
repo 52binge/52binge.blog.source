@@ -13,6 +13,8 @@ tags: [data warehouse]
 
 ## [SQL Practice](https://leetcode-cn.com/problemset/database/)
 
+## [图解SQL面试题：经典50题](https://zhuanlan.zhihu.com/p/38354000)
+
 No. | Question | Flag
 :---: | --- | :---:
 1. | ~~[175. Combine Two Tables](https://leetcode-cn.com/problems/combine-two-tables/)~~ | ❎
