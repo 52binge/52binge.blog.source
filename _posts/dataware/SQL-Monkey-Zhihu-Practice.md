@@ -24,16 +24,11 @@ tags: [data warehouse]
 > 教师表：teacher(教师号,教师姓名)
 
 
-### [1. 图解SQL： 如何查找重复数据？](https://zhuanlan.zhihu.com/p/353564155)
+### [1. SQL： 如何查找重复数据？](https://zhuanlan.zhihu.com/p/353564155)
 
-```sql
-select 列名
-from 表名
-group by 列名
-having count(列名) > n;
-```
+<img src="/images/sql/monkey-sql-having-count.png" width="590" alt="select 列名 from table group by 列名 having count(列名) > n;" />
 
-### [2. 图解SQL：如何查找第N高的数据？](https://zhuanlan.zhihu.com/p/101716138)
+### [2. SQL：如何查找第N高的数据？](https://zhuanlan.zhihu.com/p/101716138)
 
 ```sql
 select 
@@ -43,7 +38,28 @@ select
     ) as SecondHighestSalary;
 ```
 
-### [3. 图解SQL：经典topN问题](https://zhuanlan.zhihu.com/p/93346220)
+> limit 1,n
+
+### [3. SQL：查找不在表里的数据](https://zhuanlan.zhihu.com/p/88351106)
+
+<img src="/images/sql/monkey-sql-join-1.jpg" width="590" alt="left join, inner join" />
+
+<img src="/images/sql/monkey-sql-join-2.jpg" width="590" alt="" />
+
+```sql
+select 
+    a.Name as Customers
+from 
+    Customers as a left join Orders as b
+on a.Id=b.CustomerId
+where b.CustomerId is null;
+```
+
+### [4. SQL：你有多久没涨过工资了？](https://zhuanlan.zhihu.com/p/142872080)
+
+<img src="/images/sql/monkey-sql-salary.jpg" width="590" alt="left join, inner join" />
+
+### [7. SQL：经典topN问题](https://zhuanlan.zhihu.com/p/93346220)
 
 
 ```sql
