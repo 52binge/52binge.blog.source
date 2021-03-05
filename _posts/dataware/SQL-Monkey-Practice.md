@@ -105,30 +105,57 @@ where a.temp > b.temp;
 
 
 
-### [7. 拼夕夕：如何找出连续出现N次的内容？](https://zhuanlan.zhihu.com/p/348022888)
+## [7. 夕夕：连续出现N次的内容？](https://zhuanlan.zhihu.com/p/348022888)
+
+#### 方法1： 自连接
 
 ```sql
-select *
-from score as a,
-   score as b,
-   score as c;
- where a.学号 = b.学号 - 1
-   and b.学号 = c.学号 - 1
-   and a.成绩 = b.成绩
-   and b.成绩 = c.成绩;
+SELECT
+	*
+FROM
+	Score AS a,
+	Score AS b,
+	Score AS c
+WHERE
+	a.s_id = b.s_id - 1 
+	AND b.s_id = c.s_id - 1 
+	AND a.s_score = b.s_score 
+	AND b.s_score = c.s_score; 
 
 
-select distinct a.成绩 as 最终答案
-from score as a,
-   score as b,
-   score as c;
- where a.学号 = b.学号 - 1
-   and b.学号 = c.学号 - 1
-   and a.成绩 = b.成绩
-   and b.成绩 = c.成绩;
+SELECT
+	DISTINCT a.s_score as 最终答案
+FROM
+	Score AS a,
+	Score AS b,
+	Score AS c
+WHERE
+	a.s_id = b.s_id - 1 
+	AND b.s_id = c.s_id - 1 
+	AND a.s_score = b.s_score 
+	AND b.s_score = c.s_score; 
 ```
 
->疑问: 自连接产生的重复数
+#### 方法2： window function
+
+```sql
+SELECT DISTINCT
+	球员姓名 
+FROM
+	(
+	SELECT
+		球员姓名,
+		lead ( 球员姓名, 1 ) over ( PARTITION BY 球队 ORDER BY 得分时间 ) AS 姓名1,
+		lead ( 球员姓名, 2 ) over ( PARTITION BY 球队 ORDER BY 得分时间 ) AS 姓名2 
+	FROM
+		分数表 
+	) AS a 
+WHERE
+	(
+		a.球员姓名 = a.姓名1
+	AND a.球员姓名 = a.姓名2
+	);
+```
 
 ### [10. SQL：经典topN问题](https://zhuanlan.zhihu.com/p/93346220)
 
