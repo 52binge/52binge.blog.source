@@ -105,56 +105,56 @@ where a.temp > b.temp;
 
 
 
-## [7. 夕夕：连续出现N次的内容？](https://zhuanlan.zhihu.com/p/348022888)
+## [7. 拼夕夕：连续出现N次的内容？](https://zhuanlan.zhihu.com/p/348022888)
 
 #### 方法1： 自连接
 
 ```sql
 SELECT
-	*
+    *
 FROM
-	Score AS a,
-	Score AS b,
-	Score AS c
+    Score AS a,
+    Score AS b,
+    Score AS c
 WHERE
-	a.s_id = b.s_id - 1 
-	AND b.s_id = c.s_id - 1 
-	AND a.s_score = b.s_score 
-	AND b.s_score = c.s_score; 
+    a.s_id = b.s_id - 1 
+    AND b.s_id = c.s_id - 1 
+    AND a.s_score = b.s_score 
+    AND b.s_score = c.s_score; 
 
 
 SELECT
-	DISTINCT a.s_score as 最终答案
+    DISTINCT a.s_score as 最终答案
 FROM
-	Score AS a,
-	Score AS b,
-	Score AS c
+    Score AS a,
+    Score AS b,
+    Score AS c
 WHERE
-	a.s_id = b.s_id - 1 
-	AND b.s_id = c.s_id - 1 
-	AND a.s_score = b.s_score 
-	AND b.s_score = c.s_score; 
+    a.s_id = b.s_id - 1 
+    AND b.s_id = c.s_id - 1 
+    AND a.s_score = b.s_score 
+    AND b.s_score = c.s_score; 
 ```
 
 #### 方法2： window function
 
 ```sql
 SELECT DISTINCT
-	球员姓名 
+    球员姓名 
 FROM
-	(
-	SELECT
-		球员姓名,
-		lead ( 球员姓名, 1 ) over ( PARTITION BY 球队 ORDER BY 得分时间 ) AS 姓名1,
-		lead ( 球员姓名, 2 ) over ( PARTITION BY 球队 ORDER BY 得分时间 ) AS 姓名2 
-	FROM
-		分数表 
-	) AS a 
+    (
+    SELECT
+        球员姓名,
+        lead ( 球员姓名, 1 ) over ( PARTITION BY 球队 ORDER BY 得分时间 ) AS 姓名1,
+        lead ( 球员姓名, 2 ) over ( PARTITION BY 球队 ORDER BY 得分时间 ) AS 姓名2 
+    FROM
+        分数表 
+    ) AS a 
 WHERE
-	(
-		a.球员姓名 = a.姓名1
-	AND a.球员姓名 = a.姓名2
-	);
+    (
+        a.球员姓名 = a.姓名1
+    AND a.球员姓名 = a.姓名2
+    );
 ```
 
 ### [10. SQL：经典topN问题](https://zhuanlan.zhihu.com/p/93346220)
