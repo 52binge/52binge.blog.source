@@ -157,7 +157,7 @@ WHERE
     );
 ```
 
-### [10. SQL：经典topN问题](https://zhuanlan.zhihu.com/p/93346220)
+## [10. SQL：经典topN问题](https://zhuanlan.zhihu.com/p/93346220)
 
 
 ```sql
@@ -169,6 +169,92 @@ from (
    from 成绩表) as a
 where ranking <=2
 ```
+
+## [11. 链家：如何分析留存率？](https://zhuanlan.zhihu.com/p/151357806)
+
+input:
+
+<img src="/images/sql/monkey-sql-lianjia-1-user-retention.png" width="740" alt="如何分析留存率" />
+
+**指标定义：**
+
+1. 某日活跃用户数，某日活跃的去重用户数。
+2. N日活跃用户数，某日活跃的用户数在之后的第N日活跃用户数。
+3. N日活跃留存率，N日留存用户数/某日活跃用户数
+
+> 例：登陆时间（20180501日）去重用户数10000，这批用户在20180503日仍有7000人活跃，则3日活跃留存率为7000/10000=70%
+
+<img src="/images/sql/monkey-sql-lianjia-2.png" width="740" alt="output" />
+
+### 11.1 活跃用户数对应的日期
+
+```sql
+SELECT
+    登陆时间,
+    count( DISTINCT 用户id ) AS 活跃用户数 
+FROM
+    用户行为信息表 
+WHERE
+    应用名称 = '相机' 
+GROUP BY
+    登陆时间;
+```
+
+<img src="/images/sql/monkey-sql-lianjia-5-active-users.png" width="640" alt="" />
+
+
+### 11.2 次日留存用户数 
+
+次日留存用户数：在今日登录，明天也有登录的用户数。也就是时间间隔=1
+
+一个表如果涉及到时间间隔，就需要用到自联结，也就是将两个相同的表进行联结
+
+```sql
+SELECT
+    *,
+    count(DISTINCT CASE WHEN 时间间隔 = 1 THEN 用户id ELSE NULL END) AS 次日留存数 
+    FROM
+        (SELECT *, timestampdiff(DAY, a_t, b_t ) AS 时间间隔 FROM c) 
+GROUP BY
+    a_t;
+```
+
+<img src="/images/sql/monkey-sql-lianjia-6-active-users.jpeg" width="740" alt="次日留存用户数" />
+
+<!--
+<img src="/images/sql/monkey-sql-lianjia-3.jpeg" width="740" alt="" />
+-->
+
+### 11.3 三日的留存数/留存率
+
+```sql
+select 
+    a_t,count(distinct 用户id) as 活跃用户数,
+    count(distinct case when 时间间隔=1 then 用户id else null end) as  次日留存数,
+    count(distinct case when 时间间隔=1 then 用户id else null end)/ count(distinct 用户id) as 次日留存率,
+    count(distinct case when 时间间隔=3 then 用户id else null end) as  三日留存数,
+    count(distinct case when 时间间隔=3 then 用户id else null end)/ count(distinct 用户id) as 三日留存率,
+    count(distinct case when 时间间隔=7 then 用户id else null end) as  七日留存数,
+    count(distinct case when 时间间隔=7 then 用户id else null end)/ count(distinct 用户id) as 七日留存率
+from
+    (select *,timestampdiff(day,a_t,b_t) as 时间间隔
+from 
+    (select a.用户id,a.登陆时间 as a_t,b.登陆时间 as b_t
+from 用户行为信息表 as a  
+left join 用户行为信息表 as b
+on a.用户id = b.用户id
+where a.应用名称= '相机') as c
+) as d
+group by a_t;
+```
+
+<img src="/images/sql/monkey-sql-lianjia-4.jpeg" width="840" alt="" />
+
+### 11.4 本题考点
+
+1. 常用指标的理解，例如留存用户数、留存率。
+2. 灵活使用case来统计when 函数与group by 进行自定义列联表统计。
+3. 遇到只有一个表，但是需要计数时间间隔的问题，就要想到用自联结来求时间间隔，类似的有找出连续出现N次的内容、滴滴2020求职真题。
 
 ## Reference
 

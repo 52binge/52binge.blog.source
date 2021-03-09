@@ -173,3 +173,4 @@ create table dm.dm_fact_drawal_sum (
 
 ## Reference
 
+[【数据仓库】——数据仓库概念](https://www.cnblogs.com/jiangbei/p/8483591.html)
