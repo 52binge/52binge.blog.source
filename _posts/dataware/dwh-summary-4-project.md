@@ -27,7 +27,10 @@ No. | Title | Tech
 
 ## 2. 项目背景
 
-互联网金融行业, 信贷, 理财
+金融行业, 信贷
+
+<img src="/images/dataware/dataware-modeling-step-2.jpg" width="800" alt="业务过程的简易图" />
+
 
 ## 3. 数据调研
 
@@ -54,7 +57,48 @@ No. | Table Name | Desc
 19. | user_quota | 信用额度, 已使用额, 未使用额, 失效日期, 额度失效日期..
 20. | users
 
-drawal_apply
+
+> 提款&还款  34
+
+<details>
+<summary>Table Details</summary>
+
+### 3.5 loan_apply
+
+表名 | 字段 | 类型 | 描述
+--- | --- | --- | ---
+loan\_apply | id, user_id | bigint(20) | ID / 用户ID
+loan\_apply | apply_time | datetime  | 申请时间
+loan\_apply | is_current | tinyint(4) | 是否最新申请
+loan\_apply | short_loan_term | int(4) | 最短借款期限
+loan\_apply | long_loan_term | int(4) | 最长借款期限
+loan\_apply | short_loan_amount | double | 最低借款金额
+loan\_apply | long_loan_amount | double | 最高借款金额
+loan\_apply | credit_id | bigint(20) | 信用审核ID
+loan\_apply | status | varchar(20) | 状态
+loan\_apply | created_time, updated_time | datetime | 创建, 更新时间 
+
+### 3.6 loan_apply_salary
+
+表名 | 字段 | 类型 | 描述
+--- | --- | --- | ---
+loan\_apply\_salary | id, user_id | bigint(20) | ID / 用户ID
+loan\_apply\_salary | loan_apply_id | bigint(20)  | 申请ID
+loan\_apply\_salary | salary_report_url | varchar(50) | 薪资报告URL
+loan\_apply\_salary | is_review | varchar(10) | 是否完成审查
+loan\_apply\_salary | created_time, updated_time | datetime | 创建, 更新时间 
+
+### 3.7 loan_apply_credit_report
+
+表名 | 字段 | 类型 | 描述
+--- | --- | --- | ---
+loan\_apply\_credit\_report | id, user_id | bigint(20) | ID / 用户ID
+loan\_apply\_credit\_report | loan_apply_id | bigint(20)  | 申请ID
+loan\_apply\_credit\_report | salary_report_url | varchar(50) | 薪资报告URL
+loan\_apply\_credit\_report | is_review | varchar(10) | 是否完成审查
+loan\_apply\_credit\_report | created_time, updated_time | datetime | 创建, 更新时间 
+
+### 3.8 drawal_apply
 
 表名 | 字段 | 类型 | 描述
 --- | --- | --- | ---
@@ -72,7 +116,7 @@ drawal_apply | lend_time | datetime | 放款时间
 drawal_apply | due_date | datetime | 逾期时间
 drawal_apply | id | bigint(20) | ID
 
-drawal_companys
+### 3.9 drawal_companys
 
 表名 | 字段 | 类型 | 描述
 --- | --- | --- | ---
@@ -86,14 +130,60 @@ drawal_companys | comp_name/comp_address/comp_tel/comp_email/salary |
 drawal_companys | social_security
 drawal_companys | loan_usage | 
 
+</details>
+
+## 4. 主题模型
+
+No. | 主题名称 | 主题描述
+--- | --- | --- 
+1. | **客户 (USER)** | 当事人, 用户信息, 非常多, 人行征信信息， 个人资产信息
+2. | 机构 (ORG) | 线下有哪些团队, 浙江区，团队长，客户经理， 有 600+ 个. 只有维度表
+<br>3. | <br>产品 (PRD) | 签协议 产生 产品, 业务流程, 只有维度表 <br> 产品维度表： 产品编号(分好几级), 产品名称, dim_code, dim_name， 上架， 下架<br>京东金条， code， 展示给财务
+4. | 渠道 (CHL) |
+5. | **事件 (EVT)** | 1. 业借<!--(50~200亿)--> / 注册&认证 2. 授信 3. 支用 4. 放款 5. 支付 6. 还款 <!--(支付流水总量有1.5亿) , 所以基本每天全量全量关联-->
+6. | **协议 (AGR)** | 合约
+7. | 营销 (CAMP) | 营销之后的，商务经理和渠道，谈下来之后， 后端 渠道， 资产， 账务
+8. | **财务 (RISK)** |
+9. | 风险 (FINANCE) | 风险部
 
 
-> 提款&还款  34
+## 5. 建模流程
 
-## 4. 建模流程
+No. | data warehosue 建模体系 | description
+--- | --- | --- 
+1. | 规范化数据仓库 |
+2. | dimensional modeling | 1. 维度表 dimension ： 表示对分析主题所属类型的描述 <br> 2. 事实表 fact table : 对分析主题的度量 
+3. | 独立数据集市
 
+> ods_table_name / dw_fact_topic_table_name /  dm_fact_mart_name_table_name
 
-### 4.3 信贷申请
+<img src="/images/dataware/dataware-modeling-step-1.png" width="580" alt="粒度定义意味着对 事实表行 Fact Row 实际代表的内容给出明确的说明， 优先考虑最有原子性的信息而开发的维度模型" />
+
+### 5.1 OCR 认证 
+
+No. | 指标, 粒度, 维度 |描述
+--- | --- | ---
+**统计指标：** |
+. | 1. OCR 认证量, OCR通过量 |
+**统计粒度：** | 每个用户OCR认证申请, 一条数据
+**分析维度：** | 注册日期, 渠道, 用户类型, 性别, 客户经理
+
+> 未来的可能需求: 原子性, 明细层面 考虑. 
+>
+> 短信验证, 2元退化
+
+### 5.2 MD5 认证 
+
+No. | 指标, 粒度, 维度 |描述
+--- | --- | ---
+**统计指标：** |
+. | 1. 申请次数, 通过次数, 申请人数, 通过人数 |
+**统计粒度：** | 用户md5请求为一条明细记录
+**分析维度：** | 认证日期, 证件类型, 性别, 渠道, 客户经理, 用户类型
+
+> 摘要: 申请人数, 通过人数 不在DW明细层出现, 而应该放在DM层
+
+### 5.3 信贷申请
 
 No. | 指标, 粒度, 维度 |描述
 --- | --- | ---
@@ -129,9 +219,9 @@ create table dw.dw_fact_loan_apply_dtl (
 ```
 
 
-### 4.4 信贷审核
+### 5.4 信贷审核
 
-### 4.5 支用/还款
+### 5.5 支用/还款
 
 No. | 指标, 粒度, 维度 |描述
 --- | --- | ---
