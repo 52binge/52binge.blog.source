@@ -256,6 +256,34 @@ group by a_t;
 2. 灵活使用case来统计when 函数与group by 进行自定义列联表统计。
 3. 遇到只有一个表，但是需要计数时间间隔的问题，就要想到用自联结来求时间间隔，类似的有找出连续出现N次的内容、滴滴2020求职真题。
 
+## [12. 如何分析用户满意度？](https://zhuanlan.zhihu.com/p/107150787)
+
+“满意度表”记录了教师和学生对课程的满意程度。“是否满意”列里是老师和学生对课程的评价，其中“是”表示教师和学生都满意。
+
+<img src="/images/sql/monkey-user-satisfaction-1.jpeg" width="700" alt="" />
+
+“ 用户表”记录了学校教师和学生的信息。每个用户有唯一键 “编号”，“是否在系统”表示这个用户是否还在这所学校里，“角色”表示这个人是学生还是教师。
+
+两个表的关系：满意度表的“学生编号” 、 “教师编号” 和用户表的 “编号” 联结。
+
+<img src="/images/sql/monkey-user-satisfaction-2.jpeg" width="700" alt="" />
+
+现在需要分析出学校里人员对课程的满意度。满意度的计算方式如下：
+
+(教师和学生对课程都满意且已存在当前教务系统中的用户) / (在学校里的人数)
+
+```sql
+select 
+    sum(case when 满意度表.是否满意='是' then 1 else 0 end)/count(满意度表.是否满意) as 满意度
+from 满意度表 
+left join 
+    (select 编号 from 用户表 where 是否在系统='是') as 学生
+on (满意度表.学生编号 = 学生.编号)
+left join
+    (select 编号 from 用户表 where 是否在系统='是') as 教师
+on (满意度表.教师编号 = 教师.编号);
+```
+
 ## Reference
 
 - [图解SQL面试题：经典50题](https://zhuanlan.zhihu.com/p/38354000)
