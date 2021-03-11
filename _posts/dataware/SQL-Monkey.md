@@ -30,6 +30,24 @@ tags: [data warehouse]
 
 <img src="/images/sql/monkey-sql-having-count.png" width="590" alt="select 列名 from table group by 列名 having count(列名) > n;" />
 
+举一反三: 查询平均成绩大于60分的学生的学号和平均成绩
+
+```sql
+select 学号 ,avg(成绩) from score 
+group by 学号  
+having avg(成绩 ) >60
+```
+
+查询各学生的年龄（精确到月份）
+
+```sql
+/*
+【知识点】时间格式转化 timestampdiff
+*/
+select 学号 ,timestampdiff(month ,出生日期 ,now())/12 
+from student ;
+```
+
 ### [2. SQL：如何查找第N高的数据？](https://zhuanlan.zhihu.com/p/101716138)
 
 ```sql
@@ -229,7 +247,8 @@ GROUP BY
 
 ```sql
 select 
-    a_t,count(distinct 用户id) as 活跃用户数,
+    a_t,
+    count(distinct 用户id) as 活跃用户数,
     count(distinct case when 时间间隔=1 then 用户id else null end) as  次日留存数,
     count(distinct case when 时间间隔=1 then 用户id else null end)/ count(distinct 用户id) as 次日留存率,
     count(distinct case when 时间间隔=3 then 用户id else null end) as  三日留存数,
@@ -237,14 +256,19 @@ select
     count(distinct case when 时间间隔=7 then 用户id else null end) as  七日留存数,
     count(distinct case when 时间间隔=7 then 用户id else null end)/ count(distinct 用户id) as 七日留存率
 from
-    (select *,timestampdiff(day,a_t,b_t) as 时间间隔
-from 
-    (select a.用户id,a.登陆时间 as a_t,b.登陆时间 as b_t
-from 用户行为信息表 as a  
-left join 用户行为信息表 as b
-on a.用户id = b.用户id
-where a.应用名称= '相机') as c
-) as d
+    (
+     SELECT
+         c.用户id,
+         timestampdiff(day, c.a_t, c.b_t) as 时间间隔
+    FROM 
+        (
+        SELECT 
+            a.用户id, 
+            a.登陆时间 as a_t,
+            b.登陆时间 as b_t 
+        FROM 用户行为信息表 as a left join 用户行为信息表 as b on a.用户id = b.用户id where a.应用名称= '相机'
+        ) as c
+    ) as d
 group by a_t;
 ```
 
@@ -284,7 +308,60 @@ left join
 on (满意度表.教师编号 = 教师.编号);
 ```
 
-## [37. 字节：你的平均薪水是多少][0] 
+## [14. 拼多多：如何查找前20%的数据？](https://zhuanlan.zhihu.com/p/138128536)
+
+<img src="/images/sql/monkey-sql-pdd-20-percent-2.jpeg" width="700" alt="" />
+
+把这个复杂的问题拆解为3个子问题：
+
+1）找出访问次数前20%的用户
+2）剔除访问次数前20%的用户
+3）每类用户的平均访问次数
+
+### 1.访问次数前20%的用户
+
+排名：
+
+```sql
+select *,
+      row_number() over(order by 访问量 desc) as 排名
+from 用户访问次数表;
+```
+
+max(排名) * 0.2
+
+```sql
+select 
+    * 
+from 
+    (select 
+       *,
+       row_number() over(order by 访问量 desc) as 排名
+    from 用户访问次数表) as a
+where 排名 > (select max(排名) from a) * 0.2;
+```
+
+### 3. 每类用户的平均访问次数
+
+```sql
+select 用户类型,avg(访问量)
+from b
+group by 用户类型;
+```
+
+## [17. SQL：如何分组比较？](https://zhuanlan.zhihu.com/p/98526392)
+
+## [37. 字节：你的平均薪水是多少](https://zhuanlan.zhihu.com/p/342793272)
+
+查询出每个部门除去最高、最低薪水后的平均薪水，并保留整数
+
+<img src="/images/sql/monkey-sql-byte-avg-salary-1.jpeg" width="700" alt="" />
+
+> sql的运行顺序，会`先运行from和where子句，最后才运行select子句`。
+
+<img src="/images/sql/monkey-sql-byte-avg-salary-2.png" width="700" alt="" />
+
+> format(N, D) ,  N 是要格式化的数字， D 是要舍入的小数位数
 
 ## Reference
 
@@ -292,4 +369,3 @@ on (满意度表.教师编号 = 教师.编号);
 - [7张图学会SQL](https://mp.weixin.qq.com/s?__biz=MzAxMTMwNTMxMQ==&mid=2649245863&idx=1&sn=2c3a1e3e8cacf5e4e211758c47619f3e&chksm=835fc097b4284981de23eb6e09259d34963fbd3c1e6bf6c56b7d97bf3f7be816b29572f32d85&scene=21#wechat_redirect)
 - [图解面试题](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzAxMTMwNTMxMQ==&action=getalbum&album_id=1398781984763428865&scene=173&from_msgid=2649245863&from_itemidx=1&count=3#wechat_redirect)
 - [数据仓库工具箱 维度建模权威指南 第3版.pdf](https://www.cnblogs.com/fly-bird/articles/11332515.html)
-[0]: /
