@@ -351,6 +351,16 @@ group by 用户类型;
 
 ## [17. SQL：如何分组比较？](https://zhuanlan.zhihu.com/p/98526392)
 
+```sql
+select 
+    *
+from 
+    (select *, avg(成绩) over (partition by 科目) as avg_score from 成绩表) as b
+where 成绩 > avg_score;
+```
+
+<img src="/images/sql/monkey-sql-group-by-avg-1.jpeg" width="640" alt="" />
+
 ## [37. 字节：你的平均薪水是多少](https://zhuanlan.zhihu.com/p/342793272)
 
 查询出每个部门除去最高、最低薪水后的平均薪水，并保留整数
