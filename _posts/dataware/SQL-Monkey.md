@@ -204,7 +204,7 @@ input:
 
 <img src="/images/sql/monkey-sql-lianjia-2.png" width="740" alt="output" />
 
-### 11.1 活跃用户数对应的日期
+**11.1 活跃用户数对应的日期**
 
 ```sql
 SELECT
@@ -221,7 +221,7 @@ GROUP BY
 <img src="/images/sql/monkey-sql-lianjia-5-active-users.png" width="640" alt="" />
 
 
-### 11.2 次日留存用户数 
+**11.2 次日留存用户数** 
 
 次日留存用户数：在今日登录，明天也有登录的用户数。也就是时间间隔=1
 
@@ -243,7 +243,7 @@ GROUP BY
 <img src="/images/sql/monkey-sql-lianjia-3.jpeg" width="740" alt="" />
 -->
 
-### 11.3 三日的留存数/留存率
+**11.3 三日的留存数/留存率**
 
 ```sql
 select 
@@ -274,7 +274,7 @@ group by a_t;
 
 <img src="/images/sql/monkey-sql-lianjia-4.jpeg" width="840" alt="" />
 
-### 11.4 本题考点
+**11.4 本题考点**
 
 1. 常用指标的理解，例如留存用户数、留存率。
 2. 灵活使用case来统计when 函数与group by 进行自定义列联表统计。
@@ -318,7 +318,7 @@ on (满意度表.教师编号 = 教师.编号);
 2）剔除访问次数前20%的用户
 3）每类用户的平均访问次数
 
-### 1.访问次数前20%的用户
+**1.访问次数前20%的用户**
 
 排名：
 
@@ -341,12 +341,33 @@ from
 where 排名 > (select max(排名) from a) * 0.2;
 ```
 
-### 3. 每类用户的平均访问次数
+**3. 每类用户的平均访问次数**
 
 ```sql
 select 用户类型,avg(访问量)
 from b
 group by 用户类型;
+```
+
+## [15. SQL：如何查找工资前三高的员工](https://zhuanlan.zhihu.com/p/103158936)
+
+```sql
+select *,
+   rank() over (order by 成绩 desc) as ranking,
+   dense_rank() over (order by 成绩 desc) as dese_rank,
+   row_number() over (order by 成绩 desc) as row_num
+from 班级;
+```
+
+<img src="/images/sql/monkey-sql-salary-top3-1.png" width="640" alt="" />
+
+```sql
+select 课程号,学号,成绩,排名 from
+(select *,
+     dense_rank() over (partition by 课程号
+                  order by 成绩 desc) as 排名
+from 成绩表) as aa
+where 排名 <=3;
 ```
 
 ## [17. SQL：如何分组比较？](https://zhuanlan.zhihu.com/p/98526392)
@@ -360,6 +381,8 @@ where 成绩 > avg_score;
 ```
 
 <img src="/images/sql/monkey-sql-group-by-avg-1.jpeg" width="640" alt="" />
+
+## [18. SQL：如何分析游戏？](https://zhuanlan.zhihu.com/p/129326204)
 
 ## [37. 字节：你的平均薪水是多少](https://zhuanlan.zhihu.com/p/342793272)
 

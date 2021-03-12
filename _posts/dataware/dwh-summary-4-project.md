@@ -192,7 +192,7 @@ No. | 指标, 粒度, 维度 |描述
 . | 2. 提供薪报次数, 提供薪报最早时间 |
 . | 3. 提供信报次数, 提供信报最早时间 |
 **统计粒度：** | 用户的一次申请一条记录
-**分析维度：** | 申请日期, 最短期数, 最长期数, 证件类型, 性别, 渠道, 客户经理, 用户类型
+**分析维度：** | 申请日期, 证件类型, 性别, 渠道, 客户经理, 用户类型, 最短期数, 最长期数 
 
 ```sql
 ---dwd 明细层
@@ -218,6 +218,121 @@ create table dw.dw_fact_loan_apply_dtl (
     etl_time string,
 ```
 
+<details>
+<summary><strong>dw.dw_fact_loan_apply_dtl</strong></summary>
+<p></p>
+```sql
+INSERT OVERWRITE Table dw.dw_fact_loan_apply_dtl partition(partition_date)
+SELECT
+    ...
+    u.idty_type,
+    u.channel_id,
+    u.user_type,
+    u.manager_id,
+    u.sex,
+    a.user_id,
+    a.id AS apply_id,
+    a.apply_time,
+    a.is_current,
+    b.salary_cnt,
+    b.first_salary_time,
+    b.last_salary_time,
+    c.cereport_cnt,
+    c.first_cereport_time,
+    c.last_cereport_time,
+    ...
+    etl_time,
+    partition_date
+FROM
+    ods.loan_apply a
+    LEFT JOIN ods.users u ON a.user_id = u.id
+    LEFT JOIN (
+    SELECT
+        user_id,
+        loan_apply_id,
+        count( id ) AS salary_cnt,
+        min( created_at ) AS first_salary_time,
+        max( created_at ) AS last_salary_time
+    FROM
+        ods.loan_apply_salary 
+    GROUP BY
+        user_id,
+        loan_apply_id 
+    ) b ON a.user_id = b.user_id 
+    AND a.id = b.loan_apply_id
+    LEFT JOIN (
+    SELECT
+        user_id,
+        loan_apply_id,
+        count( id ) AS cereport_cnt,
+        min( created_at ) AS first_cereport_time,
+        max( created_at ) AS last_cereport_time
+    FROM
+        ods.loan_apply_credit_report 
+    GROUP BY
+        user_id,
+        loan_apply_id 
+    ) c ON a.user_id = c.user_id 
+    AND a.id = c.loan_apply_id
+```
+</details>
+
+<details>
+<summary><strong>dm.dm_fact_loan_apply_sum</strong></summary>
+<p></p>
+
+```sql
+--- 借款申请量, 申请人数
+CREATE TABLE dm.dm_fact_loan_apply_sum (
+	data_date string,
+	idty_type string,
+	channel_id BIGINT,
+	user_type string,
+	manager_id BIGINT,
+	sex string,
+	short_loan_term INT,
+	long_loan_term INT,
+	apply_num INT,
+	apply_user_num INT,
+	salary_cnt INT,
+	cereport_cnt INT,
+	short_loan_amount deciman ( 11, 2 ),
+	long_loan_amount deciman ( 11, 2 ),
+	etl_time string 
+) COMMENT '' partitioned BY ( partition_date string COMMENT '分区日期' ) ROW format delimited FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n';
+
+INSERT overwrite TABLE dm.dm_fact_loan_apply_sum PARTITION ( partition_date ) 
+SELECT
+	data_date,
+	idty_type,
+	channel_id,
+	user_type,
+	manager_id,
+	sex,
+	short_loan_term,
+	long_loan_term,
+	sum( loan_app_cnt ) AS apply_sum,
+	count( DISTINCT user_id ) AS apply_user_sum,
+	sum( salary_cnt ) AS salary_cnt,
+	sum( cereport_cnt ) AS cereport_cnt,
+	sum( short_loan_amount ) AS short_loan_amount,
+	sum( long_loan_amount ) AS long_loan_amount,
+	max( from_unixtime(...) ) AS etl_time 
+FROM
+	dw.dw_fact_user_regiter_dtl 
+WHERE
+	partition_data = form_unixtime (...) 
+GROUP BY
+	data_date,
+	idty_date,
+	channel_id,
+	user_type,
+	manager_id,
+	sex
+未完待续
+```
+
+</details>
 
 ### 5.4 信贷审核
 
