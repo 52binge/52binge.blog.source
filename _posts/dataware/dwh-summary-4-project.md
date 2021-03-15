@@ -230,8 +230,9 @@ create table dw.dw_fact_loan_apply_dtl (
 ```
 
 <details>
-<summary><strong>dw.dw_fact_loan_apply_dtl</strong></summary>
+<summary>dw.dw_fact_loan_apply_dtl</summary>
 <p></p>
+
 ```sql
 INSERT OVERWRITE Table dw.dw_fact_loan_apply_dtl partition(partition_date)
 SELECT
@@ -289,7 +290,7 @@ FROM
 </details>
 
 <details>
-<summary><strong>dm.dm_fact_loan_apply_sum</strong></summary>
+<summary>dm.dm_fact_loan_apply_sum</summary>
 <p></p>
 
 ```sql
@@ -349,7 +350,9 @@ GROUP BY
 
 main table: loan_credit, user_quota
 
-**loan_credit**
+<details>
+<summary>loan_credit</summary>
+<p></p>
 
 表名 | 字段 | 类型 | 描述
 --- | --- | --- | ---
@@ -371,6 +374,8 @@ loan_credit | created_time / updated_time |
 --- | --- | --- | ---
 user_quota | id, 
 
+</details>
+
 #### 1. dw_fact_credit_dtl
 
 No. | 指标, 粒度, 维度 |描述
@@ -379,6 +384,10 @@ No. | 指标, 粒度, 维度 |描述
 . | 1. 审核通过金额  2. 信用审核分数 3. 通过申请量 4. 拒绝申请量 5. 通过人数 6. 拒绝人数 |
 **统计粒度：** | 用户的一次审核记录为一条记录 
 **分析维度：** | 审核日期, 证件类型, 渠道, 用户类型, 客户经理, 性别, 审核人
+
+<details>
+<summary>dw.dw_fact_credit_dtl</summary>
+<p></p>
 
 ```sql
 insert overwrite table dw.dw_fact_credit_dtl partition(partition_date)
@@ -407,6 +416,7 @@ select
 from ods.loan_credit a left join ods.users u on a.user_id=u.id
 ```
 
+</details>
 
 #### 2. dm_fact_loan_credit_sum
 
@@ -415,6 +425,10 @@ No. | 指标, 粒度, 维度 |描述
 **统计指标：** |
 . | 初审量  1. 初审通过人数 2. 初审拒绝人数 3. 初审通过金额 <br> 终审量  1. 终审通过人数 2. 终审拒绝人数 3. 终审通过金额 |
 **分析维度：** | 审核日期, 证件类型, 性别, 渠道, 客户经理, 用户类型, 审核人
+
+<details>
+<summary>dm_fact_loan_credit_sum</summary>
+<p></p>
 
 ```sql
 insert overwrite table dm.dm_fact_loan_credit_sum partition(partition_date)
@@ -441,6 +455,8 @@ where
 group by
     data_date, idty_type, channel_id, user_type, manager_id, sex, credit_user_id;
 ```
+
+</details>
 
 ### 5.5 支用/还款
 
