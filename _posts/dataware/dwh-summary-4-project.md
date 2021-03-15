@@ -31,8 +31,10 @@ No. | Title | Tech
 
 <img src="/images/dataware/dataware-modeling-step-2.jpg" width="800" alt="业务过程的简易图" />
 
-
 ## 3. 数据调研
+
+<details>
+<summary>Table List</summary>
 
 No. | Table Name | Desc
 --- | --- | ---
@@ -56,7 +58,7 @@ No. | Table Name | Desc
 18. | user_md5
 19. | user_quota | 信用额度, 已使用额, 未使用额, 失效日期, 额度失效日期..
 20. | users
-
+</details>
 
 > 提款&还款  34
 
@@ -146,6 +148,10 @@ No. | 主题名称 | 主题描述
 8. | **财务 (RISK)** |
 9. | 风险 (FINANCE) | 风险部
 
+### 数据分层
+
+数据来源: ODS
+建设方式L 
 
 ## 5. 建模流程
 
@@ -158,6 +164,9 @@ No. | data warehosue 建模体系 | description
 > ods_table_name / dw_fact_topic_table_name /  dm_fact_mart_name_table_name
 
 <img src="/images/dataware/dataware-modeling-step-1.png" width="580" alt="粒度定义意味着对 事实表行 Fact Row 实际代表的内容给出明确的说明， 优先考虑最有原子性的信息而开发的维度模型" />
+
+<details>
+<summary>Business Pipeline</summary>
 
 ### 5.1 OCR 认证 
 
@@ -182,6 +191,8 @@ No. | 指标, 粒度, 维度 |描述
 **分析维度：** | 认证日期, 证件类型, 性别, 渠道, 客户经理, 用户类型
 
 > 摘要: 申请人数, 通过人数 不在DW明细层出现, 而应该放在DM层
+
+</details>
 
 ### 5.3 信贷申请
 
@@ -336,6 +347,101 @@ GROUP BY
 
 ### 5.4 信贷审核
 
+main table: loan_credit, user_quota
+
+**loan_credit**
+
+表名 | 字段 | 类型 | 描述
+--- | --- | --- | ---
+loan_credit | id, 
+loan_credit | apply_id | 
+loan_credit | user_id |
+loan_credit | audit_status | | 审核状态
+loan_credit | audit_date | datetime | 审核时间
+loan_credit | audit_result | | 审核结论
+loan_credit | passed_products | varchar(6000) | 通过产品集
+loan_credit | amount | | 批准金额
+loan_credit | product_terms | | 批贷产品期限
+loan_credit | score | varchar(20) | 信用分数
+loan_credit | credit_type | | 信用审核类型
+loan_credit | credit_user_id | | 信用审核用户ID
+loan_credit | created_time / updated_time | 
+
+表名 | 字段 | 类型 | 描述
+--- | --- | --- | ---
+user_quota | id, 
+
+#### 1. dw_fact_credit_dtl
+
+No. | 指标, 粒度, 维度 |描述
+--- | --- | ---
+**统计指标：** |
+. | 1. 审核通过金额  2. 信用审核分数 3. 通过申请量 4. 拒绝申请量 5. 通过人数 6. 拒绝人数 |
+**统计粒度：** | 用户的一次审核记录为一条记录 
+**分析维度：** | 审核日期, 证件类型, 渠道, 用户类型, 客户经理, 性别, 审核人
+
+```sql
+insert overwrite table dw.dw_fact_credit_dtl partition(partition_date)
+select
+    from_unixtime(a.audit_date, 'yyyy-MM-dd') as data_date,
+    u.idty_type,
+    u.channel_id,
+    u.user_type,
+    u.manager_id,
+    u.sex,
+    a.id as credit_id,
+    a.apply_id,
+    a.user_id,
+    a.audit_status,
+    a.audit_result,
+    a.passwd_products,
+    a.product_terms,
+    a.credit_type,
+    a.credit_user_id,
+    a.score,
+    a.amount,
+    (case when upper(audit_status) = 'PASS' then 1 else 0 end) as pass_cnt,
+    (case when upper(audit_status) = 'DENY' then 1 else 0 end) as deny_cnt,
+    from_unixtime(unix_timestamp(), 'yyyy-MM-dd JH:mm:ss') as etl_time,
+    from_unixtime(a.created_time, 'yyyy-MM-dd') as partition_date,
+from ods.loan_credit a left join ods.users u on a.user_id=u.id
+```
+
+
+#### 2. dm_fact_loan_credit_sum
+
+No. | 指标, 粒度, 维度 |描述
+--- | --- | ---
+**统计指标：** |
+. | 初审量  1. 初审通过人数 2. 初审拒绝人数 3. 初审通过金额 <br> 终审量  1. 终审通过人数 2. 终审拒绝人数 3. 终审通过金额 |
+**分析维度：** | 审核日期, 证件类型, 性别, 渠道, 客户经理, 用户类型, 审核人
+
+```sql
+insert overwrite table dm.dm_fact_loan_credit_sum partition(partition_date)
+select
+    data_date,
+    idty_type,
+    channel_id,
+    user_type,
+    manager_id,
+    sex,
+    credit_user_id,
+    count(case when credit_type='cs' then credit_id else null end) as cs_num,
+    count(distinct (case when credit_type='cs' then user_id else null end) as cs_user_num,    
+    count(distinct (case when credit_type='cs' then apply_id else null end) as cs_app_num,
+    count(distinct (case when credit_type='cs' and upper(audit_status) = 'PASS' then 1 else 0 end) as cs_pass_num,
+    count(distinct ((case when credit_type='cs' and upper(audit_status) = 'DENY' then 1 else 0 end) as cs_deny_num,
+    sum(distinct (case when credit_type='cs' and upper(audit_status) = 'PASS' then amount else null end) as cs_pass_amt,
+    max(from_unixtime(unix_timestamp(), 'yyyy-MM-dd HH:mm:ss')) as etl_time,
+    max(from_unixtime(partition_date, 'yyyy-MM-dd HH:mm:ss')) as partition_date
+from
+    dw.dw_fact_credit_dtl
+where 
+   data_date=from_unixtime(unix_timestamp(), 'yyyy-MM-dd')
+group by
+    data_date, idty_type, channel_id, user_type, manager_id, sex, credit_user_id;
+```
+
 ### 5.5 支用/还款
 
 No. | 指标, 粒度, 维度 |描述
@@ -345,8 +451,9 @@ No. | 指标, 粒度, 维度 |描述
 . | 2. 支用通过量, 支用通过人数 |
 . | 3. 协议签订量, 协议签订人数 |
 . | 4. 申请提款金额, 协议签订金额, 实际提款金额 |
-**统计粒度：** |
-**分析维度：** |
+
+
+> 用户的一次申请， 可能有多条审核记录
 
 hive_dw_fact_drawal_dtl.hql
 
@@ -379,3 +486,4 @@ create table dm.dm_fact_drawal_sum (
 ## Reference
 
 [【数据仓库】——数据仓库概念](https://www.cnblogs.com/jiangbei/p/8483591.html)
+[Hive数据倾斜优化总结](https://monkeyip.github.io/2019/04/25/Hive%E6%95%B0%E6%8D%AE%E5%80%BE%E6%96%9C%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/)
