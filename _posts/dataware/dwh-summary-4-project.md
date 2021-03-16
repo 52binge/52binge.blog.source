@@ -1,6 +1,6 @@
 ---
 top: 8
-title: DataWare Review Summary 4 - 建模流程
+title: DataWare Review Summary 4 - data modling
 toc: true
 date: 2021-03-09 09:07:21
 categories: [data-warehouse]
@@ -378,7 +378,7 @@ user_quota | id,
 
 #### 1. dw_fact_credit_dtl
 
-No. | 指标, 粒度, 维度 |描述
+No. | 指标 Index, 粒度 Granularity, 维度 dimension |描述
 --- | --- | ---
 **统计指标：** |
 . | 1. 审核通过金额  2. 信用审核分数 3. 通过申请量 4. 拒绝申请量 5. 通过人数 6. 拒绝人数 |
@@ -501,5 +501,6 @@ create table dm.dm_fact_drawal_sum (
 
 ## Reference
 
+[大数据环境下该如何优雅地设计数据分层](https://zhuanlan.zhihu.com/p/27395332)
 [【数据仓库】——数据仓库概念](https://www.cnblogs.com/jiangbei/p/8483591.html)
 [Hive数据倾斜优化总结](https://monkeyip.github.io/2019/04/25/Hive%E6%95%B0%E6%8D%AE%E5%80%BE%E6%96%9C%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/)
