@@ -398,6 +398,7 @@ where 成绩 > avg_score;
 
 ## Reference
 
+- [#SQL 如何查询关于【连续几天】的问题](https://zhuanlan.zhihu.com/p/49285570)
 - [图解SQL面试题：经典50题](https://zhuanlan.zhihu.com/p/38354000)
 - [7张图学会SQL](https://mp.weixin.qq.com/s?__biz=MzAxMTMwNTMxMQ==&mid=2649245863&idx=1&sn=2c3a1e3e8cacf5e4e211758c47619f3e&chksm=835fc097b4284981de23eb6e09259d34963fbd3c1e6bf6c56b7d97bf3f7be816b29572f32d85&scene=21#wechat_redirect)
 - [图解面试题](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzAxMTMwNTMxMQ==&action=getalbum&album_id=1398781984763428865&scene=173&from_msgid=2649245863&from_itemidx=1&count=3#wechat_redirect)
