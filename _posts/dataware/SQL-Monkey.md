@@ -26,6 +26,9 @@ tags: [data warehouse]
 > RAND() Function 0 <= ret < 1
 >
 > 1~100 -> SELECT FLOOR(1 + (RAND() * 100)) LIMIT 10;
+>
+> SELECT CustomerName, CONCAT("H1", " H2 ", RAND()), 
+> CONCAT(Address, " ", PostalCode, " ", City) AS Address FROM Customers;
 
 <details>
 <summary>#SQL 如何查询关于【连续几天】的问题</summary>
