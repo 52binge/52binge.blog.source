@@ -23,6 +23,10 @@ tags: [data warehouse]
 >
 > 教师表：teacher(教师号,教师姓名)
 
+> RAND() Function 0 <= ret < 1
+>
+> 1~100 -> SELECT FLOOR(1 + (RAND() * 100)) LIMIT 10;
+
 <details>
 <summary>#SQL 如何查询关于【连续几天】的问题</summary>
 <p></p>
