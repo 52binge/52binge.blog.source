@@ -23,6 +23,51 @@ tags: [data warehouse]
 >
 > 教师表：teacher(教师号,教师姓名)
 
+<details>
+<summary>#SQL 如何查询关于【连续几天】的问题</summary>
+<p></p>
+
+```sql
+SELECT
+	id,
+	created_at,
+	CURDATE( ), -- 2021-03-18
+	DATE(created_at), -- 2019-11-21
+	DATE(created_at) - 1  -- 20191120
+FROM
+	users 
+	LIMIT 5;
+
+SELECT
+    user_id,
+    MAX( count_date_on ) 
+FROM
+    (
+        (
+        SELECT
+            user_id,
+            count( date_on ) count_date_on 
+        FROM
+            (
+            SELECT
+                user_id,
+                date,
+                row_number ( ) over ( PARTITION BY USER ORDER BY date DESC ) rnk,
+                date - ( MAX( date ) - rnk ) date_on 
+            FROM
+                TB 
+            GROUP BY
+                user_id 
+            ) A 
+        GROUP BY
+            user_id,
+            date_on 
+        ) 
+    ) B 
+GROUP BY
+    user_id
+```
+</details>
 
 ### [1. SQL：查找重复数据？](https://zhuanlan.zhihu.com/p/353564155)
 
@@ -398,6 +443,7 @@ where 成绩 > avg_score;
 
 ## Reference
 
+- [分析最近七天内连续三天活跃用户数](https://zhuanlan.zhihu.com/p/92658629)
 - [#SQL 如何查询关于【连续几天】的问题](https://zhuanlan.zhihu.com/p/49285570)
 - [图解SQL面试题：经典50题](https://zhuanlan.zhihu.com/p/38354000)
 - [7张图学会SQL](https://mp.weixin.qq.com/s?__biz=MzAxMTMwNTMxMQ==&mid=2649245863&idx=1&sn=2c3a1e3e8cacf5e4e211758c47619f3e&chksm=835fc097b4284981de23eb6e09259d34963fbd3c1e6bf6c56b7d97bf3f7be816b29572f32d85&scene=21#wechat_redirect)
