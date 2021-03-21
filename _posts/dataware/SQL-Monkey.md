@@ -27,6 +27,8 @@ tags: [data warehouse]
 >
 > 1~100 -> SELECT FLOOR(1 + (RAND() * 100)) LIMIT 10;
 >
+> IF(expr1,expr2,expr3)
+>
 > SELECT CustomerName, CONCAT("H1", " H2 ", RAND()), 
 > CONCAT(Address, " ", PostalCode, " ", City) AS Address FROM Customers;
 
@@ -390,7 +392,7 @@ from
        *,
        row_number() over(order by 访问量 desc) as 排名
     from 用户访问次数表) as a
-where 排名 > (select max(排名) from a) * 0.2;
+where 排名 <= (select max(排名) from a) * 0.2;
 ```
 
 **3. 每类用户的平均访问次数**
