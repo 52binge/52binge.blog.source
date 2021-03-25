@@ -452,6 +452,7 @@ where 成绩 > avg_score;
 
 ## Reference
 
+- [hive大小表join优化性能](https://blog.csdn.net/u012036736/article/details/84978689)
 - [分析最近七天内连续三天活跃用户数](https://zhuanlan.zhihu.com/p/92658629)
 - [#SQL 如何查询关于【连续几天】的问题](https://zhuanlan.zhihu.com/p/49285570)
 - [图解SQL面试题：经典50题](https://zhuanlan.zhihu.com/p/38354000)
