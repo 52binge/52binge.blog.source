@@ -501,6 +501,7 @@ create table dm.dm_fact_drawal_sum (
 
 ## Reference
 
+[有赞数据仓库元数据系统实践](https://tech.youzan.com/youzan-metadata/)
 [知乎：大数据环境下该如何优雅地设计数据分层](https://zhuanlan.zhihu.com/p/27395332)
 [【数据仓库】——数据仓库概念](https://www.cnblogs.com/jiangbei/p/8483591.html)
 [Hive数据倾斜优化总结](https://monkeyip.github.io/2019/04/25/Hive%E6%95%B0%E6%8D%AE%E5%80%BE%E6%96%9C%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/)
