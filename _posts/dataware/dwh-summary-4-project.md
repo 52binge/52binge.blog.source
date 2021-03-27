@@ -1,6 +1,6 @@
 ---
 top: 8
-title: DataWare Review Summary 4 - data modling
+title: DataWare Review Summary 4 
 toc: true
 date: 2021-03-09 09:07:21
 categories: [data-warehouse]
