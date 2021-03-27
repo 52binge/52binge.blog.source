@@ -450,6 +450,32 @@ where 成绩 > avg_score;
 
 > format(N, D) ,  N 是要格式化的数字， D 是要舍入的小数位数
 
+## FP
+
+(2)
+
+```sql
+SELECT
+    t2.country,
+    count(1) as port_count
+FROM    
+    (
+		SELECT
+			t.country,
+			t.port_name
+		FROM 
+		    `bigquery-public-data.geo_international_ports.world_port_index` t 
+		WHERE t.cargo_wharf is true
+		GROUP BY t.country, t.port_name
+    ) t2
+GROUP BY t2.country
+ORDER BY port_count DESC
+LIMIT 1;
+
+SELECT ST_DISTANCE (t.port_geom, t.port_geom)
+FROM `bigquery-public-data.geo_international_ports.world_port_index` t 
+```
+
 ## Reference
 
 - [hive大小表join优化性能](https://blog.csdn.net/u012036736/article/details/84978689)
