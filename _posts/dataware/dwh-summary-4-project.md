@@ -136,6 +136,8 @@ drawal_companys | loan_usage |
 
 ## 4. 主题模型
 
+> 主题（Subject）是在较高层次上将企业信息系统中的数据进行综合、归类和分析利用的一个抽象概念，每一个主题基本对应一个宏观的分析领域。
+
 No. | 主题名称 | 主题描述
 --- | --- | --- 
 1. | **客户 (USER)** | 当事人, 用户信息, 非常多, 人行征信信息， 个人资产信息
@@ -148,10 +150,12 @@ No. | 主题名称 | 主题描述
 8. | **财务 (RISK)** |
 9. | 风险 (FINANCE) | 风险部
 
+> 在逻辑意义上，它是对应企业中某一宏观分析领域所涉及的分析对象。例如“销售分析”就是一个分析领域，因此这个数据仓库应用的主题就是“销售分析”。
+
 ### 数据分层
 
-数据来源: ODS
-建设方式L 
+数据来源: ODS, 多数全量
+
 
 ## 5. 建模流程
 
@@ -199,11 +203,13 @@ No. | 指标, 粒度, 维度 |描述
 No. | 指标, 粒度, 维度 |描述
 --- | --- | ---
 **统计指标：** |
-. | 1. 最低借款金额, 最高借款金额, 申请次数 |
+. | 1. 借款金额, 申请次数 |
 . | 2. 提供薪报次数, 提供薪报最早时间 |
 . | 3. 提供信报次数, 提供信报最早时间 |
 **统计粒度：** | 用户的一次申请一条记录
 **分析维度：** | 申请日期, 证件类型, 性别, 渠道, 客户经理, 用户类型, 最短期数, 最长期数 
+
+> low and high 借款金额
 
 ```sql
 ---dwd 明细层
@@ -376,7 +382,7 @@ user_quota | id,
 
 </details>
 
-#### 1. dw_fact_credit_dtl
+#### 1. dwd_fact_credit_dtl
 
 No. | 指标 Index, 粒度 Granularity, 维度 dimension |描述
 --- | --- | ---
@@ -386,7 +392,7 @@ No. | 指标 Index, 粒度 Granularity, 维度 dimension |描述
 **分析维度：** | 审核日期, 证件类型, 渠道, 用户类型, 客户经理, 性别, 审核人
 
 <details>
-<summary>dw.dw_fact_credit_dtl</summary>
+<summary>dw.dwd_fact_credit_dtl</summary>
 <p></p>
 
 ```sql
@@ -413,7 +419,7 @@ select
     (case when upper(audit_status) = 'DENY' then 1 else 0 end) as deny_cnt,
     from_unixtime(unix_timestamp(), 'yyyy-MM-dd JH:mm:ss') as etl_time,
     from_unixtime(a.created_time, 'yyyy-MM-dd') as partition_date,
-from ods.loan_credit a left join ods.users u on a.user_id=u.id
+from ods.loan_credit a left join (dim).users u on a.user_id=u.id
 ```
 
 </details>
@@ -505,3 +511,4 @@ create table dm.dm_fact_drawal_sum (
 [知乎：大数据环境下该如何优雅地设计数据分层](https://zhuanlan.zhihu.com/p/27395332)
 [【数据仓库】——数据仓库概念](https://www.cnblogs.com/jiangbei/p/8483591.html)
 [Hive数据倾斜优化总结](https://monkeyip.github.io/2019/04/25/Hive%E6%95%B0%E6%8D%AE%E5%80%BE%E6%96%9C%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/)
+[数据仓库–数据分层（ETL、ODS、DW、APP、DIM）](https://www.codenong.com/cs107025192/)
