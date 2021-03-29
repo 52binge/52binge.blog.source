@@ -505,6 +505,7 @@ create table dm.dm_fact_drawal_sum (
     drawal_app_amt decimal(11,2),
 ```
 
+
 ## Reference
 
 [数据仓库–数据分层（ETL、ODS、DW、APP、DIM）](https://www.codenong.com/cs107025192/)
