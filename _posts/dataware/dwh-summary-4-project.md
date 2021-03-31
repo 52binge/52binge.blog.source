@@ -213,7 +213,8 @@ No. | 指标, 粒度, 维度 |描述
 
 ```sql
 ---dwd 明细层
-create table dw.dw_fact_loan_apply_dtl (
+fact_loan_apply
+(
     data_date string,
     idty_type string, -- 证件类型
     channel_id bigint,
@@ -232,15 +233,17 @@ create table dw.dw_fact_loan_apply_dtl (
     cereport_cnt int,
     last_cereport_time,
     loan_app_cnt int,
-    etl_time string,
+    etl_time string
+)
 ```
 
 <details>
-<summary>dw.dw_fact_loan_apply_dtl</summary>
+<summary>dw/fact_loan_apply</summary>
 <p></p>
 
+
 ```sql
-INSERT OVERWRITE Table dw.dw_fact_loan_apply_dtl partition(partition_date)
+INSERT OVERWRITE Table dw/fact_loan_apply partition(partition_date)
 SELECT
     ...
     u.idty_type,
@@ -296,12 +299,12 @@ FROM
 </details>
 
 <details>
-<summary>dm.dm_fact_loan_apply_sum</summary>
+<summary>dm/fact_loan_apply_sum</summary>
 <p></p>
 
 ```sql
 --- 借款申请量, 申请人数
-CREATE TABLE dm.dm_fact_loan_apply_sum (
+CREATE TABLE dm/fact_loan_apply_sum (
 	data_date string,
 	idty_type string,
 	channel_id BIGINT,
@@ -319,7 +322,7 @@ CREATE TABLE dm.dm_fact_loan_apply_sum (
 	etl_time string 
 ) COMMENT '' partitioned BY ( partition_date string COMMENT '分区日期' ) ROW format delimited FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n';
 
-INSERT overwrite TABLE dm.dm_fact_loan_apply_sum PARTITION ( partition_date ) 
+INSERT overwrite TABLE dm: fact_loan_apply_sum PARTITION ( partition_date ) 
 SELECT
 	data_date,
 	idty_type,
@@ -337,7 +340,7 @@ SELECT
 	sum( long_loan_amount ) AS long_loan_amount,
 	max( from_unixtime(...) ) AS etl_time 
 FROM
-	dw.dw_fact_user_regiter_dtl 
+	dw: fact_user_regiter_dtl
 WHERE
 	partition_data = form_unixtime (...) 
 GROUP BY
@@ -382,7 +385,7 @@ user_quota | id,
 
 </details>
 
-#### 1. dwd_fact_credit_dtl
+#### 1. dwd/fact_credit_dtl
 
 No. | 指标 Index, 粒度 Granularity, 维度 dimension |描述
 --- | --- | ---
@@ -392,11 +395,11 @@ No. | 指标 Index, 粒度 Granularity, 维度 dimension |描述
 **分析维度：** | 审核日期, 证件类型, 渠道, 用户类型, 客户经理, 性别, 审核人
 
 <details>
-<summary>dw.dwd_fact_credit_dtl</summary>
+<summary>dwd/fact_credit_dtl</summary>
 <p></p>
 
 ```sql
-insert overwrite table dw.dw_fact_credit_dtl partition(partition_date)
+insert overwrite table dwd/fact_credit_dtl partition(partition_date)
 select
     from_unixtime(a.audit_date, 'yyyy-MM-dd') as data_date,
     u.idty_type,
@@ -424,7 +427,7 @@ from ods.loan_credit a left join (dim).users u on a.user_id=u.id
 
 </details>
 
-#### 2. dm_fact_loan_credit_sum
+#### 2. dm/fact_loan_credit_sum
 
 No. | 指标, 粒度, 维度 |描述
 --- | --- | ---
@@ -433,11 +436,11 @@ No. | 指标, 粒度, 维度 |描述
 **分析维度：** | 审核日期, 证件类型, 性别, 渠道, 客户经理, 用户类型, 审核人
 
 <details>
-<summary>dm_fact_loan_credit_sum</summary>
+<summary>dm/fact_loan_credit_sum</summary>
 <p></p>
 
 ```sql
-insert overwrite table dm.dm_fact_loan_credit_sum partition(partition_date)
+insert overwrite table dm/fact_loan_credit_sum partition(partition_date)
 select
     data_date,
     idty_type,
@@ -455,7 +458,7 @@ select
     max(from_unixtime(unix_timestamp(), 'yyyy-MM-dd HH:mm:ss')) as etl_time,
     max(from_unixtime(partition_date, 'yyyy-MM-dd HH:mm:ss')) as partition_date
 from
-    dw.dw_fact_credit_dtl
+    dw: fact_credit_dtl
 where 
    data_date=from_unixtime(unix_timestamp(), 'yyyy-MM-dd')
 group by
@@ -477,7 +480,7 @@ No. | 指标, 粒度, 维度 |描述
 
 > 用户的一次申请， 可能有多条审核记录
 
-hive_dw_fact_drawal_dtl.hql
+<!-- hive_dw_fact_drawal_dtl.hql -->
 
 ```sql
 ods.drawal_apply a left join ods.users u on a.user_id=u.id
@@ -491,7 +494,7 @@ dm层： 提款统计指标:
 
 ```sql
 ---提款统计指标
-create table dm.dm_fact_drawal_sum (
+create table dm/fact_drawal_sum (
     data_date string,
     idty_type string,
     channel_id bigint,
