@@ -53,18 +53,18 @@ class Solution:
                 elif nums[mid] < t:
                     l = mid + 1
                 else:
-                    if flag == "R":
+                    if flag == "L":
                         r = mid - 1
                     else:
                         l = mid + 1
 
-            if flag == 'R' and r + 1 < len(nums) and nums[r + 1] == t:
+            if flag == 'L' and r + 1 < len(nums) and nums[r + 1] == t:
                 return r + 1
-            if flag == 'L' and l - 1 >= 0 and nums[l - 1] == t:
+            if flag == 'R' and l - 1 >= 0 and nums[l - 1] == t:
                 return l - 1
             return -1
 
-        return [binSearch(nums=nums, t=target, flag='R'), binSearch(nums=nums, t=target, flag='L')]
+        return [binSearch(nums=nums, t=target, flag='L'), binSearch(nums=nums, t=target, flag='R')]
 ```
 
 [88. 合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/) - 逆向双指针
@@ -180,7 +180,7 @@ class Solution:
         if k == 0 or k > n:
             return []
         
-        hp = [i for i in nums[:k]]
+        hp = nums[:k]
 
         heapify(hp)
 
@@ -197,11 +197,11 @@ class Solution:
 
 No. | dynamic programming | Flag
 :---: | --- | ---
-&nbsp; | [31. n个骰子的点数](https://leetcode-cn.com/problems/nge-tou-zi-de-dian-shu-lcof) dp[i][j] ，表示投掷完 i 枚骰子后，点数 j 的出现次数 | ✔️
-&nbsp; | [Summary 20 dynamic programming](/2020/08/31/leetcode/summary_dp/) |
+no-gd | [31. n个骰子的点数](https://leetcode-cn.com/problems/nge-tou-zi-de-dian-shu-lcof) dp[i][j] ，表示投掷完 i 枚骰子后，点数 j 的出现次数 | ✔️
+&nbsp; | [Summary 20 dynamic programming](/2019/08/31/leetcode/summary_dp/) |
 (4.1) | **DP表示状态** |
 easy | 1. climbing-stairs ， 新建{}or[] ,滚动数组 <br> 2. 连续子数组的最大和 | ❎
-addition | [63. 不同路径 II](https://leetcode-cn.com/problems/unique-paths-ii/), `store = [[0]*n for i in range(m)]` 二维初始化 | ❎
+addition | [63. 多少种 不同路径 II](https://leetcode-cn.com/problems/unique-paths-ii/), `store = [[0]*n for i in range(m)]` 二维初始化 | ❎
 <br> addition | [Edit Distance/编辑距离](https://leetcode-cn.com/problems/edit-distance/)【word1 转换成 word2】<br>&nbsp;&nbsp; 1. dp = [ [0] * (m + 1) for _ in range(n + 1)] <br>&nbsp;&nbsp; 2. dp[i][j] = min(A,B,C) | <br> ✔️❎
 addition | [5. Longest Palindromic Substring/最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) <br>1. 枚举子串的长度 l+1,从小问题到大问题 <br> 2. 枚举子串的起始位置 i, j=i+l 子串结束位置,  dp[i][j] = (dp[i+1][j-1] and s[i]==s[j])  | ✔️❎
 good | [把数字翻译成字符串](https://leetcode-cn.com/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/) | Fib ✔️❎
@@ -230,7 +230,7 @@ No. | Question | Flag
 :---: | --- | ---
 (3). | linkedList |
 &nbsp; | 7. 从尾到头打印链表： <br>`reversePrint(head.next) + [head.val]` | ❎
-&nbsp; | 8. [反转链表](https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/) &nbsp;&nbsp; (循环版 双指针) <img src="/images/leetcode/linkedlist-reverseList.gif" width="600" alt="" /> | ❎
+&nbsp; | 8. [反转链表](https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/) pre, cur = head, head.next &nbsp; pre.next = None &nbsp; (循环版 双指针) <img src="/images/leetcode/linkedlist-reverseList.gif" width="600" alt="" /> | ❎
 &nbsp; | 10. [合并两个排序的链表](https://leetcode-cn.com/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/) &nbsp;&nbsp; [**Recursion**] <br> p.next = self.mergeTwoLists(l1.next, l2) | ❎
 addition | 旋转单链表 (F1. 环 F2. 走n-k%n 断开) <br> 举例： 给定 1->2->3->4->5->6->NULL, K=3 <br> 则4->5->6->1->2->3->NULL |  ❎
 addition | [92. 翻转部分单链表](https://zhuanlan.zhihu.com/p/141775663) `reverse(head: ListNode, tail: ListNode)` <br> 举例：1->2->3->4->5->null, from = 2, to = 4 结果：1->4->3->2->5->null | ❎
