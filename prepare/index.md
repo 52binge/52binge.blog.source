@@ -1,8 +1,41 @@
 
+## data warehouse
+
+数据质量 - 
+
+1. 数据本身质量：数据开发对数据质量负责，保持对数据的敬畏心
+2. 数据建设质量：可以从两方面来考量：易用性和丰富性；
+
+Title | Desc
+:--- | :--- 
+指标体系 |  指标定义规范，目的是统一开发&产品对指标的定义。通过对原子指标的命名规则、派生指标的命名规则和派生词的定义来完成。
+粒度  | 
+维度 |
+
+ 1. 数据主题划分
+ 2. 数据分层
+ 3. 表 命名规范 - dwd_数据域_业务过程_(p全量/i增量) / dws_数据域_维度_统计周期
+ 4. ods dwd dws dim ads
+
+评价体系：
+
+ 1. 数据安全
+ 2. 数据质量
+ 3. 开发效率
+ 4. 数据稳定
+ 5. 数据规范
+ 6. 数据建设
+
+元数据管理:
+
+ 1. Excel 2. DDL 3. Airflow
+
+Risk Dept
+
+ 1. 建立工单
+ 
 No. | desc | Flag
-:---: | --- | :---:
-1. | 简历上的NLP项目 |
-2. | 基础python知识： |
+:--- | :--- | ---
 &nbsp; | dict，list，set和tuple的区别？底层实现是hash/list/数组？  <br><br> 1. list 被实现为长度可变的数组，每次都会分配略大的内存防止频繁的申请分配内存，连续的一块的内存 <br> 2. tuple 本身为一个结构体，结构体里面有一个二级指针，这是常量二级指针，可以形成一个`指针数组` <br>3. **set** : `允许空值的dict`, 对dict有进行优化，在插入和删除元素的复杂度为常数级别，最坏也是O(n) <br> 4. dict 底层使用的哈希表, 哈希表平均查找时间复杂度O(1) <br> &nbsp;&nbsp;  [dict的key是不可变对象，因为要确保经过hash算法之后得到的地址唯一](https://www.codenong.com/cs106215357/) <br> &nbsp;&nbsp; py3.6+ dict是insert ordered，原来是根据hash值,乱序的，pop不一定是最后一个插入的键值对 | ❎
 &nbsp; | 函数定义的时候参数前的*和**分别是什么意思，有什么区别？ <br> &nbsp;&nbsp; fun(1,2,3,4), tuple `1, (2,3,4)` / fun(1,a=2,b=3) dict `1, {a:2, b:3}1. ` | ❎
 &nbsp; | 给变量a赋值int(1)，内存占4字节，后来又给a赋值str(1)，内存占1字节。请问两次赋值之间发生了什么？ <br> [python按引用赋值和深、浅拷贝 - [-5,256] 小整数优化](https://www.cnblogs.com/f-ck-need-u/p/10123145.html)， python int 占用 24~28 字节, 动态 | ❎
@@ -938,8 +971,98 @@ Spark有哪些聚合类的算子,我们应该尽量避免什么类型的算子�
 
 > 在我们的开发过程中，能避免则尽可能避免使用reduceByKey、join、distinct、repartition等会进行shuffle的算子，尽量使用map类的非shuffle算子。这样的话，没有shuffle操作或者仅有较少shuffle操作的Spark作业，可以大大减少性能开销。
 
+```bash
+./bin/spark-submit \
+  --master yarn
+  --deploy-mode cluster
+  --num-executors 100 \ # 总共申请的executor数目，普通任务十几个或者几十个足够了
+  --executor-memory 6G \
+  --executor-cores 4 \ # 每个executor内的核数，即每个executor中的任务task数目，此处设置为2
+  --driver-memory 1G \ # driver内存大小，一般没有广播变量(broadcast)时，设置1~4g足够
+  --conf spark.default.parallelism=1000 \    # 默认每个 satge 的 Task总数
+ # Spark作业的默认为500~1000个比较合适,如果不设置，spark会根据底层HDFS的block数量设置task的数量，这样会导致并行度偏少，资源利用不充分。该参数设为num-executors * executor-cores的2~3倍比较合适
+  --conf spark.storage.memoryFraction=0.5 \  存储内存
+  --conf spark.shuffle.memoryFraction=0.3 \  执行内存 # shuffle过程中一个task拉取到上个stage的task的输出后，进行聚合操作时能够使用的Executor内存的比例，默认是0.2，如果shuffle聚合时使用的内存超出了这个20%的限制，多余数据会被溢写到磁盘文件中去，降低shuffle性能
+ #
+ # —-spark.yarn.executor.memoryOverhead 1G ： executor执行的时候，用的内存可能会超过executor-memory，
+ # 所以会为executor额外预留一部分内存，spark.yarn.executor.memoryOverhead即代表这部分内存
+ # 默认的 spark.executor.memoryOverhead=6144（6G） 有点浪费
+```
 
-[大数据工程师（开发）面试题(附答案)](https://cloud.tencent.com/developer/article/1061680)
+[spark-summary-3-trouble-shooting](http://localhost:5000/2021/01/21/spark/spark-summary-3-trouble-shooting/)
+
+```bash
+spark.sql.shuffle.partitions - 配置join或者聚合操作shuffle数据时分区的数量
+spark.default.parallelism. - 该参数用于设置每个stage的默认task数量 , 设置该参数为num-executors * executor-cores的2~3倍较为合适
+```
+
+**spark sql多维分析优化——提高读取文件的并行度**, File (ROW Group - column chunk)
+
+```bash
+spark.sql.files.maxPartitionBytes 默认128MB，单个分区读取的最大文件大小
+spark.sql.files.maxPartitionBytes 的值来降低 maxSplitBytes 的值
+
+parquet.block.size
+```
+
+> parquet 文件的数据是以row group 存储，一个parquet 文件可能只含有一个row group，也有可能含有多个row group ，row group 的大小 主要由parquet.block.size 决定。
+>
+> 「Parquet是为了使Hadoop生态系统中的任何项目都可以使用压缩的，高效的列式数据表示形式」
+> parquet.block size:默认值为134217728byte,即128MB,表示 Row Group在内存中的块大小。该值设置得大,可以提升 Parquet文件的读取效率,但是相应在写的时候需要耗费更多的内存
+>
+>「所以在实际生产中，使用Parquet存储，snappy/lzo压缩的方式更为常见，这种情况下可以避免由于读取不可分割大文件引发的数据倾斜。
+>
+>
+> 读取hdfs文件并行了 22个 tasks
+
+
+```bash
+1. Cache 缓存
+
+  1.1 spark.catalog.cacheTable(“t”) 或 df.cache()
+             Spark SQL会把需要的列压缩后缓存，避免使用和GC的压力
+  1.2 spark.sql.inMemoryColumnarStorage.compressed 默认true
+  1.3 spark.sql.inMemoryColumnarStorage.batchSize 默认10000
+             控制列缓存时的数量，避免OOM风险。
+引申要点： 行式存储 & 列式存储 优缺点
+
+2. 其他配置
+
+  2.1 spark.sql.autoBroadcastJoinThreshold
+  2.2 spark.sql.shuffle.partitions 默认200，配置join和agg的时候的分区数
+  2.3 spark.sql.broadcastTimeout 默认300秒，广播join时广播等待的时间
+  2.4 spark.sql.files.maxPartitionBytes 默认128MB，单个分区读取的最大文件大小
+  2.5 spark.sql.files.openCostInBytes
+parquet.block.size
+
+
+3. 广播 hash join - BHJ
+   3.1 当系统 spark.sql.autoBroadcastJoinThreshold 判断满足条件，会自动使用BHJ
+```
+
+Spark SQL 在 Spark Core 的基础上针对结构化数据处理进行很多优化和改进.
+
+> Spark 只在启动 Executor 是启动一次 JVM，内存的 Task 操作是在线程复用的。每次启动 JVM 的时间可能就需要几秒甚至十几秒，那么当 Task 多了，这个时间 Hadoop 不知道比 Spark 慢了多。
+>
+> 如果对RDD进行cache操作后，数据在哪里？
+>  
+> 1. 执行cache算子时数据会被加载到各个Executor进程的内存.
+> 2. 第二次使用 会直接从内存中读取而不会区磁盘.
+
+华为云Stack全景图 > 开发者指南 > SQL和DataFrame调优 > Spark SQL join优化
+
+> 1. 逻辑执行计划只是对SQL语句中以什么样的执行顺序做一个整体描述.
+> 2. 物理执行计划包含具体什么操作. 例如：是BroadcastJoin、还是SortMergeJoin…
+> 
+> 聚合后cache
+> 
+> 默认情况下coalesce不会产生shuffle coalesce, repartition
+>
+> (1) 谓词下推 Predicate PushDown - SQL中的谓词主要有 like、between、is null、in、=、!=等
+> (2) 列裁剪 Column Pruning 和 映射下推 Project PushDown - 列裁剪和映射下推的目的：过滤掉查询不需要使用到的列
+
+
+[大数据工程师（开发）题(附答案)](https://cloud.tencent.com/developer/article/1061680)
 
 ## 7. Hive 优化
 
@@ -956,10 +1079,143 @@ No. | Hive 优化 | Flag
 9. | 数据倾斜 - key本身不均 - 可以在key上加随机数，或者增加reduceTask数量 |
 10. | 合并小文件 - 小文件的产生有三个地方，map输入，map输出，reduce输出 |
 
+```sql
+WITH x AS (
+    SELECT
+        app,
+        user_id,
+        count( 1 ) AS rn 
+    FROM
+        table1 
+    GROUP BY
+        app,
+        user_id 
+    ) 
+
+SELECT
+    t.app,
+    t.user_id 
+FROM
+    (
+    SELECT
+        app,
+        user_id,
+        row_number ( ) over ( PARTITION BY app ORDER BY rn DESC ) AS max_user 
+    FROM
+        x 
+    ) AS t 
+WHERE
+    t.max_user <= 5
+```
+
+[再次分享！Hive调优，数据工程师成神之路](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247493676&idx=1&sn=1658835f7c595cce105022e70640e020&chksm=cf37da21f8405337445ce6d8edbe4640b1a6dbd7903dfd6ac7cd2edbd83394a372bd2e3b9997&scene=21#wechat_redirect)
+
+进程 启动慢 vs 线程 级别
+MR中间结果只能存磁盘HDFS, Spark 中间结果可以缓存
+Map方法之后Reduce方法之前这段处理过程叫「Shuffle」
+
+> (1). Data Skew 的原理很简单：在进行shuffle的时候，必须将各个节点上相同的key拉取到某个节点上的一个task来进行处理，比如按照key进行聚合或join等操作。此时如果某个key对应的数据量特别大的话，就会发生 Data Skew。
+> 
+> (2). Task 有2个非常慢
+
+Hive
+
+(1). Count Distinct 改为 Group by
+(2). 在小表和大表进行join时，将小表放在前边，效率会高。hive会将小表进行缓存。
+
+2、mapjoin
+
+使用mapjoin将小表放入内存，在map端和大表逐一匹配。从而省去reduce。
+
+样例：
+
+```sql
+select /*+MAPJOIN(b)*/ a.a1,a.a2,b.b2 from tablea a JOIN tableb b ON a.a1=b.b1
+```
+
+缓存多张小表：
+
+```sql
+select /*+MAPJOIN(b,c)*/ a.a1,a.a2,b.b2 from tablea a JOIN tableb b ON a.a1=b.b1 JOIN tbalec c on a.a1=c.c1
+```
+
+Hive0.11版本之后：
+hive.auto.convert.join=True
+hive.mapjoin.smalltable.filesize
+默认值为2500000(25M),通过配置该属性来确定使用该优化的表的大小，如果表的大小小于此值就会被加载进内存中
+
+注意：使用默认启动该优化的方式如果出现默名奇妙的BUG(比如MAPJOIN并不起作用),就将以下两个属性置为fase手动使用MAPJOIN标记来启动该优化
+
+hive.auto.convert.join=false(关闭自动MAPJOIN转换操作)
+hive.ignore.mapjoin.hint=false(不忽略MAPJOIN标记)
+
+原文链接：https://blog.csdn.net/u012036736/article/details/84978689
+
+**2.1 参数调节**
+
+```bash
+set hive.map.aggr = true # 在map中会做部分聚集操作，效率更高但需要更多的内存。
+set hive.groupby.skewindata = true 
+# 数据倾斜的时候进行负载均衡，查询计划生成两个MR job
+#
+# 第一个job先进行key随机分配处理，随机分布到Reduce中，每个Reduce做部分聚合操作，先缩小数据量。
+# 第二个job再进行真正的group by key处理，根据预处理的数据结果按照Group By Key分布到Reduce中（这个过程可以保证相同的Key被分布到同一个Reduce中）
+# 完成最终的聚合操作。
+
+set hive.merge.mapfiles=true # 当出现小文件过多，需要合并小文件
+
+set hive.exec.reducers.bytes.per.reducer=1000000000 （单位是字节） 
+# 每个reduce能够处理的数据量大小，默认是1G。
+
+hive.exec.reducers.max=999 
+# 最大可以开启的reduce个数，默认是999个。在只配了hive.exec.reducers.bytes.per.reducer以及hive.exec.reducers.max的情况下，实际的reduce个数会根据实际的数据总量/每个reduce处理的数据量来决定。
+
+set mapred.reduce.tasks=-1 
+# 实际运行的reduce个数，默认是-1，可以认为指定，但是如果认为在此指定了，那么就不会通过实际的总数据量hive.exec.reducers.bytes.per.reducer来决定reduce的个数了。
+```
+
+**2.大表Join大表**
+
+把空值的key变成一个字符串加上随机数，把倾斜的数据分到不同的reduce上，由于null值关联不上，处理后并不影响最终结果。如下：
+
+```sql
+select * from log a 
+left outer join users b 
+on 
+case when a.user_id is null 
+then concat('hive',rand()) 
+else a.user_id end = b.user_id;
+```
+
+6.小表不小不大，怎么用 map join 解决倾斜问题
+
+> 在小表和大表进行join时，将小表放在前边，效率会高。hive会将小表进行缓存。
+
+**Reduce 长尾**
+
+`Count Distinct` 的执行原理是将需要去重的宇段 以及 GroupBy宇段联合作为 key将数据分发到 Reduce端。
+因为 Distinct操作，数据无法在 Map 端的 Shuffle 阶段根据 Group By 先做一次聚合操作，以减少传输的数据量，而是将所有的数据都传输到 Reduce 端，当 key 的数据分发不均匀时，就会导致 Reduce 端长尾。
+
+> 1. 对同一个表按照维度对不同的列进行 Count Distinct操作，造成 Map 端数据膨胀，从而使得下游的 Join 和 Reduce 出现链路上的 长尾。
+> 2. Map 端直接做聚合时出现 key 值分布不均匀，造成 Reduce 端长尾。 .
+> 3. 动态分区数过多时可能造成小文件过多，从而引起 Reduce 端长尾。 .
+> 4. 多个 Distinct 同时出现在一段 SQL 代码时，数据会被分发多次， 会造成数据膨胀 N 倍，长尾现象放大 N 倍.
+
+**MapReduce**
+
+> (1) Map方法之后Reduce方法之前这段处理过程叫「Shuffle」
+>
+> (2) Map方法之后，数据首先进入到分区方法，把数据标记好分区，然后把数据发送到环形缓冲区；环形缓冲区默认大小100m，环形缓冲区达到80%时，进行溢写；溢写前对数据进行排序，排序按照对key的索引进行字典顺序排序，排序的手段「快排」；溢写产生大量溢写文件，需要对溢写文件进行「归并排序」；对溢写的文件也可以进行Combiner操作，前提是汇总操作，求平均值不行。最后将文件按照分区存储到磁盘，等待Reduce端拉取。
+>
+> 3）每个Reduce拉取Map端对应分区的数据。拉取数据后先存储到内存中，内存不够了，再存储到磁盘。拉取完所有数据后，采用归并排序将内存和磁盘中的数据都进行排序。在进入Reduce方法前，可以对数据进行分组操作。
+
 ## Reference
 
+
+other:
+
 - [Shopee大数据](https://www.shuzhiduo.com/A/6pdDQVbKzw/)
-- [0086 shopee面试题汇总](https://blog.csdn.net/gendlee1991/article/details/105759780)
+- [0086 shopee题汇总](https://blog.csdn.net/gendlee1991/article/details/105759780)
 - [good - 新加坡Singapore Data infra 经验分享](https://www.aiwaner.cn/singapore-shopee.html)
 - [一亩三分地 - Shopee新加坡面经](https://www.1point3acres.com/bbs/interview/shopee-data-engineer-591386.html)
 - [2020 年 Shopee 秋招面经](https://leetcode-cn.com/circle/discuss/ej0oh6/view/oDT1B0/)
