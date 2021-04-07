@@ -1091,25 +1091,25 @@ Spark SQL 在 Spark Core 的基础上针对结构化数据处理进行很多优�
 > (2) 列裁剪 Column Pruning 和 映射下推 Project PushDown - 列裁剪和映射下推的目的：过滤掉查询不需要使用到的列
 
 
-[大数据工程师（开发）题(附答案)](https://cloud.tencent.com/developer/article/1061680)
+[DE（开发）题(附答案)](https://cloud.tencent.com/developer/article/1061680)
 
 ## 7. Hive 优化
 
 No. | Hive 优化 | Flag
 :---: | --- | :---
 1. | explain | explain [extended] query |
-2. | 列裁剪  | set hive.optimize.cp = true;
-3. | 谓词下推 | set hive.optimize.ppd=true; ## 默认是true
-4. | 分区裁剪 |
-5. | 合并小文件 - Map 输入合并 | 如果一个mapreduce job碰到一对小文件作为输入，一个小文件启动一个Task<br><br> Map端输入、合并文件之后按照block的大小分割（默认）<br>set hive.input.format=org.apache.hadoop.hive.ql.io.CombineHiveInputFormat;<br>## Map端输入，不合并<br>set hive.input.format=org.apache.hadoop.hive.ql.io.HiveInputFormat;
-5. | 合并小文件 - Map/Reduce输出合并 | 是否合并Map输出文件, 默认值为true<br>set hive.merge.mapfiles=true;<br><br> 是否合并Reduce端输出文件,默认值为false<br>set hive.merge.mapredfiles=true;
-6. | 合理设置MapTask并行度 |
-7. | 合理设置ReduceTask并行度 |
-8. | Join优化
-9. | 启用 MapJoin
-10. | Join数据倾斜优化
-13. | Group By优化
-15. | Count Distinct优化
+2. | 列裁剪  | set hive.optimize.cp = true; # 列裁剪，取数只取查询中需要用的列，默认true
+3. | <br>谓词下推 | set hive.optimize.ppd=true; # 默认是true<br><br>`select a.*, b.* from a join b on a.id = b.id where b.age > 20;`
+4. | 分区裁剪 | set hive.optimize.pruner=true; # 默认是true
+5. | 合并小文件 <br><br><br><br> Map 输入合并 | 如果一个mapreduce job碰到一对小文件作为输入，一个小文件启动一个Task<br><br>**Map 输入合并:**<br><br># Map端输入、合并文件之后按照block的大小分割（默认）set <br> hive.input.format=org.apache.hadoop.hive.ql.io.CombineHiveInputFormat;<br><br># Map端输入，不合并<br>set hive.input.format=org.apache.hadoop.hive.ql.io.HiveInputFormat;<br><br>
+5. | 合并小文件 <br><br><br><br> Map/Reduce输出合并 | 大量的小文件会给 HDFS 带来压力，影响处理效率.<br>可以通过合并 Map 和 Reduce 的结果文件来消除影响 <br><br> 是否合并Map输出文件, 默认值为true<br>set hive.merge.mapfiles=true;<br><br> 是否合并Reduce端输出文件,默认值为false<br>set hive.merge.mapredfiles=true;
+6. | 设置MapTask并行度 | 1、减少 MapTask 数是通过合并小文件来实现，这一点主要是针对数据源<br>2、增加 MapTask 数可以通过控制上一个 job 的 reduceTask 个数<br><br>重点注意：不推荐把这个值进行随意设置！<br>推荐的方式：使用默认的切块大小即可。如果非要调整，最好是切块的N倍数<br><br> default_mapper_num = total_size / dfs_block_size <br><br> set mapred.map.tasks=10; # 默认值是2, 大于 default_mapper_num 才生效 <br><br>**总结一下控制 mapper 个数的方法**：<br>1. 如果想增加 MapTask 个数，可以设置 mapred.map.tasks 为一个较大的值<br>2. 如果想减少 MapTask 个数，可以设置 maperd.min.split.size 为一个较大的值<br>3. 如果输入是大量小文件，想减少 mapper 个数，可以通过设置 hive.input.format 合并小文件
+7. | 设置ReduceTask并行度 | 可以通过改变上述两个参数的值来控制 ReduceTask 的数量. 也可以通过: <br><br> set mapred.map.tasks=10; <br> set mapreduce.job.reduces=10;
+8. | Join优化 | 1. 优先过滤后再进行Join操作，最大限度的减少参与join的数据量<br>2. 小表join大表，最好启动mapjoin，hive自动启用mapjoin, 小表不能超过25M，可以更改<br>3. Join on的条件相同的话，最好放入同一个job，并且join表的排列顺序从小到大<br>4. 如果多张表做join, 如果多个链接条件都相同，会转换成一个Job 
+9. | 启用 MapJoin |
+10. | <br><br>Join数据倾斜优化 | # join的key对应的记录条数超过这个值则会进行分拆，值根据具体数据量设置<br>set hive.skewjoin.key=100000;<br><br># 如果是join过程出现倾斜应该设置为true<br>set hive.optimize.skewjoin=false;
+13. | Group By优化 |
+15. | Count Distinct优化 |
 
 No. | Hive 优化 | Flag
 :---: | --- | :---:
