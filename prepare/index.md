@@ -1107,7 +1107,7 @@ No. | Hive 优化 | Flag
 7. | 设置ReduceTask并行度 | 可以通过改变上述两个参数的值来控制 ReduceTask 的数量. 也可以通过: <br><br> set mapred.map.tasks=10; <br> set mapreduce.job.reduces=10;
 8. | Join优化 | 1. 优先过滤后再进行Join操作，最大限度的减少参与join的数据量<br>2. 小表join大表，最好启动mapjoin，hive自动启用mapjoin, 小表不能超过25M，可以更改<br>3. Join on的条件相同的话，最好放入同一个job，并且join表的排列顺序从小到大<br>4. 如果多张表做join, 如果多个链接条件都相同，会转换成一个Job 
 9. | 启用 MapJoin |
-10. | <br><br>Join数据倾斜优化 | # join的key对应的记录条数超过这个值则会进行分拆，值根据具体数据量设置<br>set hive.skewjoin.key=100000;<br><br># 如果是join过程出现倾斜应该设置为true<br>set hive.optimize.skewjoin=false;
+10. | <br><br>Join数据倾斜优化 | # join的key对应的记录条数超过这个值则会进行分拆，值根据具体数据量设置<br>set hive.skewjoin.key=100000;<br><br># 如果是join过程出现倾斜应该设置为true<br>set hive.optimize.skewjoin=false;<br><br>通过 hive.skewjoin.mapjoin.map.tasks 参数还可以控制第二个 job 的 mapper 数量，默认10000<br>set hive.skewjoin.mapjoin.map.tasks=10000;
 13. | Group By优化 |
 15. | Count Distinct优化 |
 
