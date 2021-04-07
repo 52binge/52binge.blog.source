@@ -1,6 +1,35 @@
 
 ## data warehouse
 
+[知乎：如何建设数据仓库？](https://www.zhihu.com/question/19703294)
+[华为：数据仓库、主题域、主题概念与定义](https://www.huaweicloud.com/articles/432adc9ebe5d354c6393a3490a005d10.html)
+
+other:
+
+[美团配送数据治理实践](https://tech.meituan.com/2020/03/12/delivery-data-governance.html)
+
+[数仓大山哥 码龄10年](https://blog.csdn.net/panfelix)
+[good 数仓大山哥 - Hive数据倾斜的原因及主要解决方法](https://blog.csdn.net/panfelix/article/details/107326899?spm=1001.2014.3001.5501)
+[数仓大山哥 - Hive优化-大表join大表优化](https://blog.csdn.net/panfelix/article/details/107913560?spm=1001.2014.3001.5501)
+[缓慢变化维 (Slowly Changing Dimension) 常见的三种类型及原型设计（转）](https://www.cnblogs.com/xqzt/p/4472005.html)
+
+DWH 建模方法: **范式建模法/维度建模法/实体建模法**
+
+这里面就涉及到了数据仓库的架构，简单来说数据仓库分为四个层次：
+
+Layering | Desc
+:---: | :--- 
+ODS | 存放原始数据，直接加载原始日志、数据，数据保存原貌不做处理。
+DWD | 结构与粒度原始表保持一致，对ODS层数据进行清洗
+DWS | 以DWD为基础，进行轻度汇总 （少量以ODS为基础）
+ADS | 为各种统计报表提供数据
+
+> 注意: 数据仓库的架构当中，各个系统的元数据通过ETL同步到操作性数据仓库ODS中，对ODS数据进行面向主题域建模形成DW（数据仓库），DM是针对某一个业务领域建立模型，具体用户（决策层）查看DM生成的报表
+
+> 最重要的是，要和业务以及产品负责人耐心沟通，认真敲定口径，比如观看人数的统计，就是要确定好哪些观众不算有效观众，观众和主播是同一人的等等细节，耐心是很重要的，需要格外注意的是，开发要学会要抛弃自己的专业知识，用最通俗的方式去解释，并且学会留下记录。
+>
+> 说了这么多，最最重要的，一定要做好规范维护，无论是用前端还是excel，及时更新是必须的。表的作用，设计理念，表字段的取数逻辑，口径的提供人，表结构都要记录在案，时常维护
+
 数据质量 - 
 
 1. 数据本身质量：数据开发对数据质量负责，保持对数据的敬畏心
