@@ -142,7 +142,243 @@ WHERE
 > 
 > (2). Task 有2个非常慢
 
+1. 不指定语言，写一个WordCount的MapReduce
 
+> 1. lines = sc.textFile(...)
+> 2. lines.flatMap(lambda x: x.split(' '))
+> 3. wco = words.map(lambda x: (x, 1))
+> 4. word_count = wco.reduceByKey(add)
+> 5. word_count.collect()
+
+```python
+lines = sc.textFile("/Users/blair/ghome/github/spark3.0/pyspark/spark-src/word_count.text", 2)
+
+lines = lines.filter(lambda x: 'New York' in x)
+#lines.take(3)
+
+words = lines.flatMap(lambda x: x.split(' '))
+
+wco = words.map(lambda x: (x, 1))
+
+#print(wco.take(5))
+
+word_count = wco.reduceByKey(add)
+
+word_count.collect()
+```
+
+2. 你能用SQL语句实现上述的MapReduce吗？
+
+```sql
+select id, count(*) from D group by id order by count(*) desc;
+```
+
+3. Spark提交你的jar包时所用的命令是什么？
+
+```bash
+spark-submit
+```
+
+4. 你所理解的Spark的shuffle过程？
+
+> Shuffle是MapReduce框架中的一个特定的phase，介于Map phase和Reduce phase之间，当Map的输出结果要被Reduce使用时，输出结果需要按key哈希，并且分发到每一个Reducer上去，这个过程就是shuffle。由于shuffle涉及到了磁盘的读写和网络的传输，因此shuffle性能的高低直接影响到了整个程序的运行效率。
+
+如果我有两个list，如何用Python语言取出这两个list中相同的元素？
+
+
+```python
+list(set(list1).intersection(set(list2)))
+```
+
+Spark有哪些聚合类的算子,我们应该尽量避免什么类型的算子？
+
+> 在我们的开发过程中，能避免则尽可能避免使用reduceByKey、join、distinct、repartition等会进行shuffle的算子，尽量使用map类的非shuffle算子。这样的话，没有shuffle操作或者仅有较少shuffle操作的Spark作业，可以大大减少性能开销。
+
+```bash
+./bin/spark-submit \
+  --master yarn
+  --deploy-mode cluster
+  --num-executors 100 \ # 总共申请的executor数目，普通任务十几个或者几十个足够了
+  --executor-memory 6G \
+  --executor-cores 4 \ # 每个executor内的核数，即每个executor中的任务task数目，此处设置为2
+  --driver-memory 1G \ # driver内存大小，一般没有广播变量(broadcast)时，设置1~4g足够
+  --conf spark.default.parallelism=1000 \    # 默认每个 satge 的 Task总数
+ # Spark作业的默认为500~1000个比较合适,如果不设置，spark会根据底层HDFS的block数量设置task的数量，这样会导致并行度偏少，资源利用不充分。该参数设为num-executors * executor-cores的2~3倍比较合适
+  --conf spark.storage.memoryFraction=0.5 \  存储内存
+  --conf spark.shuffle.memoryFraction=0.3 \  执行内存 # shuffle过程中一个task拉取到上个stage的task的输出后，进行聚合操作时能够使用的Executor内存的比例，默认是0.2，如果shuffle聚合时使用的内存超出了这个20%的限制，多余数据会被溢写到磁盘文件中去，降低shuffle性能
+ #
+ # —-spark.yarn.executor.memoryOverhead 1G ： executor执行的时候，用的内存可能会超过executor-memory，
+ # 所以会为executor额外预留一部分内存，spark.yarn.executor.memoryOverhead即代表这部分内存
+ # 默认的 spark.executor.memoryOverhead=6144（6G） 有点浪费
+```
+
+[spark-summary-3-trouble-shooting](http://localhost:5000/2021/01/21/spark/spark-summary-3-trouble-shooting/)
+
+```bash
+spark.sql.shuffle.partitions - 配置join或者聚合操作shuffle数据时分区的数量
+spark.default.parallelism. - 该参数用于设置每个stage的默认task数量 , 设置该参数为num-executors * executor-cores的2~3倍较为合适
+```
+
+**spark sql多维分析优化——提高读取文件的并行度**, File (ROW Group - column chunk)
+
+```bash
+spark.sql.files.maxPartitionBytes 默认128MB，单个分区读取的最大文件大小
+spark.sql.files.maxPartitionBytes 的值来降低 maxSplitBytes 的值
+
+parquet.block.size
+```
+
+> parquet 文件的数据是以row group 存储，一个parquet 文件可能只含有一个row group，也有可能含有多个row group ，row group 的大小 主要由parquet.block.size 决定。
+>
+> 「Parquet是为了使Hadoop生态系统中的任何项目都可以使用压缩的，高效的列式数据表示形式」
+> parquet.block size:默认值为134217728byte,即128MB,表示 Row Group在内存中的块大小。该值设置得大,可以提升 Parquet文件的读取效率,但是相应在写的时候需要耗费更多的内存
+>
+>「所以在实际生产中，使用Parquet存储，snappy/lzo压缩的方式更为常见，这种情况下可以避免由于读取不可分割大文件引发的数据倾斜。
+>
+>
+> 读取hdfs文件并行了 22个 tasks
+
+
+```bash
+1. Cache 缓存
+
+  1.1 spark.catalog.cacheTable(“t”) 或 df.cache()
+             Spark SQL会把需要的列压缩后缓存，避免使用和GC的压力
+  1.2 spark.sql.inMemoryColumnarStorage.compressed 默认true
+  1.3 spark.sql.inMemoryColumnarStorage.batchSize 默认10000
+             控制列缓存时的数量，避免OOM风险。
+引申要点： 行式存储 & 列式存储 优缺点
+
+2. 其他配置
+
+  2.1 spark.sql.autoBroadcastJoinThreshold
+  2.2 spark.sql.shuffle.partitions 默认200，配置join和agg的时候的分区数
+  2.3 spark.sql.broadcastTimeout 默认300秒，广播join时广播等待的时间
+  2.4 spark.sql.files.maxPartitionBytes 默认128MB，单个分区读取的最大文件大小
+  2.5 spark.sql.files.openCostInBytes
+parquet.block.size
+
+
+3. 广播 hash join - BHJ
+   3.1 当系统 spark.sql.autoBroadcastJoinThreshold 判断满足条件，会自动使用BHJ
+```
+
+Spark SQL 在 Spark Core 的基础上针对结构化数据处理进行很多优化和改进.
+
+> Spark 只在启动 Executor 是启动一次 JVM，内存的 Task 操作是在线程复用的。每次启动 JVM 的时间可能就需要几秒甚至十几秒，那么当 Task 多了，这个时间 Hadoop 不知道比 Spark 慢了多。
+>
+> 如果对RDD进行cache操作后，数据在哪里？
+>  
+> 1. 执行cache算子时数据会被加载到各个Executor进程的内存.
+> 2. 第二次使用 会直接从内存中读取而不会区磁盘.
+
+华为云Stack全景图 > 开发者指南 > SQL和DataFrame调优 > Spark SQL join优化
+
+> 1. 逻辑执行计划只是对SQL语句中以什么样的执行顺序做一个整体描述.
+> 2. 物理执行计划包含具体什么操作. 例如：是BroadcastJoin、还是SortMergeJoin…
+> 
+> 聚合后cache
+> 
+> 默认情况下coalesce不会产生shuffle coalesce, repartition
+>
+> (1) 谓词下推 Predicate PushDown - SQL中的谓词主要有 like、between、is null、in、=、!=等
+> (2) 列裁剪 Column Pruning 和 映射下推 Project PushDown - 列裁剪和映射下推的目的：过滤掉查询不需要使用到的列
+
+## 4. hadoop, hive, spark
+
+- [Hive中order by，sort by，distribute by，cluster by的区别](https://blog.csdn.net/lzm1340458776/article/details/43306115)
+
+> order by会对输入做全局排序，因此只有一个Reducer
+> sort by不是全局排序，其在数据进入reducer前完成排序
+> 
+> distribute by是控制在map端如何拆分数据给reduce端的, sort by为每个reduce产生一个排序文件
+
+1 Hadoop和spark的主要区别
+2 Hadoop中一个大文件进行排序，如何保证整体有序？sort只会保证单个节点的数据有序
+3 Hive中有哪些udf
+4 Hadoop中文件put get的过程详细描述
+5 [Java中有哪些GC算法?](https://www.cnblogs.com/Tpf386/p/11210483.html) [1. 标记-清除算法 2. 复制算法 3. 标记-整理算法 4. 分代收集算法]
+6 [Java中的弱引用 强引用和软引用分别在哪些场景中使用](https://blog.csdn.net/aitangyong/article/details/39453365)
+7 Hadoop和spark的主要区别-这个问题基本都会问到
+
+**(1). Hadoop和spark的主要区别**
+
+> spark消除了冗余的 HDFS 读写: Hadoop 每次 shuffle 操作后，必须写到磁盘，而 Spark 在 shuffle 后不一定落盘，可以 cache 到内存中，以便迭代时使用。如果操作复杂，很多的 shufle 操作，那么 Hadoop 的读写 IO 时间会大大增加，也是 Hive 更慢的主要原因了。
+> 
+> spark消除了冗余的 MapReduce 阶段: Hadoop 的 shuffle 操作一定连着完整的 MapReduce 操作，冗余繁琐。而 Spark 基于 RDD 提供了丰富的算子操作，且 reduce 操作产生 shuffle 数据，可以缓存在内存中。
+>
+> JVM 的优化: Hadoop 每次 MapReduce 操作，启动一个 Task 便会启动一次 JVM，基于进程的操作。而 Spark 每次 MapReduce 操作是基于线程的，只在启动 Executor 是启动一次 JVM，内存的 Task 操作是在线程复用的。每次启动 JVM 的时间可能就需要几秒甚至十几秒，那么当 Task 多了，这个时间 Hadoop 不知道比 Spark 慢了多。
+
+**(2). Hadoop中一个大文件进行排序，如何保证整体有序？**
+
+> 一个文件有key值从1到10000的数据，我们用两个分区，将1到5000的key发送到partition1，然后由reduce1处理，5001到10000的key发动到partition2然后由reduce2处理，reduce1的key是按照1到5000的升序排序，reduce2的key是按照5001到10000的升序排序，这就保证了整个MapReduce程序的全局排序。
+> 
+> Hadoop 中的类 TotalOrderPartitioner
+
+## 5. data warehouse
+
+[知乎：如何建设数据仓库？](https://www.zhihu.com/question/19703294)
+[华为：数据仓库、主题域、主题概念与定义](https://www.huaweicloud.com/articles/432adc9ebe5d354c6393a3490a005d10.html)
+
+other:
+
+[美团配送数据治理实践](https://tech.meituan.com/2020/03/12/delivery-data-governance.html)
+
+[数仓大山哥 码龄10年](https://blog.csdn.net/panfelix)
+[good 数仓大山哥 - Hive数据倾斜的原因及主要解决方法](https://blog.csdn.net/panfelix/article/details/107326899?spm=1001.2014.3001.5501)
+[数仓大山哥 - Hive优化-大表join大表优化](https://blog.csdn.net/panfelix/article/details/107913560?spm=1001.2014.3001.5501)
+[缓慢变化维 (Slowly Changing Dimension) 常见的三种类型及原型设计（转）](https://www.cnblogs.com/xqzt/p/4472005.html)
+
+DWH 建模方法: **范式建模法/维度建模法/实体建模法**
+
+这里面就涉及到了数据仓库的架构，简单来说数据仓库分为四个层次：
+
+Layering | Desc
+:---: | :--- 
+ODS | 存放原始数据，直接加载原始日志、数据，数据保存原貌不做处理。
+DWD | 结构与粒度原始表保持一致，对ODS层数据进行清洗
+DWS | 以DWD为基础，进行轻度汇总 （少量以ODS为基础）
+ADS | 为各种统计报表提供数据
+
+> 注意: 数据仓库的架构当中，各个系统的元数据通过ETL同步到操作性数据仓库ODS中，对ODS数据进行面向主题域建模形成DW（数据仓库），DM是针对某一个业务领域建立模型，具体用户（决策层）查看DM生成的报表
+
+> 最重要的是，要和业务以及产品负责人耐心沟通，认真敲定口径，比如观看人数的统计，就是要确定好哪些观众不算有效观众，观众和主播是同一人的等等细节，耐心是很重要的，需要格外注意的是，开发要学会要抛弃自己的专业知识，用最通俗的方式去解释，并且学会留下记录。
+>
+> 说了这么多，最最重要的，一定要做好规范维护，无论是用前端还是excel，及时更新是必须的。表的作用，设计理念，表字段的取数逻辑，口径的提供人，表结构都要记录在案，时常维护
+
+数据质量 - 
+
+1. 数据本身质量：数据开发对数据质量负责，保持对数据的敬畏心
+2. 数据建设质量：可以从两方面来考量：易用性和丰富性；
+
+Title | Desc
+:--- | :--- 
+指标体系 |  指标定义规范，目的是统一开发&产品对指标的定义。通过对原子指标的命名规则、派生指标的命名规则和派生词的定义来完成。
+粒度  | 
+维度 |
+
+ 1. 数据主题划分
+ 2. 数据分层
+ 3. 表 命名规范 - dwd_数据域_业务过程_(p全量/i增量) / dws_数据域_维度_统计周期
+ 4. ods dwd dws dim ads
+
+评价体系：
+
+ 1. 数据安全
+ 2. 数据质量
+ 3. 开发效率
+ 4. 数据稳定
+ 5. 数据规范
+ 6. 数据建设
+
+元数据管理:
+
+ 1. Excel 2. DDL 3. Airflow
+
+Risk Dept
+
+ 1. 建立工单
+ 
 ## Reference
 
 [大数据：元数据（Metadata）](https://www.cnblogs.com/volcao/p/13636557.html)
@@ -155,3 +391,4 @@ WHERE
 [Hive数据倾斜优化总结](https://monkeyip.github.io/2019/04/25/Hive%E6%95%B0%E6%8D%AE%E5%80%BE%E6%96%9C%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/)
 [数据仓库–数据分层（ETL、ODS、DW、APP、DIM）](https://www.codenong.com/cs107025192/)
 [网易严选数仓规范与评价体系](https://mp.weixin.qq.com/s/D_mqw4UO8H-ckE5ytfnglg)
+[DE（开发）题(附答案)](https://cloud.tencent.com/developer/article/1061680)
