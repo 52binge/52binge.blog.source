@@ -28,6 +28,7 @@ No. | Hive 优化 | Flag
 10. | <br><br>`Join数据倾斜优化` | # join的key对应的记录条数超过这个值则会进行分拆，值根据具体数据量设置<br>set `hive.skewjoin.key`=100000;<br><br># 如果是join过程出现倾斜应该设置为true<br>set `hive.optimize.skewjoin`=false;<br><br>通过 hive.skewjoin.mapjoin.map.tasks 参数还可以控制第二个 job 的 mapper 数量，默认10000<br>set hive.skewjoin.mapjoin.map.tasks=10000;
 13. | Group By优化 | **1. Map端部分聚合** <br><br> # 开启Map端聚合参数设置 set hive.map.aggr=true;<br># 设置map端预聚合的行数阈值，超过该值就会分拆job，默认值100000<br>set hive.groupby.mapaggr.checkinterval=100000 <br><br> **2. 有数据倾斜时进行负载均衡**<br><br>当 HQL 语句使用 group by 时数据出现倾斜时，如果该变量设置为 true，那么 Hive 会自动进行负载均衡。<br>策略就是把 MapReduce 任务拆分成两个： 第1个先做预汇总，第2个再做最终汇总. <br><br> # 自动优化，有数据倾斜的时候进行负载均衡（默认是false） <br> set hive.groupby.skewindata=false;
 15. | Count Distinct优化 | 优化后（启动2个job，1个job负责子查询(可有多个reduce)，另1个job负责count(1)): <br> `select count(1) from (select id from tablename group by id) tmp;` 
+16. | 怎样写in/exists语句 | -- in / exists 实现 <br>`select a.id, a.name from a where a.id in (select b.id from b);`<br><br>是推荐使用 Hive 的一个高效替代方案：left semi join<br>`select a.id, a.name from a left semi join b on a.id = b.id;`
 
 **手动开启mapjoin：**
 
