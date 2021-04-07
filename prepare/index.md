@@ -1096,6 +1096,22 @@ Spark SQL 在 Spark Core 的基础上针对结构化数据处理进行很多优�
 ## 7. Hive 优化
 
 No. | Hive 优化 | Flag
+:---: | --- | :---
+1. | explain | explain [extended] query |
+2. | 列裁剪  | set hive.optimize.cp = true;
+3. | 谓词下推 | set hive.optimize.ppd=true; ## 默认是true
+4. | 分区裁剪 |
+5. | 合并小文件 - Map 输入合并 | 如果一个mapreduce job碰到一对小文件作为输入，一个小文件启动一个Task<br><br> Map端输入、合并文件之后按照block的大小分割（默认）<br>set hive.input.format=org.apache.hadoop.hive.ql.io.CombineHiveInputFormat;<br>## Map端输入，不合并<br>set hive.input.format=org.apache.hadoop.hive.ql.io.HiveInputFormat;
+5. | 合并小文件 - Map/Reduce输出合并 | 是否合并Map输出文件, 默认值为true<br>set hive.merge.mapfiles=true;<br><br> 是否合并Reduce端输出文件,默认值为false<br>set hive.merge.mapredfiles=true;
+6. | 合理设置MapTask并行度 |
+7. | 合理设置ReduceTask并行度 |
+8. | Join优化
+9. | 启用 MapJoin
+10. | Join数据倾斜优化
+13. | Group By优化
+15. | Count Distinct优化
+
+No. | Hive 优化 | Flag
 :---: | --- | :---:
 1. | join 优化, order & customer - 先过滤在Join |
 2. | union优化： （union 去掉重复的记录）而是使用 union all 然后在用group by 去重 |
