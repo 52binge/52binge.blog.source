@@ -13,6 +13,36 @@ tags: [SQL]
 
 ## 1. Hive 优化
 
+[再次分享！Hive调优，数据工程师成神之路](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247493676&idx=1&sn=1658835f7c595cce105022e70640e020&chksm=cf37da21f8405337445ce6d8edbe4640b1a6dbd7903dfd6ac7cd2edbd83394a372bd2e3b9997&scene=21#wechat_redirect)
+
+```sql
+// 让可以不走mapreduce任务的，就不走mapreduce任务
+hive> set hive.fetch.task.conversion=more;
+ 
+// 开启任务并行执行
+ set hive.exec.parallel=true;
+// 解释：当一个sql中有多个job时候，且这多个job之间没有依赖，则可以让顺序执行变为并行执行（一般为用到union all的时候）
+ 
+ // 同一个sql允许并行任务的最大线程数 
+set hive.exec.parallel.thread.number=8;
+ 
+// 设置jvm重用
+// JVM重用对hive的性能具有非常大的 影响，特别是对于很难避免小文件的场景或者task特别多的场景，这类场景大多数执行时间都很短。jvm的启动过程可能会造成相当大的开销，尤其是执行的job包含有成千上万个task任务的情况。
+set mapred.job.reuse.jvm.num.tasks=10; 
+ 
+// 合理设置reduce的数目
+// 方法1：调整每个reduce所接受的数据量大小
+set hive.exec.reducers.bytes.per.reducer=500000000; （500M）
+// 方法2：直接设置reduce数量
+set mapred.reduce.tasks = 20
+
+// map端聚合，降低传给reduce的数据量
+set hive.map.aggr=true  
+
+// 开启hive内置的数倾优化机制
+set hive.groupby.skewindata=true
+```
+
 No. | Hive 优化 | Flag
 :---: | --- | :---
 1. | explain | explain [extended] query |
@@ -29,8 +59,6 @@ No. | Hive 优化 | Flag
 13. | Group By优化 | **1. Map端部分聚合** <br><br> # 开启Map端聚合参数设置 set hive.map.aggr=true;<br># 设置map端预聚合的行数阈值，超过该值就会分拆job，默认值100000<br>set hive.groupby.mapaggr.checkinterval=100000 <br><br> **2. 有数据倾斜时进行负载均衡**<br><br>当 HQL 语句使用 group by 时数据出现倾斜时，如果该变量设置为 true，那么 Hive 会自动进行负载均衡。<br>策略就是把 MapReduce 任务拆分成两个： 第1个先做预汇总，第2个再做最终汇总. <br><br> # 自动优化，有数据倾斜的时候进行负载均衡（默认是false） <br> set hive.groupby.skewindata=false;
 15. | Count Distinct优化 | 优化后（启动2个job，1个job负责子查询(可有多个reduce)，另1个job负责count(1)): <br> `select count(1) from (select id from tablename group by id) tmp;` 
 16. | 怎样写in/exists<br><br>left semi join | -- in / exists 实现 <br>`select a.id, a.name from a where a.id in (select b.id from b);`<br><br>是推荐使用 Hive 的一个高效替代方案：left semi join<br>`select a.id, a.name from a left semi join b on a.id = b.id;` 
-
-[再次分享！Hive调优，数据工程师成神之路](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247493676&idx=1&sn=1658835f7c595cce105022e70640e020&chksm=cf37da21f8405337445ce6d8edbe4640b1a6dbd7903dfd6ac7cd2edbd83394a372bd2e3b9997&scene=21#wechat_redirect)
 
 Hive0.11版本之后：
 
