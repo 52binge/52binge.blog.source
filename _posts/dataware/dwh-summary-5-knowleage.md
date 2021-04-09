@@ -13,8 +13,9 @@ tags: [SQL]
 
 ## 1. Hive 优化
 
-[再次分享！Hive调优，数据工程师成神之路](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247493676&idx=1&sn=1658835f7c595cce105022e70640e020&chksm=cf37da21f8405337445ce6d8edbe4640b1a6dbd7903dfd6ac7cd2edbd83394a372bd2e3b9997&scene=21#wechat_redirect)
-[2020 大数据/数仓/数开 Questions](https://mp.weixin.qq.com/s/pwyus1xfX7QAz5MtecveZw)
+> [再次分享！Hive调优，数据工程师成神之路](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247493676&idx=1&sn=1658835f7c595cce105022e70640e020&chksm=cf37da21f8405337445ce6d8edbe4640b1a6dbd7903dfd6ac7cd2edbd83394a372bd2e3b9997&scene=21#wechat_redirect)
+> [2020 大数据/数仓/数开 Questions](https://mp.weixin.qq.com/s/pwyus1xfX7QAz5MtecveZw)
+> [Hive内部表外部表区别及各自使用场景](https://mp.weixin.qq.com/s?__biz=MzI2MDQzOTk3MQ==&mid=2247484702&idx=1&sn=a916d003851335e48b90be23c4519eb0&chksm=ea68efd2dd1f66c4baee87b27f9ae70cf6bde4bd35d5f9c0af66285d795724f8d7345d27a074&scene=21#wechat_redirect)
 
 ```sql
 // 让可以不走mapreduce任务的，就不走mapreduce任务
@@ -44,7 +45,7 @@ set hive.map.aggr=true
 set hive.groupby.skewindata=true
 ```
 
-[Hadoop高频考点，正在刷新你的认知！](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247493886&idx=1&sn=2cee4ece5c7cc87895d9e1a1b2fb440f&chksm=cf37daf3f84053e51cd0323f1ec9114ca0ec159a9451dd53a4afde5a7c6f1cf48f12d7999ef0&scene=21#wechat_redirect)
+[Hadoop高频考点！](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247493886&idx=1&sn=2cee4ece5c7cc87895d9e1a1b2fb440f&chksm=cf37daf3f84053e51cd0323f1ec9114ca0ec159a9451dd53a4afde5a7c6f1cf48f12d7999ef0&scene=21#wechat_redirect)
 
 No. | Hive 优化 | Flag
 :---: | --- | :---
