@@ -14,6 +14,7 @@ tags: [SQL]
 ## 1. Hive 优化
 
 [再次分享！Hive调优，数据工程师成神之路](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247493676&idx=1&sn=1658835f7c595cce105022e70640e020&chksm=cf37da21f8405337445ce6d8edbe4640b1a6dbd7903dfd6ac7cd2edbd83394a372bd2e3b9997&scene=21#wechat_redirect)
+[2020 大数据/数仓/数开 Questions](https://mp.weixin.qq.com/s/pwyus1xfX7QAz5MtecveZw)
 
 ```sql
 // 让可以不走mapreduce任务的，就不走mapreduce任务
@@ -42,6 +43,8 @@ set hive.map.aggr=true
 // 开启hive内置的数倾优化机制
 set hive.groupby.skewindata=true
 ```
+
+[Hadoop高频考点，正在刷新你的认知！](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247493886&idx=1&sn=2cee4ece5c7cc87895d9e1a1b2fb440f&chksm=cf37daf3f84053e51cd0323f1ec9114ca0ec159a9451dd53a4afde5a7c6f1cf48f12d7999ef0&scene=21#wechat_redirect)
 
 No. | Hive 优化 | Flag
 :---: | --- | :---
@@ -234,7 +237,9 @@ Spark有哪些聚合类的算子,我们应该尽量避免什么类型的算子�
  # Spark作业的默认为500~1000个比较合适,如果不设置，spark会根据底层HDFS的block数量设置task的数量，这样会导致并行度偏少，资源利用不充分。该参数设为num-executors * executor-cores的2~3倍比较合适
   --conf spark.storage.memoryFraction=0.5 \  存储内存
   --conf spark.shuffle.memoryFraction=0.3 \  执行内存 # shuffle过程中一个task拉取到上个stage的task的输出后，进行聚合操作时能够使用的Executor内存的比例，默认是0.2，如果shuffle聚合时使用的内存超出了这个20%的限制，多余数据会被溢写到磁盘文件中去，降低shuffle性能
+ # 该参数代表了Executor内存中，分配给shuffle read task进行聚合操作的内存比例，默认是20%。
  #
+
  # —-spark.yarn.executor.memoryOverhead 1G ： executor执行的时候，用的内存可能会超过executor-memory，
  # 所以会为executor额外预留一部分内存，spark.yarn.executor.memoryOverhead即代表这部分内存
  # 默认的 spark.executor.memoryOverhead=6144（6G） 有点浪费
