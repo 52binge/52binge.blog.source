@@ -426,3 +426,5 @@ Risk Dept
 [数据仓库–数据分层（ETL、ODS、DW、APP、DIM）](https://www.codenong.com/cs107025192/)
 [网易严选数仓规范与评价体系](https://mp.weixin.qq.com/s/D_mqw4UO8H-ckE5ytfnglg)
 [DE（开发）题(附答案)](https://cloud.tencent.com/developer/article/1061680)
+
+[Spark系列--SparkSQL(三)执行SparkSQL查询](https://blog.csdn.net/u012834750/article/details/81164990?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_baidulandingword-0&spm=1001.2101.3001.4242)

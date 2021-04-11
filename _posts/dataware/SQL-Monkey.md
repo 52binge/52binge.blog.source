@@ -2,7 +2,7 @@
 top: 8
 title: 猴子的图解SQL 学习笔记
 toc: true
-date: 2021-03-18 09:07:21
+date: 2021-02-01 09:07:21
 categories: [data-warehouse]
 tags: [data warehouse]
 ---
@@ -449,6 +449,52 @@ where 成绩 > avg_score;
 <img src="/images/sql/monkey-sql-byte-avg-salary-2.png" width="700" alt="" />
 
 > format(N, D) ,  N 是要格式化的数字， D 是要舍入的小数位数
+
+
+## GB SQL Task
+
+```sql
+
+（2）SQL Task
+
+-- write your code in PostgreSQL 9.4
+SELECT (
+		SELECT COUNT(*)
+		FROM (
+			SELECT t2.*
+			FROM (
+				SELECT t.*, SUM(salary) OVER (ORDER BY salary) AS j_sum_salary
+				FROM candidates t
+				WHERE position = 'junior'
+			) t2
+				CROSS JOIN (
+					SELECT coalesce(SUM(salary), 0) AS total_salary
+					FROM (
+						SELECT t1.*
+						FROM (
+							SELECT t.*, SUM(salary) OVER (ORDER BY salary) AS s_sum_salary
+							FROM candidates t
+							WHERE position = 'senior'
+						) t1
+						WHERE s_sum_salary <= 50000
+					) seniors_table
+				) s
+			WHERE j_sum_salary <= 50000 - s.total_salary
+		) junior_table
+	) AS juniors
+	, (
+		SELECT COUNT(*)
+		FROM (
+			SELECT t1.*
+			FROM (
+				SELECT t.*, SUM(salary) OVER (ORDER BY salary) AS s_sum_salary
+				FROM candidates t
+				WHERE position = 'senior'
+			) t1
+			WHERE s_sum_salary <= 50000
+		) seniors_table
+	) AS seniors
+```
 
 ## Reference
 
