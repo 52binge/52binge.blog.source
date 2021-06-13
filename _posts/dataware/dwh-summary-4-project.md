@@ -1,10 +1,12 @@
 ---
 top: 8
 title: DataWare Review Summary 4 
-toc: true
+layout: page
 date: 2021-03-09 09:07:21
 categories: [data-warehouse]
 tags: [SQL]
+icons: [fas fa-fire red]
+thumbnail: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/heartmate/icon.png
 ---
 
 <img src="/images/dataware/sm-data-warehouse-logo-1.jpg" width="580" alt="" />
