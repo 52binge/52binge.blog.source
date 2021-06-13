@@ -2,8 +2,6 @@
 
 这是一款基于地理位置，为城市生活人群提供优惠卡券的聚合平台APP.
 
-v2.0 需要解决的问题 :
-
 1. 实时位置基于6个距离段的券店实时距离计算展示. (离线地标计算)
 2. 一张券适用于多家店带来的数据膨胀. 地标关联店券等带来数据膨胀 (嵌套对象结构)
 3. 一张券适用于多家店，不同店分类不同，一张券多分类解决 (嵌套对象结构)
@@ -20,84 +18,85 @@ v2.0 需要解决的问题 :
 
 **shop**
 
-```
-                "shop_id",...
-                "shop_name_show",...(用于展示)
-                "shop_name": { (用于搜索)
-                    "type": "string",
-                    "fields": {
-                        "raw": {
-                            "type": "string",
-                            "index": "not_analyzed"
-                        }
-                    }
-                },
-                "shop_position": {
-                    "geohash": True,
-                    "geohash_precision": 7,
-                    "type": "geo_point",
-                    "geohash_prefix": True
-                },
-                "coupon_list": {
-                    "type": "nested",
-                    "properties": {
-                        "unique_coupon_id": {
-                            "index": "not_analyzed",
-                            "type": "string"
-                        },
-                        "coupon_name": {
-                            "type": "string",
-                            "fields": {
-                                "raw": {
-                                    "type": "string",
-                                    "index": "not_analyzed"
-                                }
-                            }
-                        },
-                        "coupon_source": {
-                            "type": "integer"
-                        },
-                        "status": {
-                            "type": "integer"
-                        }
-                    }
-                },
-...
+```json
+{
+  "shop_id",
+  "shop_name_show",
+  "shop_name" {
+    "type" "string",
+    "fields" {
+      "raw" {
+        "type" "string",
+        "index" "not_analyzed"
+      }
+    }
+  },
+  "shop_position" {
+    "geohash" True,
+    "geohash_precision" 7,
+    "type" "geo_point",
+    "geohash_prefix" True
+  },
+  "coupon_list" {
+    "type" "nested",
+    "properties" {
+      "unique_coupon_id" {
+        "index" "not_analyzed",
+        "type" "string"
+      },
+      "coupon_name" {
+        "type" "string",
+        "fields" {
+          "raw" {
+            "type" "string",
+            "index" "not_analyzed"
+          }
+        }
+      },
+      "coupon_source" {
+        "type" "integer"
+      },
+      "status" {
+        "type" "integer"
+      }
+    }
+  }
+}
 ```
 
 > shop_business_center , shop_address, shop_open_hours, shop_power_count,  level1_code , level2_code , shop_review_count, shop_avg_price, coupon_count, shop_source, status
 
 **coupon**
 
-```
+`````````
 mapping = {
-        index_type_name: {
-            "properties": {
+        index_type_name {
+            "properties" {
                 ...
-                "shop_list": {
-                    "type": "nested",
-                    "properties":
+                "shop_list" {
+                    "type" "nested",
+                    "properties"
                         {
-                            "unique_shop_id": {'index': 'not_analyzed', "type": "string"},
-                            "shop_address": {"type": "string"},
-                            "shop_position":
+                            "unique_shop_id" {'index' 'not_analyzed', "type" "string"},
+                            "shop_address" {"type" "string"},
+                            "shop_position"
                                 {
-                                    "geohash": True,
-                                    "geohash_precision": 7,
-                                    "type": "geo_point",
-                                    "geohash_prefix": True
+                                    "geohash" True,
+                                    "geohash_precision" 7,
+                                    "type" "geo_point",
+                                    "geohash_prefix" True
                                 }
                         }
                 }
 ......
-```
+`````````
 
 > coupon_id , `coupon_name_show`, `coupon_name`, coupon_store, coupon_condition , coupon_source, coupon_desc, coupon_type, coupon_sold, shop_count, level1_code_list, ...
 
 **business center**
 
 business center |amap name |  address | geo
-------- | ------- | ------- | -------  
+---- | ---- | ---- | ----  
 湖滨银泰 | 杭州湖滨银泰in77A区 | 杭州市上城区东坡路7号 |
 杭州来福士 | 杭州来福士 | 杭州市江干区钱江新城富春路与新业路交汇处往北200米 |
 嘉里中心 | 杭州嘉里中心 | 杭州市下城区延安路353号 |

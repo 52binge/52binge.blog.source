@@ -3,7 +3,7 @@
 ## 1. Data Warehouse
 
 OLTP (on-line transaction processing) | OLAP（On-Line Analytical Processing）
-:-------: | :-------:
+--- | ---
 数据在系统中产生 | 本身不产生数据，基础数据来源于产生系统
 基于交易的处理系统 | 基于查询的分析系统
 牵扯的数据量很小 | 牵扯的数据量庞大 (复杂查询经常使用全表扫描等)
