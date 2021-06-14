@@ -4,7 +4,7 @@ title: Hive Optimization Solution Notes
 toc: true
 date: 2021-03-12 09:07:21
 categories: [data-warehouse]
-tags: [SQL]
+tags: [Hive]
 ---
 
 <img src="/images/hadoop/hadoop-hive-logo-1.png" width="450" alt="Hadoop MapReduce" />

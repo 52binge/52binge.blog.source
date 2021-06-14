@@ -3,7 +3,7 @@
 title: 标签 ID 定义示例
 toc: true
 date: 2017-04-20 13:28:21
-categories: datascience
+categories: data-science
 tags: sina
 ---
  

@@ -2,7 +2,7 @@
 title: User Credit Score
 toc: true
 date: 2019-06-23 13:28:21
-categories: datascience
+categories: data-science
 tags: Credit-Score
 mathjax: true
 ---

@@ -1,8 +1,8 @@
 ---
 title: Data WareHouse Questions
 date: 2018-06-10 07:11:21
-categories: devops
-tags: Stack
+categories: [data-warehouse]
+tags: DWH
 ---
 
 <!--<img src="/images/dataware/dataware-1.png" width="550" alt="Tech Stack" />

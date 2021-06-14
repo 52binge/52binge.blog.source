@@ -3,7 +3,7 @@
 title: base Singapore
 toc: true
 date: 2020-02-17 18:28:21
-categories: dataanalysis
+categories: data-analysis
 tags: ITFIN
 mathjax: true
 ---

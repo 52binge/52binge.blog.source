@@ -4,7 +4,7 @@ title: DataWare Review Summary 3 - Window Function
 toc: true
 date: 2021-02-20 09:07:21
 categories: [data-warehouse]
-tags: [SQL]
+tags: [data warehouse, SQL]
 ---
 
 <img src="/images/sql/sql-window-fun-4.png" width="580" alt="（Window Function）是 SQL2003 标准中定义的一项新特性，并在 SQL2011、SQL2016 中完善" />

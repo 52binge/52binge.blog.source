@@ -2,7 +2,7 @@
 title: 互联网金融风控中的数据科学 (part1) ： 金融科技企业面临的欺诈⻛险 
 toc: true
 date: 2018-04-20 13:28:21
-categories: datascience
+categories: data-science
 tags: ITFIN
 ---
  

@@ -1,8 +1,8 @@
 ---
 title: DataWare 维度设计
 date: 2018-06-09 17:11:21
-categories: devops
-tags: Stack
+categories: [data-warehouse]
+tags: DataWare
 ---
 
 <!--<img src="/images/dataware/dataware-1.png" width="550" alt="Tech Stack" />

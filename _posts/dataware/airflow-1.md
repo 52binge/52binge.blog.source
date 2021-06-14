@@ -3,7 +3,7 @@ title: Airflow Review 1
 toc: true
 date: 2021-01-24 09:07:21
 categories: [data-warehouse]
-tags: [SQL]
+tags: [Airflow]
 ---
 
 <img src="/images/airflow/AirflowLogo.png" width="450" alt="" />

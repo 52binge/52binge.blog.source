@@ -4,7 +4,7 @@ title: SQL@Leetcode
 toc: true
 date: 2021-01-26 09:07:21
 categories: [data-warehouse]
-tags: [data warehouse]
+tags: [SQL]
 ---
 
 <img src="/images/sql/sql-50-logo.jpg" width="550" alt="" />

@@ -4,7 +4,7 @@ title: DataWare Review Summary 1
 toc: true
 date: 2020-10-01 09:07:21
 categories: [data-warehouse]
-tags: [SQL]
+tags: [data warehouse]
 ---
 
 <img src="/images/dataware/sm-data-warehouse-logo-1.jpg" width="580" alt="" />
