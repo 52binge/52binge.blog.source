@@ -1,4 +1,5 @@
 ---
+cover: true
 layout: docs
 seo_title: 开始使用
 short_title: 1. 开始使用

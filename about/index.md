@@ -1,5 +1,7 @@
 ---
 date: 2017-10-08 20:53:48
+title: About
+cover: true
 ---
 
 <style>
@@ -19,8 +21,6 @@ p + p {
 
 <!--出国留学得到的不只是文凭，而是把我放到任何我谁都不认识的国家，我都能生活下去的能力, 
 和一种名车豪宅已经动摇不了每天坐公交车去追求的简单生活平淡的心态，这两天让我受益终身。-->
-
-## About
 
 when we meet here. we can focusing on efficient learning, way of thinking, and communication skills.
 
