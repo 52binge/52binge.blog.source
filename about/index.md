@@ -119,13 +119,14 @@ when we meet here. we can focusing on efficient learning, way of thinking, and c
 
 ### Contact me
 
-- You can find me in these ways: <a class="article-myEmail" href="mailto:blair.values@gmail.com">  Email</a> <!--<a class="article-myFacebook" href="https://www.facebook.com/"> Facebook</a>--> <a class="article-myTwitter" href="https://twitter.com/">  Twitter</a> <a class="article-myInstagram" href="https://www.instagram.com/blair101v/"> Instagram</a> <a class="article-myGithub" href="https://github.com/blair101"> Github</a> <!--<a class="article-myKaggle" href="https://www.kaggle.com/blairchan"> Kaggle</a> --><!--<a class="article-mySegmentfault" href="https://www.stackoverflow.com"> Stackoverflow</a>-->
+- You can find me in these ways: <a class="article-myEmail" href="mailto:blair.values@gmail.com">  Email</a> <!--<a class="article-myFacebook" href="https://www.facebook.com/"> Facebook</a>--> <a class="article-myTwitter" href="https://twitter.com/">  Twitter</a> <a class="article-myInstagram" href="https://www.instagram.com/blairechin/"> Instagram</a> <a class="article-myGithub" href="https://github.com/blair101"> Github</a> <!--<a class="article-myKaggle" href="https://www.kaggle.com/blairchan"> Kaggle</a> --><!--<a class="article-mySegmentfault" href="https://www.stackoverflow.com"> Stackoverflow</a>-->
 - You can continue to fellow this blog and comment by [DISQUS](https://disqus.com/)
 
 ### ChangeLog
 
-- 2017-10-08 : Blair Chan  @theme improve
-- 2016-03-22 : Blair Chan  @build this blog
+- 2021-06-13 : Blair Chan, theme volantis research..
+- 2017-10-08 : Blair Chan, blairos theme improve..
+- 2016-03-22 : Blair Chan, build this blog website
 
 [1]: /images/tech-logos/2016-10-03-6.png
 [tw]: /tweet
