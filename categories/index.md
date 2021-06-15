@@ -1,5 +1,5 @@
 ---
-title: Categories 文章分类
+title: Categories
 layout: category
 -- cover: true
 sidebar: []

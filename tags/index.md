@@ -1,5 +1,5 @@
 ---
-title: Tags 标签☁️
+title: Tags☁️
 layout: tag
 sidebar: []
 comments: false
