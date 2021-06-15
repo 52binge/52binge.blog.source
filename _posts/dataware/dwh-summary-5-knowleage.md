@@ -2,10 +2,9 @@
 top: 8
 title: Hive Optimization Solution Notes
 date: 2021-03-12 09:07:21
-categories: [data-warehouse]
+categories: [data-warehouse, hive]
 tags: [Hive]
 -- comments: false
--- cover: true
 ---
 
 <img src="/images/hadoop/hadoop-hive-logo-1.png" width="450" alt="Hadoop MapReduce" />
