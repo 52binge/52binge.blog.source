@@ -1,46 +1,14 @@
 ---
-date: 2017-10-08 20:53:48
+date: 2021-06-15 11:30:48
 title: About
 cover: true
 ---
 
-<style>
-p + p {
-        display: inline;
-}
-</style>
-
-<!--img {
-        display: block !important;
-        margin-left: 100px !important;
-}-->
-
-<!--a {
-        border: none;
-}-->
-
-<!--出国留学得到的不只是文凭，而是把我放到任何我谁都不认识的国家，我都能生活下去的能力, 
-和一种名车豪宅已经动摇不了每天坐公交车去追求的简单生活平淡的心态，这两天让我受益终身。-->
-
-when we meet here. we can focusing on efficient learning, way of thinking, and communication skills.
-
-<!--在让人做某一件事之前，应该先解释为什么要做这件事，及它的重要性。这样才能让人理解，才能尊重程序员的智商。-->
-
-
- <!--[Blair’s Instagram][ins]-->
-
-<!--&nbsp; 、&nbsp;[Netease Music][wangyiyun]&nbsp;、&nbsp;[Tweet][tweet]
--->
-
-[ins]: https://www.instagram.com/blair101v/
-[wangyiyun]: https://music.163.com/#/my/m/music/playlist?id=942623425
-[tweet]: /tweet
-
-### Who am I 
+### Who am I
 
 <a class="article-myself" href="/about"> Blair Chan</a> 90s, a data developer, GTD practitioner, live in Singapore, Singapore.
 
-<a class="article-myself" href="https://instagram.com/blair101v/"> Blair Chan</a> focus on python, data engineering, computer science, machine learning.
+<a class="article-myself" href="/about"> Blair Chan</a> focus on python, data engineering, data modeling, computer science.
 
 <!--<a class="article-myself" href="/">  Libin Chan</a>-->
 <!-- <img src="/images/tech-logos/2016-10-03-6.png" width="250"  style="margin-left:100px;" /img> -->
@@ -53,9 +21,10 @@ when we meet here. we can focusing on efficient learning, way of thinking, and c
 每个人的追求和思考面都是不同的，要换位思考，尊重每一个肯为梦想而努力奋斗的人。 
 -->
 
-<img src="/images/tw/Auckland-2.jpg" width="500" alt="Auckland New Zealand" />
+<img src="/images/tw/sea-sg-logo-me1.jpg" width="500" alt="S.E.A. Aquarium Singapore" />
 
-<!--<img src="/images/tw/tw-2016-08-30-nz.jpg" width="500" />
+<!--
+<img src="/images/tw/Auckland-2.jpg" width="500" alt="Auckland New Zealand" />
 -->
 
 ### Classic line
@@ -119,7 +88,7 @@ when we meet here. we can focusing on efficient learning, way of thinking, and c
 
 ### Contact me
 
-- You can find me in these ways: <a class="article-myEmail" href="mailto:blair.values@gmail.com">  Email</a> <!--<a class="article-myFacebook" href="https://www.facebook.com/"> Facebook</a>--> <a class="article-myTwitter" href="https://twitter.com/">  Twitter</a> <a class="article-myInstagram" href="https://www.instagram.com/blairechin/"> Instagram</a> <a class="article-myGithub" href="https://github.com/blair101"> Github</a> <!--<a class="article-myKaggle" href="https://www.kaggle.com/blairchan"> Kaggle</a> --><!--<a class="article-mySegmentfault" href="https://www.stackoverflow.com"> Stackoverflow</a>-->
+- You can find me in these ways: <a class="article-myEmail" href="mailto:blair.values@gmail.com">  Email</a> <!--<a class="article-myFacebook" href="https://www.facebook.com/"> Facebook</a>--> <a class="article-myTwitter" href="https://twitter.com/blairechin">  Twitter</a> <a class="article-myInstagram" href="https://www.instagram.com/"> Instagram</a> <a class="article-myGithub" href="https://github.com/blair101"> Github</a> <!--<a class="article-myKaggle" href="https://www.kaggle.com/blairchan"> Kaggle</a> --><!--<a class="article-mySegmentfault" href="https://www.stackoverflow.com"> Stackoverflow</a>-->
 - You can continue to fellow this blog and comment by [DISQUS](https://disqus.com/)
 
 ### ChangeLog
@@ -131,4 +100,20 @@ when we meet here. we can focusing on efficient learning, way of thinking, and c
 [1]: /images/tech-logos/2016-10-03-6.png
 [tw]: /tweet
 
+
+
+<!--出国留学得到的不只是文凭，而是把我放到任何我谁都不认识的国家，我都能生活下去的能力, 
+和一种名车豪宅已经动摇不了每天坐公交车去追求的简单生活平淡的心态，这两天让我受益终身。-->
+
+<!--在让人做某一件事之前，应该先解释为什么要做这件事，及它的重要性。这样才能让人理解，才能尊重程序员的智商。-->
+
+
+ <!--[Blair’s Instagram][ins]-->
+
+<!--&nbsp; 、&nbsp;[Netease Music][wangyiyun]&nbsp;、&nbsp;[Tweet][tweet]
+-->
+
+[ins]: https://www.instagram.com/blair101v/
+[wangyiyun]: https://music.163.com/#/my/m/music/playlist?id=942623425
+[tweet]: /tweet
 
