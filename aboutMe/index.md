@@ -1,6 +1,7 @@
 ---
 date: 2021-06-15 11:30:48
 title: About
+cover: true
 ---
 
 ### Who am I
@@ -92,9 +93,9 @@ title: About
 
 ### ChangeLog
 
-- 2021-06-13 : Blair Chan, theme volantis research..
-- 2017-10-08 : Blair Chan, blairos theme improve..
-- 2016-03-22 : Blair Chan, build this blog website
+- 2021-06-13 : Blair Chen, theme volantis research..
+- 2017-10-08 : Blair Chen, blairos theme improve..
+- 2016-03-22 : Blair Chen, build this blog website
 
 [1]: /images/tech-logos/2016-10-03-6.png
 [tw]: /tweet
