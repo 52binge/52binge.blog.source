@@ -5,9 +5,10 @@ date: 2021-03-09 09:07:21
 categories: [data-warehouse]
 tags: [DWH]
 description: 本篇文章记录了我对 Volantis 主题做 Pjax 兼容的种种，大抵算是种记录吧~
-# headimg: # 可以设置文章头图
+cover: true
 
 thumbnail: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/heartmate/icon.png
+-- headimg: # 可以设置文章头图
 ---
 
 <img src="/images/dataware/sm-data-warehouse-logo-1.jpg" width="580" alt="" />
