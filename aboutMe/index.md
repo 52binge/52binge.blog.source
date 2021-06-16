@@ -4,6 +4,12 @@ title: About
 cover: true
 ---
 
+👨🏻‍🎓 𝗺𝗲, ~~always 18 years old, a student,~~ ‍シンガポールに住🇸🇬
+
+KIMO OTAKU, Lazy dog, vegetable, want to study ielts, speaks no Japanese, no offer, poverty.
+
+Welcome to communicate, learn and progress together ! &nbsp;&nbsp;&nbsp; [contact: email-to-me.](mailto:blair.value@gmail.com)
+
 ### Who am I
 
 <a class="article-myself" href="/about"> Blair Chen</a> 90s, a data developer, GTD practitioner, live in Singapore, Singapore.

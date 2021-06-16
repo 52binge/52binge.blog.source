@@ -3,6 +3,12 @@ date: 2021-06-15 11:30:48
 title: About
 ---
 
+👨🏻‍🎓 𝗺𝗲, ~~always 18 years old, a student,~~ ‍シンガポールに住🇸🇬
+
+KIMO OTAKU, Lazy dog, vegetable, want to study ielts, speaks no Japanese, no offer, poverty.
+
+Welcome to communicate, learn and progress together ! &nbsp;&nbsp; [contact: email-to-me.](mailto:blair.value@gmail.com)
+
 ### Who am I
 
 <a class="article-myself" href="/about"> Blair Chen</a> 90s, a data developer, GTD practitioner, live in Singapore, Singapore.
@@ -87,7 +93,7 @@ title: About
 
 ### Contact me
 
-- You can find me in these ways: <a class="article-myEmail" href="mailto:blair.values@gmail.com">  Email</a> <!--<a class="article-myFacebook" href="https://www.facebook.com/"> Facebook</a>--> <a class="article-myTwitter" href="https://twitter.com/blairechin">  Twitter</a> <a class="article-myInstagram" href="https://www.instagram.com/"> Instagram</a> <a class="article-myGithub" href="https://github.com/blair101"> Github</a> <!--<a class="article-myKaggle" href="https://www.kaggle.com/blairchan"> Kaggle</a> --><!--<a class="article-mySegmentfault" href="https://www.stackoverflow.com"> Stackoverflow</a>-->
+- You can find me in these ways: <a class="article-myEmail" href="mailto:blair.value@gmail.com">  Email</a> <!--<a class="article-myFacebook" href="https://www.facebook.com/"> Facebook</a>--> <a class="article-myTwitter" href="https://twitter.com/blairechin">  Twitter</a> <a class="article-myInstagram" href="https://www.instagram.com/"> Instagram</a> <a class="article-myGithub" href="https://github.com/blair101"> Github</a> <!--<a class="article-myKaggle" href="https://www.kaggle.com/blairchan"> Kaggle</a> --><!--<a class="article-mySegmentfault" href="https://www.stackoverflow.com"> Stackoverflow</a>-->
 - You can continue to fellow this blog and comment by [DISQUS](https://disqus.com/)
 
 ### ChangeLog
