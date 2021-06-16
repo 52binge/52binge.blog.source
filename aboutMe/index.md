@@ -2,6 +2,11 @@
 date: 2021-06-15 11:30:48
 title: About
 cover: true
+music:
+  server: netease   # netease, tencent, kugou, xiami, baidu
+  type: song        # song, playlist, album, search, artist
+  id: 17423740      # song id / playlist id / album id / search keyword
+  autoplay: true
 ---
 
 👨🏻‍🎓 𝗺𝗲, ~~always 18 years old, a student,~~ ‍シンガポールに住🇸🇬
