@@ -6,7 +6,7 @@ sidebar: []
 music:
   server: netease   # netease, tencent, kugou, xiami, baidu
   type: song        # song, playlist, album, search, artist
-  id: 17423740      # song id / playlist id / album id / search keyword
+  id: 35847934      # song id / playlist id / album id / search keyword
   autoplay: true
 ---
 
