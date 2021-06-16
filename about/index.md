@@ -7,7 +7,7 @@ thumbnail: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/heartmate/icon.png
 
 👨🏻‍🎓 𝗺𝗲, ~~always 18 years old, a student,~~ ‍シンガポールに住🇸🇬
 
-Kimo Otaku, Lazy🐶, Vegetable, Want to study IELTS, No offer, Poverty.
+Kimo Otaku, Lazy🐶, Vegetable, Want to study IELTS, No Offer, Poverty.
 
 Welcome to communicate, learn and progress together ! &nbsp;&nbsp; [contact: email-to-me.](mailto:blair.value@gmail.com)
 
