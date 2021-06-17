@@ -5,6 +5,11 @@ top_meta: true
 bottom_meta: false
 sidebar: []
 comments: false
+music:
+  server: netease   # netease, tencent, kugou, xiami, baidu
+  type: song        # song, playlist, album, search, artist
+  id: 17423740      # song id / playlist id / album id / search keyword
+  autoplay: true
 ---
 
 {% p center logo large,  %}
@@ -12,21 +17,17 @@ comments: false
 
 ## Volantis 
 
-{% btns circle wide centre %}
+{% btns circle centre grid5 %}
 
-{% cell Volantis主题 <p>#Theme-Settings</p>, https://volantis.js.org/v5/theme-settings/, https://cdn.jsdelivr.net/gh/XuxuGood/cdn@master/blogImages/links/volantis.png %}
+{% cell Volantis主题, https://volantis.js.org/v5/theme-settings/, https://cdn.jsdelivr.net/gh/XuxuGood/cdn@master/blogImages/links/volantis.png %}
 
-{% cell W4J1e`s Blog <p>#不务正业</p>, https://www.hin.cool/friends/, https://cdn2.hin.cool/pic/my/dl3.png %}
+{% cell W4J1e`s Blog, https://www.hin.cool/friends/, https://cdn2.hin.cool/pic/my/dl3.png %}
 
-{% cell xaoxuu <p>#Volantis</p>, https://xaoxuu.com, https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png %}
+{% cell xaoxuu, https://xaoxuu.com, https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png %}
 
-{% cell MHuiG <p>#Volantis</p>, https://blog.mhuig.top/, https://cdn.jsdelivr.net/npm/mhg@latest %}
+{% cell MHuiG, https://blog.mhuig.top/, https://cdn.jsdelivr.net/npm/mhg@latest %}
 
-{% cell 枋柚梓 <p>#Volantis</p>, https://www.inkss.cn/, https://cdn.jsdelivr.net/gh/inkss/common@master/static/web/avatar.jpg %}
-
-{% cell qinxs <p>#二次元</p>, https://7bxing.com/, https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/img/avatar.png %}
-
-{% cell 小康博客 <p>#前端开发者</p>, https://7bxing.com/, https://cdn.jsdelivr.net/npm/kang-static@latest/avatar.jpg %}
+{% cell 枋柚梓, https://www.inkss.cn/, https://cdn.jsdelivr.net/gh/inkss/common@master/static/web/avatar.jpg %}
 
 {% endbtns %}
 
@@ -34,9 +35,15 @@ Friends 博客爱好者 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cd
 
 {% btns circle wide centre %}
 
-{% cell PPJ <p>#后端开发者</p>, https://ppj19891020.github.io/, https://ppj19891020.github.io/images/avatar.jpeg %}
+{% cell PPJ后端, https://ppj19891020.github.io/, https://ppj19891020.github.io/images/avatar.jpeg %}
 
-{% cell 七海の参考書 <p>#二次元少女</p>, https://shiraha.cn, https://cdn.jsdelivr.net/gh/45921/cdn-images@main/me/avatar.jpg %}
+{% cell Blair`s Blog, https://52binge.github.io/, /images/logos/logo_me1.jpg %}
+
+{% cell 七海の参考書, https://shiraha.cn, https://cdn.jsdelivr.net/gh/45921/cdn-images@main/me/avatar.jpg %}
+
+{% cell qinxs, https://7bxing.com/, https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/img/avatar.png %}
+
+{% cell 前端小康, https://www.antmoe.com/about/, https://cdn.jsdelivr.net/npm/kang-static@latest/avatar.jpg %}
 
 {% endbtns %}
 
@@ -44,9 +51,9 @@ Friends 博客爱好者 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cd
 
 {% btns circle wide centre %}
 
-{% cell 廖雪峰 <p>#廖雪峰/SQL教程</p>, https://www.liaoxuefeng.com/, https://tva2.sinaimg.cn/crop.0.1.635.635.50/62d8efadgw1ej30downrsj20hs0hq0ws.jpg?KID=imgbed,tva&Expires=1623954405&ssig=bJZGPYhgNb %}
+{% cell 廖雪峰, https://www.liaoxuefeng.com/, https://tva2.sinaimg.cn/crop.0.1.635.635.50/62d8efadgw1ej30downrsj20hs0hq0ws.jpg?KID=imgbed,tva&Expires=1623954405&ssig=bJZGPYhgNb %}
 
-{% cell Runoob <p>#菜鸟教程</p>, https://www.runoob.com/, /images/logos/runoob-logo.jpeg %}
+{% cell Runoob, https://www.runoob.com/, /images/logos/runoob-logo.jpeg %}
 {% endbtns %}
 
 ## Codeblock
