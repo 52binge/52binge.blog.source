@@ -1,6 +1,5 @@
 ---
 title: TextCNN 文本情感分类的卷积神经网络
-toc: true
 date: 2018-12-16 07:00:21
 categories: nlp
 tags: TextCNN

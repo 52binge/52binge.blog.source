@@ -1,6 +1,5 @@
 ---
 title: FastText 用于高效文本分类的技巧
-toc: true
 date: 2018-12-19 07:00:21
 categories: nlp
 tags: fastText

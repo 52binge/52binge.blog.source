@@ -1,7 +1,6 @@
 ---
 title: Spark Tutorials 1 - Introduce、Ecosysm、Features、Shell Commands
-toc: true
-date: 2019-09-19 07:07:21
+date: 2020-09-19 07:07:21
 categories: [spark]
 tags: [spark]
 ---

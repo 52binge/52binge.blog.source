@@ -1,6 +1,5 @@
 ---
 title: scikit-learn 为机器学习准备文本数据
-toc: true
 date: 2019-12-08 22:00:21
 categories: nlp
 tags: scikit-learn

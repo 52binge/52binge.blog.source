@@ -1,10 +1,8 @@
-
 ---
 title: SBT Hello
 date: 2016-03-16 07:54:16
-tags: [scala, sbt]
 categories: spark
-toc: true
+tags: [scala, sbt]
 ---
 
  1. 什么是 SBT ?

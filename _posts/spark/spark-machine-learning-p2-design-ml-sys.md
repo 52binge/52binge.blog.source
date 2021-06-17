@@ -1,6 +1,5 @@
 ---
 title: Spark Machine Learning p2 - 设计机器学习系统
-toc: true
 date: 2016-09-08 10:07:21
 categories: spark
 tags: [spark, machine-learning]

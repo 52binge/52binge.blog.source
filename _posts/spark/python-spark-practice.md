@@ -1,6 +1,5 @@
 ---
 title: Spark Practice
-toc: true
 date: 2021-01-06 07:07:21
 categories: [spark]
 tags: [spark]

@@ -1,7 +1,6 @@
 ---
 top: 8
 title: Spark Summary 2 - Q&A
-toc: true
 date: 2021-01-08 07:07:21
 categories: [spark]
 tags: [spark]

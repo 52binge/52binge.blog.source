@@ -1,10 +1,8 @@
 ---
 title: Six Kinds of Sort algorithms
-toc: true
 date: 2011-10-27 10:28:21
-categories: icpc
-tags: acm
-mathjax: true
+categories: leetcode
+tags: leetcode
 ---
 
 input ： 8, 5, 4, 9, 2, 3, 6

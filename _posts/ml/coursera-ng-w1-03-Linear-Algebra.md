@@ -1,6 +1,5 @@
 ---
 title: Coursera Week 1 - Linear Algebra Matrices And Vectors
-toc: true
 date: 2016-09-30 14:22:21
 categories: machine-learning
 tags: machine-learning

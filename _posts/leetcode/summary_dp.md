@@ -1,12 +1,11 @@
 ---
 title: Summary 20 dynamic programming
 date: 2019-08-31 10:54:16
-tags: dp
 categories: leetcode
-toc: true
+tags: dynamic programming
 ---
 
-<img src="/images/leetcode/DP-logo.png" width="500" />
+<img src="/images/leetcode/dp-logo-1.jpeg" width="500" />
 
 <!-- more -->
 

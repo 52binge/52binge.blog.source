@@ -1,7 +1,6 @@
 ---
 top: 8
 title: Spark Summary 1 - Basic knowledge
-toc: true
 date: 2020-10-31 07:07:21
 categories: [spark]
 tags: [spark]

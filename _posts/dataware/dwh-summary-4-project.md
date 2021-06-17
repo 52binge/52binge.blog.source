@@ -11,7 +11,7 @@ thumbnail: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/heartmate/icon.png
 -- headimg: # 可以设置文章头图
 ---
 
-<img src="/images/dataware/sm-data-warehouse-logo-1.jpg" width="580" alt="" />
+<img src="/images/dataware/sm-data-warehouse-logo-1.jpg" width="580" alt="1" />
 
 <!-- more -->
 
@@ -145,7 +145,7 @@ drawal_companys | loan_usage |
 No. | 主题名称 | 主题描述
 --- | --- | --- 
 1. | **客户 (USER)** | 当事人, 用户信息, 非常多, 人行征信信息， 个人资产信息
-2. | 机构 (ORG) | 线下有哪些团队, 浙江区，团队长，客户经理， 有 600+ 个. 只有维度表
+2. | 机构 (ORG) | 线下有哪些团队, 浙江区/团队长，客户经理， 有 several hundred+ 个. 只有维度表
 <br>3. | <br>产品 (PRD) | 签协议 产生 产品, 业务流程, 只有维度表 <br> 产品维度表： 产品编号, 产品名称， 上架， 下架<br>京金， code， 展示给财务
 4. | 渠道 (CHL) |
 5. | **事件 (EVT)** | 1. 业借<!--(50~200亿)--> / 注册&认证 2. 授信 3. 支用 4. 放款 5. 支付 6. 还款 <!--(支付流水总量有1.5亿) , 所以基本每天全量全量关联-->

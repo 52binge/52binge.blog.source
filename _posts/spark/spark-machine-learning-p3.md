@@ -1,6 +1,5 @@
 ---
 title: Spark Machine Learning p3 - 数据的获取、处理与准备
-toc: true
 date: 2016-09-09 16:07:21
 categories: spark
 tags: spark

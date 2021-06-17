@@ -1,6 +1,5 @@
 ---
 title: Spark Functions 
-toc: true
 date: 2021-01-07 20:07:21
 categories: [spark]
 tags: [spark]

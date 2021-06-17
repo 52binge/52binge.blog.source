@@ -1,10 +1,8 @@
 ---
 title: Spark Read Mysql 的四种方式
-toc: true
 date: 2017-04-20 15:28:21
 categories: [spark]
 tags: [spark]
-mathjax: true
 ---
 
 目前 `Spark` 支持四种方式从数据库中读取数据，这里以 `MySQL` 为例进行介绍。

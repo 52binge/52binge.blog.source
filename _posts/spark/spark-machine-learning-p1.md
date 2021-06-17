@@ -1,10 +1,8 @@
 ---
 title: Spark Machine Learning p1 - Spark编程入门
-toc: true
 date: 2016-04-25 10:07:21
 categories: spark
 tags: [spark]
-mathjax: true
 ---
 
 Spark 的环境搭建与运行, 接触了 RDD 与 SparkContext, 启动 Spark-Shell 以及如何使用 Scala、Python 编写 Spark 程序. 

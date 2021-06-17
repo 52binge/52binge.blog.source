@@ -1,9 +1,8 @@
 ---
 title: Summary SQL - Leetcode
 date: 2018-09-06 10:54:16
-tags: leetcode
 categories: leetcode
-toc: true
+tags: sql
 ---
 
 <img src="/images/sql/sql-50-logo.jpg" width="500" />

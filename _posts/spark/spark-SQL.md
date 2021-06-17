@@ -1,10 +1,8 @@
 ---
 title: Spark SQL编程
-toc: true
 date: 2017-04-28 15:28:21
 categories: [spark]
 tags: [spark]
-mathjax: true
 ---
 
 Spark SQL，可对不同格式的数据执行ETL操作（如JSON，Parquet，数据库）然后完成特定的查询操作。

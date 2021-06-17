@@ -1,9 +1,8 @@
 ---
 title: Fine-grained Sentiment Analysis of User Online Reviews
-toc: true
 date: 2019-06-25 10:16:21
-categories: chatbot
-tags: chatbot
+categories: nlp
+tags: Sentiment
 ---
 
 <img src="/images/deeplearning/AI-Challenger-11.png" width="550" alt="AI-Challenger"/>

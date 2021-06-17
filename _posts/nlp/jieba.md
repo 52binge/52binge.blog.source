@@ -1,6 +1,5 @@
 ---
 title: Jieba 中文处理
-toc: true
 date: 2017-07-29 18:08:21
 categories: nlp
 tags: jieba

@@ -1,10 +1,8 @@
 ---
 title: RDD、DataFrame和DataSet的区别
-toc: true
 date: 2020-01-03 15:28:21
 categories: [spark]
 tags: [spark]
-mathjax: true
 ---
 
 <img src="/images/spark/spark-aura-9.3.1.png" width="600" alt="Spark SQL，可对不同格式的数据执行ETL操作（如JSON，Parquet，数据库）然后完成特定的查询操作." />

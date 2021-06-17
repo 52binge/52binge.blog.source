@@ -1,6 +1,5 @@
 ---
 title: Word2vec 基础
-toc: true
 date: 2017-07-12 21:08:21
 categories: nlp
 tags: Word2Vec
@@ -85,7 +84,8 @@ $V\_{Paris}$ - $V\_{France}$ + $V\_{German}$ = $V\_{Berlin}$
 - <font color=blue>语料库<font>
 
 ```py
-John likes to watch movies. Mary likes too.John also likes to watch football games.
+John likes to watch movies. Mary likes too.
+John also likes to watch football games.
 ```
 
 - <font color=blue>词典<font>
@@ -98,7 +98,8 @@ John likes to watch movies. Mary likes too.John also likes to watch football ga
 - <font color=blue>One-hot表示<font>
 
 ```py
-John: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]likes: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+John: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+likes: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
 ...
 too : [0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
 ```
@@ -109,10 +110,13 @@ too : [0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
 > 文档的向量表示可以直接将各词的词向量表示加和
  
 John likes to watch movies. Mary likes too. => [1, 2, 1, 1, 1, 0, 0, 0, 1, 1] 
-John also likes to watch football games. => [1, 1, 1, 1, 0, 1, 1, 1, 0, 0]> 词权重  - (`词在文档中的顺序没有被考虑`)
+John also likes to watch football games. => [1, 1, 1, 1, 0, 1, 1, 1, 0, 0]
+
+> 词权重  - (`词在文档中的顺序没有被考虑`)
 
 > tf-idf是一种统计方法，用以评估一字词对于一个文件集或一个语料库中的其中一份文件的重要程度
-- TF-IDF (Term Frequency - Inverse Document Frequency)
+
+- TF-IDF (Term Frequency - Inverse Document Frequency)
 
 Term Frequency : F(term) = (该word词出现在当前文档中的次数) / (当前文档所有word的总数).
 

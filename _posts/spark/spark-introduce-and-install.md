@@ -1,6 +1,5 @@
 ---
 title: Spark Introduce and Install
-toc: true
 date: 2016-02-01 10:07:21
 categories: [spark]
 tags: [spark]

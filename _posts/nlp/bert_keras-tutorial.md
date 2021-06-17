@@ -1,6 +1,5 @@
 ---
 title: Bert 最简单的打开姿势
-toc: true
 date: 2019-11-08 11:00:21
 categories: nlp
 tags: BERT

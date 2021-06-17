@@ -1,6 +1,5 @@
 ---
 title: 理论 seq2seq+Attention 机制模型详解
-toc: true
 date: 2017-11-17 20:00:21
 categories: nlp
 tags: seq2seq+Attention

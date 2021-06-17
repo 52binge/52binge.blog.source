@@ -1,7 +1,6 @@
 ---
 title: Spark Core 中的 RDD 详解 3.1
-toc: true
-date: 2018-07-23 08:07:21
+date: 2020-07-23 08:07:21
 categories: [spark]
 tags: [spark]
 ---

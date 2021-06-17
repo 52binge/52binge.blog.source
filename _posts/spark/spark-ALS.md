@@ -1,6 +1,5 @@
 ---
 title: Spark ALS
-toc: true
 date: 2017-05-07 10:28:21
 categories: spark
 tags: ALS

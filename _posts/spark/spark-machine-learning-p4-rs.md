@@ -1,6 +1,5 @@
 ---
 title: Spark Machine Learning p4 - Build Recommendation System
-toc: true
 date: 2016-11-23 15:28:21
 categories: [spark]
 tags: [spark, recommendation-system]

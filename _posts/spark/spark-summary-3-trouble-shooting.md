@@ -1,7 +1,6 @@
 ---
 top: 8
 title: Spark - troubleshooting
-toc: true
 date: 2021-01-21 07:07:21
 categories: [spark]
 tags: [spark]

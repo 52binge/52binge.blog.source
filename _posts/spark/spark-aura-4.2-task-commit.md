@@ -1,7 +1,6 @@
 ---
 title: Spark Task-Commit 流程解析 4.2
-toc: true
-date: 2018-07-29 08:07:21
+date: 2020-07-29 08:07:21
 categories: [spark]
 tags: [spark]
 ---

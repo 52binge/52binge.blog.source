@@ -1,6 +1,5 @@
 ---
 title: Spark Introduce 1
-toc: true
 date: 2018-06-29 10:07:21
 categories: [spark]
 tags: [spark]

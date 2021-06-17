@@ -1,12 +1,11 @@
 ---
 title: 2021 Leetcode
 date: 2021-03-19 10:54:16
-tags: leetcode
 categories: leetcode
-toc: true
+tags: leetcode
 ---
 
-<img src="/images/icpc/Array-In-C.png" width="580" />
+<img src="/images/leetcode/python-leetcode.jpg" width="500" />
 
 <!-- more -->
 
