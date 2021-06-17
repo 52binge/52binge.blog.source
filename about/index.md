@@ -35,7 +35,7 @@ Welcome to communicate, learn and progress together ! &nbsp;&nbsp; [contact: ema
 每个人的追求和思考面都是不同的，要换位思考，尊重每一个肯为梦想而努力奋斗的人。 
 -->
 
-{% image /images/tw/sea-sg-logo-me1.jpg, width=300px, alt=每天下课回宿舍的路，承载了太多记忆。 %}
+{% image /images/tw/sea-sg-logo-me1.jpg, width=300px, alt=每天下课回宿舍的路，承载了太多记忆. %}
 
 <!--
 <img src="/images/tw/Auckland-2.jpg" width="500" alt="Auckland New Zealand" />

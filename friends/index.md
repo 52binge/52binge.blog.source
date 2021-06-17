@@ -69,4 +69,10 @@ else:
    print(c)
 {% endcodeblock %}
 
+{% codeblock code snippet 1 lang:js %}
+var allp=$("div p");
+allp.attr("class",function(i,n){
+           return Number(n)+1;
+      });
+{% endcodeblock %}     
 

@@ -6,11 +6,9 @@ categories: [data-warehouse, hive]
 tags: [Hive]
 ---
 
-<img src="/images/hadoop/hadoop-hive-logo-1.png" width="350" alt="Hadoop MapReduce" />
+<img src="/images/hadoop/hadoop-hive-logo-1.png" width="380" alt="Hadoop MapReduce" />
 
 <!-- more -->
-
-<!-- sidebar: [grid, toc, tags -->
 
 ## 1. Hive 优化
 
