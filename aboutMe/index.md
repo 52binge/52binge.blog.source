@@ -17,9 +17,9 @@ Welcome to communicate, learn and progress together ! &nbsp;&nbsp;&nbsp; [contac
 
 ### Who am I
 
-<a class="article-myself" href="/about"> Blair Chen</a> 90s, a data developer, GTD practitioner, live in Singapore, Singapore.
+<a class="article-myself" href="/about"> Blair Chan</a> 90s, a data developer, GTD practitioner, live in Singapore, Singapore.
 
-<a class="article-myself" href="/about"> Blair Chen</a> focus on python, data engineering, data modeling, computer science.
+<a class="article-myself" href="/about"> Blair Chan</a> focus on python, data engineering, data modeling, computer science.
 
 <!--<a class="article-myself" href="/">  Libin Chan</a>-->
 <!-- <img src="/images/tech-logos/2016-10-03-6.png" width="250"  style="margin-left:100px;" /img> -->
@@ -104,9 +104,9 @@ Welcome to communicate, learn and progress together ! &nbsp;&nbsp;&nbsp; [contac
 
 ### ChangeLog
 
-- 2021-06-13 : Blair Chen, theme volantis research..
-- 2017-10-08 : Blair Chen, blairos theme improve..
-- 2016-03-22 : Blair Chen, build this blog website
+- 2021-06-13 : Blair Chan, theme volantis research..
+- 2017-10-08 : Blair Chan, blairos theme improve..
+- 2016-03-22 : Blair Chan, build this blog website
 
 [1]: /images/tech-logos/2016-10-03-6.png
 [tw]: /tweet

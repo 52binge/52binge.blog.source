@@ -18,9 +18,9 @@ Welcome to communicate, learn and progress together ! &nbsp;&nbsp; [contact: ema
 
 ### Who am I
 
-<a class="article-myself" href="/about"> Blair Chen</a> 90s, a data developer, GTD practitioner, live in Singapore, Singapore.
+<a class="article-myself" href="/about"> Blair Chan</a> 90s, a data developer, GTD practitioner, live in Singapore, Singapore.
 
-<a class="article-myself" href="/about"> Blair Chen</a> focus on python, data engineering, data modeling, computer science.
+<a class="article-myself" href="/about"> Blair Chan</a> focus on python, data engineering, data modeling, computer science.
 
 <!--<a class="article-myself" href="/">  Libin Chan</a>-->
 <!-- <img src="/images/tech-logos/2016-10-03-6.png" width="250"  style="margin-left:100px;" /img> -->
