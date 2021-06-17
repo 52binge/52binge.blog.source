@@ -1,11 +1,15 @@
 ---
 top: 8
+icons: [fas fa-fire red, fas fa-star green]
 title: DataWare Review Summary 4 
 date: 2021-03-09 09:07:21
 categories: [data-warehouse]
 tags: [DWH]
 description: 本篇文章记录了我对 Volantis 主题做 Pjax 兼容的种种，大抵算是种记录吧~
+ 
 thumbnail: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/heartmate/icon.png
+
+# thumbnail: /images/dataware/sm-data-warehouse-logo-1.jpg
 
 -- cover: true
 -- headimg: # 可以设置文章头图

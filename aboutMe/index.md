@@ -7,6 +7,7 @@ music:
   type: song        # song, playlist, album, search, artist
   id: 17423740      # song id / playlist id / album id / search keyword
   autoplay: true
+sidebar: []
 ---
 
 👨🏻‍🎓 𝗺𝗲, ~~always 18 years old, a student,~~ ‍シンガポールに住🇸🇬
@@ -17,11 +18,11 @@ Welcome to communicate, learn and progress together ! &nbsp;&nbsp;&nbsp; [contac
 
 ### Who am I
 
-<a class="article-myself" href="/about"> Blair Chan</a> 90s, a data developer, GTD practitioner, live in Singapore, Singapore.
+<a class="article-myself" href="/about"> Blair Chen</a> 90s, a data developer, GTD practitioner, live in Singapore, Singapore.
 
-<a class="article-myself" href="/about"> Blair Chan</a> focus on python, data engineering, data modeling, computer science.
+<a class="article-myself" href="/about"> Blair Chen</a> focus on python, data engineering, data modeling, computer science.
 
-<!--<a class="article-myself" href="/">  Libin Chan</a>-->
+<!--<a class="article-myself" href="/">  Libin Chen</a>-->
 <!-- <img src="/images/tech-logos/2016-10-03-6.png" width="250"  style="margin-left:100px;" /img> -->
 <!--<img src="/images/tech-logos/2016-10-03-6.png" width="250" /img>
 -->
@@ -32,11 +33,7 @@ Welcome to communicate, learn and progress together ! &nbsp;&nbsp;&nbsp; [contac
 每个人的追求和思考面都是不同的，要换位思考，尊重每一个肯为梦想而努力奋斗的人。 
 -->
 
-<img src="/images/tw/sea-sg-logo-me1.jpg" width="500" alt="S.E.A. Aquarium Singapore" />
-
-<!--
-<img src="/images/tw/Auckland-2.jpg" width="500" alt="Auckland New Zealand" />
--->
+<img src="/images/tw/sea-sg-logo-me1.jpg" width="350" title="S.E.A. Aquarium" alt="S.E.A. Aquarium Singapore" />
 
 ### Classic line
 
@@ -102,11 +99,11 @@ Welcome to communicate, learn and progress together ! &nbsp;&nbsp;&nbsp; [contac
 - You can find me in these ways: <a class="article-myEmail" href="mailto:blair.values@gmail.com">  Email</a> <!--<a class="article-myFacebook" href="https://www.facebook.com/"> Facebook</a>--> <a class="article-myTwitter" href="https://twitter.com/blairechin">  Twitter</a> <a class="article-myInstagram" href="https://www.instagram.com/"> Instagram</a> <a class="article-myGithub" href="https://github.com/blair101"> Github</a> <!--<a class="article-myKaggle" href="https://www.kaggle.com/blairchan"> Kaggle</a> --><!--<a class="article-mySegmentfault" href="https://www.stackoverflow.com"> Stackoverflow</a>-->
 - You can continue to fellow this blog and comment by [DISQUS](https://disqus.com/)
 
-### ChangeLog
+### ChengeLog
 
-- 2021-06-13 : Blair Chan, theme volantis research..
-- 2017-10-08 : Blair Chan, blairos theme improve..
-- 2016-03-22 : Blair Chan, build this blog website
+- 2021-06-13 : Blair Chen, theme volantis research..
+- 2017-10-08 : Blair Chen, blairos theme improve..
+- 2016-03-22 : Blair Chen, build this blog website
 
 [1]: /images/tech-logos/2016-10-03-6.png
 [tw]: /tweet
