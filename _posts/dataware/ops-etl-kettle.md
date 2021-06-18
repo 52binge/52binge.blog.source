@@ -1,8 +1,8 @@
 ---
 title: Kettle ETL
 date: 2016-01-22 15:34:16
-categories: hadoop
-tags: [kettle]
+categories: data-warehouse
+tags: [ETL]
 ---
 
 Kettle 的使用初步介绍

@@ -1,9 +1,8 @@
 ---
 title: Elasticsearch * 入门
 date: 2016-05-17 15:59:16
+categories: elastic
 tags: elasticsearch
-categories: hadoop 
-toc: true
 ---
 
 Elasticsearch 是一个基于Apache Lucene(TM)的开源搜索引擎 、 实时分布式搜索 和 分析引擎。

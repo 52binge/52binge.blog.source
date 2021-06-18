@@ -1,9 +1,8 @@
 ---
 title: Elasticsearch installation plugins
 date: 2016-05-17 15:59:16
+categories: elastic
 tags: elasticsearch
-categories: hadoop
-toc: true
 ---
 
  Elasticsearch 扩展性非常好，有很多官方和第三方开发的插件
