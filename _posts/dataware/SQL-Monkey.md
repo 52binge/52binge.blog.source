@@ -1,5 +1,4 @@
 ---
-top: 8
 title: 猴子的图解SQL 学习笔记
 date: 2021-02-01 09:07:21
 categories: [data-warehouse]

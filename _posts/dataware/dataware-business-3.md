@@ -1,6 +1,5 @@
 ---
 title: DataWare Business Review 3
-toc: true
 date: 2021-01-22 09:07:21
 categories: [data-warehouse]
 tags: [data warehouse]

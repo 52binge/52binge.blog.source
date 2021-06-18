@@ -1,5 +1,4 @@
 ---
-top: 1
 title: Docker tutorial
 date: 2019-10-07 17:11:21
 categories: devops

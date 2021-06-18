@@ -1,5 +1,4 @@
 ---
-top: 8
 title: SparkSQL Multidimensional Analysis - Group by
 date: 2021-02-10 15:28:21
 categories: [spark]

@@ -1,6 +1,5 @@
 ---
 title: SQL vs NoSQL
-toc: true
 date: 2019-09-15 09:07:21
 categories: [data-warehouse]
 tags: [SQL]

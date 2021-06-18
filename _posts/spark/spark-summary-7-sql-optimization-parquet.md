@@ -1,5 +1,4 @@
 ---
-top: 7
 title: SparkSQL - Parquet
 date: 2021-01-12 15:28:21
 categories: [spark]

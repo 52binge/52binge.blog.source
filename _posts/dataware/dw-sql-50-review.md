@@ -1,6 +1,5 @@
 ---
 title: Data Analysis - SQL 50
-toc: true
 date: 2021-01-05 09:07:21
 categories: [data-warehouse]
 tags: [data warehouse]

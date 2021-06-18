@@ -1,6 +1,5 @@
 ---
 title: Data Analysis - SQL 50 第1篇
-toc: true
 date: 2020-08-07 09:07:21
 categories: [data-warehouse]
 tags: [data warehouse]

@@ -1,6 +1,5 @@
 ---
 title: 搬瓦工VPS 配置 SSH 与 OpenVpn
-toc: true
 date: 2017-11-12 13:16:21
 categories: devops
 tags: banwagon

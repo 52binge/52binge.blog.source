@@ -1,6 +1,5 @@
 ---
 title: Data Warehouse - 基础篇
-toc: true
 date: 2018-08-01 10:07:21
 categories: [data-warehouse]
 tags: [data warehouse]

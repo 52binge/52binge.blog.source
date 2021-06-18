@@ -1,6 +1,5 @@
 ---
 title: Data Analysis - SQL 50 第2篇 Action
-toc: true
 date: 2020-08-08 09:07:21
 categories: [data-warehouse]
 tags: [data warehouse]

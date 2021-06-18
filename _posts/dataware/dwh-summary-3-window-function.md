@@ -1,7 +1,5 @@
 ---
-top: 7
 title: DataWare Review Summary 3 - Window Function
-toc: true
 date: 2021-02-20 09:07:21
 categories: [data-warehouse]
 tags: [data warehouse, SQL]

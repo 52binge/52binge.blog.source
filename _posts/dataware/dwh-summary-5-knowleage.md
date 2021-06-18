@@ -1,5 +1,4 @@
 ---
-top: 8
 title: Hive Optimization Solution Notes
 date: 2021-03-12 09:07:21
 categories: [data-warehouse, hive]

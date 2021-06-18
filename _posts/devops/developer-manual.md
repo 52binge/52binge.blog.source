@@ -1,10 +1,8 @@
 ---
-top:  6
 title: Developer's manual
 date: 2019-10-20 17:11:21
 categories: devops
 tags: developer   
-mathjax: true
 ---
 
 <img src="/images/devops/developer-3.png" width="550" alt="Developer's manual" />

@@ -1,5 +1,4 @@
 ---
-top: 8
 title: SparkSQL 从入门到调优
 date: 2021-02-03 15:28:21
 categories: [spark]
