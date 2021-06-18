@@ -56,7 +56,7 @@ IndustryVeteran 业界大佬 {% inlineimage https://cdn.jsdelivr.net/gh/volantis
 
 {% cell 廖雪峰, https://www.liaoxuefeng.com/, https://tva2.sinaimg.cn/crop.0.1.635.635.50/62d8efadgw1ej30downrsj20hs0hq0ws.jpg?KID=imgbed,tva&Expires=1623954405&ssig=bJZGPYhgNb %}
 
-{% cell 王垠**, https://www.yinwang.org/, https://avatars.githubusercontent.com/u/396124?v=4 %}
+{% cell 王垠, https://www.yinwang.org/, https://avatars.githubusercontent.com/u/396124?v=4 %}
 
 {% cell Runoob, https://www.runoob.com/, /images/logos/runoob-logo.jpeg %}
 
