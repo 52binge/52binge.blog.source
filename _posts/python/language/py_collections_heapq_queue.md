@@ -1,5 +1,5 @@
 ---
-title: collections and heapq
+title: Python collections and heapq
 date: 2020-12-16 10:07:21
 categories: [python]
 tags: [interview]

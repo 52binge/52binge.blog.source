@@ -1,6 +1,5 @@
 ---
-title: Dimensionality Reduction： PCA
-toc: true
+title: Dimensionality Reduction：PCA
 date: 2019-04-21 17:01:21
 categories: machine-learning
 tags: PCA

@@ -3,8 +3,6 @@ title: Sqoop introduce
 date: 2016-02-16 15:54:16
 tags: [sqoop]
 categories: hadoop
-toc: true
-list_number: false
 ---
 
 Sqoop 即 SQL to Hadoop, 是一款方便的在传统关系数据库与 Hadoop 之间进行数据迁移的工具，充分利用 MapReduce 并行特点以批处理的方式加快数据传输.

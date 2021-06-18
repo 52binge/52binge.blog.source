@@ -1,10 +1,8 @@
 ---
 title: Hive Introduce 1
-toc: true
 date: 2016-02-15 15:07:21
 categories: hadoop
 tags: hive
-mathjax: true
 ---
 
  1. 初步了解 Hadoop 生态圈

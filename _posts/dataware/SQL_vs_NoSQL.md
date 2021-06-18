@@ -1,6 +1,6 @@
 ---
 title: SQL vs NoSQL
-date: 2019-09-15 09:07:21
+date: 2020-09-15 09:07:21
 categories: [data-warehouse]
 tags: [SQL]
 ---

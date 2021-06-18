@@ -1,10 +1,8 @@
 ---
 title: 大数据平台CDH集群在线安装
 date: 2016-03-14 15:54:16
-tags: [cdh]
+tags: [CDH]
 categories: hadoop
-toc: true
-list_number: false
 ---
 
 介绍了 CDH 集群的搭建与安装，其中 Server 安装步骤非常准确, Agent 需要进一步验证.

@@ -1,7 +1,6 @@
 ---
 title: Hadoop Review 2 - MapReduce
-toc: true
-date: 2018-07-15 23:07:21
+date: 2020-07-15 23:07:21
 categories: [hadoop]
 tags: [MapReduce]
 ---

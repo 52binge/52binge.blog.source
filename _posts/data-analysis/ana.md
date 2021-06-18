@@ -1,12 +1,12 @@
 
 ---
-title: Data Analyst Survey at Singapore
+title: Survey of Data Analyst
 date: 2021-02-17 18:28:21
 categories: data-analysis
 tags: data-analysis
 ---
 
-Apply online
+Job survey of data analysts in Singapore
 
 <!-- more -->
 
@@ -77,7 +77,7 @@ HR interview ->code test->result, code test includes python and sql. python is n
 
 Coding round tested on dataframes: filtering, multi-conditional filtering, and also general theory on programming and Python HR interview asked the standard questions: why Shopee, why data analytics, where do you see yourself in 5 years
 
-## 7. Data Analyst in Singapore
+## Data Analyst in Singapore
 
 Application
 I applied through a recruiter. The process took 2 weeks. I interviewed at Shopee Singapore in May 2020.
@@ -85,7 +85,7 @@ I applied through a recruiter. The process took 2 weeks. I interviewed at Shopee
 Interview
 The 1st round is a HR interview (less than 30 minutes). HR will ask you general question such as why do you want to apply to Shopee, and do you know what shopee is. The 2nd round interview is SQL and python test. It is a 1.5 hours online test in which contains 17 questions. There are probably 10 multiple choice questions, 3 SQL coding questions, 4 basic python questions. The SQL coding questions test you on basic SQL coding concept, such as SELECT, JOINS while the python questions test you on understanding about the python pandas package (understanding how datatime and df.groupby is used). If you are an amateur coders who refers to python manual often, you will find yourself not being able to complete those questions. I believe, in order to pass this test, you need to score close to full marks. I wasn't able to complete the test as i encounter some technical issue on the syntax part of the code in which i wasn't able to ask for help since it's an online test (due to COVID-19 situation). I believed i scored around 10-11/17 for my test, which is not enough to move on in the next part of the interview. So in conclusion, Shopee expects you to score close to full marks on your SQL, python test. If you fail to do so, you can forget about moving further in the interview.
 
-## 8 machine learning
+## machine learning
 
 Called by HR & explained the process of selection. The coding test too, data cleaning, data extraction & use of machine learning. Given task had a huge data set 150,000 rows and 10 columns with 3 labels
 

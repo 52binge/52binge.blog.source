@@ -1,10 +1,8 @@
 ---
 title: MapReduce for Python
-toc: true
 date: 2015-01-30 10:37:21
 categories: hadoop
 tags: hadoop
-mathjax: true
 ---
 
 我们可以用 hadoop-streaming 的方式，通过 python 等其他语言来编写 MR 程序.

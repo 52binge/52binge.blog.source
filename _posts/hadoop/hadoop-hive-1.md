@@ -1,7 +1,6 @@
 ---
 title: Hadoop Tutorial 3 - Hive
-toc: true
-date: 2018-07-16 07:07:21
+date: 2020-07-16 07:07:21
 categories: [hadoop]
 tags: [Hive]
 ---
