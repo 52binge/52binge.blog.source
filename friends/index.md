@@ -44,19 +44,24 @@ Friends 博客爱好者 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cd
 {% cell qinxs, https://7bxing.com/, https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/img/avatar.png %}
 
 {% cell 前端小康, https://www.antmoe.com/about/, https://cdn.jsdelivr.net/npm/kang-static@latest/avatar.jpg %}
+
+{% cell 小萝卜算子, https://www.zhihu.com/column/c_1096052338699100160/, https://pic3.zhimg.com/50/v2-c8802b25b79b3c94a413c3b22e423c9c_xll.jpg %}
+
+{% cell 花木兰, https://www.zhihu.com/people/may-25-73/columns/, https://pic2.zhimg.com/v2-cb4445a1aeb51a52aca4b48a0abc4a0b_xll.jpg %}
+
 {% endbtns %}
 
 IndustryVeteran 业界大佬 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
 
 {% btns circle wide centre %}
 
-{% cell 小萝卜算子, https://www.zhihu.com/column/c_1096052338699100160/, https://pic3.zhimg.com/50/v2-c8802b25b79b3c94a413c3b22e423c9c_xll.jpg %}
-
-{% cell 花木兰, https://www.zhihu.com/people/may-25-73/columns/, https://pic2.zhimg.com/v2-cb4445a1aeb51a52aca4b48a0abc4a0b_xll.jpg %}
-
 {% cell 廖雪峰, https://www.liaoxuefeng.com/, https://tva2.sinaimg.cn/crop.0.1.635.635.50/62d8efadgw1ej30downrsj20hs0hq0ws.jpg?KID=imgbed,tva&Expires=1623954405&ssig=bJZGPYhgNb %}
 
-{% cell 王垠, https://www.yinwang.org/, https://avatars.githubusercontent.com/u/396124?v=4 %}
+{% cell 阮一峰, http://www.ruanyifeng.com/blog/, https://www.ruanyifeng.com/blog/images/person2_s.jpg %}
+
+{% cell 陈皓, https://coolshell.cn/, https://coolshell.cn/wp-content/uploads/2011/03/me.jpg %}
+
+{% cell 王垠, https://www.yinwang.org/, https://inews.gtimg.com/newsapp_bt/0/12948149327/1000 %}
 
 {% cell Runoob, https://www.runoob.com/, /images/logos/runoob-logo.jpeg %}
 

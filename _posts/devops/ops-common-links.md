@@ -9,64 +9,14 @@ Here are some useful links
 
 <!-- more -->
 
-## Deep Learning Coursera
-
-- [daniellaah.github.io][r1]
-- [deeplearning.ai深度学习课程字幕翻译项目][r2]
-- [互道晚安，王者峡谷见 机器学习 & 深度学习 NG 笔记][r3]
-- [deeplearning.ai（吴恩达老师的深度学习课程笔记及资源）][r4]
-- [大数据文摘 deeplearning.ai Sequence Models 中文笔记][r6]
-- [Sequence Models 英文版笔记][r7]
-- [寒小阳 - 深度学习与自然语言处理][r8]
-- [寒小阳主页][r9]
-- [Bolei Zhou @Assistant Professor CUHK][r10]
-- [计算机视觉和自然语言处理，哪个更具有发展前景呢，还是各有千秋呢？][r11]
-
-[r1]: http://daniellaah.github.io/
-[r2]: https://www.ctolib.com/Yukong-Deeplearning-ai-Solutions.html
-[r3]: https://www.cnblogs.com/marsggbo/
-[r4]: https://github.com/fengdu78/deeplearning_ai_books
-[r6]: https://github.com/theBigDataDigest/Andrew-Ng-deeplearning-part-5-Course-notes-in-Chinese/blob/master/Andrew-Ng-deeplearning.ai-part-5-Course%20notes.pdf
-[r7]: https://kulbear.github.io/pdf/sequence-models.pdf
-[r8]: https://blog.csdn.net/column/details/dl-nlp.html
-[r9]: https://blog.csdn.net/han_xiaoyang/article/category/5877239
-[r10]: http://people.csail.mit.edu/bzhou/
-[r11]: https://www.zhihu.com/question/49432647/answer/144958145
-
-## Recommend
-
-- [推荐系统经典论文文献及业界应用][recom1]
-
-[recom1]: https://blog.csdn.net/bvl10101111/article/details/78822739
-
-## NLP
-
-- [sense2vec][n1]
-- [zybuluo hanxiaoyang][n2]
-- [gensim][n3]
-- [自然语言理解-从规则到深度学习][n4]
-- [Free Will][n5]
-- [www.wildml.com][n6]
-
-[n1]: https://github.com/explosion/sense2vec
-[n2]: https://www.zybuluo.com/hanxiaoyang/note/472184
-[n3]: https://radimrehurek.com/gensim/
-[n4]: https://yq.aliyun.com/articles/158691
-[n5]: https://plushunter.github.io/
-[n6]: http://www.wildml.com/
-
 ## Friends
 
-- [fazero][f1]
 - [ali wuchong][f2]
-- [Poll的笔记][f3]
 - [阮一峰的网络日志][f4]
 - [ICML 学霸 David Abel][f5]
 - [酷壳][f6]
 
-[f1]: https://blog.fazero.me/
 [f2]: http://wuchong.me/
-[f3]: http://www.cnblogs.com/maybe2030/
 [f4]: http://www.ruanyifeng.com/blog/
 [f5]: https://david-abel.github.io/
 [f6]: https://coolshell.cn
@@ -102,13 +52,14 @@ Here are some useful links
 > 3. start Server
 > 4. Root shell - interactive
 > 5. vi /etc/ssh/sshd_config, add 
-> ```
+
+```
   PermitRootLogin yes
   Port 22
-  ```
+```
+
 > 6. /etc/init.d/sshd restart
 > 7. ssh root@ip
-
 
 ## python
 
@@ -159,24 +110,6 @@ Here are some useful links
 - [macOS (OS X) 有哪些常用的快捷键？][m1]
 
 [m1]: https://www.zhihu.com/question/20021861
-
-## 比特币
-
-- [港台数字货币交易平台排名][b1]
-- [bitfinex][b2]
-- [binance][b3]
-- [如何把火币网的比特币移到OKEX？][b4]
-- [币安(Binance) | 注册和使用教程][b5]
-- [台湾币托][b6]
-- [OTCBTC - 支持场外交易，支付宝][b7]
-
-[b1]: http://www.btcranks.com/hk/
-[b2]: https://www.bitfinex.com/
-[b3]: https://www.binance.com/en
-[b4]: https://www.zhihu.com/question/269003572
-[b5]: https://zhuanlan.zhihu.com/p/36776300
-[b6]: https://www.bitoex.com/dashboard/statistics?locale=zh-CN
-[b7]: https://otcbtc.com/
 
 ## blog
 
