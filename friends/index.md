@@ -25,9 +25,9 @@ music:
 
 {% cell xaoxuu, https://xaoxuu.com, https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png %}
 
-{% cell MHuiG, https://blog.mhuig.top/, https://cdn.jsdelivr.net/npm/mhg@latest %}
-
 {% cell 枋柚梓, https://www.inkss.cn/, https://cdn.jsdelivr.net/gh/inkss/common@master/static/web/avatar.jpg %}
+
+{% cell Font-Awesome, https://fontawesome.com/v5.15/icons?d=gallery/, fab fa-font-awesome-flag %}
 
 {% endbtns %}
 
@@ -46,7 +46,7 @@ Friends 博客爱好者 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cd
 {% cell 前端小康, https://www.antmoe.com/about/, https://cdn.jsdelivr.net/npm/kang-static@latest/avatar.jpg %}
 {% endbtns %}
 
-DataWare 数仓职业者 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
+IndustryVeteran 业界大佬 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
 
 {% btns circle wide centre %}
 
@@ -54,15 +54,10 @@ DataWare 数仓职业者 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/c
 
 {% cell 花木兰, https://www.zhihu.com/people/may-25-73/columns/, https://pic2.zhimg.com/v2-cb4445a1aeb51a52aca4b48a0abc4a0b_xll.jpg %}
 
-{% endbtns %}
-
-IndustryVeteran 业界大佬 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
-
-{% btns circle wide centre %}
-
 {% cell 廖雪峰, https://www.liaoxuefeng.com/, https://tva2.sinaimg.cn/crop.0.1.635.635.50/62d8efadgw1ej30downrsj20hs0hq0ws.jpg?KID=imgbed,tva&Expires=1623954405&ssig=bJZGPYhgNb %}
 
 {% cell Runoob, https://www.runoob.com/, /images/logos/runoob-logo.jpeg %}
+
 {% endbtns %}
 
 ## Codeblock
