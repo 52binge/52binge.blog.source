@@ -1,11 +1,9 @@
 
 ---
-title: base Singapore
-toc: true
-date: 2020-02-17 18:28:21
+title: Data Analyst Survey at Singapore
+date: 2021-02-17 18:28:21
 categories: data-analysis
-tags: ITFIN
-mathjax: true
+tags: data-analysis
 ---
 
 Apply online
@@ -16,9 +14,9 @@ Apply online
 
 btw我忘说了oa复习pandas的时候多看看datefunction是考查重点～
 
-1， HR call，简单了解工作经验，问聊不了解shopee，介绍部门。
-2，Online test， Python+SQL
-3，team manager：自我介绍+case study
+1, HR call，简单了解工作经验
+2, Online test， Python+SQL
+3, team manager：自我介绍+case study
 4, team lead: 自我介绍+case study
 5, department lead: 自我介绍+case study
 
@@ -42,7 +40,7 @@ Python主要考pandas，13个题
 - A/B testing基本步骤和概念
 
 
-base Singapore，在官网申请的，大约一周后收到一面通知，面试官很好，是个中国小姐姐，全英文面试
+base Singapore，在官网申请的，大约一周后收到一面通知，全英文面试
 
 刚收到邮件，1个多小时的Python + SQL 测试，要求下载pycharm，用pandas处理他们的excel，，，
 
