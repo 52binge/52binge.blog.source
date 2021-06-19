@@ -31,6 +31,27 @@ music:
 
 {% endbtns %}
 
+Exploring 开拓职场 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
+
+{% btns circle wide centre %}
+
+{% cell Offer帮, https://offerbang.io/, https://pic1.zhimg.com/v2-12dc0416370b598604d6480c1e9f6d85_xl.jpg %}
+
+{% cell 小Lin@知乎, https://www.zhihu.com/people/lindsayzou/, https://pic1.zhimg.com/v2-12dc0416370b598604d6480c1e9f6d85_xl.jpg %}
+
+{% endbtns %}
+
+Data WareHouse & Analyst {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
+
+{% btns circle wide centre %}
+
+{% cell 小萝卜算子, https://www.zhihu.com/column/c_1096052338699100160/, https://pic3.zhimg.com/50/v2-c8802b25b79b3c94a413c3b22e423c9c_xll.jpg %}
+
+{% cell 花木兰, https://www.zhihu.com/people/may-25-73/columns/, https://pic2.zhimg.com/v2-cb4445a1aeb51a52aca4b48a0abc4a0b_xll.jpg %}
+
+{% endbtns %}
+
+
 Friends 博客爱好者 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
 
 {% btns circle wide centre %}
@@ -44,10 +65,6 @@ Friends 博客爱好者 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cd
 {% cell qinxs, https://7bxing.com/, https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/img/avatar.png %}
 
 {% cell 前端小康, https://www.antmoe.com/about/, https://cdn.jsdelivr.net/npm/kang-static@latest/avatar.jpg %}
-
-{% cell 小萝卜算子, https://www.zhihu.com/column/c_1096052338699100160/, https://pic3.zhimg.com/50/v2-c8802b25b79b3c94a413c3b22e423c9c_xll.jpg %}
-
-{% cell 花木兰, https://www.zhihu.com/people/may-25-73/columns/, https://pic2.zhimg.com/v2-cb4445a1aeb51a52aca4b48a0abc4a0b_xll.jpg %}
 
 {% endbtns %}
 
