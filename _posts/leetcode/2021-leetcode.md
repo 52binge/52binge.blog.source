@@ -5,9 +5,11 @@ categories: leetcode
 tags: leetcode
 ---
 
-<img src="/images/leetcode/python-leetcode.jpg" width="500" alt="" />
+<img src="/images/leetcode/python-leetcode.jpg" width="450" alt="leetCode" />
 
 <!-- more -->
+
+<!--  {% image /images/leetcode/python-leetcode.jpg, width=500px, alt=leetCode %} -->
 
 ## 1. binary-search
 
