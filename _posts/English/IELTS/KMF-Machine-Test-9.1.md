@@ -7,8 +7,6 @@ tags: IELTS
 
 <img src="/images/english/ielts/kmf/kmf-9-logo.jpeg" width="550" alt="Are you ready?"/>
 
-<img src="/images/english/ielts/kmf/kmf-9-1.png" width="700" alt="Are you ready?"/>
-
 <!-- more -->
 
 ## 1. Place for Speaking
