@@ -9,6 +9,8 @@ tags: leetcode
 
 <!-- more -->
 
+<!-- {% image "/images/leetcode/python-leetcode.jpg", width="450px", alt="leetCode2" %} -->
+
 <!--  {% image /images/leetcode/python-leetcode.jpg, width=500px, alt=leetCode %} -->
 
 ## 1. binary-search
