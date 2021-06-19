@@ -1,13 +1,11 @@
 ---
 title: 一般英文聽力練習方法
 date: 2018-01-28 22:47:16
-tags: [english]
-categories: [English, IELTS]
+categories: [English]
+tags: [Cindy-English]
 ---
 
-<!--<a href="/2018/01/28/English/english-cindy-listening-duoyi/" target="_self" style="display:block; margin:0 auto; background:url('/images/english/english-listening-logo-2.jpg') no-repeat 0 0 / contain; height:309.38px; width:550px;"></a>-->
-
-<img src="/images/english/english-listening-logo-2.jpg" width="550" alt="一般英文聽力加強" />
+<img src="/images/english/cindy/cindy-listening-logo-2.jpg" width="550" alt="一般英文聽力加強" />
 
 <!-- more -->
 

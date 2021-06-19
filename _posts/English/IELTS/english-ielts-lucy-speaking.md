@@ -1,8 +1,7 @@
 ---
 title: Lucy地道美语 英语国际音标
-toc: true
 date: 2018-01-03 10:59:21
-categories: English
+categories: [English, IELTS]
 tags: IELTS
 ---
 
@@ -48,13 +47,11 @@ tags: IELTS
 
 > clothes [kləʊðz] 
 
-<div class="limg1">
-<img src="/images/english/ielts-phonetic-symbol.jpg" height="100" width="650" />
-</div>
+<img src="/images/english/ielts/ielts-phonetic-symbol.jpg" height="100" width="650" />
 
 ## 3. Part of Speech
 
-<img src="/images/english/ielts-lucy-8-part-of-speech.png" height="100" width="680" />
+<img src="/images/english/ielts/ielts-lucy-8-part-of-speech.png" height="100" width="680" />
 
 
 [1]: https://www.youtube.com/watch?v=zRJhj4JFcD0

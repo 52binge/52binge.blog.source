@@ -5,7 +5,7 @@ categories: [English, IELTS]
 tags: IELTS
 ---
 
-<img src="/images/english/ielts-logo-2.png" width="550" alt="Are you ready?"/>
+<img src="/images/english/ielts/ielts-logo-2.png" width="550" alt="Are you ready?"/>
 
 <!-- more -->
 

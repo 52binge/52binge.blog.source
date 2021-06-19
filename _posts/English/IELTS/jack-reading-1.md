@@ -5,7 +5,7 @@ categories: [English, IELTS]
 tags: IELTS
 ---
 
-<img src="/images/English/IELTS/reading/jack-reading-1.jpg" width="550" alt="2020.2.9jack阅读技巧班"/>
+<img src="/images/english/ielts/reading/jack-reading-1.jpg" width="550" alt="2020.2.9jack阅读技巧班"/>
 
 <!-- more -->
 
@@ -71,7 +71,7 @@ date 今天
 
 ## 3. class
 
-<img src="/images/English/IELTS/reading/jack-3.1.png" width="800" alt="2020.2.9jack阅读技巧班"/>
+<img src="/images/english/ielts/reading/jack-3.1.png" width="800" alt="2020.2.9jack阅读技巧班"/>
 
 > 如果考点词，没有名次复数，则退而求其次选实意的动词和名词
 > 
@@ -87,39 +87,39 @@ date 今天
 >
 > 当我们题材特别难的时候，题型往往比较人性化基础，接地气
 
-<img src="/images/English/IELTS/reading/jack-3.2.png" width="700" alt="2020.2.9jack阅读技巧班"/>
+<img src="/images/english/ielts/reading/jack-3.2.png" width="700" alt="2020.2.9jack阅读技巧班"/>
 
 > 当读到一段落，很难的时候，难以选择，可以继续读第一个段
 
 **A & B 不是两口子的，难题：**
 
-<img src="/images/English/IELTS/reading/jack-3.3.png" width="700" alt="2020.2.9jack阅读技巧班"/>
+<img src="/images/english/ielts/reading/jack-3.3.png" width="700" alt="2020.2.9jack阅读技巧班"/>
 
 **C paragraph == ii**
 
-<img src="/images/English/IELTS/reading/jack-3.4.png" width="700" alt="B paragraph 空着，C paragraph的答案"/>
+<img src="/images/english/ielts/reading/jack-3.4.png" width="700" alt="B paragraph 空着，C paragraph的答案"/>
 
 **NB1 ： E <=> i**
 
-<img src="/images/English/IELTS/reading/jack-3.5.png" width="700" alt="B paragraph 空着，C paragraph的答案"/>
+<img src="/images/english/ielts/reading/jack-3.5.png" width="700" alt="B paragraph 空着，C paragraph的答案"/>
 
 **蓝色箭头，表示 有A，没有B，所以不选该项**
 
-<img src="/images/English/IELTS/reading/jack-3.6.png" width="700" alt=""/>
+<img src="/images/english/ielts/reading/jack-3.6.png" width="700" alt=""/>
 
-<img src="/images/English/IELTS/reading/jack-3.7.png" width="700" alt="蓝色箭头，表示 有A，没有B，所以不选该项"/>
+<img src="/images/english/ielts/reading/jack-3.7.png" width="700" alt="蓝色箭头，表示 有A，没有B，所以不选该项"/>
 
 ### 3.2 841 例题
 
 这是 Section， 不是 paragraph，所以 NB1 方法是失效的.
 
-<img src="/images/English/IELTS/reading/jack-3.8.png" width="700" alt="reason"/>
+<img src="/images/english/ielts/reading/jack-3.8.png" width="700" alt="reason"/>
 
-<img src="/images/English/IELTS/reading/jack-3.9.png" width="700" alt="确认 + 排除"/>
+<img src="/images/english/ielts/reading/jack-3.9.png" width="700" alt="确认 + 排除"/>
 
 ## 4. 配对题 (2.12jack第三节)
 
-<img src="/images/English/IELTS/reading/jack-matching-3.1.png" width="700" alt="定位词：大写和数字"/>
+<img src="/images/english/ielts/reading/jack-matching-3.1.png" width="700" alt="定位词：大写和数字"/>
 
 短matching的定位词的**第一次**出现，一定是有序的
 
@@ -131,6 +131,6 @@ date 今天
 
 能选 T 也能学 F，那么其实就是选 NG
 
-<img src="/images/English/IELTS/reading/jack-TF-3.1.png" width="700" alt="能选 T 也能学 F，那么其实就是选 NG"/>
+<img src="/images/english/ielts/reading/jack-TF-3.1.png" width="700" alt="能选 T 也能学 F，那么其实就是选 NG"/>
 
-<img src="/images/English/IELTS/reading/jack-TF-3.2.png" width="700" alt="01：34"/>
+<img src="/images/english/ielts/reading/jack-TF-3.2.png" width="700" alt="01：34"/>

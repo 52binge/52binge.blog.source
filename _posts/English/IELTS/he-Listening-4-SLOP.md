@@ -5,7 +5,7 @@ categories: [English, IELTS]
 tags: IELTS
 ---
 
-<img src="/images/English/IELTS/listening/he-logo-4.jpeg" width="550" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-logo-4.jpeg" width="550" alt="Are you ready?"/>
 
 <!-- more -->
 
@@ -22,13 +22,13 @@ tags: IELTS
 
 找正确答案句的原则 **SLOP**, 我的任务就是 **化繁而简**
 
-<img src="/images/English/IELTS/listening/he-4-1.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-4-1.png" width="700" alt="Are you ready?"/>
 
-<img src="/images/English/IELTS/listening/he-4-2.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-4-2.png" width="700" alt="Are you ready?"/>
 
-<img src="/images/English/IELTS/listening/he-4-3.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-4-3.png" width="700" alt="Are you ready?"/>
 
-<img src="/images/English/IELTS/listening/he-4-4.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-4-4.png" width="700" alt="Are you ready?"/>
 
 ## 2. SLOP
 
@@ -46,7 +46,7 @@ tags: IELTS
 > 
 > care (look after)
 
-<img src="/images/English/IELTS/listening/he-4-5.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-4-5.png" width="700" alt="Are you ready?"/>
 
 ## 3. 配对题表格总结
 
@@ -58,13 +58,13 @@ tags: IELTS
 17 | Duncan | = building
 18 | Judith | retail = sales
 
-<img src="/images/English/IELTS/listening/he-4-6.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-4-6.png" width="700" alt="Are you ready?"/>
 
-<img src="/images/English/IELTS/listening/he-4-7.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-4-7.png" width="700" alt="Are you ready?"/>
 
-<img src="/images/English/IELTS/listening/he-4-8.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-4-8.png" width="700" alt="Are you ready?"/>
 
-<img src="/images/English/IELTS/listening/he-4-9.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-4-9.png" width="700" alt="Are you ready?"/>
 
 **`perform=performance`**
 **performance=demonstration**
@@ -72,7 +72,7 @@ tags: IELTS
 **`interactive=audience...question`**
 
 
-<img src="/images/English/IELTS/listening/he-4-10.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-4-10.png" width="700" alt="Are you ready?"/>
 
 **not headlthy=ill**
 **Tom...his book**
@@ -90,11 +90,11 @@ tags: IELTS
 
 抽象的词，改为具体的行为
 
-<img src="/images/English/IELTS/listening/he-4-11.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-4-11.png" width="700" alt="Are you ready?"/>
 
 [www.freeice.com](http://freerice.com/#/english-vocabulary/1392)
 
-<img src="/images/English/IELTS/listening/he-4-12.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-4-12.png" width="700" alt="Are you ready?"/>
 
 
 

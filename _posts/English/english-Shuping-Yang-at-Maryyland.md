@@ -1,9 +1,8 @@
 ---
 title: Shuping Yang's University of Maryland speech
-toc: true
 date: 2017-05-28 07:08:21
 categories: English
-tags: Maryland
+tags: Shuping Yang
 ---
 
 Shuping Yang Maryland Graduation Speech About Air and Free

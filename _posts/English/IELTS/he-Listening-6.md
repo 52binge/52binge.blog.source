@@ -5,7 +5,7 @@ categories: [English, IELTS]
 tags: IELTS
 ---
 
-<img src="/images/English/IELTS/listening/he-logo-6.jpeg" width="550" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-logo-6.jpeg" width="550" alt="Are you ready?"/>
 
 <!-- more -->
 
@@ -48,23 +48,23 @@ distract
 
 remain fertile
 
-<img src="/images/English/IELTS/listening/he-6-1.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-6-1.png" width="700" alt="Are you ready?"/>
 
-<img src="/images/English/IELTS/listening/he-6-2.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-6-2.png" width="700" alt="Are you ready?"/>
 
-<img src="/images/English/IELTS/listening/he-6-3.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-6-3.png" width="700" alt="Are you ready?"/>
 
-<img src="/images/English/IELTS/listening/he-6-4.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-6-4.png" width="700" alt="Are you ready?"/>
 
-<img src="/images/English/IELTS/listening/he-6-5.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-6-5.png" width="700" alt="Are you ready?"/>
 
-<img src="/images/English/IELTS/listening/he-6-6.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-6-6.png" width="700" alt="Are you ready?"/>
 
-<img src="/images/English/IELTS/listening/he-6-7.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-6-7.png" width="700" alt="Are you ready?"/>
 
-<img src="/images/English/IELTS/listening/he-6-8.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-6-8.png" width="700" alt="Are you ready?"/>
 
-<img src="/images/English/IELTS/listening/he-6-9.png" width="700" alt="Are you ready?"/>
+<img src="/images/english/ielts/listening/he-6-9.png" width="700" alt="Are you ready?"/>
 
 ### Section3
 
