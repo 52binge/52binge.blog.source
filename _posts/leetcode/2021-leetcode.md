@@ -5,11 +5,9 @@ categories: leetcode
 tags: leetcode
 ---
 
-{% image "/images/leetcode/python-leetcode.jpg", width="450px", alt="leetCode" %}
+{% image "/images/leetcode/python-leetcode.jpg", width="500px", alt="LeetCode" %}
 
 <!-- more -->
-
-<!-- {% image "/images/leetcode/python-leetcode.jpg", width="450px", alt="leetCode2" %} -->
 
 <!--  {% image /images/leetcode/python-leetcode.jpg, width=500px, alt=leetCode %} -->
 
