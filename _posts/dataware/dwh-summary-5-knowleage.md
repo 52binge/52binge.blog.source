@@ -5,7 +5,7 @@ categories: [data-warehouse, hive]
 tags: [Hive]
 ---
 
-{% image "/images/hadoop/hadoop-hive-logo-1.png", width="380px", alt="Hadoop MapReduce" %}
+{% image "/images/hadoop/hadoop-hive-logo-1.png", width="380px", alt="" %}
 
 <!-- more -->
 

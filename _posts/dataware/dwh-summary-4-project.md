@@ -8,7 +8,7 @@ description: 本篇文章记录了我对 Volantis 主题做 Pjax 兼容的种种
 thumbnail: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/heartmate/icon.png
 ---
 
-{% image "/images/dataware/sm-data-warehouse-logo-1.jpg", width="580px", alt="1" %}
+{% image "/images/dataware/sm-data-warehouse-logo-1.jpg", width="580px", alt="" %}
 
 <!-- more -->
 
