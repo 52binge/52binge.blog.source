@@ -5,13 +5,13 @@ categories: [spark]
 tags: [spark]
 ---
 
-<img src="/images/spark/spark-aura-3.1.3.jpg" width="950" />
+{% image "/images/spark/spark-aura-3.1.3.jpg", width="950px" %}
 
 <!--more-->
 
 ## 1. 广播变量
 
-<img src="/images/spark/spark-aura-3.1.1.jpg" width="650" />
+{% image "/images/spark/spark-aura-3.1.1.jpg", width="650px" %}
 
 > 线程可以共享变量的思路
 
@@ -102,7 +102,7 @@ spark 的累加器 和 mapreduce编程模型的全局计数器是一个道理。
 
 从前往后找action算子, 找到一个就形成一个 job.
 
-<img src="/images/spark/spark-aura-3.1.2.jpg" width="750" />
+{% image "/images/spark/spark-aura-3.1.2.jpg", width="750px" %}
 
 3 + 2 = 5 tasks
 
@@ -272,7 +272,7 @@ mapPartitions 每次遍历一个分区 (最小单位是分区)
 >  Stage 切分标准: 从后往前找宽依赖的算子 
 >  Task
 
-<img src="/images/spark/spark-aura-3.2.1.jpg" width="750" />
+{% image "/images/spark/spark-aura-3.2.1.jpg", width="750px" %}
 
 **Driver Application**: 客户端驱动程序, 也可以理解为客户端应用程序，用于将任何程序转换为 RDD 和 DAG, 并与 Cluster Manager 进行通信与调度.
 

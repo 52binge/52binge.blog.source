@@ -11,11 +11,11 @@ mathjax: true
 
 <!-- more -->
 
-<img src="/images/datascience/finance-8.jpg" width="850" />
+{% image "/images/datascience/finance-8.jpg", width="850px" %}
 
 ## 反欺诈也是一种机器学习过程
 
-<img src="/images/datascience/finance-9.jpg" width="850" />
+{% image "/images/datascience/finance-9.jpg", width="850px" %}
 
 > 对于做互联网金融一般情况是 正负样本 是极度不平衡的(最高可以达到 100 : 1), 这样的情况对于 SVM 这种分类器是不合适的，所以在做金融的**评分卡模型** 或 **欺诈模型** 也好，这样对特征的处理 和 样本的非平衡处理是比较高的.
 > 
@@ -49,31 +49,31 @@ mathjax: true
 
 ## 模型策略
 
-<img src="/images/datascience/finance-10.jpg" width="800" />
+{% image "/images/datascience/finance-10.jpg", width="800px" %}
 
 ### 1. Linear Regression
 
-<img src="/images/datascience/finance-11.jpg" width="800" />
+{% image "/images/datascience/finance-11.jpg", width="800px" %}
 
 ### 2 Logistic Regression
 
-<img src="/images/datascience/finance-12.jpg" width="800" />
+{% image "/images/datascience/finance-12.jpg", width="800px" %}
 
 ### 3. Decision Tree
 
-<img src="/images/datascience/finance-13.jpg" width="850" />
+{% image "/images/datascience/finance-13.jpg", width="850px" %}
 
 ### 4. Random Forest
 
-<img src="/images/datascience/finance-14.png" width="850" />
+{% image "/images/datascience/finance-14.png", width="850px" %}
 
 ### 5. Gradient Boosting RT
 
-<img src="/images/datascience/finance-15.png" width="850" />
+{% image "/images/datascience/finance-15.png", width="850px" %}
 
 > ---
 
-<img src="/images/datascience/finance-16.png" width="850" />
+{% image "/images/datascience/finance-16.png", width="850px" %}
 
 ## 结果评估-混淆矩阵
 
@@ -81,7 +81,7 @@ mathjax: true
 - Recall: 评估坏用户的召回率
 - F-Measure: 组合判断
 
-<img src="/images/datascience/finance-17.png" width="830" />
+{% image "/images/datascience/finance-17.png", width="830px" %}
 
 ## Reference
 

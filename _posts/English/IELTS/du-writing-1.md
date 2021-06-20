@@ -5,7 +5,7 @@ categories: [English, IELTS]
 tags: IELTS
 ---
 
-<img src="/images/english/ielts/writing/logo-conghao.png" width="550" alt="1. topic 2. hand 3. other hand 4. conclusion"/>
+{% image "/images/english/ielts/writing/logo-conghao.png", width="550px", alt="1. topic 2. hand 3. other hand 4. conclusion"%}
 
 <!-- more -->
 
@@ -13,13 +13,13 @@ tags: IELTS
 
 相邻2句话, 基本句型不重复
 
-<img src="/images/english/ielts/writing/du-0-1.png" width="800" alt=""/>
+{% image "/images/english/ielts/writing/du-0-1.png", width="800px", alt=""%}
 
 - many people will become jobless.
 - Cycling has been losing popularity.
 - There has been a decrease in the popularity of cycling.
 
-<img src="/images/english/ielts/writing/du-0-2.png" width="700" alt=""/>
+{% image "/images/english/ielts/writing/du-0-2.png", width="700px", alt=""%}
 
 0.2 class 20:00
 
@@ -97,7 +97,7 @@ IELTS 90% 都是后置定语
 
 01:23
 
-<img src="/images/english/ielts/writing/du-e1.png" width="850" alt=""/>
+{% image "/images/english/ielts/writing/du-e1.png", width="850px", alt=""%}
 
 `losing popularity`
 
@@ -120,5 +120,5 @@ a significant increase could be seen in the proportion of the elderly.
 
 先总结，在拆开
 
-<img src="/images/english/ielts/writing/du-5.2.png" width="850" alt=""/>
+{% image "/images/english/ielts/writing/du-5.2.png", width="850px", alt=""%}
 

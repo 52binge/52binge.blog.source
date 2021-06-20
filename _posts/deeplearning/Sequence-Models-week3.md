@@ -22,11 +22,11 @@ tags: deeplearning.ai
 
 在这个例子中输入的数量是 10 个中文汉字，输出为 6 个单词， $T\_x$ 与 $T_y$ 数量不一致，就需要用到 Sequence to sequence model **RNN**
 
-<img src="/images/deeplearning/C5W3-1.jpg" width="750" />
+{% image "/images/deeplearning/C5W3-1.jpg", width="750px" %}
 
 类似的例子还有用机器为下面这张图片生成描述
 
-<img src="/images/deeplearning/C5W3-2.png" width="600" />
+{% image "/images/deeplearning/C5W3-2.png", width="600px" %}
 
 只需要将 encoder 部分用一个 CNN模型 替换就可以了，比如 AlexNet，就可以得到“一只（可爱的）猫躺在楼梯上”
 
@@ -36,11 +36,11 @@ tags: deeplearning.ai
 
 语言模型:
 
-<img src="/images/deeplearning/C5W3-3.png" width="700" />
+{% image "/images/deeplearning/C5W3-3.png", width="700px" %}
 
 机器翻译模型:
 
-<img src="/images/deeplearning/C5W3-4.png" width="750" />
+{% image "/images/deeplearning/C5W3-4.png", width="750px" %}
 
 可以看到，机器翻译模型的后半部分其实就是语言模型，Andrew 将其称之为 “**条件语言模型**”，在语言模型之前有一 个条件也就是被翻译的句子:
 
@@ -78,7 +78,7 @@ $$
 
 所以据贪婪算法最后的翻译结果可能是下图中的第二个句子，但第一句可能会更好(不服气的话，我们就假设第一句更好).
 
-<img src="/images/deeplearning/C5W3-5.png" width="700" />
+{% image "/images/deeplearning/C5W3-5.png", width="700px" %}
 
 所以贪婪搜索的缺点是局部最优并不代表全局最优，就好像五黑，一队都是很牛逼的，但是各个都太优秀，就显得没那么优秀了，而另一队虽然说不是每个都是最优秀，但是凑在一起就是能 carry 全场。
 
@@ -92,7 +92,7 @@ $$
 
 如下图示，因为beam width=3，所以根据输入的需要翻译的句子选出 3 个 $y^{<1>}$最可能的输出值，即选出$P(y^{<1>}|x)$最大的前3个值。假设分别是"in","jane","september"
 
-<img src="/images/deeplearning/C5W3-6_1.png" width="700" />
+{% image "/images/deeplearning/C5W3-6_1.png", width="700px" %}
 
 ### 3.2 步骤二
 
@@ -102,11 +102,11 @@ $$
 
 又由公式 $P(y^{<1>},y^{<2>}|x)=P(y^{<1>}|x) P(y^{<2>}|x, y^{<1>})$, 我们此时已经得到了给定输入数据，前两个输出值的输出概率比较大的组合了.
 
-<img src="/images/deeplearning/C5W3-7_1.png" width="700" />
+{% image "/images/deeplearning/C5W3-7_1.png", width="700px" %}
 
 另外 2 个单词也做同样的计算
 
-<img src="/images/deeplearning/C5W3-8_1.png" width="700" />
+{% image "/images/deeplearning/C5W3-8_1.png", width="700px" %}
 
 此时我们得到了 9 组 $P(y^{<1>},y^{<2>}|x)$, 此时我们再从这 9组 中选出概率值最高的前 3 个。如下图示，假设是这3个：
 
@@ -114,7 +114,7 @@ $$
 - "jane is"
 - "jane visits"
 
-<img src="/images/deeplearning/C5W3-9_1.png" width="550" />
+{% image "/images/deeplearning/C5W3-9_1.png", width="550px" %}
 
 ### 3.3 步骤三
 
@@ -140,7 +140,7 @@ $$
 > 
 > $$P(y^{<3>}|x,y^{<1>},y^{<2>})$$
 
-<img src="/images/deeplearning/C5W3-10_1.png" width="750" />
+{% image "/images/deeplearning/C5W3-10_1.png", width="750px" %}
 
 ## 4. Refinements to beam search
 
@@ -174,7 +174,7 @@ $$
 argmax \frac{1}{T\_y^α}\sum\_{t=1}^{T\_y}logP(y^{<{t}>}|x,y^{<1>},…y^{<{t-1}>})
 $$
 
-<img src="/images/deeplearning/C5W3-11_1.png" width="700" />
+{% image "/images/deeplearning/C5W3-11_1.png", width="700px" %}
 
 
 > $T\_y$ 为输出句子中单词的个数，$α$ 是一个超参数 (可以设置为 0.7)
@@ -200,7 +200,7 @@ $$
  
 下面分两种情况讨论：
 
-<img src="/images/deeplearning/C5W3-12_1.png" width="750" />
+{% image "/images/deeplearning/C5W3-12_1.png", width="750px" %}
 
 > RNN 实际上是 encode 和 decode 的过程.
 
@@ -227,7 +227,7 @@ $
 > - 如果 beam search 更高，可以相应调整 beam width.
 > - 如果模型背锅比例更高，那么可以考虑增加正则化，增加数据等操作.
 
-<img src="/images/deeplearning/C5W3-13_1.png" width="750" />
+{% image "/images/deeplearning/C5W3-13_1.png", width="750px" %}
 
 ## 6. Bleu score (optional)
 
@@ -243,13 +243,13 @@ $
 
 如下图示机器算法将法语翻译成英语的模型.
 
-<img src="/images/deeplearning/C5W3-14_1.png" width="750" />
+{% image "/images/deeplearning/C5W3-14_1.png", width="750px" %}
 
 机器翻译与人类的翻译过程不太相同。因为人类翻译一般是逐句翻译，或者是讲一段很长的句子分解开来进行翻译。
 
 所以上述模型的翻译结果的 Bleu评分 与被翻译句子的长短有很大关系，句子较短时，模型可能无法捕捉到关键信息，所以翻译结果不是很高；但是当句子过长时，模型又抓不到重点等原因使得结果也不是很高。
 
-<img src="/images/deeplearning/C5W3-15_1.png" width="750" />
+{% image "/images/deeplearning/C5W3-15_1.png", width="750px" %}
  
 > ​见上图，如果机器能像人一样逐句或者每次将注意力只集中在一小部分进行翻译，那么翻译结果将不受句子长度的影响。下图中的绿色线即为使用了注意力模型后的翻译句子得分。
 
@@ -257,7 +257,7 @@ $
 
 下图展示了普通的翻译模型双向 RNN 结构，该结构可根据输入 $x^{<{t}>}$ 直接得到输出 $y^{<{t}>}$.
 
-<img src="/images/deeplearning/C5W3-16_1.png" width="750" />
+{% image "/images/deeplearning/C5W3-16_1.png", width="750px" %}
 
 Attention model 在此基础上做进一步处理。
 
@@ -265,11 +265,11 @@ Attention model 在此基础上做进一步处理。
 
 如下图示，根据下面一层的 双向RNN 计算结果可得到节点 $s^{<1>}$ 与其他节点权重 $α^{<1,1>},α^{<1,2>},…$ 通过这些权重可以知道该节点与其他节点的相关联程度，从而可以达到将注意力集中到部分区域的效果。
 
-<img src="/images/deeplearning/C5W3-17_1.png" width="750" />
+{% image "/images/deeplearning/C5W3-17_1.png", width="750px" %}
 
 ​其他节点同理。整个注意力模型结构如下图示
 
-<img src="/images/deeplearning/C5W3-18_1.png" width="750" />
+{% image "/images/deeplearning/C5W3-18_1.png", width="750px" %}
 
 ## 8. Attention model 
 
@@ -279,7 +279,7 @@ Attention model 在此基础上做进一步处理。
 
 如下图示，注意力模型采用双向 RNN 结构，所以每个节点有两个值，用 $\overrightarrow{a}^{<{t'}>},\overleftarrow{a}^{<{t'}>}$ 表示，为了使公式更简化，令 $a^{<{t'}>}=(\overrightarrow{a}^{<{t'}>},\overleftarrow{a}^{<{t'}>})$ 。其中 $t'$ 表示输入数据的索引。
 
-<img src="/images/deeplearning/C5W3-19_1.png" width="750" />
+{% image "/images/deeplearning/C5W3-19_1.png", width="750px" %}
 
 上一节已经介绍了注意力权重 $α^{<{t,t'}>}$，以第一个节点为例，它的权重值可以用 $α^{<{1,t'}>}$ 表示，且所有权重值满足 $\sum{α^{<{1,t'}>}}=1$
 
@@ -291,7 +291,7 @@ $$
 c^{<1>}=\sum\_{t'}α^{<{1,t'}>}a^{<{t'}>}
 $$
 
-<img src="/images/deeplearning/C5W3-20_1.png" width="750" />
+{% image "/images/deeplearning/C5W3-20_1.png", width="750px" %}
 
 ### 8.2 注意力权值计算公式
 
@@ -303,13 +303,13 @@ $$
 
 其中 $s^{<{t-1}>}$ 表示上一个状态的值, $a^{<{t'}>}$ 表示第 $t'$ 个特征节点.
 
-<img src="/images/deeplearning/C5W3-21_1.png" width="500" />
+{% image "/images/deeplearning/C5W3-21_1.png", width="500px" %}
 
 > **Andrew Ng** 并没有详细的介绍上面的网络，只是一笔带过，说反向传播和梯度下降会自动学习，emmm。。那就这样吧。
 >
 > 结合下图可以独自参考一下上面的公式是什么意思.
 
-<img src="/images/deeplearning/C5W3-22_1.png" width="600" />
+{% image "/images/deeplearning/C5W3-22_1.png", width="600px" %}
 
 ### 8.3 大数据文摘
 
@@ -317,13 +317,13 @@ $$
 
 通过之前的学习可以看到机器翻译是将所有要翻译的内容统一输入然后再开始生成结果，但这样有一个弊端就是在句子特别长的时候后面的内容有的时候无法翻译的特别的准确。通过搭建 attention model 可以解决这个问题:
 
-<img src="/images/deeplearning/C5W3-23_1.png" width="800" />
+{% image "/images/deeplearning/C5W3-23_1.png", width="800px" %}
 
 如图所示，这是一个 BRNN，并且在普通 RNN 的基础上增加 attention层，将阶段性的输入部分转化为输出，这样的方式也更符合人类的翻译过程。
 
 让我们拿出细节部分仔细的理解一下，首先是 **attention** 层，也就是下图中 $context^{<{t}>}$ ，每一个 attention 单元接受 三个单词的输入所以也称作语境单元（context）， α 是每单个输入词在语境单元中占得权重。对每一个语境单元 t 来说，因为 α 是通过 softmax 决定的，所以 $\sum\_{i=1}^{T\_x}α^{t,i}=1$. 这里决定终每一个单词占得语境权重仍然是通过一 个小型的神经网络来进行计算并且后得到的。 
 
-<img src="/images/deeplearning/C5W3-24_1.png" width="800" />
+{% image "/images/deeplearning/C5W3-24_1.png", width="800px" %}
 
 输出的 $context^{<{t}>}$ 进入到下一层 Post LSTM 这一步就和之前学习过的那样子，将前一步的输出与这一步经过重重分析的输入综合到一起产生这一步的输出。
 
@@ -335,11 +335,11 @@ $$
 
 一般语音识别过程是如下图示的，即首先将原音频 (黑白的，纵轴表示振幅) 转化成纵轴为频率的音谱图，并且通过人工预先设定的音素(phonemes)再来识别.
 
-<img src="/images/deeplearning/C5W3-25_1.png" width="750" />
+{% image "/images/deeplearning/C5W3-25_1.png", width="750px" %}
 
 当人对着麦克风录入一句话，麦克风记录下来的是空气细微的震动的强度，以及频率。人耳在听到一句话的时候其 实做的是类似的处理。在深度学习没有特别流行之前，比较流行的是用音节做语音识别，但现在因为有了强大的 **attention model**，得到的结果比音节的效果更好。
 
-<img src="/images/deeplearning/C5W3-26_1.png" width="750" />
+{% image "/images/deeplearning/C5W3-26_1.png", width="750px" %}
 
 CTC(connectionist temporal classiﬁcation)是之前较为常用的方法。
 
@@ -349,15 +349,15 @@ CTC(connectionist temporal classiﬁcation)是之前较为常用的方法。
 
 方法很简单，只需要把“_”进行压缩即可，注意需要将 "_"和空额区分开来，因为空格也是占一个字符的。
 
-<img src="/images/deeplearning/C5W3-27_1.png" width="750" />
+{% image "/images/deeplearning/C5W3-27_1.png", width="750px" %}
 
 ## 10. Trigger word detection
 
-<img src="/images/deeplearning/C5W3-28_1.png" width="700" />
+{% image "/images/deeplearning/C5W3-28_1.png", width="700px" %}
 
 假设下图式训练集中的一段音频，其中包含了两次唤醒词:
 
-<img src="/images/deeplearning/C5W3-29_1.png" width="750" />
+{% image "/images/deeplearning/C5W3-29_1.png", width="750px" %}
 
 搭建一个 attention model，在听到唤醒词之前一直输出的是 0，在听到唤醒词以后输出 1，但因为一个唤醒词会持续半秒左右所以我们也不仅仅只输出一次 1，而是将输出的 1 持续一段时间，通过这样的方式训练出的 RNN 就可以很 有效的检测到唤醒词了。
 

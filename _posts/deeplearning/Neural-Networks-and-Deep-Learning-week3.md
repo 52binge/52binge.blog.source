@@ -14,7 +14,7 @@ tags: deeplearning.ai
 
 ## 1. 常用符号与基本概念
 
-<img src="/images/deeplearning/C1W3-1_1.png" width="750" />
+{% image "/images/deeplearning/C1W3-1_1.png", width="750px" %}
 
 > 该神经网络完全可以使用上一周所讲的计算图来表示, 和 $LR$ 计算图的区别仅仅在于多了一个 $z$ 和 $a$ 的计算而已. 
 >
@@ -22,7 +22,7 @@ tags: deeplearning.ai
 >
 > 要注意的是各种参数, 中间变量 $(a, z)$ 的维度问题. 关于神经网络的基本概念, 这里就不赘述了. 见下图回顾一下:
 
-<img src="/images/deeplearning/C1W3-2_1.png" width="750" />
+{% image "/images/deeplearning/C1W3-2_1.png", width="750px" %}
 
 ## 2. 神经网络中的前向传播
 
@@ -35,15 +35,15 @@ tags: deeplearning.ai
 > **我们记隐藏层第一个 $z$ 为 $z\_1$, 第二个 $z$ 记为 $z\_2$ 以此类推**. 
 > 只要将这四个 $z$ 纵向叠加在一起称为一个**`列向量` 即可得到神经网络中这一层的 $z$** ($a$同理).
 
-<img src="/images/deeplearning/C1W3-3_1.png" width="750" />
+{% image "/images/deeplearning/C1W3-3_1.png", width="750px" %}
 
 那么这一层的 $w, b$ 又是如何得到的? 别忘了, 对于参数 $w$ 来说, 它本身就是一个列项量, 那么它是如何做纵向叠加的呢? 我们只需要将其转置变成一个横向量, 再纵向叠加即可.
 
-<img src="/images/deeplearning/C1W3-4_1.png" width="750" />
+{% image "/images/deeplearning/C1W3-4_1.png", width="750px" %}
 
 得到隐藏层的 $a$ 之后, 我们可以将其视为输入, 现只看神经网络的隐藏层和输出层, 我们发现这不就是个 $LR$ 嘛.
 
-<img src="/images/deeplearning/C1W3-5_1.png" width="750" />
+{% image "/images/deeplearning/C1W3-5_1.png", width="750px" %}
 
 这里总结一下各种变量的维度 (注意: 这里是针对一个训练样本来说的, $n\_L$ 代表的 $L$ 层的节点个数):
 
@@ -54,11 +54,11 @@ tags: deeplearning.ai
 
 那么如果有 $m$ 个训练样本这些变量的维度又是怎样的呢. 我们思考哪些变量的维度会随着样本数的变化而变化. $w$ 是参数显然它的维度是不会变的. 而输入每一个样本都会有一个 $z$ 和 $a$, 还记得 $X$ 的形式吗? 同样地, $Z$ 就是将每个样本算出来的 $z$ 横向叠加(A同理). 具体计算过程如下图:
 
-<img src="/images/deeplearning/C1W3-6_1.png" width="750" />
+{% image "/images/deeplearning/C1W3-6_1.png", width="750px" %}
 
-<img src="/images/deeplearning/C1W3-7_1.png" width="750" />
+{% image "/images/deeplearning/C1W3-7_1.png", width="750px" %}
 
-<img src="/images/deeplearning/C1W3-8_1.png" width="750" />
+{% image "/images/deeplearning/C1W3-8_1.png", width="750px" %}
 
 ## 3. 神经网络中的激活函数
 
@@ -68,19 +68,19 @@ tags: deeplearning.ai
 
 > Tanh 数据平均值为 0，具有数据中心化的效果，几乎在任何场合都优于 Sigmoid
 
-<img src="/images/deeplearning/C1W3-9_1.png" width="750" />
+{% image "/images/deeplearning/C1W3-9_1.png", width="750px" %}
 
 以上激活函数的导数请自行在草稿纸上推导.
 
-<img src="/images/deeplearning/C1W3-10_1.png" width="750" />
+{% image "/images/deeplearning/C1W3-10_1.png", width="750px" %}
 
 > derivative of **`sigmoid`** activation function
 
-<img src="/images/deeplearning/C1W3-11_1.png" width="750" />
+{% image "/images/deeplearning/C1W3-11_1.png", width="750px" %}
 
 > derivative of **`tanh`** activation function
 
-<img src="/images/deeplearning/C1W3-12_1.png" width="750" />
+{% image "/images/deeplearning/C1W3-12_1.png", width="750px" %}
 
 > derivative of **`ReLU and Leaky ReLU`** activation function
 
@@ -90,7 +90,7 @@ tags: deeplearning.ai
 > 
 > so unless you throw a non-linearity in there, then you're not computing more interesting functions.
 
-<img src="/images/deeplearning/C1W3-13_1.png" width="750" />
+{% image "/images/deeplearning/C1W3-13_1.png", width="750px" %}
 
 > 你可以在隐藏层用 tanh，输出层用 sigmoid，说明不同层的激活函数可以不一样。
 > 
@@ -116,7 +116,7 @@ Notes:
 >
 > 同样的方式, 我们使用**计算图**来计算**神经网络中的各种梯度**.
 
-<img src="/images/deeplearning/C1W3-14.png" width="750" />
+{% image "/images/deeplearning/C1W3-14.png", width="750px" %}
 
 $$
 dz^{\[2\]} = \frac{dL}{dz}= \frac{dL}{da^{\[2\]}}\frac{da^{\[2\]}}{dz^{\[2\]}}=a^{\[2\]}-y
@@ -148,7 +148,7 @@ $$
 
 下图右边为在$m$个训练样本上的向量化表达:
 
-<img src="/images/deeplearning/C1W3-15_1.png" width="750" />
+{% image "/images/deeplearning/C1W3-15_1.png", width="750px" %}
 
 > Notes: 
 >
@@ -160,7 +160,7 @@ $$
 
 在 LR 中我们的参数 $w$ 初始化为 0, 如果在神经网络中也是用相同的初始化, 那么一个隐藏层的每个节点都是相同的, 不论迭代多少次. 这显然是不合理的, 所以我们应该<font color="red"> **随机地初始化**</font> $w$ 从而解决这个 sysmmetry breaking problem. 破坏对称问题
 
-<img src="/images/deeplearning/C1W3-16_1.png" width="750" />
+{% image "/images/deeplearning/C1W3-16_1.png", width="750px" %}
 
 > 具体初始化代码可参见下图, 其中 **乘以 0.01** 是为了让参数 $w$ 较小, 加速梯度下降 
 >
@@ -170,7 +170,7 @@ $$
 > 
 > finally it turns out that sometimes there can be better constants than 0.01.
 
-<img src="/images/deeplearning/C1W3-17_1.png" width="750" />
+{% image "/images/deeplearning/C1W3-17_1.png", width="750px" %}
 
 > $b$ 并没有这个 sysmmetry breaking problem, 所以可以 $np.zeros((2, 1))$
 

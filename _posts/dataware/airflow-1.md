@@ -5,7 +5,7 @@ categories: [data-warehouse]
 tags: [Airflow]
 ---
 
-<img src="/images/airflow/AirflowLogo.png" width="450" alt="" />
+{% image "/images/airflow/AirflowLogo.png", width="450px", alt="" %}
 
 <!-- more -->
 

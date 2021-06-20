@@ -70,7 +70,7 @@ from chatbot.corpus.lightweightdata import LightweightData
 > 
 > - Model 中融入 user identity (比如背景信息、用户画像，年龄等信息)，构建出个性化的 seq2seq 模型，为不同的 user， 以及 同一个user 对不同的对象对话生成不同风格的 response
 
-<img src="/images/chatbot/bot_A3.jpg" width="800" />
+{% image "/images/chatbot/bot_A3.jpg", width="800px" %}
 
 ## Paper 4
 
@@ -81,7 +81,7 @@ from chatbot.corpus.lightweightdata import LightweightData
 > - 意在解决语言模型生成部分存在的问题
 > - 整个 seq2seq 框架中 decoder生成部分的问题，不仅是 bot领域对话生成的问题，都可以尝试用这个方式。
 
-<img src="/images/chatbot/bot_A4.jpg" width="700" />
+{% image "/images/chatbot/bot_A4.jpg", width="700px" %}
 
 ## Paper 5
 

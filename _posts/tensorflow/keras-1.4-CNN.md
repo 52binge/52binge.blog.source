@@ -10,17 +10,17 @@ Convolutional Neural Networks，CNN 也是一种前馈神经网络，其特点�
 
 <!-- more -->
 
-<img src="/images/tensorflow/keras-cnn4.png" width="550" alt="Convolutional Neural Network in Keras"/>
+{% image "/images/tensorflow/keras-cnn4.png", width="550px", alt="Convolutional Neural Network in Keras"%}
 
 **pooling**
 
-<img src="/images/tensorflow/keras-cnn5.png" width="470" alt="Convolutional Neural Network in Keras"/>
+{% image "/images/tensorflow/keras-cnn5.png", width="470px", alt="Convolutional Neural Network in Keras"%}
 
 > 研究发现, 在每一次卷积的时候, 神经层可能会无意地丢失一些信息. 这时, pooling 就可以很好地解决这一问题. 而且池化是一个筛选过滤的过程, 能将 layer 中有用的信息筛选出来, 给下一个层分析. 
 >
 > 同时也减轻了神经网络的计算负担. 也就是说在卷集的时候, 我们不压缩长宽, 尽量保留更多信息, 压缩的工作就交给池化了,这样的一项附加工作能够很有效的提高准确性. 有了这些技术,我们就可以搭建一个 CNN.
 
-<img src="/images/tensorflow/keras-cnn2.png" width="550" alt="Convolutional Neural Network in Keras"/>
+{% image "/images/tensorflow/keras-cnn2.png", width="550px", alt="Convolutional Neural Network in Keras"%}
 
 ```python
 import numpy as np

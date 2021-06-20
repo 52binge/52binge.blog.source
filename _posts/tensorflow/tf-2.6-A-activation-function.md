@@ -32,7 +32,7 @@ tags: tensorflow
 > 
 其实这个 AF, 掰弯利器, 也不是什么触不可及的东西. 它其实就是另外一个非线性函数. 比如说`relu, sigmoid, tanh`. 将这些掰弯利器嵌套在原有的结果之上, 强行把原有的线性结果给扭曲了. 使得输出结果 $y$ 也有了非线性的特征. 举个例子, 比如我使用了 `relu` 这个掰弯利器, 如果此时 $Wx$ 的结果是 1, $y$ 还将是 1, 不过 $WX$ 为 -1 的时候, $y$ 不再是 -1, 而会是 0.
 
-<img src="/images/tensorflow/tf-2.6-active5.jpg" width="550" />
+{% image "/images/tensorflow/tf-2.6-active5.jpg", width="550px" %}
 
 > 你甚至可以创造自己的激励函数来处理自己的问题, 不过要确保的是这些激励函数必须是可以微分的, 因为在 backpropagation 误差反向传递的时候, 只有这些可微分的激励函数才能把误差传递回去.
 

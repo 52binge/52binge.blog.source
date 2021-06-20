@@ -5,7 +5,7 @@ categories: [spark]
 tags: [spark]
 ---
 
-<img src="/images/spark/spark-summary-logo-1.jpg" width="500" alt="" />
+{% image "/images/spark/spark-summary-logo-1.jpg", width="500px", alt="" %}
 
 <!-- more -->
 
@@ -23,7 +23,7 @@ when performing shuffle, the `same key on each node` must be pulled to `a task o
 
 For example, most keys correspond to 10 pieces of data, but individual keys correspond to 1 million pieces of data, so most tasks may only be assigned to 10 pieces of data, and then run out in 1 second; but individual tasks may be assigned 1 million pieces The data will run for one or two hours. 
 
-<img src="/images/spark/spark-data-skew-1.png" width="700" alt="Data skew only occurs during the shuffle process." />
+{% image "/images/spark/spark-data-skew-1.png", width="700px", alt="Data skew only occurs during the shuffle process." %}
 
 No. | trigger shuffle operations <br> when data skew, it may be caused by using one of these operators.
 :---: | :---
@@ -42,7 +42,7 @@ The first thing to look at is **which stage of data skew occurs** in.
 
 > Whether using the yarn-client mode or the yarn-cluster mode, we can take a deep look at the amount of data allocated by **each task of this stage** on the Spark Web UI, so as to further determine whether the uneven data allocated by the task causes data skew.
 
-<img src="/images/spark/spark-data-skew-2.png" width="880" alt="Data skew only occurs during the shuffle process." />
+{% image "/images/spark/spark-data-skew-2.png", width="880px", alt="Data skew only occurs during the shuffle process." %}
 
 After knowing which stage the data skew occurs, then we need to calculate which part of the code corresponds to the stage where the skew occurs based on the principle of stage division. 
 
@@ -101,7 +101,7 @@ No. | solutions of the data skew
 2. | Two-stage aggregation (local aggregation + global aggregation) <br><br> **disadvantages**: only solve aggregate shuffle operations. If it is a shuffle operation of the `join` class, other solutions have to be used.
 3. | Convert reduce join to map join <br><br>**advantages**: The effect is very good for data skew caused by the join operation, because shuffle and data skew will not happen at all. <br> **disadvantages**: only suitable for `a large table and a small table`. After all, we need to broadcast the small table, which `consumes more memory resources`. <br>The driver and each Executor will have a full amount of data of a small RDD in the memory. <br> If the RDD data we broadcast is relatively large, such as 10G or more, then memory overflow may occur. Therefore, it is not suitable for the situation where both are large tables.| 
 
-<img src="/images/spark/spark-data-skew-reduce-by-key.png" width="" alt="Data skew only occurs during the shuffle process." />
+{% image "/images/spark/spark-data-skew-reduce-by-key.png", width="px", alt="Data skew only occurs during the shuffle process." %}
 
 ```python
 import sys
@@ -154,7 +154,7 @@ word_count_ret.take(5)
 
 ## 5. Convert reduce join to map join
 
-<img src="/images/spark/spark-data-skew-5-join.png" width="750" alt="the smaller RDD directly into the Driver memory through the collect operator, and then create a Broadcast variable" />
+{% image "/images/spark/spark-data-skew-5-join.png", width="750px", alt="the smaller RDD directly into the Driver memory through the collect operator, and then create a Broadcast variable" %}
 
 code:
 

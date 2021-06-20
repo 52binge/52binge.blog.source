@@ -14,15 +14,15 @@ Logistic Regression 可以看成是一种只有输入层和输出层(没有隐�
 
 <!--## Binary Classification
 -->
-<!--<img src="/images/deeplearning/C1W2-1.jpg" width="750" />
+<!--{% image "/images/deeplearning/C1W2-1.jpg", width="750px" %}
 
-<img src="/images/deeplearning/C1W2-2.jpg" width="750" />
+{% image "/images/deeplearning/C1W2-2.jpg", width="750px" %}
 -->
 ## 一. 基本概念回顾
 
 这次 Andrew 系列课程在符号上有所改动 (和机器学习课程中有所区别, 主要是为了后面代码实现方便), 如下图所示:
 
-<img src="/images/deeplearning/C1W2-3_1.jpg" width="700" />
+{% image "/images/deeplearning/C1W2-3_1.jpg", width="700px" %}
 
 ## 1. Notation
 
@@ -30,34 +30,34 @@ Logistic Regression 可以看成是一种只有输入层和输出层(没有隐�
 
 ## 2. Logistic Regression
 
-<img src="/images/deeplearning/C1W2-4_1.jpg" width="750" />
+{% image "/images/deeplearning/C1W2-4_1.jpg", width="750px" %}
 
  - 一个是 **Loss function**, 即损失函数, 它代表了对于一个样本估计值与真实值之间的误差; 
  - 一个是 **Cost function**, 它代表了所有样本loss的平均值.
 
-<img src="/images/deeplearning/C1W2-6_1.jpg" width="750" />
+{% image "/images/deeplearning/C1W2-6_1.jpg", width="750px" %}
 
 ## 3. Logistic Regression Cost Function
 
-<img src="/images/deeplearning/C1W2-8_1.jpg" width="750" />
+{% image "/images/deeplearning/C1W2-8_1.jpg", width="750px" %}
 
 ## 4. Gradient Descent
 
-<img src="/images/deeplearning/C1W2-9_1.jpg" width="750" />
+{% image "/images/deeplearning/C1W2-9_1.jpg", width="750px" %}
 
-<img src="/images/deeplearning/C1W2-10_1.jpg" width="750" />
+{% image "/images/deeplearning/C1W2-10_1.jpg", width="750px" %}
 
 ## 5. Derivatives
 
-<img src="/images/deeplearning/C1W2-11_1.png" width="750" />
+{% image "/images/deeplearning/C1W2-11_1.png", width="750px" %}
 
-<img src="/images/deeplearning/C1W2-12_1.png" width="750" />
+{% image "/images/deeplearning/C1W2-12_1.png", width="750px" %}
 
 ## 7. Computation Graph
 
 神经网络中, forward propagation 用来计算输出, backward propagation 用来计算梯度, 得到梯度后就可更新对应的参数了. 
 
-<img src="/images/deeplearning/C1W2-13_1.jpg" width="750" />
+{% image "/images/deeplearning/C1W2-13_1.jpg", width="750px" %}
 
 如上图所示通过前向传播, 我们得到 $J = 33$. 
 
@@ -67,17 +67,17 @@ Logistic Regression 可以看成是一种只有输入层和输出层(没有隐�
 
 反向传播本质上就是通过链式法则不断求出前面各个变量的导数的过程.
 
-<img src="/images/deeplearning/C1W2-14_1.png" width="750" />
+{% image "/images/deeplearning/C1W2-14_1.png", width="750px" %}
 
 ## 9. Logistic regression recap
 
 有了计算图的概念之后, 我们将其运用到 Logistic Regression 上. 
 
-<img src="/images/deeplearning/C1W2-16_1.png" width="700" />
+{% image "/images/deeplearning/C1W2-16_1.png", width="700px" %}
 
 上面的式子可以用下面的计算图来表达:
 
-<img src="/images/deeplearning/C1W2-16_2.png" width="700" />
+{% image "/images/deeplearning/C1W2-16_2.png", width="700px" %}
 
 有了上面的图之后, 我们现在来计算反向传播.
 
@@ -113,11 +113,11 @@ $$
 J(w, b) = \frac{1}{m}(L(a^{(1)}, y^{(1)}) + L(a^{(2)}, y^{(2)}) + … + L(a^{(m)}, y^{m)}))
 $$
 
-<img src="/images/deeplearning/C1W2-17_1.jpg" width="750" />
+{% image "/images/deeplearning/C1W2-17_1.jpg", width="750px" %}
 
 对于每一个样本都有一个对应的 $dz^{(i)}$, 而对于 $dw, db$ 来说是对于所有求平均.
 
-<img src="/images/deeplearning/C1W2-18_1.png" width="750" />
+{% image "/images/deeplearning/C1W2-18_1.png", width="750px" %}
 
 > 如果用以上节的伪代码来实现梯度计算的话, 效率会非常低. 需要两个显式的 for 循环.
 > 下一节介绍 向量化. 向量化就是用来解决计算效率问题. 
@@ -163,18 +163,18 @@ For loop:363.94405364990234ms
 
 首先我们进行第一步优化, 将 $w$ 写成向量的形式 $dw=np.zeros((n\_x, 1))$, 这样就省去了内层关于 $w$ 的循环.
 
-<img src="/images/deeplearning/C1W2-19_1.png" width="750" />
+{% image "/images/deeplearning/C1W2-19_1.png", width="750px" %}
 
 接下来我们来看看如何优化关于$m$个训练样本的循环. 回顾下第一节中所说的$X$:
 
-<img src="/images/deeplearning/C1W2-3_1.jpg" width="600" />
+{% image "/images/deeplearning/C1W2-3_1.jpg", width="600px" %}
 
 > 将$X$用如上的矩阵表达后, 通过 $W^T+b$ 也就得到了 $z$ 的向量化表达. $a$ 的向量化表达也就是 $z$ 每个元素进行 $\sigma$操作了.
 简单吧. 想要把握住向量化一定要清楚每个变量的维度(即python代码里ndarray的shape), 那些是**矩阵操作**, 那些是**element-wise**操作等等. 
 
 > 把握住上面的之后, 在代码实现里还要注意哪里会产生 `broadcasting`. 例如这里的 $b$ 实际上是一个scalar, 但在进行 $W^T+b$ 操作的时候, $b$ 被numpy自动`broadcasting` 成和 $W^T$ 维度一样的横向量.
 
-<img src="/images/deeplearning/C1W2-20_1.png" width="750" />
+{% image "/images/deeplearning/C1W2-20_1.png", width="750px" %}
 
 > 接下来我们看一下梯度的向量化. 前面我们知道 $dz^{(1)}, dz^{(2)}, …, dz^{(m)}$, 这样得到 $dZ$ .
 
@@ -182,13 +182,13 @@ For loop:363.94405364990234ms
 >
 > db 是一个均值？
 
-<img src="/images/deeplearning/C1W2-21_1.png" width="750" />
+{% image "/images/deeplearning/C1W2-21_1.png", width="750px" %}
 
 通过上面的努力, 我们将之前for循环的版本改成了完全向量化的表示, 这样向量化实现的代码效率会大大提高. 
 
 > (注意: ppt里的for iter in range(1000) 是迭代次数, 这个循环是不可避免的)
 
-<img src="/images/deeplearning/C1W2-22_1.png" width="750" />
+{% image "/images/deeplearning/C1W2-22_1.png", width="750px" %}
 
 ## 使用Python实现Logistic Regression进行猫咪识别
 
@@ -276,11 +276,11 @@ class LogisticRegression():
 
 **Python Broadcasting example:**
 
-<img src="/images/deeplearning/C1W2-23_1.png" width="500" />
+{% image "/images/deeplearning/C1W2-23_1.png", width="500px" %}
 
 > Notes: 多使用 reshape 来保证你用的向量或矩阵是正确的，不要害怕使用 reshape.
 
-<img src="/images/deeplearning/C1W2-24_1.png" width="400" />
+{% image "/images/deeplearning/C1W2-24_1.png", width="400px" %}
 
 > Notes: 多使用 assert(a.shape == (5,1)) 
 > 

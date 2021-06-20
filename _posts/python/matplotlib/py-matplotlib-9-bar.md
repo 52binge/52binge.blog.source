@@ -41,7 +41,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/matplotlib-9-bar-1-output_1_0.png" height="100" width="550" />
+{% image "/images/python/matplotlib-9-bar-1-output_1_0.png" height="100", width="550px" %}
 </div>
 
 ## 加颜色和数据
@@ -56,7 +56,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/matplotlib-9-bar-2-output_3_0.png" height="100" width="550" />
+{% image "/images/python/matplotlib-9-bar-2-output_3_0.png" height="100", width="550px" %}
 </div>
 
 接下来我们用函数`plt.text`分别在柱体上方（下方）加上数值，用`%.2f`保留两位小数，横向居中对齐`ha='center'`，纵向底部（顶部）对齐`va='bottom'`：
@@ -80,7 +80,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/matplotlib-9-bar-3-output_5_0.png" height="100" width="550" />
+{% image "/images/python/matplotlib-9-bar-3-output_5_0.png" height="100", width="550px" %}
 </div>
 
 [img1]: /images/python/matplotlib-9-bar-1-output_1_0.png

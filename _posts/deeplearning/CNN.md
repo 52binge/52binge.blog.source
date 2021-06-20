@@ -6,7 +6,7 @@ tags: [CNN]
 toc: true
 ---
 
-<img src="/images/deeplearning/CNN-03.png" width="700" alt="Convolutional Neural Networks" />
+{% image "/images/deeplearning/CNN-03.png", width="700px", alt="Convolutional Neural Networks" %}
 
 <!-- more -->
 
@@ -18,7 +18,7 @@ Convolutional Neural Networks，CNN 也是一种前馈神经网络，其特点�
 
 Convolution operation 的**`参数共享特性`**使得需要优化的参数数目大大缩减，提高了模型的训练效率以及可扩展性。
 
-<img src="/images/deeplearning/CNN-04.png" width="700" alt="LeCun Yann 在 1998 年提出" />
+{% image "/images/deeplearning/CNN-04.png", width="700px", alt="LeCun Yann 在 1998 年提出" %}
 
 ## 1. Convolutional Function
 
@@ -26,17 +26,17 @@ Convolution operation 的**`参数共享特性`**使得需要优化的参数数�
 
 &nbsp;&nbsp;稠密的连接结构,  神经元 $s\_i$ 与输入的所有神经元 $x\_j$ 均有连接：
 
-<img src="/images/deeplearning/CNN-05.png" width="400" alt="对于全连接网络，任意一对输入与输出神经元之间都产生交互，形成`稠密`的连接结构" />
+{% image "/images/deeplearning/CNN-05.png", width="400px", alt="对于全连接网络，任意一对输入与输出神经元之间都产生交互，形成`稠密`的连接结构" %}
 
 &nbsp;&nbsp;卷积， 每个输出神经元仅与前一层特定局部区域内的神经元存在连接：
 
-<img src="/images/deeplearning/CNN-06.png" width="400" alt="卷积神经网络中，卷积核尺度远小于输入的维度，我们称这种特性为稀疏交互" />
+{% image "/images/deeplearning/CNN-06.png", width="400px", alt="卷积神经网络中，卷积核尺度远小于输入的维度，我们称这种特性为稀疏交互" %}
 
 神经元 $s\_i$ 仅与前一层中的 $x\_{i−1}$, $x\_i$ 和 $x\_{i+1}$ 相连。具体来讲如果限定每个输出与前一层神经元的连接数为 k ，那么该层的参数总量为 $k×n$。在实际应用中，一般 $k$ 值远小于 $m$ 就可以取得较为可观的效果；复杂度将会减小几个数量级，过拟合的情况改善.
  
  **稀疏交互的物理意义：**
  
- <img src="/images/deeplearning/CNN-07.png" width="750" />
+ {% image "/images/deeplearning/CNN-07.png", width="750px" %}
 
 ### 1.2 Parameter Sharing
 
@@ -52,7 +52,7 @@ Convolution operation 的**`参数共享特性`**使得需要优化的参数数�
 - mean pooling
 - max pooling
 
- <img src="/images/deeplearning/CNN-08.png" width="600" />
+ {% image "/images/deeplearning/CNN-08.png", width="600px" %}
 
 pooling 的本质是降采样.
 
@@ -64,7 +64,7 @@ CNN 的核心思想是捕捉局部特征，起初在图像领域取得了巨大�
 
 CNN 的优势在于能够自动地对 N-gram 特征进行组合和筛选，获得不同抽象层次的语义信息。
 
- <img src="/images/deeplearning/CNN-10.png" width="700" />
+ {% image "/images/deeplearning/CNN-10.png", width="700px" %}
 
 > (1). 输入层是一个 $N×K$ 的矩阵，其中 $N$ 为文章所对应的单词总数，$K$ 是每个词对应的表示向量的维度.
 > 
@@ -91,7 +91,7 @@ CNN 的优势在于能够自动地对 N-gram 特征进行组合和筛选，获�
 
 ResNet 的提出背景是解决或缓解 Deep Neural Networks 训练中的 Gradients Vanishing 问题
 
- <img src="/images/deeplearning/CNN-11.png" width="700" />
+ {% image "/images/deeplearning/CNN-11.png", width="700px" %}
 
 > ResNet在 ImageNet 竞赛和 AlphaGo Zero 的应用中都取得了非常好的效果.
 

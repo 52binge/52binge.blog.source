@@ -7,7 +7,7 @@ tags: Docker
 mathjax: true
 ---
 
-<img src="/images/devops/docker-2.1.png" width="550" alt="Docker Microservices" />
+{% image "/images/devops/docker-2.1.png", width="550px", alt="Docker Microservices" %}
 
 <!-- more -->
 
@@ -24,11 +24,11 @@ Docker 使得软件可以拆分成若干个标准化容器，然后像搭积木�
 
 > 软件把任务外包出去，让各种外部服务完成这些任务，软件本身只是底层服务的调度中心和组装层。
 
-<!--<img src="/images/devops/docker-2.2.png" width="550" alt="Docker Microservices" />-->
+<!--{% image "/images/devops/docker-2.2.png", width="550px", alt="Docker Microservices" %}-->
 
 如何在**一台计算机**上实现多个 **`Services`**，让它们互相配合，组合出一个 **`Application`**:
 
-<img src="/images/devops/docker-2.3.png" width="550" alt="Docker Microservices" />
+{% image "/images/devops/docker-2.3.png", width="550px", alt="Docker Microservices" %}
 
 为了加深理解，采用三种方法，演示如何架设 WordPress 网站
 
@@ -122,7 +122,7 @@ docker container run \
 
 > WordPressC 要连到 wordpressdbC，冒号表示该 Container 的别名是 mysql .
 
-<img src="/images/devops/docker-1.3.png" width="750" alt="wp" />
+{% image "/images/devops/docker-1.3.png", width="750px", alt="wp" %}
 
 看到以上界面，自建WPC 演示完毕。 关闭 Containers。
 

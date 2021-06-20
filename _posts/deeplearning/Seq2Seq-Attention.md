@@ -6,15 +6,15 @@ categories: deeplearning
 tags: Seq2Seq
 ---
 
-<img src="/images/deeplearning/Seq2Seq-00.jpg" width="550" alt="Attention 和人类的选择性视觉注意力机制类似" />
+{% image "/images/deeplearning/Seq2Seq-00.jpg", width="550px", alt="Attention 和人类的选择性视觉注意力机制类似" %}
 
 <!-- more -->
 
 我们先结合上篇文章的内容，将 language model 和 Machine translation model 做一个对比：
 
-<img src="/images/deeplearning/C5W3-3.png" width="600" />
+{% image "/images/deeplearning/C5W3-3.png", width="600px" %}
 
-<img src="/images/deeplearning/C5W3-4.png" width="700" />
+{% image "/images/deeplearning/C5W3-4.png", width="700px" %}
 
 可以看到，机器翻译模型的后半部分其实就是语言模型，Andrew 将其称之为 “**条件语言模型**”.
 
@@ -24,7 +24,7 @@ $$
 
 ## 1. Encoder-Decoder
 
-<img src="/images/deeplearning/Seq2Seq-03.jpg" width="600" alt="Encoder-Decoder" />
+{% image "/images/deeplearning/Seq2Seq-03.jpg", width="600px", alt="Encoder-Decoder" %}
 
 Source 和 Target 分别由各自的单词序列构成：
 
@@ -83,7 +83,7 @@ $$
 
 > 以上描述的编码器是一个单向的 RNN，每个时间步的隐藏状态只取决于该时间步及之前的输入子序列。我们也可以使用 Bi-RNN 构造编码器。 这种情况下，编码器每个时间步的隐藏状态同时取决于该时间步之前和之后的子序列（包括当前时间步的输入），并编码了整个序列的信息。
 
-<img src="/images/chatbot/seq2seq-5.jpeg" width="700" />
+{% image "/images/chatbot/seq2seq-5.jpeg", width="700px" %}
 
 ### 1.2 decoder
 
@@ -137,7 +137,7 @@ $$
 >
 > 所以据贪婪算法最后的翻译结果可能是下图中的第二个句子，**但第一句可能会更好.**
 >
-> <img src="/images/deeplearning/C5W3-5.png" width="600" />
+> {% image "/images/deeplearning/C5W3-5.png", width="600px" %}
 >
 > 所以 Greedy Search 的缺点是局部最优并不代表全局最优. Greedy Search 更加短视，看的不长远。
 
@@ -151,7 +151,7 @@ Beam Search 是 greedy search 的加强版本，首先要预设一个值 beam wi
 
 即选出 $P(y^{<1>}|x)$ 最大的前3个值。 假设分别是 **"in", "jane", "september"**
 
-<img src="/images/deeplearning/C5W3-6_1.png" width="650" />
+{% image "/images/deeplearning/C5W3-6_1.png", width="650px" %}
 
 #### 1.4.2 step 2
 
@@ -169,11 +169,11 @@ $$
 
 我们此时已经得到了给定输入数据，前两个输出值的输出概率比较大的组合了.
 
-<img src="/images/deeplearning/C5W3-7_1.png" width="650" />
+{% image "/images/deeplearning/C5W3-7_1.png", width="650px" %}
 
 另外 2 个单词也做同样的计算
 
-<img src="/images/deeplearning/C5W3-8_1.png" width="650" />
+{% image "/images/deeplearning/C5W3-8_1.png", width="650px" %}
 
 此时我们得到了 9 组 $P(y^{<1>},y^{<2>}|x)$, 此时我们再从这 9组 中选出概率值最高的前 3 个。
 
@@ -207,7 +207,7 @@ $$
 > 
 > $$P(y^{<3>}|x,y^{<1>},y^{<2>})$$
 
-<img src="/images/deeplearning/C5W3-10_1.png" width="750" />
+{% image "/images/deeplearning/C5W3-10_1.png", width="750px" %}
 
 ### 1.5 refinements to beam search
 
@@ -241,7 +241,7 @@ $$
 argmax \frac{1}{T\_y^α}\sum\_{t=1}^{T\_y}logP(y^{<{t}>}|x,y^{<1>},…y^{<{t-1}>})
 $$
 
-<img src="/images/deeplearning/C5W3-11_1.png" width="700" />
+{% image "/images/deeplearning/C5W3-11_1.png", width="700px" %}
 
 
 > $T\_y$ 为输出句子中单词的个数，$α$ 是一个超参数 (可以设置为 0.7)
@@ -269,7 +269,7 @@ $$
 $$ - \log{P}(y\_1, \ldots, y\_{T'} \mid x\_1, \ldots, x\_T) = -\sum\_{t'=1}^{T'} \log {P}(y\_{t'} \mid y\_1,  \ldots, y\_{t'-1}, \boldsymbol{c}),
 $$
 
-<img src="/images/chatbot/seq2seq-6.png" width="800" />
+{% image "/images/chatbot/seq2seq-6.png", width="800px" %}
 
 在模型训练中，所有输出序列损失的均值通常作为需要最小化的损失函数。在图中所描述的模型预测中，我们需要将decode在上一个时间步的输出作为当前时间步的输入。与此不同，在训练中我们也可以将标签序列在上一个时间步的标签作为decode在当前时间步的输入。这叫做强制教学（teacher forcing）。
 
@@ -285,13 +285,13 @@ Seq2Seq model 来自于 “[Sequence to Sequence Learning with Neural Networks](
 
 其模型结构图如下所示：
 
-<img src="/images/chatbot/seq2seq-2.jpg" width="700" />
+{% image "/images/chatbot/seq2seq-2.jpg", width="700px" %}
 
 与上面模型最大的区别在于其source编码后的 向量$C$ 直接作为 Decoder RNN 的 init state，而不是在每次decode时都作为 RNN cell 的输入。此外，decode 时 RNN 的输入是 label，而不是前一时刻的输出。
 
 Encoder 阶段：
 
-<img src="/images/chatbot/seq2seq-3.jpg" width="500" />
+{% image "/images/chatbot/seq2seq-3.jpg", width="500px" %}
 
 > 每个词经过 RNN 都会编码为 hidden (e0,e1,e2), source序列 的编码向量e 就是 最终的 hidden state e2
 > 
@@ -299,7 +299,7 @@ Encoder 阶段：
 
 Decoder 阶段：
 
-<img src="/images/chatbot/seq2seq-4.jpg" width="500" />
+{% image "/images/chatbot/seq2seq-4.jpg", width="500px" %}
 
 e向量 仅作为 RNN 的 init state 传入decode模型，每一时刻输入都是前一时刻的正确label。直到最终输入<eos>符号截止.
 
@@ -307,7 +307,7 @@ e向量 仅作为 RNN 的 init state 传入decode模型，每一时刻输入都�
 
 请务必要阅读： [张俊林 深度学习中的注意力模型（2017版）](https://zhuanlan.zhihu.com/p/37601161)
 
-<img src="/images/deeplearning/Attention-01.jpg" width="600" />
+{% image "/images/deeplearning/Attention-01.jpg", width="600px" %}
 
 **decode** 在各个时间步依赖相同的 **背景变量 $c$** 来获取输入序列信息。当 **encode** 为 RNN 时，**背景变量$c$** 来自它最终时间步的 hidden state。
 
@@ -378,7 +378,7 @@ $$
 
 其中含下标的 W 和 b 分别为 GRU 的权重参数和偏差参数。
 
-<img src="/images/chatbot/seq2seq-7.jpeg" width="800" />
+{% image "/images/chatbot/seq2seq-7.jpeg", width="800px" %}
 
 ### 3.3 attention summary
 
@@ -393,13 +393,13 @@ $$
 
 注意力机制是一种思想，可以有多种不同的实现方式，在 Seq2Seq 模型以外的场景也有不少应用
 
-<img src="/images/deeplearning/Attention-00.jpg" width="700" />
+{% image "/images/deeplearning/Attention-00.jpg", width="700px" %}
 
 ## 4. Attention 本质思想
 
 把Attention机制从上文讲述例子中的Encoder-Decoder框架中剥离，并进一步做抽象，可以更容易懂:
 
-<img src="/images/deeplearning/Attention-04.jpg" width="600" />
+{% image "/images/deeplearning/Attention-04.jpg", width="600px" %}
 
 ### 4.1 Attention 的三阶段
 
@@ -407,13 +407,13 @@ $$
 > 2. 第二个阶段对第一阶段的原始分值进行归一化处理；
 > 3. 根据权重系数对Value进行加权求和。
 
-<img src="/images/deeplearning/Attention-03.jpg" width="600" />
+{% image "/images/deeplearning/Attention-03.jpg", width="600px" %}
 
 ### 4.2 Self Attention
 
 Attention顾名思义，指的不是Target和Source之间的Attention机制，而是Source内部元素之间或者Target内部元素之间发生的Attention机制，也可以理解为Target=Source这种特殊情况下的注意力计算机制。
 
-<img src="/images/deeplearning/Attention-05.jpg" width="600" />
+{% image "/images/deeplearning/Attention-05.jpg", width="600px" %}
 
 > 引入Self Attention后会更容易捕获句子中长距离的相互依赖的特征，因为如果是RNN或者LSTM，需要依次序序列计算，对于远距离的相互依赖的特征，要经过若干时间步步骤的信息累积才能将两者联系起来，而距离越远，有效捕获的可能性越小。
 

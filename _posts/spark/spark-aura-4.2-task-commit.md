@@ -5,7 +5,7 @@ categories: [spark]
 tags: [spark]
 ---
 
-<img src="/images/spark/spark-aura-4.1.2.jpg" width="750" />
+{% image "/images/spark/spark-aura-4.1.2.jpg", width="750px" %}
 
 <!-- more -->
 
@@ -19,7 +19,7 @@ tags: [spark]
 > 1. executor  ExecutorBacked     actor
 > 2. driver    SchedulerBackend   actor
 
-<img src="/images/spark/spark-aura-4.2.7.jpg" width="850" />
+{% image "/images/spark/spark-aura-4.2.7.jpg", width="850px" %}
 
 ## Spark 核心概念复习
 
@@ -31,13 +31,13 @@ tags: [spark]
 > HDFS - File - block - mapreduce line
 > HDFS - RDD - partition - 
 
-<img src="/images/spark/spark-aura-4.4.2.jpg" width="850" />
+{% image "/images/spark/spark-aura-4.4.2.jpg", width="850px" %}
 
-<img src="/images/spark/spark-aura-4.4.1.jpg" width="850" />
+{% image "/images/spark/spark-aura-4.4.1.jpg", width="850px" %}
 
-<img src="/images/spark/spark-aura-4.4.3.jpg" width="850" />
+{% image "/images/spark/spark-aura-4.4.3.jpg", width="850px" %}
 
-<img src="/images/spark/spark-aura-4.4.5.jpg" width="850" />
+{% image "/images/spark/spark-aura-4.4.5.jpg", width="850px" %}
 
 
 **Spark:**
@@ -95,15 +95,15 @@ SparkEnv:
 > 2. _taskScheduler    `---->`  TaskSchedulerImpl
 > 3. _schedulerBackend `---->`  StandaloneSchedulerBackend
 
-<img src="/images/spark/spark-aura-4.2.1.jpg" width="850" />
+{% image "/images/spark/spark-aura-4.2.1.jpg", width="850px" %}
 
 Spark 任务提交流程：
 
-<img src="/images/spark/spark-aura-4.2.2.jpg" width="700" alt="Spark 任务提交流程" />
+{% image "/images/spark/spark-aura-4.2.2.jpg", width="700px", alt="Spark 任务提交流程" %}
 
 图2：
 
-<img src="/images/spark/spark-aura-4.2.4.jpg" width="700" />
+{% image "/images/spark/spark-aura-4.2.4.jpg", width="700px" %}
 
 ## Reference
 

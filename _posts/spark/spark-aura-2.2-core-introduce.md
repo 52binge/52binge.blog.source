@@ -6,13 +6,13 @@ tags: [spark]
 ---
 
 
-<img src="/images/spark/spark-aura-2.2.0-1.png" width="650" alt="Spark 核心概念详述 2.2" />
+{% image "/images/spark/spark-aura-2.2.0-1.png", width="650px", alt="Spark 核心概念详述 2.2" %}
 
 <!--more-->
 
 ## 1. Word Count
 
-<img src="/images/spark/spark-aura-2.2.6.png" width="950" alt="Spark 核心概念详述 2.2" />
+{% image "/images/spark/spark-aura-2.2.6.png", width="950px", alt="Spark 核心概念详述 2.2" %}
 
 > `data source -> LineRDD -> WordRDD -> WordAndOneRDD -> WordCountRDD -> 目的地`
 > 
@@ -20,17 +20,17 @@ tags: [spark]
 >
 > 1个Application --> 1个Job --> 
 
-<img src="/images/spark/spark-aura-2.2.4.png" width="850" alt="Spark 核心概念详述 2.2" />
+{% image "/images/spark/spark-aura-2.2.4.png", width="850px", alt="Spark 核心概念详述 2.2" %}
 
-<img src="/images/spark/spark-aura-2.2.5.png" width="850" alt="Spark 核心概念详述 2.2" />
+{% image "/images/spark/spark-aura-2.2.5.png", width="850px", alt="Spark 核心概念详述 2.2" %}
 
 
 
-<img src="/images/spark/spark-aura-2.2.7.png" width="850" alt="Spark 核心概念详述 2.2" />
+{% image "/images/spark/spark-aura-2.2.7.png", width="850px", alt="Spark 核心概念详述 2.2" %}
 
-<img src="/images/spark/spark-aura-2.2.8.png" width="850" alt="Spark 核心概念详述 2.2" />
+{% image "/images/spark/spark-aura-2.2.8.png", width="850px", alt="Spark 核心概念详述 2.2" %}
 
-<img src="/images/spark/spark-aura-2.2.9.png" width="850" alt="Spark 核心概念详述 2.2" />
+{% image "/images/spark/spark-aura-2.2.9.png", width="850px", alt="Spark 核心概念详述 2.2" %}
 
 storm --- 细粒度 -- 一条数据处理一次
 

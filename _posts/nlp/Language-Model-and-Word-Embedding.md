@@ -5,7 +5,7 @@ categories: nlp
 tags: PPL
 ---
 
-<img src="/images/nlp/LM-01.jpg" width="550" alt="2001 NNLM, @Yoshua bengio" />
+{% image "/images/nlp/LM-01.jpg", width="550px", alt="2001 NNLM, @Yoshua bengio" %}
 
 <!-- more -->
 
@@ -64,7 +64,7 @@ $$
 
 计算perplexity的公式如下：
 
-<img src="/images/tensorflow/tf-google-9.1.2_1-equation.svg" width="600" />
+{% image "/images/tensorflow/tf-google-9.1.2_1-equation.svg", width="600px" %}
 
 **perplexity** 刻画的是语言模型预测一个语言样本的能力. 比如已经知道 (w1,w2,w3,…,wm) 这句话会出现在语料库之中，那么通过语言模型计算得到的这句话的概率越高，说明语言模型对这个语料库拟合得越好。
 
@@ -74,11 +74,11 @@ $$
 > 
 > perplexity的计算过程如下：
 > 
-> <img src="/images/tensorflow/tf-google-9.1.2_3-ppl.jpg" width="800" />
+> {% image "/images/tensorflow/tf-google-9.1.2_3-ppl.jpg", width="800px" %}
 
 在语言模型的训练中，通常采用 perplexity 的对数表达形式：
 
-<img src="/images/tensorflow/tf-google-9.1.2_2-equation.svg" width="600" />
+{% image "/images/tensorflow/tf-google-9.1.2_2-equation.svg", width="600px" %}
 
 > 相比较乘积求平方根的方式，加法的形式可加速计算，同时避免概率乘积数值过小而导致浮点数向下溢出的问题.
 > 
@@ -99,7 +99,7 @@ NNLM,直接从语言模型出发，将模型最优化过程转化为求词向量
 
 既然离散的表示有辣么多缺点，于是有小伙伴就尝试着用模型最优化的过程去转换词向量了.
 
-<img src="/images/nlp/word2vec-nnlm.png" width="600" />
+{% image "/images/nlp/word2vec-nnlm.png", width="600px" %}
 
 计算复杂度： ($N \* D + N \* D \* H + H \* V$) 相当之高, 于是有了 CBOW 和 Skip-Gram .
 
@@ -119,7 +119,7 @@ NNLM,直接从语言模型出发，将模型最优化过程转化为求词向量
 >
 > “I want a glass of orange `juice`”
 
-<img src="/images/deeplearning/C5W2-5_1.png" width="750" />
+{% image "/images/deeplearning/C5W2-5_1.png", width="750px" %}
 
 在这个训练模式中，是通过全部的单词去预测最后一个单词然后反向传播更新词嵌表 $E$
 
@@ -146,7 +146,7 @@ NNLM,直接从语言模型出发，将模型最优化过程转化为求词向量
 
 > 压缩到二维的可视化平面上，每一个单词 嵌入 属于自己的一个位置，相似的单词离的近，没有共性的单词离得远，这个就是 “Word Embeddings” 的概念.
 
-<img src="/images/deeplearning/C5W2-2.png" width="500" />
+{% image "/images/deeplearning/C5W2-2.png", width="500px" %}
 
 > 上图通过聚类将词性相类似的单词在二维空间聚为一类.
 
@@ -190,7 +190,7 @@ word2vec 并不是一个模型， 而是一个 2013年 google 发表的工具. �
 
 ### 4.1 CBOW
 
-<img src="/images/nlp/word2vec-CBOW_1.png" width="600" />
+{% image "/images/nlp/word2vec-CBOW_1.png", width="600px" %}
 
 > 纠错 : 上图”目标函数“的第一个公式，应该是 连乘 公式，不是 连加 运算。
 > 
@@ -210,7 +210,7 @@ $$
 P(\textrm{the}\mid\textrm{loves})\cdot P(\textrm{man}\mid\textrm{loves})\cdot P(\textrm{his}\mid\textrm{loves})\cdot P(\textrm{son}\mid\textrm{loves}).
 $$
 
-<img src="/images/nlp/word2vec-skip-gram.svg" width="300" />
+{% image "/images/nlp/word2vec-skip-gram.svg", width="300px" %}
 
 **训练 Skip-Gram**
 
@@ -226,7 +226,7 @@ $$
 \boldsymbol{u}_o^\top \boldsymbol{v}_c - \log\left(\sum_{i \in \mathcal{V}} \text{exp}(\boldsymbol{u}_i^\top \boldsymbol{v}_c)\right)
 $$
 
-<img src="/images/nlp/word2vec-skip.png" width="700" />
+{% image "/images/nlp/word2vec-skip.png", width="700px" %}
 
 它的计算需要词典中所有词以 $w_c$ 为中心词的条件概率。有关其他词向量的梯度同理可得。
 
@@ -252,11 +252,11 @@ FastText是一个快速文本分类算法，在使用标准多核CPU的情况下
 
 文本分类：
 
-<img src="/images/nlp/fastText-3.webp" width="500" />
+{% image "/images/nlp/fastText-3.webp", width="500px" %}
 
 情感分类:
 
-<img src="/images/nlp/fastText-4.webp" width="500" />
+{% image "/images/nlp/fastText-4.webp", width="500px" %}
 
 fastText 能够做到效果好，速度快，主要依靠两个秘密武器：
 

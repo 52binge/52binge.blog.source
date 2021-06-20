@@ -5,7 +5,7 @@ categories: devops
 tags: Kubernetes
 ---
 
-<img src="/images/devops/kubernetes-1.png" width="550" alt="kubernetes.io" />
+{% image "/images/devops/kubernetes-1.png", width="550px", alt="kubernetes.io" %}
 
 <!-- more -->
 
@@ -74,7 +74,7 @@ Kubernetes 支持在多种环境下的安装:
 
 ### 3.1 K8s architecture
 
-<img src="/images/devops/kubernetes-5.png" width="750" alt="kubernetes.io" />
+{% image "/images/devops/kubernetes-5.png", width="750px", alt="kubernetes.io" %}
 
 ### 3.2 Master
 
@@ -86,7 +86,7 @@ Master有三个组件：API Server、Scheduler、Controller:
 
 ### 3.3 Node
 
-<img src="/images/devops/kubernetes-4.jpg" width="600" alt="Kubernetes Node" />
+{% image "/images/devops/kubernetes-4.jpg", width="600px", alt="Kubernetes Node" %}
 
 集群中的每个非 master 节点都运行两个进程：
 

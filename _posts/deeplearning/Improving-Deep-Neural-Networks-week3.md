@@ -34,7 +34,7 @@ $β\_1,β\_2,ε$ | 最不重要 | 4
 
 - 首先是粗略地随机地寻找最优参数
 
-<img src="/images/deeplearning/C2W3-1_1.png" width="700" />
+{% image "/images/deeplearning/C2W3-1_1.png", width="700px" %}
 
 **建议使用图右的方式，原因如下：**
 
@@ -42,7 +42,7 @@ $β\_1,β\_2,ε$ | 最不重要 | 4
 
 **其次在上面找到的最优参数分布周围再随机地寻找最有参数**
 
-<img src="/images/deeplearning/C2W3-2_1.png" width="700" />
+{% image "/images/deeplearning/C2W3-2_1.png", width="700px" %}
 
 ## 2. Using an appropriate scale to pick hyperparameters
 
@@ -56,7 +56,7 @@ $β\_1,β\_2,ε$ | 最不重要 | 4
 
 此时注意: 如按照线性划分的话(如下图)，那么随机采样的值 90% 的数据来自 [0.1,1] 这个区间, 这显然与不太符合随机性.
 
-<img src="/images/deeplearning/C2W3-3_1.png" width="700" />
+{% image "/images/deeplearning/C2W3-3_1.png", width="700px" %}
 
 > 所以为了改进这一问题，我们需要将区间对数化来采样.
 > 
@@ -71,7 +71,7 @@ r = -4*np.random.rand() # rand()表示在[0,1]上均匀采样, 最后的采样�
 a = pow(10, r)
 ```
 
-<img src="/images/deeplearning/C2W3-4_1.png" width="700" />
+{% image "/images/deeplearning/C2W3-4_1.png", width="700px" %}
 
 **$β=0.9,……,0.999$**
 
@@ -87,7 +87,7 @@ a = pow(10, r)
 
 ## 3. Hyperparameters tuning in practice: Pandas vs Caviar
 
-<img src="/images/deeplearning/C2W3-5_1.png" width="700" />
+{% image "/images/deeplearning/C2W3-5_1.png", width="700px" %}
 
 **Babysitting one model:**
 
@@ -155,7 +155,7 @@ $$
 
 **adding batch Norm to a network**
 
-<img src="/images/deeplearning/C2W3-6_1.png" width="750" />
+{% image "/images/deeplearning/C2W3-6_1.png", width="750px" %}
 
 **working with mini-batches**
 
@@ -197,7 +197,7 @@ $$
 
 **batch norm** 可以使得权重比你的网络更滞后或更深层，为了更好地理解可以看下面的例子:
 
-<img src="/images/deeplearning/C2W3-7_1.png" width="700" />
+{% image "/images/deeplearning/C2W3-7_1.png", width="700px" %}
 
 如上图所示，假设我们现在要计算第三层隐藏层的值，很显然该层的计算结果依赖第二层的数据，但是第二层的数据如果未归一化之前是不可知的，分布是随机的。而如果进行归一化后，即 $\tilde{z}^{\[2\]}=γ^{\[2\]}z\_{norm}^{\[2\]}+β^{\[2\]}$ 可以将第二层数据限制为均值为 $β^{\[2\]}$, 方差为 $γ^{\[2\]}$ 的分布,注意这两个参数并不需要人为设置，它会自动学习的。所以即使输入数据千变万化，但是经过归一化后分布都是可以满足我们的需求的，更简单地说就是归一化数据可以减弱前层参数的作用与后层参数的作用之间的联系，它使得网络每层都可以自己学习。
 
@@ -226,7 +226,7 @@ batch norm 奏效的另一个原因则是它具有正则化的效果。其与dro
 
 之后就根据**指数加权平均**计算得到的值来计算归一化后的输入值即可.
 
-<img src="/images/deeplearning/C2W3-8_1.png" width="750" />
+{% image "/images/deeplearning/C2W3-8_1.png", width="750px" %}
 
 > **Andrew Ng 语录:**
 >
@@ -242,7 +242,7 @@ $$
 
 ## 8. Softmax regression
 
-<img src="/images/deeplearning/C2W3-9_1.png" width="750" />
+{% image "/images/deeplearning/C2W3-9_1.png", width="750px" %}
 
 假设第 $l$ 层有 $z^{\[l\]}=w^{\[l\]}a^{\[l-1\]}+b^{\[l\]}$, 激活函数为 $a^{\[l\]}=\frac{e^{z^{\[l\]}}}{\sum\_{j=1}^{n\_l}e^{z^{\[l\]}\_j}}$
 
@@ -264,7 +264,7 @@ $$
 
 ## 10. Deep learning frameworks
 
-<img src="/images/deeplearning/C2W3-9_1.png" width="750" />
+{% image "/images/deeplearning/C2W3-9_1.png", width="750px" %}
 
 ## 11. TensorFlow Example
  

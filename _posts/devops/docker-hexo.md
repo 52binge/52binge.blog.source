@@ -6,7 +6,7 @@ tags: Docker
 mathjax: true
 ---
 
-<img src="/images/devops/docker-3.1.svg" width="550" alt="Docker" />
+{% image "/images/devops/docker-3.1.svg", width="550px", alt="Docker" %}
 
 <!-- more -->
 

@@ -10,7 +10,7 @@ RNN, Recurrent Neural Networks 进行分类（classification），采用 MNIST �
 
 <!-- more -->
 
-<img src="/images/tensorflow/keras-lstm1.png" width="550" alt="LSTM in Keras"/>
+{% image "/images/tensorflow/keras-lstm1.png", width="550px", alt="LSTM in Keras"%}
 
 ```python
 import numpy as np

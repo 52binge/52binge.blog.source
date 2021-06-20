@@ -14,7 +14,7 @@ tags: deeplearning.ai
 
 这一小节视频主要介绍了我们在实现目标定位时标签该如何定义
 
-<img src="/images/deeplearning/C4W3-1_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-1_1.png", width="750px" %}
 
 输出 softmax 的同时，在输出4个值 $b\_x,b\_y,b\_w,b\_h$, 边界框的具体位置 （图片左上角坐标为 (0, 0)， 右下角为 (1, 1) )
 
@@ -22,7 +22,7 @@ tags: deeplearning.ai
 
 **how we define the target label $y$ for this as a supervised learning task.**
 
-<img src="/images/deeplearning/C4W3-2_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-2_1.png", width="750px" %}
 
 > 上图左下角给出了损失函数的计算公式 (这里使用的是平方差)
 >
@@ -42,7 +42,7 @@ $b\_\*$ **用于标识所识别食物的位置**
 
 - $b\_w,b\_h$: 表示识别物体的宽和高
 
-<img src="/images/deeplearning/C4W3-3.png" width="450" />
+{% image "/images/deeplearning/C4W3-3.png", width="450px" %}
 
 > 注意: $P\_c=0$ 表示三者都没有，所以此时 $C\_\*,b\_\*$ 的值我们并不在乎了.
 > 
@@ -52,7 +52,7 @@ $b\_\*$ **用于标识所识别食物的位置**
 
 特征点检测，这一节的内容和上一节感觉很类似.
 
-<img src="/images/deeplearning/C4W3-4_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-4_1.png", width="750px" %}
 
 > 要输出眼角的位置，你可以让神经网络输出的最后一层，多输出 2 个数字 $l\_x, l\_y$.
 > 
@@ -76,17 +76,17 @@ $b\_\*$ **用于标识所识别食物的位置**
 
 这个算法叫做 : **滑动窗口目标检测**
 
-<img src="/images/deeplearning/C4W3-5_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-5_1.png", width="750px" %}
 
 目标检测常使用的是滑动窗口技术检测，即使用一定大小的窗口按照指定的步长对图像进行遍历
 
-<img src="/images/deeplearning/C4W3-6.jpg" width="750" />
+{% image "/images/deeplearning/C4W3-6.jpg", width="750px" %}
 
 因为图像中车辆的大小我们是不知道的，所以可以更改窗口大小，从而识别并定位出车辆的位置。
 
-<img src="/images/deeplearning/C4W3-7_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-7_1.png", width="750px" %}
 
-<img src="/images/deeplearning/C4W3-8_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-8_1.png", width="750px" %}
 
 > **滑动窗口目标检测** 算法的缺点就是计算成本的问题.
 > 1. 如果你把窗口调大，显然会减少输入CNN的窗口个数，但是粗粒度可能会影响性能.
@@ -104,11 +104,11 @@ $b\_\*$ **用于标识所识别食物的位置**
 
 在介绍卷积滑动窗口之前我们首先要知道如何把神经网络的**全连接层**转化成**卷积层**，下面是使用了全连接层的网络结构
 
-<img src="/images/deeplearning/C4W3-9_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-9_1.png", width="750px" %}
 
 那么如何将**全连接层转化成卷积层**呢？如下图示
 
-<img src="/images/deeplearning/C4W3-10_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-10_1.png", width="750px" %}
 
 我们可以看到经过 Max Pooling 之后的数据大小是 (5, 5, 16), 第一个FC层是 400 个节点。我们可以使用 400 个 5\*5 的过滤器进行卷积运算，随后我们就得到了 (1, 1, 400) 的矩阵。
 
@@ -124,11 +124,11 @@ $b\_\*$ **用于标识所识别食物的位置**
 
 **首先我们先看下图，这就是上面提到的将全连接层转化成卷积层的示意图:**
 
-<img src="/images/deeplearning/C4W3-11_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-11_1.png", width="750px" %}
 
 下面，假设我们的测试图大小是 16\*16，并令滑动窗口大小是 14\*14 的 (为了方便理解，下图用蓝色清楚地表明了 14\*14 窗口的大小), 步长是 2，所以这个测试图可以被窗口划分成 4 个部分。随后和上面执行一样的操作，最后可以得到 (2,2,4) 的矩阵（这样发现很多计算部分是重复的），此时我们不难看出**测试图被滑动窗口选取的左上角部分对应的结果也是输出矩阵的左上角部分，其他3个部分同理**。
 
-<img src="/images/deeplearning/C4W3-12_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-12_1.png", width="750px" %}
 
 > 所以这说明了什么？
 >
@@ -137,9 +137,9 @@ $b\_\*$ **用于标识所识别食物的位置**
 
 下图很清楚的展示了卷积滑动窗口的实现。我们可以看到图片被划分成了 64 块
 
-<img src="/images/deeplearning/C4W3-13_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-13_1.png", width="750px" %}
 
-<img src="/images/deeplearning/C4W3-14_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-14_1.png", width="750px" %}
 
 > 目前这个算法还有一个缺点，就是边界框的位置可能不够准确，下一节，我们将学习解决这个缺点。
 
@@ -147,7 +147,7 @@ $b\_\*$ **用于标识所识别食物的位置**
 
 上面介绍的滑动窗口方法存在一个问题就是很多情况下滑动窗口并不能很好的切割出车体，如下图示：
 
-<img src="/images/deeplearning/C4W3-15.png" width="400" />
+{% image "/images/deeplearning/C4W3-15.png", width="400px" %}
 
 > 上面中的蓝色框可能是滑动窗口的时候，最佳的匹配位置了，但是其实我们人看后，其实很明显发现，这并不是，这就是我们要解决的问题所在. 其实最佳的匹配位置应该是红色的框，稍微有点长方形，长宽比有点向水平方向延伸.
 >
@@ -161,7 +161,7 @@ $$
 y=[P\_c,b\_x,b\_y,b\_h,b\_w,c\_1,c\_2,c\_3]
 $$
 
-<img src="/images/deeplearning/C4W3-16.png" width="450" />
+{% image "/images/deeplearning/C4W3-16.png", width="450px" %}
 
 > 如果一个格子中有两个对象，那么就当做这个格子中不存在对象. 按照 $P\_c = 0$ 处理. 
 > 
@@ -169,13 +169,13 @@ $$
 
 因为有 9 份，所以最后输出矩阵大小是 (3,3,8) , 如下图示：
 
-<img src="/images/deeplearning/C4W3-17_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-17_1.png", width="750px" %}
 
 那么如何构建卷积网络呢？
 
 输入矩阵是 (100, 100, 3), 然后是 Conv，Maxpool 层，……，最后只要确保输出矩阵大小是 (3,3,8) 即可。
 
-<img src="/images/deeplearning/C4W3-18_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-18_1.png", width="750px" %}
 
 > 这是一个卷积实现，你并没有在 3 \* 3 网格上跑 9 次算法，19 \* 19 同样你不需要网格上跑 361 次，相反这是单次卷积的实现，但你**使用了一个卷积网络**，有很多共享计算步骤，比如在处理这 3 \* 3 计算中很多计算步骤是共享的. 所以这个算法的效率很高.
 >
@@ -187,7 +187,7 @@ $$
 > - 然后 $b\_x,b\_y$ 的值是右边车辆的中心点相对于该框的位置,所以它们的值是一定小于 1 的，我们可以很容易的得到近似值 $b\_x=0.4, b\_y=0.3$
 > - $b\_h,b\_w$ 的值同理也是车辆的宽高相对于其所在框的比例，但是要注意的是这两个值是可以大于 1 的，因为有可能部分车身在框外。但是也可以使用 sigmoid函数 将值控制在 1 以内。
 
-<img src="/images/deeplearning/C4W3-19_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-19_1.png", width="750px" %}
 
 > 这里我用 3 \* 3 的网格说明，在实践中可能 19 \* 19 的网格会精细的多.
 > 
@@ -203,13 +203,13 @@ $$
 
 前面说到了实现目标定位时可能存在 **滑动窗口** 与 **真实边框** 存在出入，如下图示：
 
-<img src="/images/deeplearning/C4W3-20.jpg" width="340" />
+{% image "/images/deeplearning/C4W3-20.jpg", width="340px" %}
 
 > 红色框是车身边界，紫色框是滑动窗口，那么此窗口返回的值是有车还是无车呢？
 >
 > 为了解决上面的问题引入了交并比(IoU)，也就是两个框之间的交集与并集之比，依据这个值可以评价定位算法是否精准。
 
-<img src="/images/deeplearning/C4W3-21_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-21_1.png", width="750px" %}
 
 > 上图黄色区域表示紫色框和红色框的交集，绿色区域表示紫色框和红色框的并集，交并比(IoU)就等于 黄色区域大小 比上 绿色区域大小。
 >
@@ -227,11 +227,11 @@ $$
 
 前面 Bounding Box 一节中介绍到将图片划分成若干等分，例如 3\*3，那么一共就有9块，如下图示，我们可以很清楚的看到第二行第一块和第三块都有车，所以可以标出一个中心点坐标 $(b\_x,b\_y)$，这样我们就能通过最终的输出结果知道这两个框中有车。
 
-<img src="/images/deeplearning/C4W3-22_1.png" width="550" />
+{% image "/images/deeplearning/C4W3-22_1.png", width="550px" %}
 
 但是如果我们划分的数量变多之后呢？如下图示划分成了 19\*19，图中标出的 3 个黄框和 3 个绿框最终结果都会都会返回[$P\_x=1,b\_x=,b\_y=……$]，但是最后我们该信谁的呢？是这三个框真的有车，而且还不是同一辆车？还是只是同一辆车？所以就有了非极大值抑制来解决这个问题。
 
-<img src="/images/deeplearning/C4W3-23_1.png" width="550" />
+{% image "/images/deeplearning/C4W3-23_1.png", width="550px" %}
 
 > Non-max Suppression 做的就是清理这些检测结果，这样一辆车只检测一次，而不是每辆车都出发多次检测。
 
@@ -239,25 +239,25 @@ $$
 
 首先每个框会对是否有目标返回一个 $P\_c$ 的概率值 (也可以是 $P\_c\*C\_1\*C\_2\*C\_3$ 的概率之积)，如下图示：
 
-<img src="/images/deeplearning/C4W3-24.png" width="550" />
+{% image "/images/deeplearning/C4W3-24.png", width="550px" %}
 
 然后找到 $P\_c$ 最大的一个框，显然 0.9 的框有车的概率最大，所以该边框颜色高亮
 
-<img src="/images/deeplearning/C4W3-25.jpg" width="550" />
+{% image "/images/deeplearning/C4W3-25.jpg", width="550px" %}
 
 **然后算法遍历其他边框，找出与上一个边框的交并比大于 0.5 的边框**，很显然右边剩余两个边框符合条件，所以这两个边框变暗
 
-<img src="/images/deeplearning/C4W3-26.jpg" width="550" />
+{% image "/images/deeplearning/C4W3-26.jpg", width="550px" %}
 
 左边的车同理，不加赘述
 
-<img src="/images/deeplearning/C4W3-27.jpg" width="550" />
+{% image "/images/deeplearning/C4W3-27.jpg", width="550px" %}
 
 下面结合一个例子总结一下 **非极大值抑制** 算法的实现步骤：
 
 在这里假设只需要识别定位车辆即可，所以输出格式为 $P\_c,b\_x,b\_y,b\_h,b\_w$
 
-<img src="/images/deeplearning/C4W3-28.png" width="750" />
+{% image "/images/deeplearning/C4W3-28.png", width="750px" %}
 
 这个例子中将图像划分成 19\*19 方格，假设每个方格都已经计算出 $P\_c$ 的概率值
 
@@ -271,7 +271,7 @@ $$
 
 前面介绍了那么多，都只是识别单个物体，如果要同时识别多个物体该怎么办呢？而且识别的不同物体的中心点在同一个框中又该怎么呢 (如下图示，人和车的中心都在红点位置，处于同一个框中)？这时就需要使用 **Anchor Boxes** 了。
 
-<img src="/images/deeplearning/C4W3-29.jpg" width="400" />
+{% image "/images/deeplearning/C4W3-29.jpg", width="400px" %}
 
 Anchor Boxes 思路是对于不同物体事先采用不同的框，例如人相对于车属于瘦高的，所以使用下图中的 **Anchor Box 1**，相反车辆就使用** Anchor Box 2**.
 
@@ -283,7 +283,7 @@ Anchor Boxes 思路是对于不同物体事先采用不同的框，例如人相�
 >
 > 例如我们得到了图中人的边框信息值，然后经过计算发现其边框与 Anchor Box 1更为接近，所以最后将人的边框信息对应在前面，同理车辆边框信息对应在后面。
 
-<img src="/images/deeplearning/C4W3-30_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-30_1.png", width="750px" %}
 
 总结起来 **Anchor Box**算法 和 之前的算法区别如下：
 
@@ -297,23 +297,23 @@ Anchor Boxes 思路是对于不同物体事先采用不同的框，例如人相�
 
 例如下图中的红色框不仅要分配到其中心所在的图像上的格子中，而且还需要分配到与其交并比最大的 **Anchor Box** 中，即竖条的紫色方格。
 
-<img src="/images/deeplearning/C4W3-31_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-31_1.png", width="750px" %}
 
 回到本小节最开始的例子，最后的输出值如下图示：
 
 图中人的对应 **Anchor Box 1**， 输出值对应图中的黄色字体；车辆同理，对应绿色字体
 
-<img src="/images/deeplearning/C4W3-32_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-32_1.png", width="750px" %}
 
 > 如果两个对象所在一个格子，且两个对象圈出来的框也是一样的，这种情况非常非常少见，我们用其他方法来特殊处理.
 
 ## 9. YOLO Algorithm
 
-<img src="/images/deeplearning/C4W3-33_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-33_1.png", width="750px" %}
 
-<img src="/images/deeplearning/C4W3-34_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-34_1.png", width="750px" %}
 
-<img src="/images/deeplearning/C4W3-35_1.png" width="750" />
+{% image "/images/deeplearning/C4W3-35_1.png", width="750px" %}
 
 > YOLO Algorithm, that also encompasses many of the best ideas across the entire computer vision literature the relate to object detection.
 
@@ -323,7 +323,7 @@ Anchor Boxes 思路是对于不同物体事先采用不同的框，例如人相�
 
 候选区域，这些目前工作其实用的很少，但是还是非常有意义的，所以我作为可选视频可学习.​​​​
  
-<img src="/images/deeplearning/C4W3-36_1.png" width="750" /> 
+{% image "/images/deeplearning/C4W3-36_1.png", width="750px" %} 
 
 吴大大认为 YOLO 这种只看一次的算法，长远而言是CV领域更有希望的方向
 

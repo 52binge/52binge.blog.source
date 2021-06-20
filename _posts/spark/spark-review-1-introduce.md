@@ -6,7 +6,7 @@ tags: [spark]
 ---
 
 
-<img src="/images/spark/spark-1.1-logo.png" width="350" alt="Spark" />
+{% image "/images/spark/spark-1.1-logo.png", width="350px", alt="Spark" %}
 
 <!--more-->
 
@@ -16,7 +16,7 @@ Spark 兼顾数据仓库、流处理、图计算 等多种计算范式，大数�
 
 > - [spark.apache.org](http://spark.apache.org)
 
-<img src="/images/spark/spark-1.2.png" width="650" alt="localhost:8080" /> 
+{% image "/images/spark/spark-1.2.png", width="650px", alt="localhost:8080" %} 
 
 ## 1. Spark 的历史与发展
 
@@ -184,7 +184,7 @@ scala>
 
         http：//masterIp:8080
 
-<img src="/images/spark/spark-introduce-05.png" width="740" alt="http://localhost:8080/" />
+{% image "/images/spark/spark-introduce-05.png", width="740px", alt="http://localhost:8080/" %}
 
 ### 4.4 Spark quick start
 

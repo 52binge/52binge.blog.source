@@ -6,7 +6,7 @@ tags: [entropy]
 toc: true
 ---
 
-<img class="img-fancy" src="/images/ml/info/entropy-1.png" width="700" border="0" alt="Claude Shannon"/>
+<img class="img-fancy" src="/images/ml/info/entropy-1.png", width="700" border="0px", alt="Claude Shannon"%}
 
 <!--<a href="/2019/06/02/ml/Random_Forest_and_GBDT/" target="_self" style="display:block; margin:0 auto; background:url('/images/ml/ensumble/ensumble-1.png') no-repeat 0 0 / contain; height:304px; width:550px;"></a>
 -->

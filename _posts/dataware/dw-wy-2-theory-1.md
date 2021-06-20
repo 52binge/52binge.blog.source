@@ -5,7 +5,7 @@ categories: [data-warehouse]
 tags: [data warehouse]
 ---
 
-<img src="/images/dataware/dw-wy-2-logo.png" width="350" alt="" />
+{% image "/images/dataware/dw-wy-2-logo.png", width="350px", alt="" %}
 
 <!-- more -->
 
@@ -13,7 +13,7 @@ tags: [data warehouse]
 
 ### 1.1 范式建模
 
-<img src="/images/dataware/dw-wy-2.1.jpg" width="950" alt="1 2 3 NF" />
+{% image "/images/dataware/dw-wy-2.1.jpg", width="950px", alt="1 2 3 NF" %}
 
 ### 1.2 范式建模 优缺点
 
@@ -41,7 +41,7 @@ tags: [data warehouse]
 
 ## 2. 维度建模
 
-<img src="/images/dataware/dw-wy-2.2.jpg" width="870" alt="Kimball" />
+{% image "/images/dataware/dw-wy-2.2.jpg", width="870px", alt="Kimball" %}
 
 ### 2.1 维度建模优缺点
 
@@ -71,25 +71,25 @@ tags: [data warehouse]
 
 ## 2. 维度建模的4个步骤
 
-<img src="/images/dataware/dw-wy-2.3.png" width="800" alt="Kimball" />
+{% image "/images/dataware/dw-wy-2.3.png", width="800px", alt="Kimball" %}
 
 订单表：
 
-<img src="/images/dataware/dw-wy-2.4.jpg" width="850" alt="Kimball" />
+{% image "/images/dataware/dw-wy-2.4.jpg", width="850px", alt="Kimball" %}
 
 建模过程:
 
-<img src="/images/dataware/dw-wy-2.5.jpg" width="850" alt="Kimball" />
+{% image "/images/dataware/dw-wy-2.5.jpg", width="850px", alt="Kimball" %}
 
 ## 3. 事实表的基本概念
 
 ### 3.1 度量
 
-<img src="/images/dataware/dw-wy-2.6.jpg" width="850" alt="事实表的度量" />
+{% image "/images/dataware/dw-wy-2.6.jpg", width="850px", alt="事实表的度量" %}
 
 ### 3.2 一致性
 
-<img src="/images/dataware/dw-wy-2.7.jpg" width="850" alt="事实表的一致性" />
+{% image "/images/dataware/dw-wy-2.7.jpg", width="850px", alt="事实表的一致性" %}
 
 ## 4. 维度建模 - 常见事实表
 

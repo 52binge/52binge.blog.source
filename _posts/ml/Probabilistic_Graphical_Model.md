@@ -6,7 +6,7 @@ tags: [entropy]
 toc: true
 ---
 
-<img class="img-fancy" src="/images/ml/pgm/pgm-01.png" width="550" border="0" alt="Probabilistic Graphical Model"/>
+<img class="img-fancy" src="/images/ml/pgm/pgm-01.png", width="550" border="0px", alt="Probabilistic Graphical Model"%}
 
 <!--<a href="/2019/06/02/ml/Random_Forest_and_GBDT/" target="_self" style="display:block; margin:0 auto; background:url('/images/ml/ensumble/ensumble-1.png') no-repeat 0 0 / contain; height:304px; width:550px;"></a>
 -->
@@ -36,7 +36,7 @@ toc: true
 
 概率图模型最为“精彩”的部分就是能够用简洁清晰的图示形式表达概率生成的关系:
 
-<img src="/images/ml/pgm/pgm-02.png" width="500" />
+{% image "/images/ml/pgm/pgm-02.png", width="500px" %}
 
 在给定A的条件下B和C是条件独立的，基于条件概率的定义可得：
 
@@ -76,7 +76,7 @@ $$
 
 其中 $x=\left(x\_{1}, x\_{2}, \ldots \ldots, x\_{n}\right)$, 为样本对应的特征向量， $P(x)$ 为样本的先验概率。
 
-<img src="/images/ml/pgm/pgm-03.png" width="120" />
+{% image "/images/ml/pgm/pgm-03.png", width="120px" %}
 
 ## 3. Generative vs Discriminative
 

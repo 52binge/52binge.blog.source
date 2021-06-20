@@ -39,7 +39,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/matplotlib-7-tick-output_1_0.png" height="100" width="700" />
+{% image "/images/python/matplotlib-7-tick-output_1_0.png" height="100", width="700px" %}
 </div>
 
 ## 调整坐标 bbox
@@ -57,7 +57,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/matplotlib-7-tick-output_3_0.png" height="100" width="700" />
+{% image "/images/python/matplotlib-7-tick-output_3_0.png" height="100", width="700px" %}
 </div>
 
 [img1]: /images/python/matplotlib-7-tick-output_1_0.png

@@ -6,7 +6,7 @@ tags: [spark]
 ---
 
 
-<img src="/images/spark/spark-3.0-rdd-logo.png" width="550" alt="Spark RDD Feature" />
+{% image "/images/spark/spark-3.0-rdd-logo.png", width="550px", alt="Spark RDD Feature" %}
 
 <!--more-->
 

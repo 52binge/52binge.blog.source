@@ -5,7 +5,7 @@ categories: [hadoop]
 tags: [hdfs]
 ---
 
-<img src="/images/hadoop/hadoop-hdfs.webp" width="450" alt="Hadoop HDFS" />
+{% image "/images/hadoop/hadoop-hdfs.webp", width="450px", alt="Hadoop HDFS" %}
 
 <!--more-->
 
@@ -15,15 +15,15 @@ tags: [hdfs]
 - **HDFS 是如何从架构上解决单机内存受限问题的**
 - **揭秘 HDFS 能支撑亿级流量的核心源码设计**
 
-<img src="/images/hadoop/hdfs-4.jpg" width="" alt="Hadoop HDFS" />
+{% image "/images/hadoop/hdfs-4.jpg", width="px", alt="Hadoop HDFS" %}
 
 HDFS1 是一个 `主从式` 架构, 主节点只有一个叫 `NameNode`. 从节点有多个叫 `DataNode`
 
-<img src="/images/hadoop/hdfs-5_meitu_1.jpg"  alt="Hadoop HDFS" />
+{% image "/images/hadoop/hdfs-5_meitu_1.jpg"  alt="Hadoop HDFS" %}
 
 ## 1. HDFS1 架构
 
-<img src="/images/hadoop/hdfs-6_meitu_1.jpg"  alt="HDFS" />
+{% image "/images/hadoop/hdfs-6_meitu_1.jpg"  alt="HDFS" %}
 
 ### 1.1 HDFS1 架构缺陷
 
@@ -32,11 +32,11 @@ HDFS1 是一个 `主从式` 架构, 主节点只有一个叫 `NameNode`. 从节�
 
 ### 1.2 单点故障 Solution
 
-<img src="/images/hadoop/hdfs-7.jpg" width="800" alt="HDFS" />
+{% image "/images/hadoop/hdfs-7.jpg", width="800px", alt="HDFS" %}
 
 ### 1.3 内存受限 Solution
 
-<img src="/images/hadoop/hdfs-8.jpg" width="800" alt="HDFS" />
+{% image "/images/hadoop/hdfs-8.jpg", width="800px", alt="HDFS" %}
 
 ## 2. HDFS2 结构
 

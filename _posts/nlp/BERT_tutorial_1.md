@@ -5,7 +5,7 @@ categories: nlp
 tags: BERT
 ---
 
-<img src="/images/nlp/bert/bert_update_logo.jpg" width="500" alt="bert" />
+{% image "/images/nlp/bert/bert_update_logo.jpg", width="500px", alt="bert" %}
 
 <!-- more -->
 
@@ -101,7 +101,7 @@ tags: BERT
 
 BERT: Pre-training of **`Deep Bidirectional Transformers for Language Understanding`**.
 
-<img src="/images/nlp/bert/bert_su.png" width="750" alt="Bert的预训练和微调（图片来自Bert的原论文)" />
+{% image "/images/nlp/bert/bert_su.png", width="750px", alt="Bert的预训练和微调（图片来自Bert的原论文)" %}
 
 ## 2. 原理篇
 
@@ -129,7 +129,7 @@ Jay Alammar's Blog
 
 > - [图示详解BERT模型的输入与输出](https://www.cnblogs.com/gczr/p/11785930.html)
 
-<img src="/images/nlp/bert/bert_input_example.png" width="600" alt="bert input" />
+{% image "/images/nlp/bert/bert_input_example.png", width="600px", alt="bert input" %}
 
  More Reading：
 

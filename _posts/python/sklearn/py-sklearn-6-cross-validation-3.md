@@ -50,7 +50,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/sklearn-6-cross-validation-3-output_1_1.png" width="400" />
+{% image "/images/python/sklearn-6-cross-validation-3-output_1_1.png", width="400px" %}
 </div>
 
 由图中可以明显看到 `gamma` 值大于 `0.001`，模型就会有过拟合(`Overfitting`)的问题。

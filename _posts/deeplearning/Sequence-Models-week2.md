@@ -46,7 +46,7 @@ tags: deeplearning.ai
 
 > 这里还介绍了一个 `t-SNE` 算法，因为词性表本身是一个很高维度的空间，通过这个算法压缩到二维的可视化平面上，每一个单词 嵌入 属于自己的一个位置，相似的单词离的近，没有共性的单词离得远，这个就是 “Word Embeddings” 的概念.
 
-<img src="/images/deeplearning/C5W2-2.png" width="500" />
+{% image "/images/deeplearning/C5W2-2.png", width="500px" %}
 
 > 上图通过聚类将词性相类似的单词在二维空间聚为一类.
 
@@ -86,7 +86,7 @@ No. | sencentce | replace word | target
 
 这个问题被称作词汇的类比问题，通过研究词嵌的特征可以解决这样的问题.
 
-<img src="/images/deeplearning/C5W2-3_1.png" width="750" />
+{% image "/images/deeplearning/C5W2-3_1.png", width="750px" %}
 
 数学的表达式为：
 
@@ -110,7 +110,7 @@ $$
 
 如下图用几何方式能够更容易理解，即只要找到与向量 $\vec{AB}$ 最接近平行的向量 $\vec{CD}$ 即可.
 
-<img src="/images/deeplearning/C5W2-4_1.png" width="750" />
+{% image "/images/deeplearning/C5W2-4_1.png", width="750px" %}
 
 ## 4. Embedding Matrix
 
@@ -132,7 +132,7 @@ $$
 >
 > “I want a glass of orange `juice`”
 
-<img src="/images/deeplearning/C5W2-5_1.png" width="750" />
+{% image "/images/deeplearning/C5W2-5_1.png", width="750px" %}
 
 在这个训练模式中，是通过全部的单词去预测最后一个单词然后反向传播更新词嵌表 $E$
 
@@ -175,13 +175,13 @@ $$
 l(\hat{y},y)=\sum\_{i=1}^{10000}y\_ilog\hat{y\_i}
 $$
 
-<img src="/images/deeplearning/C5W2-6_1.png" width="750" />
+{% image "/images/deeplearning/C5W2-6_1.png", width="750px" %}
 
 在skip gram中有一个不足是 **softmax** 作为激活函数需要的运算量太大，在上限为10000个单词的词库中就已经比较慢了。一种补救的办法是用一个它的变种 “**Hierachical Softmax** (分层的Softmax)”，通过类似二叉树的方法提高训练的效率
 
 例如一些常见的单词，如**the**、**of**等就可以在很浅的层次得到，而像**durian**这种少用的单词则在较深的层次得到
 
-<img src="/images/deeplearning/C5W2-7_1.png" width="750" />
+{% image "/images/deeplearning/C5W2-7_1.png", width="750px" %}
 
 ## 7. Negative Sampling 负采样
 
@@ -196,7 +196,7 @@ orange | king | 0
 orange | book | 0
 orange | the | 0
 
-<img src="/images/deeplearning/C5W2-8_1.png" width="700" />
+{% image "/images/deeplearning/C5W2-8_1.png", width="700px" %}
 
 负取样的个数 **k** 由数据量的大小而定，上述例子中为3. 实际中数据量大则 k = 2 ~ 5，数据量小则可以相对大一些 k = 5 ~ 20
 
@@ -215,7 +215,7 @@ $$
 P(w\_i)=\frac{f(w\_i^{\frac{3}{4}})} {\sum\_{j=1}^{10000}f(w\_j^{\frac{3}{4}})}
 $$
 
-<img src="/images/deeplearning/C5W2-9_1.png" width="750" />
+{% image "/images/deeplearning/C5W2-9_1.png", width="750px" %}
 
 ## 8. GloVe Word Vectors
 
@@ -227,11 +227,11 @@ GloVe(Global vectors for word representation)虽不像Word2Vec模型那样流行
 
 商家可以通过对这些数据来构建一个情绪分类器，从而可以在一些社交平台上如微博、QQ等大家的文字评论然后对应输出相应的星级等级，这样就可以更容易知道自家店是蒸蒸日上还是日落西山了,hehehe。
 
-<img src="/images/deeplearning/C5W2-10_1.png" width="750" />
+{% image "/images/deeplearning/C5W2-10_1.png", width="750px" %}
 
 可以看到下图中的模型先将评语中各个单词通过 词嵌表(数据量一般比较大，例如有100Billion的单词数) 转化成对应的特征向量，然后对所有的单词向量做求和或者做平均，然后构建Softmax分类器，最后输出星级评级。
 
-<img src="/images/deeplearning/C5W2-11_1.png" width="750" />
+{% image "/images/deeplearning/C5W2-11_1.png", width="750px" %}
 
 但是上面的模型存在一个问题，一般而言如果评语中有像"good、excellent"这样的单词，一般都是星级评分较高的评语，但是该模型对下面这句评语就显得无能为力了：
 
@@ -239,11 +239,11 @@ GloVe(Global vectors for word representation)虽不像Word2Vec模型那样流行
 
 该评语中出现大量的good，如果直接做求和或者平均运算，经过分类器得到的输出很大概率上是高星级评分的，但这显然与该评语的本意不符.
 
-<img src="/images/deeplearning/C5W2-12_1.png" width="750" />
+{% image "/images/deeplearning/C5W2-12_1.png", width="750px" %}
 
 之所以上面的模型存在那样的缺点，就是因为它没有把单词的时序考虑进去，所以我们可以使用RNN构建模型来解决这种问题。RNN模型如下图示：
 
-<img src="/images/deeplearning/C5W2-13_1.png" width="750" />
+{% image "/images/deeplearning/C5W2-13_1.png", width="750px" %}
 
 另外使用RNN模型还有另一个好处，假设测试集中的评语是这样的
 
@@ -251,7 +251,7 @@ GloVe(Global vectors for word representation)虽不像Word2Vec模型那样流行
 
 该评语只是将**lacking in**替换成了**absent of**，而且我们即使假设**absent**并没有出现在训练集中，但是因为词嵌表很庞大，所以词嵌表中包含**absent**，所以算法依旧可以知道**absent**和**lacking**有相似之处，最后输出的结果也依然可以保持正确。
 
-<img src="/images/deeplearning/C5W2-14_1.png" width="750" />
+{% image "/images/deeplearning/C5W2-14_1.png", width="750px" %}
 
 ## 10. Debiasing Word Embeddings
 
@@ -271,13 +271,13 @@ GloVe(Global vectors for word representation)虽不像Word2Vec模型那样流行
 
 > So word embeddings can reflect the gender, ethnicity, age, sexual, orientation, and other biases of the text used to train the model. One that I'm especially passionate about is bias relating to socioeconomic status. I think that every person, whether you come from a wealthy family, or a low income family, or anywhere in between, I think everyone should have a great opportunities.
 
-<img src="/images/deeplearning/C5W2-15_1.png" width="750" />
+{% image "/images/deeplearning/C5W2-15_1.png", width="750px" %}
 
 下面将主要从性别歧视上来举例说明如何让机器学习消除偏见。
 
 下图展示了一些单词，你可以在心里先想想你看到这些单词的第一时间认为他们所对应的性别是什么吧~~~
 
-<img src="/images/deeplearning/C5W2-16_1.png" width="450" />
+{% image "/images/deeplearning/C5W2-16_1.png", width="450px" %}
 
 ### 1. 识别偏见方向
 
@@ -293,7 +293,7 @@ $$
 
 为方便理解，已在图中画出偏见方向，其余299D(除gender以外的其他单词特征)向量与偏见方向正交，也在下图中画出.
 
-<img src="/images/deeplearning/C5W2-17_1.png" width="700" />
+{% image "/images/deeplearning/C5W2-17_1.png", width="700px" %}
 
 ### 2. 词性中和
 
@@ -301,17 +301,17 @@ $$
 
 而图中的 **babysister、doctor** 则需要中和，具体方法就是将该词像非偏见方向投影得到一个新的坐标.
 
-<img src="/images/deeplearning/C5W2-18_1.png" width="700" />
+{% image "/images/deeplearning/C5W2-18_1.png", width="700px" %}
 
 ### 3. 单词对等距离化
 
 如下图示，虽然 **babysister** 中和化，但是它还是离 **grandmother** 更近，所以依旧带有偏见
 
-<img src="/images/deeplearning/C5W2-19_1.png" width="700" />
+{% image "/images/deeplearning/C5W2-19_1.png", width="700px" %}
 
 所以我们还需要将grandmother、grandfather这类与性别有关的对应词等距分布在非偏见方向的两侧(红色剪头表示移动方向，红色点表示移动后的新坐标)，如下图示。
 
-<img src="/images/deeplearning/C5W2-20_1.png" width="700" />
+{% image "/images/deeplearning/C5W2-20_1.png", width="700px" %}
 
 ## 11. Reference
 

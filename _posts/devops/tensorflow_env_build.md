@@ -5,7 +5,7 @@ categories: devops
 tags: Anaconda
 ---
 
-<img src="/images/devops/Anaconda-Jupyter-Tensorflow.png" width="500" alt="Anaconda+Tensorflow" />
+{% image "/images/devops/Anaconda-Jupyter-Tensorflow.png", width="500px", alt="Anaconda+Tensorflow" %}
 
 <!-- more -->
 

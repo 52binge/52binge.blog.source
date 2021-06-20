@@ -5,7 +5,7 @@ categories: [data-warehouse]
 tags: [data warehouse, SQL]
 ---
 
-<img src="/images/sql/sql-window-fun-4.png" width="580" alt="（Window Function）是 SQL2003 标准中定义的一项新特性，并在 SQL2011、SQL2016 中完善" />
+{% image "/images/sql/sql-window-fun-4.png", width="580px", alt="（Window Function）是 SQL2003 标准中定义的一项新特性，并在 SQL2011、SQL2016 中完善" %}
 
 <!-- more -->
 
@@ -25,7 +25,7 @@ window_function (expression) OVER (
 # 2. ORDER BY 表示将各个分区内的数据按 order_list 进行排序
 ```
 
-<img src="/images/sql/sql-window-fun-5.jpg" width="780" alt="" />
+{% image "/images/sql/sql-window-fun-5.jpg", width="780px", alt="" %}
 
 最后一项表示 Frame 的定义，即：当前窗口包含哪些数据？
 
@@ -34,7 +34,7 @@ type | frame sql | example
 **ROWS** | ROWS BETWEEN 3 PRECEDING AND 3 FOLLOWING | 表示往前 3 行到往后 3 行，一共 7 行数据（或小于 7 行，如果碰到了边界）
 **RANGE** | RANGE BETWEEN 3 PRECEDING AND 3 FOLLOWING | 表示所有值在 $[c-3,c+3]$ 这个范围内的行，$c$ 为当前行的值
 
-<img src="/images/sql/sql-window-fun-6.png" width="780" alt="" />
+{% image "/images/sql/sql-window-fun-6.png", width="780px", alt="" %}
 
 逻辑语义上说，一个窗口函数的计算“过程”如下：
 
@@ -70,7 +70,7 @@ FROM sales
 # 注：Frame 定义并非所有窗口函数都适用，比如 ROW_NUMBER()、RANK()、LEAD() 等。这些函数总是应用于整个分区，而非当前 Frame
 ```
 
-<img src="/images/sql/sql-window-fun-7.png" width="780" alt="SQL 各部分的逻辑执行顺序" />
+{% image "/images/sql/sql-window-fun-7.png", width="780px", alt="SQL 各部分的逻辑执行顺序" %}
 
 ## 2. Window Function, Hive/Spark
 
@@ -83,9 +83,9 @@ create table window_test_table (
 )ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
 ```
 
-<img src="/images/sql/sql-window-fun-1.jpg" width="580" alt="" />
+{% image "/images/sql/sql-window-fun-1.jpg", width="580px", alt="" %}
 
-<img src="/images/sql/sql-window-fun-2.jpg" width="580" alt="" />
+{% image "/images/sql/sql-window-fun-2.jpg", width="580px", alt="" %}
 
 
 业务方的实现方法：
@@ -101,7 +101,7 @@ select
 from window_test_table order by rank;
 ```
 
-<img src="/images/sql/sql-window-fun-3.jpg" width="580" alt="" />
+{% image "/images/sql/sql-window-fun-3.jpg", width="580px", alt="" %}
 
 ## 2. Window Function Principle
 
@@ -140,7 +140,7 @@ No. | title | example
 
 数据流转如下图：
 
-<img src="/images/sql/sql-window-fun-8.jpg" width="880" alt="" />
+{% image "/images/sql/sql-window-fun-8.jpg", width="880px", alt="" %}
 
 
 ## Reference

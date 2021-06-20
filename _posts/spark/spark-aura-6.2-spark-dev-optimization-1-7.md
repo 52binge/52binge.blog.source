@@ -5,7 +5,7 @@ categories: [spark]
 tags: [spark]
 ---
 
-<img src="/images/spark/spark-aura-6.2-logo.png" width="550" alt="" />
+{% image "/images/spark/spark-aura-6.2-logo.png", width="550px", alt="" %}
 
 <!-- more -->
 
@@ -58,7 +58,7 @@ map(x => x*2)
 map(x => 2 * (x+1))
 ```
 
-<img src="/images/spark/spark-aura-6.2.1.png" alt="" />
+{% image "/images/spark/spark-aura-6.2.1.pngpx", alt="" %}
 
 
 ## 3. 对多次使用的RDD进行持久化
@@ -87,7 +87,7 @@ rdd1.map.reduce.groupByKey
 > 
 > 所以为了尽快的提交任务的执行效率, 尽量把重复利用的数据持久化到内存中.
 
-<img src="/images/spark/spark-aura-6.2.2.png" alt="" />
+{% image "/images/spark/spark-aura-6.2.2.pngpx", alt="" %}
 
 ## 4. 尽量避免使用 Shuffle 类算子
 
@@ -140,7 +140,7 @@ spark 实现伪代码
 
 ## 5. 使用 map-side 预聚合(combina)的 shuffle 操作
 
-<img src="/images/spark/spark-aura-6.3.1.png" width="850" alt="" />
+{% image "/images/spark/spark-aura-6.3.1.png", width="850px", alt="" %}
 
 shuffle 类算子有第3个缺点：
 

@@ -5,15 +5,15 @@ categories: [hadoop]
 tags: [hdfs]
 ---
 
-<img src="/images/hadoop/hadoop-hdfs.webp" width="450" alt="Hadoop HDFS" />
+{% image "/images/hadoop/hadoop-hdfs.webp", width="450px", alt="Hadoop HDFS" %}
 
 <!--more-->
 
 分布式文件系统HDFS: 核心原理与操作
 
-<img src="/images/hadoop/hadoop-hdfs-1.png" width="900" alt="Hadoop HDFS" />
+{% image "/images/hadoop/hadoop-hdfs-1.png", width="900px", alt="Hadoop HDFS" %}
 
-<img src="/images/hadoop/hadoop-hdfs-2.png" width="900" alt="Hadoop HDFS" />
+{% image "/images/hadoop/hadoop-hdfs-2.png", width="900px", alt="Hadoop HDFS" %}
 
 **如何学习大数据?**
 
@@ -68,7 +68,7 @@ Q2： 硬盘不够安全
  2. Web Console： 端口 9870
  3. Java程序
 
-<img src="/images/hadoop/hadoop-hdfs-3.png" width="800" alt="使用 Java API 上传数据到HDFS" />
+{% image "/images/hadoop/hadoop-hdfs-3.png", width="800px", alt="使用 Java API 上传数据到HDFS" %}
 
 ## 4. HDFS 进阶
 

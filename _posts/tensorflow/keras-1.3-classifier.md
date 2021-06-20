@@ -6,7 +6,7 @@ categories: tensorflow
 tags: keras
 ---
 
-<img src="/images/tensorflow/keras-Classifier.png" width="550" alt="Classifier in Keras"/>
+{% image "/images/tensorflow/keras-Classifier.png", width="550px", alt="Classifier in Keras"%}
 
 <!-- more -->
 

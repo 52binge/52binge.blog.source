@@ -8,7 +8,7 @@ description: 本篇文章记录了我对 Volantis 主题做 Pjax 兼容的种种
 thumbnail: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/heartmate/icon.png
 ---
 
-<img src="/images/dataware/sm-data-warehouse-logo-1.jpg" width="580" alt="1" />
+{% image "/images/dataware/sm-data-warehouse-logo-1.jpg", width="580px", alt="1" %}
 
 <!-- more -->
 
@@ -30,7 +30,7 @@ No. | Title | Tech
 
 金融行业, 信贷
 
-<img src="/images/dataware/dataware-modeling-step-2.jpg" width="800" alt="业务过程的简易图" />
+{% image "/images/dataware/dataware-modeling-step-2.jpg", width="800px", alt="业务过程的简易图" %}
 
 ## 3. 数据调研
 
@@ -168,7 +168,7 @@ No. | data warehosue 建模体系 | description
 
 > ods_table_name / dw_fact_topic_table_name /  dm_fact_mart_name_table_name
 
-<img src="/images/dataware/dataware-modeling-step-1.png" width="580" alt="粒度定义意味着对 事实表行 Fact Row 实际代表的内容给出明确的说明， 优先考虑最有原子性的信息而开发的维度模型" />
+{% image "/images/dataware/dataware-modeling-step-1.png", width="580px", alt="粒度定义意味着对 事实表行 Fact Row 实际代表的内容给出明确的说明， 优先考虑最有原子性的信息而开发的维度模型" %}
 
 <details>
 <summary>Business Pipeline</summary>

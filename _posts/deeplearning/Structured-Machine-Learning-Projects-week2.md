@@ -46,7 +46,7 @@ Image	| Dog	| Great cats(大型猫科动物，如狮子) | Blurry(图片模糊) 
 
 机器预测可能会出错，那么人当然也有可能会出错。所以如果训练集和验证集中认为添加的标签Y出现误差该怎么处理呢？
 
-<img src="/images/deeplearning/C3W2-2_1.png" width="700" />
+{% image "/images/deeplearning/C3W2-2_1.png", width="700px" %}
 
 这里分两种情况：
 
@@ -92,11 +92,11 @@ Image	| Dog	| Great cats(大型猫科动物，如狮子) | Blurry(图片模糊) 
 
 ## 4. Training and testing on different distributions
 
-<img src="/images/deeplearning/C3W2-3_1.png" width="700" />
+{% image "/images/deeplearning/C3W2-3_1.png", width="700px" %}
 
 ## 5. Bias and Variance with mismatched data distributions
 
-<img src="/images/deeplearning/C3W2-4_1.png" width="700" />
+{% image "/images/deeplearning/C3W2-4_1.png", width="700px" %}
 
 对上面的PPT截图进行解释：
 
@@ -157,7 +157,7 @@ Image	| Dog	| Great cats(大型猫科动物，如狮子) | Blurry(图片模糊) 
 
 ## 6. Addressing data mismatch
 
-<img src="/images/deeplearning/C3W2-5_1.png" width="700" />
+{% image "/images/deeplearning/C3W2-5_1.png", width="700px" %}
 
 > 虽然我们使用数据合成已经在语音识别方面取得了不错的效果提升
 > 
@@ -187,7 +187,7 @@ Image	| Dog	| Great cats(大型猫科动物，如狮子) | Blurry(图片模糊) 
 >
 > 现在很火的无人驾驶汽车，在行驶路上需要识别很多类型的物体，如行人、红绿灯、指路标志等等，所以此时可以使用 **Multi-task learning** 来实现。神经网络示意图如下：
 
-<img src="/images/deeplearning/C3W2-6_2.png" width="750" />
+{% image "/images/deeplearning/C3W2-6_2.png", width="750px" %}
 
 > 如图示，最后的 $\hat{y}$ 是一个有4元素的向量，假设分别是行人、汽车、停车标志、信号灯。如果识别出图片中有哪一个元素，对应位置则输出1。
 
@@ -195,7 +195,7 @@ Image	| Dog	| Great cats(大型猫科动物，如狮子) | Blurry(图片模糊) 
 
 **适用情况：**
 
-<img src="/images/deeplearning/C3W2-7_1.png" width="750" />
+{% image "/images/deeplearning/C3W2-7_1.png", width="750px" %}
 
 > 最后，Andrew Ng 说在实际中迁移学习使用频率要远高于多任务学习，有个例外就是视觉检测项目中多任务学习比较多.
 
@@ -207,7 +207,7 @@ Image	| Dog	| Great cats(大型猫科动物，如狮子) | Blurry(图片模糊) 
 
 > 假如咱们走进一个摄像头，最开始离得较远的时候摄像头捕捉到的是我们的全身，此时系统不会将这种照片喂给模型，而是通过算法找到人脸的位置，然后切割放大，最后喂给模型进行识别.
 
-<img src="/images/deeplearning/C3W2-8_1.png" width="700" />
+{% image "/images/deeplearning/C3W2-8_1.png", width="700px" %}
 
 > **总结起来就是：**
 >

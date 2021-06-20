@@ -5,7 +5,7 @@ categories: [English, IELTS]
 tags: IELTS
 ---
 
-<img src="/images/english/ielts/listening/he-logo-5.jpg" width="550" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/he-logo-5.jpg", width="550px", alt="Are you ready?"%}
 
 <!-- more -->
 
@@ -32,29 +32,29 @@ rather than
 hardly
 had expected 本来以为
 
-<img src="/images/english/ielts/listening/he-5-1.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/he-5-1.png", width="700px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/listening/he-5-2.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/he-5-2.png", width="700px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/listening/he-5-3.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/he-5-3.png", width="700px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/listening/he-5-4.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/he-5-4.png", width="700px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/listening/he-5-5.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/he-5-5.png", width="700px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/listening/he-5-6.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/he-5-6.png", width="700px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/listening/he-5-7.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/he-5-7.png", width="700px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/listening/he-5-8.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/he-5-8.png", width="700px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/listening/he-5-9.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/he-5-9.png", width="700px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/listening/he-5-example-1.png" width="800" alt="Good 1"/>
+{% image "/images/english/ielts/listening/he-5-example-1.png", width="800px", alt="Good 1"%}
 
-<img src="/images/english/ielts/listening/he-5-10.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/he-5-10.png", width="700px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/listening/he-5-example-2.png" width="800" alt="Good 1"/>
+{% image "/images/english/ielts/listening/he-5-example-2.png", width="800px", alt="Good 1"%}
 
-<img src="/images/english/ielts/listening/he-5-11.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/he-5-11.png", width="700px", alt="Are you ready?"%}
 

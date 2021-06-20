@@ -7,7 +7,7 @@ tags: Metric
 ---
 
 
-<img class="img-fancy" src="/images/ml/metric/metric-1.gif" width="580" border="0" alt="机器学习性能评估指标"/>
+<img class="img-fancy" src="/images/ml/metric/metric-1.gif", width="580" border="0px", alt="机器学习性能评估指标"%}
 
 <!--<a href="/2019/06/02/ml/Random_Forest_and_GBDT/" target="_self" style="display:block; margin:0 auto; background:url('/images/ml/ensumble/ensumble-1.png') no-repeat 0 0 / contain; height:304px; width:550px;"></a>
 -->
@@ -20,7 +20,7 @@ tags: Metric
 
 本文将谈谈机器学习中，常用的性能评估指标：
 
-<img class="img-fancy" src="/images/ml/metric/metric-2.jpg" width="600" border="0" alt=""/>
+<img class="img-fancy" src="/images/ml/metric/metric-2.jpg", width="600" border="0px", alt=""%}
 
 关于模型评估的基础概念:
 
@@ -46,7 +46,7 @@ $$
 
 正反比例严重失衡，则没意义，存在 accuracy paradox 现象.
 
-<img src="/images/ml/metric/metric-3.jpg" width="800" alt=""/>
+{% image "/images/ml/metric/metric-3.jpg", width="800px", alt=""%}
 
 > accuracy 准确率 = (TP+TN)/(TP+TN+FP+FN), **准确率可以判断总的正确率**
 
@@ -54,7 +54,7 @@ $$
 
 precision 查准率 (80% = 你一共预测了100个正例，80个是对的正例)
 
-<img src="/images/ml/metric/metric-4.jpg" width="800" alt=""/>
+{% image "/images/ml/metric/metric-4.jpg", width="800px", alt=""%}
 
 > Precision = TP/(TP+FP)
 
@@ -62,11 +62,11 @@ precision 查准率 (80% = 你一共预测了100个正例，80个是对的正例
 
 recall (样本中的正例有多少被预测正确 TPR = TP/(TP+FN))
 
-<img src="/images/ml/metric/metric-5.jpg" width="800" alt=""/>
+{% image "/images/ml/metric/metric-5.jpg", width="800px", alt=""%}
 
 ### 1.4 F1-score
 
-<img src="/images/ml/metric/metric-16.jpg" width="280" alt=""/>
+{% image "/images/ml/metric/metric-16.jpg", width="280px", alt=""%}
 
 **multi-class classification**
 
@@ -88,7 +88,7 @@ precision & recall
 
 P-R曲线的横轴是召回率，纵轴是精确率。对于一个排序模型来说，其P-R曲线上的一个点代表着，在某一阈值下，模型将大于该阈值的结果判定为正样本， 小于该阈值的结果判定为负样本，此时返回结果对应的召回率和精确率。
 
-<img src="/images/ml/metric/metric-15.jpg" width="400" alt=""/>
+{% image "/images/ml/metric/metric-15.jpg", width="400px", alt=""%}
 
 > 整条 P-R 曲线是通过将阈值从高到低移动而生成的。 实线：A model， 虚线：B model
 >
@@ -104,7 +104,7 @@ ROC curve （TPR 纵轴，FPR 横轴，TP（真正率）和 FP（假正率），
 >
 > TPR = recall = 灵敏度 = P（X=1 | Y=1）， FPR = 特异度 = P（X=0 | Y=0）
 
-<img src="/images/ml/metric/metric-6.jpg" width="800" alt=""/>
+{% image "/images/ml/metric/metric-6.jpg", width="800px", alt=""%}
 
 > **注意：** ROC 曲线是 FPR 越小，TPR 越大 最好. (也就是曲线 x 轴越小，y轴越大 最好)
 >
@@ -114,7 +114,7 @@ ROC curve （TPR 纵轴，FPR 横轴，TP（真正率）和 FP（假正率），
 
 与前面的P-R曲线类似， ROC曲线是通过不断移动分类器的“截断点”来生成曲线上的一组关键点的, 截断点指的是区分正负预测结果的阈值:
 
-<img src="/images/ml/metric/metric-7.png" width="550" alt=""/>
+{% image "/images/ml/metric/metric-7.png", width="550px", alt=""%}
 
 > (1). 还有一种更直观地绘制ROC的方法。根据样本标签统计正负样本数量，假设正样本数量 P，负样本数量 N.
 > 
@@ -178,7 +178,7 @@ $$
 
 **余弦相似度 ：** 坐标系中两个向量，来计算两向量之间的夹角, 值域 [-1, 1]
 
-<img src="/images/ml/metric/metric-8.jpg" width="390" alt=""/>
+{% image "/images/ml/metric/metric-8.jpg", width="390px", alt=""%}
 
 **余弦距离 ：**  值域 [0, 1]
 
@@ -188,27 +188,27 @@ $$
 
 **欧式距离 ：** 坐标系中两个点，来计算两点之间的距离；
 
-<img src="/images/ml/metric/metric-9.png" width="300" alt=""/>
+{% image "/images/ml/metric/metric-9.png", width="300px", alt=""%}
 
 假设二维空间两个点：
 
-<img src="/images/ml/metric/metric-10.svg" width="200" alt=""/>
+{% image "/images/ml/metric/metric-10.svg", width="200px", alt=""%}
 
 然后归一化为单位向量：
 
-<img src="/images/ml/metric/metric-11.svg" width="400" alt=""/>
+{% image "/images/ml/metric/metric-11.svg", width="400px", alt=""%}
 
 余弦相似度就是：
 
-<img src="/images/ml/metric/metric-12.svg" width="400" alt=""/>
+{% image "/images/ml/metric/metric-12.svg", width="400px", alt=""%}
 
 欧式距离就是：
 
-<img src="/images/ml/metric/metric-13.svg" width="400" alt=""/>
+{% image "/images/ml/metric/metric-13.svg", width="400px", alt=""%}
 
 化简后就是：
 
-<img src="/images/ml/metric/metric-14.svg" width="200" alt=""/>
+{% image "/images/ml/metric/metric-14.svg", width="200px", alt=""%}
 
 很明显，是一个单调函数（图像类似于单位元的第一象限部分），也就意味着，两者在归一化为单位向量的时候计算相似度结果完全一样。只不过余弦相似度是值越大月相似，欧式距离是值越小越相似。
 

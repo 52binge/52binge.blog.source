@@ -5,7 +5,7 @@ categories: [data-warehouse]
 tags: [data warehouse]
 ---
 
-<img src="/images/sql/sql-50-logo.jpg" width="550" alt="" />
+{% image "/images/sql/sql-50-logo.jpg", width="550px", alt="" %}
 
 <!-- more -->
 
@@ -80,7 +80,7 @@ GROUP BY
 
 知识: **`group by 列名 having count(列名) > n`**
 
-<img src="/images/sql/monkey-sql-having-count.png" width="590" alt="select 列名 from table group by 列名 having count(列名) > n;" />
+{% image "/images/sql/monkey-sql-having-count.png", width="590px", alt="select 列名 from table group by 列名 having count(列名) > n;" %}
 
 举一反三: 查询平均成绩大于60分的学生的学号和平均成绩
 
@@ -114,9 +114,9 @@ select
 
 ### [3. SQL：查找不在表里的数据](https://zhuanlan.zhihu.com/p/88351106)
 
-<img src="/images/sql/monkey-sql-join-1.jpg" width="590" alt="left join, inner join" />
+{% image "/images/sql/monkey-sql-join-1.jpg", width="590px", alt="left join, inner join" %}
 
-<img src="/images/sql/monkey-sql-join-2.jpg" width="590" alt="" />
+{% image "/images/sql/monkey-sql-join-2.jpg", width="590px", alt="" %}
 
 ```sql
 select 
@@ -129,13 +129,13 @@ where b.CustomerId is null;
 
 ### [4. SQL：你有多久没涨过工资了？](https://zhuanlan.zhihu.com/p/142872080)
 
-<img src="/images/sql/monkey-sql-salary.jpg" width="590" alt="left join, inner join" />
+{% image "/images/sql/monkey-sql-salary.jpg", width="590px", alt="left join, inner join" %}
 
 ### [5. SQL：如何比较日期数据？](https://zhuanlan.zhihu.com/p/95768329)
 
-<img src="/images/sql/monkey-sql-date-compare-1.jpg" width="590" alt="" />
+{% image "/images/sql/monkey-sql-date-compare-1.jpg", width="590px", alt="" %}
 
-<img src="/images/sql/monkey-sql-date-compare-2.jpg" width="590" alt="" />
+{% image "/images/sql/monkey-sql-date-compare-2.jpg", width="590px", alt="" %}
 
 
 [举一反三： Weather](https://leetcode-cn.com/problems/rising-temperature/solution/shang-sheng-de-wen-du-by-leetcode/)
@@ -152,17 +152,17 @@ where a.temp > b.temp;
 1.筛选出2017年入学的“计算机”专业年龄最小的3位同学名单（姓名、年龄）
 2.统计每个班同学各科成绩平均分大于80分的人数和人数占比
 
-<img src="/images/sql/monkey-sql-min_N_nums-1.png" width="590" alt="" />
+{% image "/images/sql/monkey-sql-min_N_nums-1.png", width="590px", alt="" %}
 
-<img src="/images/sql/monkey-sql-min_N_nums-2.jpg" width="590" alt="" />
+{% image "/images/sql/monkey-sql-min_N_nums-2.jpg", width="590px", alt="" %}
 
-<img src="/images/sql/monkey-sql-min_N_nums-4.jpg" width="590" alt="" />
+{% image "/images/sql/monkey-sql-min_N_nums-4.jpg", width="590px", alt="" %}
 
-<img src="/images/sql/monkey-sql-min_N_nums-5.jpg" width="590" alt="" />
+{% image "/images/sql/monkey-sql-min_N_nums-5.jpg", width="590px", alt="" %}
 
-<img src="/images/sql/monkey-sql-min_N_nums-6.png" width="590" alt="" />
+{% image "/images/sql/monkey-sql-min_N_nums-6.png", width="590px", alt="" %}
 
-<img src="/images/sql/monkey-sql-min_N_nums-7.jpg" width="590" alt="" />
+{% image "/images/sql/monkey-sql-min_N_nums-7.jpg", width="590px", alt="" %}
 
 
 
@@ -244,7 +244,7 @@ where ranking <=2
 
 input:
 
-<img src="/images/sql/monkey-sql-lianjia-1-user-retention.png" width="740" alt="如何分析留存率" />
+{% image "/images/sql/monkey-sql-lianjia-1-user-retention.png", width="740px", alt="如何分析留存率" %}
 
 **指标定义：**
 
@@ -254,7 +254,7 @@ input:
 
 > 例：登陆时间（20180501日）去重用户数10000，这批用户在20180503日仍有7000人活跃，则3日活跃留存率为7000/10000=70%
 
-<img src="/images/sql/monkey-sql-lianjia-2.png" width="740" alt="output" />
+{% image "/images/sql/monkey-sql-lianjia-2.png", width="740px", alt="output" %}
 
 **11.1 活跃用户数对应的日期**
 
@@ -270,7 +270,7 @@ GROUP BY
     登陆时间;
 ```
 
-<img src="/images/sql/monkey-sql-lianjia-5-active-users.png" width="640" alt="" />
+{% image "/images/sql/monkey-sql-lianjia-5-active-users.png", width="640px", alt="" %}
 
 
 **11.2 次日留存用户数** 
@@ -289,10 +289,10 @@ GROUP BY
     a_t;
 ```
 
-<img src="/images/sql/monkey-sql-lianjia-6-active-users.jpeg" width="740" alt="次日留存用户数" />
+{% image "/images/sql/monkey-sql-lianjia-6-active-users.jpeg", width="740px", alt="次日留存用户数" %}
 
 <!--
-<img src="/images/sql/monkey-sql-lianjia-3.jpeg" width="740" alt="" />
+{% image "/images/sql/monkey-sql-lianjia-3.jpeg", width="740px", alt="" %}
 -->
 
 **11.3 三日的留存数/留存率**
@@ -324,7 +324,7 @@ from
 group by a_t;
 ```
 
-<img src="/images/sql/monkey-sql-lianjia-4.jpeg" width="840" alt="" />
+{% image "/images/sql/monkey-sql-lianjia-4.jpeg", width="840px", alt="" %}
 
 **11.4 本题考点**
 
@@ -336,13 +336,13 @@ group by a_t;
 
 “满意度表”记录了教师和学生对课程的满意程度。“是否满意”列里是老师和学生对课程的评价，其中“是”表示教师和学生都满意。
 
-<img src="/images/sql/monkey-user-satisfaction-1.jpeg" width="700" alt="" />
+{% image "/images/sql/monkey-user-satisfaction-1.jpeg", width="700px", alt="" %}
 
 “ 用户表”记录了学校教师和学生的信息。每个用户有唯一键 “编号”，“是否在系统”表示这个用户是否还在这所学校里，“角色”表示这个人是学生还是教师。
 
 两个表的关系：满意度表的“学生编号” 、 “教师编号” 和用户表的 “编号” 联结。
 
-<img src="/images/sql/monkey-user-satisfaction-2.jpeg" width="700" alt="" />
+{% image "/images/sql/monkey-user-satisfaction-2.jpeg", width="700px", alt="" %}
 
 现在需要分析出学校里人员对课程的满意度。满意度的计算方式如下：
 
@@ -362,7 +362,7 @@ on (满意度表.教师编号 = 教师.编号);
 
 ## [14. 拼多多：如何查找前20%的数据？](https://zhuanlan.zhihu.com/p/138128536)
 
-<img src="/images/sql/monkey-sql-pdd-20-percent-2.jpeg" width="700" alt="" />
+{% image "/images/sql/monkey-sql-pdd-20-percent-2.jpeg", width="700px", alt="" %}
 
 把这个复杂的问题拆解为3个子问题：
 
@@ -411,7 +411,7 @@ select *,
 from 班级;
 ```
 
-<img src="/images/sql/monkey-sql-salary-top3-1.png" width="640" alt="" />
+{% image "/images/sql/monkey-sql-salary-top3-1.png", width="640px", alt="" %}
 
 ```sql
 select 课程号,学号,成绩,排名 from
@@ -432,7 +432,7 @@ from
 where 成绩 > avg_score;
 ```
 
-<img src="/images/sql/monkey-sql-group-by-avg-1.jpeg" width="640" alt="" />
+{% image "/images/sql/monkey-sql-group-by-avg-1.jpeg", width="640px", alt="" %}
 
 ## [18. SQL：如何分析游戏？](https://zhuanlan.zhihu.com/p/129326204)
 
@@ -440,11 +440,11 @@ where 成绩 > avg_score;
 
 查询出每个部门除去最高、最低薪水后的平均薪水，并保留整数
 
-<img src="/images/sql/monkey-sql-byte-avg-salary-1.jpeg" width="700" alt="" />
+{% image "/images/sql/monkey-sql-byte-avg-salary-1.jpeg", width="700px", alt="" %}
 
 > sql的运行顺序，会`先运行from和where子句，最后才运行select子句`。
 
-<img src="/images/sql/monkey-sql-byte-avg-salary-2.png" width="700" alt="" />
+{% image "/images/sql/monkey-sql-byte-avg-salary-2.png", width="700px", alt="" %}
 
 > format(N, D) ,  N 是要格式化的数字， D 是要舍入的小数位数
 

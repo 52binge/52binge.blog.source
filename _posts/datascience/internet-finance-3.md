@@ -74,7 +74,7 @@ Lending Club 2016年Q3数据：https://www.lendingclub.com/info/download-data.ac
 
 参考：http://kldavenport.com/lending-club-data-analysis-revisted-with-python/
 
-<img src="/images/datascience/finance-LC-18.jpg" width="900" />
+{% image "/images/datascience/finance-LC-18.jpg", width="900px" %}
 
 看下数据，其实我也不能完全了解这些所有字段的含义
 
@@ -100,13 +100,13 @@ Lending Club 2016年Q3数据：https://www.lendingclub.com/info/download-data.ac
 
 ### 2.1 特征分析 part1
 
-<img src="/images/datascience/finance-LC-19.jpg" width="850" />
+{% image "/images/datascience/finance-LC-19.jpg", width="850px" %}
 
 > id 和 member_id 不作为特征，可以直接去掉, int_rate 带 % 的可以直接去掉 %， 变为 float 的
 
 **Loan Amount Requested Verus the Funded Amount**
 
-<img src="/images/datascience/finance-LC-20.png" width="850" />
+{% image "/images/datascience/finance-LC-20.png", width="850px" %}
 
 ### 2.2 特征分析 part2
 

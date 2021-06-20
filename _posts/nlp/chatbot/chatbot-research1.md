@@ -35,7 +35,7 @@ tags: Chatbot
 
 **生成式模型**则更加复杂，它不依赖于预定义好的回复内容，而是通过**抓取(Scratch)**的方法生成新的回复内容。生成式模型典型的有**基于机器翻译模型**的，与传统机器翻译模型不同的是，生成式模型的任务不是将一句话翻译成其他语言的一句话，而是将**用户的输入[翻译]为一个回答(response)**
 
-<img src="/images/chatbot/chatbot-1_1.png" width="800" />
+{% image "/images/chatbot/chatbot-1_1.png", width="800px" %}
 
 ### 1.2 模型分类总结
 
@@ -67,7 +67,7 @@ tags: Chatbot
 
 理论上来说，机器人面对相同语义而不同形式的问题应该给予一致的回复，例如这两个问题[How old are you?]和[What’s your age?]。这理解起来是简单的，但却是学术界目前的难题之一（如下图）。许多系统都试图对相同语义而不同形式的问题给予语义上合理的回复，但却没有考虑一致性，最大的原因在于训练模型的数据来源于大量不同的用户，这导致机器人失去了固定统一的人格。论文A Persona-Based Neural Conversation Model中提及的模型旨在创建具有固定统一人格的机器人。
 
-<img src="/images/chatbot/chatbot-1_2.png" width="400" />
+{% image "/images/chatbot/chatbot-1_2.png", width="400px" %}
 
 ### 3.3 对话模型的评测
 

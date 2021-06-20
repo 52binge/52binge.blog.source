@@ -22,7 +22,7 @@ tags: tensorflow
 
 num_batch 其实就是 batch 的数量，这里只画了三个，可以一直接下去....这样一次完成 6个字符 (num_step=6) 的处理，而且能保证 batch 之间的连续性。但是行与行之间的连续性确实是丢失了。
 
-<img src="/images/tensorflow/tf-nlp-9.2.2_2.jpg" width="700" />
+{% image "/images/tensorflow/tf-nlp-9.2.2_2.jpg", width="700px" %}
 
 **结论 :**
 
@@ -42,7 +42,7 @@ num_batch 其实就是 batch 的数量，这里只画了三个，可以一直接
 
 **再看这个图**：
 
-<img src="/images/tensorflow/tf-nlp-9.2.2_1.jpg" width="700" />
+{% image "/images/tensorflow/tf-nlp-9.2.2_1.jpg", width="700px" %}
 
 ## Reference
 

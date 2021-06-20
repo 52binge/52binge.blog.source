@@ -29,7 +29,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/matplotlib-6-annotation-output_1_0.png" height="100" width="500" />
+{% image "/images/python/matplotlib-6-annotation-output_1_0.png" height="100", width="500px" %}
 </div>
 
 ## 移动坐标
@@ -60,7 +60,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/matplotlib-6-annotation-output_3_0.png" height="100" width="550" />
+{% image "/images/python/matplotlib-6-annotation-output_3_0.png" height="100", width="550px" %}
 </div>
 
 然后标注出点`(x0, y0)`的位置信息. 用 `plt.plot([x0, x0,], [0, y0,], 'k--', linewidth=2.5)` 画出一条垂直于x轴的虚线.
@@ -98,7 +98,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/matplotlib-6-annotation-output_5_0.png" height="100" width="550" />
+{% image "/images/python/matplotlib-6-annotation-output_5_0.png" height="100", width="550px" %}
 </div>
 
 ## 加注释 annotate
@@ -142,7 +142,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/matplotlib-6-annotation-output_7_0.png" height="100" width="550" />
+{% image "/images/python/matplotlib-6-annotation-output_7_0.png" height="100", width="550px" %}
 </div>
 
 其中参数 `xycoords='data'` 是说基于数据的值来选位置, `xytext=(+30, -30)` 和 `textcoords='offset points'` 对于标注位置的描述 和 `xy` 偏差值, `arrowprops`是对图中箭头类型的一些设置.
@@ -202,7 +202,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/matplotlib-6-annotation-output_11_0.png" height="100" width="500" />
+{% image "/images/python/matplotlib-6-annotation-output_11_0.png" height="100", width="500px" %}
 </div>
 
 [img1]: /images/python/matplotlib-6-annotation-output_1_0.png

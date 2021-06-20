@@ -5,7 +5,7 @@ categories: machine-learning
 tags: PCA
 ---
 
-<img src="/images/ml/pca/pca-logo.png" width="550" alt="PCA" />
+{% image "/images/ml/pca/pca-logo.png", width="550px", alt="PCA" %}
 
 <!-- more -->
 
@@ -106,11 +106,11 @@ PCA 是一种经典的降维方法，是一种**线性、非监督、全局的**
 
 > (1) 数据预处理：对所有样本进行中心化(即使得样本和为0)
 >
-> <img src="/images/ml/pca/pca-7.png" width="350" />
+> {% image "/images/ml/pca/pca-7.png", width="350px" %}
 >
 > (2) 计算样本的协方差矩阵
 >
-> <img src="/images/ml/pca/pca-8.png" width="350" />
+> {% image "/images/ml/pca/pca-8.png", width="350px" %}
 > 
 > (3) 对2中求得的协方差矩阵Sigma进行特征值分解
 > 

@@ -19,7 +19,13 @@ recommendation system and application
 
 ## 1. 推荐系统 What?
 
-### 1.1 数学定义- 设 C 为全体用户集合- 设 S 为全部商品/推荐内容集合- 设 u 是评判把 $s\_i$ 推荐 $c\_i$ 的好坏评判函数> 推荐是对于 $c∈C$ ,找到 $s∈S$ ,使得 $u$ 最大
+### 1.1 数学定义
+
+- 设 C 为全体用户集合
+- 设 S 为全部商品/推荐内容集合
+- 设 u 是评判把 $s\_i$ 推荐 $c\_i$ 的好坏评判函数
+
+> 推荐是对于 $c∈C$ ,找到 $s∈S$ ,使得 $u$ 最大
 
 ### 1.2 人话版本
 
@@ -171,7 +177,13 @@ $$
 
 One : 对于每个要推荐的内容,我们需要建立一份资料 :
 
-> 比如词 $k\_i$ 在文档 $d\_j$ 中的权重 $w\_{ij}$ (常用的方法比如 TF-IDF)> 有一个词表 Item [$w\_1$, $w\_2$, ... ,$w\_{4000}$], 对每个 document 建立一个词表 vector。Two : 需要对用户也建立一份资料 :> 比如说定义一个权重向量 ($w\_{c1},...,w\_{ck}$) , 其中 $w\_{ci}$ 表示第 $k\_i$ 个词对用户 $c$ 的重要度
+> 比如词 $k\_i$ 在文档 $d\_j$ 中的权重 $w\_{ij}$ (常用的方法比如 TF-IDF)
+
+> 有一个词表 Item [$w\_1$, $w\_2$, ... ,$w\_{4000}$], 对每个 document 建立一个词表 vector。
+
+Two : 需要对用户也建立一份资料 :
+
+> 比如说定义一个权重向量 ($w\_{c1},...,w\_{ck}$) , 其中 $w\_{ci}$ 表示第 $k\_i$ 个词对用户 $c$ 的重要度
 > user 之前有看过的 小说 或 文档。(看过的文档放在一起搞一个doc_vector，或者 将 doc_vector 加权平均)
 
 Three : 计算匹配度 
@@ -195,8 +207,12 @@ $$
 一个用户对《Building data mining applications for CRM》感兴趣，从以下书中进行推荐 :
 
 1. `Building data mining applications for CRM`
-2. Accelerating Customer Relationships: Using CRM and Relationship Technologies3. Mastering Data Mining: The Art and Science of Customer Relationship Management
-4. Data Mining Your Website5. Introduction to marketing6. Consumer behavior7. marketing research, a handbook 
+2. Accelerating Customer Relationships: Using CRM and Relationship Technologies
+3. Mastering Data Mining: The Art and Science of Customer Relationship Management
+4. Data Mining Your Website
+5. Introduction to marketing
+6. Consumer behavior
+7. marketing research, a handbook 
 8. Customer knowledge manag
 
 ![基于内容的推荐][1]
@@ -211,7 +227,9 @@ $$
 
 计算这本书和其余7本书的相似度，推荐最近的，这里结果为 :
 
->rank 1 : Data Mining Your Website􏰅rank 2 : Accelerating Custom Relationships: Using CRM ...rank 3 : Mastering Data Mining: The Art and Science... 􏰬􏰭􏰮􏰀􏰁...
+>rank 1 : Data Mining Your Website
+􏰅rank 2 : Accelerating Custom Relationships: Using CRM ...
+rank 3 : Mastering Data Mining: The Art and Science... 􏰬􏰭􏰮􏰀􏰁...
 >
 
 结论 : 基于内容的推荐，无需用户行为的交互关联。

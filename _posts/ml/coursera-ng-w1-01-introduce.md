@@ -12,8 +12,12 @@ Machine-learning, Grew out of work in Artificial Intelligence, New capability fo
 
 ## Machine Learning
 
-- Grew out of work in Artificial Intelligence- New capability for computers> search engine, recommendation system, image recognition
-> web click data, medical records , biology, engineering
+- Grew out of work in Artificial Intelligence
+- New capability for computers
+
+> search engine, recommendation system, image recognition
+
+> web click data, medical records , biology, engineering
 > 
 > Natural Language Processing (NLP), Computer Vision
 

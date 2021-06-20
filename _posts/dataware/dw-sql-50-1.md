@@ -5,17 +5,17 @@ categories: [data-warehouse]
 tags: [data warehouse]
 ---
 
-<img src="/images/dataware/sql-50-logo.jpeg" width="550" alt="" />
+{% image "/images/dataware/sql-50-logo.jpeg", width="550px", alt="" %}
 
 <!-- more -->
 
 本文汇总了不同版本的SQL面试50题的题目，删去了重复内容，并根据涉及知识点进行分类，按照由易到难、相似题放在一起的思路进行排序并重新编
 
-<img src="/images/dataware/sql-50-table-logo.jpg" width="950" alt="" />
+{% image "/images/dataware/sql-50-table-logo.jpg", width="950px", alt="" %}
 
 Table 关系图：
 
-<img src="/images/dataware/sql-50-2.jpeg" width="750" alt="" />
+{% image "/images/dataware/sql-50-2.jpeg", width="750px", alt="" %}
 
 - [SQL面试必会50题 - 知乎](https://zhuanlan.zhihu.com/p/43289968)
 

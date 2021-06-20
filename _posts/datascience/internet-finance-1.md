@@ -16,7 +16,7 @@ tags: ITFIN
 - 互联网技术 : 交易的边界成本趋向“零”
 - 金融科技 : 用大数据、云计算等技术实现的资金融通、支付、投资和信息中介服务
 
-<img src="/images/datascience/finance-1.jpg" width="520" />
+{% image "/images/datascience/finance-1.jpg", width="520px" %}
 
 > 我们国家没有覆盖度很全的所有人的征信，虽然有央行，但是还远远不够...
 >
@@ -26,7 +26,7 @@ tags: ITFIN
 
 &nbsp;&nbsp;&nbsp; 网贷之家 收集P2P网贷平台的运营数据，并为行业排行, 以下为 2018年3月数据做的行业排行 :
 
-<img src="/images/datascience/finance-3.jpg" width="800" />
+{% image "/images/datascience/finance-3.jpg", width="800px" %}
 
 > 
 > 网贷之家 : http://www.wdzj.com/pingji.html
@@ -37,7 +37,7 @@ tags: ITFIN
 
 ## 3. 中国信用贷款行业分层 
 
-<img src="/images/datascience/finance-4.jpg" width="800" />
+{% image "/images/datascience/finance-4.jpg", width="800px" %}
 
 > APR (Annual Percentage Rate) 年利率, 对银行信用卡来说，一般 APR 在 16% ~ 18%, 那么日利率为 0.04%~0.05% 之间
 
@@ -64,11 +64,11 @@ APR 可以划分人群，APR 不同级别，贷前贷后的审核，催收的制
 
 ## 4. 个人对个人的信用贷款
 
-<img src="/images/datascience/finance-5.jpg" width="800" />
+{% image "/images/datascience/finance-5.jpg", width="800px" %}
 
 ## 5. 急速信任-自动化信用评估
 
-<img src="/images/datascience/finance-6.jpg" width="800" />
+{% image "/images/datascience/finance-6.jpg", width="800px" %}
 
 国内外 P2P 网贷的比较 :
 
@@ -90,7 +90,7 @@ APR 可以划分人群，APR 不同级别，贷前贷后的审核，催收的制
 
 ## 6. 金融科技企业面临的欺诈风险
 
-<img src="/images/datascience/finance-7.jpg" width="800" />
+{% image "/images/datascience/finance-7.jpg", width="800px" %}
 
 > 对于线上反欺诈来说，你看不见用户，只面对数据，要发现数据之间的异常、用户与用户之间有没有异常相似度联系等.
 

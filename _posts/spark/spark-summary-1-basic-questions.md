@@ -5,7 +5,7 @@ categories: [spark]
 tags: [spark]
 ---
 
-<img src="/images/spark/spark-summary-logo-1.jpg" width="500" alt="" />
+{% image "/images/spark/spark-summary-logo-1.jpg", width="500px", alt="" %}
 
 <!-- more -->
 
@@ -204,7 +204,7 @@ No. | Spark性能优化指南基础篇(8) | 优缺点
 > - sparkContext：控制整个application的生命周期，包括dagsheduler和task scheduler等组件。
 > - client：用户提交程序的入口。
 
-<img src="/images/spark/spark-aura-4.1.2.jpg" width="700" alt="" />
+{% image "/images/spark/spark-aura-4.1.2.jpg", width="700px", alt="" %}
 
 [1.1]: Spark:Yarn-cluster和Yarn-client区别与联系
 
@@ -273,7 +273,7 @@ No. | Executor的内存主要分为三块
 
 [Spark性能优化指南——基础篇](https://tech.meituan.com/2016/04/29/spark-tuning-basic.html)
 
-<img src="/images/spark/spark-basic-run-app.png" width="800" alt="" />
+{% image "/images/spark/spark-basic-run-app.png", width="800px", alt="" %}
 
 ```shell
 ./bin/spark-submit \

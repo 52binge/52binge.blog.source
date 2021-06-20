@@ -5,7 +5,7 @@ categories: devops
 tags: Systemd
 ---
 
-<img src="/images/devops/systemd-logo.gif" width="400" alt="www.freedesktop.org" />
+{% image "/images/devops/systemd-logo.gif", width="400px", alt="www.freedesktop.org" %}
 
 <!-- more -->
 
@@ -34,7 +34,7 @@ Systemd 就是为了解决这些问题而诞生的。它的设计目标是，为
 
 根据 Linux 惯例，字母d是守护进程（daemon）的缩写。 Systemd 这个名字的含义，就是它要守护整个系统。
 
-<img src="/images/devops/linux-systemd-2.jpg" width="400" alt="Systemd Author: Lennart Poettering" />
+{% image "/images/devops/linux-systemd-2.jpg", width="400px", alt="Systemd Author: Lennart Poettering" %}
 
 Linux OS Daemon management tool **Systemd** 。它是 OS 的一部分，直接与 kernel 交互，性能棒，功能强。我们完全可以将程序交给 Systemd ，让系统统一管理，成为真正意义上的系统服务。
 
@@ -47,7 +47,7 @@ $ systemctl --version
 
 Systemd 并不是一个命令，而是一组命令，涉及到系统管理的方方面面。
 
-<img src="/images/devops/linux-systemd-1.png" width="700" alt=" Systemd 架构图" />
+{% image "/images/devops/linux-systemd-1.png", width="700px", alt=" Systemd 架构图" %}
 
 ## 4. Unit
 

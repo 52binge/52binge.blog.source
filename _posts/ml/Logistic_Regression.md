@@ -6,7 +6,7 @@ categories: machine-learning
 tags: Logistic_Regression
 ---
 
-<img src="/images/ml/lr/LR-1.png" width="600" />
+{% image "/images/ml/lr/LR-1.png", width="600px" %}
 
 <!--<a href="/2019/05/31/ml/Logistic_Regression/" target="_self" style="display:block; margin:0 auto; background:url('/images/ml/lr/LR-1.png') no-repeat 0 0 / contain; height:275px; width:550px;"></a>-->
 
@@ -45,7 +45,7 @@ $$
 h\_{\theta}(x)=\frac{1}{1+e^{-z}}=\frac{1}{1+e^{-\theta^Tx}}
 $$
 
-<img src="/images/ml/lr/LR-2.png" width="280" alt="Logistic Regression 将线性函数的结果映射到了 sigmoid 函数 中. 取值在 [0, 1] 之间." />
+{% image "/images/ml/lr/LR-2.png", width="280px", alt="Logistic Regression 将线性函数的结果映射到了 sigmoid 函数 中. 取值在 [0, 1] 之间." %}
 
 $$
 log\frac{p}{1-p} = \theta^Tx
@@ -64,39 +64,39 @@ L(\theta)=\prod\_{i=1}^{N}P(y\_i|x\_i;\theta)=\prod\_{i=1}^{N}(\pi(x\_i))^{y\_i}
 
 ## 2. LR Hypothesis function
 
-<img src="/images/ml/lr/LR-3.svg" width="150" />
+{% image "/images/ml/lr/LR-3.svg", width="150px" %}
 
 其函数曲线如下：
 
-<img src="/images/ml/lr/LR-2.png" width="280" alt="取值在[0, 1]之间，在远离0的地方函数的值会很快接近0或者1。它的这个特性对于解决二分类问题十分重要." />
+{% image "/images/ml/lr/LR-2.png", width="280px", alt="取值在[0, 1]之间，在远离0的地方函数的值会很快接近0或者1。它的这个特性对于解决二分类问题十分重要." %}
 
 Logistic Regression 假设函数形式如下：
 
-<img src="/images/ml/lr/LR-4.svg" width="270" />
+{% image "/images/ml/lr/LR-4.svg", width="270px" %}
 
 所以：
 
-<img src="/images/ml/lr/LR-5.svg" width="170" />
+{% image "/images/ml/lr/LR-5.svg", width="170px" %}
 
 一个机器学习的模型，实际上是把决策函数限定在某一组条件下，这组限定条件就决定了模型的假设空间。当然，我们还希望这组限定条件简单而合理。而逻辑回归模型所做的假设是：
 
-<img src="/images/ml/lr/LR-6.svg" width="300" alt="这个函数的意思就是在给定 x 和 0 的条件下 y=1 的概率"/>
+{% image "/images/ml/lr/LR-6.svg", width="300px", alt="这个函数的意思就是在给定 x 和 0 的条件下 y=1 的概率"%}
 
 ## 3. Cost Function
 
 Cost Function：
 
-<img src="/images/ml/lr/LR-7.svg" width="470" />
+{% image "/images/ml/lr/LR-7.svg", width="470px" %}
 
 Loss Function：
 
-<img src="/images/ml/lr/LR-8.svg" width="400" />
+{% image "/images/ml/lr/LR-8.svg", width="400px" %}
 
 上面的方程等价于：
 
-<img src="/images/ml/lr/LR-9.svg" width="570" />
+{% image "/images/ml/lr/LR-9.svg", width="570px" %}
 
-<img src="/images/ml/lr/LR-10.png" width="370" />
+{% image "/images/ml/lr/LR-10.png", width="370px" %}
 
 
 > - 选择 Cost_Function 时，最好挑选对参数 $\theta$ 可微的函数（全微分存在，偏导数一定存在）
@@ -142,11 +142,11 @@ D\_{KL}(p||q) &=& \sum\_{i=1}^np(x\_i)log(p(x\_i))-\sum\_{i=1}^np(x\_i)log(q(x\_
 
 > 1）CrossEntropy lossFunction 
 > 
-> <img src="/images/ml/lr/LR-11.svg" width="300" />
+> {% image "/images/ml/lr/LR-11.svg", width="300px" %}
 > 
 > 二分类: 
 > 
-> <img src="/images/ml/lr/LR-12.svg" width="150" />
+> {% image "/images/ml/lr/LR-12.svg", width="150px" %}
 > 
 > 意义：能表征 真实样本标签 和 预测概率 之间的差值
 >
@@ -162,7 +162,7 @@ D\_{KL}(p||q) &=& \sum\_{i=1}^np(x\_i)log(p(x\_i))-\sum\_{i=1}^np(x\_i)log(q(x\_
 
 > 我们希望 log P(y|x) 越大越好，反过来，只要 log P(y|x) 的负值 -log P(y|x) 越小就行了。那我们就可以引入损失函数，且令 Loss = -log P(y|x)即可。则得到损失函数为：
 > 
-> <img src="/images/ml/lr/LR-11.svg" width="300" />
+> {% image "/images/ml/lr/LR-11.svg", width="300px" %}
 > 
 > 图可以帮助我们对 CrossEntropy lossFunction 有更直观的理解。无论真实样本标签 y 是 0 还是 1，L 都表征了预测输出与 y 的差距。
 

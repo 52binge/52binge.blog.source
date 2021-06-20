@@ -5,7 +5,7 @@ categories: [spark]
 tags: [sparkSQL]
 ---
 
-<img src="/images/spark/SparkSql-logo-2.png" width="500" alt="" />
+{% image "/images/spark/SparkSql-logo-2.png", width="500px", alt="" %}
 
 <!-- more -->
 
@@ -78,7 +78,7 @@ from
 
 [hiveql-select-group-by multi-reduce](https://www.wikitechy.com/tutorials/hive/hiveql-select-group-by)
 
-> <img src="/images/hive/hive-group-by-map-reduce-program.png" width="670" alt="" />
+> {% image "/images/hive/hive-group-by-map-reduce-program.png", width="670px", alt="" %}
 </details>
 
 ### 2.2 SparkSql
@@ -132,7 +132,7 @@ spark.sql("SELECT count(distinct id), count(distinct name) FROM pet").explain()
 
 As see from the execution plan, when dealing with `count distinct`, the `Expand` method is used.
 
-<img src="/images/spark/spark-expand-null.jpg" width="700" alt="" />
+{% image "/images/spark/spark-expand-null.jpg", width="700px", alt="" %}
 
 After expand, use `id` and `name` (not id,name) as keys to perform `HashAggregate`, which is `group by`, so that it is equivalent to **de-duplication**. then Calculate count (id) and count (name) directly later, divide and conquer the data. the data skew is alleviated.
 
@@ -142,7 +142,7 @@ After expand, use `id` and `name` (not id,name) as keys to perform `HashAggregat
 
 ### 3.1 ROLLUP
 
-<img src="/images/sparkSQL/rollup-source-1.jpg" width="450" alt="" />
+{% image "/images/sparkSQL/rollup-source-1.jpg", width="450px", alt="" %}
 
 ```sql
 SELECT
@@ -156,7 +156,7 @@ ORDER BY factory
 
 <br>
 
-<img src="/images/sparkSQL/rollup-action-2.jpg" width="450" alt="ROLL UP 搭配 GROUP BY 使用，可以为每一个分组返回一个小计行，为所有分组返回一个总计行" />
+{% image "/images/sparkSQL/rollup-action-2.jpg", width="450px", alt="ROLL UP 搭配 GROUP BY 使用，可以为每一个分组返回一个小计行，为所有分组返回一个总计行" %}
 
 ```sql
 SELECT factory, department, SUM(quantity)
@@ -165,7 +165,7 @@ GROUP BY ROLLUP(factory, department)
 ORDER BY factory
 ```
 <br>
-<img src="/images/sparkSQL/rollup-action-3.jpg" width="450" alt="如果 ROLLUP(A,B)则先对 A,B进行 GROUP BY，之后对 A 进行 GROUP BY,最后对全表 GROUP BY" />
+{% image "/images/sparkSQL/rollup-action-3.jpg", width="450px", alt="如果 ROLLUP(A,B)则先对 A,B进行 GROUP BY，之后对 A 进行 GROUP BY,最后对全表 GROUP BY" %}
 
 > 如果 ROLLUP(A,B,C)则先对 A,B,C进行 GROUP BY ，然后对 A,B进行GROUP BY,再对 A 进行GROUP BY,最后对全表进行 GROUP BY.
 
@@ -182,7 +182,7 @@ ORDER BY factory,department;
 ```
 
 <br>
-<img src="/images/sparkSQL/rollup-action-3.jpg" width="450" alt="CUBE(A,B)则先对 A,B 进行 GROUP BY，之后对 A 进行 GROUP BY,然后对 B 进行 GROUP BY，最后对全表进行 GROUP BY" />
+{% image "/images/sparkSQL/rollup-action-3.jpg", width="450px", alt="CUBE(A,B)则先对 A,B 进行 GROUP BY，之后对 A 进行 GROUP BY,然后对 B 进行 GROUP BY，最后对全表进行 GROUP BY" %}
 
 > 如果 CUBE(A,B,C)则先对 A,B,C 进行 GROUP BY,之后对 A,B ，之后对A,C ，之后对 B,C 之后对 A,之后对 B，之后对 C，最后对全表GROUP BY
 
@@ -203,7 +203,7 @@ GROUP BY ROLLUP(factory, department)
 ORDER BY factory, department;
 ```
 <br>
-<img src="/images/sparkSQL/GROUPING.jpg" width="450" alt="最后一行的 FACTORY 为空，所以 GROUPING()返回 1.也可以与CUBE结合使用" />
+{% image "/images/sparkSQL/GROUPING.jpg", width="450px", alt="最后一行的 FACTORY 为空，所以 GROUPING()返回 1.也可以与CUBE结合使用" %}
 
 
 ### 3.4 GROUPING SETS
@@ -219,7 +219,7 @@ ORDER BY factory, department
 ```
 
 <br>
-<img src="/images/sparkSQL/GROUPING-SETS.jpg" width="550" alt="GROUPING SETS则对每个参数分别进行分组，GROUPING SETS(A,B)就代表先按照 A 分组，再按照 B分组" />
+{% image "/images/sparkSQL/GROUPING-SETS.jpg", width="550px", alt="GROUPING SETS则对每个参数分别进行分组，GROUPING SETS(A,B)就代表先按照 A 分组，再按照 B分组" %}
 
 ### 3.5 GROUPING_ID()
 
@@ -237,7 +237,7 @@ FROM production
 ```
 
 <br>
-<img src="/images/sparkSQL/GROUPING_ID.jpg" width="450" alt="If you select GROUPING_ID=0, it means that the FACTORY and DEPARTMENT columns are not empty" />
+{% image "/images/sparkSQL/GROUPING_ID.jpg", width="450px", alt="If you select GROUPING_ID=0, it means that the FACTORY and DEPARTMENT columns are not empty" %}
 
 With the GROUPING_ID column, we can use the `HAVING` clause to filter the query results. If you select GROUPING_ID=0, it means that the FACTORY and DEPARTMENT columns are not empty.
 

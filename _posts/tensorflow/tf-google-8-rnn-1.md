@@ -13,13 +13,13 @@ mathjax: true
 
 运算的流程图可参考下面这张图
 
-<img src="/images/tensorflow/tf-google-8-1.jpg" width="800" />
+{% image "/images/tensorflow/tf-google-8-1.jpg", width="800px" %}
 
 ## RNN Forward Propagation
 
 RNN 前向传播知识回顾
 
-<img src="/images/deeplearning/C5W1-10_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-10_1.png", width="750px" %}
 
 > $a^{<0>}=\vec{0}$
 > 

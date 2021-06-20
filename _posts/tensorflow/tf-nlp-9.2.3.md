@@ -12,7 +12,7 @@ tags: tensorflow
 
 <!-- more -->
 
-<img src="/images/tensorflow/tf-nlp-9.2.3_1.jpg" width="700" />
+{% image "/images/tensorflow/tf-nlp-9.2.3_1.jpg", width="700px" %}
 
 ## 1. Embedding 层
 
@@ -31,7 +31,7 @@ No. | function | desc
 >
 > 用 tf.Variable 来表示词向量，这样就可以采用任意初始化的词向量，学习过程中也会优化词向量。
 
-<img src="/images/tensorflow/tf-nlp-9.2.3_2.jpg" width="700" />
+{% image "/images/tensorflow/tf-nlp-9.2.3_2.jpg", width="700px" %}
 
 ```python
 # 定义单词的词向量矩阵

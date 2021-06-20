@@ -5,7 +5,7 @@ categories: [python]
 tags: [interview]
 ---
 
-<img src="/images/python/language/py-heapq-logo.jpg" width="500" alt="collections, queue, heapq" />
+{% image "/images/python/language/py-heapq-logo.jpg", width="500px", alt="collections, queue, heapq" %}
 
 <!-- more -->
 

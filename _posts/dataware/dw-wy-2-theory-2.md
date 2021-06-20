@@ -5,7 +5,7 @@ categories: [data-warehouse]
 tags: [data warehouse]
 ---
 
-<img src="/images/dataware/dw-wy-2-2-logo.png" width="450" alt="" />
+{% image "/images/dataware/dw-wy-2-2-logo.png", width="450px", alt="" %}
 
 <!-- more -->
 

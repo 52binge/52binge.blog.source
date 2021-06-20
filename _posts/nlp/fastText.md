@@ -5,7 +5,7 @@ categories: nlp
 tags: fastText
 ---
 
-<img src="/images/nlp/fasttext-logo.png" width="600" alt="fasttext word2vec"/>
+{% image "/images/nlp/fasttext-logo.png", width="600px", alt="fasttext word2vec"%}
 
 <!-- more -->
 

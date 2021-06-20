@@ -6,7 +6,7 @@ categories: machine-learning
 tags: Kmeans
 ---
 
-<img src="/images/ml/k-means/K-Means.gif" width="550" />
+{% image "/images/ml/k-means/K-Means.gif", width="550px" %}
 
 <!-- more --><br>
 
@@ -16,7 +16,7 @@ tags: Kmeans
 
 K-Means算法主要解决的问题如下图所示。我们可以看到，在图的左边有一些点，我们用肉眼可以看出来有四个点群，但是我们怎么通过计算机程序找出这几个点群来呢？于是就出现了我们的K-Means算法.
 
-<img src="/images/ml/k-means/K-Means-1.png" width="750" />
+{% image "/images/ml/k-means/K-Means-1.png", width="750px" %}
 
 K均值聚类的基本思想是，通过迭代方式寻找K个簇(Cluster)的一种划分方案，使得聚类结果对应的代价函数最小。特别的，代价函数可以定义为各个样本距离所属簇中心点的误差平方和
 
@@ -50,17 +50,17 @@ K均值聚类的基本思想是，通过迭代方式寻找K个簇(Cluster)的一
 > 
 > (3). 定义代价函数 :
 > 
-> <img src="/images/ml/k-means/K-Means-5.svg" width="280" />
+> {% image "/images/ml/k-means/K-Means-5.svg", width="280px" %}
 >
 > (4). 令 t=0,1,2,... 为迭代轮数，重复下面的过程知道 J 收敛:
 > 
 > - 对于每一个样本 $x\_i$, 将其分配到距离最近的簇.
 > 
-> <img src="/images/ml/k-means/K-Means-3.svg" width="280" />
+> {% image "/images/ml/k-means/K-Means-3.svg", width="280px" %}
 >
 > - 对于每一个类簇 $k$, 重新计算该类簇的中心
 > 
-> <img src="/images/ml/k-means/K-Means-4.svg" width="280" />
+> {% image "/images/ml/k-means/K-Means-4.svg", width="280px" %}
 >
 
 ## 4. K-Means 优缺点

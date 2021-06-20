@@ -20,11 +20,11 @@ tags: tensorflow
 
 今天要显示的神经网络差不多是这样子的
 
-<img src="/images/tensorflow/tf-4.1_1.png" width="600" />
+{% image "/images/tensorflow/tf-4.1_1.png", width="600px" %}
 
 同时我们也可以展开看每个layer中的一些具体的结构：
 
-<img src="/images/tensorflow/tf-4.1_2.png" width="600" />
+{% image "/images/tensorflow/tf-4.1_2.png", width="600px" %}
 
 好，通过阅读代码和之前的图片我们大概知道了此处是有:
 
@@ -120,7 +120,7 @@ def add_layer(inputs, in_size, out_size, activation_function=None):
 
 效果如下：（有没有看见刚才定义 layer 里面的“内部构件”呢？）
 
-<img src="/images/tensorflow/tf-4.1_4.png" width="600" />
+{% image "/images/tensorflow/tf-4.1_4.png", width="600px" %}
 
 最后编辑 `loss` 部分：将 `with tf.name_scope()` 添加在 `loss` 上方，并为它起名为 `loss`
 
@@ -136,7 +136,7 @@ with tf.name_scope('loss'):
 
 这句话就是“绘制” loss 了， 如下：
 
-<img src="/images/tensorflow/tf-4.1_5.png" width="600" />
+{% image "/images/tensorflow/tf-4.1_5.png", width="600px" %}
 
 使用 `with tf.name_scope()` 再次对 `train_step` 部分进行编辑, 如下：
 

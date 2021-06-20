@@ -5,7 +5,7 @@ categories: [spark]
 tags: [spark]
 ---
 
-<img src="/images/spark/spark-summary-logo.jpg" width="500" alt="" />
+{% image "/images/spark/spark-summary-logo.jpg", width="500px", alt="" %}
 
 <!-- more -->
 
@@ -25,15 +25,15 @@ tags: [spark]
 
 ## 2. Spark - Ecosystem
 
-<img src="/images/spark/apache-spark-ecosystem-components.jpg" width="700" alt="" />
+{% image "/images/spark/apache-spark-ecosystem-components.jpg", width="700px", alt="" %}
 
 ## 3. Spark - Features
 
-<img src="/images/spark/apache-spark-features.jpg" width="700" alt="" />
+{% image "/images/spark/apache-spark-features.jpg", width="700px", alt="" %}
 
 ## 4. Spark - Shell Commands
 
-<img src="/images/spark/apache-SPARK-Shell-Commands-01.jpg" width="600" alt="spark shell" />
+{% image "/images/spark/apache-SPARK-Shell-Commands-01.jpg", width="600px", alt="spark shell" %}
 
 
 ### 4.1 Create a new RDD

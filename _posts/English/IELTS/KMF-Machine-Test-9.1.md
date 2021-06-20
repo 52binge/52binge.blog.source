@@ -5,17 +5,17 @@ categories: [English, IELTS]
 tags: IELTS
 ---
 
-<img src="/images/english/ielts/kmf/kmf-9-logo.jpeg" width="550" alt="Are you ready?"/>
+{% image "/images/english/ielts/kmf/kmf-9-logo.jpeg", width="550px", alt="Are you ready?"%}
 
 <!-- more -->
 
 ## 1. Place for Speaking
 
-<img src="/images/english/ielts/kmf/kmf-9-1.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/kmf/kmf-9-1.png", width="700px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/kmf/kmf-9-2.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/kmf/kmf-9-2.png", width="700px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/kmf/kmf-9-3.jpeg" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/kmf/kmf-9-3.jpeg", width="700px", alt="Are you ready?"%}
 
 ## 2. Listening
 
@@ -30,32 +30,32 @@ tags: IELTS
 
 ## 3. Reading
 
-<img src="/images/english/ielts/kmf/kmf-9-4.png" width="650" alt="简单提醒先做"/>
+{% image "/images/english/ielts/kmf/kmf-9-4.png", width="650px", alt="简单提醒先做"%}
 
-<img src="/images/english/ielts/kmf/kmf-9-5.png" width="650" alt="Are you ready?"/>
+{% image "/images/english/ielts/kmf/kmf-9-5.png", width="650px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/kmf/kmf-9-6.png" width="650" alt="Are you ready?"/>
+{% image "/images/english/ielts/kmf/kmf-9-6.png", width="650px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/kmf/kmf-9-7.png" width="650" alt="Are you ready?"/>
+{% image "/images/english/ielts/kmf/kmf-9-7.png", width="650px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/kmf/kmf-9-8.png" width="650" alt="李一老师==李老师"/>
+{% image "/images/english/ielts/kmf/kmf-9-8.png", width="650px", alt="李一老师==李老师"%}
 
 <details>
 <summary>李一老师 == 李老师</summary>
-<img src="/images/english/ielts/kmf/kmf-9-9.png" width="650" alt="李一老师==李老师"/>
+{% image "/images/english/ielts/kmf/kmf-9-9.png", width="650px", alt="李一老师==李老师"%}
 
-<img src="/images/english/ielts/kmf/kmf-9-10.png" width="650" alt="李一老师==李老师"/>
+{% image "/images/english/ielts/kmf/kmf-9-10.png", width="650px", alt="李一老师==李老师"%}
 
 </details>
 
 
-<img src="/images/english/ielts/kmf/kmf-9-11.png" width="650" alt="李一老师==李老师"/>
+{% image "/images/english/ielts/kmf/kmf-9-11.png", width="650px", alt="李一老师==李老师"%}
 
-<img src="/images/english/ielts/kmf/kmf-9-12.png" width="650" alt="李一老师==李老师"/>
+{% image "/images/english/ielts/kmf/kmf-9-12.png", width="650px", alt="李一老师==李老师"%}
 
 屠龙12字: 抓名词, 去修饰, 排除法, 定动词
 
-<img src="/images/english/ielts/kmf/kmf-9-13.png" width="650" alt="李一老师==李老师"/>
+{% image "/images/english/ielts/kmf/kmf-9-13.png", width="650px", alt="李一老师==李老师"%}
 
 
 

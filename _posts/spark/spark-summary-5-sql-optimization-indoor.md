@@ -5,7 +5,7 @@ categories: [spark]
 tags: [sparkSQL]
 ---
 
-<img src="/images/spark/spark-sql-core-structure.jpeg" width="600" alt="" />
+{% image "/images/spark/spark-sql-core-structure.jpeg", width="600px", alt="" %}
 
 <!-- more -->
 
@@ -55,14 +55,14 @@ spark = SparkSession \
 
 在Spark中，DataFrame是一种以RDD为基础的分布式数据集，类似于传统数据库中的二维表格。DataFrame与RDD的主要区别在于，前者带有schema元信息，即DataFrame所表示的二维表数据集的每一列都带有名称和类型。这使得Spark SQL得以洞察更多的结构信息，从而对藏于DataFrame背后的数据源以及作用于DataFrame之上的变换进行了针对性的优化，最终达到大幅提升运行时效率的目标。
 
-<img src="/images/spark/spark-aura-9.3.1.png" width="700" alt="RDD[Record] == DataFrame == Table, DataFrame 是一种特殊关系的 Dataset, DataSet[Row] = DataFrame" />
+{% image "/images/spark/spark-aura-9.3.1.png", width="700px", alt="RDD[Record] == DataFrame == Table, DataFrame 是一种特殊关系的 Dataset, DataSet[Row] = DataFrame" %}
 
 <img src="/images/spark/spark-aura-9.3.2.png" width="600" alt="SparkSQL 引入了 DataSet, 提供了编译时类型检测, 面向对象编程API
 " />
 
 [谈谈RDD、DataFrame、Dataset的区别和各自的优势](https://www.cnblogs.com/starwater/p/6841807.html)
 
-<img src="/images/spark/spark-aura-9.3.3.png" width="700" alt="" />
+{% image "/images/spark/spark-aura-9.3.3.png", width="700px", alt="" %}
 
 </details>
 

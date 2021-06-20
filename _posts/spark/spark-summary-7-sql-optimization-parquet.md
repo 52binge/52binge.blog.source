@@ -5,7 +5,7 @@ categories: [spark]
 tags: [sparkSQL]
 ---
 
-<img src="/images/spark/SparkSql-logo-2.png" width="500" alt="" />
+{% image "/images/spark/SparkSql-logo-2.png", width="500px", alt="" %}
 
 <!-- more -->
 

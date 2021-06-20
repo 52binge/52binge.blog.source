@@ -5,7 +5,7 @@ categories: [python]
 tags: [python3]
 ---
 
-<img src="/images/python/language/py3-sort-method.png" width="550" alt="" />
+{% image "/images/python/language/py3-sort-method.png", width="550px", alt="" %}
 
 <!-- more -->
 

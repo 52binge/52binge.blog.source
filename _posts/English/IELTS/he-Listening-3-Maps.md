@@ -5,7 +5,7 @@ categories: [English, IELTS]
 tags: IELTS
 ---
 
-<img src="/images/english/ielts/listening/heqiong.jpeg" width="550" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/heqiong.jpeg", width="550px", alt="Are you ready?"%}
 
 <!-- more -->
 
@@ -17,16 +17,16 @@ tags: IELTS
 > 
 > 按照题号顺序听答案
 
-<img src="/images/english/ielts/listening/he-3-1.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/he-3-1.png", width="700px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/listening/he-3-2.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/he-3-2.png", width="700px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/listening/he-3-3.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/he-3-3.png", width="700px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/listening/he-3-4.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/he-3-4.png", width="700px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/listening/he-3-5.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/he-3-5.png", width="700px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/listening/he-3-6.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/he-3-6.png", width="700px", alt="Are you ready?"%}
 
-<img src="/images/english/ielts/listening/he-3-7.png" width="700" alt="Are you ready?"/>
+{% image "/images/english/ielts/listening/he-3-7.png", width="700px", alt="Are you ready?"%}

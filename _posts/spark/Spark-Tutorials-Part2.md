@@ -5,13 +5,13 @@ categories: [spark]
 tags: [spark]
 ---
 
-<img src="/images/spark/Spark-Tutorial-02.jpg" width="500" alt="" />
+{% image "/images/spark/Spark-Tutorial-02.jpg", width="500px", alt="" %}
 
 <!-- more -->
 
 ## 1. Spark - SparkContext
 
-<img src="/images/spark/apache-spark-SparkContext.jpg" width="600" alt="" />
+{% image "/images/spark/apache-spark-SparkContext.jpg", width="600px", alt="" %}
 
 SparkContext allows your Spark Application to access Spark Cluster with the help of Resource Manager. The resource manager can be one of these three- **Spark Standalone,  YARN, Apache Mesos**.
 
@@ -19,7 +19,7 @@ The different contexts in which it can run are local, yarn-client, Mesos URL and
 
 ### 1.1 SparkContext Functions
 
-<img src="/images/spark/apache-spark-functions-of-sparkcontext-in.jpg" width="800" alt="Functions of SparkContext" />
+{% image "/images/spark/apache-spark-functions-of-sparkcontext-in.jpg", width="800px", alt="Functions of SparkContext" %}
 
 ### 1.2 SparkContext Conclusion
 
@@ -29,33 +29,33 @@ Hence, SparkContext provides the various functions in Spark like get the current
 
 Spark Stage- An Introduction to Physical Execution plan
 
-<img src="/images/spark/apache-Spark-Stage-An-Introduction-to-Physical-Execution-plan.png" width="700" alt="It is basically a physical unit of the execution plan. " />
+{% image "/images/spark/apache-Spark-Stage-An-Introduction-to-Physical-Execution-plan.png", width="700px", alt="It is basically a physical unit of the execution plan. " %}
 
 > 1. **ShuffleMapstage** 
 > 2. **ResultStage**
 
 ### 2.1 What are Stages in Spark?
 
-<img src="/images/spark/data-flair/Submitting-a-Job-in-Spark.jpg" width="700" alt="one task per partition. In other words,  each job which gets divided into smaller sets of tasks is a stage." />
+{% image "/images/spark/data-flair/Submitting-a-Job-in-Spark.jpg", width="700px", alt="one task per partition. In other words,  each job which gets divided into smaller sets of tasks is a stage." %}
 
 > with the boundary of a stage in spark marked by shuffle dependencies.
 > 
 > Ultimately,  submission of Spark stage triggers the execution of a series of dependent parent stages. Although, there is a first Job Id present at every stage that is the id of the job which submits stage in Spark.
 
-<img src="/images/spark/data-flair/Spark-Stages.jpg" width="700" alt="" />
+{% image "/images/spark/data-flair/Spark-Stages.jpg", width="700px", alt="" %}
 
 ### 2.2 ShuffleMapStage
 
 1. ShuffleMapStage in Spark
 2. ResultStage in Spark
 
-<img src="/images/spark/data-flair/DAG-Scheduler.jpg" width="700" alt="" />
+{% image "/images/spark/data-flair/DAG-Scheduler.jpg", width="700px", alt="" %}
 
 ### 2.3 ResultStage
 
 ResultStage implies as a final stage in a job that applies a function on one or many partitions of the target RDD in Spark. It also helps for computation of the result of an action.
 
-<img src="/images/spark/data-flair/Graph-of-Spark-Stages.jpg" width="700" alt="running a function on a spark RDD Stage that executes a Spark action in a user program is a ResultStage." />
+{% image "/images/spark/data-flair/Graph-of-Spark-Stages.jpg", width="700px", alt="running a function on a spark RDD Stage that executes a Spark action in a user program is a ResultStage." %}
 
 
 
@@ -64,11 +64,11 @@ ResultStage implies as a final stage in a job that applies a function on one or 
 
 `Apache Spark Executor for Executing Spark Tasks`
 
-<img src="/images/spark/data-flair/Apache-Spark-Executor-01.jpg" width="750" alt="" />
+{% image "/images/spark/data-flair/Apache-Spark-Executor-01.jpg", width="750px", alt="" %}
 
 ### 3.1 Spark Executor
 
-<img src="/images/spark/data-flair/heartbeat-receivers-heartbeat-message-handler.png" width="700" alt="" />
+{% image "/images/spark/data-flair/heartbeat-receivers-heartbeat-message-handler.png", width="700px", alt="" %}
 
 Some conditions in which we create Executor in Spark is:
 
@@ -119,7 +119,7 @@ Spark RDD – Introduction, Features & Operations of RDD
 > - **Distributed**, since Data resides on multiple nodes.
 > - **Dataset** represents records of the data you work with. The user can load the data set externally which can be either JSON file, CSV file, text file or database via JDBC with no specific data structure.
 
-<img src="/images/spark/data-flair/Apache-Spark-RDD-01.jpg" width="700" alt="" />
+{% image "/images/spark/data-flair/Apache-Spark-RDD-01.jpg", width="700px", alt="" %}
 
 ### 4.2 Why need RDD in Spark?
 
@@ -127,7 +127,7 @@ Apache Spark evaluates RDDs lazily. It is called when needed, which saves lots o
 
 ### 4.3 Features of Spark RDD
 
-<img src="/images/spark/data-flair/features-of-RDD-in-spark.jpg" width="750" alt="" />
+{% image "/images/spark/data-flair/features-of-RDD-in-spark.jpg", width="750px", alt="" %}
 
 ## 5. Spark RDD Operations
 
@@ -138,11 +138,11 @@ Apache Spark evaluates RDDs lazily. It is called when needed, which saves lots o
 
 **a. Narrow Transformations**
 
-<img src="/images/spark/data-flair/spark-narrow-transformation-1.jpg" width="650" alt="" />
+{% image "/images/spark/data-flair/spark-narrow-transformation-1.jpg", width="650px", alt="" %}
 
 **b. Wide Transformations**
 
-<img src="/images/spark/data-flair/spark-wide-transformation.jpg" width="650" alt="" />
+{% image "/images/spark/data-flair/spark-wide-transformation.jpg", width="650px", alt="" %}
 
 
 ### 5.2 Actions

@@ -5,7 +5,7 @@ categories: [hadoop]
 tags: [MapReduce]
 ---
 
-<img src="/images/hadoop/hadoop-mr-logo.png" width="450" alt="Hadoop MapReduce" />
+{% image "/images/hadoop/hadoop-mr-logo.png", width="450px", alt="Hadoop MapReduce" %}
 
 <!--more-->
 
@@ -36,11 +36,11 @@ tags: [MapReduce]
 
 ## 2. MapReduce 编程模式
 
-<img src="/images/hadoop/hadoop-mr-5.png" width="880" alt="Hadoop MapReduce"/>
+{% image "/images/hadoop/hadoop-mr-5.png", width="880px", alt="Hadoop MapReduce"%}
 
 **数据的处理流程： WordCount程序为例**
 
-<img src="/images/hadoop/hadoop-mr-6.png" width="980" alt="Hadoop MapReduce"/>
+{% image "/images/hadoop/hadoop-mr-6.png", width="980px", alt="Hadoop MapReduce"%}
 
 ## 3. MapReduce 编程实战
 
@@ -48,33 +48,33 @@ tags: [MapReduce]
 2. WordCountReducer
 3. WordCountMain
 
-> <img src="/images/hadoop/hadoop-mr-7.png" width="720" alt="Hadoop MapReduce"/>
+> {% image "/images/hadoop/hadoop-mr-7.png", width="720px", alt="Hadoop MapReduce"%}
 >
-> <img src="/images/hadoop/hadoop-mr-9.jpg" width="900" alt="Hadoop MapReduce WordCountMain"/>
+> {% image "/images/hadoop/hadoop-mr-9.jpg", width="900px", alt="Hadoop MapReduce WordCountMain"%}
 
 ## 4. 分布式计算模型
 
 MapReduce 计算模型的来源： PageRank 问题
 
 > 启动 Hadoop & Yarn：
-> <img src="/images/hadoop/hadoop-mr-1.png" width="600" alt="Hadoop & Yarn" align="center" />
+> {% image "/images/hadoop/hadoop-mr-1.png", width="600px", alt="Hadoop & Yarn" align="center" %}
 >
 > 执行 MapReduce：
 >
-> <img src="/images/hadoop/hadoop-mr-2.png" width="800" alt="Hadoop MapReduce"/>
+> {% image "/images/hadoop/hadoop-mr-2.png", width="800px", alt="Hadoop MapReduce"%}
 >
 > 执行结果：
 > 
-> <img src="/images/hadoop/hadoop-mr-3.png" width="800" alt="Hadoop MapReduce"/>
+> {% image "/images/hadoop/hadoop-mr-3.png", width="800px", alt="Hadoop MapReduce"%}
 > 
 
 ## 5. 其他的一些知识:
 
-> <img src="/images/hadoop/hadoop-mr-4.png" width="850" alt="Hadoop MapReduce"/>
+> {% image "/images/hadoop/hadoop-mr-4.png", width="850px", alt="Hadoop MapReduce"%}
 
 ## 6. MapReduce 在 Hadoop 中的位置
 
-<img src="/images/hadoop/hadoop-mr-8.png" width="760" alt="Hadoop MapReduce"/>
+{% image "/images/hadoop/hadoop-mr-8.png", width="760px", alt="Hadoop MapReduce"%}
 
 
 ## Reference

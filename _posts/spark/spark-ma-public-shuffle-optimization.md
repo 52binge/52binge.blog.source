@@ -5,7 +5,7 @@ categories: [spark]
 tags: [spark]
 ---
 
-<img src="/images/spark/spark-aura-6.7-shuffle-logo.png" width="550" alt="" />
+{% image "/images/spark/spark-aura-6.7-shuffle-logo.png", width="550px", alt="" %}
 
 <!-- more -->
 
@@ -67,7 +67,7 @@ spark 官方宣称： SPark hadoop 0.9:100 迭代计算 做一次 3：1
 
 导致 DataSkew 的是 Hive 表。如果该 Hive 表中的数据本身很不均匀(比如某个 key 对应了 100 万数据，其他 key 才对应了 10 条数据)，而业务场景需要频繁用 Spark 对 Hive 表执行某个分析操作，那么比较适合使用这种技术方案:
 
-<img src="/images/spark/Spark-Shuffle-Public/1-Hive-ETL_meitu_1.png" width="950" alt="Hive ETL 预处理数据" />
+{% image "/images/spark/Spark-Shuffle-Public/1-Hive-ETL_meitu_1.png", width="950px", alt="Hive ETL 预处理数据" %}
 
 ## 2. 调整shuffle操作的并行度
 
@@ -83,7 +83,7 @@ Spark 在做 Shuffle 时，默认使用 HashPartitioner(非Hash Shuffle)对数�
 
 如果调整 Shuffle 时的并行度，使得原本被分配到同一 Task 的不同 Key 发配到不同 Task 上处理，则可 降低原 Task 所需处理的数据量，从而缓解 `DataSkew` 造成的短板效应。
 
-<img src="/images/spark/Spark-Shuffle-Public/2-Shuffle.png" width="950" alt="并行度为2, 并行度为3" />
+{% image "/images/spark/Spark-Shuffle-Public/2-Shuffle.png", width="950px", alt="并行度为2, 并行度为3" %}
 	
 ### 2.5. 企业最佳实践
 
@@ -118,11 +118,11 @@ GM角色：
 
 reduceJoin:
 
-<img src="/images/spark/Spark-Shuffle-Public/3-reduceJoin_meitu_1.jpg" width="880" alt="reduceJoin" />
+{% image "/images/spark/Spark-Shuffle-Public/3-reduceJoin_meitu_1.jpg", width="880px", alt="reduceJoin" %}
 
 mapJoin:
 
-<img src="/images/spark/Spark-Shuffle-Public/3-MapJoin.png" width="" alt="mapJoin" />
+{% image "/images/spark/Spark-Shuffle-Public/3-MapJoin.png", width="px", alt="mapJoin" %}
 
 ## 5. 采样倾斜 key 并分拆 join 操作
 
@@ -134,11 +134,11 @@ mapJoin:
 > 
 > 最后把结果合起来！ 
 
-<img src="/images/spark/Spark-Shuffle-Public/5-key-few.png" width="" alt="采样倾斜 key 并分拆 join 操作" />
+{% image "/images/spark/Spark-Shuffle-Public/5-key-few.png", width="px", alt="采样倾斜 key 并分拆 join 操作" %}
 
 ## 6. 两阶段聚合(局部聚合+全局聚合)
 
-<img src="/images/spark/Spark-Shuffle-Public/6-Join.png" width="" alt="两阶段聚合" />
+{% image "/images/spark/Spark-Shuffle-Public/6-Join.png", width="px", alt="两阶段聚合" %}
 
 方案六： 两阶段聚合 （聚合类逻辑的通用解决方案）  纵向切分
 		原来：一次hash散列导致倾斜
@@ -170,7 +170,7 @@ mapJoin:
 
 ## 11. bitmap 求 Join
 
-<img src="/images/spark/Spark-Shuffle-Public/bitmap位图求join.png" width="990" alt="两阶段聚合" />
+{% image "/images/spark/Spark-Shuffle-Public/bitmap位图求join.png", width="990px", alt="两阶段聚合" %}
 
 
 ## Reference

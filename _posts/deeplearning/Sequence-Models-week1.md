@@ -20,13 +20,13 @@ tags: deeplearning.ai
 > 
 > 最直观的理解是在 CNN 对图片的分析基础上，RNN 可以对视频进行分析，这里也就引入了第三维“时间”的概念
 
-<img src="/images/deeplearning/C5W1-1_1.png" width="700" />
+{% image "/images/deeplearning/C5W1-1_1.png", width="700px" %}
 
 这一小节通过一个小例子为我们打开序列模型的大门，例子如下:
 
 > 给出这样一个句子 “Harry Potter and Herminone Granger invented a new spell."(哈利波特与赫敏格兰杰发明了 一个新的咒语。)， 我们的任务是在这个句子中准确的定位到人名 Harry Potter 和 Herminone Granger. 用深度学习的语言来描述如下图 - 每一个单词对应一个输出 0 或者 1，1 代表着是人名，0 代表不是。
 
-<img src="/images/deeplearning/C5W1-2_2.png" width="750" />
+{% image "/images/deeplearning/C5W1-2_2.png", width="750px" %}
 
 > 接下来我们要解决的一个问题是`如何才能代表一个单词?`，比如我们例子中的 “Harry”，这里我们介绍一种新的编码方式， 就是用另一种方式来代表每一个单词 - 独热编码（**One-Hot Encoding**）。 具体流程是这样，假设我们有 10000 个常用词，为其构建一个10000*1 的矩阵(column matrix)，假如第一个词是苹果(apple), 那么对应的第一个位置为 1，其他都为 0，所以称之为独热。这样每个单词都有对应的矩阵进行表示，如果这个词没有出现在我们的字典中，那么我们可以给一个特殊的符号代替，常用的是 <UNK> (unknown)
 
@@ -34,7 +34,7 @@ tags: deeplearning.ai
 
 为了后面方便说明，先将会用到的数学符号进行介绍. 以下图为例，假如我们需要定位一句话中人名出现的位置.
 
-<img src="/images/deeplearning/C5W1-2_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-2_1.png", width="750px" %}
 
 > - 红色框中的为输入、输出值。可以看到人名输出用 1 表示，反之用 0 表示；
 > - 绿色框中的 $x^{< t \>}$,$y^{< t \>}$ 表示对应红色框中的输入输出值的数学表示，注意从 1 开始.
@@ -47,7 +47,7 @@ tags: deeplearning.ai
 
 但是如果某一个单词并没有被包含在字典中怎么办呢？此时我们可以添加一个新的标记，也就是一个叫做 Unknown Word 的伪造单词，用 <**UNK**> 表示。具体的细节会在后面介绍。
 
-<img src="/images/deeplearning/C5W1-3_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-3_1.png", width="750px" %}
 
 ## 3. Recurrent Neural Network Model
 
@@ -57,29 +57,29 @@ tags: deeplearning.ai
 - 无法共享从其他位置学来的特征
 > 例如上一节中的 **Harry** 这个词是用 $x^{<1>}$ 表示的，网络从该位置学习了它是一个人名。但我们希望无论 **Harry** 在哪个位置出现网络都能识别出这是一个人名的一部分，而标准网络无法做到这一点.
 
-<img src="/images/deeplearning/C5W1-4_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-4_1.png", width="750px" %}
 
 > 输入层，比如每个 $x^{<1>}$ 都是一个 1000 维的向量，这样输入层很庞大, 那么第一层的权重矩阵就有着巨大的参数.
 
 ### 3.1 RNN 结构
 
-<img src="/images/deeplearning/C5W1-50_1.png" width="550" />
+{% image "/images/deeplearning/C5W1-50_1.png", width="550px" %}
 
 还是以识别人名为例,第一个单词 $x^{<1>}$ 输入神经网络得到输出 $y^{<1>}$
 
-<img src="/images/deeplearning/C5W1-5_1.png" width="90" />
+{% image "/images/deeplearning/C5W1-5_1.png", width="90px" %}
 
 同理, 由 $x^{<2>}$ 将得到 $y^{<2>}$,以此类推。但是这就是传统网络存在的问题，即单词之间没有联系
 
-<img src="/images/deeplearning/C5W1-6_1.png" width="90" />
+{% image "/images/deeplearning/C5W1-6_1.png", width="90px" %}
 
 为了将单词之间关联起来，所以将前一层的结果也作为下一层的输入数据。如下图示
 
-<img src="/images/deeplearning/C5W1-7_1.png" width="250" />
+{% image "/images/deeplearning/C5W1-7_1.png", width="250px" %}
 
 整体的 RNN 结构有两种表示形式，如下图示, 左边是完整的表达形式，注意第一层的 $a^{<0>}$ 一般设置为 0向量.
 
-<img src="/images/deeplearning/C5W1-8_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-8_1.png", width="750px" %}
 
 > 要开始整个流程, 需要编造一个激活值, 这通常是 0向量, 有些研究人员会用其他方法随机初始化 $a^{<0>}=\vec{0}$. 不过使用 0向量，作为 0时刻 的伪激活值 是最常见的选择. 因此我们把它输入神经网络.
 >
@@ -89,7 +89,7 @@ tags: deeplearning.ai
 
 介绍完结构之后，我们还需要知道网络中参数的表达方式及其含义。如下图示，$x^{<{i}>}$ 到网络的参数用 $W\_{ax}$ 表示，$a^{<{i}>}$ 到网络的参数用 $W\_{aa}$ 表示，$y^{<{i}>}$ 到网络的参数用 $W\_{ya}$ 表示，具体含义将在下面进行说明.
 
-<img src="/images/deeplearning/C5W1-9_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-9_1.png", width="750px" %}
 
 > $x^{<1>}$ 通过网络可以传递到 $y^{<3>}$
 > 
@@ -103,13 +103,13 @@ tags: deeplearning.ai
 
 看 RNN Forward Propagation 之前，先看下基本的标准网络
 
-<img src="/images/deeplearning/C1W3-1_1.png" width="750" />
+{% image "/images/deeplearning/C1W3-1_1.png", width="750px" %}
 
-<img src="/images/deeplearning/C1W3-4_1.png" width="750" />
+{% image "/images/deeplearning/C1W3-4_1.png", width="750px" %}
 
 RNN 在正向传播的过程中可以看到 `a` 的值随着时间的推移被传播了出去，也就一定程度上保存了单词之间的特性:
 
-<img src="/images/deeplearning/C5W1-10_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-10_1.png", width="750px" %}
 
 > $a^{<0>}=\vec{0}$
 > 
@@ -125,7 +125,7 @@ RNN 在正向传播的过程中可以看到 `a` 的值随着时间的推移被�
 >
 > 注意: 参数的下标是有顺序含义的，如 $W\_{ax}$ 下标的第一个参数表示要计算的量的类型，即要计算 $a$ 矢量，第二个参数表示要进行乘法运算的数据类型，即需要与 $x$ 矢量做运算。如 $W\_{ax} x^{t}\rightarrow{a}$
 
-<img src="/images/deeplearning/C5W1-19_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-19_1.png", width="750px" %}
 
 **Tx** ， **Ty** 是时间单位, 这里统称为“时刻”，在这例子中对应不同时刻是输入的第几个单词， **x** 是“输入值”，例子中是当前时刻的单词（以独热编码的形式）， **y** 是“输出值” **0** 或者 **1**， **a** 称为激活值用于将前一个单元的输出结果传递到下一个单元， **Wax** **Way** **Waa** 是不同的“权重矩阵”也就是我们神经网络 update 的值。每一个单元有两个输入，$a^{<{T\_x-1}>}$ 和 **x** ，有两个输出 $a^{<{T\_x}>}$ 和 **y** . 图中没有出现的 g 是“激活函数”。
 
@@ -140,7 +140,7 @@ Wax, Way, Waa | 权重矩阵
 
 下面将对如下公式进行化简：
 
-<img src="/images/deeplearning/C5W1-11_1.png" width="400" />
+{% image "/images/deeplearning/C5W1-11_1.png", width="400px" %}
 
 **1. 简化 $a^{<{t}>}$**
 
@@ -151,33 +151,33 @@ a^{<{t}>}&= g(W\_{aa}a^{<{t-1}>}+W\_{ax}x^{<{t}>}+b\_a) \notag \\\\
 \end{align}
 $$
 
-<img src="/images/deeplearning/C5W1-12_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-12_1.png", width="750px" %}
 
 > 注意，公式中使用了两个矩阵进行化简，分别是 $W\_a$ 和 $[a^{<{t-1}>},x^{<{t}>}]^T$ (使用转置符号更易理解),下面分别进行说明：
 
 $W\_a = [ W\_{aa}, W\_{ax} ]$, 假设 $W\_{aa}$ 是 (100,100) 的矩阵，$W\_{ax}$ 是 (100,10000) 的矩阵,那么 $W$ 则是 (100,10100) 的矩阵.
 
-<img src="/images/deeplearning/C5W1-13_1.png" width="550" />
+{% image "/images/deeplearning/C5W1-13_1.png", width="550px" %}
 
 $[a^{<{t-1}>},x^{<{t}>}]^T$ 是下图示意:
 
-<img src="/images/deeplearning/C5W1-14_1.png" width="550" />
+{% image "/images/deeplearning/C5W1-14_1.png", width="550px" %}
 
 故 $W\_a [a^{<{t-1}>},x^{<{t}>}]^{T}$ 矩阵计算如下图示:
 
-<img src="/images/deeplearning/C5W1-15_1.png" width="550" />
+{% image "/images/deeplearning/C5W1-15_1.png", width="550px" %}
 
 **2. 简化 $y^{<{t}>}$**
 
-<img src="/images/deeplearning/C5W1-16_1.png" width="550" />
+{% image "/images/deeplearning/C5W1-16_1.png", width="550px" %}
 
 该节PPT内容：
 
-<img src="/images/deeplearning/C5W1-17_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-17_1.png", width="750px" %}
 
 再回顾下干净的前向传播概览图:
 
-<img src="/images/deeplearning/C5W1-20_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-20_1.png", width="750px" %}
 
 ## 4. Backpropagation through time
 
@@ -189,25 +189,25 @@ RNN 的反向传播通常都由类似 Tensorflow、Torch 之类的库或者框�
 
 首先再回顾一下 RNN 的整体结构:
 
-<img src="/images/deeplearning/C5W1-20_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-20_1.png", width="750px" %}
 
 要进行反向传播，首先需要前向传播，传播方向如蓝色箭头所示，其次再按照红色箭头进行反向传播
 
-<img src="/images/deeplearning/C5W1-18_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-18_1.png", width="750px" %}
 
 ### 4.2 前向传播
 
 首先给出所有输入数据，即从 $x^{<1>}$ 到 $x^{<{T\_x}>}$, $T\_x$ 表示输入数据的数量.
 
-<img src="/images/deeplearning/C5W1-21_1.png" width="650" />
+{% image "/images/deeplearning/C5W1-21_1.png", width="650px" %}
 
 初始化参数 $W\_a$, $b\_a$，将输入数据输入网络得到对应的 $a^{<{t}>}$
 
-<img src="/images/deeplearning/C5W1-22_1.png" width="650" />
+{% image "/images/deeplearning/C5W1-22_1.png", width="650px" %}
 
 再通过与初始化参数 $W\_y$, $b\_y$ 得到 $y^{<{t}>}$
 
-<img src="/images/deeplearning/C5W1-23_1.png" width="650" />
+{% image "/images/deeplearning/C5W1-23_1.png", width="650px" %}
 
 ### 4.3 损失函数定义
 
@@ -225,15 +225,15 @@ $$
 L(\hat{y}^{<{t}>},y^{<{t}>)}) = \sum\_{t=1}^{T\_y}L^{<{t}>}(\hat{y}^{<{t}>},y^{<{t}>})
 $$
 
-<img src="/images/deeplearning/C5W1-24_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-24_1.png", width="750px" %}
 
 ### 4.4 反向传播
 
-<img src="/images/deeplearning/C5W1-25_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-25_1.png", width="750px" %}
 
 ### 4.5 整个流程图
 
-<img src="/images/deeplearning/C5W1-26_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-26_1.png", width="750px" %}
 
 ## 5. Different types of RNNs
 
@@ -241,7 +241,7 @@ $$
 
 序列模型对输入与输出的长度没有要求，在常见的例子中，机器翻译就是多个输入与多个输出，简称“多对多”， 语音识别可视为“单对多”， 它的反例是音乐生成-“多对单”。课程中介绍了多种可能的 RNN 模式，我们用下面一张图概括：
 
-<img src="/images/deeplearning/C5W1-27_1.png" width="800" />
+{% image "/images/deeplearning/C5W1-27_1.png", width="800px" %}
 
 RNN 不同的结构给了我们更多的可能性.
 
@@ -255,11 +255,11 @@ RNN 不同的结构给了我们更多的可能性.
 
 假设一个语音识别系统听一句话得到了如下两种选择，作为正常人肯定会选择第二种。但是机器才如何做判断呢？
 
-<img src="/images/deeplearning/C5W1-28_1.png" width="600" />
+{% image "/images/deeplearning/C5W1-28_1.png", width="600px" %}
 
 此时就需要通过语言模型来预测每句话的概率：
 
-<img src="/images/deeplearning/C5W1-29_1.png" width="600" />
+{% image "/images/deeplearning/C5W1-29_1.png", width="600px" %}
 
 ### 6.2 如何使用 RNN 构建语言模型
 
@@ -267,9 +267,9 @@ RNN 不同的结构给了我们更多的可能性.
 2. 将每个单词字符化 (**Tokenize**，**即使用One-shot编码**) 得到词典,，假设有 10000 个单词
 3. 还需要添加两个特殊的单词
 > -  end of sentence. 终止符，表示句子结束.
->  <img src="/images/deeplearning/C5W1-30_1.png" width="600" />
+>  {% image "/images/deeplearning/C5W1-30_1.png", width="600px" %}
 > - UNknown, 之前的笔记已介绍过
->  <img src="/images/deeplearning/C5W1-31_1.png" width="600" />
+>  {% image "/images/deeplearning/C5W1-31_1.png", width="600px" %}
 
 ### 6.3 构建语言模型示例
 
@@ -282,7 +282,7 @@ RNN 不同的结构给了我们更多的可能性.
 >
 > 当然在最开始的时候没有任何的依据，可能得到的是完全不相干的字，因为只是根据初始的值和激活函数做出的取样。
 >
-> <img src="/images/deeplearning/C5W1-32_1.png" width="500" />
+> {% image "/images/deeplearning/C5W1-32_1.png", width="500px" %}
 
 **2. 将真实值作为输入值:**
 
@@ -296,13 +296,13 @@ RNN 不同的结构给了我们更多的可能性.
 
 另外输入值满足： $x^{<{t}>}=y^{<{t-1}>}$
 
-<img src="/images/deeplearning/C5W1-33_1.png" width="600" />
+{% image "/images/deeplearning/C5W1-33_1.png", width="600px" %}
 
 **3. 计算出损失值:**
 
 下图给出了构建模型的过程以及损失值计算公式:
 
-<img src="/images/deeplearning/C5W1-34_1.png" width="700" />
+{% image "/images/deeplearning/C5W1-34_1.png", width="700px" %}
 
 > 随着训练的次数的增多，或者常用词出现的频率的增多，语言模型便慢慢的会开始掌握简单的词语比如“平均”，“每天”，“小时”。一个完善的语言模型看到类似“ 10 个小”的时候，应该就能准确的判定下一个字是“时”。
 > 
@@ -316,14 +316,14 @@ RNN 不同的结构给了我们更多的可能性.
 
 上述步骤具体如图示：
 
-<img src="/images/deeplearning/C5W1-35_1.png" width="700" />
+{% image "/images/deeplearning/C5W1-35_1.png", width="700px" %}
 
 下图给出了采样之后得到的效果：
 
 > - 左边是对训练得到新闻信息模型进行采样得到的内容；
 > - 右边是莎士比亚模型采样得到的内容.
 
-<img src="/images/deeplearning/C5W1-36_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-36_1.png", width="750px" %}
 
 ## 8. Vanishing gradients with RNNs
 
@@ -367,7 +367,7 @@ GRU（Gated Recurrent Unit）是一种用来解决梯度值过小的方法，首
 
 如图示，输入数据为 $a^{<{t-1}>}$ 和 $x^{<{t}>}$, 与参数 $W\_a$ 进行线性运算后再使用 $tanh$ 函数 转化得到 $a^{<{t}>}$. 当然再使用 softmax 函数处理可以得到预测值.
 
-<img src="/images/deeplearning/C5W1-37_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-37_1.png", width="750px" %}
 
 ### 9.2 GRU结构
 
@@ -397,7 +397,7 @@ $$
 \Gamma\_u=σ(W\_u [c^{<{t-1}>}, x^{<{t}>}]+b\_u)
 $$
 
-<img src="/images/deeplearning/C5W1-38_1.png" width="550" />
+{% image "/images/deeplearning/C5W1-38_1.png", width="550px" %}
 
 如上图示，$\Gamma\_u$ 值的大小大多分布在 0 或者 1，所以可以将其值的大小粗略的视为 0 或者 1。这就是为什么我们就可以将其理解为一扇门，如果 $\Gamma\_u=1$ , 就表示此时需要更新值，反之不用.
 
@@ -418,17 +418,17 @@ $$
 
 在读到 “cat” 的时候 ，其他时候一直为 0，知道要 输出 “was” 的时刻我们仍然知道 “cat” 的存在，也就知道它为单数了
 
-<img src="/images/deeplearning/C5W1-39_1.png" width="550" />
+{% image "/images/deeplearning/C5W1-39_1.png", width="550px" %}
 
 **GRU 结构示意图**
 
-<img src="/images/deeplearning/C5W1-40_1.png" width="550" />
+{% image "/images/deeplearning/C5W1-40_1.png", width="550px" %}
 
 ### 9.3 完整版 GRU
 
 上简化了的 GRU，在完整版中还存在另一个符号 ，这符号的意义是控制 $\tilde{c}$ 和 $c^{<{t-1}>}$ 之间的联系强弱，完整版公式如下：
 
-<img src="/images/deeplearning/C5W1-41_1.png" width="550" />
+{% image "/images/deeplearning/C5W1-41_1.png", width="550px" %}
 
 > 注意，完整公式中多出了一个 $\Gamma\_r$, 这个符号的作用是控制 $\tilde{c}^{<{t}>}$ 和 $c^{<{t}>}$ 之间联系的强弱.
 
@@ -438,15 +438,15 @@ $$
 
 GRU 只有两个门，而 LSTM 有三个门，分别是更新门 $\Gamma\_u$ (是否需要更新为 $\tilde{c}^{<{t}>}$，遗忘门 $\Gamma\_f$ (是否需要丢弃上一个时刻的值)，输出门 $\Gamma\_o$ (是否需要输出本时刻的值)
 
-<img src="/images/deeplearning/C5W1-42_1.png" width="650" />
+{% image "/images/deeplearning/C5W1-42_1.png", width="650px" %}
 
-<img src="/images/deeplearning/C5W1-43_1.png" width="650" />
+{% image "/images/deeplearning/C5W1-43_1.png", width="650px" %}
 
 虽然 LSTM 比 GRU 更复杂，但是它比 GRU 更早提出哇😄。另外一般而言 LSTM 的表现要更好，但是计算量更大，毕竟多了一个门嘛。而 GRU 实际上是对 LSTM 的简化，它的表现也不错，能够更好地扩展到深层网络。所以二者各有优势。
 
 下图是 LSTM 的结构示意图：
 
-<img src="/images/deeplearning/C5W1-44_1.png" width="700" />
+{% image "/images/deeplearning/C5W1-44_1.png", width="700px" %}
 
 ## 11. Bidirectional RNN
 
@@ -465,11 +465,11 @@ GRU 只有两个门，而 LSTM 有三个门，分别是更新门 $\Gamma\_u$ (�
 
 双向递归神经网络结构如下：
 
-<img src="/images/deeplearning/C5W1-45_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-45_1.png", width="750px" %}
 
 下图摘自大数据文摘整理
 
-<img src="/images/deeplearning/C5W1-46_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-46_1.png", width="750px" %}
 
 ## 12. Deep RNNs
 
@@ -477,7 +477,7 @@ GRU 只有两个门，而 LSTM 有三个门，分别是更新门 $\Gamma\_u$ (�
 
 横向表示时间展开，纵向则是层次展开。
 
-<img src="/images/deeplearning/C5W1-47_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-47_1.png", width="750px" %}
 
 注意激活值的表达形式有所改变，以 $a^{\[1\]<0>}$ 为例进行解释：
 
@@ -486,7 +486,7 @@ GRU 只有两个门，而 LSTM 有三个门，分别是更新门 $\Gamma\_u$ (�
 
 另外各个激活值的计算公式也略有不同，以 $a^{\[2\]<3>}$ 为例，其计算公式如下：
 
-<img src="/images/deeplearning/C5W1-48_1.png" width="550" />
+{% image "/images/deeplearning/C5W1-48_1.png", width="550px" %}
 
 ## 13. Reference
 

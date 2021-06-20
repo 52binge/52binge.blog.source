@@ -10,7 +10,7 @@ NN 可用来模拟 regression，给一组数据，用一条线对数据进行拟
 
 <!-- more -->
 
-<img src="/images/tensorflow/keras-regressor-1.2-1.png" width="450" alt="Regressor in Keras"/>
+{% image "/images/tensorflow/keras-regressor-1.2-1.png", width="450px", alt="Regressor in Keras"%}
 
 **创建数据**
 
@@ -39,7 +39,7 @@ X_train, Y_train = X[:160], Y[:160]     # train 前 160 data points
 X_test, Y_test = X[160:], Y[160:]       # test 后 40 data points
 ```
 
-<img src="/images/tensorflow/keras-regressor-1.2-2.png" width="450" />
+{% image "/images/tensorflow/keras-regressor-1.2-2.png", width="450px" %}
 
 ## 1. build model
 
@@ -122,7 +122,7 @@ plt.show()
 
 ```
 
-<img src="/images/tensorflow/keras-regressor-1.2-3.png" width="450" />
+{% image "/images/tensorflow/keras-regressor-1.2-3.png", width="450px" %}
 
 ## 6. Gaussian Distribution
 

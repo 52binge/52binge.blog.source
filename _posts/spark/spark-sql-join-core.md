@@ -6,7 +6,7 @@ tags: [spark]
 ---
 
 
-<img src="/images/spark/spark-3.0-rdd-logo.png" width="550" alt="Spark RDD Feature" />
+{% image "/images/spark/spark-3.0-rdd-logo.png", width="550px", alt="Spark RDD Feature" %}
 
 <!--more-->
 
@@ -19,11 +19,11 @@ tags: [spark]
 
 ## 1. SparkSQL总体流程
 
-<img src="/images/spark/spark-catalyst.jpg" width="550" alt="Spark" />
+{% image "/images/spark/spark-catalyst.jpg", width="550px", alt="Spark" %}
 
 ## 2. Join基本要素
 
-<img src="/images/spark/spark-sql-join-ness.png" width="650" alt="Spark" />
+{% image "/images/spark/spark-sql-join-ness.png", width="650px", alt="Spark" %}
 
 **Join基本实现流程**
 
@@ -33,7 +33,7 @@ Spark将参与Join的两张表抽象为流式遍历表(streamIter)和查找表(b
 
 > 要让两条记录能join到一起，首先需要将具有相同key的记录在同一个分区，所以通常来说，需要做一次shuffle，map阶段根据join条件确定每条记录的key，基于该key做shuffle write，将可能join到一起的记录分到同一个分区中，这样在shuffle read阶段就可以将两个表中具有相同key的记录拉到同一个分区处理.
 
-<img src="/images/spark/spark-sort-merge-join.jpeg" width="650" alt="Spark" />
+{% image "/images/spark/spark-sort-merge-join.jpeg", width="650px", alt="Spark" %}
 
 ### 2.2 broadcast join实现
 
@@ -51,11 +51,11 @@ Spark将参与Join的两张表抽象为流式遍历表(streamIter)和查找表(b
 
 full outer join仅采用sort merge join实现，左边和右表既要作为streamIter，又要作为buildIter，其基本实现流程如下图所示:
 
-<img src="/images/spark/spark-full-outer-join.png" width="650" alt="Spark" />
+{% image "/images/spark/spark-full-outer-join.png", width="650px", alt="Spark" %}
 
 ### 2.8 left semi join
 
-<img src="/images/spark/spark-left-semi-join.png" width="650" alt="Spark" />
+{% image "/images/spark/spark-left-semi-join.png", width="650px", alt="Spark" %}
 
 ### 2.9 left anti join
 

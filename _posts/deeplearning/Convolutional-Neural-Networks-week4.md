@@ -14,7 +14,7 @@ Face recognition & Neural style transfer 能够在图像、视频以及其他 2D
 
 这一节中的人脸识别技术的演示的确很NB..., 演技不错，😄
 
-<img src="/images/deeplearning/C4W4-1_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-1_1.png", width="750px" %}
 
 ## 2. One Shot Learning
 
@@ -22,7 +22,7 @@ Face recognition & Neural style transfer 能够在图像、视频以及其他 2D
 
 假如我们公司只有4个员工，按照之前的思路我们训练的神经网络模型应该如下：
 
-<img src="/images/deeplearning/C4W4-2.jpg" width="550" />
+{% image "/images/deeplearning/C4W4-2.jpg", width="550px" %}
 
 > 如图示，输入一张图像，经过CNN，最后再通过 Softmax 输出 5 个可能值的大小 (4个员工中的一个，或者都不是，所以共5种可能性)。
 >
@@ -32,7 +32,7 @@ Face recognition & Neural style transfer 能够在图像、视频以及其他 2D
 
 这显然有问题，所以有人提出了一次学习(one-shot)，更具体地说是通过一个函数来求出输入图像与数据库中的图像的差异度，用 $d(img1,img2)$ 表示。
 
-<img src="/images/deeplearning/C4W4-3_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-3_1.png", width="750px" %}
 
 如上图示，如果两个图像之间的差异度不大于某一个阈值 **τ**，那么则认为两张图像是同一个人。反之，亦然。
 
@@ -52,13 +52,13 @@ $$
 d(x^{(1)},x^{(2)})=||f(x^{(1)})-f(x^{(2)})||^2
 $$
 
-<img src="/images/deeplearning/C4W4-4_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-4_1.png", width="750px" %}
 
 问题看起来好像解决了，但感觉还漏了点什么。。**神经网络的参数咋确定啊？也就是说 $f(x^{(i)})$ 的参数怎么计算呢？**
 
 首先可以很明确的是如果两个图像是同一个人，那所得到的参数应该使得 $||f(x^{(1)})-f(x^{(2)})||^2$ 的值较小，反之较大。
 
-<img src="/images/deeplearning/C4W4-5_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-5_1.png", width="750px" %}
 
 ## 4. Triplet Loss
 
@@ -76,17 +76,17 @@ Negative | 表示不是同一个人
 
 > $d(A,P)\leqq d(A,N)$, 即 $||f(A)-f(P)||^2-||f(A)-f(N)||^2\leqq0$ (如下图示)
 
-<img src="/images/deeplearning/C4W4-6_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-6_1.png", width="750px" %}
 
 但是这样存在一个问题，即如果神经网络什么都没学到，返回的值是0，也就是说如果 $f(x)=\vec{0}$ 的话，那么这个不等式是始终成立的。(如下图示)
 
-<img src="/images/deeplearning/C4W4-7_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-7_1.png", width="750px" %}
 
 为了避免上述特殊情况，且左边值必须小于0，所以在右边减去一个变量**α**，但按照惯例是加上一个值，所以将**α**加在左边。
 
-<img src="/images/deeplearning/C4W4-8_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-8_1.png", width="750px" %}
 
-<img src="/images/deeplearning/C4W4-9_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-9_1.png", width="750px" %}
 
 综上，所得到的参数需要满足如下不等式
 
@@ -104,7 +104,7 @@ $$
 
 > 解释一下为什么用**max**函数，因为如果只要满足 $||f(A)-f(P)||^2-||f(A)-f(N)||^2+α\leqq0$，我们就认为已经正确识别出了图像中的人，所以对于该图像的损失值是 0.
 
-<img src="/images/deeplearning/C4W4-10_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-10_1.png", width="750px" %}
 
 所以总的损失函数是 : $J=\sum{L(A^{(i)},P^{(i)},N^{(i)})}$
 
@@ -116,7 +116,7 @@ $$
 
 所以还应该尽量满足 $d(A,N)\approx{d(A,N)}$
 
-<img src="/images/deeplearning/C4W4-11_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-11_1.png", width="750px" %}
 
 ## 5. Face Verification and Binary Classification
 
@@ -138,31 +138,31 @@ $$
 \hat{y}=σ(\sum\_{k=1}^{128}w\_i \frac{(f(x^{(i)})\_k-f(x^{(j)})\_k)^2}{f(x^{(i)})\_k+f(x^{(j)})\_k}+b\_i)
 $$
 
-<img src="/images/deeplearning/C4W4-12_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-12_1.png", width="750px" %}
 
 当然数据库中的图像不用每次来一张需要验证的图像都重新计算，其实可以提前计算好，将结果保存起来，这样就可以加快运算的速度了。
 
-<img src="/images/deeplearning/C4W4-13_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-13_1.png", width="750px" %}
 
 ## 6. What is neural style transfer?
 
-<img src="/images/deeplearning/C4W4-14_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-14_1.png", width="750px" %}
 
 ## 7. What are deep ConvNets learning?
 
-<img src="/images/deeplearning/C4W4-15_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-15_1.png", width="750px" %}
 
 > 第一层只能看到小部分卷积神经.
 > 
 > 你选择一个隐藏单元，发现有9个图片，最大化了单元激活，你可能找到类似这样的图片浅层区域.
 
-<img src="/images/deeplearning/C4W4-16_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-16_1.png", width="750px" %}
 
 ## 8. Cost Function
 
 如下图示：
 
-<img src="/images/deeplearning/C4W4-17_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-17_1.png", width="750px" %}
 
 左上角的包含 Content 的图片简称为 C，右上角包含 Style 的简称 S，二者融合后得到的图片简称为 G。
 
@@ -182,7 +182,7 @@ $$
 > 
 > 使用梯度下降不断优化 $J(G)$。 (优化过程如下图右边下面3个图像所示)
 
-<img src="/images/deeplearning/C4W4-18_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-18_1.png", width="750px" %}
 
 > 下面一小节将具体介绍 **Cost Function** 的计算。
 
@@ -198,7 +198,7 @@ $$
 - 然后使用预先训练好的卷积神经网络，如 VGG网络。这样我们就可以得到 图像$C$ 和 图像$G$ 在第$l$层的激活函数值，分别记为 $a^{[l][C]},a^{[l][G]}$
 - 内容损失函数 $J\_{Content}(C,G) = \frac{1}{2} || a^{[l][C]} - a^{[l][G]} ||^2$
 
-<img src="/images/deeplearning/C4W4-19_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-19_1.png", width="750px" %}
 
 ## 10. Style Cost Function
 
@@ -208,13 +208,13 @@ $$
 
 我们使用 $l$ 层的激活来度量“Style”，将“Style”定义为通道间激活值之间的**相关系数**。(**Define style as correlation between activation across channels**)
 
-<img src="/images/deeplearning/C4W4-20_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-20_1.png", width="750px" %}
 
 那么我们如何计算这个所谓的相关系数呢？
 
 下图是我们从上图中所标识的第 $l$ 层，为方便说明，假设只有 5 层通道。
 
-<img src="/images/deeplearning/C4W4-21_1.png" width="350" />
+{% image "/images/deeplearning/C4W4-21_1.png", width="350px" %}
 
 如上图示，红色通道和黄色通道对应位置都有激活项，而我们要求的便是它们之间的**相关系数**。
 
@@ -226,10 +226,10 @@ $$
 
 如图风格图像有 **5** 层通道，且该图像的可视化特征如 <font color="blue">左下角图</font> 所示。
 
-<img src="/images/deeplearning/C4W4-22_1.png" width="800" />
+{% image "/images/deeplearning/C4W4-22_1.png", width="800px" %}
 
 其中红色通道可视化特征如图中**箭头**所指是**垂直条纹**，而**黄色通道的特征则是橘色背景**。
-<!--<img src="/images/deeplearning/C4W4-22_2.png" width="750" />
+<!--{% image "/images/deeplearning/C4W4-22_2.png", width="750px" %}
 -->
 那么通过计算这两层通道的相关系数有什么用呢？
 
@@ -253,11 +253,11 @@ $$
 G\_{kk'}^{[l](G)}=\sum\_{i=1}^{n\_H^{[l]}}\sum\_{j=1}^{n\_W^{[l]}}a\_{i,j,k}^{[l](G)}a\_{i,j,k'}^{[l](G)}
 $$
 
-<img src="/images/deeplearning/C4W4-23_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-23_1.png", width="750px" %}
 
 ### 10.4 风格损失函数
 
-<img src="/images/deeplearning/C4W4-24_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-24_1.png", width="750px" %}
 
 第 $l$ 层的风格损失函数为：
 
@@ -275,11 +275,11 @@ $$
 
 1D generalizations of models
 
-<img src="/images/deeplearning/C4W4-25_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-25_1.png", width="750px" %}
 
 3D generalizations of models
 
-<img src="/images/deeplearning/C4W4-26_1.png" width="750" />
+{% image "/images/deeplearning/C4W4-26_1.png", width="750px" %}
 
 > 医学图像 与 视频检测 都是 3D 的.
 

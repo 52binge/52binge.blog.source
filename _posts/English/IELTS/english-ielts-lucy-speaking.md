@@ -47,11 +47,11 @@ tags: IELTS
 
 > clothes [kləʊðz] 
 
-<img src="/images/english/ielts/ielts-phonetic-symbol.jpg" height="100" width="650" />
+{% image "/images/english/ielts/ielts-phonetic-symbol.jpg" height="100", width="650px" %}
 
 ## 3. Part of Speech
 
-<img src="/images/english/ielts/ielts-lucy-8-part-of-speech.png" height="100" width="680" />
+{% image "/images/english/ielts/ielts-lucy-8-part-of-speech.png" height="100", width="680px" %}
 
 
 [1]: https://www.youtube.com/watch?v=zRJhj4JFcD0

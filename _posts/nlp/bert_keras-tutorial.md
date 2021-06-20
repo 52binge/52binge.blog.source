@@ -5,7 +5,7 @@ categories: nlp
 tags: BERT
 ---
 
-<img src="/images/nlp/bert-keras-1.jpeg" width="550" alt="bert 遇见 keras" />
+{% image "/images/nlp/bert-keras-1.jpeg", width="550px", alt="bert 遇见 keras" %}
 
 <!-- more -->
 
@@ -108,11 +108,11 @@ for l in bert_model.layers:
     l.trainable = True
 ```
 
-<img src="/images/nlp/bert-keras-2.png" width="800" alt="bert keras Sentiment analysis" />
+{% image "/images/nlp/bert-keras-2.png", width="800px", alt="bert keras Sentiment analysis" %}
 
 加载的 bert params non-train
 
-<img src="/images/nlp/bert-keras-3.png" width="800" alt="bert keras Sentiment analysis" />
+{% image "/images/nlp/bert-keras-3.png", width="800px", alt="bert keras Sentiment analysis" %}
 
 ## 4. 指导原则
 

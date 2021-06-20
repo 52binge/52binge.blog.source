@@ -14,23 +14,23 @@ tags: deeplearning.ai
 
 在上一周的内容中, 介绍了神经网络中的常用符号以及各种变量的维度. 不清楚的可以回顾上周的笔记内容.
 
-<img src="/images/deeplearning/C1W4-1_1.png" width="750" />
+{% image "/images/deeplearning/C1W4-1_1.png", width="750px" %}
 
-<img src="/images/deeplearning/C1W4-2_1.png" width="750" />
+{% image "/images/deeplearning/C1W4-2_1.png", width="750px" %}
 
-<img src="/images/deeplearning/C1W4-3_1.png" width="750" />
+{% image "/images/deeplearning/C1W4-3_1.png", width="750px" %}
 
-<img src="/images/deeplearning/C1W4-4_1.png" width="750" />
+{% image "/images/deeplearning/C1W4-4_1.png", width="750px" %}
 
-<img src="/images/deeplearning/C1W4-5_1.png" width="750" />
+{% image "/images/deeplearning/C1W4-5_1.png", width="750px" %}
 
 ## 2. Intuition about deep representation
 
 关于深度神经网络直观地解释这部分笔记暂略, 请直接观看课程视频内容: Why deep representation?.
 
-<img src="/images/deeplearning/C1W4-6_1.png" width="750" />
+{% image "/images/deeplearning/C1W4-6_1.png", width="750px" %}
 
-<img src="/images/deeplearning/C1W4-7_1.png" width="750" />
+{% image "/images/deeplearning/C1W4-7_1.png", width="750px" %}
 
 ## 3. 深度神经网络中的前向/反向传播
 
@@ -38,23 +38,23 @@ tags: deeplearning.ai
 
 > 需要再详细了解手推的同学可以仔细研究上周的笔记内容
 
-<img src="/images/deeplearning/C1W4-8_1.png" width="750" />
+{% image "/images/deeplearning/C1W4-8_1.png", width="750px" %}
 
-<img src="/images/deeplearning/C1W4-9_1.png" width="750" />
+{% image "/images/deeplearning/C1W4-9_1.png", width="750px" %}
 
-<img src="/images/deeplearning/C1W4-10_1.png" width="750" />
+{% image "/images/deeplearning/C1W4-10_1.png", width="750px" %}
 
 ## 4. 参数与超参数
 
 在神经网络中参数指的是 $W$, $b$, 这两个参数是通过梯度下降算法不断优化的. 而超参数指的是学习率, 迭代次数, 决定神经网络结构的参数以及激活函数的选择等等, 在后面我们还会提到 momentum, minibatch size, regularization等等. 这些都属于超参数, 需要我们手动设定.
 
-<img src="/images/deeplearning/C1W4-11_1.png" width="750" />
+{% image "/images/deeplearning/C1W4-11_1.png", width="750px" %}
 
 > 这些超参数也决定了最终的参数 $W$, $b$. 不同的超参数的选择会导致模型很大的差别. 
 
 > 所以超参数的选择也非常重要 (后面的课程会讲解如何选择超参数).
 
-<img src="/images/deeplearning/C1W4-12_1.png" width="750" />
+{% image "/images/deeplearning/C1W4-12_1.png", width="750px" %}
 
 ## 5. 使用Python实现深度神经网络
 

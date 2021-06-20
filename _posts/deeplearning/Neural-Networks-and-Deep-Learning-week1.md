@@ -14,27 +14,27 @@ tags: deeplearning.ai
 
 ## 1. Introduction to Deep Learning
 
-<img src="/images/deeplearning/light.jpg" width="420" />
+{% image "/images/deeplearning/light.jpg", width="420px" %}
 
 ### What's you'll learn
 
 <div class="limg0">
-<img src="/images/deeplearning/deeplearning-ai-w1-6.jpg" width="720" />
+{% image "/images/deeplearning/deeplearning-ai-w1-6.jpg", width="720px" %}
 </div>
 
 ## 2. What is a Neural Network ?
 
 ### Housing Price Prediction
 
-<img src="/images/deeplearning/deeplearning-ai-w1-3-housing.jpg" width="720" />
+{% image "/images/deeplearning/deeplearning-ai-w1-3-housing.jpg", width="720px" %}
 
 ## 3. Why is Deep Learning taking off ?
 
-<img src="/images/deeplearning/deeplearning-ai-w1-4.jpg" width="720" />
+{% image "/images/deeplearning/deeplearning-ai-w1-4.jpg", width="720px" %}
 
 - **Data** 、 **Computation** 、 **Algorithms**
 
-<img src="/images/deeplearning/deeplearning-ai-w1-5.jpg" width="720" />
+{% image "/images/deeplearning/deeplearning-ai-w1-5.jpg", width="720px" %}
 
 ## Reference
 

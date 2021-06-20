@@ -42,7 +42,7 @@ import nltk
 nltk.download()
 ```
 
-<!--<img src="/images/chatbot/chatbot-2_1.png" width="400" />
+<!--{% image "/images/chatbot/chatbot-2_1.png", width="400px" %}
 -->
 测试是否安装成功
 
@@ -53,11 +53,11 @@ nltk.download()
 
 ## 2. 功能一览表
 
-<img src="/images/chatbot/chatbot-2_2.png" width="800" />
+{% image "/images/chatbot/chatbot-2_2.png", width="800px" %}
 
 **NLTK 自带语料库**
 
-<img src="/images/chatbot/chatbot-2_3.png" width="600" />
+{% image "/images/chatbot/chatbot-2_3.png", width="600px" %}
 
 ## 3. Tokenize
 
@@ -73,14 +73,14 @@ nltk.download()
 
 **中文分词 jieba** (第三方开源库)
 
-<img src="/images/chatbot/chatbot-2_4.png" width="780" />
+{% image "/images/chatbot/chatbot-2_4.png", width="780px" %}
 
 **有时候tokenize没那么简单**
 
 > 比如社交网络上,这些乱七八糟的不合语法不合正常逻辑的语言很多:
 拯救 @某人, 表情符号, URL, #话题符号
 
-<img src="/images/chatbot/chatbot-2_5.png" width="650" />
+{% image "/images/chatbot/chatbot-2_5.png", width="650px" %}
 
 **社交网络语言的tokenize :**
 
@@ -90,7 +90,7 @@ tweet = 'RT @angelababy: love you baby! :D http://ah.love #168cm'
 print(word_tokenize(tweet))
 ```
 
-<img src="/images/chatbot/chatbot-2_6.png" width="880" />
+{% image "/images/chatbot/chatbot-2_6.png", width="880px" %}
 
 [正则表达式对照表](http://www.regexlab.com/zh/regref.htm)
 
@@ -210,11 +210,11 @@ filtered_words
 
 一条typical的文本预处理流水线
 
-<img src="/images/chatbot/chatbot-2_8.png" width="320" />
+{% image "/images/chatbot/chatbot-2_8.png", width="320px" %}
 
 文本预处理让我们得到了什么?
 
-<img src="/images/chatbot/chatbot-2_9.png" width="320" />
+{% image "/images/chatbot/chatbot-2_9.png", width="320px" %}
 
 ## 7. NLP上的经典应用
 
@@ -222,7 +222,7 @@ filtered_words
 
 ### 7.1 情感分析
 
-<img src="/images/chatbot/chatbot-2_10.png" width="720" />
+{% image "/images/chatbot/chatbot-2_10.png", width="720px" %}
 
 哪些是夸你？哪些是黑你？
 

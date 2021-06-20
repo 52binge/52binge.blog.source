@@ -7,13 +7,13 @@ categories: java
 toc: true
 ---
 
-<img src="/images/java/Java-Virtual-Machine-1-logo.png" width="550" alt="" />
+{% image "/images/java/Java-Virtual-Machine-1-logo.png", width="550px", alt="" %}
 
 <!-- more -->
 
 ## 1. JVM 的组织结构
 
-<img src="/images/java/JVM-1.jpg" width="680" alt="" />
+{% image "/images/java/JVM-1.jpg", width="680px", alt="" %}
 
 jvm 的三个核心：
 

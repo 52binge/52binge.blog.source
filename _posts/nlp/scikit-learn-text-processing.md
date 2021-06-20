@@ -5,7 +5,7 @@ categories: nlp
 tags: scikit-learn
 ---
 
-<img src="/images/nlp/scikit-learn-logo.jpg" width="550" alt="scikit-learn" />
+{% image "/images/nlp/scikit-learn-logo.jpg", width="550px", alt="scikit-learn" %}
 
 <!-- more -->
 

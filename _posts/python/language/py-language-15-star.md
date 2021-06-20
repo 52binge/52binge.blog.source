@@ -6,7 +6,7 @@ categories: python
 tags: [python]
 ---
 
-<img src="/images/python/language/py-star-logo.jpg" width="650" alt="STAR" />
+{% image "/images/python/language/py-star-logo.jpg", width="650px", alt="STAR" %}
 
 <!-- more -->
 

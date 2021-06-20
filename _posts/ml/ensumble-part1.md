@@ -49,7 +49,7 @@ Feature 决定了模型效果的上限，而 Ensemble 就是让你更接近这�
 
 也可以按照机器学习技法的两张图来理解
 
-<img src="/images/ml/ensumble/under_over.png" width="750" />
+{% image "/images/ml/ensumble/under_over.png", width="750px" %}
 
 第一幅图(对应boosting)可看作进行了一个特征转换来防止欠拟合，第二幅图(对应bagging)则进行了一个正则化来防止过拟合
 
@@ -151,7 +151,7 @@ Bagging 的一个扩展变体
 > - 关于Stacking的细节详述，[如何在 Kaggle 首战中进入前 10%][4] 以一幅图来说说明5折Stacking的过程
 > - 推荐一个Python的实现了Stacking集成的库mlxtend
 
-<img src="/images/ml/ensumble/stacking-1.jpg" width="800" />
+{% image "/images/ml/ensumble/stacking-1.jpg", width="800px" %}
 
 原作者举了一个5折stacking的例子，基本方法是，
 

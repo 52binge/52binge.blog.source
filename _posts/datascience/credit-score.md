@@ -7,7 +7,7 @@ tags: Credit-Score
 mathjax: true
 ---
 
-<img src="/images/datascience/credit-score-02.jpg" width="550" alt="Credit Score Card"/>
+{% image "/images/datascience/credit-score-02.jpg", width="550px", alt="Credit Score Card"%}
 
 <!-- more -->
 
@@ -189,7 +189,7 @@ B箱
 <strong>
 若 $k$ 个独立的随机变量 $Z\_1, Z\_2, ..., Z\_k$ 满足标准正态分布 $N(0,1)$ , 则这 $k$ 个随机变量的平方和：
 
-<img src="/images/datascience/credit-score-01.jpeg" width="150" alt=""/>
+{% image "/images/datascience/credit-score-01.jpeg", width="150px", alt=""%}
 
 卡方检验—χ2检验是以χ2分布为基础的一种假设检验方法，主要用于分类变量之间的独立性检验
 
@@ -199,7 +199,7 @@ B箱
 
 实际应用中，我们先假设原假设成立，计算出卡方值，卡方表示观察值与理论值间的偏离程度。
 
-<img src="/images/datascience/credit-score-03.png" width="500" alt=""/>
+{% image "/images/datascience/credit-score-03.png", width="500px", alt=""%}
 
 卡方值只是一个中间过程，通过卡方值计算出p值，p值才是我们最重要需要的。p小于0.05意味着存在显著差异。
 
@@ -215,7 +215,7 @@ B箱
 
 WOE 将预测类别的集中度的属性作为编码的数值。对于自变量第 $i$ 箱的WOE值为：
 
-<img src="/images/datascience/credit-score-04.svg" width="600" alt=""/>
+{% image "/images/datascience/credit-score-04.svg", width="600px", alt=""%}
 
 > $p\_{i1}$ 是第 $i$ 箱中坏客户占所有坏客户比例
 >
@@ -227,7 +227,7 @@ WOE 将预测类别的集中度的属性作为编码的数值。对于自变量�
 
 实际上WOE编码相当于把分箱后的特征从非线性可分映射到近似线性可分的空间内:
 
-<img src="/images/datascience/credit-score-05.svg" width="600" alt=""/>
+{% image "/images/datascience/credit-score-05.svg", width="600px", alt=""%}
 
 总结一下WOE编码的优势：
 
@@ -256,7 +256,7 @@ WOE 将预测类别的集中度的属性作为编码的数值。对于自变量�
 
 IV 信息价值(information value)，自变量的IV值越大，表示自变量的预测能力越强。 类似指标还有信息增益等。
 
-<img src="/images/datascience/credit-score-06.jpg" width="850" alt=""/>
+{% image "/images/datascience/credit-score-06.jpg", width="850px", alt=""%}
 
 ![](https://www.zhihu.com/equation?tex=IV_i+%3D%28%5Cfrac%7B%5C%23B_i%7D%7B%5C%23B_T%7D-%5Cfrac%7B%5C%23G_i%7D%7B%5C%23G_T%7D%29+%2A+log+%28%5Cfrac%7B%5C%23B_i%2F%5C%23B_T%7D%7B%5C%23G_i%2F%5C%23G_T%7D%29%3D%28%5Cfrac%7B%5C%23B_i%7D%7B%5C%23B_T%7D-%5Cfrac%7B%5C%23G_i%7D%7B%5C%23G_T%7D%29+%2A+WOE_i+%5C%5C)
 
@@ -266,11 +266,11 @@ IV 信息价值(information value)，自变量的IV值越大，表示自变量�
 
 IV 值实际上式变量各个分箱的加权求和。且和决策树中的交叉熵有异曲同工之妙。以下为交叉熵公式：
 
-<img src="/images/datascience/credit-score-07.svg" width="600" alt=""/>
+{% image "/images/datascience/credit-score-07.svg", width="600px", alt=""%}
 
 IV值的具体的计算流程如下：
 
-<img src="/images/datascience/credit-score-08.jpg" width="800" alt=""/>
+{% image "/images/datascience/credit-score-08.jpg", width="800px", alt=""%}
 
 IV排序后，选择IV>0.02的变量，共58个变量IV>0.02
 

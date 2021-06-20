@@ -29,7 +29,7 @@ Mini-batch、指数加权平均-偏差修正、Momentum、RMSprop、Adam、学�
 >
 > 但是如果每次处理训练数据的一部分即进行梯度下降法，则我们的算法速度会执行的更快。而处理的这些一小部分训练子集即称为 Mini-batch。
 
-<img src="/images/deeplearning/C2W2-1_1.png" width="700" />
+{% image "/images/deeplearning/C2W2-1_1.png", width="700px" %}
 
 > 如图，以 1000 为单位，将数据划分，令 $x^{\\{1\\}}=\\{x^{(1)},x^{(2)}……x^{(1000)}\\}$, 一般用 $x^{ \\{ t \\} }$, $y^{ \\{t\\} }$ 表示划分后的 mini-batch.
 > 
@@ -40,7 +40,7 @@ Mini-batch、指数加权平均-偏差修正、Momentum、RMSprop、Adam、学�
 
 **算法核心**
 
-<img src="/images/deeplearning/C2W2-2_1.png" width="700" />
+{% image "/images/deeplearning/C2W2-2_1.png", width="700px" %}
 
 > 假设我们有 5,000,000 个数据，每 1000 作为一个集合，计入上面所提到的 $x^{\\{1\\}}=\\{x^{(1)},x^{(2)}……x^{(5000)}\\},……$
 
@@ -64,7 +64,7 @@ epoch
 
 普通的 batch 梯度下降法 和 Mini-batch梯度下降法 代价函数的变化趋势，如下图所示：
 
-<img src="/images/deeplearning/C2W2-3_1.png" width="700" />
+{% image "/images/deeplearning/C2W2-3_1.png", width="700px" %}
 
 **Batch梯度下降** （如下图中蓝色）:
 
@@ -85,7 +85,7 @@ epoch
 > - 选一个 $1<size<m$ 的合适的 size 进行 Mini-batch 梯度下降，可实现快速学习，也应用了向量化带来的好处
 > - Cost function 的下降处于前两者之间
 
-<img src="/images/deeplearning/C2W2-4_1.png" width="700" />
+{% image "/images/deeplearning/C2W2-4_1.png", width="700px" %}
 
 ### Mini-batch 大小的选择
 
@@ -105,7 +105,7 @@ $$
 
 首先我们假设有一年的温度数据，如下图所示
 
-<img src="/images/deeplearning/C2W2-5_0.jpg" width="500" />
+{% image "/images/deeplearning/C2W2-5_0.jpg", width="500px" %}
 
 我们现在需要计算出一个温度趋势曲线，计算方法(`指数加权平均实现`)如下：
 
@@ -120,24 +120,24 @@ $$
 > 上面的 $θ\_t$ 表示第 $t$ 天的温度，β 是可调节的参数，$V\_t$ 表示 $\frac{1}{1-β}$ 天的每日温度
 
 <!--下图是一个关于天数和温度的散点图：
-<img src="/images/deeplearning/C2W2-5_1.png" width="600" />
+{% image "/images/deeplearning/C2W2-5_1.png", width="600px" %}
 -->
 
 ### 当 β=0.9、0.98、0.5 的情况
 
 当 β=0.9 时，指数加权平均最后的结果如下图中**红色**线所示；
 
-<img src="/images/deeplearning/C2W2-5_2.jpg" width="600" />
+{% image "/images/deeplearning/C2W2-5_2.jpg", width="600px" %}
 
 当 β=0.98 时，指数加权平均最后的结果如下图中**绿色**线所示, 绿线相比较红线要平滑一些，是因为对过去温度的权重更大，所以当天天气温度的影响降低，在温度变化时，适应得更缓慢一些；
 
-<img src="/images/deeplearning/C2W2-5_3.jpg" width="600" />
+{% image "/images/deeplearning/C2W2-5_3.jpg", width="600px" %}
 
 当 β=0.5 时，指数加权平均最后的结果如下图中**黄色**线所示；
 
-<img src="/images/deeplearning/C2W2-5_4.jpg" width="600" />
+{% image "/images/deeplearning/C2W2-5_4.jpg", width="600px" %}
 
-<!--<img src="/images/deeplearning/C2W2-6_1.png" width="700" />
+<!--{% image "/images/deeplearning/C2W2-6_1.png", width="700px" %}
 -->
 >  Notes: The most common value for $\beta$ is 0.9.
 
@@ -164,7 +164,7 @@ $$
 
 在我们执行指数加权平均的公式时，当 β=0.98 时，得到的并不是图中的**绿色**曲线，而是下图中的**紫色**曲线，其起点比较低。
 
-<img src="/images/deeplearning/C2W2-7.png" width="650" />
+{% image "/images/deeplearning/C2W2-7.png", width="650px" %}
 
 **原因**： 
 
@@ -254,7 +254,7 @@ $$
 
 首先介绍一下一般的梯度算法收敛情况是这样的
 
-<img src="/images/deeplearning/C2W2-8_1.png" width="750" />
+{% image "/images/deeplearning/C2W2-8_1.png", width="750px" %}
 
 > 可以看到，在前进的道路上十分曲折，走了不少弯路，在纵向我们希望走得慢一点，横向则希望走得快一点，所以才有了动量梯度下降算法.
 
@@ -265,11 +265,11 @@ $$
 > $ V\_{dw}=βV\_{dw}+(1-β)dw \\\\ V\_{db}=βV\_{db}+(1-β)db $
 > - $W=W-αV\_{dw},b=b-αV\_{db}$
 
-<img src="/images/deeplearning/C2W2-10_1.png" width="600" />
+{% image "/images/deeplearning/C2W2-10_1.png", width="600px" %}
 
 最终得到收敛的效果如下图的红色曲线所示.
 
-<img src="/images/deeplearning/C2W2-9_1.png" width="750" />
+{% image "/images/deeplearning/C2W2-9_1.png", width="750px" %}
 
 在利用梯度下降法来最小化该函数的时候，每一次迭代所更新的代价函数值如图中蓝色线所示在上下波动，而这种幅度比较大波动，减缓了梯度下降的速度，而且我们只能使用一个较小的学习率来进行迭代.
 
@@ -282,13 +282,13 @@ $$
 
 再看看算法： 
 
-<img src="/images/deeplearning/C2W2-11.png" width="700" />
+{% image "/images/deeplearning/C2W2-11.png", width="700px" %}
 
 ## 4. RMSprop (Root Mean Square Prop)
 
 RMSProp 算法的全称叫 Root Mean Square Prop，是 Geoffrey E. Hinton 在 Coursera 课程中提出的一种优化算法，在上面的 Momentum 优化算法中，虽然初步解决了优化中摆动幅度大的问题。所谓的摆动幅度就是在优化中经过更新之后参数的变化范围，如下图所示，**蓝色的为 Momentum 优化算法所走的路线**，**绿色的为 RMSProp 优化算法所走的路线**。
 
-<img src="/images/deeplearning/C2W2-12_1.png" width="700" />
+{% image "/images/deeplearning/C2W2-12_1.png", width="700px" %}
 
 为了进一步优化损失函数在更新中存在摆动幅度过大的问题，并且进一步加快函数的收敛速度，RMSProp 算法对权重 W 和偏置 b 的梯度使用了微分平方加权平均数。 
 

@@ -32,7 +32,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/matplotlib-2-figure-1.png" height="100" width="450" />
+{% image "/images/python/matplotlib-2-figure-1.png" height="100", width="450px" %}
 </div>
 
 使用`plt.figure`定义一个图像窗口：编号为3；大小为(8, 5). 
@@ -48,7 +48,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/matplotlib-2-figure-2.png" height="100" width="450" />
+{% image "/images/python/matplotlib-2-figure-2.png" height="100", width="450px" %}
 </div>
 
 ## Set Coordinate axis

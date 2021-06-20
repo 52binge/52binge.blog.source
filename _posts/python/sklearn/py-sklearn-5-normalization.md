@@ -71,7 +71,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/sklearn-5-normalization-output_5_0.png" width="400" />
+{% image "/images/python/sklearn-5-normalization-output_5_0.png", width="400px" %}
 </div>
 
 ### data normalization before

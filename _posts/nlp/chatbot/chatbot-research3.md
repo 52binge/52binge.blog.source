@@ -49,7 +49,7 @@ Machine Learning相关知识
 > - 架构设计清晰、模块化
 > - 功能分拆，解耦，部件可插拔与扩展
 
-<img src="/images/chatbot/chatbot-3_1.jpg" width="600" />
+{% image "/images/chatbot/chatbot-3_1.jpg", width="600px" %}
 
 算法与机器学习角度考量
 
@@ -93,7 +93,7 @@ print(Levenshtein.distance(texta,textb)) # 1
 
 ## 4. Chatterbot 聊天机器人
 
-<img src="/images/chatbot/chatbot-3_2.jpg" width="700" />
+{% image "/images/chatbot/chatbot-3_2.jpg", width="700px" %}
 
 **每个部分都设计了不同的 "适配器"(Adapter)**  
 
@@ -129,7 +129,7 @@ print(Levenshtein.distance(texta,textb)) # 1
 
 **预备知识:场景分类与NB**
 
-<img src="/images/chatbot/chatbot-3_3.png" width="400" />
+{% image "/images/chatbot/chatbot-3_3.png", width="400px" %}
   
 ## Reference
 

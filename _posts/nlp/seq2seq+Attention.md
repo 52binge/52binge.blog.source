@@ -19,7 +19,7 @@ tags: seq2seq+Attention
 
 ## 1. Seq2Seq 框架1
 
-<img src="/images/chatbot/seq2seq-1.jpg" width="300" />
+{% image "/images/chatbot/seq2seq-1.jpg", width="300px" %}
 
 [Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation](https://arxiv.org/pdf/1406.1078.pdf)
 
@@ -43,7 +43,7 @@ $$
 
 以上描述的编码器是一个单向的 RNN，每个时间步的隐藏状态只取决于该时间步及之前的输入子序列。我们也可以使用 Bi-RNN 构造编码器。这种情况下，编码器每个时间步的隐藏状态同时取决于该时间步之前和之后的子序列（包括当前时间步的输入），并编码了整个序列的信息。
 
-<img src="/images/chatbot/seq2seq-5.jpeg" width="800" />
+{% image "/images/chatbot/seq2seq-5.jpeg", width="800px" %}
 
 ### 1.2 decode 解码器
 
@@ -74,7 +74,7 @@ $$
 $$ - \log\mathbb{P}(y_1, \ldots, y_{T'} \mid x_1, \ldots, x_T) = -\sum_{t'=1}^{T'} \log \mathbb{P}(y_{t'} \mid y_1,  \ldots, y_{t'-1}, \boldsymbol{c}),
 $$
 
-<img src="/images/chatbot/seq2seq-6.png" width="800" />
+{% image "/images/chatbot/seq2seq-6.png", width="800px" %}
 
 在模型训练中，所有输出序列损失的均值通常作为需要最小化的损失函数。在图中所描述的模型预测中，我们需要将decode在上一个时间步的输出作为当前时间步的输入。与此不同，在训练中我们也可以将标签序列在上一个时间步的标签作为decode在当前时间步的输入。这叫做强制教学（teacher forcing）。
 
@@ -88,15 +88,15 @@ $$
 
 第二个要讲的Seq-to-Seq模型来自于 “[Sequence to Sequence Learning with Neural Networks](https://arxiv.org/pdf/1409.3215.pdf)”，其模型结构图如下所示：
 
-<img src="/images/chatbot/seq2seq-2.jpg" width="600" />
+{% image "/images/chatbot/seq2seq-2.jpg", width="600px" %}
 
 与上面模型最大的区别在于其source编码后的 向量$C$ 直接作为Decoder阶段RNN的初始化state，而不是在每次decode时都作为`RNN cell`的输入。此外，decode时RNN的输入是目标值，而不是前一时刻的输出。首先看一下编码阶段：
 
-<img src="/images/chatbot/seq2seq-3.jpg" width="500" />
+{% image "/images/chatbot/seq2seq-3.jpg", width="500px" %}
 
 就是简单的RNN模型，每个词经过RNN之后都会编码为hidden state（e0,e1,e2），并且source序列的编码向量e就是最终的hidden state e2。接下来再看一下解码阶段：
 
-<img src="/images/chatbot/seq2seq-4.jpg" width="500" />
+{% image "/images/chatbot/seq2seq-4.jpg", width="500px" %}
 
 e向量仅作为RNN的初始化状态传入decode模型。接下来就是标准的循环神经网络，每一时刻输入都是前一时刻的正确label。直到最终输入<eos>符号截止滚动。
 
@@ -171,7 +171,7 @@ $$
 
 其中含下标的 W 和 b 分别为门控循环单元的权重参数和偏差参数。
 
-<img src="/images/chatbot/seq2seq-7.jpeg" width="800" />
+{% image "/images/chatbot/seq2seq-7.jpeg", width="800px" %}
 
 ### 3.3 小结
 

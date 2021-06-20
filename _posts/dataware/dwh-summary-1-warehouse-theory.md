@@ -5,7 +5,7 @@ categories: [data-warehouse]
 tags: [data warehouse]
 ---
 
-<img src="/images/dataware/sm-data-warehouse-logo-1.jpg" width="580" alt="" />
+{% image "/images/dataware/sm-data-warehouse-logo-1.jpg", width="580px", alt="" %}
 
 <!-- more -->
 
@@ -73,7 +73,7 @@ DW 4 大特征:  Subject Oriented、Integrate、Non-Volatil、Time Variant .
 
 **data warehouse 逻辑分层架构：**
 
-<img src="/images/dataware/dw-summary-pic.jpeg" width="550" alt="" />
+{% image "/images/dataware/dw-summary-pic.jpeg", width="550px", alt="" %}
 
 ### 1.2 data modeling
 
@@ -236,7 +236,7 @@ JOIN查询仍然可以使用WHERE条件和ORDER BY排序。
 
 <details>
 <summary>Hive 系统架构</summary>
-<img src="/images/hadoop/hive-02.png" width="550" alt="Hive 系统架构" />
+{% image "/images/hadoop/hive-02.png", width="550px", alt="Hive 系统架构" %}
 
 </details>
 

@@ -69,7 +69,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/matplotlib-4-ax-4_1.png" height="100" width="700" />
+{% image "/images/python/matplotlib-4-ax-4_1.png" height="100", width="700px" %}
 </div>
 
 ## 调整坐标轴
@@ -88,7 +88,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/matplotlib-4-ax-4_2.png" height="100" width="700" />
+{% image "/images/python/matplotlib-4-ax-4_2.png" height="100", width="700px" %}
 </div>
 
 使用`.yaxis.set_ticks_position`设置`y`坐标刻度数字或名称的位置：`left`.（所有位置：`left`，`right`，`both`，`default`，`none`）
@@ -109,7 +109,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/matplotlib-4-ax-4_3.png" height="100" width="700" />
+{% image "/images/python/matplotlib-4-ax-4_3.png" height="100", width="700px" %}
 </div>
 
 [img1]: /images/python/matplotlib-4-ax-4_1.png

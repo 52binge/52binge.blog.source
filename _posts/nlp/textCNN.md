@@ -5,7 +5,7 @@ categories: nlp
 tags: TextCNN
 ---
 
-<img src="/images/nlp/textcnn-logo.png" width="650" />
+{% image "/images/nlp/textcnn-logo.png", width="650px" %}
 
 <!-- more -->
 

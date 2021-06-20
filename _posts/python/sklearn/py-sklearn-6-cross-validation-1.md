@@ -87,7 +87,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/sklearn-6-cross-validation-1-output_6_0.png" width="400" />
+{% image "/images/python/sklearn-6-cross-validation-1-output_6_0.png", width="400px" %}
 </div>
 
 从图中得知，选择 `12~18` 的 `k` 值最好。高过 `18` 之后，准确率开始下降则是因为过拟合(`Over fitting`)的问题。
@@ -113,7 +113,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/sklearn-6-cross-validation-1-output_8_1.png" width="400" />
+{% image "/images/python/sklearn-6-cross-validation-1-output_8_1.png", width="400px" %}
 </div>
 
 由图可以得知，平均方差越低越好，因此选择`13~18`左右的`K`值会最好

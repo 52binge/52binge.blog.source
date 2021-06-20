@@ -6,13 +6,13 @@ tags: [spark]
 ---
 
 
-<img src="/images/spark/spark-3.0-rdd-logo.png" width="550" alt="Spark RDD Feature" />
+{% image "/images/spark/spark-3.0-rdd-logo.png", width="550px", alt="Spark RDD Feature" %}
 
 <!--more-->
 
 ## 1. Spark 是什么?
 
-<img src="/images/spark/spark-3.1.png" width="900" alt="Spark" />
+{% image "/images/spark/spark-3.1.png", width="900px", alt="Spark" %}
 
 > SQL, Oracle, Spark
 > 
@@ -25,7 +25,7 @@ tags: [spark]
 
 ## 2. Spark 执行过程
 
-<img src="/images/spark/spark-3.2.png" width="830" alt="Spark" />
+{% image "/images/spark/spark-3.2.png", width="830px", alt="Spark" %}
 
 > HiveOnSpark vs SparkSQL
 >
@@ -38,13 +38,13 @@ tags: [spark]
 
 ## 3. Spark 的起源
 
-<img src="/images/spark/spark-3.3.png" width="900" alt="Spark" />
+{% image "/images/spark/spark-3.3.png", width="900px", alt="Spark" %}
 
 ## 4. Spark 的架构图
 
 > Spark 2.x python & Java 性能 1:1
 
-<img src="/images/spark/spark-3.4.png" width="700" alt="Spark" />
+{% image "/images/spark/spark-3.4.png", width="700px", alt="Spark" %}
 
 Spark DataFrame 与 pandas Dataframe 没关系，但是可以互相转换
 
@@ -61,7 +61,7 @@ Spark DataFrame 与 pandas Dataframe 没关系，但是可以互相转换
 
 ## 5. RDD 的五个特性
 
-<img src="/images/spark/spark-3.5.png" width="900" alt="Spark" />
+{% image "/images/spark/spark-3.5.png", width="900px", alt="Spark" %}
 
 ## 6. Spark Api 如何使用
 
@@ -127,11 +127,11 @@ words.mapPartitionsWithIndex(indexedFunc).collect()
 
 查看 spark 运行状态： http://localhost:8080/
 
-<img src="/images/spark/spark-3.7.png" width="900" alt="Spark" />
+{% image "/images/spark/spark-3.7.png", width="900px", alt="Spark" %}
 
 查看 spark Jobs 状态：http://localhost:4040/jobs/
 
-<img src="/images/spark/spark-3.6.png" width="900" alt="Spark" />
+{% image "/images/spark/spark-3.6.png", width="900px", alt="Spark" %}
 
 > `知识摘要`:
 > 1. 如果用 Hadoop Mapreduce 来完成, 则代码写起来麻烦并繁多.
@@ -142,7 +142,7 @@ words.mapPartitionsWithIndex(indexedFunc).collect()
 
 ## 8. Spark 执行图
 
-<img src="/images/spark/spark-2.3.jpg" width="600" alt="Spark Exec" />
+{% image "/images/spark/spark-2.3.jpg", width="600px", alt="Spark Exec" %}
 
 
 ## Reference

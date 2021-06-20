@@ -60,7 +60,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/matplotlib-5-legend-1.png" height="100" width="650" />
+{% image "/images/python/matplotlib-5-legend-1.png" height="100", width="650px" %}
 </div>
 
 参数 `loc='upper right'` 表示图例将添加在图中的右上角.
@@ -76,7 +76,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/matplotlib-5-legend-2.png" height="100" width="650" />
+{% image "/images/python/matplotlib-5-legend-2.png" height="100", width="650px" %}
 </div>
 
 这样我们就能分别重新设置线条对应的 `label` 了.

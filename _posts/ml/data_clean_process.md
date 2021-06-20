@@ -6,7 +6,7 @@ tags: [estimation]
 toc: true
 ---
 
-<img class="img-fancy" src="/images/ml/metric/data-pre-processing.jpg" width="600" border="0" alt="data pre-processing"/>
+<img class="img-fancy" src="/images/ml/metric/data-pre-processing.jpg", width="600" border="0px", alt="data pre-processing"%}
 
 <!-- more -->
 

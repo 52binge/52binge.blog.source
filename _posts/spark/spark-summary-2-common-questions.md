@@ -5,7 +5,7 @@ categories: [spark]
 tags: [spark]
 ---
 
-<img src="/images/spark/spark-summary-logo-1.jpg" width="500" alt="" />
+{% image "/images/spark/spark-summary-logo-1.jpg", width="500px", alt="" %}
 
 <!-- more -->
 
@@ -39,7 +39,7 @@ No. | Title | Flag
 20. | [Spark高频考点](https://mp.weixin.qq.com/s/UPtxoGWZIvPE0KHoOs_tBw): 写出你用过的spark中的算子，其中哪些会产生shuffle过程 <br><br>1. reduceBykey 2. groupByKey 3. …ByKey | ❎
 21. | [good - Spark学习之路 （三）Spark之RDD](https://www.cnblogs.com/qingyunzong/p/8899715.html)  扎心了老铁 | ❎
 22. | [请写出创建Dateset的几种方式](https://spark.apache.org/docs/2.1.0/sql-programming-guide.html#sql) <br> 1. 常用的方式通过sparksession读取外部文件或者数据生成dataset <br> 2. 通过调用createDataFrame生成Dataset <br><br> df.select(`"name"`).show()<br>df.select(df[`'name'`], df[`'age'`] + 1).show() <br> df.filter(df[`'age'`] > 21).show() <br> df.groupBy(`"age"`).count().show() <br><br> df.createOrReplaceTempView(`"people"`) <br> sqlDF = spark.sql(`"SELECT * FROM people"`) <br> sqlDF.show() <br><br> teenNames = `teenagers.rdd`.map(lambda p: "Name: " + p.name).collect() | <br><br><br><br>❎
-23. | 描述一下 RDD，DataFrame，DataSet 的区别？ <br><br> DataSet 结合了 RDD 和 DataFrame 的优势，并带来的一个新的概念 Encoder。<br> 当序列化数据时，Encoder 产生字节码与 off-heap 进行交互，可以达到按需访问数据的效果，而不用反序列化整个对象。Spark 尚未提供自定义 Encoder 的 API，可是将来会加入 <br> <img src="/images/spark/rdd-df-ds.jpg" width="700" alt="" /> <br><br> [Apache spark DataFrame & Dataset](https://spark.apache.org/docs/2.1.0/sql-programming-guide.html#datasets-and-dataframes) | <br><br><br><br><br><br>❎
+23. | 描述一下 RDD，DataFrame，DataSet 的区别？ <br><br> DataSet 结合了 RDD 和 DataFrame 的优势，并带来的一个新的概念 Encoder。<br> 当序列化数据时，Encoder 产生字节码与 off-heap 进行交互，可以达到按需访问数据的效果，而不用反序列化整个对象。Spark 尚未提供自定义 Encoder 的 API，可是将来会加入 <br> {% image "/images/spark/rdd-df-ds.jpg", width="700px", alt="" %} <br><br> [Apache spark DataFrame & Dataset](https://spark.apache.org/docs/2.1.0/sql-programming-guide.html#datasets-and-dataframes) | <br><br><br><br><br><br>❎
 24. | 描述一下Spark中stage是如何划分的？描述一下shuffle的概念 | ✔️❎
 25. | [Spark 在yarn上运行需要做哪些关键的配置工作？](https://www.cnblogs.com/bigdata1024/p/12116621.html) <br> [如何kill -个Spark在yarn运行中Application](https://blog.csdn.net/power0405hf/article/details/50457960): `yarn application -kill <appId>` <br> 但是这样会导致端口在一段时间（24小时）内被占用 | <br>❎
 26. | 通常来说，Spark与MapReduce相比，Spark运行效率更高。请说明效率更高来源于Spark内置的哪些机制？并请列举常见spark的运行模式？ | ❎
@@ -87,7 +87,7 @@ sqlDF.show()
 
 - [very good Spark分区 partition 详解](https://blog.csdn.net/qq_22473611/article/details/107822168)
 
-<img src="/images/spark/spark-rdd-split-task-partition.png" width="800" alt="申请的计算节点（Executor）数目和每个计算节点核数，决定了你同一时刻可以并行执行的task" />
+{% image "/images/spark/spark-rdd-split-task-partition.png", width="800px", alt="申请的计算节点（Executor）数目和每个计算节点核数，决定了你同一时刻可以并行执行的task" %}
 
 No. | Title | Flag
 :---: | --- | ---
@@ -170,7 +170,7 @@ rdd_sorted = rdd_data.map(lambda x:(x,1)).sortByKey().map(lambda x:x[0])
 
 ## 7. map和mapPartitions的区别
 
-<img src="/images/spark/spark-map-vs-mapPartitions.jpg" width="500" alt="" />
+{% image "/images/spark/spark-map-vs-mapPartitions.jpg", width="500px", alt="" %}
 
 ## 8. 数据存入Redis  优先使用什么算子?
 

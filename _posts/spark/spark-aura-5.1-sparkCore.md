@@ -5,7 +5,7 @@ categories: [spark]
 tags: [spark]
 ---
 
-<img src="/images/spark/spark-aura-5.1.2.jpg" width="950" alt="executor 一定属于某个 Application" />
+{% image "/images/spark/spark-aura-5.1.2.jpg", width="950px", alt="executor 一定属于某个 Application" %}
 
 <!-- more -->
 
@@ -85,7 +85,7 @@ No. | Spark 任务的提交流程 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 (19) | DriverActor 接受到 DAGScheduler 发送过来的 task，会拿到一个序列化器，对 task 进行序列化，然后将序列化好的 task 封装到 launchTask 中，然后将 launchTask 发送给指定的Executor
 (20) | Executor 接受到了 DriverActor 发送过来的 launchTask 时，会拿到一个反序列化器，对launchTask 进行反序列化，封装到 TaskRunner 中，然后从 Executor 这个线程池中获取一个线程，将反序列化好的 `task` 中的算子作用在 RDD 对应的分区上
 
-<img src="/images/spark/spark-aura-5.1.1.jpg" width="950" />
+{% image "/images/spark/spark-aura-5.1.1.jpg", width="950px" %}
 
 spark1.x RPC AKKA
 spark2.x RPC netty

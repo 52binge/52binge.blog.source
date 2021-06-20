@@ -5,15 +5,15 @@ categories: [hadoop]
 tags: [Hive]
 ---
 
-<img src="/images/hadoop/hadoop-hive-logo-1.png" width="450" alt="Hadoop MapReduce" />
+{% image "/images/hadoop/hadoop-hive-logo-1.png", width="450px", alt="Hadoop MapReduce" %}
 
 <!--more-->
 
 分布式文件系统HDFS: 核心原理与操作
 
-<img src="/images/hadoop/hadoop-hdfs-1.png" width="900" alt="Hadoop HDFS" />
+{% image "/images/hadoop/hadoop-hdfs-1.png", width="900px", alt="Hadoop HDFS" %}
 
-<img src="/images/hadoop/hadoop-hdfs-2.png" width="900" alt="Hadoop HDFS" />
+{% image "/images/hadoop/hadoop-hdfs-2.png", width="900px", alt="Hadoop HDFS" %}
 
 
 ## Reference

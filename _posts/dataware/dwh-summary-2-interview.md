@@ -5,13 +5,13 @@ categories: [data-warehouse]
 tags: [data warehouse]
 ---
 
-<img src="/images/dataware/sm-data-warehouse-logo-1.jpg" width="580" alt="" />
+{% image "/images/dataware/sm-data-warehouse-logo-1.jpg", width="580px", alt="" %}
 
 <!-- more -->
 
 No. | [2020年大厂-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688808) | Flag
 :---: | --- | :---:
-0. | [Hive SQL count（distinct）效率问题及优化](https://article.itxueyuan.com/a93Dg) <br>set mapreduce.map.memory.mb=48192;<br>set mapreduce.reduce.memory.mb=48192;<br>set mapred.reduce.tasks=1000；<br><br>select count（distinct account） from...where...<br><br> 加入distinct，map阶段不能用combine消重，数据输出为（k，v）形式然后在reduce阶段进行消重<br>Hive在处理COUNT这种“全聚合(full aggregates)”计算时，忽略指定的Reduce Task数，而强制使用1 <br><br> insert overwrite table temp select id，account，count(1) as num from tablename group by id，account； <br> <img src="/images/hadoop/map-reduce-combine.png" width="780" alt="" /> <br>[MapReduce流程简单解析](https://blog.csdn.net/yuzhuzhong/article/details/51476353)| ❎
+0. | [Hive SQL count（distinct）效率问题及优化](https://article.itxueyuan.com/a93Dg) <br>set mapreduce.map.memory.mb=48192;<br>set mapreduce.reduce.memory.mb=48192;<br>set mapred.reduce.tasks=1000；<br><br>select count（distinct account） from...where...<br><br> 加入distinct，map阶段不能用combine消重，数据输出为（k，v）形式然后在reduce阶段进行消重<br>Hive在处理COUNT这种“全聚合(full aggregates)”计算时，忽略指定的Reduce Task数，而强制使用1 <br><br> insert overwrite table temp select id，account，count(1) as num from tablename group by id，account； <br> {% image "/images/hadoop/map-reduce-combine.png", width="780px", alt="" %} <br>[MapReduce流程简单解析](https://blog.csdn.net/yuzhuzhong/article/details/51476353)| ❎
 1. | 手写"连续活跃登陆"等类似场景的sql | ❎
 <br><br>2. | left semi join和left join区别? <br><br>`left semi join` 是 in(keySet) 的关系，遇到右表重复记录，左表会跳过；当右表不存在的时候，左表数据不会显示; 相当于SQL的in语句. <br>`left join`: 当右表不存在的时候，则会显示NULL |　<br><br>❎
 <br><br><br>3. | 维度建模 和 范式建模(3NF模型) 的区别? <br><br> 维度建模是面向分析场景的，主要关注点在于快速、灵活: **星型模型 & 雪花模型 & 星系模型** <br><br> 3NF的最终目的就是为了降低数据冗余，保障数据一致性: <br> (2.1) 原子性 - 数据不可分割 <br> (2.2) 基于第一个条件，实体属性完全依赖于主键 <br> (2.3) 消除传递依赖 - 任何非主属性不依赖于其他非主属性 | <br><br><br>❎

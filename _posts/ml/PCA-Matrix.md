@@ -18,31 +18,31 @@ tags: PCA
 
 矩阵乘法的意义就是特定的向量转换 (不同坐标系的向量转换)
 
-<img src="/images/nlp/matrix/liner-03-1.png" width="550" alt="Are you ready?"/>
+{% image "/images/nlp/matrix/liner-03-1.png", width="550px", alt="Are you ready?"%}
 
 ## 04. Matrix multiplication as composition
 
 ## 09. 基变换
 
 
-<!--<img src="/images/nlp/matrix/matrix-0.png" width="600" alt="Are you ready?"/>
+<!--{% image "/images/nlp/matrix/matrix-0.png", width="600px", alt="Are you ready?"%}
 -->
 
-<img src="/images/nlp/matrix/matrix-1.png" width="550" alt="Are you ready?"/>
+{% image "/images/nlp/matrix/matrix-1.png", width="550px", alt="Are you ready?"%}
 
 Jennifer's 坐标系的基向量，是另外的样子. (在我们的坐标系中的表示)
 
-<img src="/images/nlp/matrix/av6731067-1.png" width="550" alt="Are you ready?"/>
+{% image "/images/nlp/matrix/av6731067-1.png", width="550px", alt="Are you ready?"%}
 
 矩阵乘法的意义就是特定的向量转换 (不同坐标系的向量转换)
 
-<img src="/images/nlp/matrix/av6731067-2.png" width="550" alt="Are you ready?"/>
+{% image "/images/nlp/matrix/av6731067-2.png", width="550px", alt="Are you ready?"%}
 
 Jennifer's 坐标系的 vector 与 我们坐标系的 vector 的互相转换：
 
-<img src="/images/nlp/matrix/av6731067-3.png" width="550" alt="Are you ready?"/>
+{% image "/images/nlp/matrix/av6731067-3.png", width="550px", alt="Are you ready?"%}
 
-<img src="/images/nlp/matrix/av6731067-4.png" width="550" alt="Are you ready?"/>
+{% image "/images/nlp/matrix/av6731067-4.png", width="550px", alt="Are you ready?"%}
 
 
 ## Reference

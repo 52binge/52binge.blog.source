@@ -6,7 +6,7 @@ tags: [MLP]
 toc: true
 ---
 
-<img src="/images/deeplearning/ANN-01.png" width="500" />
+{% image "/images/deeplearning/ANN-01.png", width="500px" %}
 
 <!-- more -->
 
@@ -24,7 +24,7 @@ Feedforward Networks 是一类网络的统称: MLP、Autoencoder、RBM、CNN 等
 
 ## 1. Neural Networks Basics
 
-<img src="/images/deeplearning/C1W3-8_1.png" width="700" />
+{% image "/images/deeplearning/C1W3-8_1.png", width="700px" %}
 
 ## 2. Activation functions
 
@@ -34,7 +34,7 @@ Feedforward Networks 是一类网络的统称: MLP、Autoencoder、RBM、CNN 等
 
 > Tanh 数据平均值为 0，具有数据中心化的效果，几乎在任何场合都优于 Sigmoid
 
-<img src="/images/deeplearning/C1W3-9_1.png" width="700" />
+{% image "/images/deeplearning/C1W3-9_1.png", width="700px" %}
 
 为什么需要激活函数? 如果没有激活函数, 那么不论多少层的神经网络都只相当于一个LR:
 
@@ -63,7 +63,7 @@ ReLU (rectified linear unit 矫正线性单元)
 
 在 LR 中我们的参数 $w$ 初始化为 0, 如果在神经网络中也是用相同的初始化, 那么一个隐藏层的每个节点都是相同的, 不论迭代多少次. 这显然是不合理的, 所以我们应该<font color="red"> **随机地初始化**</font> $w$ 从而解决这个 sysmmetry breaking problem. 破坏对称问题
 
-<img src="/images/deeplearning/C1W3-16_1.png" width="700" />
+{% image "/images/deeplearning/C1W3-16_1.png", width="700px" %}
 
 > 具体初始化代码可参见下图, 其中 **乘以 0.01** 是为了让参数 $w$ 较小, 加速梯度下降 
 >
@@ -73,7 +73,7 @@ ReLU (rectified linear unit 矫正线性单元)
 > 
 > finally it turns out that sometimes there can be better constants than 0.01.
 
-<img src="/images/deeplearning/C1W3-17_1.png" width="700" />
+{% image "/images/deeplearning/C1W3-17_1.png", width="700px" %}
 
 ## 4. Improving DNN
 
@@ -139,7 +139,7 @@ ReLU (rectified linear unit 矫正线性单元)
 
 dropout 也是一种正则化的手段, 在训练时以 1-keep_prob 随机地”丢弃”一些节点. 如下图所示.
 
-<img src="/images/deeplearning/C2W1-10_1.png" width="600" />
+{% image "/images/deeplearning/C2W1-10_1.png", width="600px" %}
 
 > dropout 将产生收缩权重的平方范数的效果, 和 L2 类似，实施 dropout 的结果是它会压缩权重，并完成一些预防过拟合的外层正则化，事实证明 dropout 被正式地作为一种正则化的替代形式
 > 
@@ -157,7 +157,7 @@ dropout 也是一种正则化的手段, 在训练时以 1-keep_prob 随机地”
 
 ### 4.4 Normalization
 
-<img src="/images/deeplearning/C2W1-14_1.png" width="600" />
+{% image "/images/deeplearning/C2W1-14_1.png", width="600px" %}
 
 > 1. 0 均值化 
 > 2. 归一化 方差
@@ -185,7 +185,7 @@ dropout 也是一种正则化的手段, 在训练时以 1-keep_prob 随机地”
 
 Vanishing/Exploding gradients 指的是随着前向传播不断地进行, 激活单元的值会逐层指数级地增加或减小, 从而导致梯度无限增大或者趋近于零, 这样会严重影响神经网络的训练. 如下图.
 
-<img src="/images/deeplearning/Vanishing-Exploding-gradients.png" width="750" />
+{% image "/images/deeplearning/Vanishing-Exploding-gradients.png", width="750px" %}
 
 > 可以减小这种情况发生的方法, 就是用有效的参数初始化 (该方法并不能完全解决这个问题). 但是也是有意义的
 > 

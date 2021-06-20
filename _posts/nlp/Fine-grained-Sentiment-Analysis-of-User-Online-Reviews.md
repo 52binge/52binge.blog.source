@@ -5,7 +5,7 @@ categories: nlp
 tags: Sentiment
 ---
 
-<img src="/images/deeplearning/AI-Challenger-11.png" width="550" alt="AI-Challenger"/>
+{% image "/images/deeplearning/AI-Challenger-11.png", width="550px", alt="AI-Challenger"%}
 
 <!-- more -->
 
@@ -23,19 +23,19 @@ Online reviews have become the critical factor to make consumption decision in r
 
 There are four sentimental types for every fine-grained element: Positive, Neutral, Negative and Not mentioned, which are labelled as 1, 0, -1 and-2. The meaning of these four labels are listed below.
 
-<img src="/images/deeplearning/AI-Challenger-14.png" width="650" alt=""/>
+{% image "/images/deeplearning/AI-Challenger-14.png", width="650px", alt=""%}
 
 An example of one labelled review:
 
 > “味道不错的面馆，性价比也相当之高，分量很足～女生吃小份，胃口小的，可能吃不完呢。环境在面馆来说算是好的，至少看上去堂子很亮，也比较干净，一般苍蝇馆子还是比不上这个卫生状况的。中午饭点的时候，人很多，人行道上也是要坐满的，隔壁的冒菜馆子，据说是一家，有时候也会开放出来坐吃面的人。“
 
-<img src="/images/deeplearning/AI-Challenger-13.png" width="650" alt=""/>
+{% image "/images/deeplearning/AI-Challenger-13.png", width="650px", alt=""%}
 
 ---
 
 「AI Challenger」是面向全球人工智能人才的开源数据集和编程竞赛平台。AI Challenger 2018 由创新工场、搜狗、美团点评、美图公司联合主办。有上万支团队参赛， 覆盖 81 个国家、1100 所高校、990 家公司。
 
-<!--<img src="/images/deeplearning/AI-Challenger-21.webp" width="850" alt=""/>
+<!--{% image "/images/deeplearning/AI-Challenger-21.webp", width="850px", alt=""%}
 -->
 
 ## 整体流程
@@ -45,7 +45,7 @@ An example of one labelled review:
 - **数据处理**
 。。。
 
-<img src="/images/deeplearning/AI-Challenger-22.webp" width="890" alt=""/>
+{% image "/images/deeplearning/AI-Challenger-22.webp", width="890px", alt=""%}
 
 有20个粒度的评价指标，每个粒度又有4种情感状态，从官方baseline来看，分别训练了20个（4标签）分类器。
 
@@ -262,7 +262,7 @@ model.summary()
 
 RNN：
 
-<img src="/images/deeplearning/AI-Challenger-16-1.png" width="900" alt=""/>
+{% image "/images/deeplearning/AI-Challenger-16-1.png", width="900px", alt=""%}
 
 RCNN：
 
@@ -292,7 +292,7 @@ x = Dense(4, activation="softmax")(x)
 model.summary()
 ```
 
-<img src="/images/deeplearning/AI-Challenger-17-1.png" width="900" alt=""/>
+{% image "/images/deeplearning/AI-Challenger-17-1.png", width="900px", alt=""%}
 
               
 > Input 一个网络层次，输入层 在 keras
@@ -443,7 +443,7 @@ class Metrics(Callback):
 
 ## 3. ELMO-Like
 
-<!--<img src="/images/deeplearning/AI-Challenger-23.webp" width="850" alt=""/>
+<!--{% image "/images/deeplearning/AI-Challenger-23.webp", width="850px", alt=""%}
 -->
 
 （腾讯词向量 16G， 800W \* 200 = 5W \* 200 + 自训词向 5W \* 128 ） + BiGRU 中层语义 + BiGRU 高层语义

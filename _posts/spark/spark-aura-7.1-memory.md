@@ -7,7 +7,7 @@ tags: [spark]
 
 [1. Spark性能优化指南——基础篇](https://tech.meituan.com/2016/04/29/spark-tuning-basic.html)
 
-<img src="/images/spark/spark-aura-7.1-memory.png" width="500" alt="" />
+{% image "/images/spark/spark-aura-7.1-memory.png", width="500px", alt="" %}
 
 <!-- more -->
 
@@ -197,7 +197,7 @@ No. | spark 能利用的内存有2个区域
 
 这2个区域，又都分为2个区域：
 
-<img src="/images/spark/spark-aura-7.1-memory.png" width="700" alt="" />
+{% image "/images/spark/spark-aura-7.1-memory.png", width="700px", alt="" %}
 
 
 ```java
@@ -221,7 +221,7 @@ Test t2 = new Test1();
 
 ## 4. spark 的静态内存模型和统一内存模型详解 + 资源调优
 
-<img src="/images/spark/spark-aura-7.1.3.png" width="850" alt="Off-Heap 内存" />
+{% image "/images/spark/spark-aura-7.1.3.png", width="850px", alt="Off-Heap 内存" %}
 
 spark 的2种内存管理方式：
 
@@ -253,7 +253,7 @@ spark 的2种内存管理方式：
 
 [Memory Management](http://spark.apache.org/docs/latest/configuration.html#memory-management)
 
-<img src="/images/spark/spark-aura-7.1.2.jpg" width="900" alt="" />
+{% image "/images/spark/spark-aura-7.1.2.jpg", width="900px", alt="" %}
 
 ### 4.1 spark 的静态内存模型
 

@@ -12,7 +12,7 @@ Tensorflow 首先要定义神经网络的结构, 然后再把数据放入结构�
 
 ## 计算图
 
-<img src="/images/tensorflow/tf-1-why.gif" width="400" />
+{% image "/images/tensorflow/tf-1-why.gif", width="400px" %}
 
 因为 TensorFlow 是采用数据流图（**data　flow　graphs**）来计算, 所以首先我们得创建一个**数据流图**, 然后再将我们的数据（数据以张量(**tensor**)的形式存在）放在数据流图中计算. 
 

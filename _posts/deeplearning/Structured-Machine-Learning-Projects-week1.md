@@ -21,7 +21,7 @@ tags: deeplearning.ai
 
 ## 1. Why ML Strategy?
 
-<img src="/images/deeplearning/C3W1-1_1.png" width="700" />
+{% image "/images/deeplearning/C3W1-1_1.png", width="700px" %}
 
 > 如上图示，假如我们在构建一个喵咪分类器，数据集就是上面几个图，训练之后准确率达到90%。虽然看起来挺高的，但是这显然并不具一般性，因为数据集太少了。那么此时可以想到的ML策略有哪些呢？总结如上图中 **`Ideas`**.
 
@@ -29,14 +29,14 @@ tags: deeplearning.ai
 
 > Orthogonalization [ɔ:θɒɡənəlaɪ'zeɪʃn] 正交化
 
-<img src="/images/deeplearning/C3W1-2_1.png" width="600" />
+{% image "/images/deeplearning/C3W1-2_1.png", width="600px" %}
  
 > And when I train a neural network，I tend not to use early shopping.
 > 
 > 因为 Early Stropping，这个按钮能同时影响两件事情. 就像一个按钮同时影响电视机的宽度和高度. 如果你有更多的正交化(Orthogonalization)的手段，用这些手段调网络会简单不少.
 When a supervised learning system is design, these are the 4 assumptions that needs to be true and orthogonal.
 
-<img src="/images/deeplearning/C3W1-3_1.png" width="600" />
+{% image "/images/deeplearning/C3W1-3_1.png", width="600px" %}
 
 No. | strategy | solutions
 :-------:  | :-------:  | :-------:
@@ -47,14 +47,14 @@ No. | strategy | solutions
 
 ## 3. Single number evaluation metric
 
-<img src="/images/deeplearning/C3W1-4_1.png" width="700" />
+{% image "/images/deeplearning/C3W1-4_1.png", width="700px" %}
 
 > 大致的思想就是首先按照单一数字评估指标对模型进行评价和优化。以精确率和召回率为例，这二者一般来说是一个不可兼得的指标，所以为了更好的衡量模型的好坏，引入F1算法来综合精确率和召回率对模型进行评估.
 
-<!--<img src="/images/deeplearning/C3W1-6_1.png" width="700" />
+<!--{% image "/images/deeplearning/C3W1-6_1.png", width="700px" %}
 -->
 
-<img src="/images/deeplearning/C3W1-7_1.png" width="700" />
+{% image "/images/deeplearning/C3W1-7_1.png", width="700px" %}
 
 [Ref: sklearn中 F1-micro 与 F1-macro区别和计算原理][F1]
 
@@ -64,7 +64,7 @@ No. | strategy | solutions
 
 It's not always easy into a single real number evaluation metric
 
-<img src="/images/deeplearning/C3W1-9_1.png" width="750" />
+{% image "/images/deeplearning/C3W1-9_1.png", width="750px" %}
 
 > So more generally, if you have N metrics that you care about, it's sometimes reasonable to pick one of them to be optimizing. So you want to do as well as is possible on that one. And then N minus 1 to be satisficing.
 > 
@@ -72,7 +72,7 @@ It's not always easy into a single real number evaluation metric
 
 ## 5. Train/dev/test distributions
 
-<img src="/images/deeplearning/C3W1-10_1.png" width="700" />
+{% image "/images/deeplearning/C3W1-10_1.png", width="700px" %}
 
 **Training, development and test distributions**
 
@@ -90,7 +90,7 @@ the data.
 
 ## 6. Size of dev and test sets
 
-<img src="/images/deeplearning/C3W1-11_1.png" width="750" />
+{% image "/images/deeplearning/C3W1-11_1.png", width="750px" %}
 
 ## 7. When to change dev/test sets and metrics
 
@@ -101,11 +101,11 @@ the data.
 >
 > 所以对于技术人员来说可能希望准确性高一些的算法A，而用户可能会非常在意你给他推送了某些不想看的东西, 也许更喜欢算法B。所以总的来说就是根据实际需要来 改变开发/测试集合指标.
 
-<img src="/images/deeplearning/C3W1-12_1.png" width="750" />
+{% image "/images/deeplearning/C3W1-12_1.png", width="750px" %}
 
 ## 8. Why human-level performance?
 
-<img src="/images/deeplearning/C3W1-14_1.png" width="750" />
+{% image "/images/deeplearning/C3W1-14_1.png", width="750px" %}
 
 > 如图示：
 >
@@ -115,28 +115,28 @@ the data.
 >
 > 其中紫色曲线在末尾收敛后与绿色虚线之间的差距称为贝叶斯优化误差(Bayse Optima Error)
 
-<!--<img src="/images/deeplearning/C3W1-13_1.png" width="750" />-->
+<!--{% image "/images/deeplearning/C3W1-13_1.png", width="750px" %}-->
 
 因此在实际操作过程中，我们可以以人类准确率为指标来评判我们训练的模型好坏程度
 
-<img src="/images/deeplearning/C3W1-15_1.png" width="750" />
+{% image "/images/deeplearning/C3W1-15_1.png", width="750px" %}
 
 ## 9. Avoidable bias
 
-<img src="/images/deeplearning/C3W1-16_1.png" width="750" />
+{% image "/images/deeplearning/C3W1-16_1.png", width="750px" %}
 
 > Humans error 与 Training Error 之间的差距我们成为 Avoidable bias
 > Training Error 与 Dev Error 之间的差距我们成为 Variance
 
 ## 10. Understanding human-level performance
 
-<img src="/images/deeplearning/C3W1-18_1.png" width="750" />
+{% image "/images/deeplearning/C3W1-18_1.png", width="750px" %}
 
 > **解释说明 Example 1**:
 > 
 > 假如一个医院需要对一个医学影像进行分类识别，普通人，普通医生，有经验的医生和一群有经验的医生识别错误率分别为3%，1%，0.7%，0.5%。上一节中提到过Human Error，那此时的该如何确定Human Error呢？你可能会说取平均值，只能说Too Naive！当然是取最好的结果啦，也就是由一群经验丰富的医生组成的团体得到的结果作为Human Error。另外贝叶斯误差一定小于0.5%。
 
-<img src="/images/deeplearning/C3W1-19_1.png" width="750" />
+{% image "/images/deeplearning/C3W1-19_1.png", width="750px" %}
 
 > **解释说明 Example 2**:
 >
@@ -153,7 +153,7 @@ the data.
 
 ## 11. Surpassing human-level performance
 
-<img src="/images/deeplearning/C3W1-20_1.png" width="750" />
+{% image "/images/deeplearning/C3W1-20_1.png", width="750px" %}
 
 > **Scenario A**
 > 
@@ -167,7 +167,7 @@ the data.
 
 ## 12. Improving your model performance
 
-<img src="/images/deeplearning/C3W1-21_1.png" width="750" />
+{% image "/images/deeplearning/C3W1-21_1.png", width="750px" %}
 
 ## 13. Reference
 

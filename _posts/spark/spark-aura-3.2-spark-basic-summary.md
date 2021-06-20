@@ -5,7 +5,7 @@ categories: [spark]
 tags: [spark]
 ---
 
-<img src="/images/spark/spark-aura-3.2.1.jpg" width="600" />
+{% image "/images/spark/spark-aura-3.2.1.jpg", width="600px" %}
 
 <!-- more -->
 
@@ -48,7 +48,7 @@ HDFS 处理 myha01 这个 nameservice 的方式非常的暴力:
 > 而其余所有阶段都会生成ShuffleMapTask；之所以称之为ShuffleMapTask是因为它需要将自己的计算结果通过shuffle到下一个stage中。
 
 
-<img src="/images/spark/spark-aura-3.2.1.jpg" width="700" />
+{% image "/images/spark/spark-aura-3.2.1.jpg", width="700px" %}
 
 **Driver Application**: 客户端驱动程序, 也可以理解为客户端应用程序，用于将任何程序转换为 RDD 和 DAG, 并与 Cluster Manager 进行通信与调度.
 
@@ -124,11 +124,11 @@ referencing a dataset in an external storage systemHDFS
 
 **WordCount 各种流程的划分**：
 
-<img src="/images/spark/spark-aura-3.2.2.jpg" width="950" alt="WorCount 各种流程划分" />
+{% image "/images/spark/spark-aura-3.2.2.jpg", width="950px", alt="WorCount 各种流程划分" %}
 
 **WordCount DAG 有向无环图**：
 
-<img src="/images/spark/spark-aura-3.2.3.jpg" width="850" alt="WorCount DAG有向无环图" />
+{% image "/images/spark/spark-aura-3.2.3.jpg", width="850px", alt="WorCount DAG有向无环图" %}
 
 ## Reference
 

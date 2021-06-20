@@ -5,7 +5,7 @@ categories: [data-warehouse]
 tags: [SQL]
 ---
 
-<img src="/images/sql/sql-vs-nosql.png" width="500" alt="" />
+{% image "/images/sql/sql-vs-nosql.png", width="500px", alt="" %}
 
 <!-- more -->
         

@@ -5,7 +5,7 @@ categories: python
 tags: pyCharm
 ---
 
-<img src="/images/python/tools/PyCharm_logo.jpg" width="500" alt="Pycharm Keyboard Shortcuts" />
+{% image "/images/python/tools/PyCharm_logo.jpg", width="500px", alt="Pycharm Keyboard Shortcuts" %}
 
 <!-- more -->
 
@@ -51,7 +51,7 @@ PYTHONPATH=~/ghome/6E/work_project/mlar:~/ghome/6E/work_project/mlar/nn_framewor
 
 ### environment
 
-<img src="/images/python/tools/PyCharm_invoke.png" width="800" alt="Pycharm Invoke" />
+{% image "/images/python/tools/PyCharm_invoke.png", width="800px", alt="Pycharm Invoke" %}
 
 ## Reference
 

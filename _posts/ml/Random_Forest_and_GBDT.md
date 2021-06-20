@@ -6,7 +6,7 @@ categories: machine-learning
 tags: Rondom_Forest
 ---
 
-<img class="img-fancy" src="/images/ml/ensumble/ensumble-1.png" width="550" border="0" alt=""/>
+<img class="img-fancy" src="/images/ml/ensumble/ensumble-1.png", width="550" border="0px", alt=""%}
 
 <!--<a href="/2019/06/02/ml/Random_Forest_and_GBDT/" target="_self" style="display:block; margin:0 auto; background:url('/images/ml/ensumble/ensumble-1.png') no-repeat 0 0 / contain; height:304px; width:550px;"></a>
 -->
@@ -25,13 +25,13 @@ Rondom Forest, 的 Random 体现在 2 个方面：
 
 Sample data Random： 
 
-<img class="img-fancy" src="/images/ml/ensumble/ensumble-2.jpg" width="600" border="0"/>
+<img class="img-fancy" src="/images/ml/ensumble/ensumble-2.jpg", width="600" border="0px" %}
 
 Feature Random：
 
 > 与数据集的随机选取类似，随机森林中的子树的每一个分裂过程并未用到所有的待选特征，而是从所有的待选特征中随机选取一定的特征，之后再在随机选取的特征中选取最优的特征。这样能够使得随机森林中的决策树都能够彼此不同，提升系统的多样性，从而提升分类性能。
 
-<img class="img-fancy" src="/images/ml/ensumble/ensumble-3.jpg" width="600" border="0"/>
+<img class="img-fancy" src="/images/ml/ensumble/ensumble-3.jpg", width="600" border="0px" %}
 
 [7.1]: https://zhuanlan.zhihu.com/p/34534004
 
@@ -41,11 +41,11 @@ GBDT 是以决策树（CART）为基学习器的 GB算法，是迭代树，而�
 
 一般 Boosting 算法都是一个迭代的过程，每一次新的训练都是为了改进上一次的结果。
 
-<img class="img-fancy" src="/images/ml/ensumble/ensumble-4.jpg" width="600" />
+<img class="img-fancy" src="/images/ml/ensumble/ensumble-4.jpg", width="600px" %}
 
 GBDT 的核心就在于：**每一棵树学的是之前所有树结论和的残差**，这个残差就是一个加预测值后能得真实值的累加量。
 
-<img class="img-fancy" src="/images/ml/ensumble/ensumble-5.jpg" width="850" />
+<img class="img-fancy" src="/images/ml/ensumble/ensumble-5.jpg", width="850px" %}
 
 ## 3. RF vs GBDT
 
@@ -66,7 +66,7 @@ Xgboost相比于GBDT来说，更加有效应用了数值优化，最重要是**�
 > 4. 列抽样（column subsampling）。xgboost借鉴RF做法，支持列抽样（即每次的输入特征不是全部特征)
 > 5. 并行化处理： 预先对每个特征内部进行了排序找出候选切割点.各个**feature**的增益计算就可以开多线程进行.
 
-<img class="img-fancy" src="/images/ml/ensumble/ensumble-6.jpg" width="600" />
+<img class="img-fancy" src="/images/ml/ensumble/ensumble-6.jpg", width="600px" %}
 
 > 好的模型需要具备两个基本要素：
 >
@@ -91,7 +91,7 @@ Bagging 的思想比较简单，即每一次从原始数据中根据 **均匀概
 
 Boosting 的每一次抽样的 **样本分布都是不一样** 的。每一次迭代，都根据上一次迭代的结果，**增加被错误分类的样本的权重**，使得模型能在之后的迭代中更加注意到 **难以分类的样本**，这是一个 **不断学习的过程，也是一个不断提升** 的过程，这也就是boosting思想的本质所在。 迭代之后，将每次迭代的基分类器进行集成。那么如何进行样本权重的调整和分类器的集成是我们需要考虑的关键问题。
 
-<img src="/images/ml/ensumble/ensumble-7.jpg" width="600" alt=""/>
+{% image "/images/ml/ensumble/ensumble-7.jpg", width="600px", alt=""%}
 
 ## 6. 特征重要度
 

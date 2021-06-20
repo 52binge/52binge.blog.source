@@ -5,17 +5,17 @@ categories: [data-warehouse]
 tags: [data warehouse]
 ---
 
-<img src="/images/dataware/dw-wy-1.1.jpg" width="750" alt="" />
+{% image "/images/dataware/dw-wy-1.1.jpg", width="750px", alt="" %}
 
 <!-- more -->
 
 ## 1. what's data warehouse?
 
-<img src="/images/dataware/dw-wy-1.2.jpg" width="750" alt="" />
+{% image "/images/dataware/dw-wy-1.2.jpg", width="750px", alt="" %}
 
 ## 2. why build data warehouse?
 
-<img src="/images/dataware/dw-wy-1.3.jpg" width="750" alt="" />
+{% image "/images/dataware/dw-wy-1.3.jpg", width="750px", alt="" %}
 
 ## 3. 什么情况应建 data warehouse ?
 
@@ -26,40 +26,40 @@ tags: [data warehouse]
 5. 当你想要借助大数据的力量来提升产品竞争力
 6. 当你想时刻知道业务发展情况时
 
-<img src="/images/dataware/dw-wy-1.4.jpg" width="950" alt="" />
+{% image "/images/dataware/dw-wy-1.4.jpg", width="950px", alt="" %}
 
 ## 4. Warehouse vs Middle platform
 
-<img src="/images/dataware/dw-wy-1.5.jpg" width="950" alt="" />
+{% image "/images/dataware/dw-wy-1.5.jpg", width="950px", alt="" %}
 
 ## 5. OLTP vs OLAP
 
-<img src="/images/dataware/dw-wy-1.6.jpg" width="850" alt="" />
+{% image "/images/dataware/dw-wy-1.6.jpg", width="850px", alt="" %}
 
 ## 6. 应用关系
 
-<img src="/images/dataware/dw-wy-1.7.jpg" width="850" alt="" />
+{% image "/images/dataware/dw-wy-1.7.jpg", width="850px", alt="" %}
 
 ## 7. 模式设计的3个阶段
 
 ### 7.1 概念模型
 
-<img src="/images/dataware/dw-wy-1.8.jpg" width="850" alt="" />
+{% image "/images/dataware/dw-wy-1.8.jpg", width="850px", alt="" %}
 
 ### 7.2 逻辑模型
 
-<img src="/images/dataware/dw-wy-1.9.jpg" width="850" alt="" />
+{% image "/images/dataware/dw-wy-1.9.jpg", width="850px", alt="" %}
 
 ### 7.3 物理模型
 
-<img src="/images/dataware/dw-wy-1.10.jpg" width="850" alt="" />
+{% image "/images/dataware/dw-wy-1.10.jpg", width="850px", alt="" %}
 
 > 聊聊你理解的 OLAP 和 OLTP (使用场景、技术栈等)
 > 聊聊你对维度建模的理解
 
 ## 8. 技术组件
 
-<img src="/images/dataware/dw-wy-1.11.jpg" width="950" alt="" />
+{% image "/images/dataware/dw-wy-1.11.jpg", width="950px", alt="" %}
 
 ## Reference
 

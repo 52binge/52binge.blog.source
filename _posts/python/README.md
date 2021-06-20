@@ -7,7 +7,7 @@ tags: WSGI
 mathjax: true
 ---
 
-<img src="/images/python/WSGI/WSGI-1.jpg" width="550" alt="WSGI" />
+{% image "/images/python/WSGI/WSGI-1.jpg", width="550px", alt="WSGI" %}
 
 <!-- more -->
 
@@ -15,7 +15,7 @@ mathjax: true
 
 User 通过 浏览器 访问 互联网上指定的 网页文件 展示到浏览器上。
 
-<img src="/images/python/WSGI/WSGI-2.png" width="600" alt="WSGI" />
+{% image "/images/python/WSGI/WSGI-2.png", width="600px", alt="WSGI" %}
 
 技术角度，以下3个步骤：
 
@@ -37,11 +37,11 @@ User 通过 浏览器 访问 互联网上指定的 网页文件 展示到浏览�
 
 **CGI 流程**
 
-<img src="/images/python/WSGI/WSGI-3.png" width="650" alt="CGI 流程" />
+{% image "/images/python/WSGI/WSGI-3.png", width="650px", alt="CGI 流程" %}
 
 **WSGI 流程**
 
-<img src="/images/python/WSGI/WSGI-4.png" width="550" alt="WSGI 流程" />
+{% image "/images/python/WSGI/WSGI-4.png", width="550px", alt="WSGI 流程" %}
 
 ## 2. What's WSGI
 

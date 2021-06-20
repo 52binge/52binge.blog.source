@@ -26,7 +26,7 @@ tags: deeplearning.ai
 
 该网络 1980s 提出，主要针对灰度图像训练的，用于识别手写数字。
 
-<img src="/images/deeplearning/C4W2-1_1.png" width="750" />
+{% image "/images/deeplearning/C4W2-1_1.png", width="750px" %}
 
 > 1. 当时很少用到 Padding，所以看到随着网络层次增加，图像的高度和宽度都是逐渐减小的，深度则不断增加.
 > 2. 当时人们会更倾向于使用 Average Pooling，但是现在则更推荐使用 Max Pooling.
@@ -38,7 +38,7 @@ tags: deeplearning.ai
 
 AlexNet 其实和 LetNet-5 有很多相似的地方，如大致的网络结构。不同的地方主要有如下：
 
-<img src="/images/deeplearning/C4W2-2_1.png" width="750" />
+{% image "/images/deeplearning/C4W2-2_1.png", width="750px" %}
 
 - 激活函数使用的是 **Relu**，最后一层使用的是 **Softmax**
 - 参数更多，有6000万个参数，而 LeNet-5 只有6万个左右
@@ -52,7 +52,7 @@ AlexNet 其实和 LetNet-5 有很多相似的地方，如大致的网络结构�
 
 ### 2.3 VGG-16
 
-<img src="/images/deeplearning/C4W2-3_1.png" width="750" />
+{% image "/images/deeplearning/C4W2-3_1.png", width="750px" %}
 
 这个网络太牛了，因为它有将近 1.38亿个参数，即使放到现在也是一个很大的网络，但是这个网络的结构并不复杂。下面主要介绍一下上图网络。
 
@@ -72,17 +72,17 @@ ResNets 发明者是 何恺明、张翔宇、任少卿、孙剑
 
 首先介绍组成残差网络的单元：残差块(**Residual Block**)，如下图示：
 
-<img src="/images/deeplearning/C4W2-4.png" width="550" />
+{% image "/images/deeplearning/C4W2-4.png", width="550px" %}
 
 残差块是由两层网络节点组成的, $a^{[l]}$ 经过线性变化，再通过Relu激活函数后得到 $a^{[l+1]}$， $a^{[l+2]}$ 也同理，具体过程如下图示：
 
-<img src="/images/deeplearning/C4W2-5_1.png" width="750" />
+{% image "/images/deeplearning/C4W2-5_1.png", width="750px" %}
 
 特别注意上图中的**紫色线**连接，$a^{[{l}]}$ 通过这条线直接将数据传递给 $a^{[l+2]}$， 所以 $a^{[l+2]}=g(z^{[l+1]}+a^{[l]})$ ，这条紫色线也叫作**short cut**(或skip connection)
 
 ### 3.2 残差网络
 
-<img src="/images/deeplearning/C4W2-6_1.png" width="750" />
+{% image "/images/deeplearning/C4W2-6_1.png", width="750px" %}
 
 如图示，残差网络每两层网络节点组成一个残差块，这也就是其与普通网络(Plain Network)的差别。
 
@@ -98,7 +98,7 @@ ResNets 发明者是 何恺明、张翔宇、任少卿、孙剑
 
 为了直观解释残差网络为什么有用，假设我们已经通过一个很大的神经网络得到了 $a^{[l]}$。 而现在我们又需要添加两层网络进去，我们看看如果添加的是残差块会有什么效果。如下图示：
 
-<img src="/images/deeplearning/C4W2-7.jpg" width="650" />
+{% image "/images/deeplearning/C4W2-7.jpg", width="650px" %}
 
 由 **残差块Residual Block** 的特点我们知道 $a^{[l+2]}=g(z^{[l+1]}+a^{[l]})=g(W^{[l+1]}a^{[l]}+b^{[l+1]}+a^{[l]})$
 
@@ -114,17 +114,17 @@ ResNets 发明者是 何恺明、张翔宇、任少卿、孙剑
 
 $1 \* 1$ 卷积乍看起来好像很没用，如下图上，​但是如果这个 $1 \* 1$ 的卷积有深度呢？​
 
-<img src="/images/deeplearning/C4W2-8.png" width="750" />
+{% image "/images/deeplearning/C4W2-8.png", width="750px" %}
 
 说个更加直观的理解就是使用 $1\*1$ 卷积可以很方便的减少深度，而不改变高度和宽度，如下图所示：
 
-<img src="/images/deeplearning/C4W2-9.png" width="700" />
+{% image "/images/deeplearning/C4W2-9.png", width="700px" %}
 
 只需要用 32 个 ($1\*1\*192$) 的 Filter 即可, 如果不用 $1 \* 1$ 卷积，例如采用 $2\*2$ 卷积,要想实现只改变深度，那么还需要使用 padding，相比起来更加麻烦了.
 
 ## 6. Inception network motivation
 
-<img src="/images/deeplearning/C4W2-10.jpg" width="700" />
+{% image "/images/deeplearning/C4W2-10.jpg", width="700px" %}
 
 如上图示，我们使用了各种过滤器，也是用了 Max Pooling。但是这些并不需要人工的选择其个数，这些都可以通过学习来确定下来。所以这种方法很好的帮助我们选择何种 **Filter** 的问题，这也就是 **Inception**网络。
 
@@ -132,7 +132,7 @@ $1 \* 1$ 卷积乍看起来好像很没用，如下图上，​但是如果这�
 
 注意随之而来的计算成本，尤其是 $5\*5$ 的 Filter，下面以这个 Filter 举例进行说明：
 
-<img src="/images/deeplearning/C4W2-11.jpg" width="700" />
+{% image "/images/deeplearning/C4W2-11.jpg", width="700px" %}
 
 如上图示，使用 32 个 $(5\*5\*192)$ 的 **Filter**，对 $(28,28,192)$ 进行 Same卷积 运算得到 $(28,28,32)$ 的输出矩阵，该卷积需要执行的乘法运算有多少次呢？
 
@@ -142,7 +142,7 @@ $1 \* 1$ 卷积乍看起来好像很没用，如下图上，​但是如果这�
 
 上面运算次数多大1.2亿次，运算量相当大，因此有另一种网络结构对此进行优化，且可以达到同样效果，即采用 1 \* 1 卷积
 
-<img src="/images/deeplearning/C4W2-12.png" width="700" />
+{% image "/images/deeplearning/C4W2-12.png", width="700px" %}
 
 如图示进行了两次卷积，我们计算一下总共的乘法次数。
 
@@ -152,9 +152,9 @@ $1 \* 1$ 卷积乍看起来好像很没用，如下图上，​但是如果这�
 
 ## 7. Inception network
 
-<img src="/images/deeplearning/C4W2-12_1.png" width="750" />
+{% image "/images/deeplearning/C4W2-12_1.png", width="750px" %}
 
-<img src="/images/deeplearning/C4W2-13_1.png" width="750" />
+{% image "/images/deeplearning/C4W2-13_1.png", width="750px" %}
 
 > 为了可以防止过拟合，还有个特别的 inception network，是一个 Google 员工开发的叫做 GoogLeNet，这个名字是为了向 LeNet 致敬. 这样非常好，深度学习的研究人员如何重视协作，深度学习工作者对彼此的工作成果，都有一种强烈的敬意.
 
@@ -166,17 +166,17 @@ Practical advice for using ConvNets
 
 简单说就是在他人的基础上实现自己想要的模型，举个🌰，假如我们现在需要识别家里养的两只猫，分别叫 **小花** 和 **小白**，但是我们只有比较少的图片。幸运的是网上已经有一个已经训练好的模型，是用来区分1000个不同事物的(包括猫)，其网络模型如下：
 
-<img src="/images/deeplearning/C4W2-15.png" width="750" />
+{% image "/images/deeplearning/C4W2-15.png", width="750px" %}
 
 我们的需求是最后结果有三种：是 **小花**，or **小白**，or **都不是**。​所以需要对 **softmax** 做如下图修改.
 
 由于数据较少，所以可以对他人的模型的前面的结构中的参数进行冻结，即 **权重 weight** 和 **偏差 bias** 不做改动。
 
-<img src="/images/deeplearning/C4W2-16.png" width="750" />
+{% image "/images/deeplearning/C4W2-16.png", width="750px" %}
 
 ​当然，如果我们有一定量的数据，那么 **freeze** 的范围也可以随之减少，即拿来训练的层次可以增多
 ​
-​<img src="/images/deeplearning/C4W2-17.png" width="750" />
+​{% image "/images/deeplearning/C4W2-17.png", width="750px" %}
 
 > you find that for a lot of computer vision applications, you just do much better if you download someone else's open source weights and use that as initialization for your problem.
 > 
@@ -191,7 +191,7 @@ Practical advice for using ConvNets
 - 局部变形(local warping)
 - 镜像(mirroring)
 
-​<img src="/images/deeplearning/C4W2-18.jpg" width="750" />
+​{% image "/images/deeplearning/C4W2-18.jpg", width="750px" %}
 
 > 以上介绍的方法，同时使用并没有什么坏处，但是在实践中，因为太复杂了，所以使用的很少。
 >
@@ -201,17 +201,17 @@ Practical advice for using ConvNets
 
 我们都知道图像是由 **RGB** 三种颜色构成的，所以该数据扩充方法常采用 **PCA color augmentation**，即假如一个图片的 **R** 和 **G** 成分较多，那么该算法则 **R,G** 的值会减少很多，而 B 的值变化会少一些，所以使得总体的颜色保持一致.
 
-​<img src="/images/deeplearning/C4W2-19_2.png" width="750" />
+​{% image "/images/deeplearning/C4W2-19_2.png", width="750px" %}
 
 > 如果你看不懂这些，那么没关系，可以看看 AlexNet 论文中的细节，你也能找到 PCA 颜色增强的开源实现方法.
 
 ## 11. The state of CV
 
-​<img src="/images/deeplearning/C4W2-21_1.png" width="750" />
+​{% image "/images/deeplearning/C4W2-21_1.png", width="750px" %}
 
-​<img src="/images/deeplearning/C4W2-22_1.png" width="750" />
+​{% image "/images/deeplearning/C4W2-22_1.png", width="750px" %}
 
-​<img src="/images/deeplearning/C4W2-23_1.png" width="750" />
+​{% image "/images/deeplearning/C4W2-23_1.png", width="750px" %}
 ​
 ## Reference
 

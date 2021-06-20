@@ -14,7 +14,7 @@ tags: tensorflow
 
 自己做了一个示意图，希望帮助初学者更好地理解 多层RNN. 
 
-<img src="/images/tensorflow/tf-4.4_1-simple-lstms.png" width="800" />
+{% image "/images/tensorflow/tf-4.4_1-simple-lstms.png", width="800px" %}
 
 通过本例，你可以了解到单层 LSTM 的实现，多层 LSTM 的实现。输入输出数据的格式。 RNN 的 dropout layer 的实现。
 
@@ -24,7 +24,7 @@ tags: tensorflow
 
 MNIST 是在机器学习领域中的一个经典问题。该问题解决的是把 28x28像素 的灰度手写数字图片识别为相应的数字，其中数字的范围从 0到9.
 
-<img src="/images/tensorflow/tf-4.4_5-mnist_digits.png" width="400" />
+{% image "/images/tensorflow/tf-4.4_5-mnist_digits.png", width="400px" %}
 
 > MNIST 数据集 包含了 60000 张图片来作为训练数据，10000 张图片作为测试数据。每张图片都代表了 0~9 中的一个数字。图片大小都为 28*28，处理后的每张图片是一个长度为 784 的一维数组，这个数组中的元素对应图片像素矩阵提供给神经网络的输入层，像素矩阵中元素的取值范围 [0, 1]， 它代表了颜色的深浅。其中 0 表示白色背景(background)，1 表示黑色前景(foreground)。
 

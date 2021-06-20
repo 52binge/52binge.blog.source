@@ -15,9 +15,9 @@ tags: deeplearning.ai
 
 ## 1. Computer vision
 
-<img src="/images/deeplearning/C4W1-1_1.png" width="700" />
+{% image "/images/deeplearning/C4W1-1_1.png", width="700px" %}
 
-<img src="/images/deeplearning/C4W1-2_1.png" width="700" />
+{% image "/images/deeplearning/C4W1-2_1.png", width="700px" %}
 
 > 如图示，之前课程中介绍的都是 64 \* 64 \* 3的图像 (**3 代表**:因为每个图片都有3个颜色通道 channels, 12288 So $X$, **the input features has dimension 12288**)，而一旦图像质量增加，例如变成 1000 \* 1000 \* 3 的时候那么此时的神经网络的计算量会巨大，显然这不现实。所以需要引入其他的方法来解决这个问题.
 
@@ -25,13 +25,13 @@ tags: deeplearning.ai
 
 使用边缘检测作为入门样例, you see how the convolution operation works.
 
-<img src="/images/deeplearning/C4W1-3_1.png" width="700" />
+{% image "/images/deeplearning/C4W1-3_1.png", width="700px" %}
 
 > 边缘检测可以是垂直边缘检测，也可以是水平边缘检测，如上图所示.
 
 至于算法如何实现，下面举一个比较直观的例子：
 
-<img src="/images/deeplearning/C4W1-4_1.png" width="700" />
+{% image "/images/deeplearning/C4W1-4_1.png", width="700px" %}
 
 > 可以很明显的看出原来 6 \* 6 的矩阵有明显的垂直边缘，通过 3 \* 3 的过滤器 **filter** (也叫做 “核”)卷积之后，仍然保留了原来的垂直边缘特征，虽然这个边缘貌似有点粗，这是因为数据不够大的原因，如果输入数据很大的话这个不是很明显了.
 > 
@@ -39,17 +39,17 @@ tags: deeplearning.ai
 
 ## 3. More edge detection
 
-<img src="/images/deeplearning/C4W1-5_1.png" width="700" />
+{% image "/images/deeplearning/C4W1-5_1.png", width="700px" %}
 
 除了上面的垂直，水平边缘检测，其实也可以检测初颜色过度变化，例如是亮变暗，还是暗变亮？
 
-<img src="/images/deeplearning/C4W1-5_2.png" width="600" />
+{% image "/images/deeplearning/C4W1-5_2.png", width="600px" %}
 
 **在计算机视觉的历史上，层曾经公平的争论过哪些什么样的 `filter` 数字组合才是最好的:
 **
 > **下面是一些常见的过滤器，第二个是`Sobel filter`，具有较强的鲁棒性，第三个是`Schoss filter`.**
 
-<img src="/images/deeplearning/C4W1-6_1.png" width="700" />
+{% image "/images/deeplearning/C4W1-6_1.png", width="700px" %}
 
 Filter | desc
 :-------: | :-------:
@@ -69,7 +69,7 @@ Other Filter | 9个参数也可以通过学习(反向传播)的方式获得
 
 ### 4.1 运用 Padding 的原因
 
-<img src="/images/deeplearning/C4W1-7_1.png" width="500" />
+{% image "/images/deeplearning/C4W1-7_1.png", width="500px" %}
 
 原来的 6 \* 6 填充后变成了 8 \* 8，此时在经过一次卷积得到的仍旧是 6 \* 6 的矩阵。
 
@@ -96,7 +96,7 @@ Same convolutions | Pad so that output size is the same as the input size. <br><
 
 过滤器 纵向、横向 都需要按 步长 $S$ 来移动，如图示:
 
-<img src="/images/deeplearning/C4W1-8_1.png" width="700" />
+{% image "/images/deeplearning/C4W1-8_1.png", width="700px" %}
 
 结合之前的内容，输出矩阵大小计算公式方法为，假设：
 
@@ -117,7 +117,7 @@ Stride | $s \* s$ | 步长
 
 这一节用立体卷积来解释
 
-<img src="/images/deeplearning/C4W1-9_1.png" width="700" />
+{% image "/images/deeplearning/C4W1-9_1.png", width="700px" %}
 
 > **如图**:
 >
@@ -130,15 +130,15 @@ Stride | $s \* s$ | 步长
 
 ## 7. One Layer of CNN Example
 
-<img src="/images/deeplearning/C4W1-10_1.png" width="700" />
+{% image "/images/deeplearning/C4W1-10_1.png", width="700px" %}
 
 如图示得到 **$4 \* 4$** 的矩阵后还需要加上一个偏差 **$b\_n$** (Python 广播机制)，之后还要进行非线性转换，即用 ReLU 函数.
 
-<img src="/images/deeplearning/C4W1-10_2.png" width="700" />
+{% image "/images/deeplearning/C4W1-10_2.png", width="700px" %}
 
 因此假如在某一卷积层中使用了 10 个 **$3 \* 3$** 的 **Filter** 过滤器，那么一共有 $(3\*3+1)\*10=280$ 个参数.
 
-<img src="/images/deeplearning/C4W1-11_1.png" width="700" />
+{% image "/images/deeplearning/C4W1-11_1.png", width="700px" %}
 
 下面总结了各项参数的大小和表示方法：
 
@@ -158,7 +158,7 @@ Output | $n\_{H/W}^{[l]}=[\frac{n\_{H/W}^{[l-1]}+2p^{[l]}-f^{[l]}}{s^{[l]}}+1]$ 
 
 ## 8. A Simple Convolution Network
 
-<img src="/images/deeplearning/C4W1-12_1.png" width="750" />
+{% image "/images/deeplearning/C4W1-12_1.png", width="750px" %}
 
 上图简单介绍了卷积网络的计算过程，需要再介绍的一点是最后一层的全连接层，即将 $7 \* 7 \* 40$ 的输出矩阵展开，得到 $1960$ 个节点，然后再采用 **Softmax** 来进行预测.
 
@@ -174,7 +174,7 @@ Output | $n\_{H/W}^{[l]}=[\frac{n\_{H/W}^{[l-1]}+2p^{[l]}-f^{[l]}}{s^{[l]}}+1]$ 
 
 使用池化层来缩减模型的大小，提高计算速度，同时提高提取特征的鲁棒性.
 
-<img src="/images/deeplearning/C4W1-13_1.png" width="700" />
+{% image "/images/deeplearning/C4W1-13_1.png", width="700px" %}
 
 **<font color="wathet">最大池化的直观理解</font>:**
 
@@ -188,15 +188,15 @@ Output | $n\_{H/W}^{[l]}=[\frac{n\_{H/W}^{[l-1]}+2p^{[l]}-f^{[l]}}{s^{[l]}}+1]$ 
 
 在 Andrew Ng 的课件中将 Conv layer 和 Pooling layer 合并在一起视为一层，因为池化层没有参数 (因为池化层的过滤器 无参数，有超参数，而且其大小可以事先确定好)。 但是在其他文献中有可能会把池化层算成单独的层，所以视情况而定。
 
-<img src="/images/deeplearning/C4W1-14_1.png" width="750" />
+{% image "/images/deeplearning/C4W1-14_1.png", width="750px" %}
 
-<img src="/images/deeplearning/C4W1-15.jpg" width="750" />
+{% image "/images/deeplearning/C4W1-15.jpg", width="750px" %}
 
 > 池化层参数个数为 0，卷积层参数个数一般多，**fully connected layer** 全连接层 参数很多.
 
 ## 11. Why Convolutions ?
 
-<img src="/images/deeplearning/C4W1-16_1.png" width="750" />
+{% image "/images/deeplearning/C4W1-16_1.png", width="750px" %}
 
 卷积 相比于 FC全连接 的好处最直观的就是使用的参数更少，**参数共享** 和 **稀疏连接**：
 
@@ -204,7 +204,7 @@ Output | $n\_{H/W}^{[l]}=[\frac{n\_{H/W}^{[l-1]}+2p^{[l]}-f^{[l]}}{s^{[l]}}+1]$ 
 
 特征检测如垂直边缘检测如果适用于图片的某个区域，那么它也可能适用于图片的其他区域，也就是说如果你用一个 $3 \* 3$ 的 Filter 检测垂直边缘. 那么图片的左上角区域以及旁边的各个区域都可以使用这个 $3 \* 3$ 的过滤器. 每个特征检测器以及输出都可以在输入图片的不同区域中使用同样的参数，以便提取垂直边缘或其他特征，它不仅适用于边缘特征这样的低阶特征，同样适用于高阶特征. 例如：提取脸上的眼睛 等或者其他对象. 这种是整张图片共享特征检测器 提取效果也很好
 
-<img src="/images/deeplearning/C4W1-17_1.png" width="750" />
+{% image "/images/deeplearning/C4W1-17_1.png", width="750px" %}
 
 ### 11.2 Sparsity of Connections
 
@@ -212,7 +212,7 @@ Output | $n\_{H/W}^{[l]}=[\frac{n\_{H/W}^{[l-1]}+2p^{[l]}-f^{[l]}}{s^{[l]}}+1]$ 
 
 综上这些就是卷积神经网络 CNN 表现良好的原因.
 
-<img src="/images/deeplearning/C4W1-18_1.png" width="750" />
+{% image "/images/deeplearning/C4W1-18_1.png", width="750px" %}
 
 ## Reference
 

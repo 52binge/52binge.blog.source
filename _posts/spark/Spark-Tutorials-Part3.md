@@ -5,7 +5,7 @@ categories: [spark]
 tags: [spark]
 ---
 
-<img src="/images/spark/data-flair/Apache-Spark-RDD-01.jpg" width="550" alt="" />
+{% image "/images/spark/data-flair/Apache-Spark-RDD-01.jpg", width="550px", alt="" %}
 
 <!-- more -->
 
@@ -16,13 +16,13 @@ tags: [spark]
 
 ## 1. Create RDDs
 
-<img src="/images/spark/data-flair/ways-to-create-RDDs-in-spark-2.jpg" width="700" alt="" />
+{% image "/images/spark/data-flair/ways-to-create-RDDs-in-spark-2.jpg", width="700px", alt="" %}
 
 ## 2. RDD Persistence and Caching
 
 What is RDD persistence, Why do we need to call cache or persist on an RDD, What is the Difference between Cache() and Persist() method in Spark
 
-<img src="/images/spark/data-flair/RDD-Persistence-and-Caching-Mechanism-in-Apache-Spark-2.jpg" width="700" alt="" />
+{% image "/images/spark/data-flair/RDD-Persistence-and-Caching-Mechanism-in-Apache-Spark-2.jpg", width="700px", alt="" %}
 
 **What is RDD Persistence and Caching**
 
@@ -46,11 +46,11 @@ using RDD.unpersist() method.
 
 ## 3. RDD Features
 
-<img src="/images/spark/data-flair/features-of-rdd-1.jpg" width="800" alt="" />
+{% image "/images/spark/data-flair/features-of-rdd-1.jpg", width="800px", alt="" %}
 
 ### 3.1 In-memory computation
 
-<img src="/images/spark/data-flair/Spark-In-Memory-Computing.jpg" width="700" alt="" />
+{% image "/images/spark/data-flair/Spark-In-Memory-Computing.jpg", width="700px", alt="" %}
 
 ### 3.2 Lazy Evaluation
 
@@ -97,11 +97,11 @@ Whereas actions like **countByKey**
 
 ### 4.1 Objective
 
-<img src="/images/spark/data-flair/Spark-Paired-RDD-01.jpg" width="700" alt="" />
+{% image "/images/spark/data-flair/Spark-Paired-RDD-01.jpg", width="700px", alt="" %}
 
 in spark is designed as each dataset in RDD is divided into logical partitions. Further, we can say here each partition may be computed on different nodes of the cluster.
 
-<img src="/images/spark/data-flair/Paired-RDD-01-1.jpg" width="600" alt="" />
+{% image "/images/spark/data-flair/Paired-RDD-01-1.jpg", width="600px", alt="" %}
 
 ### 4.2 Spark Paired RDD
 

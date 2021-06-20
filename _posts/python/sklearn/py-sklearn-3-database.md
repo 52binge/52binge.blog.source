@@ -17,14 +17,14 @@ eg: boston 房价, 糖尿病, 数字, Iris 花。
 也可以生成虚拟的数据，例如用来训练线性回归模型的数据，可以用函数来生成
 
 <div class="limg1">
-<img src="/images/python/sklearn-3-datasets-1.png" width="400" />
+{% image "/images/python/sklearn-3-datasets-1.png", width="400px" %}
 </div>
 <!--![][img-1]-->
 
 例如，点击进入 boston 房价的数据，可以看到 `sample` 的总数，属性，以及 `label` 等信息
 
 <div class="limg1">
-<img src="/images/python/sklearn-3-datasets-2.png" width="650" />
+{% image "/images/python/sklearn-3-datasets-2.png", width="650px" %}
 </div>
 
 如果是自己生成数据，按照函数的形式，输入 `sample`，`feature`，`target` 的个数等等。
@@ -110,7 +110,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/sklearn-3-datasets-output_11_0.png"/>
+{% image "/images/python/sklearn-3-datasets-output_11_0.pngpx" %}
 </div>
 
 可以看到用函数生成的 `Linear Regression` 用的数据。
@@ -124,7 +124,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/sklearn-3-datasets-output_13_0.png"/>
+{% image "/images/python/sklearn-3-datasets-output_13_0.pngpx" %}
 </div>
 
 <!--![output_13_0][img-4]-->

@@ -5,7 +5,7 @@ categories: [spark]
 tags: [spark]
 ---
 
-<img src="/images/spark/SparkSql-logo-2_meitu_1.jpg" width="500" alt="" />
+{% image "/images/spark/SparkSql-logo-2_meitu_1.jpg", width="500px", alt="" %}
 
 <!-- more -->
 
@@ -87,7 +87,7 @@ spark-sql 在 hadoop02 和 hadoop03 中启动的时候，都各自初始化了�
 
  spark-sql的元数据的状态就是hive.
 
-<img src="/images/spark/spark-aura-10.3.1.png" width="900" alt="" />
+{% image "/images/spark/spark-aura-10.3.1.png", width="900px", alt="" %}
 
 ### 2.3 SparkSQL 脚本使用
 

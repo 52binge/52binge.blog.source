@@ -5,7 +5,7 @@ categories: nlp
 tags: BERT
 ---
 
-<img src="/images/nlp/bert5/bert5-2.png" width="400" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/bert5-2.png", width="400px", alt="BERT tutorial" %}
 
 <!-- more -->
 
@@ -16,59 +16,59 @@ BERT的全称是: Bidirectional Encoder Representation from Transformers
 
 ## 1. Transformer to BERT
 
-<img src="/images/nlp/bert5/Transformer-to-Bert-1.png" width="650" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/Transformer-to-Bert-1.png", width="650px", alt="BERT tutorial" %}
 
 ### 1.1 ELMO
 
 ELMO 全称： Embeddings from Language Models
 
-<img src="/images/nlp/bert5/Transformer-to-Bert-2.png" width="650" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/Transformer-to-Bert-2.png", width="650px", alt="BERT tutorial" %}
 
-<img src="/images/nlp/bert5/Transformer-to-Bert-3.png" width="650" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/Transformer-to-Bert-3.png", width="650px", alt="BERT tutorial" %}
 
 ### 1.2 Transformer
 
-<img src="/images/nlp/bert5/Transformer-to-Bert-6.png" width="650" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/Transformer-to-Bert-6.png", width="650px", alt="BERT tutorial" %}
 
-<img src="/images/nlp/bert5/Transformer-to-Bert-7.png" width="650" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/Transformer-to-Bert-7.png", width="650px", alt="BERT tutorial" %}
 
-<img src="/images/nlp/bert5/Transformer-to-Bert-8.png" width="650" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/Transformer-to-Bert-8.png", width="650px", alt="BERT tutorial" %}
 
-<img src="/images/nlp/bert5/Transformer-to-Bert-9.png" width="500" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/Transformer-to-Bert-9.png", width="500px", alt="BERT tutorial" %}
 
 ### 1.3 Bert
 
-<img src="/images/nlp/bert5/Transformer-to-Bert-10.png" width="750" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/Transformer-to-Bert-10.png", width="750px", alt="BERT tutorial" %}
 
 ---
 
-<img src="/images/nlp/bert5/Transformer-to-Bert-11.png" width="750" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/Transformer-to-Bert-11.png", width="750px", alt="BERT tutorial" %}
 
-<img src="/images/nlp/bert5/Transformer-to-Bert-12.png" width="750" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/Transformer-to-Bert-12.png", width="750px", alt="BERT tutorial" %}
 
 
 E\_A 代表这个 Token 属于 SentenceA 还是 Sentence B
 
 ### 1.4 Pre-training Bert
 
-<img src="/images/nlp/bert5/Transformer-to-Bert-13.png" width="700" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/Transformer-to-Bert-13.png", width="700px", alt="BERT tutorial" %}
 
-<img src="/images/nlp/bert5/Transformer-to-Bert-14.png" width="700" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/Transformer-to-Bert-14.png", width="700px", alt="BERT tutorial" %}
 
-<img src="/images/nlp/bert5/Transformer-to-Bert-15.png" width="700" alt="BERT tutorial" />
-
-<br>
-
-<img src="/images/nlp/bert5/Transformer-to-Bert-16.png" width="600" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/Transformer-to-Bert-15.png", width="700px", alt="BERT tutorial" %}
 
 <br>
 
-<img src="/images/nlp/bert5/Transformer-to-Bert-17.png" width="800" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/Transformer-to-Bert-16.png", width="600px", alt="BERT tutorial" %}
+
+<br>
+
+{% image "/images/nlp/bert5/Transformer-to-Bert-17.png", width="800px", alt="BERT tutorial" %}
 
 <!--
-<img src="/images/nlp/bert5/Transformer-to-Bert-18.png" width="700" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/Transformer-to-Bert-18.png", width="700px", alt="BERT tutorial" %}
 
-<img src="/images/nlp/bert5/Transformer-to-Bert-19.png" width="700" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/Transformer-to-Bert-19.png", width="700px", alt="BERT tutorial" %}
 -->
 为什么用2个 Sentences
 
@@ -89,19 +89,19 @@ Bert 每个 Head 能抓住不同的 Feature
 ## 2. Transformer to BERT
 
 <!--
-<img src="/images/nlp/bert5/Transformer-to-Bert-20.png" width="700" alt="BERT tutorial" />-->
+{% image "/images/nlp/bert5/Transformer-to-Bert-20.png", width="700px", alt="BERT tutorial" %}-->
 
-<img src="/images/nlp/bert5/Transformer-to-Bert-21.png" width="660" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/Transformer-to-Bert-21.png", width="660px", alt="BERT tutorial" %}
 
-<img src="/images/nlp/bert5/Transformer-to-Bert-22.png" width="660" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/Transformer-to-Bert-22.png", width="660px", alt="BERT tutorial" %}
 
-<img src="/images/nlp/bert5/Transformer-to-Bert-23.png" width="660" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/Transformer-to-Bert-23.png", width="660px", alt="BERT tutorial" %}
 
 阅读理解是QA加难的版本
 
 ## 3. Recap
 
-<img src="/images/nlp/bert5/bert5-3.png" width="650" alt="BERT tutorial" />
+{% image "/images/nlp/bert5/bert5-3.png", width="650px", alt="BERT tutorial" %}
 
 > 每个word都是这句话的所有信息组成的
 > 

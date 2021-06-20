@@ -40,7 +40,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/matplotlib-8-scatter-1.png" height="100" width="700" />
+{% image "/images/python/matplotlib-8-scatter-1.png" height="100", width="700px" %}
 </div>
 
 [img1]: /images/python/matplotlib-8-scatter-1.png

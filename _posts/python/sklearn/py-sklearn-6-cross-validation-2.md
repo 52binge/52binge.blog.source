@@ -60,7 +60,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/sklearn-6-cross-validation-2-output_7_0.png" width="400" />
+{% image "/images/python/sklearn-6-cross-validation-2-output_7_0.png", width="400px" %}
 </div>
 
 ## Reference

@@ -36,7 +36,7 @@ tags: Chatbot
 
 ## 1. 聊天机器人
 
-<img src="/images/chatbot/chatbot-5_1.jpg" width="700" />
+{% image "/images/chatbot/chatbot-5_1.jpg", width="700px" %}
 
 ### 1.1 基于检索的 chatbot
 
@@ -54,7 +54,7 @@ tags: Chatbot
 
 ## 2. 回顾 chatterbot
 
-<img src="/images/chatbot/chatbot-5_2.png" width="600" />
+{% image "/images/chatbot/chatbot-5_2.png", width="600px" %}
 
 ### 2.1 chatterbot 的问题
 
@@ -109,7 +109,7 @@ tags: Chatbot
 
 ## 3. 用深度学习来完成
 
-<img src="/images/chatbot/chatbot-5_3.png" width="700" />
+{% image "/images/chatbot/chatbot-5_3.png", width="700px" %}
 
 > 不管网络结构如何，你抓住最好的 loss function
 >
@@ -140,7 +140,7 @@ tags: Chatbot
 
 ### 4.1 Train sets
 
-<img src="/images/chatbot/chatbot-5_4.png" width="900" />
+{% image "/images/chatbot/chatbot-5_4.png", width="900px" %}
 
 ### 4.2 Test / Validation sets
 
@@ -167,7 +167,7 @@ u’dog’
 
 - 用 NER(命名实体识别) 将文本中的 **实体**，如姓名、地点、组织、URL等 替换成特殊字符
 
-<img src="/images/chatbot/chatbot-5_5.png" width="900" />
+{% image "/images/chatbot/chatbot-5_5.png", width="900px" %}
 
 ## 5. 评估准则 BASELINE
 

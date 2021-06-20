@@ -5,7 +5,7 @@ categories: [spark]
 tags: [spark]
 ---
 
-<img src="/images/spark/spark-summary-logo-1.jpg" width="500" alt="" />
+{% image "/images/spark/spark-summary-logo-1.jpg", width="500px", alt="" %}
 
 <!-- more -->
 
@@ -111,7 +111,7 @@ No. | Title | Flag
 
 - [very good Spark分区 partition 详解](https://blog.csdn.net/qq_22473611/article/details/107822168)
 
-<img src="/images/spark/spark-rdd-split-task-partition.png" width="800" alt="申请的计算节点（Executor）数目和每个计算节点核数，决定了你同一时刻可以并行执行的task" />
+{% image "/images/spark/spark-rdd-split-task-partition.png", width="800px", alt="申请的计算节点（Executor）数目和每个计算节点核数，决定了你同一时刻可以并行执行的task" %}
 
 No. | Title | Flag
 :---: | --- | ---

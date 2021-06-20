@@ -16,11 +16,11 @@ Tensorflow 提供的一些 Activation Function [tensorflow/api_guides/python/nn]
 
 下面是一个 TensorFlow 搭建的 简单版神经网络 数据流图 :
 
-<img src="/images/tensorflow/tf-2.6-active6_1.png" width="550" />
+{% image "/images/tensorflow/tf-2.6-active6_1.png", width="550px" %}
 
 Layer2 展开部分，Layer1 出来的数据，再输入到 Layer2 中
 
-<img src="/images/tensorflow/tf-2.6-active7.jpg" width="550" />
+{% image "/images/tensorflow/tf-2.6-active7.jpg", width="550px" %}
 
 > 详细介绍请前往 [What's Activation Function][4]
 

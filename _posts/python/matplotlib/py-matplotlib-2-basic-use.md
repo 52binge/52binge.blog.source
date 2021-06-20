@@ -52,7 +52,7 @@ plt.show()
 ```
 
 <div class="limg1">
-<img src="/images/python/matplotlib-1-basic-use-1.png" height="100" width="450" />
+{% image "/images/python/matplotlib-1-basic-use-1.png" height="100", width="450px" %}
 </div>
 
 [img1]: /images/python/matplotlib-basic-use-1_1.png

@@ -6,7 +6,7 @@ tags: [RNN]
 toc: true
 ---
 
-<img src="/images/deeplearning/RNN-01.png" width="500" />
+{% image "/images/deeplearning/RNN-01.png", width="500px" %}
 
 <!-- more -->
 
@@ -28,7 +28,7 @@ toc: true
 
 在 $h\_T$ 后面直接接一个 Softmax 层，输出文本所属类别的预测概率 $y$，就可以实现文本分类.
 
-<img src="/images/deeplearning/RNN-02.png" width="650" />
+{% image "/images/deeplearning/RNN-02.png", width="650px" %}
 
 可应用于多种具体任务：
 
@@ -48,13 +48,13 @@ $$
 
 ### 1.1 TensorFlow RNN
 
-<img src="/images/tensorflow/tf-google-8-1.jpg" width="700" alt="Forward Propagation" />
+{% image "/images/tensorflow/tf-google-8-1.jpg", width="700px", alt="Forward Propagation" %}
 
 > [更多详情参见本博： TensorFlow：第8章 Recurrent Neural Networks 1](/2018/11/08/tensorflow/tf-google-8-rnn-1/)
 
 ### 1.2 Forward Propagation
 
-<img src="/images/deeplearning/C5W1-10_1.png" width="700" />
+{% image "/images/deeplearning/C5W1-10_1.png", width="700px" %}
 
 > $a^{<0>}=\vec{0}$
 > 
@@ -79,7 +79,7 @@ $$
  
  此时就需要通过语言模型来预测每句话的概率：
  
-<img src="/images/deeplearning/C5W1-29_1.png" width="600" />
+{% image "/images/deeplearning/C5W1-29_1.png", width="600px" %}
 
 ### 2.1 RNN Language Model 
 
@@ -87,9 +87,9 @@ $$
 2. 将每个单词字符化 (**Tokenize**，**即使用One-shot编码**) 得到词典,，假设有 10000 个单词
 3. 还需要添加两个特殊的单词
 > -  end of sentence. 终止符，表示句子结束.
->  <img src="/images/deeplearning/C5W1-30_1.png" width="600" />
+>  {% image "/images/deeplearning/C5W1-30_1.png", width="600px" %}
 > - UNknown, 之前的笔记已介绍过
->  <img src="/images/deeplearning/C5W1-31_1.png" width="600" />
+>  {% image "/images/deeplearning/C5W1-31_1.png", width="600px" %}
 
 ### 2.2 Language Model Example
 
@@ -102,7 +102,7 @@ $$
 >
 > 当然在最开始的时候没有任何的依据，可能得到的是完全不相干的字，因为只是根据初始的值和激活函数做出的取样。
 >
-> <img src="/images/deeplearning/C5W1-32_1.png" width="500" />
+> {% image "/images/deeplearning/C5W1-32_1.png", width="500px" %}
 
 **2. 将真实值作为输入值:**
 
@@ -116,13 +116,13 @@ $$
 
 另外输入值满足： $x^{<{t}>}=y^{<{t-1}>}$
 
-<img src="/images/deeplearning/C5W1-33_1.png" width="600" />
+{% image "/images/deeplearning/C5W1-33_1.png", width="600px" %}
 
 **3. 计算出损失值:**
 
 下图给出了构建模型的过程以及损失值计算公式:
 
-<img src="/images/deeplearning/C5W1-34_1.png" width="700" />
+{% image "/images/deeplearning/C5W1-34_1.png", width="700px" %}
 
 > 随着训练的次数的增多，或者常用词出现的频率的增多，语言模型便慢慢的会开始掌握简单的词语比如“平均”，“每天”，“小时”。一个完善的语言模型看到类似“ 10 个小”的时候，应该就能准确的判定下一个字是“时”。
 > 
@@ -169,7 +169,7 @@ GRU 是一种用来解决梯度值过小的方法，首先来看下在一个时�
 
 当然 $a^{<{t}>}$, 再使用 softmax 函数处理可以得到预测值.
 
-<img src="/images/deeplearning/C5W1-37_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-37_1.png", width="750px" %}
 
 ### 4.2 GRU结构
 
@@ -217,17 +217,17 @@ $$
 
 > 在读到 “cat” 时候，其他时候一直为 0，知道要输出 “was” 的时刻，我们知道 “cat” 的存在，也就知道它为单数
 >
-> <img src="/images/deeplearning/C5W1-39_1.png" width="550" />
+> {% image "/images/deeplearning/C5W1-39_1.png", width="550px" %}
 
 **GRU 结构示意图**
 
-<img src="/images/deeplearning/C5W1-40_1.png" width="550" />
+{% image "/images/deeplearning/C5W1-40_1.png", width="550px" %}
 
 ### 4.3 完整版 GRU
 
 上面简化了 GRU，在完整版中还存在另一个符号 ，这符号的意义是控制 $\tilde{c}$ 和 $c^{<{t-1}>}$ 之间的联系强弱，完整版如下：
 
-<img src="/images/deeplearning/C5W1-41_1.png" width="550" />
+{% image "/images/deeplearning/C5W1-41_1.png", width="550px" %}
 
 > 注意，完整公式中多出了一个 $\Gamma\_r$, 这个符号的作用是控制 $\tilde{c}^{<{t}>}$ 和 $c^{<{t}>}$ 之间联系的强弱.
 
@@ -239,17 +239,17 @@ $$
 
 GRU 只有两个门，而 LSTM 有三个门，分别是更新门 $\Gamma\_u$ (是否需要更新为 $\tilde{c}^{<{t}>}$)，遗忘门 $\Gamma\_f$ (是否需要丢弃上一个时刻的值)，输出门 $\Gamma\_o$ (是否需要输出本时刻的值)
 
-<img src="/images/deeplearning/C5W1-42_1.png" width="650" />
+{% image "/images/deeplearning/C5W1-42_1.png", width="650px" %}
 
-<img src="/images/deeplearning/C5W1-43_1.png" width="650" />
+{% image "/images/deeplearning/C5W1-43_1.png", width="650px" %}
 
 下图是 LSTM 的结构示意图：
 
-<img src="/images/deeplearning/C5W1-44_1.png" width="700" />
+{% image "/images/deeplearning/C5W1-44_1.png", width="700px" %}
 
 ### 5.2 LSTM Structure
 
-<img src="/images/deeplearning/RNN-03.png" width="700" alt="1997年, Sepp Hochreiter 和 Jürgen Schmidhuber" />
+{% image "/images/deeplearning/RNN-03.png", width="700px", alt="1997年, Sepp Hochreiter 和 Jürgen Schmidhuber" %}
 
 LSTM 仍是 $x\_t$ 和 $h\_{t−1}$ 来计算 $h\_t$，但对内部的结构进行了更加精心的设计，加入 **3 Gate** 和 **1 memory\_cell**.
 
@@ -304,11 +304,11 @@ LSTM 仍是 $x\_t$ 和 $h\_{t−1}$ 来计算 $h\_t$，但对内部的结构进�
 像这样的例子如果想让我们的序列模型明白就需要借助不同的结构比如 - 双向递归神经网络(Bidirectional RNN).
 该神经网络首先从正面理解一遍这句话，再从反方向理解一遍.
 
-<img src="/images/deeplearning/C5W1-45_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-45_1.png", width="750px" %}
 
 下图摘自大数据文摘整理
 
-<img src="/images/deeplearning/C5W1-46_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-46_1.png", width="750px" %}
 
 ## 7. Deep RNNs
 
@@ -316,7 +316,7 @@ LSTM 仍是 $x\_t$ 和 $h\_{t−1}$ 来计算 $h\_t$，但对内部的结构进�
 
 横向表示时间展开，纵向则是层次展开。
 
-<img src="/images/deeplearning/C5W1-47_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-47_1.png", width="750px" %}
 
 注意激活值的表达形式有所改变，以 $a^{\[1\]<0>}$ 为例进行解释：
 
@@ -325,7 +325,7 @@ LSTM 仍是 $x\_t$ 和 $h\_{t−1}$ 来计算 $h\_t$，但对内部的结构进�
 
 另外各个激活值的计算公式也略有不同，以 $a^{\[2\]<3>}$ 为例，其计算公式如下：
 
-<img src="/images/deeplearning/C5W1-48_1.png" width="550" />
+{% image "/images/deeplearning/C5W1-48_1.png", width="550px" %}
 
 ## Reference
 

@@ -5,7 +5,7 @@ categories: [spark]
 tags: [spark]
 ---
 
-<img src="/images/hadoop/Hive-Data-Model-Optimization.jpg" width="550" alt="" />
+{% image "/images/hadoop/Hive-Data-Model-Optimization.jpg", width="550px", alt="" %}
 
 <!-- more -->
 

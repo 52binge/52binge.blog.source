@@ -23,11 +23,11 @@ Matplotlib 它能帮你画出美丽的:
 下面是一些例图:
 
 <div class="limg1">
-<img src="/images/python/matplotlib-0-why-1.png" height="100" width="650" />
+{% image "/images/python/matplotlib-0-why-1.png" height="100", width="650px" %}
 </div>
 
 <div class="limg1">
-<img src="/images/python/matplotlib-0-why-3.png" height="100" width="650" />
+{% image "/images/python/matplotlib-0-why-3.png" height="100", width="650px" %}
 </div>
 
 [img1]: /images/python/matplotlib-0-why-1.png

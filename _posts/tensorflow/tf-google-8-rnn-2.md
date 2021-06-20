@@ -16,7 +16,7 @@ Deep RNNs 是 为了增强模型的表达能力，可以在网络中设置多个
 
 ## 1. LSTM
 
-<img src="/images/tensorflow/tf-google-8-2.jpg" width="600" />
+{% image "/images/tensorflow/tf-google-8-2.jpg", width="600px" %}
 
 ### 单层LSTM结构实现
 
@@ -54,7 +54,7 @@ _init__(
 - activation 表示内部状态的激活函数，默认是 tanh
 - name 表示这一层的名字，同样名字的层会共享权重，如果为了避免这样的情况需要设置reuse=True
 
-<img src="/images/tensorflow/tf-google-8-5.jpg" width="600" />
+{% image "/images/tensorflow/tf-google-8-5.jpg", width="600px" %}
 
 采用**BasicLSTMCell来声明LSTM结构如下所示**，我们用伪代码和注释来进行说明。
 
@@ -89,15 +89,15 @@ for i in range(num_steps):
 
 - Bidirectional RNN 双向递归神经网络. 该神经网络首先从正面理解一遍这句话，再从反方向理解一遍.
 
-<img src="/images/tensorflow/tf-google-8-3.jpg" width="600" />
+{% image "/images/tensorflow/tf-google-8-3.jpg", width="600px" %}
 
 ## 3. Deep RNNs
 
 - Deep RNNs 深层，顾名思义就是层次增。 横向表示时间展开，纵向则是层次展开。
 
-<!--<img src="/images/tensorflow/tf-google-8-4.jpg" width="600" />
+<!--{% image "/images/tensorflow/tf-google-8-4.jpg", width="600px" %}
 -->
-<img src="/images/deeplearning/C5W1-47_1.png" width="750" />
+{% image "/images/deeplearning/C5W1-47_1.png", width="750px" %}
 
 MultiRNNCell的初始化方法如下
 
