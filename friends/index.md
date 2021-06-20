@@ -49,6 +49,8 @@ Data WareHouse & Analyst {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/c
 
 {% cell 花木兰, https://www.zhihu.com/people/may-25-73/columns/, https://pic2.zhimg.com/v2-cb4445a1aeb51a52aca4b48a0abc4a0b_xll.jpg %}
 
+{% cell 奕文/汪, https://www.instagram.com/wangyiwen1225/, /images/logos/E.w-logo.jpeg %}
+
 {% endbtns %}
 
 
