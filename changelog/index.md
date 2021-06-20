@@ -18,16 +18,66 @@ music:
 
 {% timeline %}
 
-{% timenode 2020-07-24 [2.6.6 -> 3.0](https://github.com/volantis-x/hexo-theme-volantis/releases) %}
+{% timenode 2020-06-21 [2.6.6 -> 4.0](https://github.com/volantis-x/hexo-theme-volantis/releases) %}
 
-1. 如果有 `hexo-lazyload-image` 插件，需要删除并重新安装最新版本，设置 `lazyload.isSPA: true`。
-2. 2.x 版本的 css 和 js 不适用于 3.x 版本，如果使用了 `use_cdn: true` 则需要删除。 
+ 1. 注册 leancloud 
+ 
+{% endtimenode %}
+
+{% timenode 2020-06-20 [2.6.6 -> 4.0](https://github.com/volantis-x/hexo-theme-volantis/releases) %}
+
+1. 将 articles 中所有的 img 标签 改为 [Image 标签](https://volantis.js.org/v5/tag-plugins/) 的形式
+2. 将 articles 中所有的 头部的 `toc: true` 和 `mathjax: true` 去掉. 
+
+{% endtimenode %}
+
+{% timenode 2021-06-18 [2.6.2 -> 2.6.3](https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3) %}
+
+1. 更新 highlightjs and clipboard and comment typing mode
+2. 修改 light 模式的 p 文字样式, p: #444 to #000
+3. 增加 friends 页面, 并调试其样式
+4. 更新 pay-blog fa-alipay 图标
+
+{% endtimenode %}
+
+
+{% timenode 2021-06-17 [2.6.2 -> 2.6.3](https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3) %}
+
+1. update theme/_config.yml webinfo
+2. update webinfo.ejs 具体修改位置: hexo-theme-volantis/layout/_widget/webinfo.ejs
+
+{% endtimenode %}
+
+ 
+{% timenode 2021-06-16 [2.6.2 -> 2.6.3](https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3) %}
+
+1. 创建 home page (为了博客的另一种形式展示) 并修改样式, 具体修改位置: layout/_partial/scripts/coverCtrl.ejs
+2. 创建 categoryc url add cover (为了博客的另一种形式展示)
+3. 更新 blogger social youtube and twitter update in theme/_config
+4. sidebar 的 blogger title BlairChen 居中样式修改, 具体修改位置: theme css/_layout/sidebar.styl text-align
+5. update 底部分享 share 选项, 修改位置： update layout.ejs share
+6. theme/_config comments, qrcode. 其他修改 copyright.
+
+{% endtimenode %}
+
+{% timenode 2021-06-15 [2.6.2 -> 2.6.3](https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3) %}
+
+1. 调大 整个版面 max_width. 修改位置： theme/_config.yml
+2. 更新 body 内的 fontfamily. 修改位置: theme/_config.yml custom_css.fontfamily.bodyfont
+3. 使用 search bar 并 update my avatar logo
+
+{% endtimenode %}
+
+{% timenode 2021-06-14 [2.6.2 -> 2.6.3](https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3) %}
+
+1. 使用 theme hexo-theme-volantis 并更新配置: author, public views, language
+2. 更新 theme: parallax, aplayer, darkmodejs, comments
 
 {% endtimenode %}
 
 {% timenode 2021-06-13 [2.6.2 -> 2.6.3](https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3) %}
 
-theme volantis research…
+theme hexo-theme-volantis research…
 
 {% endtimenode %}
 
