@@ -5,7 +5,7 @@ categories: leetcode
 tags: leetcode
 ---
 
-<img src="/images/leetcode/python-leetcode.jpg" width="450" alt="leetCode" />
+{% image "/images/leetcode/python-leetcode.jpg", width="450px", alt="leetCode" %}
 
 <!-- more -->
 
@@ -152,7 +152,7 @@ class Solution:
 
 ## 2. DFS / Stack
 
-[2.1 字符串解码 "3[a2[c]]" == "accacc"](https://leetcode-cn.com/problems/decode-string/), `stack == [(3, ""), (2,"a")]` <img src="/images/leetcode/stack-string-decoding.jpg" width="500" alt="" />
+[2.1 字符串解码 "3[a2[c]]" == "accacc"](https://leetcode-cn.com/problems/decode-string/), `stack == [(3, ""), (2,"a")]` {% image "/images/leetcode/stack-string-decoding.jpg", width="500px", alt="" %}
 
 ```python
 class Solution:
@@ -233,7 +233,7 @@ No. | Question | Flag
 :---: | --- | ---
 (3). | linkedList |
 &nbsp; | 7. 从尾到头打印链表： <br>`reversePrint(head.next) + [head.val]` | ❎
-&nbsp; | 8. [反转链表](https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/) pre, cur = head, head.next &nbsp; pre.next = None &nbsp; (循环版 双指针) <img src="/images/leetcode/linkedlist-reverseList.gif" width="600" alt="" /> | ❎
+&nbsp; | 8. [反转链表](https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/) pre, cur = head, head.next &nbsp; pre.next = None &nbsp; (循环版 双指针) {% image "/images/leetcode/linkedlist-reverseList.gif", width="600px", alt="" %} | ❎
 &nbsp; | 10. [合并两个排序的链表](https://leetcode-cn.com/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/) &nbsp;&nbsp; [**Recursion**] <br> p.next = self.mergeTwoLists(l1.next, l2) | ❎
 addition | 旋转单链表 (F1. 环 F2. 走n-k%n 断开) <br> 举例： 给定 1->2->3->4->5->6->NULL, K=3 <br> 则4->5->6->1->2->3->NULL |  ❎
 addition | [92. 翻转部分单链表](https://zhuanlan.zhihu.com/p/141775663) `reverse(head: ListNode, tail: ListNode)` <br> 举例：1->2->3->4->5->null, from = 2, to = 4 结果：1->4->3->2->5->null | ❎
@@ -272,7 +272,7 @@ good | [1.5 (两个节点)二叉树的最近公共祖先](https://leetcode-cn.co
 good | [1.6 (两个节点)二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof) &nbsp;&nbsp; **Recursion** + 剪枝 | ✔️❎ 
 good | [1.7 二叉树中和为某一值的路径](https://leetcode-cn.com/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof) `递归回溯` | ✔❎️
 &nbsp; | [1.8 二叉搜索树的后序遍历序列](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof) | ❎
-&nbsp; | [1.9 二叉搜索树与双向链表](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/) <img src="/images/leetcode/binary-tree-delinkedlist.png" width="400" alt="" /> |
+&nbsp; | [1.9 二叉搜索树与双向链表](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/) {% image "/images/leetcode/binary-tree-delinkedlist.png", width="400px", alt="" %} |
 additional | 求二叉树第K层的节点个数 [**Recursion**] ，root != None and k==1，返回1  <br>  f(root.left, k-1) + f(root.right, k-1) | ❎
 additional | 求二叉树第K层的叶子节点个数 [**Recursion**]  <br> if(k==1 and root.left and root.right is null) return 1; | ✔️❎
 

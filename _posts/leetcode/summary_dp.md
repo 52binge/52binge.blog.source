@@ -5,7 +5,7 @@ categories: leetcode
 tags: dynamic programming
 ---
 
-<img src="/images/leetcode/dp-logo-1.jpeg" width="500" />
+{% image "/images/leetcode/dp-logo-1.jpeg", width="500px" %}
 
 <!-- more -->
 
@@ -35,7 +35,7 @@ tags: dynamic programming
 
 **不同路径 II：**
 
-<img src="/images/leetcode/dp_robot_maze.png" width="" />
+{% image "/images/leetcode/dp_robot_maze.png", width="px" %}
 
 > 如果当前没有障碍物，dp[m][n] = dp[m - 1][n] + dp[m][n - 1]
 > 如果有障碍物，则dp[m][n] = 0
@@ -281,7 +281,7 @@ rabbbit
 
 dp[i][j] 代表 T 前 i 字符串可以由 S j 字符串组成最多个数.
 
-<img src="/images/leetcode/dp-summary-12.png" width="600" />
+{% image "/images/leetcode/dp-summary-12.png", width="600px" %}
 
 ```
 [1, 1, 1, 1, 1, 1, 1, 1]

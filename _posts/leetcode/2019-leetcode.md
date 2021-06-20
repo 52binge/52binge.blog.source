@@ -5,7 +5,7 @@ categories: leetcode
 tags: leetcode
 ---
 
-<img src="/images/leetcode/leetcode-logo.jpeg" width="450" />
+{% image "/images/leetcode/leetcode-logo.jpeg", width="450px" %}
 
 <!-- more -->
 
@@ -813,7 +813,7 @@ public class Solution {
 
 - [算法&数据结构 ， 20Tree](https://www.weiweiblog.cn/20tree/)
 
-<img src="/images/leetcode/BinaryTree-1.png" width="450" />
+{% image "/images/leetcode/BinaryTree-1.png", width="450px" %}
 
 **4.1 easy**
 
