@@ -63,7 +63,7 @@ Friends 博客爱好者 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cd
 
 {% cell qinxs, https://7bxing.com/, https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/img/avatar.png %}
 
-{% cell E.w, https://www.instagram.com/p/B4plzVUBjFs/?utm_source=ig_web_copy_link, /images/logos/E.w-logo.jpeg %}
+{% cell E.w, /images/logos/E.w-logo.jpeg, /images/logos/E.w-logo.jpeg %}
 
 {% endbtns %}
 
