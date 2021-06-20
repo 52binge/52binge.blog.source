@@ -1,6 +1,5 @@
 ---
 title: Evaluation Metric
-toc: true
 date: 2019-06-03 10:01:21
 categories: machine-learning
 tags: Metric

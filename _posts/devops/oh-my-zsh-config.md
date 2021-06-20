@@ -1,6 +1,5 @@
 ---
 title: My Zsh Config Files
-toc: true
 date: 2017-10-21 18:16:21
 categories: devops
 tags: zshrc

@@ -1,6 +1,5 @@
 ---
 title: Recommendation System - CF
-toc: true
 date: 2017-02-28 10:28:21
 categories: machine-learning
 tags: RS

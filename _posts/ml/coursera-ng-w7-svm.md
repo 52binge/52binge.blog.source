@@ -1,6 +1,5 @@
 ---
 title: Coursera 7 - Support Vector Machines
-toc: true
 date: 2017-10-13 16:08:21
 categories: machine-learning
 tags: SVM

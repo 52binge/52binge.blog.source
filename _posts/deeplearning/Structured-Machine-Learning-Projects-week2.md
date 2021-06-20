@@ -1,6 +1,5 @@
 ---
 title: Structured Machine Learning Projects (week2) - ML Strategy 2
-toc: true
 date: 2018-07-25 19:00:21
 categories: deeplearning
 tags: deeplearning.ai

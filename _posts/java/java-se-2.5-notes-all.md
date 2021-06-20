@@ -4,7 +4,6 @@ title: Java SE Learning Notes for All
 date: 2013-02-02 07:54:16
 tags: [java]
 categories: java
-toc: true
 ---
 
 这篇主要是记录了我学习 Java SE 的概要笔记: `手中无剑`, `心中有剑`, `摘花飞叶可以伤人`.

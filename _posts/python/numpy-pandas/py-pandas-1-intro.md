@@ -1,10 +1,8 @@
 ---
 title: Pandas Basic Intro
-toc: true
 date: 2017-12-27 16:28:21
 categories: python
 tags: Pandas   
-mathjax: true
 ---
 
 如果用列表和字典来作比较, 那么可以说 Numpy 是列表形式的，没有数值标签，而 Pandas 就是字典形式

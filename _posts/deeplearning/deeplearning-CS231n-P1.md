@@ -1,6 +1,5 @@
 ---
 title: 深度学习与计算机视觉 - 历史回顾与介绍
-toc: true
 date: 2018-09-01 20:00:21
 categories: deeplearning
 tags: CS231n

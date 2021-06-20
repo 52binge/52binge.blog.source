@@ -4,7 +4,6 @@ title: Java SE Learning Notes for Exception
 date: 2013-07-25 14:54:16
 tags: [java]
 categories: java
-toc: true
 ---
 
 Java SE `异常处理`部分的概要笔记: `手中无剑`, `心中有剑`.

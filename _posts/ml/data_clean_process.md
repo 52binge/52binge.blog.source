@@ -3,7 +3,6 @@ title: 数据清理中，处理缺失值的方法是?
 date: 2019-08-10 10:06:16
 categories: machine-learning
 tags: [estimation]
-toc: true
 ---
 
 <img class="img-fancy" src="/images/ml/metric/data-pre-processing.jpg", width="600" border="0px", alt="data pre-processing"%}

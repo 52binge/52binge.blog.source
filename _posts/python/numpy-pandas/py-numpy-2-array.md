@@ -1,10 +1,8 @@
 ---
 title: Numpy Array 
-toc: true
 date: 2017-12-22 16:43:21
 categories: python
 tags: [Numpy]   
-mathjax: true
 ---
 
 创建 array 有很多 形式

@@ -1,10 +1,8 @@
 ---
 title: Pandas Select Data
-toc: true
 date: 2017-12-28 23:28:21
 categories: python
 tags: Pandas   
-mathjax: true
 ---
 
 pandas 选择数据, 首先我们建立了一个 6X4 的矩阵数据

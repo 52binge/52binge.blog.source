@@ -1,6 +1,5 @@
 ---
 title: Python Basic Learning III
-toc: true
 date: 2017-06-05 11:00:21
 categories: python
 tags: [python]

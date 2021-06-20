@@ -4,7 +4,6 @@ title: SpringMVC Demo
 date: 2016-09-11 07:54:16
 tags: [spring]
 categories: java
-toc: true
 ---
 
 写一个入门整洁的编写 java 后端程序的代码架, 主要使用了 java + springMvc + mybatis + logback + spring task 等技术.

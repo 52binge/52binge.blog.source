@@ -1,10 +1,8 @@
 ---
 title: Numpy Array Merge
-toc: true
 date: 2017-12-26 17:28:21
 categories: python
 tags: Numpy   
-mathjax: true
 ---
 
 对于一个`array`的合并，我们可以想到按行、按列等多种方式进行合并

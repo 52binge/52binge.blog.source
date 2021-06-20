@@ -1,6 +1,5 @@
 ---
 title: Improving DNN (week3) - Hyperparameter、Batch Regularization
-toc: true
 date: 2018-07-23 20:00:21
 categories: deeplearning
 tags: deeplearning.ai

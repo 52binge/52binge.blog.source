@@ -1,6 +1,5 @@
 ---
 title: Matplotlib Tick bbox
-toc: true
 date: 2018-01-23 17:08:21
 categories: python
 tags: Matplotlib

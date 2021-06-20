@@ -1,6 +1,5 @@
 ---
 title: Coursera Week 2 - Octave Tutorial By NG
-toc: true
 date: 2016-10-21 10:28:21
 categories: machine-learning
 tags: machine-learning

@@ -1,6 +1,5 @@
 ---
 title: Sklearn DataSets
-toc: true
 date: 2018-01-03 18:05:21
 categories: python
 tags: Sklearn

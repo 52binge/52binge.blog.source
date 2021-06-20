@@ -1,6 +1,5 @@
 ---
 title: Python 中 4 个魔法方法， __len__,__getitem__,__setitem__,__iter__
-toc: true
 date: 2018-09-01 10:00:21
 categories: python
 tags: [python]

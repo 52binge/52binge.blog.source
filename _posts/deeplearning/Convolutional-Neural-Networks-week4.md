@@ -1,6 +1,5 @@
 ---
 title: CNN (week4) - Face recognition & Neural style transfer
-toc: true
 date: 2018-09-08 15:00:21
 categories: deeplearning
 tags: deeplearning.ai

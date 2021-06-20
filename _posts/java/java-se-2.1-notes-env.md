@@ -4,7 +4,6 @@ title: Java SE Learning Notes for Environment
 date: 2013-02-02 08:54:16
 tags: [java]
 categories: java
-toc: true
 ---
 
 Java 环境的搭建 `手中无剑`, `心中有剑`.

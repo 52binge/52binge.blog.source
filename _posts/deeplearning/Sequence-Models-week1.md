@@ -1,6 +1,5 @@
 ---
 title: Sequence Models (week1) - Recurrent Neural Networks
-toc: true
 date: 2018-07-26 19:00:21
 categories: deeplearning
 tags: deeplearning.ai

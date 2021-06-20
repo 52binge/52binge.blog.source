@@ -1,6 +1,5 @@
 ---
 title: Point to Plane
-toc: true
 date: 2016-05-17 15:07:21
 categories: machine-learning
 tags: math

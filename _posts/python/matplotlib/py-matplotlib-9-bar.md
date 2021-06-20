@@ -1,6 +1,5 @@
 ---
 title: Matplotlib Bar
-toc: true
 date: 2018-01-24 13:20:21
 categories: python
 tags: Matplotlib

@@ -1,6 +1,5 @@
 ---
 title: Python Class
-toc: true
 date: 2017-06-05 10:00:21
 categories: python
 tags: [python]

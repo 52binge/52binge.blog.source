@@ -1,6 +1,5 @@
 ---
 title: RNN classifier in Keras
-toc: true
 date: 2019-08-22 20:17:21
 categories: tensorflow
 tags: keras

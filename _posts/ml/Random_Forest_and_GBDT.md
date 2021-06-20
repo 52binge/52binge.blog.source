@@ -1,6 +1,5 @@
 ---
 title: Rondom Forest vs GBDT
-toc: true
 date: 2019-06-02 10:01:21
 categories: machine-learning
 tags: Rondom_Forest

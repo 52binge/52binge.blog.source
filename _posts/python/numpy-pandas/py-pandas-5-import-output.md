@@ -1,10 +1,8 @@
 ---
 title: Pandas IO
-toc: true
 date: 2017-12-30 21:15:21
 categories: python
 tags: Pandas   
-mathjax: true
 ---
 
 `pandas` 可以读取与存取的资料格式有很多种，像 `csv`、`excel`、`json`、`html` 与 `pickle` 等…

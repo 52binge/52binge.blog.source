@@ -1,6 +1,5 @@
 ---
 title: PTB 数据的 batching 方法
-toc: true
 date: 2018-10-01 11:00:21
 categories: tensorflow
 tags: tensorflow

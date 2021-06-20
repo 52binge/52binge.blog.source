@@ -1,6 +1,5 @@
 ---
 title: python 结构化您的工程
-toc: true
 date: 2017-11-04 10:05:21
 categories: python
 tags: [python]

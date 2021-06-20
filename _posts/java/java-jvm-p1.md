@@ -4,7 +4,6 @@ title: JVM 运行时
 date: 2020-05-30 16:54:16
 tags: [java,jvm]
 categories: java
-toc: true
 ---
 
 {% image "/images/java/Java-Virtual-Machine-1-logo.png", width="550px", alt="" %}

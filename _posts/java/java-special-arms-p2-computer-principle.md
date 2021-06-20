@@ -4,7 +4,6 @@ title: Java程序员需要知道的计算机原理 (not finish)
 date: 2016-09-13 16:54:16
 tags: [java]
 categories: java
-toc: true
 ---
 
 Java特种兵 - Java程序员需要知道的计算机原理，Reading Notes

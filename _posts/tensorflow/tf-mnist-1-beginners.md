@@ -1,6 +1,5 @@
 ---
 title: 简单前馈网络实现 mnist 分类
-toc: true
 date: 2018-10-04 21:10:21
 categories: tensorflow
 tags: tensorflow

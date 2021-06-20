@@ -1,6 +1,5 @@
 ---
 title: Matplotlib Legend
-toc: true
 date: 2018-01-23 15:30:21
 categories: python
 tags: Matplotlib

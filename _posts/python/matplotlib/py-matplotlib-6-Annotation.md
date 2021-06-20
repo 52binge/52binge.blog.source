@@ -1,6 +1,5 @@
 ---
 title: Matplotlib Annotation
-toc: true
 date: 2018-01-23 16:38:21
 categories: python
 tags: Matplotlib

@@ -1,6 +1,5 @@
 ---
 title: Python Read File
-toc: true
 date: 2017-06-04 10:00:21
 categories: python
 tags: [python]

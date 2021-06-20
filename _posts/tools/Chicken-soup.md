@@ -1,6 +1,5 @@
 ---
 title: 致敬奋斗的自己
-toc: true
 date: 2011-11-29 10:26:48
 categories: tools
 tags: Chicken-soup

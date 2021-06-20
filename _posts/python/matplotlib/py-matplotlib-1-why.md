@@ -1,6 +1,5 @@
 ---
 title: Matplotlib Why ?
-toc: true
 date: 2018-01-01 12:12:21
 categories: python
 tags: Matplotlib

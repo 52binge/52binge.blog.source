@@ -1,10 +1,8 @@
 ---
 title: Improving Deep Neural Networks (week1) - 深度学习的实用层面
-toc: true
 date: 2018-07-19 20:00:21
 categories: deeplearning
 tags: deeplearning.ai
-mathjax: true
 ---
 
 这次我们要学习专项课程中第二门课 Improving Deep Neural Networks

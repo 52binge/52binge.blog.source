@@ -1,10 +1,8 @@
 ---
 title: Pandas Deal NaN Value
-toc: true
 date: 2017-12-30 20:56:21
 categories: python
 tags: Pandas   
-mathjax: true
 ---
 
 处理 `NaN` 数据, 一些 空 或者 `NaN` 数据, 如何删除或者填补这些 `NaN` 数据.

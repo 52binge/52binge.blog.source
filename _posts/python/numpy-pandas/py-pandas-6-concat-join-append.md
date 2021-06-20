@@ -1,10 +1,8 @@
 ---
 title: Pandas Concat、Join、join_axes、append
-toc: true
 date: 2017-12-31 09:22:21
 categories: python
 tags: Pandas   
-mathjax: true
 ---
 
 

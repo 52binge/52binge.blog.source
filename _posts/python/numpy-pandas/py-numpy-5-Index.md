@@ -1,10 +1,8 @@
 ---
 title: Numpy Index
-toc: true
 date: 2017-12-26 14:28:21
 categories: python
 tags: Numpy   
-mathjax: true
 ---
 
 在元素列表或者数组中，我们可以用如同 `a[2]` 一样的表示方法，同样的，Numpy中也有相应的表示方法

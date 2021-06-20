@@ -1,6 +1,5 @@
 ---
 title: Sequence Models (week3) - Attention mechanism
-toc: true
 date: 2018-08-14 10:00:21
 categories: deeplearning
 tags: deeplearning.ai

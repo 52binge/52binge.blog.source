@@ -1,6 +1,5 @@
 ---
 title: What's Activation Function
-toc: true
 date: 2018-09-07 14:15:21
 categories: tensorflow
 tags: tensorflow

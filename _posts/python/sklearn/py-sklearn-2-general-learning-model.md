@@ -1,6 +1,5 @@
 ---
 title: Sklearn General Learning Model
-toc: true
 date: 2018-01-05 15:05:21
 categories: python
 tags: Sklearn

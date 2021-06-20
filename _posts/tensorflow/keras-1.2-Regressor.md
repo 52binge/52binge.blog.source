@@ -1,6 +1,5 @@
 ---
 title: Regressor in Keras
-toc: true
 date: 2019-08-21 13:17:21
 categories: tensorflow
 tags: keras

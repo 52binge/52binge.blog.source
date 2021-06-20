@@ -1,6 +1,5 @@
 ---
 title: New Mac Install Brew Iterm Zsh
-toc: true
 date: 2017-03-22 16:43:21
 categories: devops
 tags: [mac]

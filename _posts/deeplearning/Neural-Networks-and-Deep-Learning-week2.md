@@ -1,6 +1,5 @@
 ---
 title: Neural Networks and Deep Learning (week2) - Neural Networks Basics
-toc: true
 date: 2018-07-07 09:55:21
 categories: deeplearning
 tags: deeplearning.ai

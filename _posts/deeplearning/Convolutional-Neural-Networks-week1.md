@@ -1,6 +1,5 @@
 ---
 title: Convolutional Neural Networks (week1) - CNN
-toc: true
 date: 2018-08-21 10:00:21
 categories: deeplearning
 tags: deeplearning.ai

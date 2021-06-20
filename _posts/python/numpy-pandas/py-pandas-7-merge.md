@@ -1,10 +1,8 @@
 ---
 title: Pandas Merge
-toc: true
 date: 2017-12-31 10:12:21
 categories: python
 tags: Pandas   
-mathjax: true
 ---
 
 `pandas`中的`merge`和`concat`类似,但主要是用于两组有**key column**的数据,统一索引的数据.

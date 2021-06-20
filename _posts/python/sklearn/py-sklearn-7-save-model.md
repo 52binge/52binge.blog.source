@@ -1,6 +1,5 @@
 ---
 title: Sklearn Save Model
-toc: true
 date: 2018-01-10 13:17:21
 categories: python
 tags: Sklearn

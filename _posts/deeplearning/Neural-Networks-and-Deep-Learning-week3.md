@@ -1,6 +1,5 @@
 ---
 title: Neural Networks and Deep Learning (week3) - Shallow Neural Networks
-toc: true
 date: 2018-07-14 14:55:21
 categories: deeplearning
 tags: deeplearning.ai

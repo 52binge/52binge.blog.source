@@ -1,6 +1,5 @@
 ---
 title: Matplotlib Coordinate axis
-toc: true
 date: 2018-01-23 14:08:21
 categories: python
 tags: Matplotlib

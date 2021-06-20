@@ -1,10 +1,8 @@
 ---
 title: Pandas Matplotlib Intro
-toc: true
 date: 2017-12-31 11:12:21
 categories: python
 tags: Pandas   
-mathjax: true
 ---
 
 matplotlib 将数据可视化. 仅仅是用来 show 图片的, 即 plt.show()

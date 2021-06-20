@@ -1,6 +1,5 @@
 ---
 title: Coursera Week 2 - Linear Regression with Multiple Variables
-toc: true
 date: 2016-10-08 12:28:21
 categories: machine-learning
 tags: machine-learning

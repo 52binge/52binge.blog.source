@@ -1,6 +1,5 @@
 ---
 title: Python def函数、函数参数、函数默认参数
-toc: true
 date: 2017-06-03 07:00:21
 categories: python
 tags: [python]

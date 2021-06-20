@@ -1,6 +1,5 @@
 ---
 title: Python 函数式编程 zip、lambda、map...
-toc: true
 date: 2018-01-24 14:00:21
 categories: python
 tags: [python]

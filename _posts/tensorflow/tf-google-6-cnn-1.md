@@ -1,6 +1,5 @@
 ---
 title: TensorFlow： 第6章 图片识别与CNN
-toc: true
 date: 2018-09-28 10:00:21
 categories: tensorflow
 tags: CNN

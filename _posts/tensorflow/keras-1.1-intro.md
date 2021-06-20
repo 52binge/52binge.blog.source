@@ -1,6 +1,5 @@
 ---
 title: Keras Introduce
-toc: true
 date: 2019-08-19 13:17:21
 categories: tensorflow
 tags: keras

@@ -3,7 +3,6 @@ title: Docker + Hexo
 date: 2019-10-19 17:11:21
 categories: devops
 tags: Docker   
-mathjax: true
 ---
 
 {% image "/images/devops/docker-3.1.svg", width="550px", alt="Docker" %}

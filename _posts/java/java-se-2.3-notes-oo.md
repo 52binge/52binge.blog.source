@@ -4,7 +4,6 @@ title: Java SE Learning Notes for OO
 date: 2013-07-24 13:54:16
 tags: [java]
 categories: java
-toc: true
 ---
 
 Java SE `面向对象`部分的概要笔记: `手中无剑`, `心中有剑`.

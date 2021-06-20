@@ -1,6 +1,5 @@
 ---
 title: Sklearn Normalization
-toc: true
 date: 2018-01-06 19:52:21
 categories: python
 tags: Sklearn

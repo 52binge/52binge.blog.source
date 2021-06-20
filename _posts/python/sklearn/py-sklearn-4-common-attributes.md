@@ -1,6 +1,5 @@
 ---
 title: Sklearn Common Attributes and Functions
-toc: true
 date: 2018-01-05 14:15:21
 categories: python
 tags: Sklearn

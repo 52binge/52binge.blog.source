@@ -1,6 +1,5 @@
 ---
 title: Linux Search Cmd
-toc: true
 date: 2017-10-24 22:04:21
 categories: devops
 tags: linux

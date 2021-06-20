@@ -3,7 +3,6 @@ title: Convolutional Neural Networks
 date: 2019-06-13 10:06:16
 categories: deeplearning
 tags: [CNN]
-toc: true
 ---
 
 {% image "/images/deeplearning/CNN-03.png", width="700px", alt="Convolutional Neural Networks" %}

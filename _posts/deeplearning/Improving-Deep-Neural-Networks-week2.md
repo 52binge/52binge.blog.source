@@ -1,6 +1,5 @@
 ---
 title: Improving Deep Neural Networks (week2) - Optimization Algorithm
-toc: true
 date: 2018-07-21 10:00:21
 categories: deeplearning
 tags: deeplearning.ai

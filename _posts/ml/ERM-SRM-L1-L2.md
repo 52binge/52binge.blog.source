@@ -3,7 +3,6 @@ title: L1、L2 Regularization
 date: 2019-06-09 10:06:16
 categories: machine-learning
 tags: [L1-L2]
-toc: true
 ---
 
 <img class="img-fancy" src="/images/ml/intro/L1l2regularization.png", width="550" border="0px", alt="L1 L2 Regularization"%}

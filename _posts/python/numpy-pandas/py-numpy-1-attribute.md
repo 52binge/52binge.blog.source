@@ -1,10 +1,8 @@
 ---
 title: Numpy Attribute
-toc: true
 date: 2017-12-21 16:43:21
 categories: python
 tags: [Numpy]    
-mathjax: true
 ---
 
 numpy 的几种属性 维度、行列个数、元素个数

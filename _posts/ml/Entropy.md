@@ -3,7 +3,6 @@ title: Information Entropy
 date: 2019-06-07 16:06:16
 categories: machine-learning
 tags: [entropy]
-toc: true
 ---
 
 <img class="img-fancy" src="/images/ml/info/entropy-1.png", width="700" border="0px", alt="Claude Shannon"%}

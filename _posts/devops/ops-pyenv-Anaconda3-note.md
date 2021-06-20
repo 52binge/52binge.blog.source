@@ -1,6 +1,5 @@
 ---
 title: Pyenv Install Anaconda3
-toc: true
 date: 2017-12-07 10:16:21
 categories: devops
 tags: Anaconda3

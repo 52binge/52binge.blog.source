@@ -1,6 +1,5 @@
 ---
 title: Python Output、Variable、dataType、If、While/For、Py Head
-toc: true
 date: 2017-05-31 11:00:21
 categories: python
 tags: [python]

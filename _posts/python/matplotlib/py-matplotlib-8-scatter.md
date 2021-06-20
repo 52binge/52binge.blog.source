@@ -1,6 +1,5 @@
 ---
 title: Matplotlib Scatter
-toc: true
 date: 2018-01-24 11:08:21
 categories: python
 tags: Matplotlib

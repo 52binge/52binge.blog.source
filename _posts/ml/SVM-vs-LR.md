@@ -3,7 +3,6 @@ title: SVM 和 LR 的区别与联系？
 date: 2019-06-10 10:06:16
 categories: machine-learning
 tags: [SVM]
-toc: true
 ---
 
 <img class="img-fancy" src="/images/ml/svm/svm-01.jpg", width="600" border="0px", alt="SVM vs LR"%}

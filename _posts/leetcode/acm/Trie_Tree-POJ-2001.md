@@ -1,6 +1,5 @@
 ---
 title: Trie Tree POJ 2001
-toc: true
 date: 2013-01-17 18:06:21
 categories: [leetcode]
 tags: acm

@@ -1,6 +1,5 @@
 ---
 title: Linux File Basic Cmd
-toc: true
 date: 2017-10-23 22:04:21
 categories: devops
 tags: linux

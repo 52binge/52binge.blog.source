@@ -1,6 +1,5 @@
 ---
 title: Decision Tree part1
-toc: true
 date: 2016-08-16 16:43:21
 categories: machine-learning
 tags: [decision-tree]

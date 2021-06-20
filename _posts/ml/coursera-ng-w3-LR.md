@@ -1,6 +1,5 @@
 ---
 title: Coursera Week 3 - Logistic Regression
-toc: true
 date: 2016-10-24 10:28:21
 categories: machine-learning
 tags: machine-learning

@@ -1,6 +1,5 @@
 ---
 title: My Blog Config.yml
-toc: true
 date: 2017-10-08 20:16:21
 categories: devops
 tags: macos

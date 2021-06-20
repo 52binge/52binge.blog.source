@@ -1,6 +1,5 @@
 ---
 title: K-means
-toc: true
 date: 2018-12-18 10:01:21
 categories: machine-learning
 tags: Kmeans

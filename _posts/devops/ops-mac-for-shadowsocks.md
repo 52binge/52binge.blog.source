@@ -1,6 +1,5 @@
 ---
 title: Macos Terminal Set Shadowsocks
-toc: true
 date: 2017-10-19 22:24:21
 categories: devops
 tags: Shadowsocks

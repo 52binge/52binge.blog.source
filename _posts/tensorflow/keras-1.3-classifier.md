@@ -1,6 +1,5 @@
 ---
 title: Classifier in Keras
-toc: true
 date: 2019-08-22 14:17:21
 categories: tensorflow
 tags: keras

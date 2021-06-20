@@ -1,10 +1,8 @@
 ---
 title: User Credit Score
-toc: true
 date: 2019-06-23 13:28:21
 categories: data-science
 tags: Credit-Score
-mathjax: true
 ---
 
 {% image "/images/datascience/credit-score-02.jpg", width="550px", alt="Credit Score Card"%}

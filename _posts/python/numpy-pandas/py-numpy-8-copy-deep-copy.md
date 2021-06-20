@@ -1,10 +1,8 @@
 ---
 title: Numpy copy & deep copy
-toc: true
 date: 2017-12-27 14:28:21
 categories: python
 tags: Numpy   
-mathjax: true
 ---
 
 numpy copy & deep copy

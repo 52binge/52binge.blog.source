@@ -1,10 +1,8 @@
 ---
 title: Python WSGI 协议详解
-toc: true
 date: 2019-10-06 09:11:21
 categories: python
 tags: WSGI   
-mathjax: true
 ---
 
 {% image "/images/python/WSGI/WSGI-1.jpg", width="550px", alt="WSGI" %}

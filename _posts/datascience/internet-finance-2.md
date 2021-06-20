@@ -1,10 +1,8 @@
 ---
 title: 互联网金融风控中的数据科学 (part2)  ： 模型策略
-toc: true
 date: 2018-04-21 18:28:21
 categories: data-science
 tags: ITFIN
-mathjax: true
 ---
 
 反欺诈也是一种机器学习过程， 反欺诈建模中的数据科学

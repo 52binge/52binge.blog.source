@@ -1,10 +1,8 @@
 ---
 title: Numpy Array Split
-toc: true
 date: 2017-12-27 13:28:21
 categories: python
 tags: Numpy   
-mathjax: true
 ---
 
 Numpy array 横向分割、纵向分割、等量分割、非等量分割

@@ -1,10 +1,8 @@
 ---
 title: Python Data Mining and Analysis environment
-toc: true
 date: 2016-08-02 16:43:21
 categories: [python]
 tags: [machine-learning, python]
-mathjax: true
 ---
 
 这是用 Python 进行数据分析挖掘的一小部分，包括 高维数组、数值计算、机器学习、神经网络 和 语言模型等。

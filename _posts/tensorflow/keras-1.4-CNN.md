@@ -1,6 +1,5 @@
 ---
 title: CNN classifier in Keras
-toc: true
 date: 2019-08-22 15:17:21
 categories: tensorflow
 tags: CNN

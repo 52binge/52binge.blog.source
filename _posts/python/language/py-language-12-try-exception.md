@@ -1,6 +1,5 @@
 ---
 title: Python try … except … as …
-toc: true
 date: 2018-01-24 14:02:21
 categories: python
 tags: [python]

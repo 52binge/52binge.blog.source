@@ -1,6 +1,5 @@
 ---
 title: SQL@Leetcode
-toc: true
 date: 2021-01-26 09:07:21
 categories: [data-warehouse]
 tags: [SQL]

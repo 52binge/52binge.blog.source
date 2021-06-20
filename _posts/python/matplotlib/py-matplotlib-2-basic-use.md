@@ -1,6 +1,5 @@
 ---
 title: Matplotlib Basic Use
-toc: true
 date: 2018-01-01 12:46:21
 categories: python
 tags: Matplotlib

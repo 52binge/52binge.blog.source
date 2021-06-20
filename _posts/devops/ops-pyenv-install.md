@@ -1,6 +1,5 @@
 ---
 title: Pyenv Install For Virtual Multi Python Version Switch
-toc: true
 date: 2017-10-18 20:16:21
 categories: devops
 tags: help

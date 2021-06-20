@@ -1,6 +1,5 @@
 ---
 title: Coursera Week 1 - Machine Learning Introduction
-toc: true
 date: 2016-09-20 10:22:21
 categories: machine-learning
 tags: machine-learning

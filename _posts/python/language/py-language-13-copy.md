@@ -1,6 +1,5 @@
 ---
 title: Python copy & deepcopy
-toc: true
 date: 2018-01-24 15:00:21
 categories: python
 tags: [python]

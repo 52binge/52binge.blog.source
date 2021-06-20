@@ -1,6 +1,5 @@
 ---
 title: Python 星号表达式(*) 用法详解
-toc: true
 date: 2020-07-17 10:00:21
 categories: python
 tags: [python]

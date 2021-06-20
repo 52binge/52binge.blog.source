@@ -1,6 +1,5 @@
 ---
 title: pickle
-toc: true
 date: 2018-01-19 13:00:21
 categories: python
 tags: [python]

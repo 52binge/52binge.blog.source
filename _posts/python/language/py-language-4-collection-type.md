@@ -1,6 +1,5 @@
 ---
 title: Python 集合 List、Tuple、Dict、 Set
-toc: true
 date: 2017-05-31 16:00:21
 categories: python
 tags: [python]

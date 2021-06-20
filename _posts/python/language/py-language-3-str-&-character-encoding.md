@@ -1,6 +1,5 @@
 ---
 title: Python 字符编码 & 字符串
-toc: true
 date: 2017-05-31 13:05:21
 categories: python
 tags: [python]

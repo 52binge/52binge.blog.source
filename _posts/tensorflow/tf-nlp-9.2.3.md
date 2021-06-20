@@ -1,6 +1,5 @@
 ---
 title: RNN 的语言模型 TensorFlow 实现
-toc: true
 date: 2018-10-02 21:00:21
 categories: tensorflow
 tags: tensorflow

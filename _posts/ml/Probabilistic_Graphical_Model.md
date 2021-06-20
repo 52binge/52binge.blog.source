@@ -3,7 +3,6 @@ title: Probabilistic Graphical Model
 date: 2019-06-08 10:06:16
 categories: machine-learning
 tags: [entropy]
-toc: true
 ---
 
 <img class="img-fancy" src="/images/ml/pgm/pgm-01.png", width="550" border="0px", alt="Probabilistic Graphical Model"%}

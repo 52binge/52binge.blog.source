@@ -1,6 +1,5 @@
 ---
 title: Sklearn Choosing The Right Estimator
-toc: true
 date: 2018-01-03 13:22:21
 categories: python
 tags: Sklearn

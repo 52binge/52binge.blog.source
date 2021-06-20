@@ -1,10 +1,8 @@
 ---
 title: Numpy Basic Operation 2
-toc: true
 date: 2017-12-25 14:43:21
 categories: python
 tags: Numpy   
-mathjax: true
 ---
 
 numpy 矩阵的基本操作，argmin/argmax、mean/average、cumsum、sort、transpose/A.T、clip

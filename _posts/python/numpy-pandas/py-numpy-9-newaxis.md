@@ -1,6 +1,5 @@
 ---
 title: numpy.newaxis 转变矩阵的形狀
-toc: true
 date: 2018-09-11 15:37:21
 categories: python
 tags: newaxis

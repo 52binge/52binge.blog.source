@@ -1,10 +1,8 @@
 ---
 title: Numpy Basic Operation 1 
-toc: true
 date: 2017-12-25 11:43:21
 categories: python
 tags: Numpy   
-mathjax: true
 ---
 
 numpy 矩阵的基本运算，加减乘除、数学函数、最大最小值、axis 查找 等

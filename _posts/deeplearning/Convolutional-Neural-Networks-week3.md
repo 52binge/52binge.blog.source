@@ -1,6 +1,5 @@
 ---
 title: Convolutional Neural Networks (week3) - Object detection
-toc: true
 date: 2018-09-01 15:00:21
 categories: deeplearning
 tags: deeplearning.ai

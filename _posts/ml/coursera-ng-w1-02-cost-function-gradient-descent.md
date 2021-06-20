@@ -1,6 +1,5 @@
 ---
 title: Coursera Week 1 - Linear Regression Cost Function & Gradient descent
-toc: true
 date: 2016-09-28 17:22:21
 categories: machine-learning
 tags: machine-learning

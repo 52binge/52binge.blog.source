@@ -1,6 +1,5 @@
 ---
 title: Sklearn Cross-validation 3
-toc: true
 date: 2018-01-09 15:17:21
 categories: python
 tags: Sklearn

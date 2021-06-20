@@ -1,10 +1,8 @@
 ---
 title: Docker microservices
-toc: true
 date: 2019-10-14 17:11:21
 categories: devops
 tags: Docker   
-mathjax: true
 ---
 
 {% image "/images/devops/docker-2.1.png", width="550px", alt="Docker Microservices" %}

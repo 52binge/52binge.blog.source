@@ -1,6 +1,5 @@
 ---
 title: Support Vecor Machine (六部曲)
-toc: true
 date: 2018-06-20 16:08:21
 categories: machine-learning
 tags: machine-learning

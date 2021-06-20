@@ -1,6 +1,5 @@
 ---
 title: Matplotlib Figure
-toc: true
 date: 2018-01-01 13:08:21
 categories: python
 tags: Matplotlib

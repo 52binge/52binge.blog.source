@@ -1,6 +1,5 @@
 ---
 title: Macos High Sierra 10.13 Work Environment Install
-toc: true
 date: 2017-10-03 07:08:21
 categories: devops
 tags: macos

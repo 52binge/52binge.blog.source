@@ -1,6 +1,5 @@
 ---
 title: My Vim Config File
-toc: true
 date: 2017-10-04 20:16:21
 categories: devops
 tags: vimrc

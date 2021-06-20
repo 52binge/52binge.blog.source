@@ -1,6 +1,5 @@
 ---
 title: Ensumble 集成学习小记
-toc: true
 date: 2018-07-03 17:43:21
 categories: machine-learning
 tags: [Ensumble]

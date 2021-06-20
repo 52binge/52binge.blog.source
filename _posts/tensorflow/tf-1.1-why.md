@@ -1,6 +1,5 @@
 ---
 title: TensorFlow Why?
-toc: true
 date: 2017-08-22 13:17:21
 categories: tensorflow
 tags: tensorflow

@@ -1,6 +1,5 @@
 ---
 title: Ensemble Learning (part1)
-toc: true
 date: 2018-04-07 16:08:21
 categories: machine-learning
 tags: Ensemble

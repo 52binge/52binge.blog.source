@@ -1,6 +1,5 @@
 ---
 title: Sklearn Why ?
-toc: true
 date: 2018-01-03 13:16:21
 categories: python
 tags: Matplotlib

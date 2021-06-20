@@ -1,6 +1,5 @@
 ---
 title: Python Slice、Iteration、List generation、Generator
-toc: true
 date: 2017-06-03 09:00:21
 categories: python
 tags: [python]

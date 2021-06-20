@@ -1,6 +1,5 @@
 ---
 title: Sequence Models (week2) - NLP - Word Embeddings
-toc: true
 date: 2018-08-02 16:00:21
 categories: deeplearning
 tags: deeplearning.ai

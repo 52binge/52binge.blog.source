@@ -4,7 +4,6 @@ title: JVM 跨平台与字节码原理初步
 date: 2016-08-16 16:54:16
 tags: [java,jvm]
 categories: java
-toc: true
 ---
 
 Java特种兵 - JVM 跨平台与字节码原理，Reading Notes

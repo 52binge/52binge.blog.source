@@ -1,6 +1,5 @@
 ---
 title: Logistic Regression
-toc: true
 date: 2019-05-31 10:01:21
 categories: machine-learning
 tags: Logistic_Regression

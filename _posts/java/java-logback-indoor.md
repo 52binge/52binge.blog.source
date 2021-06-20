@@ -3,7 +3,6 @@ title: Logback 入门初步
 date: 2015-12-27 15:54:16
 tags: logback
 categories: java
-toc: true
 ---
 
 Logback 一个开源日志组件, SLF4J 这个简单的日志前端接口（Façade）来替代 Jakarta Commons-Logging 。

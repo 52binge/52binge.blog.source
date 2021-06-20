@@ -1,6 +1,5 @@
 ---
 title: Work 常用的命令积累
-toc: true
 date: 2015-05-29 18:09:44
 categories: devops
 tags: work-cmd

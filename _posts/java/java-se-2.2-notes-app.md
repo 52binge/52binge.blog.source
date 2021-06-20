@@ -4,7 +4,6 @@ title: Java SE Learning Notes for Hello World
 date: 2013-02-02 10:54:16
 tags: [java]
 categories: java
-toc: true
 ---
 
 第一个 Java 程序 HelloWorld.java.  `手中无剑`, `心中有剑`.

@@ -4,7 +4,6 @@ title: Java SE Introduce
 date: 2013-02-02 07:54:16
 tags: [java]
 categories: java
-toc: true
 ---
 
 Java是一种广泛使用的计算机编程语言，拥有跨平台、面向对象、泛型编程的特性.

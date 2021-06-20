@@ -3,7 +3,6 @@ title: 中国人起名学问
 date: 2016-08-13 07:54:16
 tags: Chinese's name
 categories: tools
-toc: true
 ---
 
 我对中国人起名学问的自我研究记录

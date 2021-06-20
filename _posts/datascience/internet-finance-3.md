@@ -1,10 +1,8 @@
 ---
 title: 互联网金融风控中的数据科学 (part3) ： Lending Club 的数据试验
-toc: true
 date: 2018-04-23 13:28:21
 categories: data-science
 tags: ITFIN
-mathjax: true
 ---
 
 用户全流程欺诈⻛险评分体系

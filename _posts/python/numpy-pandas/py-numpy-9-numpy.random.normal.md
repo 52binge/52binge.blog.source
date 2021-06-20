@@ -1,6 +1,5 @@
 ---
 title: numpy.random.normal 函数
-toc: true
 date: 2018-09-11 16:16:21
 categories: python
 tags: numpy

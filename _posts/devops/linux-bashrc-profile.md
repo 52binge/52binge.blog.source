@@ -3,7 +3,6 @@ title: Linux, profile / bashrc Brief Introduce
 date: 2014-05-18 07:54:16
 tags: [bashrc]
 categories: devops
-toc: true
 list_number: true
 ---
 

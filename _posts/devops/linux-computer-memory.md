@@ -3,7 +3,6 @@ title: 寄存器, 内存, 存储器, Cache 的区别
 date: 2012-03-18 10:54:16
 tags: memory
 categories: devops
-toc: true
 list_number: true
 ---
 

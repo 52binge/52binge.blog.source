@@ -1,6 +1,5 @@
 ---
 title: Macos Sierra Uninstall App & Solve Allow apps Anywhere
-toc: true
 date: 2017-10-19 21:57:21
 categories: devops
 tags: mac
