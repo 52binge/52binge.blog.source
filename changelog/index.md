@@ -20,7 +20,7 @@ music:
 
 {% timenode 2020-06-21 [2.6.6 -> 4.0](https://github.com/volantis-x/hexo-theme-volantis/releases) %}
 
- 1. 注册 leancloud 
+ 1. 注册 leancloud (可能会这样做, 这是记录 webinfo 的)
  
 {% endtimenode %}
 

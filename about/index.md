@@ -48,6 +48,6 @@ Welcome to communicate, learn and progress together ! &nbsp;&nbsp;&nbsp; [contac
 
 ### ⛅️ ChengeLog
 
-- 2021-06-13 : Blair Chen, theme volantis research..
+- 2021-06-13 : Blair Chen, [more info, please click.](/changelog)
 - 2017-10-08 : Blair Chen, blairos theme improve.
 - 2016-03-22 : Blair Chen, build this blog website.

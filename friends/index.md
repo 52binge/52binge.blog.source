@@ -49,10 +49,7 @@ Data WareHouse & Analyst {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/c
 
 {% cell 花木兰, https://www.zhihu.com/people/may-25-73/columns/, https://pic2.zhimg.com/v2-cb4445a1aeb51a52aca4b48a0abc4a0b_xll.jpg %}
 
-{% cell 奕文/汪, https://www.instagram.com/wangyiwen1225/, /images/logos/E.w-logo.jpeg %}
-
 {% endbtns %}
-
 
 Friends 博客爱好者 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
 
@@ -62,11 +59,11 @@ Friends 博客爱好者 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cd
 
 {% cell Blair`s Blog, https://52binge.github.io/, /images/logos/logo_me1.jpg %}
 
+{% cell E.w, https://www.instagram.com/p/B4plzVUBjFs/?utm_source=ig_web_copy_link, /images/logos/E.w-logo.jpeg %}
+
 {% cell 七海の参考書, https://shiraha.cn, https://cdn.jsdelivr.net/gh/45921/cdn-images@main/me/avatar.jpg %}
 
 {% cell qinxs, https://7bxing.com/, https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/img/avatar.png %}
-
-{% cell 前端小康, https://www.antmoe.com/about/, https://cdn.jsdelivr.net/npm/kang-static@latest/avatar.jpg %}
 
 {% endbtns %}
 
