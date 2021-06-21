@@ -21,6 +21,7 @@ music:
 {% timenode 2020-06-21 [2.6.6 -> 4.0](https://github.com/volantis-x/hexo-theme-volantis/releases) %}
 
  1. 注册 [leancloud国际版](https://console.leancloud.app/) 记录 webinfo .
+ 2. blog theme/_config.yml 改为 blog/_config.my_volantis.yml, 这种方式不会每次修改自动加载, 需要重启server
  
 {% endtimenode %}
 
