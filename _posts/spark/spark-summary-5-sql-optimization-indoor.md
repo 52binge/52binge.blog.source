@@ -5,7 +5,7 @@ categories: [spark]
 tags: [sparkSQL]
 ---
 
-{% image "/images/spark/spark-sql-core-structure.jpeg", width="600px", alt="" %}
+{% image "/images/spark/sparkSql-logo-1.jpeg", width="500px", alt="" %}
 
 <!-- more -->
 
@@ -62,7 +62,7 @@ spark = SparkSession \
 
 [谈谈RDD、DataFrame、Dataset的区别和各自的优势](https://www.cnblogs.com/starwater/p/6841807.html)
 
-{% image "/images/spark/spark-aura-9.3.3.png", width="700px", alt="" %}
+{% image "/images/spark/spark-aura-9.3.3.png", width="650px", alt="" %}
 
 </details>
 
@@ -274,6 +274,8 @@ drwxr-xr-x@ 5 blair  staff   160B Jun  6 21:34 dir1
 </details>
 
 ## 3. SparkSQL 调优
+
+{% image "/images/spark/spark-sql-core-structure.jpeg", width="700px", alt="" %}
 
 No. | Title Author | Link
 --- | --- | --- 

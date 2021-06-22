@@ -11,7 +11,7 @@ tags: Taiwan
 [![台湾 vs 大陆](/images/world/taiwan/taiwan-logo-2.jpg "title")](http://www.baidu.com)
 -->
 
-<img class="img-fancy" src="/images/world/taiwan/taiwan-logo-2.jpg", width="550" border="0px", alt="台湾 vs 大陆"%}
+{% image "/images/world/taiwan/taiwan-logo-2.jpg", width="550px", alt="台湾 vs 大陆" %}
 
 
 [id]: /images/world/taiwan/taiwan-logo-2.jpg "title"
