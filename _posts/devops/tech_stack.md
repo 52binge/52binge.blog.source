@@ -5,7 +5,7 @@ categories: devops
 tags: Stack
 ---
 
-{% image "/images/devops/tech-stack-logo1.png", width="550px", alt="Tech Stack" %}
+{% image "/images/devops/tech-stack-logo1.png", width="500px", alt="Tech Stack" %}
 
 <!-- more -->
 

@@ -5,7 +5,7 @@ categories: machine-learning
 tags: [decision-tree]
 ---
 
-<img src="/images/ml/decision-tree/decision-tree-2.png" width="330" /img>
+{% image "/images/ml/decision-tree/decision-tree-2.png", width="500px" %}
 
 <!-- more -->
 

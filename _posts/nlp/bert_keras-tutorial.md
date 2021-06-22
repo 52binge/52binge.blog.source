@@ -5,7 +5,7 @@ categories: nlp
 tags: BERT
 ---
 
-{% image "/images/nlp/bert-keras-1.jpeg", width="550px", alt="bert 遇见 keras" %}
+{% image "/images/nlp/bert-keras-1.jpeg", width="500px", alt="bert 遇见 keras" %}
 
 <!-- more -->
 

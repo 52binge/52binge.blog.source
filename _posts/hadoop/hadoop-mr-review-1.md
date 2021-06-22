@@ -5,7 +5,7 @@ categories: [hadoop]
 tags: [MapReduce]
 ---
 
-{% image "/images/hadoop/hadoop-mr-logo.png", width="450px", alt="Hadoop MapReduce" %}
+{% image "/images/hadoop/hadoop-mr-logo.png", width="400px", alt="Hadoop MapReduce" %}
 
 <!--more-->
 

@@ -5,7 +5,7 @@ categories: devops
 tags: Fluentd
 ---
 
-{% image "/images/devops/fluentd-1.png", width="550px", alt="Fluentd" %}
+{% image "/images/devops/fluentd-1.png", width="500px", alt="Fluentd" %}
 
 <!-- more -->
 

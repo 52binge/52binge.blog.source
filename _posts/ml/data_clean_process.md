@@ -5,7 +5,7 @@ categories: machine-learning
 tags: [estimation]
 ---
 
-<img class="img-fancy" src="/images/ml/metric/data-pre-processing.jpg", width="600" border="0px", alt="data pre-processing"%}
+{% image "/images/ml/metric/data-pre-processing.jpg", width="500px", alt="data pre-processing" %}
 
 <!-- more -->
 

@@ -5,7 +5,7 @@ categories: [hadoop]
 tags: [Hive]
 ---
 
-{% image "/images/hadoop/hadoop-hive-logo-1.png", width="450px", alt="Hadoop MapReduce" %}
+{% image "/images/hadoop/hadoop-hive-logo-1.png", width="400px", alt="" %}
 
 <!--more-->
 

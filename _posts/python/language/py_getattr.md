@@ -5,7 +5,6 @@ categories: [python]
 tags: [getattr]
 ---
 
-
 decorator 由于函数也是一个对象，而且函数对象可以被赋值给变量，所以，通过变量也能调用该函数。
 
 getattr(object, name[,default])

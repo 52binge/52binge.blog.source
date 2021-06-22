@@ -5,7 +5,7 @@ categories: [English, IELTS]
 tags: IELTS
 ---
 
-{% image "/images/english/ielts/writing/logo-conghao.png", width="550px", alt="1. topic 2. hand 3. other hand 4. conclusion"%}
+{% image "/images/english/ielts/writing/logo-conghao.png", width="500px", alt="1. topic 2. hand 3. other hand 4. conclusion" %}
 
 <!-- more -->
 

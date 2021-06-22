@@ -5,7 +5,7 @@ categories: [hadoop]
 tags: [hdfs]
 ---
 
-{% image "/images/hadoop/hadoop-hdfs.webp", width="450px", alt="Hadoop HDFS" %}
+{% image "/images/hadoop/hadoop-hdfs.webp", width="400px", alt="" %}
 
 <!--more-->
 

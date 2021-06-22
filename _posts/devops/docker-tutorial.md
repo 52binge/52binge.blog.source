@@ -5,7 +5,7 @@ categories: devops
 tags: Docker
 ---
 
-{% image "/images/devops/docker-1.1.jpg", width="550px", alt="Docker" %}
+{% image "/images/devops/docker-1.1.jpg", width="500px", alt="Docker" %}
 
 <!-- more -->
 

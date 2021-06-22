@@ -5,7 +5,7 @@ categories: deeplearning
 tags: Seq2Seq
 ---
 
-{% image "/images/deeplearning/Seq2Seq-00.jpg", width="550px", alt="Attention 和人类的选择性视觉注意力机制类似" %}
+{% image "/images/deeplearning/Seq2Seq-00.jpg", width="500px", alt="Attention 和人类的选择性视觉注意力机制类似" %}
 
 <!-- more -->
 

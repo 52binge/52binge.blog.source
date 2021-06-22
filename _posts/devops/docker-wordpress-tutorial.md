@@ -5,7 +5,7 @@ categories: devops
 tags: Docker   
 ---
 
-{% image "/images/devops/docker-2.1.png", width="550px", alt="Docker Microservices" %}
+{% image "/images/devops/docker-2.1.png", width="500px", alt="Docker Microservices" %}
 
 <!-- more -->
 

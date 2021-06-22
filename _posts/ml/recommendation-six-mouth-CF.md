@@ -2,7 +2,7 @@
 title: Recommendation System - CF
 date: 2017-02-28 10:28:21
 categories: machine-learning
-tags: RS
+tags: RecommendationSystem
 ---
 
 recommendation system and application

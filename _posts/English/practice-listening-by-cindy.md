@@ -5,7 +5,7 @@ categories: [English]
 tags: [Cindy-English]
 ---
 
-{% image "/images/english/cindy/cindy-listening-logo-2.jpg", width="550px", alt="一般英文聽力加強" %}
+{% image "/images/english/cindy/cindy-listening-logo-2.jpg", width="500px", alt="一般英文聽力加強" %}
 
 <!-- more -->
 

@@ -1,11 +1,11 @@
 ---
 title: Hive Optimize 25 Items
 date: 2020-07-18 08:07:21
-categories: [spark]
-tags: [spark]
+categories: [data-warehouse]
+tags: [hive]
 ---
 
-{% image "/images/hadoop/Hive-Data-Model-Optimization.jpg", width="550px", alt="" %}
+{% image "/images/hadoop/Hive-Data-Model-Optimization.jpg", width="450px", alt="" %}
 
 <!-- more -->
 

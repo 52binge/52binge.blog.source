@@ -5,9 +5,9 @@ categories: machine-learning
 tags: Kmeans
 ---
 
-{% image "/images/ml/k-means/K-Means.gif", width="550px" %}
+{% image "/images/ml/k-means/K-Means.gif", width="500px" %}
 
-<!-- more --><br>
+<!-- more -->
 
 在数据挖掘中， k-Means 算法是一种 cluster analysis 的算法，其主要是来计算数据聚集的算法，主要通过不断地取离种子点最近均值的算法。
 

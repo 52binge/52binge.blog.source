@@ -5,13 +5,9 @@ categories: machine-learning
 tags: [entropy]
 ---
 
-<img class="img-fancy" src="/images/ml/pgm/pgm-01.png", width="550" border="0px", alt="Probabilistic Graphical Model"%}
-
-<!--<a href="/2019/06/02/ml/Random_Forest_and_GBDT/" target="_self" style="display:block; margin:0 auto; background:url('/images/ml/ensumble/ensumble-1.png') no-repeat 0 0 / contain; height:304px; width:550px;"></a>
--->
+{% image "/images/ml/pgm/pgm-01.png", width="500px", alt="Probabilistic Graphical Model" %}
 
 <!-- more -->
-
 
 对于一个实际问题，目标： 能够挖掘隐含在数据中的知识。 怎样才能使用概率图模型挖掘这些隐藏知识呢？
 

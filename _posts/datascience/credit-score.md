@@ -5,7 +5,7 @@ categories: data-science
 tags: Credit-Score
 ---
 
-{% image "/images/datascience/credit-score-02.jpg", width="550px", alt="Credit Score Card"%}
+{% image "/images/datascience/credit-score-02.jpg", width="500px", alt="Credit Score Card"%}
 
 <!-- more -->
 

@@ -5,7 +5,7 @@ categories: nlp
 tags: Sentiment
 ---
 
-{% image "/images/deeplearning/AI-Challenger-11.png", width="550px", alt="AI-Challenger"%}
+{% image "/images/deeplearning/AI-Challenger-11.png", width="500px", alt="AI-Challenger"%}
 
 <!-- more -->
 

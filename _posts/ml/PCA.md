@@ -5,7 +5,7 @@ categories: machine-learning
 tags: PCA
 ---
 
-{% image "/images/ml/pca/pca-logo.png", width="550px", alt="PCA" %}
+{% image "/images/ml/pca/pca-logo.png", width="500px", alt="PCA" %}
 
 <!-- more -->
 

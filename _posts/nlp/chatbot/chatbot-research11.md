@@ -5,8 +5,6 @@ categories: [nlp]
 tags: Chatbot
 ---
 
-<!-- 2018 -->
-
 我们使用 tf.contrib.legacy_seq2seq 下的 API 构建了一个简单的 chatbot 对话系统. 代码是1.0之前旧版.
 
 本篇我们学习新版本灵活的的API，这里先来说一下二者的不同：

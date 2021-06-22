@@ -9,7 +9,8 @@ Guitar 调音、换弦操作方法
 
 <!-- more -->
 
-## Guitar 调音操作 
+## Guitar 调音操作
+ 
 将调音器夹琴头空白位置，短按开关键将模式调节到G字母再进行调试~
 
 从细到粗1-6弦的标准音分别是：1E 2B 3G 4D 5A 6E，
@@ -36,5 +37,6 @@ Guitar 调音、换弦操作方法
 
 吉他正对自己，一二三弦往自己怀里方向是拧紧调高，往外的方向是放松调低，四五六弦是相反方向
 
-[1]: http://v.youku.com/v_show/id_XMTQ3NDEzOTgzNg==.html?from=y1.7-2
+
+[1]: http://v.youku.com/v_show/id_XMTQ3NDEzOTgzNg==.html?from=y1.7-2
 [2]: http://v.youku.com/v_show/id_XMTM4MDkyNjQ0MA==.html?from=y1.7-2

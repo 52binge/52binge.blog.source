@@ -5,7 +5,7 @@ categories: nlp
 tags: PPL
 ---
 
-{% image "/images/nlp/LM-01.jpg", width="550px", alt="2001 NNLM, @Yoshua bengio" %}
+{% image "/images/nlp/LM-01.jpg", width="500px", alt="2001 NNLM, @Yoshua bengio" %}
 
 <!-- more -->
 

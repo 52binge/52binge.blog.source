@@ -5,7 +5,7 @@ categories: tools
 tags: LoseWeight
 ---
 
-<img src="/images/health/thin-belly.jpg" width="550" alt=""/>
+{% image "/images/health/thin-belly.jpg", width="500px", alt="" %}
 
 <!-- more -->
 

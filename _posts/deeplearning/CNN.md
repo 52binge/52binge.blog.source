@@ -5,7 +5,7 @@ categories: deeplearning
 tags: [CNN]
 ---
 
-{% image "/images/deeplearning/CNN-03.png", width="700px", alt="Convolutional Neural Networks" %}
+{% image "/images/deeplearning/CNN-03.png", width="500px", alt="Convolutional Neural Networks" %}
 
 <!-- more -->
 

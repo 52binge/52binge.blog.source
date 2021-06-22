@@ -5,7 +5,7 @@ categories: elastic
 tags: ElasticSearch
 ---
 
-{% image "/images/elastic/elastic-keyword-1.jpg", width="550px", alt="ElasticSearch" %}
+{% image "/images/elastic/elastic-keyword-1.jpg", width="500px", alt="ElasticSearch" %}
 
 <!-- more -->
 

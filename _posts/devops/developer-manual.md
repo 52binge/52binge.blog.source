@@ -5,7 +5,7 @@ categories: devops
 tags: developer   
 ---
 
-{% image "/images/devops/developer-3.png", width="550px", alt="Developer's manual" %}
+{% image "/images/devops/developer-3.png", width="500px", alt="Developer's manual" %}
 
 <!-- more -->
 

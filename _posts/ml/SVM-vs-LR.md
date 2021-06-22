@@ -5,7 +5,7 @@ categories: machine-learning
 tags: [SVM]
 ---
 
-<img class="img-fancy" src="/images/ml/svm/svm-01.jpg", width="600" border="0px", alt="SVM vs LR"%}
+{% image "/images/ml/svm/svm-01.jpg", width="500px", alt="SVM vs LR" %}
 
 <!--<a href="/2019/06/02/ml/Random_Forest_and_GBDT/" target="_self" style="display:block; margin:0 auto; background:url('/images/ml/ensumble/ensumble-1.png') no-repeat 0 0 / contain; height:304px; width:550px;"></a>
 -->

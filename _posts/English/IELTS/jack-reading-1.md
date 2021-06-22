@@ -5,7 +5,7 @@ categories: [English, IELTS]
 tags: IELTS
 ---
 
-{% image "/images/english/ielts/reading/jack-reading-1.jpg", width="550px", alt="2020.2.9jack阅读技巧班"%}
+{% image "/images/english/ielts/reading/jack-reading-1.jpg", width="500px", alt="2020.2.9jack阅读技巧班"%}
 
 <!-- more -->
 

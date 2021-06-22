@@ -5,7 +5,7 @@ categories: machine-learning
 tags: Logistic_Regression
 ---
 
-{% image "/images/ml/lr/LR-1.png", width="600px" %}
+{% image "/images/ml/lr/LR-1.png", width="500px" %}
 
 <!--<a href="/2019/05/31/ml/Logistic_Regression/" target="_self" style="display:block; margin:0 auto; background:url('/images/ml/lr/LR-1.png') no-repeat 0 0 / contain; height:275px; width:550px;"></a>-->
 

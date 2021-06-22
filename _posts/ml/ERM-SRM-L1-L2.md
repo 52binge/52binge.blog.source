@@ -5,10 +5,7 @@ categories: machine-learning
 tags: [L1-L2]
 ---
 
-<img class="img-fancy" src="/images/ml/intro/L1l2regularization.png", width="550" border="0px", alt="L1 L2 Regularization"%}
-
-<!--<a href="/2019/06/02/ml/Random_Forest_and_GBDT/" target="_self" style="display:block; margin:0 auto; background:url('/images/ml/ensumble/ensumble-1.png') no-repeat 0 0 / contain; height:304px; width:550px;"></a>
--->
+{% image "/images/ml/intro/L1l2regularization.png", width="550", alt="L1 L2 Regularization" %}
 
 <!-- more -->
 

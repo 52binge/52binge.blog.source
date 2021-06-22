@@ -5,7 +5,7 @@ categories: tensorflow
 tags: keras
 ---
 
-{% image "/images/tensorflow/keras-Classifier.png", width="550px", alt="Classifier in Keras"%}
+{% image "/images/tensorflow/keras-Classifier.png", width="500px", alt="Classifier in Keras" %}
 
 <!-- more -->
 

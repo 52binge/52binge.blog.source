@@ -5,7 +5,7 @@ categories: python
 tags: WSGI   
 ---
 
-{% image "/images/python/WSGI/WSGI-1.jpg", width="550px", alt="WSGI" %}
+{% image "/images/python/WSGI/WSGI-1.jpg", width="500px", alt="WSGI" %}
 
 <!-- more -->
 

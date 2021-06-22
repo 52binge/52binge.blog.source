@@ -5,7 +5,7 @@ categories: tools
 tags: SkinCare
 ---
 
-<img src="/images/health/health-skin.jpeg" width="350" alt=""/>
+{% image "/images/health/health-skin.jpeg", width="350px", alt="" %}
 
 <!-- more -->
 

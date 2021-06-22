@@ -5,7 +5,7 @@ categories: [English, IELTS]
 tags: IELTS
 ---
 
-{% image "/images/english/ielts/speaking/yu.1.1.logo.png", width="550px", alt="Simon312 的2020年新题库刷题班"%}
+{% image "/images/english/ielts/speaking/yu.1.1.logo.png", width="500px", alt="Simon312 的2020年新题库刷题班"%}
 
 <!-- more -->
 

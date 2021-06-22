@@ -6,7 +6,7 @@ tags: [java,jvm]
 categories: java
 ---
 
-{% image "/images/java/Java-Virtual-Machine-1-logo.png", width="550px", alt="" %}
+{% image "/images/java/Java-Virtual-Machine-1-logo.png", width="500px", alt="" %}
 
 <!-- more -->
 

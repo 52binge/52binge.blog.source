@@ -5,7 +5,7 @@ categories: devops
 tags: Kubernetes
 ---
 
-{% image "/images/devops/kubernetes-1.png", width="550px", alt="kubernetes.io" %}
+{% image "/images/devops/kubernetes-1.png", width="500px", alt="kubernetes.io" %}
 
 <!-- more -->
 

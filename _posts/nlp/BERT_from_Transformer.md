@@ -5,7 +5,7 @@ categories: nlp
 tags: BERT
 ---
 
-{% image "/images/nlp/bert5/bert5-2.png", width="400px", alt="BERT tutorial" %}
+{% image "/images/nlp/bert5/bert5-2.png", width="500px", alt="BERT tutorial" %}
 
 <!-- more -->
 
