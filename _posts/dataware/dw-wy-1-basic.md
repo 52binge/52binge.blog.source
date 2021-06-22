@@ -5,7 +5,7 @@ categories: [data-warehouse]
 tags: [data warehouse]
 ---
 
-{% image "/images/dataware/dw-wy-1.1.jpg", width="750px", alt="" %}
+{% image "/images/dataware/dw-wy-1.1.jpg", width="500px", alt="" %}
 
 <!-- more -->
 

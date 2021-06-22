@@ -5,7 +5,7 @@ categories: leetcode
 tags: leetcode
 ---
 
-{% image "/images/leetcode/leetcode-logo.jpeg", width="450px" %}
+{% image "/images/leetcode/leetcode-logo.jpeg", width="500px" %}
 
 <!-- more -->
 

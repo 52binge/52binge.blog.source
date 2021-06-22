@@ -5,7 +5,7 @@ categories: [spark]
 tags: [spark]
 ---
 
-{% image "/images/spark/spark-aura-5.1.2.jpg", width="950px", alt="executor 一定属于某个 Application" %}
+{% image "/images/spark/spark-aura-5.1.2.jpg", width="500px", alt="executor 一定属于某个 Application" %}
 
 <!-- more -->
 

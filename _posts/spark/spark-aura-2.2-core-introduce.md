@@ -6,7 +6,7 @@ tags: [spark]
 ---
 
 
-{% image "/images/spark/spark-aura-2.2.0-1.png", width="650px", alt="Spark 核心概念详述 2.2" %}
+{% image "/images/spark/spark-aura-2.2.0-1.png", width="500px", alt="Spark 核心概念详述 2.2" %}
 
 <!--more-->
 

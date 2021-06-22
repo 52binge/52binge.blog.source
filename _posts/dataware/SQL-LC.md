@@ -5,7 +5,7 @@ categories: [data-warehouse]
 tags: [SQL]
 ---
 
-{% image "/images/sql/sql-50-logo.jpg", width="550px", alt="" %}
+{% image "/images/sql/sql-50-logo.jpg", width="500px", alt="" %}
 
 <!-- more -->
 

@@ -5,7 +5,7 @@ categories: world
 tags: NewZealand
 ---
 
-{% image "/images/world/newzealand/nz-logo.jpg", width="800px", alt="Auckland New Zealand" %}
+{% image "/images/world/newzealand/nz-logo.jpg", width="700px", alt="Auckland New Zealand" %}
 
 <!-- more -->
 

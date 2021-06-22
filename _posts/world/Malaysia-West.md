@@ -5,7 +5,7 @@ categories: world
 tags: Malaysia
 ---
 
-{% image "/images/world/Malaysia/Malaysia-logo.jpeg", width="550px" %}
+{% image "/images/world/Malaysia/Malaysia-logo.jpeg", width="500px" %}
 
 <!-- more -->
 

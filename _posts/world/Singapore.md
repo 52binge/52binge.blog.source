@@ -5,7 +5,7 @@ categories: world
 tags: Singapore
 ---
 
-{% image "/images/world/Singapore/sg1.jpg", width="550px" %}
+{% image "/images/world/Singapore/sg1.jpg", width="500px" %}
 
 <!-- more -->
 

@@ -5,7 +5,7 @@ categories: world
 tags: Vietnam
 ---
 
-{% image "/images/world/Vietnam/Vietnam-logo.jpg", width="550px" %}
+{% image "/images/world/Vietnam/Vietnam-logo.jpg", width="500px" %}
 
 <!-- more -->
 

@@ -5,7 +5,7 @@ categories: world
 tags: NewZealand
 ---
 
-{% image "/images/world/NZA/nza-map.png", width="550px" %}
+{% image "/images/world/NZA/nza-map.png", width="500px" %}
 
 <!-- more -->
 

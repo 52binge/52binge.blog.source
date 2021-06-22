@@ -5,7 +5,7 @@ categories: [spark]
 tags: [spark]
 ---
 
-{% image "/images/spark/spark-aura-6.2-logo.png", width="550px", alt="" %}
+{% image "/images/spark/spark-aura-6.2-logo.png", width="500px", alt="" %}
 
 <!-- more -->
 

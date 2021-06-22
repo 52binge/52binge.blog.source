@@ -5,7 +5,7 @@ categories: [data-warehouse]
 tags: [data warehouse, SQL]
 ---
 
-{% image "/images/sql/sql-window-fun-4.png", width="580px", alt="（Window Function）是 SQL2003 标准中定义的一项新特性，并在 SQL2011、SQL2016 中完善" %}
+{% image "/images/sql/sql-window-fun-4.png", width="500px", alt="（Window Function）是 SQL2003 标准中定义的一项新特性，并在 SQL2011、SQL2016 中完善" %}
 
 <!-- more -->
 

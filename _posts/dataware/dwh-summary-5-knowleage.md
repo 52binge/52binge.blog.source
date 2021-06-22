@@ -5,7 +5,7 @@ categories: [data-warehouse, hive]
 tags: [Hive]
 ---
 
-{% image "/images/hadoop/hadoop-hive-logo-1.png", width="380px", alt="" %}
+{% image "/images/hadoop/hadoop-hive-logo-1.png", width="500px", alt="" %}
 
 <!-- more -->
 

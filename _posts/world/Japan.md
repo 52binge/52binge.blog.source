@@ -5,7 +5,7 @@ categories: world
 tags: Japan
 ---
 
-{% image "/images/world/Japan/Japan_tour_map.gif", width="550px" %}
+{% image "/images/world/Japan/Japan_tour_map.gif", width="500px" %}
 
 <!-- more -->
 

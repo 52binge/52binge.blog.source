@@ -5,7 +5,7 @@ categories: [data-warehouse]
 tags: [data warehouse]
 ---
 
-{% image "/images/hadoop/hadoop-mr-logo.png", width="450px", alt="" %}
+{% image "/images/hadoop/hadoop-mr-logo.png", width="500px", alt="" %}
 
 <!-- more -->
 
