@@ -6,7 +6,7 @@
 
 import os
 
-fileDir = "/Users/blair/ghome/blog/source/_posts/"
+fileDir = "/Users/blair/ghome/blog/source/_posts/world/"
 
 file_path = []
 
