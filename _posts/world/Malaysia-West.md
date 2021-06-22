@@ -5,7 +5,7 @@ categories: world
 tags: Malaysia
 ---
 
-<img src="/images/world/Malaysia/Malaysia-logo.jpeg" width="550"/>
+{% image "/images/world/Malaysia/Malaysia-logo.jpeg", width="550px" %}
 
 <!-- more -->
 
@@ -13,7 +13,7 @@ tags: Malaysia
 
 西马有著名的首都吉隆坡、文化小城马六甲，美食聚集地槟城和热带岛屿兰卡威等；东马则是海洋度假胜地。
 
-<img src="/images/world/Malaysia/Malaysia-west-1.jpeg" width="600"/>
+{% image "/images/world/Malaysia/Malaysia-west-1.jpeg", width="600px" %}
 
 
 马来西亚分成东马来西亚和西马来西亚。东马来西亚包括世界前三日落观看地之一亚庇（沙巴）、“潜水天堂”诗巴丹，还有仙本那等。距离比较远（如果你是从吉隆坡飞东马的话），时间需要比较多，因此不适合太赶的五天旅行。
@@ -38,7 +38,7 @@ DAY4-5： 在兰卡威不能错过自驾环岛，陆上体验完了，可以在�
 
 **路线安排：茨厂街(China Town)—马里安曼印度庙—清真寺(National Mosque)—独立广场—双子塔KLCC**
 
-<img src="/images/world/Malaysia/Malaysia-west-2.jpeg" width="550"/>
+{% image "/images/world/Malaysia/Malaysia-west-2.jpeg", width="550px" %}
 
 ## Day2-3 槟城 Penang
 
@@ -47,13 +47,13 @@ DAY4-5： 在兰卡威不能错过自驾环岛，陆上体验完了，可以在�
 
 槟城（Penang）：作为“最佳被访的岛屿之一”，吸引人的是可以在肚子撑船的美食，还有乔治市的街头艺术。噢，对了！槟城的姓氏桥还是《初恋红豆冰》的取景地，值得来看一看！   
 
-<!--<img src="/images/world/Malaysia/Malaysia-west-3.jpeg" width="550"/>
+<!--{% image "/images/world/Malaysia/Malaysia-west-3.jpeg", width="550px" %}
 -->
 乔治市里散落在各个地方的壁画:
 
-<img src="/images/world/Malaysia/Penang-1.jpeg" width="550" alt="乔治市街头艺术 Mirror Georgetown"/>
+{% image "/images/world/Malaysia/Penang-1.jpeg", width="550px", alt="乔治市街头艺术 Mirror Georgetown"%}
 
-<!--<img src="/images/world/Malaysia/Penang-2.jpeg" width="550" alt="乔治市街头艺术 Mirror Georgetown"/>-->
+<!--{% image "/images/world/Malaysia/Penang-2.jpeg", width="550px", alt="乔治市街头艺术 Mirror Georgetown"%}-->
 
 **推荐必吃美食**：炒粿条、榴莲冰淇淋、亚参叻沙 Asam Laksa、煎蕊和红豆冰Cendol, Ais kacang、槟城福建面Hokkien Mee和咖哩面 Curry mee, Mee Kari 。
 
@@ -61,7 +61,7 @@ DAY4-5： 在兰卡威不能错过自驾环岛，陆上体验完了，可以在�
 
 美丽的沙滩、奇特的溶洞、青翠的森林、壮观的瀑布以及种类繁多的野生动植物
 
-<img src="/images/world/Malaysia/Langkawi-2.png" width="650"/>
+{% image "/images/world/Malaysia/Langkawi-2.png", width="650px" %}
 
 2天的时间提供三种路线，供大家参考选择：
 
@@ -77,7 +77,7 @@ DAY4-5： 在兰卡威不能错过自驾环岛，陆上体验完了，可以在�
 
 芭雅岛——和鱼群穿梭在珊瑚之间
 
-<img src="/images/world/Malaysia/Langkawi-3.jpeg" width="650"/>
+{% image "/images/world/Malaysia/Langkawi-3.jpeg", width="650px" %}
 
 **●●亮点概括●●**
 

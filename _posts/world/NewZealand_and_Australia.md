@@ -5,7 +5,7 @@ categories: world
 tags: NewZealand
 ---
 
-<img src="/images/world/NZA/nza-map.png" width="550"/>
+{% image "/images/world/NZA/nza-map.png", width="550px" %}
 
 <!-- more -->
 
@@ -37,7 +37,7 @@ Day | Date | Dest | Type | Time
 
 > 如果经由奥克兰－霍比特人小镇－惠灵顿，再搭船抵达南岛也是条相当理想，并且实惠的路线。
 
-<img src="/images/world/NZA/nz3.jpeg" width="600" alt="奥克兰海港夜景。By 锦衣"/>
+{% image "/images/world/NZA/nz3.jpeg", width="600px", alt="奥克兰海港夜景。By 锦衣"%}
 
 奥克兰是新西兰最大的城市，一方面它承载了新西兰城市的最佳面貌，是新西兰为数不多城市中的翘楚。另一方面，它是所有从国内前往新西兰旅行者的中转站，一部分人从这里直接搭乘飞机进入南岛开始旅行，另一部分人为它保留并不充裕的时间，看一看天空塔，赏一赏夜景。
 

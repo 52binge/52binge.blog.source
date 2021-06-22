@@ -5,7 +5,7 @@ categories: world
 tags: Taiwan
 ---
 
-<img src="/images/world/taiwan/taiwan-trip-logo-1.jpg" width="550" border="0" alt="台灣旅行"/>
+{% image "/images/world/taiwan/taiwan-trip-logo-1.jpg", width="550" border="0px", alt="台灣旅行"%}
 
 <!--<a href="/2018/07/22/taiwan/my_taiwan_trip/" target="_self" style="display:block; margin:0 auto; background:url('/images/world/taiwan/taiwan-trip-logo-1.jpg') no-repeat 0 0 / contain; height:550px; width:550px;"></a>
 -->
@@ -67,7 +67,7 @@ tags: Taiwan
 
 ### 台湾图览
 
-<img src="/images/world/taiwan/trip/tw10.jpeg" width="500" />
+{% image "/images/world/taiwan/trip/tw10.jpeg", width="500px" %}
 
 ### 东台湾看海
 
@@ -79,7 +79,7 @@ tags: Taiwan
 
 ### 行程总概 (台北、宜兰、花莲、台北)
 
-<img src="/images/world/taiwan/trip/tw12_1.png" width="1000" />
+{% image "/images/world/taiwan/trip/tw12_1.png", width="1000px" %}
 
 6952301022230
 
@@ -148,7 +148,7 @@ No. | Date | Title | Del
 > 
 > 16点多开始游览南方澳，差不多1-2小时结束游览可以在这里吃饭，也可以坐计程车回苏澳站，坐台铁回宜兰吃晚饭
 
-<img src="/images/world/taiwan/trip/tw-day3-1.jpeg" width="500" />
+{% image "/images/world/taiwan/trip/tw-day3-1.jpeg", width="500px" %}
 
 > 龟山岛、樱桃陵园 是比较远的. 可以选择舍弃，暂时不排进来.
 > 
@@ -194,7 +194,7 @@ No. | Date | Title | Del
 
 **Day1 台北 一 日游**
 
-<img src="/images/world/taiwan/trip/tw7.jpeg" width="700" />
+{% image "/images/world/taiwan/trip/tw7.jpeg", width="700px" %}
 
 [img3]: /images/world/taiwan/trip/tw3.jpg
 [img4]: /images/world/taiwan/trip/tw4.jpg

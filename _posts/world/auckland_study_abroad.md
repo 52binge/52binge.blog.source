@@ -5,7 +5,7 @@ categories: world
 tags: NewZealand
 ---
 
-<img src="/images/world/Auckland/Auckland-2.jpg" width="550" alt="Auckland New Zealand" />
+{% image "/images/world/Auckland/Auckland-2.jpg", width="550px", alt="Auckland New Zealand" %}
 
 <!-- more -->
 
@@ -20,7 +20,8 @@ tags: NewZealand
 > EPPS 课程主要是针对那些已经满足了奥克兰硕士专业学术要求，但语言方面略有不足的学生。
 > 
 > EPPS 课程能够确保学生获得未来本科，硕士甚至博士专业学习所需的英语语言能力与学术写作能力。
-> > 成功通过 EPPS 课程并达到相应的分数后，无需参加任何雅思考试即可进入奥克兰大学的专业课程进行学习。
+> 
+> 成功通过 EPPS 课程并达到相应的分数后，无需参加任何雅思考试即可进入奥克兰大学的专业课程进行学习。
 
 新西兰八大的语言中心入学要求 : 奥克兰大学 本科/研究生最低要求:比正课低 0.5 分
 

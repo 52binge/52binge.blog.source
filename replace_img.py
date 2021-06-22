@@ -4,9 +4,11 @@
     @date: 2021-06-20 11:05 AM
 """
 
-import os
+import os, sys
+import importlib
+importlib.reload(sys)
 
-fileDir = "/Users/blair/ghome/blog/source/_posts/world/"
+fileDir = "/Users/blair/ghome/blog/source/_posts/world"
 
 file_path = []
 
@@ -20,7 +22,7 @@ def func():
 def replace_img(file):
     print(file)
     file_data = ""
-    with open(file, "r") as f:
+    with open(file, "r", encoding='utf-8') as f:
         for line in f:
             if '<img' not in line or '/>' not in line:
                 file_data += line
@@ -49,7 +51,7 @@ def replace_img(file):
 
             file_data += line
 
-    with open(file, "w") as f:
+    with open(file, "w", encoding='utf-8') as f:
         f.write(file_data)
 
 

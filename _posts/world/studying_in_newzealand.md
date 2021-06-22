@@ -5,17 +5,17 @@ categories: world
 tags: NewZealand
 ---
 
-<img src="/images/world/newzealand/nz-logo.jpg" width="800" alt="Auckland New Zealand" />
+{% image "/images/world/newzealand/nz-logo.jpg", width="800px", alt="Auckland New Zealand" %}
 
 <!-- more -->
 
 **NZ 8 University**
 
-<img src="/images/world/newzealand/nz-8-university-rank.png" width="600" alt="8 University in New Zealand" />
+{% image "/images/world/newzealand/nz-8-university-rank.png", width="600px", alt="8 University in New Zealand" %}
 
 ## 1. university of anckland
 
-<img src="/images/world/newzealand/universityofanckland-logo.jpeg" width="600" alt="www.auckland.ac.nz" />
+{% image "/images/world/newzealand/universityofanckland-logo.jpeg", width="600px", alt="www.auckland.ac.nz" %}
 
 > New Zealand is the most famous university in the world. The school is located in the center of Auckland, the largest city in New Zealand, with convenient life and colorful after-school activities.
 >
@@ -38,7 +38,7 @@ Overall score of 58 and no PTE Communicative score below 50
 
 ## 2. university of otago
 
-<img src="/images/world/newzealand/otago-1.jpg" width="600" alt="www.otago.ac.nz" />
+{% image "/images/world/newzealand/otago-1.jpg", width="600px", alt="www.otago.ac.nz" %}
 
 > [Postgraduate Diploma in Science (PGDipSci)](https://www.otago.ac.nz/courses/qualifications/pgdipsci.html) Computer Science	NZ$34,755	 	 	S1, 
 > 
@@ -70,7 +70,7 @@ TOEFL iBT Special Home Edition
 
 ## 3. university of canterbury
 
-<img src="/images/world/newzealand/uc-student.jpg" width="700" alt="www.canterbury.ac.nz" />
+{% image "/images/world/newzealand/uc-student.jpg", width="700px", alt="www.canterbury.ac.nz" %}
 
 > Postgraduate: 2020	60	Special (Set) Programme Fee	$19,200
 > 
@@ -88,7 +88,7 @@ TOEFL iBT Special Home Edition
 
 ## 4. auckland university of technology
 
-<img src="/images/world/newzealand/Institusi-AUT-paling-internasional-NZ-Kampus-0.jpg" width="700" alt="www.aut.ac.nz" />
+{% image "/images/world/newzealand/Institusi-AUT-paling-internasional-NZ-Kampus-0.jpg", width="700px", alt="www.aut.ac.nz" %}
 
 > [Postgraduate Diploma in Computer and Information Sciences](https://www.aut.ac.nz/study/study-options/engineering-computer-and-mathematical-sciences/courses/postgraduate-diploma-in-computer-and-information-sciences)
 > 

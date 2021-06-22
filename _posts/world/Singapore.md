@@ -5,7 +5,7 @@ categories: world
 tags: Singapore
 ---
 
-<img src="/images/world/Singapore/sg1.jpg" width="550"/>
+{% image "/images/world/Singapore/sg1.jpg", width="550px" %}
 
 <!-- more -->
 
@@ -18,7 +18,7 @@ tags: Singapore
 
 **坡图览**
 
-<img src="/images/world/Singapore/sg3.jpg" width="650"/>
+{% image "/images/world/Singapore/sg3.jpg", width="650px" %}
 
 ## Day1: 市区经典（鱼尾狮公园 →）
 
@@ -26,9 +26,9 @@ tags: Singapore
 2. Merlion Park [鱼尾狮公园]
 3. Gardens by the Bay [滨海湾花园]
 
-<img src="/images/world/Singapore/sg4.jpg" width="850"/>
+{% image "/images/world/Singapore/sg4.jpg", width="850px" %}
 
-<img src="/images/world/Singapore/sg5.jpg" width="850"/>
+{% image "/images/world/Singapore/sg5.jpg", width="850px" %}
 
 > 若想看坡市区风景，建议搭乘摩天轮，每圈循环约30分钟。
 >

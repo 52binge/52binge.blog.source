@@ -5,7 +5,7 @@ categories: world
 tags: Vietnam
 ---
 
-<img src="/images/world/Vietnam/Vietnam-logo.jpg" width="550"/>
+{% image "/images/world/Vietnam/Vietnam-logo.jpg", width="550px" %}
 
 <!-- more -->
 
@@ -20,7 +20,7 @@ tags: Vietnam
 - 避暑高原大叻
 - 东方夏威夷芽庄
 
-<img src="/images/world/Vietnam/Vietnam-map.png" width="550" alt="越南南部主要城市位置图" />
+{% image "/images/world/Vietnam/Vietnam-map.png", width="550px", alt="越南南部主要城市位置图" %}
 
 南部的越南，曾经被法国人殖民了一百多年，被美国人管理了二十多年，各种文化在这里汇集，融合，形成了万千风情的神韵，越南南部的城市，每一个地方都有自己独特的魅力和气质。
 
@@ -32,7 +32,7 @@ tags: Vietnam
 
 **第一站**
 
-<img src="/images/world/Vietnam/vm-passenger-ticket.png" width="880" />
+{% image "/images/world/Vietnam/vm-passenger-ticket.png", width="880px" %}
 
 
 **行程概览**
@@ -44,7 +44,7 @@ Day | Date | Dest | Type | Hotel
 Day1 | 2020-01-24 | 胡志明 | 16:55 樟宜机场T4 → 18:00 新山一国际机场T2<br>机场6.7km→Hotel→范5老街→越式烤肉(1/2)→金融塔 |  宿胡志明
  | | | | 金融塔票是否需提前预定 <br> grab 非常便宜，景点之间打车便可，但 traffic jam | 
  
- <img src="/images/world/Vietnam/vm-Ho-Chi-Minh-2.png" width="880" />
+ {% image "/images/world/Vietnam/vm-Ho-Chi-Minh-2.png", width="880px" %}
  
  Day | Date | Dest | Type | Hotel
 :-------: | :-------: | :-------:  | :-------: | :-------:
@@ -80,7 +80,7 @@ Day10 | 2020-02-02 | 岘港 - 新加坡 | 越捷航空 VJ973 12:20 岘港国际�
 
 ## Day1. 东方巴黎-胡志明
 
-<img src="/images/world/Vietnam/vm-Ho-Chi-Minh-1.jpg" width="700" alt="Ho Chi Minh" />
+{% image "/images/world/Vietnam/vm-Ho-Chi-Minh-1.jpg", width="700px", alt="Ho Chi Minh" %}
 
 <!--
 
@@ -90,7 +90,7 @@ Day10 | 2020-02-02 | 岘港 - 新加坡 | 越捷航空 VJ973 12:20 岘港国际�
 >
 > [胡志明往返美奈的交通教学](https://sinpeigoh.com/2017/04/29/sleepingbus-futa/)
 >
-> <img src="/images/world/Vietnam/vm-bus.jpg" width="500"/>
+> {% image "/images/world/Vietnam/vm-bus.jpg", width="500px" %}
 > 
 > 2020.01.25 夜间大巴，7:30/11:00/19:00/23:00 只有这4个时间是快车, 胡志明到美奈
 > 
@@ -102,17 +102,17 @@ Day10 | 2020-02-02 | 岘港 - 新加坡 | 越捷航空 VJ973 12:20 岘港国际�
 
 芽庄是众所周知的网红城市，这座美丽的城市有许多外号，像东方夏威夷，小马尔代夫等等。
 
-<img src="/images/world/Vietnam/vm-Nha-Trang-map.jpeg" width="700" alt="芽庄海滩" />
+{% image "/images/world/Vietnam/vm-Nha-Trang-map.jpeg", width="700px", alt="芽庄海滩" %}
 
 来芽庄，体验芽庄特色的热泥浆浴是必打卡的项目，泡在热热的泥浆浴里像泡温泉一样特别舒服，泡完泥浆浴和温泉，再体验一个越式按摩放松身心最合适不过了。
 
-<img src="/images/world/Vietnam/Vietnam-7.jpeg" width="700" alt="芽庄 矿泥浴景区" />
+{% image "/images/world/Vietnam/Vietnam-7.jpeg", width="700px", alt="芽庄 矿泥浴景区" %}
 
 ## Day3. 春暖花开-芽庄
 
 芽庄推荐景点：珍珠岛游乐园、芽庄三岛出海游、iresort泥浆浴
 
-<img src="/images/world/Vietnam/Vietnam-5.jpeg" width="700" alt="芽庄海滩" />
+{% image "/images/world/Vietnam/Vietnam-5.jpeg", width="700px", alt="芽庄海滩" %}
 
 > 这里拥有大海，沙滩，椰子树，跨海缆车，世界级摩天轮，海上的迪斯尼乐园，还有遍地的咖啡厅，街头满是美美的鸡蛋花，三角梅，海风吹来，坐在沙滩的躺椅捧着椰子喝，一边放空身体发呆，这才是生活。
 
@@ -124,13 +124,13 @@ Day10 | 2020-02-02 | 岘港 - 新加坡 | 越捷航空 VJ973 12:20 岘港国际�
 
 [越南 越南美奈如何安排行程？适合玩几天？](https://www.mafengwo.cn/wenda/detail-13940452-14002857.html)
 
-<img src="/images/world/Vietnam/Vietnam-2.jpeg" width="700" alt="白沙丘" />
+{% image "/images/world/Vietnam/Vietnam-2.jpeg", width="700px", alt="白沙丘" %}
 
 > 如果你住在美奈，一定要体验一下狂野刺激的吉普车，坐在海边沙滩上看日出、日落~
 
 渔港是美奈的名片，风景秀丽的渔港，簸箕船渔船飘荡在海湾，傍晚和清晨特别热闹，虽然渔港弥漫着一股海鲜的腥味，但是挡不住渔港的魅力
 
-<img src="/images/world/Vietnam/Vietnam-3.jpeg" width="700" alt="渔港 BY deargod123" />
+{% image "/images/world/Vietnam/Vietnam-3.jpeg", width="700px", alt="渔港 BY deargod123" %}
 
 > 红沙滩不仅作为一个很好的拍照背景，赏日落也是最美的，红沙滩很近，从红沙滩望过去是一望无际的海岸线，蓝色的大海和红色的沙漠交相辉映，傍晚时分会有很多当地的人拿着滑沙的工具邀请你体验，从高高的沙丘上滑下来，特别的有趣，重拾童心。
 
@@ -138,13 +138,13 @@ Day10 | 2020-02-02 | 岘港 - 新加坡 | 越捷航空 VJ973 12:20 岘港国际�
 
 大叻，百年前的法国人和越南末代皇帝就把这里当成度假天堂，在大叻，法国人修建了许许多多的度假别墅，百年以后，大叻的殖民风情还是被完整保留了下来，被称为越南的法国花园，家家户户法式小别墅，大街小巷鲜花盛开。
 
-<img src="/images/world/Vietnam/vm-Dalat-house.jpeg" width="700" alt="Crazy House" />
+{% image "/images/world/Vietnam/vm-Dalat-house.jpeg", width="700px", alt="Crazy House" %}
 
 ## Day6-7. 芽庄
 
 来芽庄，有一半人会选择出海玩，满目玲琅的四岛游，三岛游，海钓游，潜水游.
 
-<img src="/images/world/Vietnam/Vietnam-6.jpeg" width="700" alt="芽庄黑岛" />
+{% image "/images/world/Vietnam/Vietnam-6.jpeg", width="700px", alt="芽庄黑岛" %}
 
 ## Day8-9. 岘港
 
@@ -152,9 +152,9 @@ Day10 | 2020-02-02 | 岘港 - 新加坡 | 越捷航空 VJ973 12:20 岘港国际�
 
 美国《国家地理》评岘港为人生必到的50个景点之一，认为它是现代文明与自然的完美结合.
 
-<img src="/images/world/Vietnam/vm-Da-Nang-1.jpeg" width="700" alt="童话不在故事里——巴拿山" />
+{% image "/images/world/Vietnam/vm-Da-Nang-1.jpeg", width="700px", alt="童话不在故事里——巴拿山" %}
 <br>
-<img src="/images/world/Vietnam/vm-Da-Nang-2.webp" width="700" alt="岘港旅行地图" />
+{% image "/images/world/Vietnam/vm-Da-Nang-2.webp", width="700px", alt="岘港旅行地图" %}
 
 ## Day10. 新加坡
 

@@ -5,8 +5,7 @@ categories: [spark]
 tags: [spark]
 ---
 
-<!--{% image "/images/spark/spark-summary-logo.jpg", width="500px", alt="" %}
--->
+{% image "/images/spark/spark-summary-logo-1.jpg", width="500px", alt="" %}
 
 [good - Spark会把数据都载入到内存么？](https://www.jianshu.com/p/b70fe63a77a8)
 

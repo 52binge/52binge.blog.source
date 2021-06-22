@@ -5,14 +5,14 @@ categories: world
 tags: NewZealand
 ---
 
-<img src="/images/world/newzealand/nz_flag.jpg" width="550" alt="Auckland New Zealand" />
+{% image "/images/world/newzealand/nz_flag.jpg", width="550px", alt="Auckland New Zealand" %}
 
 <!-- more -->
 
-<img src="/images/world/newzealand/nz-sourth-north.jpg" width="800" alt="Auckland New Zealand" />
+{% image "/images/world/newzealand/nz-sourth-north.jpg", width="800px", alt="Auckland New Zealand" %}
 
 
-<img src="/images/world/newzealand/nz-trip-s1.jpg" width="800" alt="Auckland New Zealand" />
+{% image "/images/world/newzealand/nz-trip-s1.jpg", width="800px", alt="Auckland New Zealand" %}
 
 ## Reference
 

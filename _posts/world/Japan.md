@@ -5,7 +5,7 @@ categories: world
 tags: Japan
 ---
 
-<img src="/images/world/Japan/Japan_tour_map.gif" width="550"/>
+{% image "/images/world/Japan/Japan_tour_map.gif", width="550px" %}
 
 <!-- more -->
 
@@ -19,13 +19,13 @@ tags: Japan
 
 **关西图览**
 
-<img src="/images/world/Japan/jp-logo-2.jpg" width="650"/>
+{% image "/images/world/Japan/jp-logo-2.jpg", width="650px" %}
 
 **行程总概**
 
-<img src="/images/world/Japan/jp-traffic-1.jpg" width="850"/>
+{% image "/images/world/Japan/jp-traffic-1.jpg", width="850px" %}
 
-<img src="/images/world/Japan/jp-traffic-2.jpg" width="850"/>
+{% image "/images/world/Japan/jp-traffic-2.jpg", width="850px" %}
 
 Name | Date | Time | Place | Checking Luggage
 :-------: | :-------: | :-------: | :-------: | :-------: 
@@ -41,7 +41,7 @@ Name | Date | Time | Place | Checking Luggage
 >
 > 关西空港－－新今宫－－－大阪或梅田（umeda) 需要换乘一次 到新今宫换乘大坂环线 消费约1310日元（1130是南海电车 180 是大阪环线）
 
-<img src="/images/world/Japan/Kansai-1.jpg" width="780"/>
+{% image "/images/world/Japan/Kansai-1.jpg", width="780px" %}
 
 [超详细关西七日游路线，玩转大阪~京都~奈良~][3]
 
@@ -58,9 +58,9 @@ Day1 | 2019-09-07 | 上海 - 大阪 | 大阪城公园→天守阁→道顿崛→
 
 上午游览大阪城公园，时间充裕可以深度游览里面的天守阁与西之丸庭园。中午可以前往道顿崛附近用餐，连着心斋桥，法善寺小巷等，可以逛上一下午。晚上前往梅田展望台看大阪的夜景。
 
-<img src="/images/world/Japan/Osaka-1.png" width="880"/>
+{% image "/images/world/Japan/Osaka-1.png", width="880px" %}
 
-<img src="/images/world/Japan/Osaka-2.png" width="880"/>
+{% image "/images/world/Japan/Osaka-2.png", width="880px" %}
 
 ## Day2. 京都（清水寺 →）
 
@@ -72,7 +72,7 @@ Day2 | 2019-09-08 | 大阪 - 京都 | 清水坂→清水寺→产宁坂,二宁�
 
 上午游玩清水寺及其周边，清水寺的参观结束后可以逛逛二年坂三年坂，然后往祗园方向步行，沿途经过二宁坂（二年坂）、产宁坂（三年坂）、宁宁之道、八坂塔、高台寺等著名景点。 傍晚可以步行至八坂神社，京都重要的活动祭典很多都会在这里举办，6点还会亮灯，景色精致独具韵味，晚上顺便逛逛祇园，走走花见小路，夏季的时候尤其热闹。
 
-<img src="/images/world/Japan/Kyoto-1.jpg" width="880"/>
+{% image "/images/world/Japan/Kyoto-1.jpg", width="880px" %}
 
 **Route**：
 
@@ -98,11 +98,11 @@ Day3 | 2019-09-09 | 京都 - 京都 |  伏见稻荷→千本鸟居→宇治上�
 
 上午游览伏见稻荷大社，走一走千本鸟居，下午游览三十三间堂，参观完后有时间可以逛一逛锦市场，不过部分商铺会在17:00左右打烊，这是一处专卖京都特产的地方，有“京都厨房”的美称，傍晚时分去到京都著名的花街——先斗町，这里紧邻鸭川，吃过饭后可以沿着鸭川逛一圈。
 
-<img src="/images/world/Japan/Kyoto-2.jpg" width="880"/>
+{% image "/images/world/Japan/Kyoto-2.jpg", width="880px" %}
 
 前往岚山，想要体验小火车的蜂蜂可以在龟冈站搭乘小火车穿越保津峡，岚山站下后可步行至竹林的入口。在渡月桥景区也可以租借自行车游览
 
-<img src="/images/world/Japan/Kyoto-3.jpg" width="880"/>
+{% image "/images/world/Japan/Kyoto-3.jpg", width="880px" %}
 
 > 相比两条线地铁而言，京都市巴士的使用频率更多，单程240日元起，推荐500日元的巴士1日券，现场购买.
 
@@ -112,7 +112,7 @@ Day | Date | Dest | Type | Desc
 :-------: | :-------: | :-------:  | :-------: | :-------:
 Day4 | 2019-09-10 | 京都 - 奈良 | 近铁奈良站→奈良公园→东大寺→春日大社→唐招提寺→奈良町 | 宿大阪
 
-<img src="/images/world/Japan/Nara-1.png" width="880"/>
+{% image "/images/world/Japan/Nara-1.png", width="880px" %}
 
 ## Day5. 神戶（神户港 →）
 
@@ -122,15 +122,15 @@ Day5 | 2019-09-11 | 大阪 - 神户 | 坐JR→神户→神户港→北野异人�
 
 上午抵达神户港，感受充满现代设计感的港区建筑，还可以乘坐神户港地标马赛克摩天轮，从高空欣赏整座城市；随后前往北野异人馆街，多数为当年外国商人的私人住宅或外国使领馆。下午前往日本最古老的三大温泉乡之一有马温泉，泡温泉的同时感受历史文化；最后前往日本三大夜景地之一六甲山，眺望神户、大阪和京都﻿的绝美夜景～
 
-<img src="/images/world/Japan/Kobe-1.png" width="880"/>
+{% image "/images/world/Japan/Kobe-1.png", width="880px" %}
 
-<img src="/images/world/Japan/Kobe-2.png" width="880"/>
+{% image "/images/world/Japan/Kobe-2.png", width="880px" %}
 
 [神户经典1日游](http://www.mafengwo.cn/mdd/route/15298_110032.html)
 
 ## Day6. 大阪（去东京 →）
 
-<img src="/images/world/Japan/Kansai-2.png" width="800"/>
+{% image "/images/world/Japan/Kansai-2.png", width="800px" %}
 
 > Checking Luggage : 20公斤
 
@@ -147,7 +147,7 @@ Day | Date | Dest | Type | Desc
 :-------: | :-------: | :-------:  | :-------: | :-------:
 Day7 | 2019-09-13 | [富士山B套装][5] | [富士回游][7]→河口湖(缆车待定)→仓山浅间公园(浅间神灶)<br>→山中湖→六本本之丘室外展52F | 宿东京
 
-<img src="/images/world/Japan/Fujiyama.jpg" width="700"/>
+{% image "/images/world/Japan/Fujiyama.jpg", width="700px" %}
 
 > 河口湖是富士五湖中最繁华的湖，湖中的富士山倒影为一奇景。
 
@@ -157,7 +157,7 @@ Day | Date | Dest | Type | Desc
 :-------: | :-------: | :-------:  | :-------: | :-------:
 Day8 | 2019-09-14 | [镰仓 套装][5] | 大佛→鹤冈八幡宫→江之岛→镰仓高校前站→高中→江之电 | 宿东京
 
-<img src="/images/world/Japan/Kamakura.png" width="800"/>
+{% image "/images/world/Japan/Kamakura.png", width="800px" %}
 
 ## Day9. 东京 Tokyo
 
@@ -165,7 +165,7 @@ Day | Date | Dest | Type | Desc
 :-------: | :-------: | :-------:  | :-------: | :-------:
 Day9 | 2019-09-15 | 东京 - 东京  | bills→新宿车站→台场景点10选→皇居→银座→Akomeya→樂町<br>→上野公园→阿美横滨→秋叶原→新宿歌舞伎町 | 宿东京
 
-<img src="/images/world/Japan/Tokyo.png" width="800"/>
+{% image "/images/world/Japan/Tokyo.png", width="800px" %}
 
 [超详细关西七日游路线](http://special.cn.yokocho.com/archives/15506/)
 [第一次東京旅遊 一定要去的10個地方｜東京自由行必看](https://www.youtube.com/watch?v=3ydlmgwZBbg)
