@@ -20,8 +20,9 @@ music:
 
 {% timenode 2020-06-22 [2.6.6 -> 4.0](https://github.com/volantis-x/hexo-theme-volantis/releases) %}
 
- 1. 注册 [leancloud国际版](https://console.leancloud.app/) 记录 webinfo .
- 2. blog theme/_config.yml 改为 blog/_config.my_volantis.yml, 这种方式不会每次修改自动加载, 需要重启server
+ 1. 更新 icon, 修改在 blog/_config.yml rel="icon" and rel="shortcut icon"
+ 2. 转移 trip 类 articles 到该 blog 下.
+ 3. 将所有 articles 中的 logo image 大于 500px 的都 改为 500px.
  
 {% endtimenode %}
 
