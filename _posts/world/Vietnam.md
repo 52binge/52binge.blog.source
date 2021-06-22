@@ -82,22 +82,6 @@ Day10 | 2020-02-02 | 岘港 - 新加坡 | 越捷航空 VJ973 12:20 岘港国际�
 
 {% image "/images/world/Vietnam/vm-Ho-Chi-Minh-1.jpg", width="700px", alt="Ho Chi Minh" %}
 
-<!--
-
-> 美奈 胡志明怎么去美奈 
-> 
-> 1. 搭巴士  -- 好处是可以躺着去美奈很舒服且巴士票很便宜, sleeping bus & wifi.
->
-> [胡志明往返美奈的交通教学](https://sinpeigoh.com/2017/04/29/sleepingbus-futa/)
->
-> {% image "/images/world/Vietnam/vm-bus.jpg", width="500px" %}
-> 
-> 2020.01.25 夜间大巴，7:30/11:00/19:00/23:00 只有这4个时间是快车, 胡志明到美奈
-> 
-> 注意： 确认好，到达时间 与 发车时间.
-
--->
-
 ## Day2. 东夏威夷-芽庄
 
 芽庄是众所周知的网红城市，这座美丽的城市有许多外号，像东方夏威夷，小马尔代夫等等。
