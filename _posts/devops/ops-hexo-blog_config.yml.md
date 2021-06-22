@@ -27,11 +27,16 @@ import:
     - <meta name="theme-color" content="#ffffff">
   link:
     - <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png">
-    - <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-32x32.png">
-    - <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-16x16.png">
+#    - <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-32x32.png">
+#    - <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-16x16.png">
+
+#    - <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/qq.png">
+    - <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/title-icon-1.png">
     - <link rel="manifest" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/site.webmanifest">
     - <link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    - <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon.ico">
+#    - <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon.ico">
+    - <link rel="shortcut icon" href="/images/logos/title-icon-1.png">
+
   script:
     - <script></script>
 
@@ -58,7 +63,7 @@ timezone:
 #  app_key: #<AppKEY>
 
 #comments
-disqus_shortname: blairos-sn
+#disqus_shortname: blairos-sn
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -123,7 +128,8 @@ pagination_dir: page
 #theme: even
 #theme: hexo-theme-fluid
 #theme: hexo-theme-ayer
-theme: hexo-theme-volantis
+#theme: hexo-theme-volantis
+theme: my_volantis
 #theme: hexo-theme-ymd45921
 
 # Deployment
