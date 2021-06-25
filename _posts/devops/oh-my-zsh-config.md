@@ -13,7 +13,7 @@ tags: zshrc
 
 ```bash
 ###################################################
-###       blair custom config @2020.07.07      ###
+###       blair custom config @2021.06.25      ###
 ###################################################
 
 alias ipython='python -m IPython'

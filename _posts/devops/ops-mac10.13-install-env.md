@@ -16,15 +16,6 @@ Enable Dragging With Three Finger :
 
  1. Chrome
  2. NeteaseMusic
- 3. Baiduyun & Aira2GUI
- 4. Microsoft\_Office\_2016\_15.38.17090200\_Installer.pkg
-
-> Google Chrome is up to date
-> Version 61.0.3163.100 (Official Build) (64-bit)
->
-> 百度云破解限速 (Aria2GUI + chrome plugin)
-> 
-> Evernote 国际版与国内版分开管理的.
 
 ## 2. Dev Tools
 
@@ -32,19 +23,17 @@ Enable Dragging With Three Finger :
 
  1. Macdown
  2. Alfred
- 3. Atom
- 4. SubLime Text
- 5. [Homebrew][1]
- 6. Iterm2
- 7. Oh-my-zsh
- 8. [PyCharm & IDEA][3]
- 9. GNU\_Octave\_3.8.0-6.dmg
+ 3. SubLime Text
+ 4. [Homebrew](https://brew.sh/)
+ 5. Iterm2
+ 6. [Oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
+ 7. [PyCharm & IDEA][3]
 
 > brew (install 过程会自动需要 Xcode 被安装)
 > brew install wget tree 
 > 
-> wget https://bootstrap.pypa.io/get-pip.py <br>
-> sudo python get-pip.py
+> 待定 wget https://bootstrap.pypa.io/get-pip.py <br>
+> 待定 sudo python get-pip.py
 
 ### 2.2 iterm & zsh
 
@@ -66,22 +55,447 @@ Enable Dragging With Three Finger :
 > maybe Atom, Brogrammer, Darkside 
 > 
 > [Zsh astro theme][i3]
+>
+> Iterm2 -> Preference -> Profiles -> 右下角 -> import JSON profiles -> HotKey Window.json (MyProfiles)
+
+<details><summary>HotKey Window.json</summary>
+
+```json
+{
+  "Working Directory" : "\/Users\/blair",
+  "Prompt Before Closing 2" : false,
+  "Selected Text Color" : {
+    "Green Component" : 0,
+    "Red Component" : 0,
+    "Blue Component" : 0
+  },
+  "Rows" : 25,
+  "Ansi 11 Color" : {
+    "Green Component" : 1,
+    "Red Component" : 1,
+    "Blue Component" : 0.3333333432674408
+  },
+  "Use Italic Font" : true,
+  "HotKey Characters" : "",
+  "Foreground Color" : {
+    "Green Component" : 0.73333334922790527,
+    "Red Component" : 0.73333334922790527,
+    "Blue Component" : 0.73333334922790527
+  },
+  "HotKey Window Floats" : true,
+  "Right Option Key Sends" : 0,
+  "Character Encoding" : 4,
+  "Selection Color" : {
+    "Green Component" : 0.8353000283241272,
+    "Red Component" : 0.70980000495910645,
+    "Blue Component" : 1
+  },
+  "Mouse Reporting" : true,
+  "Ansi 4 Color" : {
+    "Green Component" : 0,
+    "Red Component" : 0,
+    "Blue Component" : 0.73333334922790527
+  },
+  "Non-ASCII Anti Aliased" : true,
+  "Sync Title" : false,
+  "Disable Window Resizing" : true,
+  "Description" : "Default",
+  "Close Sessions On End" : true,
+  "Jobs to Ignore" : [
+    "rlogin",
+    "ssh",
+    "slogin",
+    "telnet"
+  ],
+  "Scrollback Lines" : 1000,
+  "HotKey Window Reopens On Activation" : false,
+  "Prevent Opening in a Tab" : false,
+  "Flashing Bell" : false,
+  "Cursor Guide Color" : {
+    "Red Component" : 0.70213186740875244,
+    "Color Space" : "sRGB",
+    "Blue Component" : 1,
+    "Alpha Component" : 0.25,
+    "Green Component" : 0.9268307089805603
+  },
+  "BM Growl" : true,
+  "Ansi 3 Color" : {
+    "Green Component" : 0.73333334922790527,
+    "Red Component" : 0.73333334922790527,
+    "Blue Component" : 0
+  },
+  "Use Non-ASCII Font" : false,
+  "Link Color" : {
+    "Red Component" : 0,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.73423302173614502,
+    "Alpha Component" : 1,
+    "Green Component" : 0.35916060209274292
+  },
+  "Shortcut" : "",
+  "Background Image Location" : "",
+  "Bold Color" : {
+    "Green Component" : 1,
+    "Red Component" : 1,
+    "Blue Component" : 1
+  },
+  "Unlimited Scrollback" : false,
+  "Custom Command" : "No",
+  "HotKey Key Code" : 49,
+  "Keyboard Map" : {
+    "0xf700-0x260000" : {
+      "Text" : "[1;6A",
+      "Action" : 10
+    },
+    "0x37-0x40000" : {
+      "Text" : "0x1f",
+      "Action" : 11
+    },
+    "0x32-0x40000" : {
+      "Text" : "0x00",
+      "Action" : 11
+    },
+    "0xf709-0x20000" : {
+      "Text" : "[17;2~",
+      "Action" : 10
+    },
+    "0xf70c-0x20000" : {
+      "Text" : "[20;2~",
+      "Action" : 10
+    },
+    "0xf729-0x20000" : {
+      "Text" : "[1;2H",
+      "Action" : 10
+    },
+    "0xf72b-0x40000" : {
+      "Text" : "[1;5F",
+      "Action" : 10
+    },
+    "0xf705-0x20000" : {
+      "Text" : "[1;2Q",
+      "Action" : 10
+    },
+    "0xf703-0x260000" : {
+      "Text" : "[1;6C",
+      "Action" : 10
+    },
+    "0xf700-0x220000" : {
+      "Text" : "[1;2A",
+      "Action" : 10
+    },
+    "0xf701-0x280000" : {
+      "Text" : "0x1b 0x1b 0x5b 0x42",
+      "Action" : 11
+    },
+    "0x38-0x40000" : {
+      "Text" : "0x7f",
+      "Action" : 11
+    },
+    "0x33-0x40000" : {
+      "Text" : "0x1b",
+      "Action" : 11
+    },
+    "0xf703-0x220000" : {
+      "Text" : "[1;2C",
+      "Action" : 10
+    },
+    "0xf701-0x240000" : {
+      "Text" : "[1;5B",
+      "Action" : 10
+    },
+    "0xf70d-0x20000" : {
+      "Text" : "[21;2~",
+      "Action" : 10
+    },
+    "0xf702-0x260000" : {
+      "Text" : "[1;6D",
+      "Action" : 10
+    },
+    "0xf729-0x40000" : {
+      "Text" : "[1;5H",
+      "Action" : 10
+    },
+    "0xf706-0x20000" : {
+      "Text" : "[1;2R",
+      "Action" : 10
+    },
+    "0x34-0x40000" : {
+      "Text" : "0x1c",
+      "Action" : 11
+    },
+    "0xf700-0x280000" : {
+      "Text" : "0x1b 0x1b 0x5b 0x41",
+      "Action" : 11
+    },
+    "0x2d-0x40000" : {
+      "Text" : "0x1f",
+      "Action" : 11
+    },
+    "0xf70e-0x20000" : {
+      "Text" : "[23;2~",
+      "Action" : 10
+    },
+    "0xf702-0x220000" : {
+      "Text" : "[1;2D",
+      "Action" : 10
+    },
+    "0xf703-0x280000" : {
+      "Text" : "0x1b 0x1b 0x5b 0x43",
+      "Action" : 11
+    },
+    "0xf700-0x240000" : {
+      "Text" : "[1;5A",
+      "Action" : 10
+    },
+    "0xf707-0x20000" : {
+      "Text" : "[1;2S",
+      "Action" : 10
+    },
+    "0xf70a-0x20000" : {
+      "Text" : "[18;2~",
+      "Action" : 10
+    },
+    "0x35-0x40000" : {
+      "Text" : "0x1d",
+      "Action" : 11
+    },
+    "0xf70f-0x20000" : {
+      "Text" : "[24;2~",
+      "Action" : 10
+    },
+    "0xf703-0x240000" : {
+      "Text" : "[1;5C",
+      "Action" : 10
+    },
+    "0xf701-0x260000" : {
+      "Text" : "[1;6B",
+      "Action" : 10
+    },
+    "0xf702-0x280000" : {
+      "Text" : "0x1b 0x1b 0x5b 0x44",
+      "Action" : 11
+    },
+    "0xf72b-0x20000" : {
+      "Text" : "[1;2F",
+      "Action" : 10
+    },
+    "0x36-0x40000" : {
+      "Text" : "0x1e",
+      "Action" : 11
+    },
+    "0xf708-0x20000" : {
+      "Text" : "[15;2~",
+      "Action" : 10
+    },
+    "0xf701-0x220000" : {
+      "Text" : "[1;2B",
+      "Action" : 10
+    },
+    "0xf70b-0x20000" : {
+      "Text" : "[19;2~",
+      "Action" : 10
+    },
+    "0xf702-0x240000" : {
+      "Text" : "[1;5D",
+      "Action" : 10
+    },
+    "0xf704-0x20000" : {
+      "Text" : "[1;2P",
+      "Action" : 10
+    }
+  },
+  "Ansi 14 Color" : {
+    "Green Component" : 1,
+    "Red Component" : 0.3333333432674408,
+    "Blue Component" : 1
+  },
+  "Ansi 2 Color" : {
+    "Green Component" : 0.73333334922790527,
+    "Red Component" : 0,
+    "Blue Component" : 0
+  },
+  "Send Code When Idle" : false,
+  "ASCII Anti Aliased" : true,
+  "Tags" : [
+
+  ],
+  "Ansi 9 Color" : {
+    "Green Component" : 0.3333333432674408,
+    "Red Component" : 1,
+    "Blue Component" : 0.3333333432674408
+  },
+  "Use Bold Font" : true,
+  "Silence Bell" : false,
+  "Ansi 12 Color" : {
+    "Green Component" : 0.3333333432674408,
+    "Red Component" : 0.3333333432674408,
+    "Blue Component" : 1
+  },
+  "Window Type" : 0,
+  "Use Bright Bold" : true,
+  "Has Hotkey" : true,
+  "HotKey Modifier Activation" : 0,
+  "Cursor Text Color" : {
+    "Green Component" : 1,
+    "Red Component" : 1,
+    "Blue Component" : 1
+  },
+  "HotKey Window Dock Click Action" : 0,
+  "Default Bookmark" : "No",
+  "Cursor Color" : {
+    "Green Component" : 0.73333334922790527,
+    "Red Component" : 0.73333334922790527,
+    "Blue Component" : 0.73333334922790527
+  },
+  "Ansi 1 Color" : {
+    "Green Component" : 0,
+    "Red Component" : 0.73333334922790527,
+    "Blue Component" : 0
+  },
+  "Name" : "HotKey Window",
+  "Blinking Cursor" : false,
+  "Guid" : "93391868-B18E-488D-8281-468CE7F2D96D",
+  "Idle Code" : 0,
+  "Ansi 10 Color" : {
+    "Green Component" : 1,
+    "Red Component" : 0.3333333432674408,
+    "Blue Component" : 0.3333333432674408
+  },
+  "Ansi 8 Color" : {
+    "Green Component" : 0.3333333432674408,
+    "Red Component" : 0.3333333432674408,
+    "Blue Component" : 0.3333333432674408
+  },
+  "Badge Color" : {
+    "Red Component" : 1,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0,
+    "Alpha Component" : 0.5,
+    "Green Component" : 0.1491314172744751
+  },
+  "Ambiguous Double Width" : false,
+  "Blur Radius" : 3.4086770304568521,
+  "Ansi 0 Color" : {
+    "Green Component" : 0,
+    "Red Component" : 0,
+    "Blue Component" : 0
+  },
+  "Blur" : true,
+  "Normal Font" : "CourierNewPS-BoldMT 17",
+  "Vertical Spacing" : 1,
+  "Ansi 7 Color" : {
+    "Green Component" : 0.73333334922790527,
+    "Red Component" : 0.73333334922790527,
+    "Blue Component" : 0.73333334922790527
+  },
+  "HotKey Window AutoHides" : true,
+  "Command" : "",
+  "Terminal Type" : "xterm-256color",
+  "Horizontal Spacing" : 1,
+  "Option Key Sends" : 0,
+  "HotKey Window Animates" : true,
+  "HotKey Modifier Flags" : 1179648,
+  "Ansi 15 Color" : {
+    "Green Component" : 1,
+    "Red Component" : 1,
+    "Blue Component" : 1
+  },
+  "Ansi 6 Color" : {
+    "Green Component" : 0.73333334922790527,
+    "Red Component" : 0,
+    "Blue Component" : 0.73333334922790527
+  },
+  "Transparency" : 0.13976840101522844,
+  "HotKey Activated By Modifier" : false,
+  "Background Color" : {
+    "Green Component" : 0,
+    "Red Component" : 0,
+    "Blue Component" : 0
+  },
+  "Screen" : -2,
+  "HotKey Characters Ignoring Modifiers" : " ",
+  "Bound Hosts" : [
+
+  ],
+  "Non Ascii Font" : "Monaco 12",
+  "Ansi 13 Color" : {
+    "Green Component" : 0.3333333432674408,
+    "Red Component" : 1,
+    "Blue Component" : 1
+  },
+  "Columns" : 77,
+  "HotKey Alternate Shortcuts" : [
+
+  ],
+  "Use Tab Color" : true,
+  "Visual Bell" : true,
+  "Custom Directory" : "No",
+  "Ansi 5 Color" : {
+    "Green Component" : 0,
+    "Red Component" : 0.73333334922790527,
+    "Blue Component" : 0.73333334922790527
+  },
+  "Set Local Environment Vars" : false
+}
+```
+
+</details>
 
 **oh-my-zsh 自带 git 插件，里面的针对git 的别名设置见**:
 
 > ➜ >vim .oh-my-zsh/plugins/git/git.plugin.zsh
+
+**my_zprofile**
+
+[.zprofile](/2017/10/21/devops/oh-my-zsh-config/)
+
+**my_vimrc**
+
+[.vimrc](/2017/10/04/devops/my-vimrc/)
 
 **oh-my-zsh autojump plugin install**
 
 1. brew install autojump
 2. vim .zshrc
 
-```
+```bash
 plugins=(git autojump)
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 ```
 
 then, source ~/.zshrc
+
+
+if Folder permission "Insecure completion-dependent directories detected", then:
+
+vim .zshrc
+
+```bash
+Set ZSH_DISABLE_COMPFIX=true 
+#  in your zshrc file, before oh-my-zsh.sh is sourced, and update OMZ to the latest version. It should ignore these permission issues and load the completion system normally.
+```
+
+then, source ~/.zshrc
+
+**Astro zsh theme add in .zshrc** [Astro zsh theme, download and move to target dir, then:](https://github.com/iplaces/astro-zsh-theme)
+
+```bash
+ZSH_THEME="astro"
+```
+
+then, source ~/.zshrc
+
+**也加载下 .bash_profile**
+
+~/.zshrc, tail line add
+
+```bash
+source ~/.bash_profile
+```
+
+then, source ~/.zshrc
+
+[iTerm2 如何设置半透明窗口？](https://zhuanlan.zhihu.com/p/234766527)
 
 **Reference Article**
 
@@ -105,7 +519,87 @@ then, source ~/.zshrc
 
 ---
 
-### 2.3 ssh config
+### 2.3 Miniconda
+
+[https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html)
+
+> Miniconda3 MacOSX 64-bit pkg
+	
+~/.zshrc, tail line add
+
+```bash
+source ~/.bash_profile
+```
+
+then, source ~/.zshrc
+
+```bash
+➜ conda info
+
+     active environment : base
+    active env location : /opt/miniconda3
+            shell level : 1
+       user config file : /Users/blair/.condarc
+ populated config files :
+          conda version : 4.9.2
+    conda-build version : not installed
+         python version : 3.9.1.final.0
+       virtual packages : __osx=10.14.6=0
+                          __unix=0=0
+                          __archspec=1=x86_64
+       base environment : /opt/miniconda3  (writable)
+           channel URLs : https://repo.anaconda.com/pkgs/main/osx-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/osx-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /opt/miniconda3/pkgs
+                          /Users/blair/.conda/pkgs
+       envs directories : /opt/miniconda3/envs
+                          /Users/blair/.conda/envs
+               platform : osx-64
+             user-agent : conda/4.9.2 requests/2.25.0 CPython/3.9.1 Darwin/18.7.0 OSX/10.14.6
+                UID:GID : 501:20
+             netrc file : None
+           offline mode : False
+```
+
+```bash
+➜ python -V
+Python 3.9.1
+(base)
+# ~ [18:54:12]
+➜ pip --version
+pip 20.3.1 from /opt/miniconda3/lib/python3.9/site-packages/pip (python 3.9)
+(base)
+# ~ [18:54:14]
+➜
+```
+
+create env foo & install common package
+
+```bash
+conda create --name foo
+conda info
+conda info --envs
+conda activate foo
+conda list
+conda install pip
+pip list
+pip install pandas numpy scikit-learn matplotlib
+# 优先用 pip 来安装 package, pip 不行, 在用 conda. 浩哥的习惯. 推荐不绝对
+```
+
+[只用来管理 Python 版本和虚拟环境，Miniconda 也是一个很好的选择](https://zhuanlan.zhihu.com/p/81321705)
+
+```bash
+➜ conda info --envs
+# conda environments:
+#
+base                  *  /opt/miniconda3
+foo                      /opt/miniconda3/envs/foo
+```
+
+### 2.4 ssh config
 
 1. ssh-keygen -t rsa -C "your-company-email-full-address"
 2. ~/.ssh/id_rsa.pub 粘贴到运维平台
@@ -113,8 +607,8 @@ then, source ~/.zshrc
 > mac iterm2 ssh 跳转失败, 解决办法 :
 > 
 > (1) 新建并编辑 .ssh/config, 并复制以下内容到 config文件中
->
-> ```
+
+```
 Host * 
 ForwardAgent yes 
 PasswordAuthentication yes 
@@ -125,7 +619,7 @@ Compression yes
 
 > (2) cd ～/.ssh, 并在 terminal 中执行 ssh-add
 
-### 2.4 navicat for MySQL
+### 2.5 navicat for MySQL
 
 ![rds-general][s2]
 
@@ -144,7 +638,7 @@ Compression yes
  4. Scala
  5. Spark
 
-```
+```bash
 ➜  software pwd
 /usr/local/xsoft/software
 ➜  software ll
@@ -173,9 +667,9 @@ $ npm install -g hexo-cli
 
 > v4.1.0 更合适 hexo
 
-## 5. Python
+## 5. Python (待定)
 
-### 5.1 this mac install pip
+### 5.1 this mac install pip (待定)
 
 [Python pip][2] , `sudo python get-pip.py`
 
@@ -191,7 +685,7 @@ then, terminal input `pip list`.
 > [list]  
 > format=columns  
 
-### 5.2 pyenv install package
+### 5.2 pyenv install package (待定)
 
 **First, you need to install python `pyenv` environment**
 
@@ -205,16 +699,8 @@ pip install scipy
 pip install matplotlib
 pip install pandas
 
-pip install xlrd
-pip install xlwt
-pip install StatsModels
 pip install scikit-learn
-
-pip install jieba
-pip install --upgrade gensim
 ```
-
-> pip install elasticsearch==1.9
 
 **ipython**
 
@@ -256,7 +742,6 @@ Macos NSNavRecentPlaces 内部自动生成的配置，别乱改。
 > defaults write -g NSNavRecentPlaces '("~/Desktop", "/usr/local/xsoft/software")';
  
  
-[1]: https://brew.sh/
 [2]: https://bootstrap.pypa.io/get-pip.py
 [3]: https://feiyang.li/2017/02/26/jetbrains/index.html
 [4]: http://blog.tibame.com/?p=2068
