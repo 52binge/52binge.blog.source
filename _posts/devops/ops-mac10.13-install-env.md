@@ -1,5 +1,5 @@
 ---
-title: Macos High Sierra 10.13 Work Environment Install
+title: MacOS Mojave 10.14.6 Work Environment Install
 date: 2017-10-03 07:08:21
 categories: devops
 tags: macos
@@ -585,7 +585,7 @@ conda activate foo
 conda list
 conda install pip
 pip list
-pip install pandas numpy scikit-learn matplotlib
+pip install pandas numpy scikit-learn matplotlib ipython notebook
 # 优先用 pip 来安装 package, pip 不行, 在用 conda. 浩哥的习惯. 推荐不绝对
 ```
 
@@ -643,29 +643,30 @@ Compression yes
 /usr/local/xsoft/software
 ➜  software ll
 total 0
-lrwxr-xr-x  apache-maven -> /usr/local/xsoft/deploy/apache-maven-3.3.9
-lrwxr-xr-x  apache-tomcat -> /usr/local/xsoft/deploy/apache-tomcat-7.0.59
-lrwxr-xr-x  scala -> /usr/local/xsoft/deploy/scala-2.11.7
-lrwxr-xr-x  spark -> /usr/local/xsoft/deploy/spark-1.6.3-bin-hadoop2.6
+lrwxr-xr-x  1 blair  staff    40B Jun 30  2020 jdk -> /usr/local/xsoft/software/jdk-14.0.1.jdk
+lrwxr-xr-x  1 blair  staff    44B Mar 21 08:42 maven -> /usr/local/xsoft/software/apache-maven-3.6.3
+drwxr-xr-x@ 7 blair  staff   224B Mar 21 08:42 software
+lrwxr-xr-x  1 blair  staff    51B Jul  1  2020 spark -> /usr/local/xsoft/software/spark-3.0.0-bin-hadoop3.2
 ➜  software
 ```
 
 ## 4. Blog
 
+[nvm node.js](https://www.cnblogs.com/gaozejie/p/10689742.html)
+
  1. [hexo][5]
  2. Install Node.js
 
 ```
-$ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+$ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.35.2/install.sh | bash
 ```
 > Once nvm is installed, restart the terminal and run the following command to install Node.js:
 
 ```
-$ nvm install v4.1.0
+# $ nvm install v4.1.0
+$ nvm install v14.17.1
 $ npm install -g hexo-cli
 ```
-
-> v4.1.0 更合适 hexo
 
 ## 5. Python (待定)
 
