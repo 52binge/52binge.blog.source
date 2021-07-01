@@ -652,6 +652,16 @@ lrwxr-xr-x  1 blair  staff    51B Jul  1  2020 spark -> /usr/local/xsoft/softwar
 
 ## 4. Blog
 
+git config
+
+```bash
+$ git config --list
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+$ git config --list
+$ git config user.name
+```
+
 [nvm node.js](https://www.cnblogs.com/gaozejie/p/10689742.html)
 
  1. [hexo][5]
