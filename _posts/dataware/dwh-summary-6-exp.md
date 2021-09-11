@@ -55,11 +55,11 @@ No. | 主题名称 | 主题描述
 
 Data Layer | 表类型  |  表类型描述  |  生命周期管理规则
 --- | --- | --- | --- 
-ods/dm/dal/dim | - | - | 不做处理
+ODS/DM/ADS/DIM | - | - | 不做处理
 DWD | \_h | 时全量  |  31days， 直到月末
-DWD |  \_hh  |  时增量  |  366days
-DWD |  \_d  |  天全量  |  31days， 直到月末
-DWD |  \_dd  |  天增量  | 366days
+.. |  \_hh  |  时增量  |  366days
+.. |  \_d  |  天全量  |  31days， 直到月末
+.. |  \_dd  |  天增量  | 366days
 ..  |  \_w  |  周全量  |  26weeks
 ..  |  \_ww  |  周增量  |  104weeks
 ..  |  \_m  |  月全量  |  7months
@@ -84,5 +84,5 @@ DOUBLE  | 双精度型浮点数据
 
 ## Reference
 
-[TDBank：腾讯万亿级实时数据接入系统](http://marker.to/ctqviW)
+[TDBank：万亿级实时数据接入系统](http://marker.to/ctqviW)
 
