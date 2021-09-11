@@ -51,11 +51,7 @@ No. | 主题名称 | 主题描述
 
 ## 4. Data Update 
 
-{% image "/images/dataware/dw6-4.jpg", width="600px", alt="" %}
-
-## 5. DWH
-
-### 5.1 Data Cycle
+### 4.1 Data Life Cycle
 
 Data Layer | 表类型  |  表类型描述  |  生命周期管理规则
 --- | --- | --- | --- 
@@ -71,7 +67,7 @@ DWD |  \_dd  |  天增量  | 366days
 .. | \_y  | 年全量 | -
 .. | \_yy  | 年增量 | -
 
-### 5.2 Data Type
+### 4.2 Data Type
 
 Data Type | Desc
 --- | --- 
@@ -79,7 +75,7 @@ STRING | 字符串数据
 BIGINT | 长整型数据
 DOUBLE  | 双精度型浮点数据
 
-### 5.3 NULL
+### 4.3 NULL
 
 > NVL(time, "9991231235959")
 > 
