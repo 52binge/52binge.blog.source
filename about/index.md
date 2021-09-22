@@ -21,7 +21,7 @@ Welcome to communicate, learn and progress together ! &nbsp;&nbsp;&nbsp; [contac
 
 ### ⭐ Who am I
 
-<a href="/about"> Blair Chen</a> a data developer, GTD practitioner, live in Singapore, Singapore.
+<a href="/about"> Blair Chen</a> a data developer, GTD (Getting Things Done) practitioner, live in Singapore, Singapore.
 
 <a href="/about"> Blair Chen</a> focus on python/SQL, data engineering, data modeling, computer science.
 
