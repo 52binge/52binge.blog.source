@@ -10,11 +10,12 @@ tags: Systemd
 <!-- more -->
 
 
-## iOA 开机自启动问题
+## iOA 开机自启动
 
 ```bash
- 1795  launchctl unload -w /Library/LaunchAgents/com.tencent.iOA.startup.plist
- 1796  launchctl unload -w /Library/LaunchAgents/com.tencent.iOABiz.Agent.plist
+launchctl unload -w /Library/LaunchAgents/com.tencent.iOA.startup.plist
+
+#launchctl unload -w /Library/LaunchAgents/com.tencent.iOABiz.Agent.plist
 ```
 
 ## iOABiz
