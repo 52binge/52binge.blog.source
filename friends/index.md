@@ -21,7 +21,7 @@ music:
 
 {% cell Volantis主题, https://volantis.js.org/v5/theme-settings/, https://cdn.jsdelivr.net/gh/XuxuGood/cdn@master/blogImages/links/volantis.png %}
 
-{% cell W4J1e`s Blog, https://www.hin.cool/friends/, https://cdn2.hin.cool/pic/my/dl3.png %}
+{% cell W4J1e`s Friends, https://www.hin.cool/friends/, /images/logos/friends-logo.jpg %}
 
 {% cell xaoxuu, https://xaoxuu.com, https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png %}
 
@@ -62,8 +62,6 @@ Friends 博客爱好者 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cd
 {% cell 七海の参考書, https://shiraha.cn, https://cdn.jsdelivr.net/gh/45921/cdn-images@main/me/avatar.jpg %}
 
 {% cell qinxs, https://7bxing.com/, https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/img/avatar.png %}
-
-<!-- {% cell Molly, /images/logos/E.w-logo.jpeg, /images/logos/E.w-logo.jpeg %} -->
 
 {% endbtns %}
 
