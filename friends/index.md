@@ -23,11 +23,9 @@ music:
 
 {% cell W4J1e`s Friends, https://www.hin.cool/friends/, /images/logos/friends-logo.jpg %}
 
+<!--
 {% cell xaoxuu, https://xaoxuu.com, https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png %}
-
-{% cell 枋柚梓, https://www.inkss.cn/, https://cdn.jsdelivr.net/gh/inkss/common@master/static/web/avatar.jpg %}
-
-{% cell Font-Awesome, https://fontawesome.com/v5.15/icons?d=gallery/, fab fa-font-awesome-flag %}
+-->
 
 {% endbtns %}
 
@@ -77,7 +75,15 @@ IndustryVeteran 业界大佬 {% inlineimage https://cdn.jsdelivr.net/gh/volantis
 
 {% cell 王垠, https://www.yinwang.org/, https://inews.gtimg.com/newsapp_bt/0/12948149327/1000 %}
 
+{% endbtns %}
+
+ToolsPage  {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
+
+{% btns circle wide centre %}
+
 {% cell Runoob, https://www.runoob.com/, /images/logos/runoob-logo.jpeg %}
+
+{% cell Font-Awesome, https://fontawesome.com/v5.15/icons?d=gallery/, fab fa-font-awesome-flag %}
 
 {% endbtns %}
 
