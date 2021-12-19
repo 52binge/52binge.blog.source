@@ -85,6 +85,8 @@ ToolsPage  {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l
 
 {% cell Font-Awesome, https://fontawesome.com/v5.15/icons?d=gallery/, fab fa-font-awesome-flag %}
 
+{% cell EMOJIALL, https://www.emojiall.com/zh-hans/all-emojis, /images/logos/emoji-face-logo.png %}
+
 {% endbtns %}
 
 ## Codeblock
