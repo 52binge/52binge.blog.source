@@ -1,5 +1,5 @@
 ---
-title: Writing - Task1 资料汇总
+title: Writing - Task1 资料汇总 - 柱状图
 date: 2021-12-10 09:37:48
 categories: [English, IELTS]
 tags: IELTS
@@ -48,14 +48,11 @@ Overall, there were more male than female research students in the given year. `
 
 ## 3. body paragraph 1
 
-The bar chart illustrates how many male and female research students studied six different subjects (linguistics, psychology, natural sciences, engineering, programming and mathematics) in 2005.
+Female and male students showed a **more or less** similar interest in linguistics, psychology and natural sciences. **`In particular`**, natural sciences was the most popular of all, showing the same enrollment number of 200. Though very popular, psychology **was favored more by men(200)** than women(around 170). In linguistics, the **situation was the reverse**, with more women than men.
 
-Overall, there were more male research students than females in 2005. Although the most popular subject for both genders was natural sciences, men least preferred linguistics and woman showed little interest in mathematics. Linguistics was the only subject that was favoured by women more than men.
-
-There was a similar number of men and women in three subjects. There were equal numbers in research students (200) learning natural sciences. There was a difference between the genders of about 25 in both psychology and linguistics with more women choosing linguistics (about 110) and more men taking psychology (200).
-
-A difference of about half was evident in engineering and programming where 150 men chose both subjects. By contrast, 200 men selected mathematics which was approximately five-fold that of women (about 40).
-
+## 4. body paragraph 2
+ 
+However, female and male students showed **`significant differences`** in engineering, programming and mathematics. In all three subjects, **male dominance was obvious**, especially in mathematics, **`which was taken 200 male students`** and only around 40 female students. In engineering and programming, the number of female students was roughly half of that of male.
 
 ## 1. 伊娃EvaMissXIAO
 
