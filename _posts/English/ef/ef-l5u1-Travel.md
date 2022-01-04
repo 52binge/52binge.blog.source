@@ -2,24 +2,9 @@
 title: EF 5.1 Travel
 date: 2017-06-14 07:00:16
 tags: ef-english
-categories: English
-toc: true
-description: level 5 unit 1 travel , you'll learn how to handle a variety of other tasks related to travel 
+categories: [English, EF]
 ---
 
-<style>
-img {
-        display: block !important;
-        width: 550px;
-        margin-left: 120px !important;
-}
-audio {
-        display: block !important;
-        width: 550px;
-        margin-left: 120px !important;
-}
-
-</style>
 
 ## 1. Talking about flight arrangements
 
@@ -241,7 +226,7 @@ I absolutely love traveling. I've traveled to 7 countries. I've been to Thailand
 
 I haven't been to Africa yet, but I really want to go. My trip last month to Thailand was difficult. The flight took 17 hours. When I arrived, customs took my cellphone, and I had to buy a new one!
 
-[1]: /images/english/ef-l5u1l1.png
-[2]: /images/english/ef-l5u1l2.png
-[3]: /images/english/ef-l5u1l3.png
-[4]: /images/english/ef-l5u1l4.png
+[1]: /images/english/ef/ef-l5u1l1.png
+[2]: /images/english/ef/ef-l5u1l2.png
+[3]: /images/english/ef/ef-l5u1l3.png
+[4]: /images/english/ef/ef-l5u1l4.png
