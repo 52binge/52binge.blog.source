@@ -5,7 +5,7 @@ categories: [English, Writing]
 tags: IELTS
 ---
 
-{%}% youtube ZJyNM26Nxas 
+{% youtube ZJyNM26Nxas %}
 
 <!-- more -->
 
@@ -25,3 +25,6 @@ tags: IELTS
 ## 4. Grammatical accuracy (语法准确度)
 
 {% image "/images/english/ielts/writing/w-t2-4.jpg", width="500px", alt="he knows a lot." %}
+
+{% youtube usrFsPoa-xA %}
+
