@@ -11,7 +11,5 @@ tags: IELTS
 
 <!-- more -->
 
-## 干货
-
 {% youtube usrFsPoa-xA %}
 
