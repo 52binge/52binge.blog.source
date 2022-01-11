@@ -1,7 +1,7 @@
 ---
 title: Speaking 1 - Simon312 2020 口语考试形式一览
 date: 2020-03-28 17:14:48
-categories: [English, IELTS]
+categories: [English, speaking]
 tags: IELTS
 ---
 
