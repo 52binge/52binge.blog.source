@@ -1,7 +1,7 @@
 ---
 title: Writing Task2 - 丸子tinateena 最强指导
 date: 2022-01-06 09:08:48
-categories: [English, Writing]
+categories: [English, writing]
 tags: IELTS
 ---
 

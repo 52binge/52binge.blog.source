@@ -1,7 +1,7 @@
 ---
 title: ieltsonlinetests.com！拿走干货
 date: 2022-01-07 09:08:48
-categories: [English, IELTS]
+categories: [English, writing]
 tags: IELTS
 ---
 

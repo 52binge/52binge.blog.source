@@ -1,7 +1,7 @@
 ---
 title: Writing - Task1 资料汇总 - bar chart
 date: 2021-12-10 09:37:48
-categories: [English, IELTS]
+categories: [English, writing]
 tags: IELTS
 ---
 

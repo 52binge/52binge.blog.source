@@ -1,7 +1,7 @@
 ---
 title: Writing Task1 - line chart
 date: 2021-12-29 09:08:48
-categories: [English, IELTS]
+categories: [English, writing]
 tags: IELTS
 ---
 

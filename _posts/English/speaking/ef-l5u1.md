@@ -1,7 +1,7 @@
 ---
 title: EF Level5 - Travel / Restaurant / Clothes and Apparel
 date: 2021-12-31 09:08:48
-categories: [English, IELTS]
+categories: [English, speaking]
 tags: IELTS
 ---
 
