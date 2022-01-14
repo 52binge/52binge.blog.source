@@ -20,7 +20,7 @@ I want to talk about Andy who has been my best friend since school days. He is c
 
 ## 2. When did you both meet for the first time?
 
-It was in 2014 when I met with her one a computer class.  It just happened that on a class one time He couldn’t get an empty seat while I was sitting alone since my friend was absent on that day. I asked him to sit **along with** me and introduced myself. **From then onwards**, we became friends and our friendship is continued till today.
+It was in 2014 when I met with her one a computer class.  It just happened that on a class one time He couldn’t get an empty seat while I was sitting alone since my friend was absent on that day. I asked him to sit **along with** me and introduced myself. <red>**From then onwards**</red>, we became friends and our friendship is continued till today.
 
 ## 3. What do you usually do together?
 

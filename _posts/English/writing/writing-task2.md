@@ -11,20 +11,20 @@ tags: IELTS
 
 ## 1. Task response (题目回应程度)
 
-{% image "/images/english/ielts/writing/w-t2-1.jpg", width="500px", alt="Despite his young age, he knows a lot." %}
+{% image "/images/english/writing/w-t2-1.jpg", width="500px", alt="Despite his young age, he knows a lot." %}
 
 ## 2. Coherence and cohesion (行文逻辑)
 
-{% image "/images/english/ielts/writing/w-t2-2.jpg", width="500px", alt="Despite his young age, he knows a lot." %}
+{% image "/images/english/writing/w-t2-2.jpg", width="500px", alt="Despite his young age, he knows a lot." %}
 
 ## 3. Lexical resource (词汇丰富度)
 
-{% image "/images/english/ielts/writing/w-t2-3.jpg", width="500px", alt="he knows a lot." %}
+{% image "/images/english/writing/w-t2-3.jpg", width="500px", alt="he knows a lot." %}
 
 
 ## 4. Grammatical accuracy (语法准确度)
 
-{% image "/images/english/ielts/writing/w-t2-4.jpg", width="500px", alt="he knows a lot." %}
+{% image "/images/english/writing/w-t2-4.jpg", width="500px", alt="he knows a lot." %}
 
 {% youtube usrFsPoa-xA %}
 
