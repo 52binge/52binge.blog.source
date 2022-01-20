@@ -47,6 +47,13 @@ The graph below shows average carbon dioxide (CO2) emissions per person in the U
 
 ## 2. Overview 概括段 [IMP]
 
+一、线形图数据的描写
+
+线形图的基本特征是，随着一段时间的推移，图里的元素发生升高、降低或者不变的趋势。所以，我们需要掌握基本动词的表达。
+
+On the whole, the university graduates showed a general incresing trend. 
+
+
 
 ## 3. body paragraph 1
 
