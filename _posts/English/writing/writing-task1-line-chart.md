@@ -9,10 +9,10 @@ tags: IELTS
 
 <!-- {% image "/images/english/IELTS-logo-1.png", width="500px", alt="1. Introduction 2. Overview 3. Details paragraph1 4. Details paragraph2" %} -->
 
-1. Introduction 引入段
-2. Overview 概括段
-3. Details paragraph 1 细节段落1
-4. Details paragraph 2 细节段落 2
+1. Introduction 
+2. Overview 
+3. Details paragraph 1 `[StartPoint -> MidPoint]`
+4. Details paragraph 2 `[MidPoint -> EndPoint]`
 
 <!-- more -->
 
@@ -53,7 +53,11 @@ The graph below shows average carbon dioxide (CO2) emissions per person in the U
 
 On the whole, the university graduates showed a general incresing trend. 
 
+{% image "/images/english/writing/w-line-chart-20190518.jpg", width="500px", alt="1. Introduction 2. Overview 3. Details paragraph1 4. Details paragraph2" %}
 
+[URBAN POPULATION NUMBERS](https://essayforum.com/writing/percentages-people-living-towns-89919/)
+
+On the whole, it is clear that three countries had an increaseing
 
 ## 3. body paragraph 1
 

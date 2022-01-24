@@ -1,17 +1,23 @@
 ---
-title: Writing Task1 资料汇总/模板不在于多,而在于精 - bar chart
-date: 2021-12-10 09:37:48
+title: Writing Task1 模板不在于多,而在于精 - Bar Chart
+date: 2022-01-23 11:37:48
 categories: [English, writing]
 tags: IELTS
-top: 1
+top: 0
 ---
 
-{% image "/images/english/writing/ielts-w-logo2.jpg", width="500px", alt="雅思写作总共1小时，时间分配是Task1 20mins / give info about" %}
+{% image "/images/english/writing/ielts-w-logo2.jpg", width="500px", alt="雅思写作总共1小时，时间分配是Task1 20mins / give info about / 从抽象到具体+从整体到部分" %}
 
-1. [学术类雅思小作文Task1：通过改写题目写好Introduction段落](https://zhuanlan.zhihu.com/p/104979260)
-2. Overview - **`"Overall, On the whole"`**
-3. Details paragraph 1 细节段落1
-4. Details paragraph 2 细节段落 2
+1. [学术类雅思小作文Task1：通过改写题目写好Introduction段落](https://zhuanlan.zhihu.com/p/104979260) - **1. 替换动词 & 句式 2. 概括变具体**
+2. Overview - **`"Overall, On the whole.`** **1. include comparison 2). 2~3 key features 3. no specific data)**"
+3. Details paragraph 1 - **specific data to support comparisons**
+4. Details paragraph 2 - **specific data to support comparisons**
+
+**Task1**：
+
+- △ 柱状为王，线表饼以及非数据考题辅助进攻；
+- △ 动态图仍是考试重点，静态图和非数据考题辅助备考
+- △ 考生必须灵活掌握动态图四大句式的变化，掌握动态柱图、饼图、表格转化为线图的方式，随后按照趋势（上升下降）的总变化情况，对数据进行分类分批的描述；
 
 <!-- more -->
 
@@ -27,17 +33,21 @@ The bar chart below shows the number of research students studying a different s
 
 {% image "/images/english/writing/task1-logo1.png", width="650px", alt="1. Introduction 2. Overview 3. Details paragraph1 4. Details paragraph2" %}
 
-## 1. Introduction 引入段 （如何写）
+## 1. Introduction [替换动词/句式]
 
 原文: The bar chart below shows the number of research students studying a different subject in 2005.
 
-改写: The bar chart `presents` the number of research students, divided by gender, who `pursued(致力于/从事`) different subjects in 2005. These subjects included linguistics, psychology, natural sciences, engineering, programming and mathematics. (`概括变具体`)
+改写: The bar chart `presents` the number of research students, **divided by gender**, who `pursued(致力于/从事`) different subjects in 2005. These subjects included linguistics, psychology, natural sciences, engineering, programming and mathematics. (`概括变具体`)
 
-> pursued: 追求; 致力于 ; 执行 ; 贯彻 ; 继续探讨 ; 
+> divided by gender (detail info - 具体化) 
 >
-> 总结: 1. 替换动词 2. 替换句式 3. 概括变具体
+> pursued (替换上文 studying): 追求; 致力于 ; 执行 ; 贯彻 ; 继续探讨 ;  1. 替换动词/句式 2. 概括变具体
 
-## 2. Overview 概括段 [IMP]
+## 2. Overview [compar/nodata]
+
+1. include comparison 
+2. 2~3 key features 
+3. no specific data
 
 Overall, there were more male than female research students in the given year. `Among all the subjects`, male students had a higher enrollment than female students `except for` linguistics. Although both genders took a strong interest in psychology and natural sciences, two of the most popular subjects, men least preferred linguistics and women mathematics.
 
