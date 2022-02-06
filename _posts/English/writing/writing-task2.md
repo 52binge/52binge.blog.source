@@ -24,13 +24,27 @@ tags: IELTS
 
 <!-- more -->
 
+{% image "/images/english/writing/w-t2-input-output-zhihu.jpg", width="500px", alt="Despite his young age, he knows a lot." %}
+
+---------------------------这是目录---------------------------
+
+> Phase 1：掌握雅思大作文备考体系
+> Phase 2：学习高分范文
+> Phase 3：练习历史真题
+> Phase 4：获得批改反馈
+> Phase 5：总结、复习笔记
+
 ## ▶▶ Phase 1：掌握雅思大作文备考体系
+
+> 写作时间只有短短的40分钟，当看到题目时就需要在5分钟内快速想出文章的提纲 (essay outline)，也就是观点思路
 
 庆幸的是，几乎所有的Task 2大作文题目都可以分为六大类别的题目，和小作文的攻略一样，每一类别的题型都有精准的、系统的思路结构，这就是「雅思写作备考体系」的精髓所在。
 
 ## 1.1 Question Type 1：建议类
 
 一般含有这样的字眼：**"should", "a good way to...", "It is important to..."**
+
+{% image "/images/english/writing/w-t2-1.1-suggestion.jpg", width="500px", alt="Despite his young age, he knows a lot." %}
 
 > As part of education, students should spend a period of time studying and living in a different country to learn language and culture. To what extant do you agree or disagree?（2019.3.9）
 >
@@ -41,6 +55,19 @@ tags: IELTS
 > The government should introduce laws to make businesses employ equal numbers of male and female workers in every department.
 >
 > To what extent do you agree or disagree with this opinion?
+
+
+▲ 比如建议类的题目可以通过**必要性、可行性、风险、实际效果**四个维度来开拓论点：
+
+① 必要性：实施建议能不能带来必要的好处？这个建议能不能解决实际问题？这个建议符不符合社会提倡的价值观？
+
+② 可行性：有没有能力（比如人力、金钱、知识、时间、技术、方法等）去实施建议？实施过程中遇到的困难能不能解决？
+
+③ 风险：如果实施建议是有风险的，潜在的风险可不可以控制、预防、减少和解决的？如果可以控制，那么具体的解决方案是什么？如果不可控制，那么有哪些消极影响？会不会有反效果？会不会违反社会的主流价值观？
+
+④ 实际效果：真正实施计划起来的效果会怎么样？如果建议不能实施，背后影响的原因是什么？如果可以实施但不能解决根本问题，或者效果有限，有没有方法修补缺点？
+
+## 1.2 Question Type 2：绝对词类
 
 ## 1. Task response (题目回应程度)
 
