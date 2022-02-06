@@ -1,7 +1,6 @@
 ---
 title: Internet job introduction
-date: 2022-01-26 09:08:48
-categories: [tools]
+date: 2022-02-26 09:08:48
 tags: job
 ---
 
