@@ -4,8 +4,6 @@ date: 2022-02-26 09:08:48
 tags: job
 ---
 
-# Internet job introduction
-
 {% youtube C366hnsI8UI %}
 
 <!-- more -->
