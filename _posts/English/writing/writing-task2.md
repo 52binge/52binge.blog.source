@@ -69,6 +69,18 @@ tags: IELTS
 
 ## 1.2 Question Type 2：绝对词类
 
+绝对词类题目指的是出现了all, best, most important, only, now, nothing, ban这些字眼。
+
+比如以下的雅思真题：
+
+> Some people think the most important thing about being rich is that it gives them the opportunity to help other people. To what extent do you agree or disagree? （2018.9.13）
+>
+> Some people believe that the best way to reduce the time to travel to work is replace gardens and parks with apartment buildings, which commuters can live. Others disagree. Discuss both views and give your opinion. （2019.4.6）
+>
+> Individuals can do nothing to improve the environment. Only governments and large companies can make a difference. To what extent do you agree or disagree with this opinion? （2019.6.13）
+
+**让步反驳型的文章结构 (Concession and Refutation)：**
+
 ## 1. Task response (题目回应程度)
 
 {% image "/images/english/writing/w-t2-1.jpg", width="500px", alt="Despite his young age, he knows a lot." %}

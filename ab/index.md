@@ -1,7 +1,6 @@
 ---
 title: Internet job introduction
-date: 2022-02-06 21:08:48
-tags: job
+date: 2022-02-06 21:20:48
 ---
 
 {% youtube C366hnsI8UI %}
@@ -29,6 +28,8 @@ tags: job
 ## 2. Business Analyst
 
 {% youtube KJ0SoBkjN0Y %}
+
+{% youtube lEbTg8kczy4 %}
 
 [linkedin: business analyst](https://www.linkedin.com/jobs/search/?keywords=business%20analyst)
 
