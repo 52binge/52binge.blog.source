@@ -22,6 +22,8 @@ tags: IELTS
 
 [雅思写作Task 2（大作文）备考体系](https://zhuanlan.zhihu.com/p/114305647)
 
+选出旧题里大作文的常用话题（约10个），比如**学习、家庭、科技、媒体、文化、环境、犯罪**等，每个话题至少练习2篇，这样练习后基本能覆盖到考试里出现的话题。
+
 <!-- more -->
 
 {% image "/images/english/writing/w-t2-input-output-zhihu.jpg", width="500px", alt="Despite his young age, he knows a lot." %}
