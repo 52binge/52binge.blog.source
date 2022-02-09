@@ -1,6 +1,6 @@
 ---
 title: Writing Task2 Topic - Crime
-date: 2022-02-07 09:08:48
+date: 2022-02-09 09:55:48
 categories: [English, writing]
 tags: IELTS
 ---
@@ -27,18 +27,38 @@ tags: IELTS
 
 ## Crime & Punishment
 
-### 1. 不同意增加警察巡逻是减少罪案的关键（**开头段**）
+## 1. 开头段 | 改写正文/明确观点
 
-In recent days, the question of **`whether` the main solution to reducing crime is to have more police patrolling the streets `or not`** has been receiving **a great deal of public attention**. This idea may be intinial appealing, but some analysis will show that it is not the key method and that other options are preferable.
+In recent days, the question of **`whether` the main solution to reducing crime is to have more police patrolling the streets `or not`** has been receiving **a great deal of public attention**. This idea may be intinial appealing, but **`some analysis will show that it is not the key method and that other options are preferable`**.
 
 > **whether ... or not**
+>
 >   I am not sure whether I will go to the party or not.
 >   Tom is deciding whether go camping or not.
 > 
 > has been receiving **a great deal of public attention**
+>
+> **it is not the key method and that other options are preferable.**
 
-There are a number of reasons why having high numbers of visible police officers is not the key. First, by the state-of-the-art technology recent years, it must be said that many crimes are not carried out on streets. In fact, the number of criminal cases which are in the Internet, such as identify theft or financial hacking, become gradually increase, thus would be invisible to police patrols anyway. Second, this tactic would decline minor crime such as littering, but determined criminals such as thieves and muggers will find some ways to operate. This means that, those bad atitudes are planned carefully or happened immediately, which would hardly control by patrolling police.
+## 2. 让步段 | 有定效果
+
+This tactic would decline **`minor crime`** such as littering, but determined criminals such as thieves and muggers will find some ways to operate. 
+
+This means that, those bad atitudes are planned carefully or happened immediately, `which would hardly control` by patrolling police.
+
+## 3. 反驳段 | 不是关键
+
+There are a number of reasons why having high numbers of visible police officers is not the key. 
+
+First 首先
+ by the state-of-the-art technology recent years, it must be said that many crimes are not carried out on streets. In fact, the number of criminal cases which are in the Internet, such as identify theft or financial hacking, become gradually increase, thus would be invisible to police patrols anyway. 
+
+## 4. 替代方案段
+
 There are several possible alternatives which could be considered. It probably more effective to improve the efficiency of existing police rather than increase their numbers. For example, by better training in computer-based crime, police would rise the rates of detection for internet crimes. Furthermore, another viable option would be to increase penalties for criminals. This means that, those people who intend to commit crime or not would be concerned by these penalties, which leads to reduce crime rate.
+
+## 5. 结尾段
+
 In conclusion, cheaper alternative options will be far more compelling to address the root of the problem rather than police patrols streets. By applying effectively options, it would be helpful to reduce crime.
 
 patrolling
