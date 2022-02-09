@@ -41,7 +41,13 @@ date: 2022-02-06 21:20:48
 >
 > [【面试套路】如何回答商业分析师Case Interview](https://zhuanlan.zhihu.com/p/35867171)
 
-## 3. Product Manager
+## 3. Data Engineer (Tech)
+
+[Data Engineer - Data Warehouse](https://careers.shopee.sg/job-detail/2664)
+
+[Data Engineer - Processing & Analysis](https://careers.shopee.sg/job-detail/554)
+
+## 4. Product Manager
 
 [Linkedin: product manager](https://www.linkedin.com/jobs/search/?keywords=product%20manager)
 
@@ -49,18 +55,20 @@ date: 2022-02-06 21:20:48
 
 [seagroup: Associate, Product](https://career.sea.com/position/140)
 
-## 4. Business Intelligence
+## 5. Business Intelligence
 
 [Regional Business Intelligence Intern (Strategic Planning & Analytics)](https://careers.shopee.sg/job-detail/J00004407/1)
 
-## 5. Operations
+## 6. Operations
 
 [Operations: Available Positions](https://careers.shopee.sg/jobs?region_id=1&dept_id=106&name=Operation&limit=50&offset=0)
 
-## 6. Business Development
+## 7. Business Development
 
 [Business Development: Available Positions](https://careers.shopee.sg/jobs?region_id=1&dept_id=101&name=&limit=50&offset=0)
 
-## 7. HR
+## 8. HR
 
 {% youtube WUanS0ioKEg %}
+
+## 9. Quality Assurance Engineer (T)
