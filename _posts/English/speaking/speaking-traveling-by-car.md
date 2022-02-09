@@ -12,6 +12,10 @@ Let's talk about traveling by car
 
 1). Do you like to travel by car?
 
+> It's  
+>
+> Yes, I do because undeniably it provides nothing but convenience. However, I don’t have a car so I’m left with no choice but to take a bus or train every single day. 
+
 **2). When do you travel by car?**
 
 > When my friends invite me to travel somewhere – that’s the only time that I can travel by car. However,&nbsp; these days I don’t have any opportunity because my friends and I temporarily delay our travel plans due to the travel restrictions caused by the covid-19.&nbsp;
