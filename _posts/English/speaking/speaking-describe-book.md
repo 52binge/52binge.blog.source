@@ -16,32 +16,29 @@ tags: IELTS
 3. What it is about?
 4. And explain why you think it is exciting?
 
-## Sample Answer 1
-
 Introduction
 
 Being a voracious reader, I love to read books. Although I have read many exciting books in my life, there is one book that has caught my attention.
 
-When you read it?
+## 1. When you read it?
 
-Last month I had to go for a job interview in the capital city. Since the journey was too long, I decided to utilize my time productively by reading a book.
-
+Last month I had a long holidays, I decided to utilize my time productively by reading a book.
 
 Before boarding the train, I purchased a book by the name of “Atomic Habits“.
 
-This book is so exciting and addictive. During the journey, most of the time, I remained involved in reading this masterpiece.
+This book is so interesting and addictive. During the Chinese New Year holiday, most of the time, I remained involved in reading this book.
 
-What kind of book it is? and What it is about?
+## 2. What it is about?
 
 This book is a self-improvement book.
 
-The central focus of this book is on the habits of people. It says that we can bring a paradigm shift in our lives by replacing our bad habits with good habits.
+The central focus of this book is on the habits of people. It says that we can bring a paradigm 模范 shift in our lives by replacing our bad habits with good habits.
 
 Whether we have to improve our skills by working on this. By making a tiny improvement of one per cent every day, we can improve our performance by thirty-seven per cent at the end of the year.
 
-Explain why you think it is exciting?
+## 3. Explain why you think it is exciting?
 
-This book is exciting because, after reading it, you can handle all the conflicts in your life adroitly.
+This book is **interesting**/exciting because, after reading it, you can handle all the conflicts in your life adroitly.
 
 There is no denying this conviction that most people work tremendously hard to gain success in their lives.
 
@@ -51,7 +48,7 @@ It adds excitement to your life by giving you hope.
 
 Such was the impact of this book that, I achieved my most awaited goals, in just six months after reading this book.
 
-Conclusion
+## 4. Conclusion
 
 In nutshell, this book can add fun and excitement to your life by leading you towards an impressive growth trajectory.
 
