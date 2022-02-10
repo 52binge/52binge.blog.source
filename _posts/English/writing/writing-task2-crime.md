@@ -5,11 +5,14 @@ categories: [English, writing]
 tags: IELTS
 ---
 
+{% image "/images/english/writing/ielts-w-police-patrol-officer.jpg", width="450px", alt="littering, thieves, muggers" %}
+
+<!-- more -->
+
 ‘The key to reducing crime is to have more police patrolling the streets.’ How far do you support this proposal? What other ways of reducing crime may be effective?
 
 [The key to reducing crime](https://writing9.com/text/5ede5fd09c2e600018fe3f91)
 
-<!-- more -->
 
 > 1. address all issues 解决所有问题
 > 2. entirely on topic 完全在主题上
@@ -29,7 +32,7 @@ tags: IELTS
 
 ## 1. 开头段 | 改写正文/明确观点
 
-In recent days, the question of **`whether` the main solution to reducing crime is to have more police patrolling the streets `or not`** has been receiving **a great deal of public attention**. This idea may be intinial appealing, but **`some analysis will show that it is not the key method and that other options are preferable`**.
+In recent days, the question of **`whether` the main solution to reducing crime is to have more police patrolling the streets `or not`** has been receiving **a great deal of public attention**. This idea may be initially appealing, but **`some analysis will show that it is not the key method and that other options are preferable`**.
 
 > **whether ... or not**
 >
@@ -38,20 +41,30 @@ In recent days, the question of **`whether` the main solution to reducing crime 
 > 
 > has been receiving **a great deal of public attention**
 >
+> This idea may be **`initially appealing`** 
+>
 > **it is not the key method and that other options are preferable.**
 
 ## 2. 让步段 | 有定效果
 
-This tactic would decline **`minor crime`** such as littering, but determined criminals such as thieves and muggers will find some ways to operate. 
+This tactic would decline **`minor crime`** such as **littering**, but determined criminals such as thieves and muggers will find some ways to operate. 
 
-This means that, those bad atitudes are planned carefully or happened immediately, `which would hardly control` by patrolling police.
+This means that, those bad attitudes are planned carefully or happened immediately, **`which would hardly control`** by patrolling police.
+
+> major vs minor crime
+>
+> **littering, thieves, muggers**
 
 ## 3. 反驳段 | 不是关键
 
-There are a number of reasons why having high numbers of visible police officers is not the key. 
+**There are a number of reasons** why having high numbers of visible police officers **is not the key**. 
 
 First 首先
  by the state-of-the-art technology recent years, it must be said that many crimes are not carried out on streets. In fact, the number of criminal cases which are in the Internet, such as identify theft or financial hacking, become gradually increase, thus would be invisible to police patrols anyway. 
+
+> **There are a number of reasons**
+>
+> 
 
 ## 4. 替代方案段
 
