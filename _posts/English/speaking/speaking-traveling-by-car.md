@@ -5,8 +5,7 @@ categories: [English, speaking]
 tags: IELTS
 ---
 
-Let's talk about traveling by car
-
+{% image "/images/english/speaking/ielts-s-traveling-by-car.jpg", width="450px", alt="Let's talk about traveling by car" %}
 
 <!-- more -->
 
