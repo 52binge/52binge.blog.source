@@ -1,5 +1,5 @@
 ---
-title: Writing Task2 Topic - Crime
+title: Writing Task2 Topic - Crime (绝对词类)
 date: 2022-02-09 09:55:48
 categories: [English, writing]
 tags: IELTS
@@ -8,6 +8,10 @@ tags: IELTS
 {% image "/images/english/writing/ielts-w-police-patrol-officer.jpg", width="450px", alt="littering, thieves, muggers" %}
 
 <!-- more -->
+
+## Question Type 2：绝对词类
+
+> 绝对词类题目指的是出现了all, best, most important, only, now, nothing, ban这些字眼。
 
 ‘The key to reducing crime is to have more police patrolling the streets.’ How far do you support this proposal? What other ways of reducing crime may be effective?
 
@@ -47,7 +51,7 @@ In recent days, the question of **`whether` the main solution to reducing crime 
 
 ## 2. 让步段 | 有定效果
 
-This tactic would decline **`minor crime`** such as **littering**, but determined criminals such as thieves and muggers will find some ways to operate. 
+This strategy will reduce **`minor crimes`** such as **littering**, but determined criminals such as `thieves` (thief) and `robbers` will find some ways to operate. 
 
 This means that, those bad attitudes are planned carefully or happened immediately, **`which would hardly control`** by patrolling police.
 
@@ -87,4 +91,5 @@ crime and technology
 teenagers and crime
 role of policemen
 men and women in law enforcement
+robbers
 
