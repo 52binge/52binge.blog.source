@@ -72,14 +72,23 @@ First 首先
 
 ## 4. 替代方案段
 
-There are several possible alternatives which could be considered. It probably more effective to improve the efficiency of existing police rather than increase their numbers. For example, by better training in computer-based crime, police would rise the rates of detection for internet crimes. Furthermore, another viable option would be to increase penalties for criminals. This means that, those people who intend to commit crime or not would be concerned by these penalties, which leads to reduce crime rate.
+There are several possible alternatives which could be considered. 
+It probably more effective to improve the **efficiency of existing police** rather than increase their numbers. For example, by better training in computer-based crime, police would rise the rates of **`detection`** for internet crimes. 
+
+{% image "/images/english/writing/ielts-w-fine-vs-penalty.jpg", width="450px", alt="littering, thieves, muggers" %}
+
+Furthermore, another viable option would be to increase penalties for criminals. This means that, These measures will **`deter`** those who intend to commit crimes, which leads to **`reduce crime rate`**.
 
 ## 5. 结尾段
 
-In conclusion, cheaper alternative options will be far more compelling to address the root of the problem rather than police patrols streets. By applying effectively options, it would be helpful to reduce crime.
+In conclusion, 
 
-patrolling
+**cheaper alternative options** will be `far more compelling` to solve the **`root of the problem`** rather than police patrols streets. 
 
+**By applying effectively options, it would be helpful to reduce crime**.
+
+
+compelling 英 [kəmˈpelɪŋ] 令人信服的
 
 [Crime相关词伙](https://mp.weixin.qq.com/s/5kQsfpNPIIwOOf59ZDTSMg)
 

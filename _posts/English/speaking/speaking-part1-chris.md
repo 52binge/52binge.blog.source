@@ -9,6 +9,8 @@ tags: IELTS
 2. Who do you live with?
 3. Do you like your neighbourhood?
 
+the large windows **give you the impression** that it's much bigger
+
 <!-- more -->
 
 ## Flat, live, neighbourhood
