@@ -60,7 +60,14 @@ Some people believe that schools should give opportunities for students to go ab
 
 ## 反对段1
 
-On the first side, although studying overseas definitely is a benefit for learners to obtain knowledge about other countries, it may cause some difficulties in putting it into action. Without reasonable solutions, those difficulties possibly exceed their advantages. To begin with, there is absolutely a financial problem. It is not only for flights and accommodation but also for fundamental demands that each student has to take into consideration when spending money. Besides, living overseas probably takes a long time for an individual to know well about a country by learning in different environments. Furthermore, culture shock, as well as homesickness in the initial days possibly affect the process they acquire understanding.  As a result, the information they get does not satisfy the original purpose. In other words, schooling in foreign countries has more demerits than its benefits due to financial concerns and limited studying efficiency.
+On the first side, although studying overseas **`definitely is a benefit`** for learners `to obtain` knowledge about other countries, **it may cause some difficulties in putting it into action**. Without reasonable solutions, those difficulties possibly exceed their advantages. **To begin with**, there is absolutely a financial problem. It is not only for flights and accommodation **but also for** fundamental demands that each student has to take into consideration when spending money. Besides, living overseas probably takes a long time for an **`individual`** to know well about a country by learning in different environments. 
+
+ Furthermore, culture shock, as well as homesickness in the initial days possibly affect the process they acquire understanding.  As a result, the information they get does not satisfy the original purpose. In other words, schooling in foreign countries has more demerits than its benefits due to **financial concerns and limited studying efficiency**.
+
+
+> 1. On the first side
+> 2. financial concerns 
+> 3. limited studying efficiency. 
 
 ## 反对段2
 
