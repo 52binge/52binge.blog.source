@@ -14,6 +14,8 @@ tags: IELTS
 
 这个体系的解决方案基本步骤是：
 
+[雅思寫作 Task 2 得分技巧](https://noworries-english.com/about-ielts/ielts-skill-writing-task2/)
+
 ① 掌握雅思写作备考体系：底层思维逻辑 + 语料素材积累
 ② 学习范文
 ③ 练习真题

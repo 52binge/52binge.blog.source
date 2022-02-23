@@ -5,11 +5,11 @@ categories: [English, writing]
 tags: IELTS
 ---
 
-{% image "/images/english/writing/ielts-w-education-1.jpg", width="450px", alt="littering, thieves, muggers" %}
+{% image "/images/english/writing/ielts-w-education-1.jpg", width="450px", alt="" %}
 
 <!-- more -->
 
-## Question Type 1：建议类
+**Question Type 1**
 
 As part of education, students should spend a period of time studying and living in a different country to learn language and culture .Do you agree or disagree
 
