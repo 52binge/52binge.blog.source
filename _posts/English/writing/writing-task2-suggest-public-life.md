@@ -15,7 +15,7 @@ It is important for all towns and cities to have large public outdoor places lik
 
 > 並多使用連接詞，讓整篇文章更通順！
 
-## 第一段 Introduction 引言、介紹
+## Introduction 引言
 
 It is sometimes argued about the importance of the existence of public areas <span style="background-color: rgb(196, 237, 157);">such as</span> squares and parks in modern societies. <span style="background-color: rgb(196, 237, 157);">While</span> I agree that these areas bring many benefits to societies and the spiritual life of citizens, I think it would not be possible to have them everywhere <span style="background-color: rgb(196, 237, 157);">as well as</span>.
 
