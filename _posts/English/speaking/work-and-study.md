@@ -5,7 +5,7 @@ categories: [English, speaking]
 tags: IELTS
 ---
 
-{% image "/images/english/speaking/work-study-logo.jpg", width="450px", alt="" %}
+{% image "/images/english/speaking/work-study-logo.jpg", width="500px", alt="" %}
 
 <!-- more -->
 
