@@ -1,5 +1,5 @@
 ---
-title: Shoppping & Env & Jobs
+title: Shoppping, Env, Jobs
 date: 2022-02-28 09:08:48
 categories: [English, writing]
 tags: IELTS
