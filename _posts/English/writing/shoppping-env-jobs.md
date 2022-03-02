@@ -21,6 +21,8 @@ harmful to the environment but benefits the job market
 
 It is true that online shopping has become more and more popular in our time. In my opinion, while this trend is not eco-friendly, it helps to create new job opportunities.
 
+> It is true that...has become more and more popular in our time
+
 ## 2. Body paragraph 1
 
 > online shopping is harmful to the environment
