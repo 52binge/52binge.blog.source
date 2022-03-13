@@ -13,6 +13,11 @@ tags: IELTS
 
 <!-- more -->
 
+## hobby
+
+> I often swim in the community recently. I want to keep healthy
+> Well, recently I went to running in the park because I wanted to keep me fitness and get toned[təʊnd] .
+
 {% image "/images/english/speaking/s-hometown-3.jpg", width="800px", alt="" %}
 
 ## 3. what the climate is like
