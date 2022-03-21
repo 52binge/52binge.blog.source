@@ -5,8 +5,10 @@ categories: [English, writing]
 tags: IELTS
 ---
 
- 社会， 教育， 政府， 环境， 犯罪， 媒体， 科技， 全球化， 文化
+ society, education, government, environment, crime, media, technology, globalization, culture
 
+ 社会， 教育， 政府， 环境， 犯罪， 媒体， 科技， 全球化， 文化
+ 
 [KMF 经典句子](https://ielts.kmf.com/practice/writing/classic)
 
 <!-- more -->
