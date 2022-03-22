@@ -2,7 +2,7 @@
 title: EF Conversation
 date: 2017-06-30 07:00:16
 tags: ef-english
-categories: [English, EF]
+categories: [English]
 toc: true
 description: conversation
 ---

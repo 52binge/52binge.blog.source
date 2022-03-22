@@ -2,7 +2,7 @@
 title: EF 5.1 Travel
 date: 2017-06-14 07:00:16
 tags: ef-english
-categories: [English, EF]
+categories: [English]
 ---
 
 

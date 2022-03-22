@@ -1,7 +1,7 @@
 ---
 title: Listening - 备考逻辑
 date: 2022-03-18 08:33:48
-categories: [English, speaking]
+categories: [English, listening]
 tags: IELTS
 ---
 

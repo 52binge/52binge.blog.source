@@ -16,7 +16,6 @@ tags: IELTS
 >
 > **in addition to that ... also ... as welll. Besides,**
 
-Í
 I'm a data program engineer, I have <span style="background-color: rgb(196, 237, 157);">daily meetings</span> to discuss new products, **`in addition to that`** I produce tables and write codes. **`Also`**, I do financial data <span style="background-color: rgb(196, 237, 157);">collection, calculation, analysis and processing</span> and other related development work, including but not limited to data related to foreign exchange transactions.
 
 ## 2. Is your job easy or difficult?
