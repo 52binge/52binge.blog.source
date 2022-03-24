@@ -13,6 +13,9 @@ top: 0
 3. Details paragraph 1 - **specific data to support comparisons**
 4. Details paragraph 2 - **specific data to support comparisons**
 
+
+[KMF练习>备考指南>雅思写作必备素材积累](https://ielts.kmf.com/beikao/detail/18/4)
+
 **Task1**：
 
 - △ 柱状为王，线表饼以及非数据考题辅助进攻；
