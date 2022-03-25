@@ -34,9 +34,6 @@ Line Chart - 懂得取舍，横轴多数为年份
 
 > **3个点, 2个趋势**
 
->{% image "/images/english/ielts/writing/w-task1-line-chart-2.png", width="900px", alt="1. Introduction 2. Overview 3. Details paragraph1 4. Details paragraph2" %}
-
-
 {% image "/images/english/writing/w-task1-line-chart.jpg", width="900px", alt="1. Introduction 2. Overview 3. Details paragraph1 4. Details paragraph2" %}
 
 ## 1. Introduction 引入段 （如何写）
@@ -44,6 +41,8 @@ Line Chart - 懂得取舍，横轴多数为年份
 The graph below shows average carbon dioxide (CO2) emissions per person in the United Kingdom, Sweden, Italy and Portugal between 1967 and 2007.
 
 {% image "/images/english/writing/w-line-chart-1-introduce.jpg", width="900px", alt="1. Introduction 2. Overview 3. Details paragraph1 4. Details paragraph2" %}
+
+> Per **capita** income rose sharply last year. 
 
 ## 2. Overview 概括段 [IMP]
 

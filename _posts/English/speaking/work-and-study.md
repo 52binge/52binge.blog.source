@@ -9,6 +9,9 @@ tags: IELTS
 
 <!-- more -->
 
+I studied computer science because of my love for science and I love to use my brain. Since computer science is a difficult subject and I love to use my brain, it was the perfect subject for me. 
+
+**Due to** this, this industry can offer me a good career. **As a result** I can easily find a job and have a gd income. **This's why** I `chose` this subject. So, I am very satisfied with my life.
 
 ## 1. Can you describe your job to me?
 
