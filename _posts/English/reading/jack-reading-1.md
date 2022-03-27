@@ -1,7 +1,7 @@
 ---
 title: Reading - Jack
 date: 2020-04-11 17:14:48
-categories: [English, IELTS]
+categories: [English, reading]
 tags: IELTS
 ---
 

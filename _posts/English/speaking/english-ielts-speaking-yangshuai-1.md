@@ -1,7 +1,7 @@
 ---
 title: 杨帅完美发音班(1)
 date: 2017-12-03 21:55:21
-categories: [English, IELTS]
+categories: [English, speaking]
 tags: IELTS
 ---
 

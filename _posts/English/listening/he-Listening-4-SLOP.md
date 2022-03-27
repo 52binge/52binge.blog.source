@@ -1,7 +1,7 @@
 ---
 title: IELTS Listening 4 - 配对题
 date: 2020-03-14 18:14:48
-categories: [English, IELTS]
+categories: [English, listening]
 tags: IELTS
 ---
 

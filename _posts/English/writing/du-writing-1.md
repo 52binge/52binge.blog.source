@@ -1,7 +1,7 @@
 ---
 title: Writing - 丛昊 & 杜仕明
 date: 2020-04-16 07:14:48
-categories: [English, IELTS]
+categories: [English, writing]
 tags: IELTS
 ---
 

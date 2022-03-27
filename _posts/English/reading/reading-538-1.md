@@ -1,7 +1,7 @@
 ---
 title: Reading - 538 考点词
 date: 2020-02-26 22:14:48
-categories: [English, IELTS]
+categories: [English, reading]
 tags: IELTS
 ---
 

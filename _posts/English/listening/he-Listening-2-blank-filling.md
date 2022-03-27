@@ -1,7 +1,7 @@
 ---
 title: IELTS Listening 2 - blank filling  填空题
 date: 2020-03-14 10:14:48
-categories: [English, IELTS]
+categories: [English, listening]
 tags: IELTS
 ---
 

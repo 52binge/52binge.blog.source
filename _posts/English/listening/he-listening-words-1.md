@@ -1,7 +1,7 @@
 ---
 title: IELTS Listening 1 - 雅思听力必考词汇
 date: 2020-03-19 17:14:48
-categories: [English, IELTS]
+categories: [English, listening]
 tags: IELTS
 ---
 

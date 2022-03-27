@@ -1,7 +1,7 @@
 ---
 title: Lucy地道美语 英语国际音标
 date: 2018-01-03 10:59:21
-categories: [English, IELTS]
+categories: [English, speaking]
 tags: IELTS
 ---
 

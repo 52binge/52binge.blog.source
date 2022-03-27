@@ -1,7 +1,7 @@
 ---
 title: IELTS Listening 1 - 雅思入门常识
 date: 2020-02-27 17:14:48
-categories: [English, IELTS]
+categories: [English, listening]
 tags: IELTS
 ---
 

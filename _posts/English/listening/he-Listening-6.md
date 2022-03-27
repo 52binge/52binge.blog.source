@@ -1,7 +1,7 @@
 ---
 title: IELTS Listening 6 - 复习要点 
 date: 2020-03-16 19:14:48
-categories: [English, IELTS]
+categories: [English, listening]
 tags: IELTS
 ---
 

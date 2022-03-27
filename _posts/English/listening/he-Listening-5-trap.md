@@ -1,7 +1,7 @@
 ---
 title: IELTS Listening 5 - 雅思陷阱 
 date: 2020-03-14 19:14:48
-categories: [English, IELTS]
+categories: [English, listening]
 tags: IELTS
 ---
 

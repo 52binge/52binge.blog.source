@@ -1,7 +1,7 @@
 ---
 title: Speaking 1 - 杨帅口语
 date: 2020-03-29 14:14:48
-categories: [English, IELTS]
+categories: [English, speaking]
 tags: IELTS
 ---
 
