@@ -42,9 +42,9 @@ Yes, I do, I think it's a lovely place.
 
 ### 2.1 Introduction
 
-Computers, mobile phones, clothes, air conditioners, kitchen appliances, etc. are essential to everyone’s lives.I don’t think we can imagine our life without these things. Today I would like to talk about an important item that is k important to me.
+Computers, mobile phones, clothes, air conditioners are essential to everyone’s lives.I don’t think we can imagine our life without these things. Today I would like to talk about an important item - Microwave that is important to me.
 
-### 2.2 What it is? and How long have you had it for?
+### 2.2 What it is? and How long have you had it for?Í
 
 Food provides nutrients, Energy for activity, growth, and all physical functions such asbreathing, digestion of food, and 40, heat retention. 
 
@@ -52,7 +52,7 @@ In this busy life, people don’t have much time to prepare meals at home. It al
 
 ### 2.3 Why you cannot live without it?
 
-Now, it become a important part of my life. I got a `recipe book`. There are a few easy recipes in it which can prepare in minutes. I am using this system from last S months.  It helps me to prepare meals on time and save a lot of time.
+Now, it has become an important part of my life.. I got a `recipe book`. There are a few easy recipes in it which can prepare in minutes. I am using this system from last S months.  It helps me to prepare meals on time and save a lot of time.
 
 > recipe /ˈresəˌpē/
 
@@ -60,6 +60,8 @@ Now, it become a important part of my life. I got a `recipe book`. There are a f
 
 Before buying it, sometimes I think about how i lived/ managed my life. A few months ago, whenever I ate out, I spent a lot of money on food and then on medicine to cure the health problems caused by street food.
 
+ I often had to take medicine to cure my health problems.
+ 
 ### 2.5 Conclusion:
 
 Now I can say I am saving a lot of money because I eat healthy homemade food.
