@@ -9,6 +9,61 @@ tags: IELTS
 
 <!-- more -->
 
+## 3. Describe a rule that you don’t like 
+
+[https://ieltsrewind.com/](https://ieltsrewind.com/describe-a-rule-that-you-dont-like-ielts-cue-card/)
+
+You should say:
+
+- What it is
+- Why you do not like it
+- How others feel about the rule
+- And explain whether you have followed the rule or not
+
+[hɑːˈməʊniəs] 
+
+### 3.1 Introduction:
+
+> (1) Rules and laws are made to create a peaceful society.
+>
+> (2) If we all obey the rules and laws then we would all be benefited.
+> 
+> (3) There are rules everywhere.
+>
+> (4) Schools are the first place where children learn about the rules and codes of conduct.
+
+### 3.2 What it is?
+
+Every school/college/office has rules, like wearing the prescribed uniform, coming in time, doing tasks on time and so on.
+My school/college/office also has rules about the uniform that we have to wear.
+It was blue trouser and white shirt on Mondays, Tuesdays, Thursdays and Fridays.
+Only on weekends, we can wear whatever we want
+
+### 3.3 Why you don’t like it?
+
+1. All students/colleague and I do not like this rule.
+2. I think we should follow the developed countries and everyone should be allowed to wear the clothes he likes according to his personality
+3. Everybody can express their creativity and style by wearing different clothes.
+
+Wed 20:30
+
+### 3.4 How others feel about the rule? 
+
+**and whether you’ve followed the rule?**
+
+Uniforms should be for certain professionals only like doctors, lawyers or those in military/police
+At my place, if anyone breaks this rule, and does not come in uniform, they are fined.
+The fine for the `first offence[əˈfens]` is 100  but if we break the rule more than twice then the fine goes up to 1000.
+Luckily, I have never broken the rule and have always ensured that my uniform is neat and clean but I still hate this rule.
+
+## 4. Describe a long walk you ever had. 
+
+Fri 20:30
+
+> 1. when 
+> 2. where 
+> 3. who with 
+> 4. how you felt
 
 ## 1. Describe A Special Cake You Received From Others
 
@@ -78,5 +133,7 @@ After that, we ordered a cake and celebrate my mother’s birthday. Next day, I 
 I learned a lesson electronically thing needs extra care and safety also.
 
 [update 2022](https://ieltsquangbinh.com/describe-something-that-was-broken-in-your-home-and-then-repaired/)
+
+
 
 
