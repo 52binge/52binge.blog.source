@@ -22,6 +22,14 @@ You should say:
 
 [hɑːˈməʊniəs] 
 
+> You said: " If my English is I can choose other company " . (Wrong)
+>
+> Rather say: " If my English is good I can choose another company ". (Right answer)
+>
+> You said: " I want to make a short describe   " . (Wrong)
+>
+> Rather say: " I want to share a short description ". (Right answer)
+
 ### 3.1 Introduction:
 
 > (1) Rules and laws are made to create a peaceful society.
