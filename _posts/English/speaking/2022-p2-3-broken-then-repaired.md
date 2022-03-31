@@ -9,6 +9,12 @@ tags: IELTS
 
 <!-- more -->
 
+## 4. Describe A Long Walk You Ever Had. 
+
+1. When 2. Where 3. Who With 4. How You Felt
+
+> 星期五, 四月 01 @ 20:30 (UTC+08:00) / 四月 02 @ 22:00
+
 ## 3. Describe a rule that you don’t like 
 
 [https://ieltsrewind.com/](https://ieltsrewind.com/describe-a-rule-that-you-dont-like-ielts-cue-card/)
@@ -24,11 +30,25 @@ You should say:
 
 > You said: " If my English is I can choose other company " . (Wrong)
 >
-> Rather say: " If my English is good I can choose another company ". (Right answer)
+> Rather say: " If my English is good I can choose **another** company ". (Right answer)
 >
 > You said: " I want to make a short describe   " . (Wrong)
 >
-> Rather say: " I want to share a short description ". (Right answer)
+> Rather say: " I want to **share a short description** ". (Right answer)
+
+**对比other与another**
+
+>（1）：the other 用于两者中的另一个，another 指三者以上中的另一个
+>
+>    He has two toys. One is for me, the other is for himself.    
+>
+>    All these are not good. Show me another, please.
+>
+>（2）another 还有 “再……” 的意思，other 有 “另外” 的含义：
+>
+>    Have another cup of coffee, please.  再喝一杯咖啡吧！
+>
+>    The girl is much cleverer than other three. 这女孩比另外三个都聪明。
 
 ### 3.1 Introduction:
 
@@ -51,7 +71,7 @@ Only on weekends, we can wear whatever we want
 
 1. All students/colleague and I do not like this rule.
 2. I think we should follow the developed countries and everyone should be allowed to wear the clothes he likes according to his personality
-3. Everybody can express their creativity and style by wearing different clothes.
+3. Everybody can express their creativity and style **by wearing different clothes**.
 
 Wed 20:30
 
