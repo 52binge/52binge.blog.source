@@ -60,6 +60,8 @@ On the whole, the UK and Sweden <span style="background-color: rgb(196, 237, 157
 
 ## 3. body1 (3点2势 start -> mid)
 
+{% image "/images/english/writing/ielts-w-line-chart-2-carbon-dioxide.jpeg", width="500px", alt="1. Introduction 2. Overview 3. Details paragraph1 4. Details paragraph2" %}
+
 In 1967, the highest CO2 emissions were in the UK, at around 11, followed by Sweden at approximately 9. Italy and Portugal had relatively lower emissions, at around 4 and 1 respectively. 
 Around 1987, CO2 emissions per capita in the UK steadily dropped to 10, still being the highest. In Sweden, despite the short initial increase to above 10, CO2 emissions later dropped to around 7, which was the same as those in Italy, which had witnessed an increase. At the same time, the average emissions of CO2 climbed to around 3 in Portugal, remaining the lowest.
 

@@ -13,6 +13,25 @@ tags: IELTS
 
 1. When 2. Where 3. Who With 4. How You Felt
 
+### 4.1 when， who with
+
+I’d like to talk about the one particular walk I had with my best friend a year ago. It had been a very tough day for me, working on weekends and to top it, the work was **a bit bizarre** [bɪˈzɑː(r)] . I was about to crash when Molly called me up for a walk. 
+
+I remember running from my work desk and out to the office gate **as if** I had found my freedom. We initially thought of going for a 15-minute walk, but I came back after around one hour.
+
+
+We were ambling talking about the unnecessary things, discussing each other and having a beautiful time. It was late in the evening and the winds were blowing beautifully. 
+
+### 4.2 where (office area)
+
+We had burger first then tea followed by corn and then ice cream. There was not much distance that we covered, we were around 500 meters from the office area, but we took many rounds of the same place, and it was amazing.
+
+### 4.4 How You Felt
+
+We chatted about his dreams and mine and then about the things going right and wrong in our lives. Then, we discussed our families, broken hearts and almost everything. 
+
+It was a lovely walk, after a terrible day at work, when you are **stuck**[stʌk]  to a computer screen for more than 10 hours, nothing can be better than having a walk with your best friend.
+
 > 星期五, 四月 01 @ 20:30 (UTC+08:00) / 四月 02 @ 22:00
 
 ## 3. Describe a rule that you don’t like 
