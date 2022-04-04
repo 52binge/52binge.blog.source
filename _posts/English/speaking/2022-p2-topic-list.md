@@ -9,6 +9,15 @@ tags: IELTS
 
 <!-- more -->
 
+## 5. a person in primary school
+
+Describe a person who impressed you most when you were in primary school 
+
+1. Who he/she is;
+2. How you knew him/her;
+3. Why he/she impressed you most
+4. And explain how you feel about him/her
+
 ## 4. Describe A Long Walk You Ever Had. 
 
 1. When 2. Where 3. Who With 4. How You Felt
