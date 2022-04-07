@@ -1,5 +1,5 @@
 ---
-title: Update 2022 - ielts p2
+title: Update 2022 - ielts p2, Reading
 date: 2022-03-28 08:33:48
 categories: [English, speaking]
 tags: IELTS
@@ -8,6 +8,33 @@ tags: IELTS
 {% image "/images/english/speaking/s-microwave-logo1.jpg", width="450px", alt="Food provides nutrients and energy for" %}
 
 <!-- more -->
+
+## 5. Describe a person who impressed you most when you were in primary school
+
+1. Who he/she is;
+2. How you knew him/her;
+3. Why he/she impressed you most
+4. And explain how you feel about him/her
+
+### 5.1. Who he/she is;
+
+Well, when I was in primary school, art class was always my favorite. So the art teacher, Mrs. Li, really left a **mark/impression** on me.
+
+### 5.2. How you knew him/her;
+
+In my eyes she was like a superhero. She could(**can past**） do anything! I still remember clear as day that she taught us to **make paper cuttings**. I have to say she’s pretty skilled in paper-cutting. I remember that during one class, she took just a few minutes to **cut two butterflies**. It seemed like she had magic hands. But I couldn’t keep up with her at all.
+ 
+### 5.3. Why he/she impressed you most
+ 
+My fingers were clumsy [ˈklʌmzi] and I could never cut the papers well. But Mrs. Li didn’t look down on me. She personally came to my side and helped me fold a piece of paper in half several times. Then she asked me to draw an image on it and cut it along the lines. When I unfolded the paper, it really looked like a butterfly. I remember I was **over the moon** and thanked her a lot.
+
+> over the moon: 我记得我欣喜若狂
+
+### 5.4. explain how you feel about him/herÍ
+
+Actually I learned many art skills from Mrs. Li. She was patient and kind to every student and was always smiling, so I was very fond of her. After so many years, my memory of primary school is fading, but I still remember tons of moments from art class and with Mrs. Li clearly. I really miss those days in primary school. It was the happiest and most carefree period of my life.
+
+> tones [tʌnz]
 
 ## 4. Describe A Long Walk You Ever Had. 
 
