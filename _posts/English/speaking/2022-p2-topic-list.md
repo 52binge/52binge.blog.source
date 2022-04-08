@@ -63,6 +63,25 @@ It was a lovely walk, after a terrible day at work, when you are **stuck**[stʌk
 
 > 星期五, 四月 01 @ 20:30 (UTC+08:00) / 四月 02 @ 22:00
 
+Your good responses/sentences:  
+
+I will do yoga and meditation on Saturday 
+I'll attend this activity 
+I'd like to talk about a walk that I had with a friend a half year ago 
+I remember running from my work desk to the office gate gate as if I had found my freedom 
+we thought we were going to have a 15 minute walk but we cam back after one hour 
+we were about 1000 meters from the place I worked 
+she is a classmate of my former colleague 
+we had a burger first and tea followed by ice cream 
+it was a lovely walk 
+Grammar tips: (This is better to say)  
+
+it was late in the evening we are hang out rather say it was late in the evening and we hung out- verb tense 
+it was in the evening and the wind were blowing our face rather say it was late in the evening and the wind was blowing in our faces 
+she living and working in Singapore rather say she is living and working in Singapore 
+she is data analysis in that company rather say she is a data analyst (ana-list)  working in that company
+
+
 ## 3. a rule that you don’t like 
 
 Describe a rule that you don’t like 
