@@ -1,13 +1,11 @@
 ---
 title: Writing Task1 - line chart
-date: 2021-12-29 09:08:48
+date: 2022-04-10 09:08:48
 categories: [English, writing]
 tags: IELTS
 ---
 
-{% image "/images/english/writing/ielts-w-line-chart-2-carbon-dioxide.jpeg", width="500px", alt="1. Introduction 2. Overview 3. Details paragraph1 4. Details paragraph2" %}
-
-<!-- {% image "/images/english/IELTS-logo-1.png", width="500px", alt="1. Introduction 2. Overview 3. Details paragraph1 4. Details paragraph2" %} -->
+{% image "/images/english/writing/ielts-writing-task-1-waste-produced-by-three-companies.png", width="450px", alt="1. Introduction 2. Overview 3. Details paragraph1 4. Details paragraph2" %}
 
 1. Introduction 
 2. Overview 
@@ -16,7 +14,23 @@ tags: IELTS
 
 <!-- more -->
 
+## 1. Waste produced by 3 companies
+
+The graph below shows the amounts of waste produced by 3 companies over a period of 15years.
+
+### 1.1 Introduction
+
+The line graph compares 3 companies <span style="background-color: rgb(196, 237, 157);">in terms of</span> their waste output between the year 2000 and the year 2015.
+
+### 1.2 overview
+
+On the whole, **it is clear that** <span style="background-color: rgb(196, 237, 157);">there were significant changes</span> in the amounts of waste produced by all 3 companies shown on the graph. **While** companies A and B saw waste output <span style="background-color: rgb(196, 237, 157);">fall over 15-year period</span>, the amount of waste produced by company C increased considerably. 
+
+## 2. average carbon dioxide
+
 {% image "/images/english/writing/ielts-writing-1-1.jpg", width="800px", alt="1. Introduction 2. Overview 3. Details paragraph1 4. Details paragraph2" %}
+
+{% image "/images/english/writing/ielts-w-line-chart-2-carbon-dioxide.jpeg", width="500px", alt="1. Introduction 2. Overview 3. Details paragraph1 4. Details paragraph2" %}
 
 {% youtube nMGyK0DhLAA %}
 
