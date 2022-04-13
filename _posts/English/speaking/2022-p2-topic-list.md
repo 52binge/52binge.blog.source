@@ -9,6 +9,12 @@ tags: IELTS
 
 <!-- more -->
 
+## 7. Describe a course that impressed you a lot
+
+## 6. Describe A Difficult Thing You Did Well
+
+
+
 ## 5. Describe a person who impressed you most when you were in primary school
 
 1. Who he/she is;

@@ -26,6 +26,32 @@ The line graph compares 3 companies <span style="background-color: rgb(196, 237,
 
 On the whole, **it is clear that** <span style="background-color: rgb(196, 237, 157);">there were significant changes</span> in the amounts of waste produced by all 3 companies shown on the graph. **While** companies A and B saw waste output <span style="background-color: rgb(196, 237, 157);">fall over 15-year period</span>, the amount of waste produced by company C increased considerably. 
 
+> considerably /kənˈsid(ə)rəblē/ 相当
+
+### 1.3 bady 1
+
+{% image "/images/english/writing/ielts-writing-task-1-waste-produced-by-three-companies.png", width="450px", alt="1. Introduction 2. Overview 3. Details paragraph1 4. Details paragraph2" %}
+
+In 2000, company A produced 12 tonnes of waste, while companies B and C produced **around** 8 tonnes and 4 tonnes of waste material **respectively**. 
+
+**Over the following 5 years**, the waste output of companies B and C **rose by** around 2 tonnes, but the figure for company A **fell by** approximately 1 tonnes.
+
+> **adv:**
+> 1. around /əˈround/
+> 2. approximately /əˈpräksəmətlē/ 
+> 3. roughly /ˈrəflē/
+> 4. respectively /rəˈspektivlē/ 分别, 各自地
+
+### 1.4 bady 2
+
+From 2005 to 2015, company A **cut waste production by** roughly 3 tonnes, and company B **reduced its waste by around 7 tonnes**. **By contrast**, company C saw an increase in waste production of approximately 4 tonnes over the same 10-year period. By 2015, company C's waste output had risen to 10 tonnes, while the respective amounts of waste from companies A and B had dropped to 8 tonnes and only 3 tonnes.
+
+> **v:**
+> 1. cut
+> 2. reduced
+> 3. contrast: noun /ˈkɒntrɑːst/ 对比/对照 | verb /kənˈtrɑːst/ 形成对比  | By contrast 相比之下
+> 过去分词表的意义是被动或完成。 三、不过，过去式和过去分词最主要的区别是:过去式是一个动词
+
 ## 2. average carbon dioxide
 
 {% image "/images/english/writing/ielts-writing-1-1.jpg", width="800px", alt="1. Introduction 2. Overview 3. Details paragraph1 4. Details paragraph2" %}
