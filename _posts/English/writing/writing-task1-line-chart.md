@@ -50,6 +50,7 @@ From 2005 to 2015, company A **cut waste production by** roughly 3 tonnes, and c
 > 1. cut
 > 2. reduced
 > 3. contrast: noun /ˈkɒntrɑːst/ 对比/对照 | verb /kənˈtrɑːst/ 形成对比  | By contrast 相比之下
+> 过去分词表的意义是被动或完成。 三、不过，过去式和过去分词最主要的区别是:过去式是一个动词
 
 ## 2. average carbon dioxide
 
