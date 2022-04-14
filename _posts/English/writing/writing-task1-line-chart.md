@@ -58,7 +58,7 @@ In 2000, company A produced 12 tonnes of waste, while companies B and C produced
 
 ### 1.4 bady 2
 
-From 2005 to 2015, company A **cut waste production by** roughly 3 tonnes, and company B **reduced its waste by around 7 tonnes**. **By contrast**, company C saw an increase in waste production of approximately 4 tonnes over the same 10-year period. By 2015, company C's waste output **had risen** to 10 tonnes, while the respective amounts of waste from companies A and B **had dropped** to 8 tonnes and only 3 tonnes.
+From 2005 to 2015, company A **cut waste production by** roughly 3 tonnes, and company B **reduced its waste by around 7 tonnes**. **By contrast**, company C saw an increase in `waste production of approximately 4 tonnes` over the same 10-year period. By 2015, company C's waste output **had risen** to 10 tonnes, while the respective amounts of waste from companies A and B **had dropped** to 8 tonnes and only 3 tonnes.
 
 > **important 句子**
 > 1. **saw + noun + noun**: saw in increase in waste production
