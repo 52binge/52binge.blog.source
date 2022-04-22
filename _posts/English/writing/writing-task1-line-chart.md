@@ -18,6 +18,8 @@ tags: IELTS
 
 The graph below shows the amounts of waste produced by 3 companies over a period of 15years.
 
+> **over X years from 2000 to 2015**
+
 ### 1.1 Introduction
 
 The line graph compares 3 companies <span style="background-color: rgb(196, 237, 157);">in terms of</span> their waste output between the year 2000 and the year 2015.

@@ -126,7 +126,7 @@ Only on weekends, we can wear whatever we want
 **3.3 Why you don’t like it?**
 
 1. All students/colleague and I do not like this rule.
-2. I think we should follow the developed countries and everyone should be allowed to wear the clothes he likes according to his personality
+2. I think we should follow the western countries and everyone should be allowed to wear the clothes he likes according to his personality
 3. Everybody can express their creativity and style **by wearing different clothes**.
 
 Wed 20:30
