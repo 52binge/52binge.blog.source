@@ -9,13 +9,20 @@ date: 2022-04-23 00:20:48
 
 - [1.2 Spark - troubleshooting](/2021/01/21/spark/spark-summary-3-trouble-shooting/)
 
+- [1.3 [转] Spark 多个Stage执行是串行执行的么？](https://www.jianshu.com/p/5fe79b67ea00)
+
+- [1.4 [转] Spark宽依赖和窄依赖深度剖析](https://www.jianshu.com/p/736a4e628f0f)
+
+{% image "/images/spark/spark-summary-1.3-stage-rdd-partition-join.webp", width="600px", alt="Spark Stages" %}
+
+
 ## 2. SparkSQL
 
-- [2.1 Spark SQL几种Join实现](/2020/09/26/spark/spark-sql-join-core/)
+- [2.1 SparkSQL 底层实现原理](/2020/10/17/spark/sparkSQL-all-knowleage/)
 
-- [2.2 SparkSQL 底层实现原理](/2020/10/17/spark/sparkSQL-all-knowleage/)
+- [2.2 SparkSQL 从入门到调优](/2021/02/03/spark/spark-summary-5-sql-optimization-indoor/)
 
-- [2.3 SparkSQL 从入门到调优](/2021/02/03/spark/spark-summary-5-sql-optimization-indoor/)
+- [2.3 Spark SQL几种Join实现](/2020/09/26/spark/spark-sql-join-core/)
 
 - [2.4 SparkSQL Multidimensional Analysis - Group by](/2021/02/10/spark/spark-summary-6-sql-optimization-cube-group-by/)
 
