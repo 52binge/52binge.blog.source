@@ -43,6 +43,12 @@ tags: [spark]
 > DataFrame和DataSet可以相互转化，df.as[ElementType]这样可以把DataFrame转化为DataSet，ds.toDF()这样可以把DataSet转化为DataFrame
 > 
 > DataSet可以在编译时检查类型, DataSet以Catalyst逻辑执行计划表示，并且数据以编码的二进制形式被存储，不需要反序列化就可以执行sorting、shuffle等操作。
+>
+> Spark SQL是Spark最新和技术最为复杂的组件之一。它支持SQL查询和新的DataFrame API。Spark SQL的核心是Catalyst优化器，它以一种新颖的方式利用高级编程语言特性（例如Scala的模式匹配和quasiquotes）来构建可扩展查询优化器。
+
+> [深入研究Spark SQL的Catalyst优化器（原创翻译） ](https://www.cnblogs.com/shishanyuan/p/8455786.html)
+>
+> [Spark 多个Stage执行是串行执行的么？](https://www.jianshu.com/p/5fe79b67ea00)
 
 repartition vs coalesce vs coalesce in sql
 

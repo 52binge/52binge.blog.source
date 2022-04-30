@@ -18,6 +18,8 @@ tags: IELTS
 
 The graph below shows the amounts of waste produced by 3 companies over a period of 15years.
 
+> **over X years from 2000 to 2015**
+
 ### 1.1 Introduction
 
 The line graph compares 3 companies <span style="background-color: rgb(196, 237, 157);">in terms of</span> their waste output between the year 2000 and the year 2015.
@@ -26,6 +28,11 @@ The line graph compares 3 companies <span style="background-color: rgb(196, 237,
 
 On the whole, **it is clear that** <span style="background-color: rgb(196, 237, 157);">there were significant changes</span> in the amounts of waste produced by all 3 companies shown on the graph. **While** companies A and B saw waste output <span style="background-color: rgb(196, 237, 157);">fall over 15-year period</span>, the amount of waste produced by company C increased considerably. 
 
+> **important 句子**
+> 1. saw + noun + verb: saw waste output fall
+>
+> While 尽管/虽然
+> fall [fɔːl] 是原形,“fell”是“fall”的过去式. “fall in love with”与“fell in love with”意思相同.
 > considerably /kənˈsid(ə)rəblē/ 相当
 
 ### 1.3 bady 1
@@ -36,15 +43,30 @@ In 2000, company A produced 12 tonnes of waste, while companies B and C produced
 
 **Over the following 5 years**, the waste output of companies B and C **rose by** around 2 tonnes, but the figure for company A **fell by** approximately 1 tonnes.
 
+> **important 句子**
+> 1. company A produced..., while companies B and C produced..., and... 
+
+> **fell** fell”是“fall”的过去式
+
 > **adv:**
 > 1. around /əˈround/
 > 2. approximately /əˈpräksəmətlē/ 
 > 3. roughly /ˈrəflē/
 > 4. respectively /rəˈspektivlē/ 分别, 各自地
+>
+> **ton[tʌn] 和 tonne [tʌn]**
+> 1. ton (美联邦国家, long ton = 1 英噸 = 2,240 磅 = 1.0160469088 公噸 = 1,016.0469088 公斤)
+> 2. tonne = 1 公噸 = 1,000 公斤 【metric ton】
 
 ### 1.4 bady 2
 
-From 2005 to 2015, company A **cut waste production by** roughly 3 tonnes, and company B **reduced its waste by around 7 tonnes**. **By contrast**, company C saw an increase in waste production of approximately 4 tonnes over the same 10-year period. By 2015, company C's waste output had risen to 10 tonnes, while the respective amounts of waste from companies A and B had dropped to 8 tonnes and only 3 tonnes.
+From 2005 to 2015, company A **cut waste production by** roughly 3 tonnes, and company B **reduced its waste by around 7 tonnes**. **By contrast**, company C saw an increase in `waste production of approximately 4 tonnes` over the same 10-year period. By 2015, company C's waste output **had risen** to 10 tonnes, while the respective amounts of waste from companies A and B **had dropped** to 8 tonnes and only 3 tonnes.
+
+> **important 句子**
+> 1. **saw + noun + noun**: saw in increase in waste production
+> 2. **had risen/dropped** to 10 tonnes - rise 是不及物动词，只能说 sth. rise(s), rose(过去式)，risen(过去分词)
+>
+> 过去式是一个动词，而过去分词是一个动词的非谓语形式，相当于一个形容词或副词
 
 > **v:**
 > 1. cut
