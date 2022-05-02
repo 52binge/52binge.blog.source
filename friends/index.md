@@ -21,7 +21,7 @@ Business Intelligence {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-
 
 {% btns circle wide centre %}
 
-{% cell 小萝卜算子, https://www.zhihu.com/column/c_1096052338699100160/, https://pic3.zhimg.com/50/v2-c8802b25b79b3c94a413c3b22e423c9c_xll.jpg %}
+{% cell 小萝卜算子, https://www.zhihu.com/people/hongmianao, https://pic3.zhimg.com/50/v2-c8802b25b79b3c94a413c3b22e423c9c_xll.jpg %}
 
 {% cell 花木兰, https://www.zhihu.com/people/may-25-73/columns/, https://pic2.zhimg.com/v2-cb4445a1aeb51a52aca4b48a0abc4a0b_xll.jpg %}
 
