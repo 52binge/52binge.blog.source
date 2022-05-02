@@ -10,10 +10,12 @@ music:
   type: song        # song, playlist, album, search, artist
   id: 17423740      # song id / playlist id / album id / search keyword
   autoplay: true
+valine:
+  placeholder: 有什么想对我说的呢？
 ---
 
 {% p center logo large,  %}
-{% p center small, 学习过程中认识的大佬们，排名分组不分先后 %}
+{% p center small, the dalao I know during the learning process. %}
 
 Business Intelligence {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
 

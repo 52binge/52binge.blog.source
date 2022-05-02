@@ -1,6 +1,13 @@
 ---
 title: Spark
 date: 2022-04-23 00:20:48
+music:
+  server: netease   # netease, tencent, kugou, xiami, baidu
+  type: song        # song, playlist, album, search, artist
+  id: 17423740      # song id / playlist id / album id / search keyword
+  autoplay: true
+valine:
+  placeholder: 有什么想对我说的呢？
 ---
 
 ## 1. Spark Summary
