@@ -13,9 +13,9 @@ music:
 ---
 
 {% p center logo large,  %}
-{% p center small, 使用hexo过程中认识的大佬们，排名分组不分先后 %}
+{% p center small, 学习过程中认识的大佬们，排名分组不分先后 %}
 
-Data WareHouse & Analyst {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
+Business Intelligence {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
 
 {% btns circle wide centre %}
 
