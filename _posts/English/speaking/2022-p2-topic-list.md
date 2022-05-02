@@ -5,7 +5,7 @@ categories: [English, speaking]
 tags: IELTS
 ---
 
-{% image "/images/english/speaking/s-microwave-logo1.jpg", width="450px", alt="Food provides nutrients and energy for" %}
+Update 2022 Some IELTS Speaking part 2 cue-cards you may like
 
 <!-- more -->
 
