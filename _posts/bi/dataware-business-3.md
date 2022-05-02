@@ -1,5 +1,5 @@
 ---
-title: DataWare Business Review 3
+title: dataware business review
 date: 2021-01-22 09:07:21
 categories: bi
 tags: [data warehouse]

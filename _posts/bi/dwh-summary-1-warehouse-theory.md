@@ -1,5 +1,5 @@
 ---
-title: DataWare Review Summary 1
+title: data-warehouse review 1
 date: 2020-10-01 09:07:21
 categories: bi
 tags: [data warehouse]

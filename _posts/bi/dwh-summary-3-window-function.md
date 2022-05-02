@@ -1,5 +1,5 @@
 ---
-title: DataWare Review Summary 3 - Window Function
+title: data-warehouse review 3 - Window Function
 date: 2021-02-20 09:07:21
 categories: bi
 tags: [data warehouse, SQL]

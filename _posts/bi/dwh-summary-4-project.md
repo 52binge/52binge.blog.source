@@ -1,6 +1,6 @@
 ---
 icons: [fas fa-fire red, fas fa-star green]
-title: DataWare Review Summary 4 
+title: data-warehouse review 4
 date: 2021-03-09 09:07:21
 categories: bi
 tags: [DWH]

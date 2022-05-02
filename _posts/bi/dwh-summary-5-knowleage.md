@@ -1,5 +1,5 @@
 ---
-title: Hive Optimization Solution Notes
+title: Hive Optimization Notes
 date: 2021-03-12 09:07:21
 categories: bi
 tags: [Hive]
