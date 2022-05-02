@@ -1,5 +1,5 @@
 ---
-title: A idea of a ​​​​bi-dev
+title: A bi-dev's idea
 date: 2022-04-30 09:07:21
 categories: bi
 tags: [BI]
