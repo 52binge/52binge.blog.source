@@ -1,7 +1,7 @@
 ---
 title: 机考模拟解析 9.2 (Listening & Writing)
 date: 2020-07-05 16:14:48
-categories: [English, IELTS]
+categories: [English, listening]
 tags: IELTS
 ---
 

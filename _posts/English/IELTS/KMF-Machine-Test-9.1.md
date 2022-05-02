@@ -1,7 +1,7 @@
 ---
 title: 机考模拟解析 9.1 (Speaking & Reading)
 date: 2020-07-05 08:13:48
-categories: [English, IELTS]
+categories: [English]
 tags: IELTS
 ---
 
