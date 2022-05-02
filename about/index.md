@@ -21,11 +21,11 @@ What's your daily personal growth secret？
 3. english • drama  👁
 4. yoga hot • meditation 🧘
 
-If you are dissatisfied with your current state, you must know that the present is the accumulation of the past. If you want to live well in the future, you must start to accumulate slowly from now on.
-
-Diligence must not be in a hurry, as soon as you are in a hurry, it becomes false diligence
-
-Diligence is not a race against time, but continuous, dripping water wears through the rock. We have time to accumulate slowly, no need to worry.
+> If you are dissatisfied with your current state, you must know that the present is the accumulation of the past. If you want to live well in the future, you must start to accumulate slowly from now on.
+>
+> Diligence must not be in a hurry, as soon as you are in a hurry, it becomes false diligence
+>
+> Diligence is not a race against time, but continuous, dripping water wears through the rock. We have time to accumulate slowly, no need to worry.
 
 <!--  image "/images/tw/blairme2.jpg", width="400px", alt=""
 
@@ -37,11 +37,11 @@ Diligence is not a race against time, but continuous, dripping water wears throu
 
 -->
 
-### 🔑 Classic line
+### 🔑 Classic
 
-1. Whatever you do in this life, it's not legendary, unless your friends are there to see it.
-2. Life is full of changes. One day you have an apartment, the next day it's a house of dumplings. But the important stuff doesn't change. To the important stuff.
-3. When you're single, and your friends start to get married, every wedding invitation presents a strange moment of self-evaluation: "Will you be bringing a guest, or will you be attending alone?"
+> 1. Whatever you do in this life, it's not legendary, unless your friends are there to see it.
+> 2. Life is full of changes. One day you have an apartment, the next day it's a house of dumplings. But the important stuff doesn't change. To the important stuff.
+> 3. When you're single, and your friends start to get married, every wedding invitation presents a strange moment of self-evaluation: "Will you be bringing a guest, or will you be attending alone?"
 
 <!-- 非名人名言： 任何对其它人或者事物报以极高期望的人是这个世界上最不幸福的人, 降低期望是通向幸福之路-->
 
