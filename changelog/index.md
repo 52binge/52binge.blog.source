@@ -18,7 +18,7 @@ music:
 
 {% timeline %}
 
-{% timenode 2020-06-22 [2.6.6 -> 4.0](https://github.com/volantis-x/hexo-theme-volantis/releases) %}
+{% timenode 2021-06-22 [2.6.6 -> 4.0](https://github.com/volantis-x/hexo-theme-volantis/releases) %}
 
  1. 更新 icon, 修改在 blog/_config.yml rel="icon" and rel="shortcut icon"
  2. 转移 trip 类 articles 到该 blog 下.
@@ -26,14 +26,14 @@ music:
  
 {% endtimenode %}
 
-{% timenode 2020-06-21 [2.6.6 -> 4.0](https://github.com/volantis-x/hexo-theme-volantis/releases) %}
+{% timenode 2021-06-21 [2.6.6 -> 4.0](https://github.com/volantis-x/hexo-theme-volantis/releases) %}
 
  1. 注册 [leancloud国际版](https://console.leancloud.app/) 记录 webinfo .
  2. blog theme/_config.yml 改为 blog/_config.my_volantis.yml, 这种方式不会每次修改自动加载, 需要重启server
  
 {% endtimenode %}
 
-{% timenode 2020-06-20 [2.6.6 -> 4.0](https://github.com/volantis-x/hexo-theme-volantis/releases) %}
+{% timenode 2021-06-20 [2.6.6 -> 4.0](https://github.com/volantis-x/hexo-theme-volantis/releases) %}
 
 1. 将 articles 中所有的 img 标签 改为 [Image 标签](https://volantis.js.org/v5/tag-plugins/) 的形式
 2. 将 articles 中所有的 头部的 `toc: true` 和 `mathjax: true` 去掉. 
