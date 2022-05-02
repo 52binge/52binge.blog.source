@@ -18,6 +18,12 @@ music:
 
 {% timeline %}
 
+{% timenode 2022-05-02 [2.6.2 -> 2.6.3](https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3) %}
+
+1. 关闭 home page (为了博客的另一种形式展示) 并恢复 coverCtrl, 修改位置: layout/_partial/scripts/coverCtrl.ejs
+
+{% endtimenode %}
+
 {% timenode 2021-06-22 [2.6.6 -> 4.0](https://github.com/volantis-x/hexo-theme-volantis/releases) %}
 
  1. 更新 icon, 修改在 blog/_config.yml rel="icon" and rel="shortcut icon"
