@@ -1,5 +1,5 @@
 ---
-title: Data Warehouse - 理论篇 2
+title: data warehouse - 理论篇 2
 date: 2020-08-03 08:07:21
 categories: bi
 tags: [data warehouse]

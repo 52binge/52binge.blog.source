@@ -1,5 +1,5 @@
 ---
-title: Data Warehouse - 基础篇
+title: data warehouse - 基础篇
 date: 2020-08-01 10:07:21
 categories: bi
 tags: [data warehouse]

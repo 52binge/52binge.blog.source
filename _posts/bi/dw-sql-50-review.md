@@ -1,5 +1,5 @@
 ---
-title: Data Analysis - SQL 50
+title: data analysis - SQL 50
 date: 2021-01-05 09:07:21
 categories: bi
 tags: [data warehouse]

@@ -1,7 +1,7 @@
 ---
 title: Airflow Review 1
 date: 2021-01-24 09:07:21
-categories: bi
+categories: devops
 tags: [Airflow]
 ---
 

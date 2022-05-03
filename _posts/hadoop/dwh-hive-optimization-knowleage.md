@@ -1,7 +1,7 @@
 ---
-title: Hive Optimization Notes
+title: Hive optimization notes
 date: 2021-03-12 09:07:21
-categories: bi
+categories: hadoop
 tags: [Hive]
 ---
 

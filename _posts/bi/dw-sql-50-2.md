@@ -1,5 +1,5 @@
 ---
-title: Data Analysis - SQL 50 第2篇 Action
+title: data analysis - SQL 50 第2篇 action
 date: 2020-08-08 09:07:21
 categories: bi
 tags: [data warehouse]

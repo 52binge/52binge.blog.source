@@ -1,6 +1,6 @@
 
 ---
-title: Survey of Data Analyst
+title: survey of data analyst
 date: 2021-02-17 18:28:21
 categories: bi
 tags: data-analysis
