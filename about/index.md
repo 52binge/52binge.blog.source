@@ -47,8 +47,7 @@ What's your daily personal growth secret？
 
 ### ⛅️ ChengeLog
 
+- 2022-05-03 : [一期一会 いちごいちえ..](https://artsandculture.google.com/entity/m062s1m?hl=zh) <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 - 2021-06-13 : Blair Chen, [more info, please click.](/changelog)
 - 2017-10-08 : Blair Chen, blairos theme improve.
 - 2016-03-22 : Blair Chen, build this blog website.
-
-<img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
