@@ -1,5 +1,5 @@
 ---
-title: SparkSQL, indoor to optimization
+title: SparkSQL indoor to optimization
 date: 2021-02-03 15:28:21
 categories: [spark]
 tags: [sparkSQL]
