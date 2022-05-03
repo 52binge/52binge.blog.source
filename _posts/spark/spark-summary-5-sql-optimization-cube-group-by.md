@@ -1,11 +1,11 @@
 ---
 title: SparkSQL Multidimensional Analysis - Group by
-date: 2021-02-10 15:28:21
+date: 2021-02-02 15:28:21
 categories: [spark]
 tags: [sparkSQL]
 ---
 
-{% image "/images/spark/SparkSql-logo-2.png", width="500px", alt="" %}
+{% image "/images/spark/SparkSql-logo-2.png", width="450px", alt="" %}
 
 <!-- more -->
 
@@ -249,3 +249,4 @@ With the GROUPING_ID column, we can use the `HAVING` clause to filter the query 
 - [Spark SQL / Catalyst 内部原理 与 RBO](https://www.jianshu.com/p/83a70a160607)
 - [Spark权威指南—— DataFrame API笔记](https://zhuanlan.zhihu.com/p/150963974)
 - [GROUP BY都不会！ROLLUP，CUBE，GROUPPING详解](https://zhuanlan.zhihu.com/p/58639733)
+- [spark sql多维分析优化——细节是魔鬼](https://zhuanlan.zhihu.com/p/78804934)
