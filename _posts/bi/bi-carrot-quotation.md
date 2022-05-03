@@ -25,4 +25,4 @@ thumbnail: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/heartmate/icon.png
 
 ## Reference
 
-- [萝卜姐语录](https://www.zhihu.com/people/hongmianao)
+[🥕🥕🥕](https://www.zhihu.com/people/hongmianao)
