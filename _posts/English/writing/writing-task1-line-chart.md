@@ -5,14 +5,14 @@ categories: [English, writing]
 tags: IELTS
 ---
 
-{% image "/images/english/writing/ielts-writing-task-1-waste-produced-by-three-companies.png", width="450px", alt="1. Introduction 2. Overview 3. Details paragraph1 4. Details paragraph2" %}
-
 1. Introduction 
 2. Overview 
 3. Details paragraph 1 `[StartPoint -> MidPoint]`
 4. Details paragraph 2 `[MidPoint -> EndPoint]`
 
 <!-- more -->
+
+{% image "/images/english/writing/ielts-writing-task-1-waste-produced-by-three-companies.png", width="450px", alt="1. Introduction 2. Overview 3. Details paragraph1 4. Details paragraph2" %}
 
 ## 1. Waste produced by 3 companies
 

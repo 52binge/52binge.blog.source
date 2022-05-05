@@ -10,22 +10,20 @@ music:
   type: song        # song, playlist, album, search, artist
   id: 17423740      # song id / playlist id / album id / search keyword
   autoplay: true
+valine:
+  placeholder: 有什么想对我说的呢？
 ---
 
 {% p center logo large,  %}
-{% p center small, 使用hexo过程中认识的大佬们，排名分组不分先后 %}
+{% p center small, the dalao I know during the learning process. %}
 
-## Volantis 
+Business Intelligence {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
 
-{% btns circle centre grid5 %}
+{% btns circle wide centre %}
 
-{% cell Volantis主题, https://volantis.js.org/v5/theme-settings/, https://cdn.jsdelivr.net/gh/XuxuGood/cdn@master/blogImages/links/volantis.png %}
+{% cell 小萝卜算子, https://www.zhihu.com/people/hongmianao, https://pic3.zhimg.com/50/v2-c8802b25b79b3c94a413c3b22e423c9c_xll.jpg %}
 
-{% cell W4J1e`s Friends, https://www.hin.cool/friends/, /images/logos/friends-logo.jpg %}
-
-<!--
-{% cell xaoxuu, https://xaoxuu.com, https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png %}
--->
+{% cell 花木兰, https://www.zhihu.com/people/may-25-73/columns/, https://pic2.zhimg.com/v2-cb4445a1aeb51a52aca4b48a0abc4a0b_xll.jpg %}
 
 {% endbtns %}
 
@@ -39,27 +37,17 @@ Exploring 开拓职场 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn
 
 {% endbtns %}
 
-Data WareHouse & Analyst {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
-
-{% btns circle wide centre %}
-
-{% cell 小萝卜算子, https://www.zhihu.com/column/c_1096052338699100160/, https://pic3.zhimg.com/50/v2-c8802b25b79b3c94a413c3b22e423c9c_xll.jpg %}
-
-{% cell 花木兰, https://www.zhihu.com/people/may-25-73/columns/, https://pic2.zhimg.com/v2-cb4445a1aeb51a52aca4b48a0abc4a0b_xll.jpg %}
-
-{% endbtns %}
-
 Friends 博客爱好者 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
 
 {% btns circle wide centre %}
-
-{% cell PPJ后端, https://ppj19891020.github.io/, https://ppj19891020.github.io/images/avatar.jpeg %}
 
 {% cell Blair`s Blog, https://52binge.github.io/, /images/logos/logo_me1.jpg %}
 
 {% cell 七海の参考書, https://shiraha.cn, https://cdn.jsdelivr.net/gh/45921/cdn-images@main/me/avatar.jpg %}
 
 {% cell qinxs, https://7bxing.com/, https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/img/avatar.png %}
+
+{% cell PPJ后端, https://ppj19891020.github.io/, https://ppj19891020.github.io/images/avatar.jpeg %}
 
 {% endbtns %}
 
@@ -86,6 +74,20 @@ ToolsPage  {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l
 {% cell Font-Awesome, https://fontawesome.com/v5.15/icons?d=gallery/, fab fa-font-awesome-flag %}
 
 {% cell EMOJIALL, https://www.emojiall.com/zh-hans/all-emojis, /images/logos/emoji-face-logo.png %}
+
+{% endbtns %}
+
+Volantis & hexo {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
+
+{% btns circle centre grid5 %}
+
+{% cell Volantis主题, https://volantis.js.org/v5/theme-settings/, https://cdn.jsdelivr.net/gh/XuxuGood/cdn@master/blogImages/links/volantis.png %}
+
+{% cell W4J1e`s Friends, https://www.hin.cool/friends/, /images/logos/friends-logo.jpg %}
+
+<!--
+{% cell xaoxuu, https://xaoxuu.com, https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png %}
+-->
 
 {% endbtns %}
 

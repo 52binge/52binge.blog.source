@@ -1,6 +1,13 @@
 ---
 title: Spark
 date: 2022-04-23 00:20:48
+music:
+  server: netease   # netease, tencent, kugou, xiami, baidu
+  type: song        # song, playlist, album, search, artist
+  id: 17423740      # song id / playlist id / album id / search keyword
+  autoplay: true
+valine:
+  placeholder: 有什么想对我说的呢？
 ---
 
 ## 1. Spark Summary
@@ -15,6 +22,9 @@ date: 2022-04-23 00:20:48
 
 {% image "/images/spark/spark-summary-1.3-stage-rdd-partition-join.webp", width="600px", alt="Spark Stages" %}
 
+> DataFrame是spark1.3.0版本提出来的
+> DataSet是spark1.6.0版本提出来的
+> 但在 spark2.0 版本中，DataFrame和DataSet合并为DataSet.
 
 ## 2. SparkSQL
 

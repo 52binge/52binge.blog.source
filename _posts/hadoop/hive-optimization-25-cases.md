@@ -1,7 +1,7 @@
 ---
 title: Hive Optimize 25 Items
 date: 2020-07-18 08:07:21
-categories: [data-warehouse]
+categories: hadoop
 tags: [hive]
 ---
 

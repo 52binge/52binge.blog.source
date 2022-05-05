@@ -1,6 +1,7 @@
 ---
 title: Internet job introduction
 date: 2022-02-06 21:20:48
+cover: true
 ---
 
 {% youtube C366hnsI8UI %}

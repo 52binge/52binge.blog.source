@@ -1,5 +1,5 @@
 ---
-title: RDD、DataFrame和DataSet的区别
+title: RDD vs DataFrame vs DataSet
 date: 2021-01-03 15:28:21
 categories: [spark]
 tags: [spark]

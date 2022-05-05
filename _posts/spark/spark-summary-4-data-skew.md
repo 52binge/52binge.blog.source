@@ -1,11 +1,11 @@
 ---
-title: Spark - Data Skew Advanced
+title: spark data skew advanced
 date: 2021-01-27 07:07:21
 categories: [spark]
 tags: [spark]
 ---
 
-{% image "/images/spark/spark-summary-logo-1.jpg", width="500px", alt="" %}
+most tasks are executed very fast, but some tasks are extremely slow.
 
 <!-- more -->
 

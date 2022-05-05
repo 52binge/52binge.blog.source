@@ -1,7 +1,7 @@
 ---
 title: IELTS Learning Experience
 date: 2019-05-25 17:14:48
-categories: [English, IELTS]
+categories: [English]
 tags: IELTS
 ---
 

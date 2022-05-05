@@ -65,6 +65,10 @@ find .|xargs grep -ri "IBM" -l 
 
 ```bash
 sed -i "s/oldString/newString/g"  `grep oldString -rl ./`
+
+OR
+
+grep -rl 'categories:\ tensorflow2' ./  | xargs sed -i "" "s/categories:\ tensorflow2/categories:\ data-science/g"
 ```
 
 8). VIM tab ^I 替换

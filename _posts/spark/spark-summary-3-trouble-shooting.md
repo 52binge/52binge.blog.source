@@ -1,11 +1,11 @@
 ---
-title: Spark - troubleshooting
+title: spark troubleshooting
 date: 2021-01-21 07:07:21
 categories: [spark]
 tags: [spark]
 ---
 
-{% image "/images/spark/spark-summary-logo-1.jpg", width="500px", alt="" %}
+{% image "/images/spark/spark-summary-logo-1.jpg", width="300px", alt="" %}
 
 <!-- more -->
 
