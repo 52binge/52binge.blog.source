@@ -7,7 +7,7 @@ icons: [fas fa-fire red, fas fa-star green]
 thumbnail: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/heartmate/icon.png
 ---
 
-{% image "/images/bi/interview_make_rocket.jpg", width="450px", alt="" %}
+{% image "/images/bi/interview_make_rocket.jpg", width="400px", alt="" %}
 
 <!-- more -->
 
