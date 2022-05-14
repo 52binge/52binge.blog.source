@@ -16,7 +16,7 @@ date: 2016-07-16 16:59:48
 > `2022.05.14` They contribute to my Life Principles ：）
 > 
 > 1. Annual Reading and Social Thinking
-> 2. Thinking about the relationship between the sexes
+> 2. Thinking about the gender relations
 > 3. Consumerism and Materialism
 > 4. **Take time to care about what really matters**
 > 5. No matter what the major is, you need to know the whole picture
