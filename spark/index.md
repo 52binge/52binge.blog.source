@@ -10,6 +10,18 @@ valine:
   placeholder: 有什么想对我说的呢？
 ---
 
+### Spark 精品
+
+[Spark会把数据都载入到内存么？](https://www.jianshu.com/p/b70fe63a77a8)
+
+> Shuffle不过是偷偷的帮你加上了个类似saveAsLocalDiskFile的动作。然而，写磁盘是一个高昂的动作。所以我们尽可能的把数据先放到内存，再批量写到文件里，还有读磁盘文件也是给费内存的动作。
+>
+> **Cache/Persist意味着什么？**
+> 
+> 其实就是给某个Stage加上了一个saveAsMemoryBlockFile的动作, Spark允许你把中间结果放内存里.
+
+[Author 知乎](https://www.zhihu.com/people/allwefantasy/posts)
+
 ## 1. Spark Summary
 
 - [1.1 Spark Summary 1 - Basic knowledge](/2020/10/31/spark/spark-summary-1-basic-questions/)

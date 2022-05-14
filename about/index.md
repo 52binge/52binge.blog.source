@@ -21,8 +21,10 @@ What's your daily personal growth secret？
 3. english • drama  👁
 4. yoga hot • meditation 🧘
 
-> If you are dissatisfied with your current state, you must know that the present is the accumulation of the past. If you want to live well in the future, you must start to accumulate slowly from now on.
->
+<!-- 
+If you are dissatisfied with your current state, you must know that the present is the accumulation of the past. If you want to live well in the future, you must start to accumulate slowly from now on.
+-->
+
 > Diligence must not be in a hurry, as soon as you are in a hurry, it becomes false diligence
 >
 > Diligence is not a race against time, but continuous, dripping water wears through the rock. We have time to accumulate slowly, no need to worry.
