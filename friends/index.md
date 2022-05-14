@@ -17,7 +17,7 @@ valine:
 {% p center logo large,  %}
 {% p center small, the dalao I know during the learning process. %}
 
-Reading, Thinking, Wrinting {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
+Reading, Thinking, Writing {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
 
 {% btns circle wide centre %}
 
