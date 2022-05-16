@@ -16,7 +16,7 @@ date: 2016-07-16 16:59:48
  {% image "/images/tw/changi-jurassic-mile3.jpg", width="350px", alt="" %} 
  {% endbtns %}
  
-> `2022.05.15` VesakDay in Singapore
+> `2022.05.15`  VesakDay in Singapore
 >
 > {% image "/images/tw/Chinatown-VesakDay.jpg", width="350px", alt="" %}
 
