@@ -26,7 +26,7 @@ valine:
 
 [萝卜姐: Is the ByteDance interview difficult and how should you deal with it?](https://www.zhihu.com/question/339135205)
 
-### 1. Interview dismantling
+### 1. skill dismantling
 
 > 1.1 底层原理，源码理解。
 > 1.2 项目相关，难点，仓库建模
