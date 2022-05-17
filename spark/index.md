@@ -1,5 +1,5 @@
 ---
-title: Spark
+title: Professional Skill
 date: 2022-04-23 00:20:48
 music:
   server: netease   # netease, tencent, kugou, xiami, baidu
@@ -21,6 +21,36 @@ valine:
 > 其实就是给某个Stage加上了一个saveAsMemoryBlockFile的动作, Spark允许你把中间结果放内存里.
 
 [Author 知乎](https://www.zhihu.com/people/allwefantasy/posts)
+
+**BI：做正确的事，等待好事发生**
+
+[萝卜姐: Is the ByteDance interview difficult and how should you deal with it?](https://www.zhihu.com/question/339135205)
+
+### 1. skill dismantling
+
+> 1.1 底层原理，源码理解。
+> 1.2 项目相关，难点，仓库建模
+> 1.3 show **sql**
+
+**spark和hive**：
+
+1. join 实现有几种呢，源码有研究过吗？ 底层是怎么实现的
+
+> [面试必知的Spark SQL几种Join实现 - (streamIter为大表，buildIter为小表)](https://www.51cto.com/article/626552.html)
+> sort merge join / broadcast join / hash join
+>
+
+2. shuffle形式有几种？都做哪些优化
+3. 是通过什么管理shuffle中的内存，磁盘 的
+
+
+2. How to use kung fu in daily life
+
+3. Be confident and positive
+
+4. Interview tips (overcoming nervousness)
+
+5. last last last last
 
 ## 1. Spark Summary
 

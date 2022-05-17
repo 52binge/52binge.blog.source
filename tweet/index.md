@@ -4,8 +4,24 @@ date: 2016-07-16 16:59:48
 
 ## Tweet
 
-<p style="font-style:italic;color:cornflowerblue;">Blairブレア🧘 Is Inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
+<p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
+
+> `2022.05.17` SparkSQL Join & English BBC - 诸事不顺的一天 The English we We Speak 
+> 
+
+> `2022.05.16` [SGBike EXPLORE Changi Jurassic Mile: Cycling along Changi Airport Connector](https://www.sgbike.com.sg/post/cycle-along-changi-airport-connector-and-explore-changi-jurassic-mile)
+>
+> Changi Airport (T2) to Jurassic Mile: 3.5km
+> Changi Airport (T2) to East Coast Park: 5km
+> Changi Airport (T2) to Marina Bay: 19km 
+> {% btns circle wide centre %}
+ {% image "/images/tw/changi-jurassic-mile3.jpg", width="350px", alt="" %} 
+ {% endbtns %}
+ 
+> `2022.05.15`  VesakDay in Singapore
+>
+> {% image "/images/tw/Chinatown-VesakDay.jpg", width="350px", alt="" %}
 
 > `2022.05.14` Rich Dad Poor Dad (富爸爸·穷爸爸) ：
 > 
