@@ -1,5 +1,5 @@
 ---
-title: Spark
+title: Professional Skill
 date: 2022-04-23 00:20:48
 music:
   server: netease   # netease, tencent, kugou, xiami, baidu
@@ -21,6 +21,26 @@ valine:
 > 其实就是给某个Stage加上了一个saveAsMemoryBlockFile的动作, Spark允许你把中间结果放内存里.
 
 [Author 知乎](https://www.zhihu.com/people/allwefantasy/posts)
+
+**BI：做正确的事，等待好事发生**
+
+[萝卜姐: Is the ByteDance interview difficult and how should you deal with it?
+
+](https://www.zhihu.com/question/339135205)
+
+### 1. Interview dismantling
+
+> 1.1 底层原理，源码理解。
+> 1.2 项目相关，难点，仓库建模
+> 1.3 show **sql**
+
+2. How to use kung fu in daily life
+
+3. Be confident and positive
+
+4. Interview tips (overcoming nervousness)
+
+5. last last last last
 
 ## 1. Spark Summary
 
