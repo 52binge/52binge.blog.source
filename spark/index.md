@@ -24,7 +24,7 @@ valine:
 
 **BI：做正确的事，等待好事发生**
 
-[萝卜姐: Is the ByteDance interview difficult and how should you deal with it?](https://www.zhihu.com/question/339135205)
+[萝卜姐: Is the ByteDance interview difficult and how should you deal with it?](https://www.zhihu.com/question/339135205/answer/1178925849)
 
 ### 1. skill dismantling
 
@@ -41,10 +41,37 @@ valine:
 >
 
 2. shuffle形式有几种？都做哪些优化
+
+> [spark基础之shuffle机制、原理分析及Shuffle的优化（很好很详细)](https://blog.csdn.net/BigData_Mining/article/details/82622502)
+> Shuffle就是对数据进行重组，由于分布式计算的特性和要求，在实现细节上更加繁琐和复杂
+> 1. HashShuffle（<=spark1.6,会产生很多小文件, Writer费内存易GC）
+> 2. Sort-Based Shuffle (有多重model，不展开)
+>  {% image "/images/spark/spark-shuffle-maptask.png", width="650px", alt="" %}
+> Transformation 操作如:repartition，join，cogroup，以及任何 *By 或者 *ByKey 的 Transformation 都需要 shuffle 数据9,合理的选用操作将降低 shuffle 操作的成本,提高运算速度
+
 3. 是通过什么管理shuffle中的内存，磁盘 的
 
+4. 讲讲谓词下推？
 
-2. How to use kung fu in daily life
+5. full outer join原理
+
+6. spark为什么比hive快
+
+7. 讲讲sparksql优化
+
+8. 讲讲RDD, DAG, Stage
+
+9. 说说groupByKey, reduceByKey
+
+10. spark是怎么读取文件,分片的？
+11. 有没有遇到过spark读取文件，有一些task空跑的现象？
+12. 窗口函数中 几个rank函数有啥不同（spark、hive中窗口函数实现原理复盘 Hive sql窗口函数源码分析 sparksql比hivesql优化的点（窗口函数））parquet文件和orc文件有啥不同mr shuffle 是什么样子？具体原理是什么？跟spark有什么不同？讲讲hive sql优化hive 数据倾斜参数原理讲讲spark内存模型？（从一个sql任务理解spark内存模型 ）
+
+**2. Show SQL**
+
+> 就会问还有没有更优化的方式？
+> 窗口函数，groupingsets cube这些 都会用到。有好多是计算滑动的那种
+> 这个sql 在hive中起几个job，为什么是这么几个job？
 
 3. Be confident and positive
 

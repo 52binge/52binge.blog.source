@@ -7,6 +7,9 @@ date: 2016-07-16 16:59:48
 <p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
+> `2022.05.18` shuffle形式有几种？都做哪些优化 & English BBC - <如果在相遇,我会记得你> the good old songs
+> 
+
 > `2022.05.17` SparkSQL Join & English BBC - 诸事不顺的一天 The English we We Speak 
 > 
 
