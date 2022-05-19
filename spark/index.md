@@ -10,6 +10,35 @@ valine:
   placeholder: 有什么想对我说的呢？
 ---
 
+## Business intelligence
+
+<p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
+</p>
+
+> `2022.05.19` English My Job 
+> {% image "/images/bi/interview-consecutive-login-sql01.jpg", width="650px", alt="" %}
+> [2021 blair Notes](/2021/01/09/bi/dwh-summary-2-interview/) / [2020 Interview Questions - Data Warehouse](https://jishuin.proginn.com/p/763bfbd32925)  
+> ```sql
+-- 1. how to 连续 
+select 
+  user_id, count(1) cnt
+from
+  (
+    select 
+      user_id, 
+      login_date, 
+      row_number() over(partition by user_id order by login_date) as rn
+    from tmp.tmp_last_3_day
+  ) t
+group by user_id, date_sub(login_date, t.rn)
+having count(1) >= 3;
+```
+> `2022.05.18` shuffle形式有几种？都做哪些优化 & English BBC - <如果在相遇,我会记得你> the good old songs
+> 
+
+> `2022.05.17` SparkSQL Join & English BBC - 诸事不顺的一天 The English we We Speak 
+> 
+
 ### Spark 精品
 
 [Spark会把数据都载入到内存么？](https://www.jianshu.com/p/b70fe63a77a8)

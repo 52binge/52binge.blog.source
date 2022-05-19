@@ -10,22 +10,6 @@ date: 2016-07-16 16:59:48
 </p>
 
 > `2022.05.19` 手写"连续活跃登陆"等类似场景的sql & English My Job 
-> {% image "/images/bi/interview-consecutive-login-sql01.jpg", width="650px", alt="" %} 
-> ```sql
--- 1. how to 连续 
-select 
-  user_id, count(1) cnt
-from
-  (
-    select 
-      user_id, 
-      login_date, 
-      row_number() over(partition by user_id order by login_date) as rn
-    from tmp.tmp_last_3_day
-  ) t
-group by user_id, date_sub(login_date, t.rn)
-having count(1) >= 3;
-```
 > [2021 blair Notes](/2021/01/09/bi/dwh-summary-2-interview/) / [2020 Interview Questions - Data Warehouse](https://jishuin.proginn.com/p/763bfbd32925)
 > 
 > English:
@@ -33,10 +17,10 @@ having count(1) >= 3;
 > 2. Design and dev of financial data warehouse, including **cross-border remittance**, remittance between Hong Kong and China Mainland, study abroad payment [əˈbrôd], etc; data support of risk control, anti-money laundering and anti-fraud services;
 > 
 
-> `2022.05.18` shuffle形式有几种？都做哪些优化 & English BBC - <如果在相遇,我会记得你> the good old songs
+> `2022.05.18` English BBC - <如果在相遇,我会记得你> the good old songs
 > 
 
-> `2022.05.17` SparkSQL Join & English BBC - 诸事不顺的一天 The English we We Speak 
+> `2022.05.17` English BBC - 诸事不顺的一天 The English we We Speak 
 > 
 
 > `2022.05.16` [SGBike EXPLORE Changi Jurassic Mile: Cycling along Changi Airport Connector](https://www.sgbike.com.sg/post/cycle-along-changi-airport-connector-and-explore-changi-jurassic-mile)
