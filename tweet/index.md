@@ -9,7 +9,7 @@ date: 2016-07-16 16:59:48
 <p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
-> `2022.05.19` 手写"连续活跃登陆"等类似场景的sql & English My Job 
+> `2022.05.19` English my work 
 > [2021 blair Notes](/2021/01/09/bi/dwh-summary-2-interview/) / [2020 Interview Questions - Data Warehouse](https://jishuin.proginn.com/p/763bfbd32925)
 > 
 > English:
