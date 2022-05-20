@@ -15,6 +15,36 @@ valine:
 <p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
+> `2022.05.20` [Spark面试整理 hdc520 大全好总结](https://www.cnblogs.com/hdc520/p/12588379.html)
+> 1.1 [Spark处理数据比Hive快的原因](https://book.itheima.net/study/1269935677353533441/1270196659166420993/1270200848609222657)
+>
+> 总结： Spark比Mapreduce运行更快，主要得益于其对mapreduce操作的优化以及对JVM使用的优化。
+>   (1) `消除了冗余的HDFS读写` （不需要过多地和磁盘交互）
+>   (2) `消除了冗余的MapReduce阶段` 
+>   (3) `JVM的优化` [MapReduce操作，启个Task便启次JVM，进程的操作。Spark 线程]
+>
+> 1.2 [reduceByKey vs groupByKey](https://blog.csdn.net/zongzhiyuan/article/details/49965021)
+> 在spark中，我们知道一切的操作都是基于RDD的。在使用中，RDD有一种非常特殊也是非常实用的format——pair RDD，即RDD的每一行是（key, value）的格式。这种格式很像Python的字典类型，便于针对key进行一些处理。
+针对pair RDD这样的特殊形式，spark中定义了许多方便的操作，今天主要介绍一下reduceByKey和groupByKey，
+>
+> groupByKey 当采用groupByKey时，由于它不接收函数，spark只能先将所有的键值对(key-value pair)都移动，这样的后果是集群节点之间的开销很大，导致传输延时
+>
+> ```python
+> lines = sc.textFile("/Users/blair/ghome/github/spark3.0/pyspark/spark-src/word_count.text", 2)
+>
+lines = lines.filter(lambda x: 'New York' in x)
+#lines.take(3)
+
+words = lines.flatMap(lambda x: x.split(' '))
+
+wco = words.map(lambda x: (x, 1))
+
+#print(wco.take(5))
+from operator import add
+word_count = wco.reduceByKey(add)
+
+word_count.collect()
+```
 > `2022.05.19` English My Job 
 > {% image "/images/bi/interview-consecutive-login-sql01.jpg", width="650px", alt="" %}
 > [2021 blair Notes](/2021/01/09/bi/dwh-summary-2-interview/) / [2020 Interview Questions - Data Warehouse](https://jishuin.proginn.com/p/763bfbd32925)  
