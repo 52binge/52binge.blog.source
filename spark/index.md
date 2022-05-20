@@ -10,6 +10,69 @@ valine:
   placeholder: 有什么想对我说的呢？
 ---
 
+## Business intelligence
+
+<p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
+</p>
+
+
+> `2022.05.21` full outer join相对来说要复杂一点，full outer join仅采用sort merge join实现，左边和右表既要作为streamIter，又要作为buildIter
+> {% image "/images/spark/spark-full-outer-join.png", width="600px", alt="" %}
+
+> `2022.05.20` [Spark面试整理 hdc520 大全好总结](https://www.cnblogs.com/hdc520/p/12588379.html)
+> 1.1 [Spark处理数据比Hive快的原因](https://book.itheima.net/study/1269935677353533441/1270196659166420993/1270200848609222657)
+>
+> 总结： Spark比Mapreduce运行更快，主要得益于其对mapreduce操作的优化以及对JVM使用的优化。
+>   (1) `消除了冗余的HDFS读写` （不需要过多地和磁盘交互）
+>   (2) `消除了冗余的MapReduce阶段` 
+>   (3) `JVM的优化` [MapReduce操作，启个Task便启次JVM，进程的操作。Spark 线程]
+>
+> 1.2 [reduceByKey vs groupByKey](https://blog.csdn.net/zongzhiyuan/article/details/49965021)
+> 在spark中，我们知道一切的操作都是基于RDD的。在使用中，RDD有一种非常特殊也是非常实用的format——pair RDD，即RDD的每一行是（key, value）的格式。这种格式很像Python的字典类型，便于针对key进行一些处理。
+针对pair RDD这样的特殊形式，spark中定义了许多方便的操作，今天主要介绍一下reduceByKey和groupByKey，
+>
+> groupByKey 当采用groupByKey时，由于它不接收函数，spark只能先将所有的键值对(key-value pair)都移动，这样的后果是集群节点之间的开销很大，导致传输延时
+>
+> ```python
+> lines = sc.textFile("/Users/blair/ghome/github/spark3.0/pyspark/spark-src/word_count.text", 2)
+>
+lines = lines.filter(lambda x: 'New York' in x)
+#lines.take(3)
+
+words = lines.flatMap(lambda x: x.split(' '))
+
+wco = words.map(lambda x: (x, 1))
+
+#print(wco.take(5))
+from operator import add
+word_count = wco.reduceByKey(add)
+
+word_count.collect()
+```
+> `2022.05.19` English My Job 
+> {% image "/images/bi/interview-consecutive-login-sql01.jpg", width="650px", alt="" %}
+> [2021 blair Notes](/2021/01/09/bi/dwh-summary-2-interview/) / [2020 Interview Questions - Data Warehouse](https://jishuin.proginn.com/p/763bfbd32925)  
+> ```sql
+-- 1. how to 连续 
+select 
+  user_id, count(1) cnt
+from
+  (
+    select 
+      user_id, 
+      login_date, 
+      row_number() over(partition by user_id order by login_date) as rn
+    from tmp.tmp_last_3_day
+  ) t
+group by user_id, date_sub(login_date, t.rn)
+having count(1) >= 3;
+```
+> `2022.05.18` shuffle形式有几种？都做哪些优化 & English BBC - <如果在相遇,我会记得你> the good old songs
+> 
+
+> `2022.05.17` SparkSQL Join & English BBC - 诸事不顺的一天 The English we We Speak 
+> 
+
 ### Spark 精品
 
 [Spark会把数据都载入到内存么？](https://www.jianshu.com/p/b70fe63a77a8)
@@ -24,7 +87,7 @@ valine:
 
 **BI：做正确的事，等待好事发生**
 
-[萝卜姐: Is the ByteDance interview difficult and how should you deal with it?](https://www.zhihu.com/question/339135205)
+[萝卜姐: Is the ByteDance interview difficult and how should you deal with it?](https://www.zhihu.com/question/339135205/answer/1178925849)
 
 ### 1. skill dismantling
 
@@ -41,10 +104,37 @@ valine:
 >
 
 2. shuffle形式有几种？都做哪些优化
+
+> [spark基础之shuffle机制、原理分析及Shuffle的优化（很好很详细)](https://blog.csdn.net/BigData_Mining/article/details/82622502)
+> Shuffle就是对数据进行重组，由于分布式计算的特性和要求，在实现细节上更加繁琐和复杂
+> 1. HashShuffle（<=spark1.6,会产生很多小文件, Writer费内存易GC）
+> 2. Sort-Based Shuffle (有多重model，不展开)
+>  {% image "/images/spark/spark-shuffle-maptask.png", width="650px", alt="" %}
+> Transformation 操作如:repartition，join，cogroup，以及任何 *By 或者 *ByKey 的 Transformation 都需要 shuffle 数据9,合理的选用操作将降低 shuffle 操作的成本,提高运算速度
+
 3. 是通过什么管理shuffle中的内存，磁盘 的
 
+4. 讲讲谓词下推？
 
-2. How to use kung fu in daily life
+5. full outer join原理
+
+6. spark为什么比hive快
+
+7. 讲讲sparksql优化
+
+8. 讲讲RDD, DAG, Stage
+
+9. 说说groupByKey, reduceByKey
+
+10. spark是怎么读取文件,分片的？
+11. 有没有遇到过spark读取文件，有一些task空跑的现象？
+12. 窗口函数中 几个rank函数有啥不同（spark、hive中窗口函数实现原理复盘 Hive sql窗口函数源码分析 sparksql比hivesql优化的点（窗口函数））parquet文件和orc文件有啥不同mr shuffle 是什么样子？具体原理是什么？跟spark有什么不同？讲讲hive sql优化hive 数据倾斜参数原理讲讲spark内存模型？（从一个sql任务理解spark内存模型 ）
+
+**2. Show SQL**
+
+> 就会问还有没有更优化的方式？
+> 窗口函数，groupingsets cube这些 都会用到。有好多是计算滑动的那种
+> 这个sql 在hive中起几个job，为什么是这么几个job？
 
 3. Be confident and positive
 

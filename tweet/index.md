@@ -2,12 +2,25 @@
 date: 2016-07-16 16:59:48
 ---
 
+一件事无论太晚或者太早，都不会阻拦你成为你想成为的那个人，这个过程没有时间的期限，只要你想，随时都可以开始。from 《返老还童》
+
 ## Tweet
 
 <p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
-> `2022.05.17` SparkSQL Join & English BBC - 诸事不顺的一天 The English we We Speak 
+> `2022.05.19` English my work 
+> [2021 blair Notes](/2021/01/09/bi/dwh-summary-2-interview/) / [2020 Interview Questions - Data Warehouse](https://jishuin.proginn.com/p/763bfbd32925)
+> 
+> English:
+> 1. Financial bigdata collection, calculation, analysis and processing related dev work;
+> 2. Design and dev of financial data warehouse, including **cross-border remittance**, remittance between Hong Kong and China Mainland, study abroad payment [əˈbrôd], etc; data support of risk control, anti-money laundering and anti-fraud services;
+> 
+
+> `2022.05.18` English BBC - <如果在相遇,我会记得你> the good old songs
+> 
+
+> `2022.05.17` English BBC - 诸事不顺的一天 The English we We Speak 
 > 
 
 > `2022.05.16` [SGBike EXPLORE Changi Jurassic Mile: Cycling along Changi Airport Connector](https://www.sgbike.com.sg/post/cycle-along-changi-airport-connector-and-explore-changi-jurassic-mile)
