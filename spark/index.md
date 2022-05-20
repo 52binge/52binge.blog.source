@@ -15,6 +15,10 @@ valine:
 <p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
+
+> `2022.05.21` full outer join相对来说要复杂一点，full outer join仅采用sort merge join实现，左边和右表既要作为streamIter，又要作为buildIter
+> {% image "/images/spark/spark-full-outer-join.png", width="600px", alt="" %}
+
 > `2022.05.20` [Spark面试整理 hdc520 大全好总结](https://www.cnblogs.com/hdc520/p/12588379.html)
 > 1.1 [Spark处理数据比Hive快的原因](https://book.itheima.net/study/1269935677353533441/1270196659166420993/1270200848609222657)
 >
