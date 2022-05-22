@@ -1,5 +1,12 @@
 ---
 date: 2016-07-16 16:59:48
+music:
+  server: netease   # netease, tencent, kugou, xiami, baidu
+  type: song        # song, playlist, album, search, artist
+  id: 17423740      # song id / playlist id / album id / search keyword
+  autoplay: true
+valine:
+  placeholder: 有什么想对我说的呢？
 ---
 
 一件事无论太晚或者太早，都不会阻拦你成为你想成为的那个人，这个过程没有时间的期限，只要你想，随时都可以开始。from 《返老还童》
@@ -10,6 +17,7 @@ date: 2016-07-16 16:59:48
 </p>
 
 > `2022.05.22` 一期一会 シンガポール
+> いちごいちえ，是由日本茶道发展而来的词语。在茶道里，指表演茶道的人会在心里怀着“难得一面，世当珍惜”的心情来诚心礼遇面前每一位来品茶的客人。
 > {% image "/images/tw/japan-tea3.jpg", width="350px", alt="" %}
 
 > `2022.05.19` English my work 
