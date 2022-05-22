@@ -10,7 +10,7 @@ date: 2016-07-16 16:59:48
 </p>
 
 > `2022.05.22` 一期一会 シンガポール
-> いちごいちえ，是由日本茶道发展而来的词语。在茶道里，指表演茶道的人会在心里怀着“难得一面，世当珍惜”的心情来诚心礼遇面前每一位来品茶的客人。
+> いちごいちえ，chi-go ichi-e (Japanese: 一期一会, pronounced [it͡ɕi.ɡo it͡ɕi.e], lit. "one time, one meeting") is a Japanese four-character idiom (yojijukugo) that describes a cultural concept of treasuring the unrepeatable nature of a moment. The term has been translated as "for this time only", and "once in a lifetime". The term reminds people to cherish any gathering that they may take part in, citing the fact that any moment in life cannot be repeated; even when the same group of people get together in the same place again, a particular gathering will never be replicated, and thus each moment is always a once-in-a-lifetime experience.[1] The concept is most commonly associated with Japanese tea ceremonies, especially tea masters Sen no Rikyū and Ii Naosuke.
 > {% image "/images/tw/japan-tea3.jpg", width="350px", alt="" %}
 
 > `2022.05.19` English my work 
