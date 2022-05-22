@@ -12,17 +12,19 @@ valine:
 
 ## Business intelligence
 
-**BI：做正确的事，等待好事发生** 
+**BI：Do the right thing and wait for the good to happen** 
 
 1. [Spark面试整理 hdc520 大全好总结](https://www.cnblogs.com/hdc520/p/12588379.html)
-2. [2021 Leetcode](/2021/03/19/leetcode/2021-leetcode/)
+2. [2021 Leetcode all](/lc/) / [2021 Leetcode](/2021/03/19/leetcode/2021-leetcode/)
 3. SQL
 4. Project
 
 <p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
-> `2022.05.21` [2021 Leetcode](/2021/03/19/leetcode/2021-leetcode/)
+> `2022.05.22`  **binary-search**
+>  1.1 二分查找, while l <= r  1.2 two_sum (easy hash) 1.3 [3sum](https://leetcode.cn/problems/3sum/),(first, second, third)
+>  1.4 [34. 在排序数组中查找元素的第一个和最后一个位置](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/)
 
 > `2022.05.21` full outer join相对来说要复杂一点，full outer join仅采用sort merge join实现，左边和右表既要作为streamIter，又要作为buildIter
 > {% image "/images/spark/spark-full-outer-join.png", width="600px", alt="" %}
