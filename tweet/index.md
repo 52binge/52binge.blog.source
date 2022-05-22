@@ -2,15 +2,22 @@
 date: 2016-07-16 16:59:48
 ---
 
-一件事无论太晚或者太早，都不会阻拦你成为你想成为的那个人，这个过程没有时间的期限，只要你想，随时都可以开始。from 《返老还童》
-
 ## Tweet
 
 <p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
+> `2022.05.22` [《The Curious case of Benjamin Button》](https://zhuanlan.zhihu.com/p/402452475) 
+> 
+> For what it’s worth, it’s never too late,
+> Or in my case, too early, To be whoever you want to be.
+> There’s no time limit, stop whenever you want.
+> You can change or stay the same.
+> There’s no rules to this thing.
+> I hope you make the best of it.
+
 > `2022.05.22` 一期一会 シンガポール
-> いちごいちえ，chi-go ichi-e (Japanese: 一期一会, pronounced [it͡ɕi.ɡo it͡ɕi.e], lit. "one time, one meeting") is a Japanese four-character idiom (yojijukugo) that describes a cultural concept of treasuring the unrepeatable nature of a moment. The term has been translated as "for this time only", and "once in a lifetime". The term reminds people to cherish any gathering that they may take part in, citing the fact that any moment in life cannot be repeated; even when the same group of people get together in the same place again, a particular gathering will never be replicated, and thus each moment is always a once-in-a-lifetime experience.[1] The concept is most commonly associated with Japanese tea ceremonies, especially tea masters Sen no Rikyū and Ii Naosuke.
+> いちごいちえ，chi-go ichi-e is a Japanese four-character that describes a cultural concept of treasuring the unrepeatable nature of a moment. The term has been translated as "for this time only", and "once in a lifetime". The term reminds people to cherish any gathering that they may take part in, citing the fact that any moment in life cannot be repeated; even when the same group of people get together in the same place again, a particular gathering will never be replicated, and thus each moment is always a once-in-a-lifetime experience.[1] The concept is most commonly associated with Japanese tea ceremonies, especially tea masters Sen no Rikyū and Ii Naosuke.
 > {% image "/images/tw/japan-tea3.jpg", width="350px", alt="" %}
 
 > `2022.05.19` English my work 
