@@ -1,8 +1,14 @@
 ---
+title: Tweet
 date: 2016-07-16 16:59:48
+music:
+  server: netease   # netease, tencent, kugou, xiami, baidu
+  type: song        # song, playlist, album, search, artist
+  id: 17423740      # song id / playlist id / album id / search keyword
+  autoplay: true
+valine:
+  placeholder: 有什么想对我说的呢？
 ---
-
-## Tweet
 
 <p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
