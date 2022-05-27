@@ -14,6 +14,45 @@ valine:
 <p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
+> `2022.05.27` **阿滴English - tell me about your self?**
+> 
+> I've always wanted to work in the finance tech company because I have a passion for it and I think it has a lot of potential.
+>
+> In my senior year I also participated in an intership at DuDu Digital and stayed there for two full semesters.
+>
+> This allowed me to get hands-on experience about what works and what doesn't, putting what I learned in school into practice.
+>
+> During my time there, I successfully launched there marketing projects that gave the company 50% return on investment. Of course there were other projects that didn't go that well but I learned from those failures as well.
+>
+> Overall I have to say it was an extremely rewarding internship.
+>
+> Now that I've graduated, I fell like I'm ready to take on anything. I have studied in a relevant field and worked directly in the industry. I believe I have all the knowledge and skills needed to do well in the marketing field.
+>
+> `2022.05.26`
+> I've always wanted to work in the finance tech company because I have a passion for it and I think it has a lot of potential.
+>
+> This's why I focused on  marketing 
+>
+> Class Topic: Job interviews
+>
+> Class Goal: To use the English Language to express ideas and opinions as well as respond to lesson activities
+> Corrected Sentences
+>
+> One of my weakness is my second language skills which I am currently working on. 
+>
+> Lesson Vocabulary
+>
+> Target language
+>
+> • Describing a strength and giving extra information to support it: I'm very proactive. I try to fix problems before they become serious. / I'm enthusiastic about my work. I love being in sales. / My greatest strength is curiosity. I love to learn new things. / Persistence is my greatest strength. I don't give up until I succeed. / I'm a really good communicator. I'm especially good at listening.
+>
+> • Describing a weakness and giving extra information as to how you improved: I've had problems with public speaking, but my manager is coaching me, so I've improved quite a bit. / My technical knowledge was a bit weak, so I started taking computer classes at night. / My team told me that I needed to be a better listener. They're helping me work on that, and I've improved a lot.
+>
+> • Words related to strengths: clever, bright, sharp, ambitious, determined, understanding, sensitive, resilient, thick-skinned, confident
+>
+> • Words related to weaknesses: touchy, thin-skinned, insensitive, big-headed, arrogant, cocky
+
+
 > `2022.05.23` [How to Kick Ass in an English Interview](https://www.youtube.com/watch?v=AqpCPwlwEz8)
 >  **Q1: Can you tell me about yourself？**
 >
