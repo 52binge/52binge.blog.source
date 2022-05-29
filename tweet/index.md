@@ -17,6 +17,10 @@ valine:
 >
 > {% image "/images/tw/tw-reject-someone.png", width="650px", alt="" %}
 
+> 英文為何不能說 help me buy?
+>
+> {% image "/images/tw/tw-grab-lunch.png", width="550px", alt="I will pay you back" %}
+
 > `2022.05.27` 迷上 小红书
 
 > `2022.05.22` [《The Curious case of Benjamin Button》](https://zhuanlan.zhihu.com/p/402452475) 

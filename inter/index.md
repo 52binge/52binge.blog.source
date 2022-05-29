@@ -15,35 +15,21 @@ valine:
 </p>
 
 > `2022.05.29`
-> ### 1. tell me about yourself
->
+> **1. tell me about yourself**
 > My name is blair. 
 >
-> I have 7years related exp about data engineer . Ever since I graduated from university in 2014.  I’ve put my time into programming and data engineer related dev work.
+> I have 7years work exp related data engineer . Ever since I graduated from university in 2014.  I’ve put my time into programming and data engineer related dev work.
 >
-> now I working in Tencent Company, which is largest tech Chinese company in Asia.
+> now I working in Tencent Company Singapore brunch, which is largest tech company in Asia.
 >
-> 
+> I focused on financial bigdata collection, calculation, analysis and processing related dev work;
 >
-> #### 1.1 Academic Backgroud
-> #### 1.2 Professional Backgroud
-> #### 1.3 Fun Fact
-> #### 1.4 Why Career
-> #### 1.5 Why Company
->
-
-> 
->
-> ， about Finance Wise Foreign Exchange business。
->
-> I focus on financial bigdata collection, analysis and processing related dev work;
->
-> This allowed me to get hands-on experience about what works and what doesn’t.
+> This allowed me to get a deeper understanding of data warehouse modeling and spark etc..
 >
 > During my time there, I successfully build financial data warehouse projects that won the Company-level Business Breakthrough Award
 >
 > I believe I have all the knowledge and skills needed to do well in the data engineer field.
-
+>
 > **2. tech problem**
 > 
 > **3. project problem**
