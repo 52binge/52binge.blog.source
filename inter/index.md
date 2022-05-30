@@ -24,7 +24,7 @@ valine:
 >
 > I focused on financial bigdata collection, calculation, analysis and processing related dev work;
 >
-> This allowed me to get a deeper understanding of data warehouse modeling and spark etc..
+> This allowed me to get a deeper understanding of data warehouse modeling and spark knowledge..
 >
 > During my time there, I successfully build financial data warehouse projects that won the Company-level Business Breakthrough Award
 >
@@ -32,17 +32,39 @@ valine:
 >
 > **2. tech problem**
 > 
-> **3. project problem**
+> **3. project problem**  Tell me about a challenging project you have
 >
 > **4. bhv problem**
 >
->  4.1 Why are you interested in this job？
+>  **4.1 Why are you interested in this job？**
 >
->  4.2 Why did you leave your last job？
+> After looking at the job description, I found that…
 >
->  4.3 How Do you solve work conflict?
+> This is Why I’d love to have the opportunity to …
+>
+> I believe I would be able to…
+>
+>  **4.2 Why did you leave your last job？**
 > 
->  4.4 Do you work well under pressure?
+>    Quite simply…
+>
+>  4.3 [How Do You Handle Conflict in the Workplace?](https://www.indeed.com/career-advice/interviewing/handle-conflict-in-workplace)
+>
+>  Tell me about a time you disagreed with your boss.
+>
+> **Communication is key**
+>
+>  Many conflicts take place due to a lack of communication and understanding. For this reason, it is usually better to voice a difference in opinion immediately and in a civilized way, rather than allowing **underlying[ˌəndərˈlīiNG] resentment[rəˈzentmənt]** and anger to result in conflict.
+> 
+>  **4.4 [Do you work well under pressure?](https://www.indeed.com/career-advice/interviewing/interview-question-how-do-you-work-under-pressure)**
+>
+> One time I was supposed to deliver a project to a PM in five days. A colleague who was working with another PM had the same deadline, but he had to take a leave of absence due to personal reasons. I was forced to take up both projects at the same time, but I did not let the stress affect me. Instead, I came up with a very **`detailed time management plan`** and found new ways to **boost efficiency** that enabled me to deliver both projects on time. Although tired”
+>
+>  **4.5: Why should we hire u？**
+>
+> There are a couple of reasons why I think I’m a good fit for this position
+>
+> First of All 2. Another reason is that… 3. Finally
 
 
 > `2022.05.27` **阿滴English - tell me about your self?**
