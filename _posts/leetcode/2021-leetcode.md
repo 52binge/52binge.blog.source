@@ -263,8 +263,8 @@ No. | Question | Flag
 **easy** |  |  
 (1). | **Tree** |
 &nbsp; | [1.1 平衡二叉树](https://leetcode-cn.com/problems/ping-heng-er-cha-shu-lcof) <br> abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right) | ❎
-&nbsp; | [1.2 对称的二叉树](https://leetcode-cn.com/problems/dui-cheng-de-er-cha-shu-lcof) | ❎
-&nbsp; | [1.3 二叉树的镜像](https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof)： root.left = self.mirrorTree(root.right) `swap后+递归` | ❎
+&nbsp; | [1.2 对称的二叉树](https://leetcode-cn.com/problems/dui-cheng-de-er-cha-shu-lcof) <br> return root == None or isSymmetricHelper(root.left, root.right)| ❎
+&nbsp; | [1.3 二叉树的镜像](https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof)： `递归+swap后` <br>root.left = self.mirrorTree(root.right)<br>root.left = self.mirrorTree(root.right)<br>root.left = right;root.right = left   | ❎
 &nbsp; | [1.4 二叉搜索树的第k大节点](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/) &nbsp;&nbsp; [中序遍历 倒序, 右-中-左]  | ✔️❎ 
 good | [1.5 (两个节点)二叉树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/) &nbsp;&nbsp; [**Recursion**] 后序遍历+路径回溯 | ✔️❎ 
 good | [1.6 (两个节点)二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof) &nbsp;&nbsp; **Recursion** + 剪枝 | ✔️❎ 
@@ -291,5 +291,4 @@ class Solution:
         if root == None:
             return True
         return abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right)
-
 ```
