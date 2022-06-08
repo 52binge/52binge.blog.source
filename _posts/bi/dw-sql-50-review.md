@@ -1,8 +1,8 @@
 ---
 title: data analysis - SQL 50
 date: 2021-01-05 09:07:21
-categories: bi
-tags: [data warehouse]
+categories: sql
+tags: [sql50]
 ---
 
 {% image "/images/sql/sql-50-logo.jpg", width="500px", alt="" %}

@@ -1,7 +1,7 @@
 ---
 title: SQL vs NoSQL
 date: 2020-09-15 09:07:21
-categories: bi
+categories: sql
 tags: [SQL]
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: 猴子的图解SQL 学习笔记
 date: 2021-02-01 09:07:21
-categories: bi
-tags: [data warehouse]
+categories: sql
+tags: [🐒SQL]
 ---
 
 {% image "/images/sql/sql-50-logo.jpg", width="500px", alt="" %}

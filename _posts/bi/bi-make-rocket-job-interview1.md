@@ -1,7 +1,7 @@
 ---
 title: How to make rocket - SQL篇
 date: 2022-05-30 09:07:21
-categories: bi
+categories: sql
 tags: [BI]
 icons: [fas fa-fire red, fas fa-star green]
 thumbnail: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/heartmate/icon.png

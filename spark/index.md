@@ -16,7 +16,7 @@ valine:
 
 1. [Spark面试整理 hdc520 大全好总结](https://www.cnblogs.com/hdc520/p/12588379.html)
 2. [2021 Leetcode all](/lc/) / [2021 Leetcode](/2021/03/19/leetcode/2021-leetcode/)
-3. SQL
+3. [SQL](/categories/sql/)
 4. Project
 
 <p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">

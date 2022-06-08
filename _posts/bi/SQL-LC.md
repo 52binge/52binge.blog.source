@@ -1,7 +1,7 @@
 ---
 title: SQL@Leetcode
 date: 2021-01-26 09:07:21
-categories: bi
+categories: sql
 tags: [SQL]
 ---
 

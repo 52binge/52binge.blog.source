@@ -1,8 +1,8 @@
 ---
 title: data analysis - SQL 50 第1篇
 date: 2020-08-07 09:07:21
-categories: bi
-tags: [data warehouse]
+categories: sql
+tags: [sql50]
 ---
 
 {% image "/images/sql/sql-50-logo.jpeg", width="500px", alt="" %}
