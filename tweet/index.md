@@ -13,6 +13,8 @@ valine:
 <p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
+> Apple
+
 > `2022.05.29` reject someone politely
 >
 > {% image "/images/tw/tw-reject-someone.png", width="650px", alt="" %}

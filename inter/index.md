@@ -14,6 +14,49 @@ valine:
 <p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
+
+> `2022.06.07`
+> Average questions mostly on SQL, 1 question on data structure. In depth explanation of your current and recent projects. Another interview was based on architecture solutions for certain scenarios.
+>
+> 1. SQL questions like self joint
+> 2. python coding questions like sort algorithm
+>
+> First I had a phone screen with the hiring manager involving some Spark/Kafka questions. Then a phone screen with a common Leetcode question. After passing those I had a virtual onsite with five 1 hour interviews.
+>
+> First interview was with the HR person. Second interview was with the hiring manager. Third was a simple tech screen (sql). Next level was to meet the team, about 4 people at 45 min each.
+>
+> They asked pretty basic questions in the initial tech screen. Questions about lag/lead and how you might handle clickstream data.
+> String Manipulation questions (medium leetcode)
+> Couple SQL questions
+> Lot of Design based questions
+> Lots of SQL queries
+> Why Spark is preferred over Mapreduce?
+>
+```
+private static Map<String, Integer> namesToNumPurchases = new HashMap<String, Integer>() {{
+put("Chris", 10);
+put("Bob", 5);
+put("David", 5);
+put("Sue", 12);
+put("Jim", 3);
+}};
+
+/*
+Required output:
+
+3: Jim
+5: Bob, David
+10: Chris
+12: Sue
+*/
+```
+
+> Find the occurance position of string in sequence of chars.
+> difference between Python and Scala
+> SQL physical and logical schema, 2 problem solving/riddle questions
+> create market basket output from sql.
+
+
 > `2022.05.29`
 > **1. tell me about yourself**
 > My name is blair. 
