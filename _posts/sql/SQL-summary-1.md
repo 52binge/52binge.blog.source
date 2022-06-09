@@ -1,6 +1,6 @@
 ---
-title: How to make rocket - SQL篇
-date: 2022-05-30 09:07:21
+title: Leetcode SQL - Summary 1
+date: 2022-06-09 09:07:21
 categories: sql
 tags: [BI]
 icons: [fas fa-fire red, fas fa-star green]
@@ -17,9 +17,9 @@ thumbnail: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/heartmate/icon.png
 
 [SQL Leetcode Plan](https://leetcode.cn/study-plan/sql/?progress=8qjpxl7)
 
-1.1 [1699. Number of Calls Between Two Persons]()
+### 1.1 IF / GROUP BY
 
-知识: IF / GROUP BY
+1.1 [1699. Number of Calls Between Two Persons]()
 
 ```sql
 SELECT 
@@ -38,6 +38,8 @@ FROM
 GROUP BY 
     person1, person2
 ```
+
+### 1.2 BETWEEN sdate AND edate
 
 1.2 [1251. 平均售价 average_price](https://leetcode.cn/study-plan/sql/?progress=8qjpxl7)
 
@@ -59,6 +61,8 @@ FROM (
 GROUP BY product_id
 ```
 
+### 1.3 SUM / GROUP BY
+
 1.3 [1571. Warehouse Manager](https://leetcode.cn/problems/warehouse-manager/)
 
 知识: SUM / GROUP BY
@@ -76,6 +80,8 @@ ON
 GROUP BY w.name;
 ```
 
+### 1.4 SUM + CASE WHEN
+
 1.4 [1445. Apples & Oranges](https://leetcode.cn/problems/apples-oranges/)
 
 知识: SUM / CASE WHEN / GROUP BY / ORDER BY
@@ -88,6 +94,8 @@ FROM sales
     GROUP BY sale_date
     ORDER BY sale_date;
 ```
+
+### 1.5 COUNT / SUM / IF
 
 1.5 [1193. Monthly Transactions I](https://leetcode.cn/problems/monthly-transactions-i/)
 
@@ -119,6 +127,8 @@ GROUP BY
   country
 ```
 
+### 1.6 round(num, 2)
+
 1.6 [1633. Percentage of Users Attended a Contest](https://leetcode.cn/problems/percentage-of-users-attended-a-contest/)
 
 知识: `round(num, 2) / 子查询在SELECT里 / GROUP BY` [子查询在SELECT里 MYSQL 支持， Hive/Spark 不一定支持] 
@@ -143,6 +153,8 @@ select
 from Delivery
 ```
 
+### 1.8 AVG(rating<3) / SUM IF
+
 1.8 [1211. Queries Quality and Percentage](https://leetcode.cn/problems/queries-quality-and-percentage/)
 
 知识：**自从学会了AVG**  AVG(rating < 3) = AVG（条件）相当于sum（if（条件，1，0））/count(全体)
@@ -164,6 +176,82 @@ SELECT query_name
 	, round(100 * AVG(rating < 3), 2) AS poor_query_percentage
 FROM Queries
 GROUP BY query_name;
+```
+
+### 1.9 DATE_FORMAT / NOT IN
+
+1.9 [1607. Sellers With No Sales](https://leetcode.cn/problems/sellers-with-no-sales/)
+
+```sql
+-- DATE_FORMAT / WHERE NOT IN
+
+SELECT 
+    seller_name AS SELLER_NAME
+FROM 
+    Seller
+WHERE 
+    Seller.seller_id NOT IN (
+        SELECT DISTINCT seller_id AS id FROM Orders WHERE DATE_FORMAT(sale_date, "%Y") = 2020
+    )
+ORDER BY SELLER_NAME;
+``` 
+
+### 1.10 Group by + Having
+
+[619. Biggest Single Number](https://leetcode.cn/problems/biggest-single-number/)
+
+having只用于group by分组统计语句
+
+```sql
+select 
+    max(num) as num
+from
+    (
+        select
+            num
+        from 
+            MyNumbers
+        group by num
+        having count(num) = 1
+    ) t
+```
+
+### 1.11 dense_rank() over (part
+
+[1112. Highest Grade For Each Student](https://leetcode.cn/problems/highest-grade-for-each-student/)
+
+```sql
+# 窗口
+select 
+    student_id, 
+    course_id, 
+    grade 
+from 
+    (
+        select 
+            *,
+            dense_rank() over (partition by student_id order by grade desc, course_id) rk 
+        from enrollments
+    ) t
+where 
+    rk=1
+```
+
+### 1.12 Having+SUM(IF / Count(IF)
+
+[1398. Customers Who Bought Products A and B but Not C](https://leetcode.cn/problems/customers-who-bought-products-a-and-b-but-not-c/)
+
+```sql
+select 
+    o.customer_id customer_id,
+    c.customer_name customer_name
+ from 
+     orders o JOIN customers c ON o.customer_id = c.customer_id
+ group by o.customer_id 
+ having 
+    SUM(IF(o.product_name='A',1,0)) > 0 
+    AND SUM(IF(o.product_name='B',1,0)) > 0 
+    AND SUM(IF(o.product_name='C',1,0))=0
 ```
 
 ## BigData
