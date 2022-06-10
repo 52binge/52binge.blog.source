@@ -63,7 +63,7 @@ tags: Bali
 2. 金巴兰海滩 Jimbaran Beach - 世界十大最美落日海滩之一
 3. 库塔海滩 Kuta Beach
 4. [情人崖](https://www.mafengwo.cn/poi/13130.html)
-5. [海神庙 - 必去](https://www.mafengwo.cn/poi/13099.html)
+5. [海神庙](https://www.mafengwo.cn/poi/13099.html)
 6. 努沙杜瓦海滩 Nusa Dua - 巴厘岛的最南端
 7. 乌布市场 Ubud Market - 乌布皇宫 Ubud Palace
 8. 圣泉寺（Tirta Empul） - 必去
@@ -73,10 +73,6 @@ tags: Bali
 12. 布拉坦水神庙（Ulun Danu Bratan Temple）/蒂尔塔冈加水上花园（ Tirta Gangga Water Palace）
 13. 罗维纳🐬  时间有限
 14. 🌊佩尼达岛🏖宇宙级攻略
-
-[【微攻略】不止有一流酒店！一篇攻略为你解读巴厘岛的正确打开方式！](http://www.lvmama.com/lvyou/guide/mini-419.html)
-[15个您不可错过的巴厘岛Ins风景点](https://www.indonesia.travel/sg/zh-cn/trip-ideas/15-instagrammable-destination-s-you-must-visit-in-bali)
-[跟着ins网红解锁巴厘岛最适合拍照的景点](https://www.uniqueway.com/articles/island/3541.html)
 
 {% image "/images/world/Indonesia/bali-trip-map-2.jpg", width="700px", alt="" %}
 
@@ -101,7 +97,7 @@ tags: Bali
 >
 > D4 天空之门 + 水上宫殿 + 水神庙(待定)
 >
-> D5 🌊佩尼达岛🏖 OR 看海豚+水神庙（Ulun Danu Bratan Temple）(Klook上定即可)
+> D5 佩尼达岛🏖 OR 海豚之旅+水神庙（Ulun Danu Bratan Temple）(Klook上定即可)
 
 [TOP10【Bali巴厘岛】10个必去景点](http://oppasharing.com/article/21105/)
 [巴厘岛5日线路](https://www.mafengwo.cn/mdd/cityroute/10460_311.html)
@@ -134,7 +130,7 @@ tags: Bali
 
 天空之门Pura Lempuyang + 蒂尔塔冈加水上宫殿 + 水神庙(待定)
 
-## DAY5 佩尼达岛🏖/看海豚+水神庙
+## DAY5 海豚之旅+水神庙/佩尼达岛
 
 klook 上都有团
 
@@ -146,4 +142,7 @@ klook 上都有团
 
 ## Reference
 
-[巴厘岛旅游攻略 /  海洋珍珠，绮丽之岛——巴厘岛](https://www.mafengwo.cn/i/5589251.html?sys_ver=)
+- [【微攻略】不止有一流酒店！一篇攻略为你解读巴厘岛的正确打开方式！](http://www.lvmama.com/lvyou/guide/mini-419.html)
+- [15个您不可错过的巴厘岛Ins风景点](https://www.indonesia.travel/sg/zh-cn/trip-ideas/15-instagrammable-destination-s-you-must-visit-in-bali)
+- [跟着ins网红解锁巴厘岛最适合拍照的景点](https://www.uniqueway.com/articles/island/3541.html)
+- [巴厘岛旅游攻略 /  海洋珍珠，绮丽之岛——巴厘岛](https://www.mafengwo.cn/i/5589251.html?sys_ver=)
