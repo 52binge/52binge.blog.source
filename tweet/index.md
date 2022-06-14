@@ -20,11 +20,11 @@ valine:
 > bar: What's so special about the roof?
 >
 > {% image "/images/tw/shimmering-skyline.jpg", width="450px", alt="" %}
->
+
 > `2022.05.29` reject someone politely
 >
 > {% image "/images/tw/tw-reject-someone.png", width="450px", alt="" %}
-
+>
 > 英文為何不能說 help me buy?
 >
 > {% image "/images/tw/tw-grab-lunch.png", width="450px", alt="I will pay you back" %}
