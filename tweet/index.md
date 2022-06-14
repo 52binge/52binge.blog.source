@@ -13,15 +13,21 @@ valine:
 <p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
-> Apple
-
+> `2022.06.14` the moon, the stars, the shimmering skyline ， /ˈʃɪmərɪŋ/
+> ted: you are still here
+> ted: I say, like I don't really care but it's a nice surprise, wanna see the roof？
+> ted: I get her up the roof and the roof takes care of the rest
+> bar: What's so special about the roof?
+>
+> {% image "/images/tw/shimmering-skyline.jpg", width="450px", alt="" %}
+>
 > `2022.05.29` reject someone politely
 >
-> {% image "/images/tw/tw-reject-someone.png", width="650px", alt="" %}
+> {% image "/images/tw/tw-reject-someone.png", width="450px", alt="" %}
 
 > 英文為何不能說 help me buy?
 >
-> {% image "/images/tw/tw-grab-lunch.png", width="550px", alt="I will pay you back" %}
+> {% image "/images/tw/tw-grab-lunch.png", width="450px", alt="I will pay you back" %}
 
 > `2022.05.27` 迷上 小红书
 

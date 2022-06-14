@@ -1,5 +1,5 @@
 ---
-title: Professional Skill
+title: Business intelligence
 date: 2022-04-23 00:20:48
 music:
   server: netease   # netease, tencent, kugou, xiami, baidu
@@ -10,60 +10,30 @@ valine:
   placeholder: 有什么想对我说的呢？
 ---
 
-## Business intelligence
+Diligence is not a race against time, but **continuous**, dripping water wears through the rock. 
 
-**BI：Do the right thing and wait for the good to happen** 
+Plan | Time | Topic | Level2
+:---: | --- | --- | ---
+**2022.06** | | | 
+1. | 7:00~7:30 | HIMYM EP02 | 
+2. | 7:30~8:20 | [2021 leetcode](/2021/03/19/leetcode/2021-leetcode/) |  2.1 binary-search <br> 2.2 dfs + stack <br> 2.3 dynamic programming <br> 2.4 sliding window & hash 
+3. | 8:30~9:30 | spark basic | 3.1 mr vs spark (4) <br> 3.2 rdd / dataframe / dataset <br> 3.3 rdd operations - transformation + action <br> 3.4 cache + persist <br> 3.5 spark join 
+**2022.07** | | | 
+1. | 7:30~8:20 | sql window |  
+2. | 8:30~9:30 | project / spark |  
+3. | 8:30~9:30 | flink |  
 
-1. [Spark面试整理 hdc520 大全好总结](https://www.cnblogs.com/hdc520/p/12588379.html)
-2. [2021 Leetcode all](/lc/) / [2021 Leetcode](/2021/03/19/leetcode/2021-leetcode/)
-3. [SQL](/categories/sql/)
-4. Project
+> 1. [Spark面试整理 hdc520 大全好总结](https://www.cnblogs.com/hdc520/p/12588379.html) 2. [2021 Leetcode all](/lc/) / [2021 Leetcode](/2021/03/19/leetcode/2021-leetcode/) 3. [SQL](/categories/sql/)
 
 <p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
-## Leetcode
-
-No. | `2022.06.01`: Question **Tree** [剑指](https://leetcode-cn.com/problemset/lcof/) | flag 
-:---: | --- | ---
-(1). | **Tree** |
-&nbsp; | [1.1 平衡二叉树](https://leetcode-cn.com/problems/ping-heng-er-cha-shu-lcof) <br> def maxHigh(root): <br> &nbsp;&nbsp;  if root == None: return 0  <br> &nbsp;&nbsp;  return max(maxHigh(root.left), maxHigh(root.right)) + 1; <br><br> def isBalanced(self, root: TreeNode) -> bool: <br> &nbsp;&nbsp; abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right) | ❎
-&nbsp; | [1.2 对称的二叉树](https://leetcode-cn.com/problems/dui-cheng-de-er-cha-shu-lcof) <br> return root == None or isSymmetricHelper(root.left, root.right) <br> &nbsp;&nbsp;return isSymmetricHelper(left.left, right.right) and isSymmetricHelper(left.right, right.left)| ❎
-&nbsp; | [1.3 二叉树的镜像](https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof)： `递归+swap后` <br>root.left = self.mirrorTree(root.right)<br>root.left = self.mirrorTree(root.right)<br>root.left = right;root.right = left   | ❎
-&nbsp; | [1.4 二叉搜索树的第k大节点](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/) &nbsp;&nbsp; [中序遍历 倒序, 右-中-左]  | ✔️❎ 
-good | [1.5 (两个节点)二叉树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/) &nbsp;&nbsp; [**Recursion**] 后序遍历+路径回溯 | ✔️❎ 
-good | [1.6 (两个节点)二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof) &nbsp;&nbsp; **Recursion** + 剪枝 | ✔️❎ 
-good | [1.7 二叉树中和为某一值的路径](https://leetcode-cn.com/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof) `递归回溯` | ✔❎️
-&nbsp; | [1.8 二叉搜索树的后序遍历序列](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof) | ❎
-&nbsp; | [1.9 二叉搜索树与双向链表](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/) {% image "/images/leetcode/binary-tree-delinkedlist.png", width="400px", alt="" %} |
-additional | 求二叉树第K层的节点个数 [**Recursion**] ，root != None and k==1，返回1  <br>  f(root.left, k-1) + f(root.right, k-1) | ❎
-additional | 求二叉树第K层的叶子节点个数 [**Recursion**]  <br> if(k==1 and root.left and root.right is null) return 1; | ✔️❎
-
-```python
-class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
-
-class Solution:
-    def isBalanced(self, root: TreeNode) -> bool:
-        def maxHigh(root):
-            if root == None:
-                return 0
-            return max(maxHigh(root.left), maxHigh(root.right)) + 1
-
-        if root == None:
-            return True
-        return abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right)
-```
-
 > `2022.05.27`: review: **spark vs MR**   [Spark面试整理 hdc520 大全好总结](https://www.cnblogs.com/hdc520/p/12588379.html)
 >
-> 1. DAG计算模型. spark遇到宽依赖才会出现shuffer，而hadoop每次MapReduce都会有一次shuffer；
+> 1. DAG计算模型. spark遇到 wide dependency 才会出现shuffer，而hadoop每次MapReduce都会有一次shuffer；
 > 2. MapReduce 每次shuffle 操作后，必须写到磁盘, 而spark可以 cache/persist.   RDD在每次transformation后并不立即执行，而且action后才执行，有进一步减少了I/O操作。
 > 3. MR它必须等map输出的所有数据都写入本地磁盘文件以后，才能启动reduce操作
-> 4. 利用多线程来执行具体的任务（Hadoop MapReduce采用的是进程模型），减少任务的启动和切换开销；
+> 4. spark 利用多线程来执行具体的任务（Hadoop MapReduce采用的是进程模型），减少任务的启动和切换开销；
 >
 > **spark的RDD与DataFrame以及Dataset的区别**
 > **（1）RDD特点**
@@ -291,3 +261,22 @@ having count(1) >= 3;
 ## 5. Spark Interview
 
 - [5.1 RDD、DataFrame和DataSet的区别](/2021/01/03/spark/spark-rdd-ds-df/)
+
+```python
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+class Solution:
+    def isBalanced(self, root: TreeNode) -> bool:
+        def maxHigh(root):
+            if root == None:
+                return 0
+            return max(maxHigh(root.left), maxHigh(root.right)) + 1
+
+        if root == None:
+            return True
+        return abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right)
+```
