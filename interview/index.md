@@ -14,6 +14,20 @@ valine:
 <p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
+Diligence is not a race against time, but **continuous**, dripping water wears through the rock. 
+
+Plan | Time | Topic | Level2
+:---: | --- | --- | ---
+**2022.06** | | | 
+1. | 7:00~7:30 | SQL | 
+2. | 7:30~8:20 | [2021 leetcode](/2021/03/19/leetcode/2021-leetcode/) |  2.1 binary-search <br> 2.2 dfs + stack <br> 2.3 dynamic programming <br> 2.4 sliding window & hash 
+3. | 8:30~9:30 | spark basic | 3.1 mr vs spark (4) <br> 3.2 rdd / dataframe / dataset <br> 3.3 rdd operations - transformation + action <br> 3.4 cache + persist <br> 3.5 spark join
+4. | 20:30~22:30 | English | HIMYM EP02  
+**2022.07** | | | 
+1. | 7:30~8:20 | sql window |  
+2. | 8:30~9:30 | project / spark |  
+3. | 8:30~9:30 | flink |  
+
 
 > `2022.06.07`
 > Average questions mostly on SQL, 1 question on data structure. In depth explanation of your current and recent projects. Another interview was based on architecture solutions for certain scenarios.
