@@ -13,6 +13,19 @@ valine:
 <p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
+> `2022.06.15` Moives : sicence fiction / curious / Jurassic park
+>
+> Don’t be afraid to make mistakes.
+> Practise every day.
+> Practise the 4 core skills: reading, writing, speaking and listening.
+> Keep a notebook of new words you learn
+> Do a lesson at least once a day.
+> Don’t directly translate into English from your own language.
+> The most natural way to learn a grammar is through talking.
+> Make use of the internet. It’s full of resources to help you learn.
+> Watch television and films in English.
+> Learn a new word a day and use it in real conversations. You need to build an active vocabulary.
+
 > `2022.06.15` Can I show you the roof?
 > {% image "/images/tw/himym-show-your-the-roof.jpg", width="450px", alt="" %}
 > bar: It's magical up there. 
