@@ -44,11 +44,11 @@ Plan | Time | Topic | Level2
 ### 2.2 dfs + stack
 
 1. 字符串解码 “3[a2[c]]” == “accacc”, stack == [(3, ""), (2,"a")]
-2. 数组中的第K个最大元素 【heapify(hp) , heappop(hp), heappush(hp, v) 】
+2. **The Kth largest element in the array** 【heapify(hp) , heappop(hp), heappush(hp, v) 】
 
 ```python
 from heapq import heapify, heappush, heappop 
-# python中的heap是小根堆:  heapify(hp) , heappop(hp), heappush(hp, v) 
+# The heap in python is a small root heap:  heapify(hp) , heappop(hp), heappush(hp, v) 
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
         n = len(nums)
@@ -72,7 +72,7 @@ class Solution:
 
 ### 2.4 sliding window & hash
 
-## 3. Spark
+## 3. Spark & Spark SQL
 
 3.1 mr vs spark (4)
 3.2 rdd / dataframe / dataset
@@ -82,9 +82,16 @@ class Solution:
 
 ## 4. Project
 
-## 5. Flink
+## 5. BI
 
-## 6. English
+1. OLTP / OLAP [On-line Analytical Processing](/2020/08/01/bi/dw-wy-1-basic/)
+2. ETL -> ODS -> DIL(DWD)/DIM -> DML(DWM) / APP(DAL)/DIM 
+3. Hive -> DDL / DML / Select / Function 
+4. [data warehouse review 6](/2020/10/01/bi/dwh-summary-1-warehouse-theory/)
+
+## 6. Flink & Flink SQL
+
+## 7. English
 
 > `2022.06.07`
 > Average questions mostly on SQL, 1 question on data structure. In depth explanation of your current and recent projects. Another interview was based on architecture solutions for certain scenarios.
