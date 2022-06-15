@@ -89,6 +89,11 @@ class Solution:
 3. Hive -> DDL / DML / Select / Function 
 4. [data warehouse review 6](/2020/10/01/bi/dwh-summary-1-warehouse-theory/)
 
+> **大数据是 database+分布式体系结构的结合**
+>
+>
+
+
 ## 6. Flink & Flink SQL
 
 ## 7. English
