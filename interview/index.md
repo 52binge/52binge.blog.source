@@ -39,10 +39,38 @@ Plan | Time | Topic | Level2
 
 ## 2. Leetcode
 
-2.1 binary-search
-2.2 dfs + stack
-2.3 dynamic programming
-2.4 sliding window & hash
+### 2.1 binary-search
+
+### 2.2 dfs + stack
+
+1. 字符串解码 “3[a2[c]]” == “accacc”, stack == [(3, ""), (2,"a")]
+2. 数组中的第K个最大元素 【heapify(hp) , heappop(hp), heappush(hp, v) 】
+
+```python
+from heapq import heapify, heappush, heappop 
+# python中的heap是小根堆:  heapify(hp) , heappop(hp), heappush(hp, v) 
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        if k == 0 or k > n:
+            return []
+        
+        hp = nums[:k]
+
+        heapify(hp)
+
+        for i in range(k, n):
+            v = nums[i]
+            if v > hp[0]:
+                heappop(hp)
+                heappush(hp, v)
+
+        return hp[0]
+```
+
+### 2.3 dynamic programming
+
+### 2.4 sliding window & hash
 
 ## 3. Spark
 

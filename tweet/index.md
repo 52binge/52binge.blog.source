@@ -13,11 +13,30 @@ valine:
 <p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
+> `2022.06.15` Can I show you the roof?
+> {% image "/images/tw/himym-show-your-the-roof.jpg", width="450px", alt="" %}
+> bar: It's magical up there. 
+> ted: I got that roof reserved.
+
+> `2022.06.14` **Making decisions:** I was born and raised in China. 
+> What other things can help you choose?  weather, local food and local culture 
+>
+> 1.1 The local culture is the most important. 
+> 1.2 The weather is the second most important. 
+> 1.3 The local food is the least important. 
+>
+> **Role Play:**  I don´t think Balin is a good choice
+> 2.1 We can also see animals. 
+> 2.2 It can make me feel relaxed. 
+> 2.3 I will feel more relaxed in Tala than Balin because the activities are relaxing. 
+> 2.4 If we go to Balin we won´t/ will not feel like we´re on vacation because it´s close to our company. 
+
 > `2022.06.14` the moon, the stars, the shimmering skyline ， /ˈʃɪmərɪŋ/
 > ted: you are still here
 > ted: I say, like I don't really care but it's a nice surprise, wanna see the roof？
 > ted: I get her up the roof and the roof takes care of the rest
 > bar: What's so special about the roof?
+> lily: You can't not fall in love on that roof. .... I work with Carlos. Anyone know a Carlos? 
 >
 > {% image "/images/tw/shimmering-skyline.jpg", width="450px", alt="" %}
 
