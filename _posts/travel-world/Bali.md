@@ -140,7 +140,7 @@ No. | Card | Status
 
 ## DAY6 京打马尼火山 Kintamani Volcano
 
-漂流 + 京打马尼火山 Kintamani Volcano
+漂流 + 京打马尼火山 Kintamani Volcano 金塔马尼巴杜尔火山口日出四驱车＆日出登山健行之旅
 
 ## DAY7 佩尼达岛
 
