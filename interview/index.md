@@ -35,9 +35,9 @@ No. | Question | Answer
 2. | SQL：如何查找第N高的数据？ | limit 1, n
 3. | SQL：查找不在表里的数据    | t1 & t2 join, where t2.field = NULL
 4. | SQL：如何比较日期数据？ <br> [197. Rising Temperature](https://leetcode.cn/problems/rising-temperature/) | 自关联 + datediff
-5. | SQL：如何找出最小的N个数？ |
-6. | SQL：连续出现N次的内容？ |
-7. | SQL：经典topN问题 |
+5. | SQL：各科成绩平均分大于80分的人数和人数占比 | sum(case when 1, 0), count(b.id) <br> join (select avg(score) from t group id)
+6. | SQL：连续出现N次的内容？ | 方法2： window function, lead, where
+7. | SQL：经典topN问题 | window function: row_number() over (partition by .. order by.. 
 
 ## 2. Leetcode
 
