@@ -14,7 +14,12 @@ valine:
 </p>
 
 > `2022.06.18` Moives by Robert V.
-> 《Passengers》
+> 《Passengers》2016 by Jennifer Lawrence / Chris Pratt
+>
+> [Pierce Brosnan Hosts the 2019 Breakthrough Prize Ceremony](https://www.youtube.com/watch?v=FNcnaknGJ4E)
+>
+> \<LIGHT YEARS AWAY\> It is also the theme song of the movie " Space Traveler " in China, G.E.M.
+> Lionel Richie: 2019 Breakthrough Prize Ceremony
 
 > `2022.06.15` Moives : sicence fiction / curious / Jurassic park
 >
