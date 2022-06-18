@@ -13,6 +13,9 @@ valine:
 <p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
+> `2022.06.18` Moives by Robert V.
+> 《Passengers》
+
 > `2022.06.15` Moives : sicence fiction / curious / Jurassic park
 >
 > Don’t be afraid to make mistakes.
