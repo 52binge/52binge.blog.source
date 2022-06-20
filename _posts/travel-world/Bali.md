@@ -97,7 +97,7 @@ DPS - Denpasar-Bali | 16Jul | 14:10-20:55 | T2-I
 
 Day | Date | Dest | Desc | hotel
 :-------: | :-------: | :------- | :------- | :------- 
-DAY1 | 16Jul | Bali | 新加坡 → Bali (20:55) → 接机 → Hotel | Amadea Resort & Villas Seminyak Bali <br> Jl. Laksamana 55 (Oberoi Road) <br> Seminyak
+DAY1 | 16Jul | Bali | 新加坡 → Bali → 接机 → Hotel | Amadea Resort & Villas Seminyak Bali <br> Jl. Laksamana 55 (Oberoi Road) <br> Seminyak
 DAY2 | 17Jul | Bali | → 乌鲁瓦图情人崖 Uluwatu Nyang-Nyang Beach (0.5h) <br> → 库塔海滩 Kuta Beach(surfer's paradise) (3h) <br> → 海神庙 Tanah Lot (必去) <br> → 金巴兰海滩 Jimbaran beach+Rock Bar  | ..
 DAY3 | 18Jul | Bali | → 圣泉寺 Pura Tirta Empul (1.5小时) <br> → 德格拉朗梯田 Tegallalang Rice Terrace (1小时) 《稻香》MV取景地 <br> → 乌布皇宫 Puri Saren (0.5小时) <br> → 乌布市场 Ubud Pasar (3小时) | 待定
 DAY4 | 19Jul | Bali | → [klook-蓝梦岛&金银岛一日 浮潜+恶魔眼泪/Toyapakeh墙/黄桥/蓝色泻湖等](https://www.klook.com/zh-CN/activity/21676-nusa-lembongan-ceningan-tour-bali/) 79.5S$ 2+人成团 <br> 08:00 Meet up and check in 渡轮出发前往蓝梦岛  <br> → [浪花朵朵巴厘岛蓝梦岛一日游出海潜水旅游浮潜红树林](https://traveldetail.fliggy.com/item.htm?spm=a220m.1000858.1000725.1.6e8d4a19cVBDlE&id=526572896127&skuId=4476733131076&areaId=440100&user_id=2073168184&cat_id=2&is_b=1&rn=2b5b66161a5796b6f06ce5b02583c3ab)
