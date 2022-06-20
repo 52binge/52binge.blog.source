@@ -102,13 +102,13 @@ DPS - Denpasar-Bali | 16Jul | 14:10-15:15 | T2-I
 Day | Date | Dest | Desc | hotel
 :-------: | :-------: | :------- | :------- | :------- 
 DAY1 | 16Jul | Bali | 新加坡 → Bali → 接机 → Hotel | Amadea Resort & Villas Seminyak Bali <br> Jl. Laksamana 55 (Oberoi Road) <br> Seminyak
-DAY2 | 17Jul | Bali | 情人崖(0.5小时) → 库塔海滩 Kuta (3小时) → 海神庙 <br><br> 金巴兰+RockBar 努沙杜瓦海滩(1-3小时) | ..
-DAY4 | 18Jul | Bali | 圣泉寺(1.5小时) → 德格拉朗梯田(1小时) → 乌布皇宫(0.5小时) → 乌布市场(3小时) <br><br> 周杰伦《稻香》Mv取景地 <br><br> 象窟-梯田-圣泉寺-午饭（眺望阿贡火山）-Sekumal瀑布-善恶之门
-DAY3 | 19Jul | Bali |  → [klook 蓝梦岛 & 金银岛一日游 + 浮潜 + 恶魔的眼泪](https://www.klook.com/zh-CN/activity/21676-nusa-lembongan-ceningan-tour-bali/) <br>  → [浪花朵朵巴厘岛蓝梦岛一日游出海潜水旅游浮潜红树林](https://traveldetail.fliggy.com/item.htm?spm=a220m.1000858.1000725.1.6e8d4a19cVBDlE&id=526572896127&skuId=4476733131076&areaId=440100&user_id=2073168184&cat_id=2&is_b=1&rn=2b5b66161a5796b6f06ce5b02583c3ab)
-DAY5 | 20Jul | Bali | 天空之门Pura Lempuyang → 蒂尔塔冈加水上宫殿 | INS
-DAY6 | 21Jul | Bali | 佩尼达岛 [巴厘岛🌊宇宙级攻略](http://www.xiaohongshu.com/discovery/item/5dd138bd00000000010066fb?source=question)
-DAY7 | 22Jul | Bali | 海豚之旅+水神庙 [巴厘岛看海豚+水神庙私人团一日游](https://www.klook.com/zh-CN/activity/17746-dolphin-watching-ulun-danu-trip-bali/?spm=SearchResult.SearchResult_LIST&clickId=e35fbbf511)
-DAY8 | 23Jul | Bali | 巴厘岛雷吉安海滩冲浪课程 → 金巴兰海鲜晚餐 RockBar → Spa 都在klook <br><br> 京打马尼火山 Kintamani Volcano 金塔马尼巴杜尔火山口日出四驱车＆日出登山健行之旅 <br>巴厘岛巴图尔火山半日游【吉普车+黑熔岩+天然温泉】
+DAY2 | 17Jul | Bali | → 乌鲁瓦图情人崖 Uluwatu Nyang-Nyang Beach (0.5h) <br> → 库塔海滩 Kuta Beach(surfer's paradise) (3h) <br> → 海神庙 Tanah Lot <br> → 金巴兰海滩 Jimbaran beach+Rock Bar  | ..
+DAY4 | 18Jul | Bali | → 圣泉寺 Pura Tirta Empul (1.5小时) <br> → 德格拉朗梯田 Tegallalang Rice Terrace (1小时) 《稻香》<br> → 乌布皇宫 Puri Saren (0.5小时) <br> → 乌布市场 Ubud Pasar (3小时) 
+DAY3 | 19Jul | Bali | → [klook 蓝梦岛 & 金银岛一日游 + 浮潜 + 恶魔的眼泪](https://www.klook.com/zh-CN/activity/21676-nusa-lembongan-ceningan-tour-bali/) <br>  → [浪花朵朵巴厘岛蓝梦岛一日游出海潜水旅游浮潜红树林](https://traveldetail.fliggy.com/item.htm?spm=a220m.1000858.1000725.1.6e8d4a19cVBDlE&id=526572896127&skuId=4476733131076&areaId=440100&user_id=2073168184&cat_id=2&is_b=1&rn=2b5b66161a5796b6f06ce5b02583c3ab)
+DAY5 | 20Jul | Bali | → 天空之门 Pura Lempuyang <br> → 蒂尔塔冈加水上宫殿 Tirta Gangga <br> → Sekumal瀑布 <br> → 善恶之门 Handara Gate | INS
+DAY6 | 21Jul | Bali | → 佩尼达岛 [巴厘岛🌊宇宙级攻略](http://www.xiaohongshu.com/discovery/item/5dd138bd00000000010066fb?source=question)
+DAY7 | 22Jul | Bali | → 海豚之旅[巴厘岛看海豚+水神庙私人团一日游](https://www.klook.com/zh-CN/activity/17746-dolphin-watching-ulun-danu-trip-bali/?spm=SearchResult.SearchResult_LIST&clickId=e35fbbf511) <br> → 水神庙 Ulun Danu Beratan Temple 
+DAY8 | 23Jul | Bali | → 巴厘岛雷吉安海滩冲浪课程 → 金巴兰海鲜晚餐 RockBar → Spa 都在klook <br><br> 京打马尼火山 Kintamani Volcano 金塔马尼巴杜尔火山口日出四驱车＆日出登山健行之旅 <br>巴厘岛巴图尔火山半日游【吉普车+黑熔岩+天然温泉】
 DAY9 | 24Jul | SG | 
 
 
