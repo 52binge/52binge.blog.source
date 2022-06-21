@@ -76,6 +76,21 @@ class Solution:
 
 ## 3. Spark & Spark SQL
 
+### 3.1 Spark Basic
+
+1. Spark History / Why Spark / Spark Components (SparkCore & SparkSQL) / Ecosystem 
+2. Spark Features
+3. Resilient Distributed Dataset – RDD
+→ a. Ways to create Spark RDD
+→ b. Spark RDDs operations (`Transformation`/`Action`)
+→ c. Sparkling Features of Spark RDD (`Lazy Evaluation`/`Fault Tolerance`/`Partitioning`/`Parallel`)
+
+### 3.2 SparkSQL
+
+### 3.3 SparkInterview
+
+### 3.4 SparkSQL 源码解读
+
 3.1 mr vs spark (4)
 3.2 rdd / dataframe / dataset
 3.3 rdd operations - transformation + action
