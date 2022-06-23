@@ -145,7 +145,6 @@ DAY2 | 17Jul | Bali | → 乌鲁瓦图情人崖 Uluwatu Nyang-Nyang Beach (0.5h)
 2. 金银岛 Nusa Ceningan
 2.1 蓝色泻湖（Blue Lagoon）
 2.2 金银岛悬崖风景 Mahana Jumping Point
-2.3 海峡飞狐（Abyss Zipline）
 
 **DAY6-21Jul**
 
