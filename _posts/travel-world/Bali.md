@@ -107,12 +107,82 @@ DAY7 | 22Jul | Bali | → Lovina 罗维纳🐬海豚之旅[巴厘岛看海豚+�
 DAY8 | 23Jul | Bali | → Kuta/雷吉安 海滩冲浪课程 <br> → 金巴兰海鲜晚餐 RockBar → Spa 都在klook <br> → 阿勇河漂流 （Ayung River Rafting）(待定) <br> ~~京打马尼火山 Kintamani Volcano 金塔马尼巴杜尔火山口日出四驱车＆日出登山健行之旅 <br>巴厘岛巴图尔火山半日游【吉普车+黑熔岩+天然温泉】~~ | 
 DAY9 | 24Jul | SG | 09:00 ~ 11:40
 
-## 6. 辅助信息
+## 6. 详细路线
 
 {% image "/images/world/Indonesia/bali-trip-0.jpg", width="500px", alt="" %}
 
+**DAY1-16Jul** 抵达
+
+**DAY2-17Jul**
+
+→ 乌鲁瓦图情人崖 Uluwatu Nyang-Nyang Beach (0.5h) 
+→ 海神庙 Tanah Lot (必去) 
+→ 圣泉寺 Pura Tirta Empul (1.5小时) 
+→ 梦幻大树秋千BALI SWING 
+→ 德格拉朗梯田 Tegallalang Rice Terrace (1小时) 《稻香》MV取景地
+→ 品尝猫屎咖啡☕️ 
+→ 乌布皇宫 Puri Saren (0.5h) 
+→ ~~乌布市场 Ubud Pasar (3h) 【可以忽略, 放在后面】~~
+
+**DAY3-18Jul**
+
+→ 网红瀑布 Sekumal
+→ 天空之门 Pura Lempuyang (远眺阿贡火山的全貌)
+→ 蒂尔塔冈加水上宫殿（Tirta Gangga Magical Water Palace）
+→ ~~~~登安南村（Tenganan Village）~~
+→ 乌布市场 Ubud Pasar (3h)
+
+**DAY4-19Jul**
+
+佩尼达岛 Nusa Penida [(Klook一日游提前定)](https://www.klook.com/en-SG/activity/15758-nusa-penida-full-day-trip-bali/?spm=SearchResult.SearchResult_LIST&clickId=37a0e582a2)
+💘①第一站：Angel’s Billabong天神浴池
+💘②第二站：Broken Beach天神裂缝
+💘③第三站：Kelingking Beach精灵沙滩
+💘④第四站：crystal bay水晶沙滩
+💘④ + 浮潜 snorkeling
+
+**DAY5-20Jul**
+
+蓝梦岛 Nusa Lembongan & 金银岛 Nusa Ceningan  
+1. 蓝梦岛 Nusa Lembongan
+1.1 恶魔之泪（Devil's Tears）
+1.2 梦幻海滩（dream beach）
+1.3 红树林 Mangrove Forest Nusa Lembongan
+1.4 蓝梦岛浮潜 （Lembongan Diving）
+2. 金银岛 Nusa Ceningan
+2.1 蓝色泻湖（Blue Lagoon）
+2.2 金银岛悬崖风景 Mahana Jumping Point
+2.3 海峡飞狐（Abyss Zipline）
+
+**DAY6-21Jul**
+
+→ 库塔冲浪🏄🏻 Kuta Beach(surfer's paradise)
+→ 金巴兰海滩 Jimbaran beach
+→ Rock Bar (可以略过,放在后面)
+
+**DAY7-22Jul**
+
+Lovina海豚之旅 (3:00am)
+→ 🐬dolphins
+→ 水神庙 Ulun Danu Beratan Temple
+→ ~~善恶之门 Handara Gate~~
+
+**DAY8-23Jul**
+
+奥巴马同款-五星级漂流
+
+→ 阿勇河漂流（Ayung River)
+→ 京打马尼火山湖畔泡温泉
+→ 乌布市场 Ubud Pasar
+
+**DAY9-24Jul** 返程
+
+## 7. 辅助信息
+
+
 ## Reference
 
+- [网红最新小众玩法，让你的巴厘岛自由行刷爆朋友圈](http://www.mafengwo.cn/gonglve/ziyouxing/282064.html)
 - [TOP10【Bali巴厘岛】10个必去景点](http://oppasharing.com/article/21105/)
 - [巴厘岛5日线路](https://www.mafengwo.cn/mdd/cityroute/10460_311.html)
 - [【微攻略】不止有一流酒店！一篇攻略为你解读巴厘岛的正确打开方式！](http://www.lvmama.com/lvyou/guide/mini-419.html)
