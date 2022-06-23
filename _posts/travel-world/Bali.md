@@ -149,9 +149,11 @@ DAY2 | 17Jul | Bali | → 乌鲁瓦图情人崖 Uluwatu Nyang-Nyang Beach (0.5h)
 
 **DAY6-21Jul**
 
-→ 京打马尼火山湖畔泡温泉 Kintamani Volcano
-→ 巴图尔湖边单车 Bike tour around Lake Danau Batur
-→ 泡火山温泉 Soak in volcanic hot spring
+奥巴马同款-五星级漂流
+
+→ 阿勇河漂流（Ayung River)
+→ 库塔冲浪🏄🏻 Kuta Beach(surfer's paradise)
+→ 金巴兰海滩 Jimbaran beach + Rock Bar
 
 **DAY7-22Jul**
 
@@ -162,11 +164,10 @@ Lovina海豚之旅 (3:00am)
 
 **DAY8-23Jul**
 
-奥巴马同款-五星级漂流
+→ 京打马尼火山湖畔泡温泉 Kintamani Volcano
+→ 巴图尔湖边单车 Bike tour around Lake Danau Batur
+→ 泡火山温泉 Soak in volcanic hot spring
 
-→ 阿勇河漂流（Ayung River)
-→ 库塔冲浪🏄🏻 Kuta Beach(surfer's paradise)
-→ 金巴兰海滩 Jimbaran beach + Rock Bar
 
 **DAY9-24Jul** 返程
 
