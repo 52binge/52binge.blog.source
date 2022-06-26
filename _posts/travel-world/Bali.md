@@ -129,12 +129,10 @@ DAY2 | 17Jul | Bali | → 乌鲁瓦图情人崖 Uluwatu Nyang-Nyang Beach (0.5h)
 
 **DAY4-19Jul**
 
-佩尼达岛 Nusa Penida [(Klook一日游提前定)](https://www.klook.com/en-SG/activity/15758-nusa-penida-full-day-trip-bali/?spm=SearchResult.SearchResult_LIST&clickId=37a0e582a2)
-💘①第一站：Angel’s Billabong天神浴池
-💘②第二站：Broken Beach天神裂缝
-💘③第三站：Kelingking Beach精灵沙滩
-💘④第四站：crystal bay水晶沙滩
-💘④ + 浮潜 snorkeling
+Lovina海豚之旅 (3:00am)
+→ 🐬dolphins
+→ 水神庙 Ulun Danu Beratan Temple
+→ ~~善恶之门 Handara Gate~~
 
 **DAY5-20Jul**
 
@@ -153,18 +151,20 @@ Lembongan Island, Lembongan
 
 **DAY6-21Jul**
 
+佩尼达岛 Nusa Penida [(Klook一日游提前定)](https://www.klook.com/en-SG/activity/15758-nusa-penida-full-day-trip-bali/?spm=SearchResult.SearchResult_LIST&clickId=37a0e582a2)
+💘①第一站：Angel’s Billabong天神浴池
+💘②第二站：Broken Beach天神裂缝
+💘③第三站：Kelingking Beach精灵沙滩
+💘④第四站：crystal bay水晶沙滩
+💘④ + 浮潜 snorkeling
+
+**DAY7-22Jul**
+
 奥巴马同款-五星级漂流
 
 → 阿勇河漂流（Ayung River)
 → 库塔冲浪🏄🏻 Kuta Beach(surfer's paradise)
 → 金巴兰海滩 Jimbaran beach + Rock Bar
-
-**DAY7-22Jul**
-
-Lovina海豚之旅 (3:00am)
-→ 🐬dolphins
-→ 水神庙 Ulun Danu Beratan Temple
-→ ~~善恶之门 Handara Gate~~
 
 **DAY8-23Jul**
 
