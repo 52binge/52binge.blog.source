@@ -1,6 +1,6 @@
 ---
-title: 2021 Leetcode
-date: 2021-03-19 10:54:16
+title: 2022 Leetcode
+date: 2022-06-27 07:54:16
 categories: leetcode
 tags: leetcode
 ---
@@ -11,7 +11,12 @@ tags: leetcode
 
 <!--  {% image /images/leetcode/python-leetcode.jpg, width=500px, alt=leetCode %} -->
 
+- [visualgo](https://visualgo.net/en/sorting)
+- [bigocheatsheet](https://www.bigocheatsheet.com/)
+
+
 ## 1. binary-search
+
 
 **1.1 二分查找, while l <= r**
 
@@ -194,14 +199,37 @@ class Solution:
         return hp[0]
 ```
 
-## 3. DP 
+## 3. dynamic programming 
+
+Using dynamic programming to solve problems is generally 3 steps:
+
+1. state
+2. Find the state transition equation
+3. Boundary processing
+
+When analyzing the state of the problem, don't analyze the whole, just analyze the last stage! Because dynamic programming problems are divided into multiple stages, the state representation of each stage is the same, and our final answer is in the last stage.
+
+### 3.1 
+
+爬楼梯 climbing-stairs ， ✔️ 新建{}or[] ,滚动数组
+
+```python
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        dp = {}
+        dp[1] = 1
+        dp[2] = 2
+        for i in range(3,n+1):
+            dp[i] = dp[i-1] + dp[i-2]
+        return dp[n]
+```
 
 No. | dynamic programming | Flag
 :---: | --- | ---
 no-gd | [31. n个骰子的点数](https://leetcode-cn.com/problems/nge-tou-zi-de-dian-shu-lcof) dp[i][j] ，表示投掷完 i 枚骰子后，点数 j 的出现次数 | ✔️
 &nbsp; | [Summary 20 dynamic programming](/2019/08/31/leetcode/summary_dp/) |
 (4.1) | **DP表示状态** |
-easy | 1. climbing-stairs ， 新建{}or[] ,滚动数组 <br> 2. 连续子数组的最大和 | ❎
+easy | [Climbing Stairs](https://leetcode.cn/problems/climbing-stairs/) ， 新建{}or[] ,滚动数组 <br> 2. 连续子数组的最大和 | ❎
 addition | [63. 多少种 不同路径 II](https://leetcode-cn.com/problems/unique-paths-ii/), `store = [[0]*n for i in range(m)]` 二维初始化 | ❎
 <br> addition | [Edit Distance/编辑距离](https://leetcode-cn.com/problems/edit-distance/)【word1 转换成 word2】<br>&nbsp;&nbsp; 1. dp = [ [0] * (m + 1) for _ in range(n + 1)] <br>&nbsp;&nbsp; 2. dp[i][j] = min(A,B,C) | <br> ✔️❎
 addition | [5. Longest Palindromic Substring/最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) <br>1. 枚举子串的长度 l+1,从小问题到大问题 <br> 2. 枚举子串的起始位置 i, j=i+l 子串结束位置,  dp[i][j] = (dp[i+1][j-1] and s[i]==s[j])  | ✔️❎
@@ -292,3 +320,4 @@ class Solution:
             return True
         return abs(maxHigh(root.left) - maxHigh(root.right)) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right)
 ```
+

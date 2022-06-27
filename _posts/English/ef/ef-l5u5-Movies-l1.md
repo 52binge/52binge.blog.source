@@ -2,7 +2,7 @@
 title: Movies L1 Talking about a movie you recently saw
 date: 2016-10-28 07:15:16
 tags: ef-english
-categories: English
+categories: EF-English
 toc: true
 description: level 5 unit 5 lesson 1, Movies
 ---
@@ -19,7 +19,7 @@ description: level 5 unit 5 lesson 1, Movies
 - bioengineering
 - soundtrack
 
-<img src="/images/ef-l5u5l1.png" width="460" height="400"/img>
+<img src="/images/english/efd/ef-l5u5l1.png" width="460" height="400"/>
 
 Dialog |
 ------- | -------|
