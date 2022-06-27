@@ -22,7 +22,7 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 
 ### 1.1 p1 逛腾讯 新加坡
 
-镜头1: office 楼下 [介绍目的地]
+镜头1: office 楼下 [ab 介绍此行目的]
 镜头2: office 楼上 
 
 >  2.1 切到刷卡进入 + 电梯口    
@@ -32,12 +32,11 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
   
 镜头3: 12F wework 
 
-> 3.1 blair 从 12F 工位/meeting 室站起来
-> 3.2 逛的时候 (12F wework)
-、
-1. 早晨来一杯咖啡
+> 3.1 ab & blair 12F 门口
+> 3.2 逛的时候 (12F wework) 【wework 影片此时类似】
+
+1. 早晨来一杯咖啡 & 喝下午茶 [果汁、零食、啤酒、space water]
 2. 中午来一场 Game Room
-3. 下午喝下午茶 [果汁、零食、space water]
 
 ### 1.5 工作时间
 
