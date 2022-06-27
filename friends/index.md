@@ -21,6 +21,8 @@ Reading, Thinking, Writing {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x
 
 {% btns circle wide centre %}
 
+{% cell AbbieLu, https://www.youtube.com/c/AbbieLu, https://yt3.ggpht.com/MtO_Vnu9ZPkqCDZUkPclNHhfWlZa9XtsGRLkQpA8clFPwWV8mvYxk6YjVGUqEdsMPOnmMbHS-w=s88-c-k-c0x00ffffff-no-rj %}
+
 {% cell 江海寄余生, https://mp.weixin.qq.com/s/O-M7lUvIzz6ThbVIWeDCcA, https://mmbiz.qpic.cn/mmbiz_jpg/0WDa4XMbaxtBZ04ziaWiayI2rVXALzXJhL3MSLCWEHSmYJEGfCYSrHIS2ZUiaVBu55feBnUia6llDK97bbc6y4xL6Q/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1 %}
 
 {% endbtns %}
