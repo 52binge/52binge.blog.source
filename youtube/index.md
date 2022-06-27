@@ -20,6 +20,56 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 2. screenwriter & director
 2. Day in the Life of a Tencent Working
 
+### 1.1 p1 逛腾讯 新加坡
+
+镜头1: office 楼下 [介绍目的地]
+镜头2: office 楼上 
+
+>  2.1 切到刷卡进入 + 电梯口    
+>  2.2 在切到 19F office Tencent Logo
+>  2.3 Tencent Logo/ ab & blair 这是我的朋友, 也是在担任 BI, 今天是由他来带我逛一逛 Tencent SG
+>  2.4 大家好， 我是 ab 的朋友， 我叫 blair， DE, 今天带大家看一下 Tencent SG 的情况
+  
+镜头3: 12F wework 
+
+> 3.1 blair 从 12F 工位/meeting 室站起来
+> 3.2 逛的时候 (12F wework)
+、
+1. 早晨来一杯咖啡
+2. 中午来一场 Game Room
+3. 下午喝下午茶 [果汁、零食、space water]
+
+### 1.5 工作时间
+
+1. 早晨 9:30~10:00
+2. 晚上 5:30~7:00 弹性 (6:00pm)
+
+### 1.6 办公环境
+
+
+### 1.7 坐下来一起聊 鹅厂 的事
+
+> 6.1 介绍 Tencent 在东南亚发展的业务, 选新加坡为亚洲中心
+> 6.2 硬件环境，还是不错的，该有的福利公司尽力是配备全的. 因为我们 在这开office 也刚2年， 目前还没有食堂. 但是周边有很多shopping mall/有时候会和同事一起聚餐
+> 6.3 人 nice / 我老板 nice / 同事的技术水平也是非常强的 （这样的环境自我成长）
+> 6.4 新加坡的事, 2018年在考虑和准备, 2019年 996 爆火，然后有个机会就试了下，然后就来了 NUS 孵化的公司 【逃离996】
+
+**鹅厂福利**
+
+1. 年假多
+2. 饮品 & 零食
+3. 保险 (不错的)
+4. 团建经费充足
+5. 年会/部门年会， 多种年会, 会有很多礼品
+6. 平时晚上/周末组织的 各种 club 活动 [这里需要配图]
+7. Gym 配置
+
+
+2020.09 腾讯选择新加坡作为其亚洲业务的中心
+新加坡优越的地理位置、先进的金融和法律体系、低关税、以及稳定的政局和社会秩序、以及法律对知识产权的保护使其成为中国企业出海的首选之地，同时它也相继成为全球各行业巨头的亚洲区域中心。
+支持其在东南亚及其他地区不断发展的业务。目前，Tencent 在马来西亚，印度尼西亚和泰国都有业务
+
+
 ## 1. Youtube
 
 Day in the Life of a Tencent Working
@@ -65,15 +115,5 @@ Day in the Life of a Tencent Working
 ## 2. Standup paddleboarding
 
 {% youtube vFM665uurJ0 %}
-
-## 3. chi-go ichi-e
-
-> `2022.05.22` 一期一会 シンガポール
-> いちごいちえ，chi-go ichi-e is a Japanese four-character that describes a cultural concept of treasuring the unrepeatable nature of a moment. The term has been translated as "for this time only", and "once in a lifetime". The term reminds people to cherish any gathering that they may take part in, citing the fact that any moment in life cannot be repeated; even when the same group of people get together in the same place again, a particular gathering will never be replicated, and thus each moment is always a once-in-a-lifetime experience.[1] The concept is most commonly associated with Japanese tea ceremonies, especially tea masters Sen no Rikyū and Ii Naosuke.
-> {% image "/images/tw/japan-tea3.jpg", width="350px", alt="" %}
-
-
-
-
 
 
