@@ -27,7 +27,6 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 >  镜头 2.1 切到刷卡进入 + 电梯口    
 >  镜头 2.2 在切到 19F office Tencent Logo
 >  镜头 2.3 Tencent Logo/ ab & blair 这是我的朋友, 也是在担任 BI, 今天是由他来带我逛一逛 Tencent SG
->  镜头 2.4 大家好， 我是 ab 的朋友， 我叫 blair， DE, 今天带大家看一下 Tencent SG 的情况
   
 ### 1.2 办公环境
 
