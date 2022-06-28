@@ -48,7 +48,7 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 > 7.1 Tencent 为什么选择新加坡腾讯?  鹅厂绕口令
 > 7.2 硬件环境，还是不错的，该有的福利公司尽力是配备全的. 因为我们 在这开office 也刚2年， 目前还没有食堂. 但是周边有很多shopping mall/有时候会和同事一起聚餐
 > 7.3 人 nice / 我老板 nice / 同事的技术水平也是非常强的 （这样的环境自我成长）
-> 7.4 新加坡的事, 2018年在考虑和准备, 2019年 996 爆火，然后有个机会就试了下，然后就来了 NUS 孵化的公司 【逃离996】
+> 7.4 新加坡的事, 2021 年来 Tencent SG 【逃离996】 2019年 996 爆火
 
 **工作时间**
 
