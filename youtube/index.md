@@ -16,19 +16,18 @@ valine:
 
 Diligence is not a race against time, but **continuous**, dripping water wears through the rock. 
 
-1. Learning 剪映
-2. screenwriter & director
-2. Day in the Life of a Tencent Working
+1. screenwriter & director
+2. exploring big company - tencent / Day in the Life of a Tencent Working
 
 ### 1.1 介绍 Topic 逛腾讯 新加坡
 
 镜头1: office 楼下 [ab 介绍此行目的]
 镜头2: office 楼上 
 
->  2.1 切到刷卡进入 + 电梯口    
->  2.2 在切到 19F office Tencent Logo
->  2.3 Tencent Logo/ ab & blair 这是我的朋友, 也是在担任 BI, 今天是由他来带我逛一逛 Tencent SG
->  2.4 大家好， 我是 ab 的朋友， 我叫 blair， DE, 今天带大家看一下 Tencent SG 的情况
+>  镜头 2.1 切到刷卡进入 + 电梯口    
+>  镜头 2.2 在切到 19F office Tencent Logo
+>  镜头 2.3 Tencent Logo/ ab & blair 这是我的朋友, 也是在担任 BI, 今天是由他来带我逛一逛 Tencent SG
+>  镜头 2.4 大家好， 我是 ab 的朋友， 我叫 blair， DE, 今天带大家看一下 Tencent SG 的情况
   
 ### 1.2 办公环境
 
@@ -37,10 +36,10 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 > 3.1 ab & blair 12F 门口
 > 3.2 逛的时候 (12F wework) 【wework 影片此时类似】
 
-1. 早晨来一杯咖啡 & 
+1. 来一杯咖啡 
 2. 零食 & 果汁
-3. 中午来一场 Game Room
-4. 喝下午茶 [果汁、零食、啤酒、space water]
+3. 中午来一场 Game Room / 
+4. 喝下午茶 drinking time [果汁、零食、啤酒、kombucha..]
 5. 下班：Gym 配置
 
 ### 1.3 坐下来一起聊 鹅厂 的事
@@ -48,7 +47,7 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 > 7.1 Tencent 为什么选择新加坡腾讯?  鹅厂绕口令
 > 7.2 硬件环境，还是不错的，该有的福利公司尽力是配备全的. 因为我们 在这开office 也刚2年， 目前还没有食堂. 但是周边有很多shopping mall/有时候会和同事一起聚餐
 > 7.3 人 nice / 我老板 nice / 同事的技术水平也是非常强的 （这样的环境自我成长）
-> 7.4 新加坡的事, 2021 年来 Tencent SG 【逃离996】 2019年 996 爆火
+> 7.4 新加坡的事, 2019年 Github 996.ICU 爆火【逃离996】-> 2021 年来 Tencent SG  
 
 **工作时间**
 
@@ -61,11 +60,14 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 2. 饮品 & 零食
 3. 保险 (不错的)
 4. 团建经费充足
-5. 年会/部门年会， 多种年会, 会有很多礼品
-6. 平时晚上/周末组织的 各种 club 活动 [这里需要配图]
+5. 定期体检 
+5. 集团年会/文化日/大部门年会/境内小部门年会/境外年会， 各种年会, 会有很多礼品
+6. 平时晚上/周末组织的 各种 club 活动/FamilyDay [这里需要配图]
 7. Gym 配置
 
 ### 1.4 采访 Angel
+
+need check with public affairs team if this is allowed to be done
 
 介绍 Tencent 在东南亚发展的业务, 选新加坡为亚洲中心.
 
@@ -74,6 +76,8 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 支持其在东南亚及其他地区不断发展的业务。目前，Tencent 在马来西亚，印度尼西亚和泰国都有业务
 
 ### 1.5 ab 总结
+
+...
 
 ## 1. Youtube
 
@@ -117,8 +121,10 @@ Day in the Life of a Tencent Working
 
 {% youtube l0h-oy47mac %}
 
+<!-- 
+
 ## 2. Standup paddleboarding
 
 {% youtube vFM665uurJ0 %}
 
-
+-->
