@@ -39,7 +39,7 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 1. 来一杯咖啡 
 2. 零食 & 果汁
 3. 中午来一场 Game Room / 
-4. 喝下午茶 drinking time [果汁、零食、啤酒、kombucha..]
+4. 喝下午茶 drinking time [果汁、零食、啤酒、康普茶 kombucha..]
 5. 下班：Gym 配置
 
 ### 1.3 坐下来一起聊 鹅厂 的事
