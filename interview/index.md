@@ -16,6 +16,40 @@ valine:
 
 Diligence is not a race against time, but **continuous**, dripping water wears through the rock. 
 
+## 3. Spark & Spark SQL
+
+### 3.1 Spark Basic
+
+1. Spark History / Why Spark / Spark Components (SparkCore & SparkSQL) / Ecosystem 
+2. Spark Features
+3. Resilient Distributed Dataset – RDD
+→ a. Ways to create Spark RDD
+→ b. Spark RDDs operations (`Transformation`/`Action`)
+→ c. Sparkling Features of Spark RDD (`Lazy Evaluation`/`Fault Tolerance`/`Partitioning`/`Parallel`)
+
+### 3.2 SparkSQL
+
+### 3.3 SparkInterview
+
+### 3.4 SparkSQL 源码解读
+
+3.1 mr vs spark (4)
+3.2 rdd / dataframe / dataset
+3.3 rdd operations - transformation + action
+3.4 cache + persist
+3.5 spark join
+
+## 4. Project
+
+## 5. BI
+
+1. OLTP / OLAP [On-line Analytical Processing](/2020/08/01/bi/dw-wy-1-basic/)
+2. ETL -> ODS -> DIL(DWD)/DIM -> DML(DWM) / APP(DAL)/DIM 
+3. Hive -> DDL / DML / Select / Function 
+4. [data warehouse review 6](/2020/10/01/bi/dwh-summary-1-warehouse-theory/)
+
+> **大数据是 database+分布式体系结构的结合**
+
 ## 1. SQL 🐒
 
 No. | Question | Answer
@@ -63,41 +97,6 @@ class Solution:
 
 ### 2.4 sliding window & hash
 
-## 3. Spark & Spark SQL
-
-### 3.1 Spark Basic
-
-1. Spark History / Why Spark / Spark Components (SparkCore & SparkSQL) / Ecosystem 
-2. Spark Features
-3. Resilient Distributed Dataset – RDD
-→ a. Ways to create Spark RDD
-→ b. Spark RDDs operations (`Transformation`/`Action`)
-→ c. Sparkling Features of Spark RDD (`Lazy Evaluation`/`Fault Tolerance`/`Partitioning`/`Parallel`)
-
-### 3.2 SparkSQL
-
-### 3.3 SparkInterview
-
-### 3.4 SparkSQL 源码解读
-
-3.1 mr vs spark (4)
-3.2 rdd / dataframe / dataset
-3.3 rdd operations - transformation + action
-3.4 cache + persist
-3.5 spark join
-
-## 4. Project
-
-## 5. BI
-
-1. OLTP / OLAP [On-line Analytical Processing](/2020/08/01/bi/dw-wy-1-basic/)
-2. ETL -> ODS -> DIL(DWD)/DIM -> DML(DWM) / APP(DAL)/DIM 
-3. Hive -> DDL / DML / Select / Function 
-4. [data warehouse review 6](/2020/10/01/bi/dwh-summary-1-warehouse-theory/)
-
-> **大数据是 database+分布式体系结构的结合**
->
->
 
 
 ## 6. Flink & Flink SQL
