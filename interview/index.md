@@ -16,9 +16,9 @@ valine:
 
 Diligence is not a race against time, but **continuous**, dripping water wears through the rock. 
 
-## 3. Spark & Spark SQL
+## 1. Spark & Spark SQL
 
-### 3.1 Spark Basic
+### 1.1 Spark Basic
 
 1. Spark History / Why Spark / Spark Components (SparkCore & SparkSQL) / Ecosystem 
 2. Spark Features
@@ -27,11 +27,11 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 → b. Spark RDDs operations (`Transformation`/`Action`)
 → c. Sparkling Features of Spark RDD (`Lazy Evaluation`/`Fault Tolerance`/`Partitioning`/`Parallel`)
 
-### 3.2 SparkSQL
+### 1.2 SparkSQL
 
-### 3.3 SparkInterview
+### 1.3 SparkInterview
 
-### 3.4 SparkSQL 源码解读
+### 1.4 SparkSQL 源码解读
 
 3.1 mr vs spark (4)
 3.2 rdd / dataframe / dataset
@@ -39,9 +39,11 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 3.4 cache + persist
 3.5 spark join
 
-## 4. Project
+## 2. Project
 
-## 5. BI
+Spark 优化
+
+## 3. BI
 
 1. OLTP / OLAP [On-line Analytical Processing](/2020/08/01/bi/dw-wy-1-basic/)
 2. ETL -> ODS -> DIL(DWD)/DIM -> DML(DWM) / APP(DAL)/DIM 
@@ -50,7 +52,7 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 
 > **大数据是 database+分布式体系结构的结合**
 
-## 1. SQL 🐒
+## 5. SQL 🐒
 
 No. | Question | Answer
 :---: | --- | --- 
@@ -62,7 +64,7 @@ No. | Question | Answer
 6. | SQL：连续出现N次的内容？ | 方法2： window function, lead, where
 7. | SQL：经典topN问题 | window function: row_number() over (partition by .. order by.. 
 
-## 2. Leetcode
+## 6. Leetcode
 
 ### 2.1 binary-search
 
