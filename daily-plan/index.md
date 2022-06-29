@@ -23,13 +23,13 @@ Plan | Time | Topic | Level2
 1. | 7:00~7:30 | [猴子SQL](/2021/02/01/sql/SQL-Monkey/) | 1.1 group by + having count(列名) > n
 2. | 7:30~8:20 | [2021 leetcode](/2021/03/19/leetcode/2021-leetcode/) |  2.1 binary-search <br> 2.2 dfs + stack <br> 2.3 dynamic programming <br> 2.4 sliding window & hash 
 3. | 8:30~9:30 | spark basic | 3.1 mr vs spark (4) <br> 3.2 rdd / dataframe / dataset <br> 3.3 rdd operations - transformation + action <br> 3.4 cache + persist <br> 3.5 spark join
-4. | 20:30~22:30 | English | 4.1 EF English <br> 4.2 IELTS Writing English <br> 4.3 HIMYM EP02
+4. | 20:30~22:30 | English | 4.1 IELTS Writing (Morning) <br> 4.2 EF English (晚上) <br> 4.3 TV scripted (睡前:朗逸思👂🏻)
 **2022.07** | | | 
 1. | 7:30~8:30 | project / spark |  
 2. | 8:40~9:30 | flink |  
 3. | thinking | youtuber | Learning 剪映 <br> Day in the Life of a Tencent Working
 
-## 1. SQL 🐒
+## 1. SQL 
 
 No. | Question | Answer
 :---: | --- | --- 
