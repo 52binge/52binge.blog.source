@@ -38,7 +38,16 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 1. 来一杯咖啡 
 2. 零食 & 果汁
 3. 中午来一场 Game Room / 
-4. 喝下午茶 drinking time [果汁、零食、啤酒、康普茶 kombucha..]
+
+4. 喝下午茶 drinking time 吧台 [果汁、啤酒、红茶菌/康普茶 (kombucha)..]
+
+> 红茶菌 (kombucha),其实是一种发酵茶。由茶，糖，再混合细菌和酵母 (symbiotic culture of bacteria and yeast) 一起发酵而成。其发酵过程产生微量酒精和醋酸，喝起来有酸酸甜甜的感觉。想减肥的也很有效。而且有不同口味，而且都很好喝。口味：柠檬和姜，草莓，芒果，百香果。小瓶康普茶里约有10多亿活性益生菌。所以要保持冷饮。
+>
+> 第一眼看着像普通的气泡水, 别小瞧它的欢迎程度, 风靡欧美，被Ins和Youtube网红达人、各路媒体称为：
+> “ElixirofLife”（续命水）/ “ImmortalWater”（不朽水）/ “DrinkofFuture”（未来饮料）......
+>
+> “发酵饮品有助肠道健康” 它的味道酸酸甜甜如气泡水，又类似香槟，带着点酒味（仅有酒香，实际无酒精），小伙伴们尝过后纷纷表示好喝！
+
 5. 下班：Gym 配置
 
 ### 1.3 坐下来一起聊 鹅厂 的事
