@@ -52,23 +52,56 @@ Spark 优化
 
 > **大数据是 database+分布式体系结构的结合**
 
-## 5. SQL 🐒
+## 4. SQL 🐒
 
 No. | Question | Answer
 :---: | --- | --- 
-1. | SQL：查找重复数据？ | group by 列名 having count(列名) > n
-2. | SQL：如何查找第N高的数据？ | limit 1, n
-3. | SQL：查找不在表里的数据    | t1 & t2 join, where t2.field = NULL
-4. | SQL：如何比较日期数据？ <br> [197. Rising Temperature](https://leetcode.cn/problems/rising-temperature/) | 自关联 + datediff
+1. | ✅SQL：查找重复数据？ | group by 列名 having count(列名) > n
+2. | ✅SQL：如何查找第N高的数据？ | limit 1, n
+3. | ✅SQL：查找不在表里的数据    | t1 & t2 join, where t2.field = NULL
+4. | ✅[SQL：如何比较日期数据？](/2021/02/01/sql/SQL-Monkey/) <br> [197. Rising Temperature](https://leetcode.cn/problems/rising-temperature/) | 自关联 + datediff <br><br> DATEDIFF(w1.recordDate, w2.recordDate) = 1 AND w1.Temperature > w2.Temperature;
 5. | SQL：各科成绩平均分大于80分的人数和人数占比 | sum(case when 1, 0), count(b.id) <br> join (select avg(score) from t group id)
 6. | SQL：连续出现N次的内容？ | 方法2： window function, lead, where
 7. | SQL：经典topN问题 | window function: row_number() over (partition by .. order by.. 
+8. | SQL：[面试必备—SQL window function？](https://zhuanlan.zhihu.com/p/114921777) |
 
-## 6. Leetcode
+```sql
+Input: 
+Weather table:
++----+------------+-------------+
+| id | recordDate | temperature |
++----+------------+-------------+
+| 1  | 2015-01-01 | 10          |
+| 2  | 2015-01-02 | 25          |
+| 3  | 2015-01-03 | 20          |
+| 4  | 2015-01-04 | 30          |
++----+------------+-------------+
+Output: 
++----+
+| id |
++----+
+| 2  |
+| 4  |
++----+
+Explanation: 
+In 2015-01-02, the temperature was higher than the previous day (10 -> 25).
+In 2015-01-04, the temperature was higher than the previous day (20 -> 30).
 
-### 2.1 binary-search
 
-### 2.2 dfs + stack
+SELECT
+    w1.id AS 'Id'
+FROM
+    weather as w1
+        JOIN
+    weather as w2 
+ON DATEDIFF(w1.recordDate, w2.recordDate) = 1 AND w1.Temperature > w2.Temperature;
+```
+
+## 5. Leetcode
+
+### 5.1 binary-search
+
+### 5.2 dfs + stack
 
 1. 字符串解码 “3[a2[c]]” == “accacc”, stack == [(3, ""), (2,"a")]
 2. **The Kth largest element in the array** 【heapify(hp) , heappop(hp), heappush(hp, v) 】
@@ -95,9 +128,9 @@ class Solution:
         return hp[0]
 ```
 
-### 2.3 dynamic programming
+### 5.3 dynamic programming
 
-### 2.4 sliding window & hash
+### 5.4 sliding window & hash
 
 
 
