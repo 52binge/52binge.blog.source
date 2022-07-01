@@ -78,8 +78,17 @@ Difference between SORT BY and ORDER BY
 10．分桶和PARTITION的区别，并且分桶和PARTITION的各自机制是什么  
 The difference between bucketing and PARTITION, and what are the respective mechanisms of bucketing and PARTITION
 
-11. Spark 数据倾斜的原理和不同场景下的解决方案是什么，MPP架构数据下的数据倾斜解决方案是什么
- What are the principles of **Spark data skew** and solutions in different scenarios, and what are the solutions for data skew under MPP architecture data
+11. 谈谈你对元数据管理和数据资产管理的理解
+Talk about your understanding of metadata management and data asset management  
+
+12. 你认为你来做这个岗位的优势和劣势是什么
+What do you think are your strengths and weaknesses in this position?  
+
+13. 谈谈你对这个岗位所需技能的理解，假如你来到这个岗位未来半年你的工作思路是什么
+Talk about your understanding of the skills required for this position, and if you come to this position, what are your work ideas in the next six months?  
+
+14. 以你对传统数仓的理解，什么样的业务会有实时性的需求？
+Based on your understanding of traditional data warehouses, what kind of business has real-time requirements?  
 
 ## 3. Spark
 
@@ -89,13 +98,15 @@ The difference between bucketing and PARTITION, and what are the respective mech
 
 2. Why Spark is faster than Map Reduced
 
-
-
+5. Spark 数据倾斜的原理和不同场景下的解决方案是什么，MPP架构数据下的数据倾斜解决方案是什么
+ What are the principles of **Spark data skew** and solutions in different scenarios, and what are the solutions for data skew under MPP architecture data
 
 
 ## 4. Project
 
 ## 5. Leetcode
+
+## 6. Bhv
 
 
 > `2022.06.18` Moives by Robert V.
