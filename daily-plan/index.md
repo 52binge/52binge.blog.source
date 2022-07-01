@@ -83,6 +83,16 @@ The difference between bucketing and PARTITION, and what are the respective mech
 
 ## 3. Spark
 
+- [Spark interview](https://www.cnblogs.com/hdc520/p/12588379.html)
+
+1. history / advantages of spark
+
+2. Why Spark is faster than Map Reduced
+
+
+
+
+
 ## 4. Project
 
 ## 5. Leetcode
