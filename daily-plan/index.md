@@ -19,15 +19,15 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 
 Plan | Time | Topic | Level2
 :---: | --- | --- | ---
+**2022.07** | | | 
+1. | 7:00~8:00 | data warehouse | 
+2. | 8:10~9:00 | project | 
+3. | 9:10~10:00 | spark |  
 **2022.06** | | | 
 1. | 6:30~7:30 | English | 1.1 IELTS Writing (Morning) <br> 1.2 EF English (晚上) <br> 1.3 TV scripted (睡前:朗逸思👂🏻)
 2. | 7:40~8:10 | [猴子SQL](/2021/02/01/sql/SQL-Monkey/) | 2.1 SQL Cartesian product /kɑːˈtiːzɪən,kɑːˈtiːʒ(ə)n/ 
 3. | 8:20~8:50 | [2022 leetcode](/2022/06/27/leetcode/2022-leetcode/) |  3.1 binary-search <br> 3.2 dfs + stack <br> 3.3 dynamic programming <br> 3.4 sliding window & hash 
 4. | 9:00~9:50 | spark basic | 4.1 mr vs spark (4) <br> 4.2 rdd / dataframe / dataset <br> 4.3 rdd operations - transformation + action <br> 4.4 cache + persist <br> 4.5 spark join
-**2022.07** | | | 
-1. | 7:30~8:30 | project / spark |  
-2. | 8:40~9:30 | flink |  
-3. | thinking | youtuber | Learning 剪映 <br> Day in the Life of a Tencent Working
 
 ## 1. SQL 
 
@@ -37,15 +37,55 @@ No. | Question | Answer
 2. | ✅SQL：如何查找第N高的数据？ | limit 1, n
 3. | ✅SQL：查找不在表里的数据    | t1 & t2 join, where t2.field = NULL
 4. | ✅SQL：如何比较日期数据？ <br> [197. Rising Temperature](https://leetcode.cn/problems/rising-temperature/) | 自关联 + datediff <br><br> DATEDIFF(w1.recordDate, w2.recordDate) = 1 AND w1.Temperature > w2.Temperature;
-5. | SQL：各科成绩平均分大于80分的人数和人数占比 | sum(case when 1, 0), count(b.id) <br> join (select avg(score) from t group id)
+5. | ✅SQL：各科成绩均分大于80人数和占比 | sum(case when 1, 0), count(b.id) <br> join (select avg(score) from t group by id)
 6. | SQL：连续出现N次的内容？ | 方法2： window function, lead, where
 7. | SQL：经典topN问题 | window function: row_number() over (partition by .. order by.. 
 8. | SQL：[面试必备——SQL窗口函数你会了吗？](https://zhuanlan.zhihu.com/p/114921777) |
 
 [SQL：如何比较日期数据？](/2021/02/01/sql/SQL-Monkey/)
 
+## 2. Data Warehouse BI
 
-## 2. Leetcode
+1．首先几分钟的自我介绍 
+First few minutes of self-introduction
+
+2．数据仓库主要为的解决什么问题 
+what problem is the main purpose of data warehouse to solve 
+
+3．数据仓库模型的理解，数据仓库分层设计的好处是什么 
+what are the benefits of the hierarchical design of the data warehouse
+
+4．数据建模考虑的点是什么，然后随机给了你一个业务场景问问你如果建立模型大致怎么设计 
+What are the points considered in data modeling, and then randomly give you a business scenario to ask you how to design the model if you build it
+
+5．你挑一个你印象最深刻的项目来描述下以及为什么让你印象最深刻
+You pick a project that impressed you the most and describe it and why it impressed you the most
+
+> 注：这个问题要慎重回答，对于经验比较丰富的建议要么回答你对架构做了些有亮点设计的项目要么就是从业务上带来很大价值的项目
+
+6．你处理过最大的数据量大概是多少，遇到性能问题时候怎么优化  
+What is the largest amount of data you have processed, and how to optimize when you encounter performance problems
+
+7．对于数据中台的理解，和数据仓库和数据湖的区别  
+The understanding of the data center, and the difference between the data warehouse and the data lake
+
+8．MAPREDUCE的主要过程，MAP阶段和REDUCE阶段的SHUFFLE各是什么过程  
+The main process of MAPREDUCE, what is the process of SHUFFLE in MAP stage and REDUCE stage
+
+9．SORT BY和ORDER BY的区别  
+Difference between SORT BY and ORDER BY
+
+10．分桶和PARTITION的区别，并且分桶和PARTITION的各自机制是什么  
+The difference between bucketing and PARTITION, and what are the respective mechanisms of bucketing and PARTITION
+
+11. Spark 数据倾斜的原理和不同场景下的解决方案是什么，MPP架构数据下的数据倾斜解决方案是什么
+ What are the principles of **Spark data skew** and solutions in different scenarios, and what are the solutions for data skew under MPP architecture data
+
+## 3. Spark
+
+## 4. Project
+
+## 5. Leetcode
 
 
 > `2022.06.18` Moives by Robert V.
@@ -57,7 +97,7 @@ No. | Question | Answer
 > Lionel Richie: 2019 Breakthrough Prize Ceremony
 
 
-## 3. Youtube
+## 6. Youtube
 
 Day in the Life of a Tencent Working
 
