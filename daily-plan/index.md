@@ -95,7 +95,7 @@ what are the benefits of the hierarchical design of the data warehouse
 >
 > classify and abstract the understanding of the business meaning and requirements of data from a high level.
 >
-> for example: 💘①  order topic, 💘②  user topic, 💘③ financial topics, etc. will be generated.
+> for example: 💘①  user topic, 💘②  order topic, 💘③ evt topic, 💘④ financial topics, etc. will be generated.
 >
 > 主要解决的问题是对数据分门别类的区分，方便业务使用数据以及方便数仓根据数据需求进行数据加工；
 > The main problem to be solved is to **classify data into different categories**, to facilitate business use of data and to facilitate data processing by data warehouses according to data requirements;
@@ -114,6 +114,15 @@ What is the largest amount of data you have processed, and how to optimize when 
 
 8．对于数据中台的理解，和数据仓库和数据湖的区别  
 The understanding of the data center, and the difference between the data warehouse and the data lake
+
+> **there is little difference between the two at the practical level;** 
+> **it is just that the former has higher strategic expectations at the conceptual level** /kənˈsɛptʃʊəl/
+>
+> {% image "/images/bi/data-center-vs-data-warehosue.jpg", width="750px", alt="data-center vs data-warehouse: The green highlight is the difference. " %}
+>
+> data warehouse is mainly defined as BI; but according to the application of the real-world scenario /sɪˈnɑːrɪəʊ/, 
+>
+> the data warehouse is not only used for reports, it already contains user_profile and outputs business_systems. 
 
 9．MAPREDUCE的主要过程，MAP阶段和REDUCE阶段的SHUFFLE各是什么过程  
 The main process of MAPREDUCE, what is the process of SHUFFLE in MAP stage and REDUCE stage
