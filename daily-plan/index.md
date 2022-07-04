@@ -48,6 +48,8 @@ No. | Question | Answer
 
 ## 2. [Data Warehouse BI](https://zhuanlan.zhihu.com/p/99800460)
 
+[数据仓库之十问十答](https://zhuanlan.zhihu.com/p/99800460)
+
 1．首先几分钟的自我介绍 
 First few minutes of self-introduction
 
