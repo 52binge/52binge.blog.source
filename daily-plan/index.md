@@ -19,10 +19,12 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 
 Plan | Time | Topic | Level2
 :---: | --- | --- | ---
+**2022.08** | | |
+1. | 7:00~8:00 | IELTS | Writing / Speaking
 **2022.07** | | | 
-1. | 7:00~8:00 | data warehouse | 
-2. | 8:10~9:00 | project | 
-3. | 9:10~10:00 | spark |  
+1. | 7:00~8:00 | IELTS | Listening / Writing
+2. | 8:10~9:00 | data warehouse  | SQL / BI / Spark
+3. | 9:10~10:00 | project | 
 **2022.06** | | | 
 1. | 6:30~7:30 | English | 1.1 IELTS Writing (Morning) <br> 1.2 EF English (晚上) <br> 1.3 TV scripted (睡前:朗逸思👂🏻)
 2. | 7:40~8:10 | [猴子SQL](/2021/02/01/sql/SQL-Monkey/) | 2.1 SQL Cartesian product /kɑːˈtiːzɪən,kɑːˈtiːʒ(ə)n/ 
@@ -44,7 +46,7 @@ No. | Question | Answer
 
 [SQL：如何比较日期数据？](/2021/02/01/sql/SQL-Monkey/)
 
-## 2. Data Warehouse BI
+## 2. [Data Warehouse BI](https://zhuanlan.zhihu.com/p/99800460)
 
 1．首先几分钟的自我介绍 
 First few minutes of self-introduction
@@ -52,42 +54,84 @@ First few minutes of self-introduction
 2．数据仓库主要为的解决什么问题 
 what problem is the main purpose of data warehouse to solve 
 
+> 数据仓库是对业务系统的数据进行同步接入、历史存储、清洗加工、有效管理、分层建设、贴合需求；最终以提供满足业务场景数据使用需求的一种数据库。
+> for mysql and other business system data: 
+>
+> 💘① data accesses & historically stores
+> 💘② cleans and processes(ETL), 
+> 💘③ effectively manages, hierarchically constructs, 
+> 💘④ fits the needs of the data of the business system; 
+>
+> finally, it provides a database that meets the data usage needs of business scenarios.
+>
+> {% image "/images/bi/inter-bi-dw.jpg", width="700px", alt="" %}
+
 3．数据仓库模型的理解，数据仓库分层设计的好处是什么 
 what are the benefits of the hierarchical design of the data warehouse
 
-4．数据建模考虑的点是什么，然后随机给了你一个业务场景问问你如果建立模型大致怎么设计 
+> 数据仓库分层是通过对数据从无序到有序，从明细到汇总，从汇总到应用的设计。 主要是为了提升数据使用效率，方便问题定位，减少重复开发，统一数据口径等问题。
+> Data warehouse layering is the design of data :
+>
+> 💘① from disorder to order
+> 💘② from detail to summary
+> 💘③ from summary to application. 
+>
+> The main purpose is to improve：
+>
+> 💘① the efficiency of data use (每层粒度不同，需开发一个应用层的表直接根据现有的汇总层进行开发即可)
+> 💘② reduce repeated dev, (the granularity of each layer is different, dev a new app-table from summary-layer)
+> 💘③ Easy to locate problems
+> 💘④ unify data calibers and other issues.
+>
+> 方便数据血缘追踪：当有应用层表的数据出现问题时，我们可以通过血缘追踪快速定位到其关联的表，因为层次结构清晰，所有很好追踪到；如果没有分层，则可能会想蜘蛛网一样。
+> Convenient data **lineage tracking**: When there is a problem with the data of the application layer table, we can quickly locate its associated table through `lineage tracking`, because the hierarchical structure is clear, everything can be easily tracked; if there is no hierarchy, you may think of spiders the same as the net.
+
+4. 数据仓库中的主题是什么？解决什么问题？
+
+> 数据仓库主题是从较高层次上对数仓数据业务含义和需求的理解进行归类抽象划分的一种方式。最终会产生比如：订单主题、用户主题、营销主题、财务主题等。
+> The topic of data warehouse is a way to :
+>
+> classify and abstract the understanding of the business meaning and requirements of data from a high level.
+>
+> for example: 💘①  order topic, 💘②  user topic, 💘③ financial topics, etc. will be generated.
+>
+> 主要解决的问题是对数据分门别类的区分，方便业务使用数据以及方便数仓根据数据需求进行数据加工；
+> The main problem to be solved is to **classify data into different categories**, to facilitate business use of data and to facilitate data processing by data warehouses according to data requirements;
+
+5．数据建模考虑的点是什么，然后随机给了你一个业务场景问问你如果建立模型大致怎么设计 
 What are the points considered in data modeling, and then randomly give you a business scenario to ask you how to design the model if you build it
 
-5．你挑一个你印象最深刻的项目来描述下以及为什么让你印象最深刻
+
+6．你挑一个你印象最深刻的项目来描述下以及为什么让你印象最深刻
 You pick a project that impressed you the most and describe it and why it impressed you the most
 
 > 注：这个问题要慎重回答，对于经验比较丰富的建议要么回答你对架构做了些有亮点设计的项目要么就是从业务上带来很大价值的项目
 
-6．你处理过最大的数据量大概是多少，遇到性能问题时候怎么优化  
+7．你处理过最大的数据量大概是多少，遇到性能问题时候怎么优化  
 What is the largest amount of data you have processed, and how to optimize when you encounter performance problems
 
-7．对于数据中台的理解，和数据仓库和数据湖的区别  
+8．对于数据中台的理解，和数据仓库和数据湖的区别  
 The understanding of the data center, and the difference between the data warehouse and the data lake
 
-8．MAPREDUCE的主要过程，MAP阶段和REDUCE阶段的SHUFFLE各是什么过程  
+9．MAPREDUCE的主要过程，MAP阶段和REDUCE阶段的SHUFFLE各是什么过程  
 The main process of MAPREDUCE, what is the process of SHUFFLE in MAP stage and REDUCE stage
 
-9．SORT BY和ORDER BY的区别  
+10．SORT BY和ORDER BY的区别  
 Difference between SORT BY and ORDER BY
 
-10．分桶和PARTITION的区别，并且分桶和PARTITION的各自机制是什么  
+11．分桶和PARTITION的区别，并且分桶和PARTITION的各自机制是什么  
 The difference between bucketing and PARTITION, and what are the respective mechanisms of bucketing and PARTITION
 
-11. 谈谈你对元数据管理和数据资产管理的理解
+12．谈谈你对元数据管理和数据资产管理的理解
 Talk about your understanding of metadata management and data asset management  
 
-12. 你认为你来做这个岗位的优势和劣势是什么
+13．你认为你来做这个岗位的优势和劣势是什么
 What do you think are your strengths and weaknesses in this position?  
 
-13. 谈谈你对这个岗位所需技能的理解，假如你来到这个岗位未来半年你的工作思路是什么
+14．谈谈你对这个岗位所需技能的理解，假如你来到这个岗位未来半年你的工作思路是什么
 Talk about your understanding of the skills required for this position, and if you come to this position, what are your work ideas in the next six months?  
 
-14. 以你对传统数仓的理解，什么样的业务会有实时性的需求？
+15．以你对传统数仓的理解，什么样的业务会有实时性的需求？
 Based on your understanding of traditional data warehouses, what kind of business has real-time requirements?  
 
 ## 3. Spark
