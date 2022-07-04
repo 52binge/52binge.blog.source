@@ -4,7 +4,7 @@ date: 2016-07-16 16:59:48
 music:
   server: netease   # netease, tencent, kugou, xiami, baidu
   type: song        # song, playlist, album, search, artist
-  id: 17423740      # song id / playlist id / album id / search keyword
+  id: 449818741      # song id / playlist id / album id / search keyword
   autoplay: true
 valine:
   placeholder: 有什么想对我说的呢？
@@ -48,9 +48,7 @@ Plan | Time | Topic | Level2
 > `2022.07.04` 《Passengers》2016 is a American science-fiction romance film 
 >
 > chief actor - Chris Pratt
-> chief actress - Jennifer Lawrence 
->
-> by Jennifer Lawrence / Chris Pratt . Jennifer Lawrence nicknamed Big Cousin Sister
+> chief actress - Jennifer Lawrence nicknamed Big Cousin Sister by Chinese fans.
 >
 >  It stars Jennifer Lawrence and Chris Pratt. a huge **`interstellar`**[ˌɪntəˈstelə(r)] 星际的 **`spacecraft`** carrying thousands of people to a **`colony`**[ˈkɒləni] 殖民地 60 light years from Earth, when the two are **`awakened`**  [əˈweɪkənd]被唤起 90 years early from their space capsule hibernation.
 >  The story of how they fell in love and finally managed the spacecraft and successfully flew[fluː] to the second planet, and they eventually grew old, but the houses and trees in the spacecraft left their footprints
