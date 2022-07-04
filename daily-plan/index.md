@@ -128,7 +128,7 @@ The understanding of the data center, and the difference between the data wareho
 The main process of MAPREDUCE, what is the process of SHUFFLE in MAP stage and REDUCE stage
 
 10．SORT BY和ORDER BY的区别  
-Difference between SORT BY and ORDER BY
+[Difference between SORT BY and ORDER BY](https://zhuanlan.zhihu.com/p/93747613)
 
 11．分桶和PARTITION的区别，并且分桶和PARTITION的各自机制是什么  
 The difference between bucketing and PARTITION, and what are the respective mechanisms of bucketing and PARTITION
