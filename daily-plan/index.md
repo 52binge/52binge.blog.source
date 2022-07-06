@@ -142,12 +142,17 @@ What do you think are your strengths and weaknesses in this position?
 14．谈谈你对这个岗位所需技能的理解，假如你来到这个岗位未来半年你的工作思路是什么
 Talk about your understanding of the skills required for this position, and if you come to this position, what are your work ideas in the next six months?  
 
-✨目前活动✨
-1️⃣ SQL、Python
-2️⃣ Spark、Hadoop、Hive、MMP
-3️⃣ Data Warehouse BI (methodology dimensional modeling 、data governance etc..)
-4️⃣ Business knowledge 
-5️⃣ Computer Basic
+> ✨1️⃣ SQL、Python
+> ✨2️⃣ Spark、Hadoop、Hive、MMP、Flink
+> ✨3️⃣ Data Warehouse BI (methodology dimensional modeling 、data governance etc..)
+> ✨4️⃣ Business knowledge 
+> ✨5️⃣ Computer Basic
+>
+> work ideas：
+>
+> 1. platform & toosl - DDP/DAMP/US (data dev platform / data assets management platform / unified scheduler System)  
+> 2. business model
+> 3. data process, data flow... 
 
 15．以你对传统数仓的理解，什么样的业务会有实时性的需求？
 Based on your understanding of traditional data warehouses, what kind of business has real-time requirements?  
