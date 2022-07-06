@@ -140,7 +140,7 @@ Talk about your understanding of metadata management and data asset management
 What do you think are your strengths and weaknesses in this position?  
 
 14．谈谈你对这个岗位所需技能的理解，假如你来到这个岗位未来半年你的工作思路是什么
-Talk about your understanding of the skills required for this position, and if you come to this position, what are your work ideas in the next six months?  
+Talk about your understanding of the skills required for this position, and if you do this position, what are your work ideas in the next six months?  
 
 > ✨1️⃣ SQL、Python
 > ✨2️⃣ Spark、Hadoop、Hive、MMP、Flink
@@ -168,6 +168,21 @@ Based on your understanding of traditional data warehouses, what kind of busines
 5. Spark 数据倾斜的原理和不同场景下的解决方案是什么，MPP架构数据下的数据倾斜解决方案是什么
  What are the principles of **Spark data skew** and solutions in different scenarios, and what are the solutions for data skew under MPP architecture data
 
+
+### 3.1 advanced
+
+<details>
+<summary>SparkSQL</summary>
+
+如何搭建 SparkSQL 离线数仓
+
+<center><embed src="/images/sparkSQL/Spark-Dw-如何搭建 SparkSQL 离线数仓？.pdf" width="950" height="600"></center>
+
+**Spark SQL**
+
+<center><embed src="/images/sparkSQL/Class1-Spark SQL 架构体系与执行流程-金澜涛.pdf" width="950" height="600"></center>
+<center><embed src="/images/sparkSQL/Class2-Spark SQL 执行计划和优化逻辑-金澜涛 .pdf" width="950" height="600"></center>
+</details>
 
 ## 4. Project
 
