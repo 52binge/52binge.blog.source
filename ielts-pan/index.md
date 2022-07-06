@@ -33,17 +33,19 @@ Plan | Time | Topic | Level2
 > [KMF 雅思7分只用了3个月！如何成功逆袭？](https://course.kmf.com/article/495/29/0)
 
 
-## 1. Basic Learning
+## 1. Speaking
 
-## 2. 真题训练  
+## 2. Writing  
 
-## 3. 口语和写作
+## 3. Listening
+
+## 4. Reading
 
 剑9 -12的真题难度相对均衡，很适合初期练习，不会因为太难挫伤自信心。
 
-## 4. EF English
+## 5. EF English
 
-### 4.1 Moive
+### 5.1 Moive
 
 > `2022.07.04` 《Passengers》2016 is a American science-fiction romance film 
 >
