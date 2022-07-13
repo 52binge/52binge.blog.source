@@ -15,13 +15,17 @@ tags: NewZealand
 
 - Passport
 - money exchange
-- Travel Sim Card (data 4G+100G+call)
+- Travel Sim Card (data 4G+100G+call klook)
  
  
 Day | Date | Dest | Type | Time
 :-------: | :-------: | :-------:  | :-------: | :-------:
  | | | | 
 <br>Day1 | 2020-12-19<br><br>2021-01-03 | 纽村<br><br>土澳 | <br>南半球 | <br>16days
+
+地点： 新加坡 —— 奥克兰 —— 皇后镇 —— 墨尔本 —— 凯恩斯 —— 布里斯班 —— 悉尼 —— 新加坡
+
+http://wherej.com/travelblog/bb102b09ec214bb03e8a73ac62624607
 
 ## 1. 奥克兰
 
@@ -43,9 +47,21 @@ Day | Date | Dest | Type | Time
 
 奥克兰曾经做为新西兰的首都，尽管后来被地理位置更佳的惠灵顿取代，但仍旧是新西兰最发达、热闹、外向的城市。从市中心的伊丽莎白女王广场到海港大桥，或登上天空塔，用一杯咖啡的时间领略“千帆之都”的闲适与繁华。稍远一些推荐你前往伊甸山，这里风景优雅，可以眺望整个奥克兰，适合在阳光充裕的下午徒步游览。
 
+1. 中央公园
+2. AUT
+3. 萤火虫洞出来出发去霍比屯
+4. 夏尔村的羊群
+5. Bilbo Baggins老爷的袋底洞
+
 ## 2. 最美皇后镇
 
+奥克兰 飞到 皇后镇 近两个小时
+
 ## 3. 凯恩斯圣诞
+
+大堡礁(1天)   阿金考特外堡礁
+
+库兰达热带雨林自然公园   凯恩斯前滩散步道
 
 ## 3. 失望墨尔本
 
@@ -53,10 +69,13 @@ Day | Date | Dest | Type | Time
 
 ## 5. 悉尼跨年
 
+悉尼港大桥   达令港
+岩石区   悉尼歌剧院   悉尼皇家植物园   塔龙加动物园
+悉尼鱼市场   海德公园   圣玛丽大教堂   悉尼维多利亚女王大厦
 
 ## Reference
 
-- [在最美的季节畅游新西兰、澳大利亚](http://wherequ.com/travelblog/61160.html)
+- [在最美的季节畅游新西兰、澳大利亚](http://wherej.com/travelblog/bb102b09ec214bb03e8a73ac62624607)
 - [澳大利亚悉尼+墨尔本+新西兰基督城+皇后镇+奥克兰15日13晚自由行](https://vacations.ctrip.com/travel/detail/p1022438232/?city=2)
 - [在最美的季节畅游新西兰、澳大利亚][1]
 - [澳大利亚🇦🇺新西兰🇳🇿之旅](https://www.mafengwo.cn/i/16860082.html)
