@@ -67,10 +67,10 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 1. 年假多
 2. 饮品 & 零食
 3. 保险 (不错的)
-4. 团建经费充足 team-building allowance
+4. 团建经费充足 team-building allowance / Team Building
 5. 定期体检 
 6. 集团年会/文化日/大部门年会/境内小部门年会/境外年会， 各种年会, 会有很多礼品
-7. 平时晚上/周末组织的 各种 club 活动/FamilyDay [这里需要配图]
+7. 平时晚上/周末组织的 各种 club 活动/FamilyDay/FruitGathering (celebrating summer's sweet harvest)
 8. Gym 配置
 
 ### 1.4 采访 Angel
