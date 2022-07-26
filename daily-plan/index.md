@@ -63,9 +63,9 @@ what problem is the main purpose of data warehouse to solve
 > 数据仓库是对业务系统的数据进行同步接入、历史存储、清洗加工、有效管理、分层建设、贴合需求；最终以提供满足业务场景数据使用需求的一种数据库。
 > for mysql and other business system data: 
 >
-> 💘① data accesses & historically stores
-> 💘② cleans and processes(ETL), 
-> 💘③ effectively manages, hierarchically constructs, 
+> 💘① data accesses & historically stores;
+> 💘② cleans and processes(ETL);
+> 💘③ effectively manages, layered construction;
 > 💘④ fits the needs of the data of the business system; 
 >
 > finally, it provides a database that meets the data usage needs of business scenarios.
