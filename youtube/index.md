@@ -35,7 +35,7 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 > 3.1 ab & blair 12F 门口
 > 3.2 逛的时候 (12F wework) 【wework 影片此时类似】
 
-1. 来一杯咖啡 
+1. 来一杯咖啡 & breakfast
 2. 零食 & 果汁
 3. 中午来一场 Game Room / 
 
