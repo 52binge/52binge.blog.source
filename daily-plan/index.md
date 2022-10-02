@@ -25,9 +25,10 @@ Plan | Time | Topic | Level2
 :---: | --- | --- | ---
 **2022.10** | | |
 1. | 7:00~8:00 | IELTS | Writing / Speaking
-2. | 8:00~10:00 | PPT | PPT + Youtuber 
-3. | | real-time data warehouse 
+2. | 8:00~9:00 | PPT | PPT + Youtuber 
+3. | 9:00~10:00 | Career | SparkSQL <br> Leetcode <br> Work BI <br> Real-Time Data Warehouse / Flink
 **2022.09** | | |
+1. | Covid | Covid | Covid
 **2022.08** | | |
 1. | 7:00~8:00 | IELTS | Writing / Speaking
 **2022.07** | | | 
