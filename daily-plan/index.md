@@ -23,6 +23,10 @@ Set your mind to it and you can do it !
 
 Plan | Time | Topic | Level2
 :---: | --- | --- | ---
+**2022.10** | | |
+1. | 7:00~8:00 | IELTS | Writing / Speaking
+2. | 8:00~10:00 | PPT | PPT + Youtuber 
+**2022.09** | | |
 **2022.08** | | |
 1. | 7:00~8:00 | IELTS | Writing / Speaking
 **2022.07** | | | 
