@@ -18,6 +18,62 @@ If you really want to do it you can! Just keep on trying your best and practice 
 
 Diligence is not a race against time, but **continuous**, dripping water wears through the rock. 
 
+## VISA - Sr. Data Engineer
+
+Preferred Qualifications
+
+- Java and Big Data technologies like Hive, Hadoop, and Spark
+- Understanding and working experience with shell scripting
+- Knowledge and working experience on Git/Stash, Ant, Maven, Jenkins and Jira
+- Experience with database technologies like DB2, Oracle, SQL Server
+- Knowledge of Unix/Linux
+- Strong foundation in computer science, with strong competencies in data structures, algorithms and software design optimized for building highly distributed and parallelized systems
+
+## ByteDance - [Data Engineer - Global Payments ByteDance Singapore, Singapore](https://www.linkedin.com/jobs/collections/recommended/?currentJobId=3286657181)
+
+Qualifications
+
+- Bachelor's degree or above in Computer Science, Statistics, Mathematics or other related majors;
+- At least 3 years of experiences and above;
+- Proficient in at least one programming language such as Python, Java, Scala, Go, etc., with a strong engineering background and interest in data;
+- Prior experience with writing and debugging data pipelines using a distributed data framework (`Hadoop/Spark/Flink`/Storm etc.);
+- Familiar with OLAP engines (Hive/ES/Clickhouse/Druid/Kylin/Doris etc.);
+- Familiar with data warehouse architecture, data modelling methods and data governance; enthusiastic about data mining, strong business understanding and abstraction capabilities;
+- Proficient in databases, strong SQL/ETL development ability;
+- Experience in `real-time data warehouse development` is preferred.
+
+## Data Engineer, Apple Media Products
+
+- Proven experience working on big data systems and distributed computing, such as Hadoop and Spark.
+- Proficiency in using query languages like `SQL, Hive and SparkSQL`.
+- Experience with entity-relationship modeling and understanding of normalization.
+- Experience with sessionization of clickstream and time-series data is a plus.
+- Familiar with the concepts of dimensional modeling.
+- Experience maintaining a large software system and writing a test suite.
+- Experience with Continuous Integration, Version Control such as git.
+- Experience with programming languages such as `Scala, Spark or Python`.
+- Experience with `data visualization tools, such as GGplot`, etc.
+- Deep understanding of data structures and common methods in data transformation.
+- Keep up-to-date with the newest technology trends.
+
+## Binance - Data Warehouse Engineer
+
+Responsibilities
+
+- 5+ years experiences of data lake and data warehouse design and development experience.
+- Deeply understanding of data warehouse modeling and data governance. Solid knowledge of data warehouse development methodology, including dimensional modeling, information factory, and one data, etc.
+- Proficient in Java / Scala / Python (at least one language) and Hive & Spark SQL programming languages.
+- Familiar with OLAP technology (such as: kylin, impala, presto, druid, etc.).
+- Proficient in Big Data batch pipeline development.
+- Familiar with Big Data components including but not limited to Hadoop, Hive, Spark, Delta lake, Hudi, Presto, Hbase, Kafka, Zookeeper, Airflow, Elasticsearch, Redis, etc.
+- Experiences with AWS Big Data services are a plus.
+
+## Amazon - Sr. Data Engineer
+
+- Expert working knowledge on SQL and Python/Scala to perform data processing, building data models, conducting data analysis.
+- Exceptional visualisation skills using Tableau, Qlikview or other relevant visualisation tools. - Exhibits sound business judgment, a proven ability to influence others, strong analytical skills, and a proven track record of taking ownership, leading data-driven analyses, and influencing results
+- Strong written and verbal communication skills, with a track record of presenting to senior management - Effective self-starter who excels in a lean and fast-paced organisation
+
 ## 1. Spark & Spark SQL
 
 ### 1.1 Spark Basic
