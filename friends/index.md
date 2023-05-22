@@ -23,8 +23,6 @@ Reading, Thinking, Writing {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x
 
 {% cell AbbieLu, https://www.youtube.com/c/AbbieLu, https://yt3.ggpht.com/MtO_Vnu9ZPkqCDZUkPclNHhfWlZa9XtsGRLkQpA8clFPwWV8mvYxk6YjVGUqEdsMPOnmMbHS-w=s88-c-k-c0x00ffffff-no-rj %}
 
-{% cell 江海寄余生, https://mp.weixin.qq.com/s/O-M7lUvIzz6ThbVIWeDCcA, https://mmbiz.qpic.cn/mmbiz_jpg/0WDa4XMbaxtBZ04ziaWiayI2rVXALzXJhL3MSLCWEHSmYJEGfCYSrHIS2ZUiaVBu55feBnUia6llDK97bbc6y4xL6Q/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1 %}
-
 {% endbtns %}
 
 Business Intelligence {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
@@ -51,8 +49,6 @@ Friends 博客爱好者 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cd
 
 {% cell qinxs, https://7bxing.com/, https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/img/avatar.png %}
 
-{% cell PPJ后端, https://ppj19891020.github.io/, https://ppj19891020.github.io/images/avatar.jpeg %}
-
 {% endbtns %}
 
 IndustryVeteran 业界大佬 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
@@ -64,8 +60,6 @@ IndustryVeteran 业界大佬 {% inlineimage https://cdn.jsdelivr.net/gh/volantis
 {% cell 阮一峰, http://www.ruanyifeng.com/blog/, https://www.ruanyifeng.com/blog/images/person2_s.jpg %}
 
 {% cell 陈皓, https://coolshell.cn/, https://coolshell.cn/wp-content/uploads/2011/03/me.jpg %}
-
-{% cell 王垠, https://www.yinwang.org/, https://inews.gtimg.com/newsapp_bt/0/12948149327/1000 %}
 
 {% endbtns %}
 

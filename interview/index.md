@@ -42,7 +42,28 @@ Qualifications
 - Proficient in databases, strong SQL/ETL development ability;
 - Experience in `real-time data warehouse development` is preferred.
 
-## Data Engineer, Apple Media Products
+## Grab - Senior Data Engineer, Finance Cortex
+
+The day-to-day activities:
+
+Build, deploy and manage big data solutions that can adequately handle the needs of a rapidly growing data driven company
+Spearhead the development of systems, architectures, and platforms that can scale to the 3 Vs of Big data (Volume, Velocity, Variety)
+Streamline data access and security to enable data scientists and analysts to easily access to data whenever they need to
+Build out scalable and reliable ETL pipelines and processes to ingest data from a large number and variety of data sources
+Maintain and optimize the performance of our data analytics infrastructure to ensure accurate, reliable and timely delivery of key insights for decision making
+Lead the movement cleaning and normalizing subsets of data of interest as preparatory step before deeper analysis by the data scientists
+Run Modern high performance analytical databases and computation engines like Spark, Flink, Presto, Synapse, BigQuery, Greenplum and others
+
+The must haves:
+
+A degree or higher in Computer Science, Electronics or Electrical Engineering, Software Engineering, Information Technology or other related technical disciplines.
+Experience in handling large data sets (multiple PBs) and working with structured, unstructured and geographical datasets
+Designed high performance scalable infrastructure stacks for Big Data Analytics
+Deep understanding of databases and best engineering practices - include handling and logging errors, monitoring the system, building human-fault-tolerant pipelines, understanding how to scale up, addressing continuous integration, knowledge of database administration, maintaining data cleaning and ensuring a deterministic pipeline
+Real passion for data, new data technologies, and discovering new and interesting solutions to the company’s data needs
+Excellent communication skills to communicate with the product development engineers to coordinate development of data pipelines, and or any new products features that can be built on top of the results of data analysis
+
+## Apple - Data Engineer, Media Products
 
 - Proven experience working on big data systems and distributed computing, such as Hadoop and Spark.
 - Proficiency in using query languages like `SQL, Hive and SparkSQL`.
@@ -55,18 +76,6 @@ Qualifications
 - Experience with `data visualization tools, such as GGplot`, etc.
 - Deep understanding of data structures and common methods in data transformation.
 - Keep up-to-date with the newest technology trends.
-
-## Binance - Data Warehouse Engineer
-
-Responsibilities
-
-- 5+ years experiences of data lake and data warehouse design and development experience.
-- Deeply understanding of data warehouse modeling and data governance. Solid knowledge of data warehouse development methodology, including dimensional modeling, information factory, and one data, etc.
-- Proficient in Java / Scala / Python (at least one language) and Hive & Spark SQL programming languages.
-- Familiar with OLAP technology (such as: kylin, impala, presto, druid, etc.).
-- Proficient in Big Data batch pipeline development.
-- Familiar with Big Data components including but not limited to Hadoop, Hive, Spark, Delta lake, Hudi, Presto, Hbase, Kafka, Zookeeper, Airflow, Elasticsearch, Redis, etc.
-- Experiences with AWS Big Data services are a plus.
 
 ## Amazon - Sr. Data Engineer
 

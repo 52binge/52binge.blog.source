@@ -24,19 +24,14 @@ Set your mind to it and you can do it !
 Plan | Time | Topic | Level2
 :---: | --- | --- | ---
 **2022.10** | | |
-1. | 7:00~8:00 | IELTS | Writing / Speaking
-2. | 8:00~9:00 | PPT | PPT + Youtuber 
-3. | 9:00~10:00 | Career | SparkSQL <br> Leetcode <br> Work BI <br> Real-Time Data Warehouse / Flink
+1. | 9:00~10:00 | Career | SparkSQL <br> Leetcode <br> Work BI <br> Real-Time Data Warehouse / Flink
 **2022.09** | | |
 1. | Covid | Covid | Covid
-**2022.08** | | |
-1. | 7:00~8:00 | IELTS | Writing / Speaking
 **2022.07** | | | 
-1. | 7:00~8:00 | IELTS | Listening / Writing
-2. | 8:10~9:00 | data warehouse  | SQL / BI / Spark
-3. | 9:10~10:00 | project | 
+1. | 8:10~9:00 | data warehouse  | SQL / BI / Spark
+2. | 9:10~10:00 | project | 
 **2022.06** | | | 
-1. | 6:30~7:30 | English | 1.1 IELTS Writing (Morning) <br> 1.2 EF English (晚上) <br> 1.3 TV scripted (睡前:朗逸思👂🏻)
+1. | 6:30~7:30 | English | 1.1 IELTS Writing (Morning) <br> 1.2 EF English (晚上)
 2. | 7:40~8:10 | [猴子SQL](/2021/02/01/sql/SQL-Monkey/) | 2.1 SQL Cartesian product /kɑːˈtiːzɪən,kɑːˈtiːʒ(ə)n/ 
 3. | 8:20~8:50 | [2022 leetcode](/2022/06/27/leetcode/2022-leetcode/) |  3.1 binary-search <br> 3.2 dfs + stack <br> 3.3 dynamic programming <br> 3.4 sliding window & hash 
 4. | 9:00~9:50 | spark basic | 4.1 mr vs spark (4) <br> 4.2 rdd / dataframe / dataset <br> 4.3 rdd operations - transformation + action <br> 4.4 cache + persist <br> 4.5 spark join

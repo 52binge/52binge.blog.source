@@ -13,7 +13,28 @@ valine:
 <p style="font-style:italic;color:cornflowerblue;">小舟從此逝 江海寄餘生🧘 is inputting <img src=/images/tw/main-progress-blue-dot.gif style="box-shadow:none; margin:0;height:16px">
 </p>
 
+> `2022.07.04` 《Passengers》2016 is a American science-fiction romance film 
+>
+> chief actor - Chris Pratt
+> chief actress - Jennifer Lawrence nicknamed Big Cousin Sister by Chinese fans.
+>
+>  It stars Jennifer Lawrence and Chris Pratt. a huge **`interstellar`**[ˌɪntəˈstelə(r)] 星际的 **`spacecraft`** carrying thousands of people to a **`colony`**[ˈkɒləni] 殖民地 60 light years from Earth, when the two are **`awakened`**  [əˈweɪkənd]被唤起 90 years early from their space capsule hibernation.
+>  The story of how they fell in love and finally managed the spacecraft and successfully flew[fluː] to the second planet, and they eventually grew old, but the houses and trees in the spacecraft left their footprints
+>
+> A Chinese song \<LIGHT YEARS AWAY\> is the theme song of the movie "Passengers" in China.
+>
+> G.E.M. song【LIGHT YEARS AWAY】 won NASA 2019 Breakthrough Prize Ceremony
+> [Pierce Brosnan Hosts the 2019 Breakthrough Prize Ceremony](https://www.youtube.com/watch?v=FNcnaknGJ4E)
+>
+> {% youtube y_UBPFyuRMA %}
+>
+> The reason why I like it is that this film was completed with only four actors and was a success. and reason is theme song is famous in China.
+>
+> eventually侧重于动作或行为的结果。 Eventually the fire was under control. / finally不带感情色彩
+
+
 > `2022.06.18` Moives by Robert V.
+>
 > 《Passengers》2016 by Jennifer Lawrence / Chris Pratt
 >
 > [Pierce Brosnan Hosts the 2019 Breakthrough Prize Ceremony](https://www.youtube.com/watch?v=FNcnaknGJ4E)
@@ -35,7 +56,6 @@ valine:
 > Learn a new word a day and use it in real conversations. You need to build an active vocabulary.
 
 > `2022.06.15` Can I show you the roof?
-> {% image "/images/tw/himym-show-your-the-roof.jpg", width="450px", alt="" %}
 > bar: It's magical up there. 
 > ted: I got that roof reserved.
 
