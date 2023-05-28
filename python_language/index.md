@@ -50,23 +50,23 @@ Python 开发了很多明星网站，例如 YouTube、Instagram、Douban.
 [py0.0]: /2017/10/18/ops/ops-pyenv-install/
 [py0.1]: /2017/12/07/ops/ops-pyenv-Anaconda3-note/
 
-[py1.1]: /2016/08/02/python/py-language-1-data-analysis-environment/
-[py1.2]: /2017/05/31/python/py-language-2-Output-Variable-dataType-If-While:For-PyHead/
-[py1.3]: /2017/05/31/python/py-language-3-str-&-character-encoding/
+[py1.1]: /2016/08/02/python/language/py-language-1-data-analysis-environment/
+[py1.2]: /2017/05/31/python/language/py-language-2-Output-Variable-dataType-If-While:For-PyHead/
+[py1.3]: /2017/05/31/python/language/py-language-3-str-&-character-encoding/
 
-[py2.1]: /2017/05/31/python/py-language-4-collection-type/
-[py2.2]: /2017/06/03/python/py-language-5-function/
-[py2.3]: /2017/06/04/python/py-language-6-read-file/
+[py2.1]: /2017/05/31/python/language/py-language-4-collection-type/
+[py2.2]: /2017/06/03/python/language/py-language-5-function/
+[py2.3]: /2017/06/04/python/language/py-language-6-read-file/
 
-[py3.1]: /2017/06/05/python/py-language-8-class/
+[py3.1]: /2017/06/05/python/language/py-language-8-class/
 
-[py4.1]: /2017/06/03/python/py-language-10-advanced/
-[py4.2]: /2018/01/24/python/py-language-11-zip-lambda-map/
-[py4.3]: /2018/01/24/python/py-language-12-try-exception/
-[py4.4]: /2018/01/24/python/py-language-13-copy/
-[py4.5]: /2018/01/19/python/py-language-14-pickle/
+[py4.1]: /2017/06/03/python/language/py-language-10-advanced/
+[py4.2]: /2018/01/24/python/language/py-language-11-zip-lambda-map/
+[py4.3]: /2018/01/24/python/language/py-language-12-try-exception/
+[py4.4]: /2018/01/24/python/language/py-language-13-copy/
+[py4.5]: /2018/01/19/python/language/py-language-14-pickle/
 
-[py.p1]: /2017/11/04/python/py-language-structure-project/
+[py.p1]: /2017/11/04/python/language/py-language-structure-project/
 
 [0]: /python_language
 

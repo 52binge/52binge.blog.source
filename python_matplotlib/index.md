@@ -21,13 +21,13 @@ date: 2018-01-06 16:46:48
 
 - [4.7 : Matplotlib Tick bbox][matplotlib7]
 
-[matplotlib1]: /2018/01/01/python/py-matplotlib-1-why/
-[matplotlib2]: /2018/01/01/python/py-matplotlib-2-basic-use/
-[matplotlib3]: /2018/01/01/python/py-matplotlib-3-figure-image/
-[matplotlib4]: /2018/01/23/python/py-matplotlib-4-coordinate_axis/
-[matplotlib5]: /2018/01/23/python/py-matplotlib-5-legend/
-[matplotlib6]: /2018/01/23/python/py-matplotlib-6-Annotation/
-[matplotlib7]: /2018/01/23/python/py-matplotlib-7-tick/
+[matplotlib1]: /2018/01/01/python/matplotlib/py-matplotlib-1-why/
+[matplotlib2]: /2018/01/01/python/matplotlib/py-matplotlib-2-basic-use/
+[matplotlib3]: /2018/01/01/python/matplotlib/py-matplotlib-3-figure-image/
+[matplotlib4]: /2018/01/23/python/matplotlib/py-matplotlib-4-coordinate_axis/
+[matplotlib5]: /2018/01/23/python/matplotlib/py-matplotlib-5-legend/
+[matplotlib6]: /2018/01/23/python/matplotlib/py-matplotlib-6-Annotation/
+[matplotlib7]: /2018/01/23/python/matplotlib/py-matplotlib-7-tick/
 
 ### &nbsp;画图种类
 
@@ -41,8 +41,8 @@ date: 2018-01-06 16:46:48
 
 - [4.12 : 3D 数据 *][0]
 
-[matplotlib8]: /2018/01/24/python/py-matplotlib-8-scatter/
-[matplotlib9]: /2018/01/24/python/py-matplotlib-9-bar/
+[matplotlib8]: /2018/01/24/python/matplotlib/py-matplotlib-8-scatter/
+[matplotlib9]: /2018/01/24/python/matplotlib/py-matplotlib-9-bar/
 
 ### &nbsp;多图合并显示
 

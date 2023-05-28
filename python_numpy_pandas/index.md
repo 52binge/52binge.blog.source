@@ -23,14 +23,14 @@ date: 2018-01-06 16:46:48
 
 - [2.8 : Numpy Copy & Deep Copy][numpy8]
 
-[numpy1]: /2017/12/21/python/py-numpy-1-attribute/
-[numpy2]: /2017/12/22/python/py-numpy-2-array/
-[numpy3]: /2017/12/25/python/py-numpy-3-basic-operation-1/
-[numpy4]: /2017/12/25/python/py-numpy-4-basic-operation-2/
-[numpy5]: /2017/12/26/python/py-numpy-5-Index/
-[numpy6]: /2017/12/26/python/py-numpy-6-Array-Merge/
-[numpy7]: /2017/12/27/python/py-numpy-7-Split/
-[numpy8]: /2017/12/27/python/py-numpy-8-copy-deep-copy/
+[numpy1]: /2017/12/21/python/numpy-pandas/py-numpy-1-attribute/
+[numpy2]: /2017/12/22/python/numpy-pandas/py-numpy-2-array/
+[numpy3]: /2017/12/25/python/numpy-pandas/py-numpy-3-basic-operation-1/
+[numpy4]: /2017/12/25/python/numpy-pandas/py-numpy-4-basic-operation-2/
+[numpy5]: /2017/12/26/python/numpy-pandas/py-numpy-5-Index/
+[numpy6]: /2017/12/26/python/numpy-pandas/py-numpy-6-Array-Merge/
+[numpy7]: /2017/12/27/python/numpy-pandas/py-numpy-7-Split/
+[numpy8]: /2017/12/27/python/numpy-pandas/py-numpy-8-copy-deep-copy/
 
 ### Pandas
 
