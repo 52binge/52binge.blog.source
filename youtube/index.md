@@ -71,7 +71,7 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 5. 定期体检 
 6. 集团年会/文化日/大部门年会/境内小部门年会/境外年会， 各种年会, 会有很多礼品
 7. 平时晚上/周末组织的 各种 club 活动/FamilyDay/FruitGathering (celebrating summer's sweet harvest)
-8. Gym 配置
+8. GYM benefit
 
 ### 1.4 采访 Angel
 
