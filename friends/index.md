@@ -47,7 +47,7 @@ IndustryVeteran 业界大佬 {% inlineimage https://cdn.jsdelivr.net/gh/volantis
 
 {% btns circle wide centre %}
 
-{% cell 廖雪峰, https://www.liaoxuefeng.com/, https://tva2.sinaimg.cn/crop.0.1.635.635.50/62d8efadgw1ej30downrsj20hs0hq0ws.jpg?KID=imgbed,tva&Expires=1623954405&ssig=bJZGPYhgNb %}
+{% cell 廖雪峰, https://www.liaoxuefeng.com/, https://avatars.githubusercontent.com/u/7370123?v=4 %}
 
 {% cell 阮一峰, http://www.ruanyifeng.com/blog/, https://www.ruanyifeng.com/blog/images/person2_s.jpg %}
 
