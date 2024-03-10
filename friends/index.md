@@ -17,14 +17,6 @@ valine:
 {% p center logo large,  %}
 {% p center small, the dalao I know during the learning process. %}
 
-Reading, Thinking, Writing {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
-
-{% btns circle wide centre %}
-
-{% cell AbbieLu, https://www.youtube.com/c/AbbieLu, https://yt3.ggpht.com/MtO_Vnu9ZPkqCDZUkPclNHhfWlZa9XtsGRLkQpA8clFPwWV8mvYxk6YjVGUqEdsMPOnmMbHS-w=s88-c-k-c0x00ffffff-no-rj %}
-
-{% endbtns %}
-
 Business Intelligence {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
 
 {% btns circle wide centre %}
@@ -32,8 +24,6 @@ Business Intelligence {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-
 {% cell 小萝卜算子, https://www.zhihu.com/people/hongmianao, https://pic3.zhimg.com/50/v2-c8802b25b79b3c94a413c3b22e423c9c_xll.jpg %}
 
 {% cell 花木兰, https://www.zhihu.com/people/may-25-73/columns/, https://pic2.zhimg.com/v2-cb4445a1aeb51a52aca4b48a0abc4a0b_xll.jpg %}
-
-{% cell Offer帮, https://offerbang.io/, https://pic1.zhimg.com/v2-12dc0416370b598604d6480c1e9f6d85_xl.jpg %}
 
 {% cell 小Lin@知乎, https://www.zhihu.com/people/lindsayzou/, https://pic1.zhimg.com/v2-12dc0416370b598604d6480c1e9f6d85_xl.jpg %}
 
@@ -44,6 +34,8 @@ Friends 博客爱好者 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cd
 {% btns circle wide centre %}
 
 {% cell Blair`s Blog, https://52binge.github.io/, /images/logos/logo_me1.jpg %}
+
+{% cell Joye, https://joyenjoye.com/, https://avatars.githubusercontent.com/u/29893343?v=4 %}
 
 {% cell 七海の参考書, https://shiraha.cn, https://cdn.jsdelivr.net/gh/45921/cdn-images@main/me/avatar.jpg %}
 
