@@ -35,9 +35,9 @@ Friends 博客爱好者 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cd
 
 {% cell Blair`s Blog, https://52binge.github.io/, /images/logos/logo_me1.jpg %}
 
-{% cell Joye, https://joyenjoye.com/, https://avatars.githubusercontent.com/u/29893343?v=4 %}
-
 {% cell 七海の参考書, https://shiraha.cn, https://cdn.jsdelivr.net/gh/45921/cdn-images@main/me/avatar.jpg %}
+
+{% cell joye, https://joyenjoye.com/, https://avatars.githubusercontent.com/u/29893343?v=4 %}
 
 {% cell qinxs, https://7bxing.com/, https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/img/avatar.png %}
 
