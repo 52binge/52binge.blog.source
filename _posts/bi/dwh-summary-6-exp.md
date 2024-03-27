@@ -1,6 +1,6 @@
 ---
 icons: [fas fa-fire red, fas fa-star green]
-title: data-warehouse review 6
+title: data-warehouse standardization - 数仓规范体系简版  
 date: 2021-09-11 09:07:21
 categories: bi
 tags: [DWH]

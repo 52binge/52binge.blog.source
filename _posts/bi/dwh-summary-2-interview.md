@@ -1,5 +1,5 @@
 ---
-title: data-warehouse review 2
+title: data-warehouse 2 - 面经杂乱篇
 date: 2021-01-09 09:07:21
 categories: bi
 tags: [data warehouse]
