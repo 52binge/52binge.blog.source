@@ -56,33 +56,62 @@ Spark 是计算框架, 它主要使用 HDFS 充当持久化层。
 5. 安装 Spark
 6. 启动 Spark 集群
 
+```bash
+MS=/usr/local/xsoft
+
+### JAVA ###
+JAVA_HOME=$MS/jdk/Contents/Home
+JAVA_BIN=$JAVA_HOME/bin
+PATH=$JAVA_HOME/bin:$PATH
+CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/jre/lib/dt.jar:$JAVA_HOME/jre/lib/tools.jar
+export JAVA_HOME JAVA_BIN PATH CLASSPATH
+
+export HADOOP_HOME=/usr/local/Cellar/hadoop/3.2.1_1
+export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
+
+export SCALA_HOME=/usr/local/Cellar/scala/2.13.3
+export PATH=$PATH:$SCALA_HOME/bin
+
+export SPARK_HOME=$MS/spark
+export PATH=$PATH:$SPARK_HOME/bin
+```
+
 <a href="http://spark.apache.org/downloads.html">Spark官网下载</a>
+
 
 ### 4.1 安装 Spark
 
 ```bash
-(1). download  spark-1.5.2-bin-hadoop2.6.tgz
+(1). tar -xzvf spark-3.0.0-bin-hadoop2.7.tgz
 
-(2). tar -xzvf spark-1.5.2-bin-hadoop2.6.tgz
+(2). cd /usr/local/xsoft/spark-3.0.0-bin-hadoop3.2/
 
 (3). 配置 conf/spark-env.sh
     1) 详细复杂参数配置参见 官网 Configuration
     2) vim conf/spark-env.sh
     
-    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home
-    export SCALA_HOME=/usr/local/Cellar/scala/2.11.5
-    export SPARK_HOME=/usr/local/xSoft/spark
-    
-    export SPARK_MASTER_IP=ip
-    export MASTER=spark://ip:7077
-
-    export SPARK_EXECUTOR_INSTANCES=2
-    export SPARK_EXECUTOR_CORES=1
-
-    export SPARK_WORKER_MEMORY=1000m
-    export SPARK_EXECUTOR_MEMORY=300m
-
-    export SPARK_LIBRARY_PATH=${SPARK_HOME}/lib
+		#!/usr/bin/env bash
+		
+		export SCALA_HOME=/usr/local/Cellar/scala/2.13.3
+		export SPARK_HOME=/usr/local/xsoft/spark
+		
+		export SPARK_MASTER_IP=localhost
+		export MASTER=spark://localhost:7077
+		
+		#export IPYTHON=1
+		export PYSPARK_PYTHON=/Users/blair/.pyenv/versions/anaconda3/envs/spark/bin/python3
+		export PYSPARK_DRIVER_PYTHON="jupyter"
+		export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
+		
+		#export SPARK_WORKER_MEMORY=2g
+		
+		#export SPARK_EXECUTOR_INSTANCES=2
+		#export SPARK_EXECUTOR_CORES=1
+		
+		#export SPARK_WORKER_MEMORY=2000m
+		#export SPARK_EXECUTOR_MEMORY=500m
+		
+       #export SPARK_LIBRARY_PATH=${SPARK_HOME}/lib
 
 (4). 配置 conf/slaves (测试可选)
 (5). 一般需要 startup ssh server.

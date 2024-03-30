@@ -28,11 +28,6 @@ tags: [spark]
 >
 > - shuffle调优，主要讲解了如何对Spark作业的shuffle运行过程以及细节进行调优。
 
-今天的内容:
-
-> 1. 开发调优
-> 2. 数据倾斜
-
 # 开发调优 10点
 
 ## 1. 避免创建重复的RDD
@@ -243,116 +238,6 @@ rdd.repartition = rdd2   rdd2.sort = rdd3
 mapreduce: DistributedCache
 spark: BroadCastManager SparkContext
 
-## 8. 使用Kryo优化序列化性能
-
-1. java: 
-2. mapreduce
-3. 他们的区别
-
-**java中创建对象的方式:**
-
- 1. 构造器
- 2. 静态工厂方法 (私有化了构造器)
- 3. 反射
- 4. 克隆
- 5. 反序列化
-
-**java： 实现序列化:**
-
-    让参与序列化的类型 implements Serializable
-    
-    ObjectOutputStream oos = new ...
-    oos.writeObject(student)
-        网络IO，FileIO
-    Redis: String
-        把一个对象： toString, 序列化, JSON
-        
-有个缺点:
-
- 除了把当前这个对象的属性的值给存储/携带之外, 还会把当前这个对象的类型的信息都携带.
- 
-加入要传入 10000 个对象：
-
-```
-1  :  类型信息    对象信息
-2  :  类型信息    对象信息
-...
-1000  :  类型信息    对象信息
-```
-
-**mapreduce:**
-
-序列化，自定义规则
-
-对于类型信息，只会携带一次
-
-```
-1  :  对象信息
-2  :  对象信息
-...
-1000  :  对象信息
-```
-
-java 原生序列组件的原因
-
-实现方式:
-
-```java
-class Student implements Writable {
-    private int id;
-    private String name;
-	
-	// 序列化
-    write(out) {
-        out.writeInt(id);
-        out.writeUTF(name);
-    }
-    // 反序列化
-    readFields(in) {
-        this.id = in.readInt();
-        this.name = in.readUTF();
-    }
-}
-```
-
-他们的区别：
-
-  mapreduce 的序列化机制, 只序列化要进行传输的属性的值，不重复序列化对象的类型信息
-
-**spark：**
-
-1. 默认情况下, 是支持 java 原生序列化机制
-2. 使用 KryoSerializer 
-
-```scala
-使用方式:
-
-// 创建SparkConf对象。
-val conf = new SparkConf().setMaster(...).setAppName(...)
-// 设置序列化器为KryoSerializer。
-conf.set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
-// 注册要序列化的自定义类型。
-conf.registerKryoClasses(Array(classOf[MyClass1], classOf[MyClass2]))
-```
-
-## 9. 优化数据结构
-
-Java中，有三种类型比较耗费内存： 
-
-> * 对象，每个Java对象都有对象头、引用等额外的信息，因此比较占用内存空间。 
-> * 字符串，每个字符串内部都有一个字符数组以及长度等额外信息。 
-> * 集合类型，比如HashMap、LinkedList等，因为集合类型内部通常会使用一些内部类来封装集合元素，比如Map.Entry。
-
-因此Spark建议，在Spark编码实现中，特别是对于算子函数中的代码，尽量不要使用上述三种数据结构，尽量使用
-
-> - 字符串替代对象，使用原始类型（比如Int、Long）替代字符串，
-> - 数组替代集合类型，这样尽可能地减少内存占用，从而降低GC频率，提升性能。
-
-> **`不要刻意去这么做`**, 也要注意可读性.
-
-但是在笔者的编码实践中发现，要做到该原则其实并不容易。因为我们同时要考虑到代码的可维护性，如果一个代码中，完全没有任何对象抽象，全部是字符串拼接的方式，那么对于后续的代码维护和修改，无疑是一场巨大的灾难。同理，如果所有操作都基于数组实现，而不使用HashMap、LinkedList等集合类型，那么对于我们的编码难度以及代码可维护性，也是一个极大的挑战。因此笔者建议，在可能以及合适的情况下，使用占用内存较少的数据结构，但是前提是要保证代码的可维护性。
-
-## 10. 融会贯通
 
 ## Reference
 

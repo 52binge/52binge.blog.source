@@ -188,9 +188,7 @@ persist() ==== persist(StorageLevel.MEMORY_ONLY)
 > 
 > JVM 最大的区域是 Head 内存， OffHeap 堆外内存
 
-## 7. union, join, subtract, cartesian
-
-## 8. 各种 byKey 操作 (重要)
+各种 byKey 操作 (重要)
 
 ----union, join, coGroup, subtract, cartesian----
 
@@ -200,122 +198,6 @@ persist() ==== persist(StorageLevel.MEMORY_ONLY)
 > 4. sortByKey
 > 5. combineByKey
 
-### 8.1 groupByKey
-
-```scala
-val data = List(("math", 89), ("hadoop", 100), ("math", 10), ("english", 89), ("math", 1000))
-```
-
-groupByKey把相同的key的数据分组到一个集合序列当中：
-
-```scala
-[
-  ("spark",1), 
-  ("hive",1), 
-  ("spark",1), 
-  ("hadoop",1), 
-  ("hive",1)
-] 
---> 
-[
-  ("spark",(1,1)),
-  ("hive",(1,1)),
-  ("hadoop",(1))
-]
-```
-
-- [Spark函数讲解：aggregateByKey 过往记忆](https://www.iteblog.com/archives/1261.html)
-- [Spark的groupByKey、reduceByKey、sortByKey算子案例](https://zhuanlan.zhihu.com/p/61517837)
-
-## 9. RDD mapPartitions, mapPartitionsWithIndex
-
-mapPartitions 每次遍历一个分区 (最小单位是分区)
-
-## 10. map, flatMap, filter
-
-## 11. spark 基础概念复习
-
-### 11.1 第1部分
-
-  第一天spark内容的部分残留
-  
-     WordCountJava7
-     WordCountJava8
-  
-  任务的提交：
-  
-    (1). run-example SparkPi 100
-    (2). spark-shell
-    (3). spark-submit
-  
-  --master:
-  
-    local local[2] local\[\*\]
-    spark://hadoop02:7077, hadoop04:7077
-    yarn
-    
-  HDFS 处理 myha01 这个 nameservice 的方式非常的暴力:
-  
-    所有的请求，其实都会给每个 namenode 都发送, 但是只有 active 的 namenode才会进行处理，进行回复
-    if (namenode.getServiceStage() == "standby") {} else : ...
-  
-### 11.1 第2部分
- 
- 核心功能: SparkContext, 存储体系， 执行引擎 DAGScheduler, 部署魔术
- 
- 扩展功能: SQL, Streaming, GraphX, MLlib, SparkR, Pyspark
- 
- **核心概念**:
- 
->  Application
->  Job   切分标准: 从前往后找action的算子
->  Stage 切分标准: 从后往前找宽依赖的算子 
->  Task
-
-{% image "/images/spark/spark-aura-3.2.1.jpg", width="750px" %}
-
-**Driver Application**: 客户端驱动程序, 也可以理解为客户端应用程序，用于将任何程序转换为 RDD 和 DAG, 并与 Cluster Manager 进行通信与调度.
-
->  ClusterManager
->  Driver
->  Executor
->  Master, Worker, Client
-    
-deploy-mode 主要针对 yarn: client cluster
-
-基本架构:
-
-**编程模型**:
-
->  1). 获取编程入口 `--->` SparkContext
->        
->  2). 通过编程入口使用不同的方式加载数据得到一个`数据抽象` `--->` RDD 
->        
->  3). 针对加载得到的数据抽象调用不同的`算子`进行处理 `--->` Transformation + Action
->       
->  4). 针对结果数据进行处理 RDD/Scala 对象 或 集合 `--->` print / save 存储
->        
->  5). 关闭编程入口 `--->` sparkContext.stop()
->  
-> sparkSQL
-> sparkStreaming
-> & 
-> sparkCore 一模一样
-> 唯一不相同的地方就是: 编程入口, 数据抽象, 算子      
-
-**RDD：**
-
-(1) 概念： 弹性分布式数据集， 不可变的， 可分区的分布式集合
-(2) 属性： 
-
-> - A list of partitions
-> - A function for computing on other RDDs
-> - A list of dependencies on other RDDs
-> - Optionally, a Partition for key-value RDDs (e.g. to say that the RDD is hash-partitioned)
-> - Optionally, a list of preferred locations to compute each split on (e.g. block locations for an HDFS file)
- 
-
-## 12. RDD 算子 sample, takeSample
 
 ## Reference
 
