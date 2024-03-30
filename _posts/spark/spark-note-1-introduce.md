@@ -177,6 +177,7 @@ The Spark architecture adopts the **Master-Slave model** common in distributed c
 
 Spark abstracts distributed memory data into elastic distributed data sets (**RDD**), and implements **rich operators** on it to calculate the RDD, and finally converts the operator sequence into a **DAG** for execution and scheduling.
 
+{% image "/images/spark/Hadoop-vs-Spark-1.jpg", width="600px", alt="" %}
 
 ## Reference
 
