@@ -5,7 +5,7 @@ categories: [spark]
 tags: [spark]
 ---
 
-{% image "/images/spark/spark-summary-logo-2.png", width="500px", alt="" %}
+{% image "/images/spark/spark-summary-logo-2.png", width="450px", alt="" %}
 
 <!-- more -->
 
@@ -24,7 +24,7 @@ Apache Spark is a unified analytics engine for large-scale data processing
 
 ## 2. Spark - Ecosystem
 
-{% image "/images/spark/apache-spark-ecosystem-components.jpg", width="600px", alt="Spark - Ecosystem" %}
+{% image "/images/spark/Apache-Spark-Ecosystemwebp.webp", width="600px", alt="Spark - Ecosystem" %}
 
 ## 3. Spark vs Hadoop
  
@@ -42,6 +42,8 @@ Spark advantages as follows:
 ## 4. Spark - Quick Start
 
 Spark is a computing framework that mainly uses HDFS as the persistence layer.
+
+{% image "/images/spark/spark-3.4.png", width="600px", alt="Spark" %}
 
 ### 4.1 Spark-Shell 
 
@@ -69,6 +71,8 @@ sorted_word_count = word_count.sortBy(lambda x: x[1], ascending=False)
 
 > reduceByKey: Merge values with the same key (such as summation, maximum value, etc.). This step reduces the amount of data before Shuffle.
 Advantages: For large data sets, this method is more efficient because it reduces the amount of data during network transmission.
+
+{% image "/images/spark/spark_wordcount_vertical_large.png", width="600px", alt="You think this is a stand-alone mode with only one Executor and one Task" %}
 
 ### 4.2 DataFrame API
 
@@ -104,6 +108,8 @@ In SQL, there is no direct **reduceByKey**
 
 ### 4.3 SparkSQL
 
+uses DataFrame for data processing with SparkSQL
+
 ```python
 from pyspark.sql import SparkSession
 # 1: Initialize SparkSession
@@ -130,14 +136,10 @@ ORDER BY count DESC
 sorted_word_count.show()
 ```
 
+Within the code, **the DataFrame API to read a text file and then register it as a temporary view to perform data processing and querying through SQL statements**. 
+
 > 1. Syntax and readability: The DataFrame API prefers programmatic processing, while Spark SQL provides a declarative query method, which may be more friendly to users familiar with SQL.
 > 2. Temporary view: In Spark SQL implementation, DataFrame needs to be registered as a temporary view to execute SQL queries, while the DataFrame API operates directly on the data.
-
-**View cluster status via SparkPI samples web UI**
-
-        http：//masterIp:8080
-
-{% image "/images/spark/spark-introduce-05.png", width="740px", alt="http://localhost:8080/" %}
 
 quick-start : https://spark.apache.org/docs/latest/quick-start.html
 
@@ -175,9 +177,9 @@ The Spark architecture adopts the **Master-Slave model** common in distributed c
 
 ## 6. Summary
 
-Spark abstracts distributed memory data into distributed data-sets (**RDD**), and implements **rich operators** on it to calculate the RDD, and finally converts the operator sequence into a **DAG** for execution and scheduling.
+Introduced spark three ways to write wordcount program
 
-{% image "/images/spark/Spark-Fundamentals-Plan-1.png", width="700px", alt="" %}
+In large company production environments, storing data in Hive and querying it directly with Spark SQL is a common practice. This approach primarily leverages the DataFrame API.
 
 ## Reference
 
