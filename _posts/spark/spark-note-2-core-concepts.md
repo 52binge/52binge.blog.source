@@ -85,9 +85,9 @@ Apache Spark evaluates RDDs lazily. It is called when needed, which saves lots o
 
 {% image "/images/spark/pyspark-rdd-logo.png", width="500px", alt="rdd-of-string vs rdd-pair" %}
 
-> - Immutability: Once created, the data in an RDD cannot be changed. This ensures data consistency and fault tolerance.
+> - Immutability: Once created, the data in RDD cann't changed. This ensures data consistency & fault tolerance.
 > - Resilience: RDDs are fault-tolerant, meaning they can recover quickly from failures using lineage information.
-> - Distributed: The data in RDDs is distributed across the cluster, allowing for parallel processing on multiple nodes.
+> - Distributed: The data in RDDs is distributed across the cluster, allowing parallel processing on multiple nodes.
 > - Partitioning: RDDs are divided into partitions, which can be processed in parallel across the cluster.
 > - Lazy Evaluation: RDDs are lazily evaluated, meaning computations on them are delayed until an action is performed, optimizing overall data processing efficiency.
 
@@ -112,17 +112,23 @@ rdd = spark.sparkContext.textFile("path/to/textfile")
 2. Action. RDD returns final result of RDD computations. 
 3. Cronroller，(cache/persist) 
 
+{% image "/images/spark/rdd-narrow-and-wide-dependencies.png", width="600px", alt="" %}
+
 ## 3. DAG & Stage
 
 ### 3.1 WordCount FlowChart
 
 {% image "/images/spark/spark-aura-3.2.2.jpg", width="800px", alt="WorCount 各种流程划分" %}
 
+{% image "/images/spark/spark-dag-visualization.png", width="500px", alt="" %}
+
 ### 3.2 WordCount DAG
 
 WordCount DAG - 2个Stage
 
-{% image "/images/spark/spark-aura-3.2.3.jpg", width="800px", alt="WorCount DAG有向无环图" %}
+{% image "/images/spark/spark-aura-3.2.3.jpg", width="750px", alt="WorCount DAG有向无环图" %}
+
+{% image "/images/spark/spark-wordcount-rdd-trans.jpg", width="600px", alt="" %}
 
 ### 3.3 Stage 
 
