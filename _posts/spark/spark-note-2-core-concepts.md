@@ -128,13 +128,13 @@ rdd = spark.sparkContext.textFile("path/to/textfile")
 
 | Concept | Description |
 |---------------|-------------------|
-| **Application** | A complete program built on Spark, consisting of a set of jobs / 基于Spark构建的完整程序，包含一组作业 |
-| **Job** | A sequence of computations triggered by an action operation, split based on actions from front to back / 由action操作触发的一系列计算，根据动作从前往后切分,Job被分解成多个Stage，Stage是基于RDD的宽依赖（shuffle依赖）来划分的。 每个action操作会提交一个Job。Job是由一系列Stage组成的，这些Stage基于RDD的宽依赖被顺序执行。每个Stage是对一组可以并行执行的任务的封装，而Job的完成则是通过顺序执行这些Stage来实现的。这种设计使得Spark能够有效地处理大规模数据集，同时优化计算资源的使用。  |
+| **Application** | A complete program built on Spark, consisting of a set of jobs |
+| **Job** | A sequence of computations triggered by an action operation, split based on actions from front to back / 由action操作触发的一系列计算，根据动作从前往后切分,Job被分解成多个Stage，Stage是基于RDD的宽依赖（shuffle依赖）来划分的。 每个action操作会提交一个Job。Job是由一系列Stage组成的，这些Stage基于RDD的宽依赖被顺序执行。每个Stage是对一组可以并行执行的任务的封装，而Job的完成则是通过顺序执行这些Stage来实现的  |
 | **Stage** | Jobs are divided into stages at wide dependencies, split from back to front / 从后往前找 shuffle类型/宽依赖 的算子, 遇到一个就断开, 形成一个 stage；遇到窄赖就将这个RDD加入该stage中。 作业在宽依赖处被划分为阶段，从后往前切分, Stage的边界是shuffle：当一个操作需要对数据进行重新分布，比如通过key进行分组时，这就引入了宽依赖。Spark会在这些宽依赖的位置切分Stage，因此，Stage的边界就是数据shuffle的地方。 |
-| **关系**  | 一个Job包含多个Stage。<br>- Stage内的任务可以并行执行，但多个Stage之间是有先后顺序的，只有当一个Stage中的所有Task执行完成后，下一个Stage才会开始执行。 <br>- Stage的边界是数据shuffle的地方。 |
+| **关系**  | 一个Job包含多个Stage。<br>- Stage内的任务可以并行执行，但多个Stage之间是有先后顺序的，只有当一个Stage中的所有Task执行完成后，下一个Stage才会开始执行. |
 | **执行过程** | 执行过程中，每个Stage被TaskScheduler分解成多个Task，这些Task由Executor并行执行。Stage的执行是顺序的，但Stage内的Task是并行的。Job的完成依赖于所有Stage的顺序执行和完成。 |
 | **RDD** | 每个 RDD 又可以指定不同的分区数, 默认情况下：每一个分区，就会是一个 Task |
-| **Task** | The smallest unit of work in Spark, executed on the cluster / Spark中执行的最小工作单位 |
+| **Task** | The smallest unit of work in Spark, executed on the cluster |
 | **2 Task Types** | Split into `ShuffleMapTask` and `ResultTask`: <br> - **ShuffleMapTask**: Prepares data for a shuffle before the next stage <br> - **ResultTask**: Executes at the final stage for each partition's result <br> 分为`ShuffleMapTask`和`ResultTask`： <br> - **ShuffleMapTask**：在下一个阶段之前准备shuffle的数据 <br> - **ResultTask**：在最后一个阶段为每个分区的结果执行 ; ShuffleMapTask和ResultTask；简单来说，DAG的最后一个阶段会为每个结果的partition生成一个ResultTask，即每个Stage里面的Task的数量是由该Stage中最后一个RDD的Partition的数量所决定的！|
 
 ### 3.3 DAGScheduler Workflow
