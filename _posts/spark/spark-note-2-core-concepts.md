@@ -130,11 +130,99 @@ WordCount DAG - 2个Stage
 
 {% image "/images/spark/spark-wordcount-rdd-trans.jpg", width="600px", alt="" %}
 
+
+**DAG规划和基础理论**
+
+切分 Stage 是 从后往前找 shuffer类型/宽依赖的算子，遇到一个就断开，形成一个 stage
+
+最后一个 stage： ResultStage
+
+除此之外的stage
+
+> 因此spark划分stage的整体思路是：从后往前推，遇到宽依赖就断开，划分为一个stage；遇到窄赖就将这个RDD加入该stage中。
+> 
+> 在spark中，Task的类型分为2种：ShuffleMapTask和ResultTask；简单来说，DAG的最后一个阶段会为每个结果的partition生成一个ResultTask，即每个Stage里面的Task的数量是由该Stage中最后一个RDD的Partition的数量所决定的！
+> 
+> 而其余所有阶段都会生成ShuffleMapTask；之所以称之为ShuffleMapTask是因为它需要将自己的计算结果通过shuffle到下一个stage中。
+
+
+**切分stage：**
+
+从后往前找 shuffle类型/宽依赖 的算子, 遇到一个就断开, 形成一个 stage
+
+> 最后一个stage: ResultStage   ------>  ResultTask
+> 除此之外的stage：ShffleMapStage   ------>  ShffleTask
+> 
+> 每一个 stage 都会切成多个同种类型的 Task
+>
+> 每一个 Stage 中的有可能包含多个不同的 RDD
+> 那么一个 Stage 又有可能会划分多个 task 执行
+> 每个 RDD 又可以指定不同的分区数
+> 默认情况下：每一个分区，就会是一个 Task
+> 
+> 那么现在，如果遇到了一个 stage 中有多个不同分区数的RDD，
+> 那么请问：到底这个stage中有多少个Task执行呢？
+> 
+> 5 4 3 -----> 3个task
+> 
+> 以最后一个RDD的分区数来决定
+
+**切分job：**
+
+从前往后找action算子, 找到一个就形成一个 job.
+
+{% image "/images/spark/spark-aura-3.1.2.jpg", width="750px" %}
+
+3 + 2 = 5 tasks
+
+DAG 的生成
+
+checkpoint linage
+
+检查点  血脉  血统
+
+容错
+
+对于Spark任务中的宽窄依赖，我们只喜欢窄依赖
+
+DAGScheduler：
+
+> 1. spark-submit 提交任务
+> 2. 初始化 DAGScheduler 和 TaskScheduler
+> 3. 接收到 application 之后，DAGScheduler 会首先把 application 抽象成一个 DAG
+> 4. DAGScheduler 对这个 DAG (DAG中的一个Job) 进行 stage 的切分
+> 5. 把每一个 stage 提交给 TaskScheduler
+
+rdd1.collect
+
+client 提交任务的任务节点
+
+> 如果是client模式，那么 driver程序就在 client 节点
+> 如果模式是 cluster, driver 程序在 worker 中.
+> rdd20.countByKey()
+> 
+> countByKey 是作用在 key-value 类型上的一个 action 算法
+> countByValue 一般是用来统计普通类型的RDD
+> map reduce recudeByKey filter, json
+> 
+> 难点：
+> 
+>   1. aggregate
+>   2. aggregate
+
+count sum max min distinct avg
+
+100G ----> 1G
+20G -----> 30G
+
 ### 3.3 Stage 
 
 Spark Stage- An Introduction to Physical Execution plan
 
 {% image "/images/spark/spark-stage-tasks.png", width="600px", alt="" %}
+
+> Stage is a TaskSet, which divides the Stage into Tasks based on the number of partitions. 
+> Stage是一个TaskSet，将Stage根据分区数划分成一个个的Task
 
 | Concept | Description |
 |---------------|-------------------|
@@ -160,6 +248,7 @@ Spark Executors are helpful for executing tasks. we can have as many executors w
 
 ## Reference
 
+- [spark中如何划分stage](https://www.jianshu.com/p/787706759036)
 - [Spark广播变量和累加器详解](https://blog.csdn.net/BigData_Mining/article/details/82148085)
 - [马老师-Spark的WordCount到底产生了多少个RDD](https://blog.csdn.net/zhongqi2513/article/details/81513587)
 - [大数据技术之_19_Spark学习_02_Spark Core 应用解析 实例练习](https://www.cnblogs.com/chenmingjun/p/10777091.html)

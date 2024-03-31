@@ -32,8 +32,6 @@ Spark SQL在框架内部已经在各种可能的情况下 <strong>`尽量重用�
 
 上文讨论分区表时提到的 分区剪枝 便是其中一种 -> 当查询的过滤条件中涉及到分区列时，我们可以根据查询条件剪掉肯定不包含目标数据的分区目录，从而减少IO
 
-> Spark SQL也可以充分利用RCFile、ORC、Parquet等列式存储格式的优势，仅扫描查询真正涉及的列，忽略其余列的数据。
-
 ## 4. RDD和DataSet
 
 > - DataSet以Catalyst逻辑执行计划表示，并且数据以编码的二进制形式被存储，不需要反序列化就可以执行sorting、shuffle等操作。
@@ -47,30 +45,6 @@ Spark SQL在框架内部已经在各种可能的情况下 <strong>`尽量重用�
 > 1. DataSet可以在编译时检查类型
 > 2. 是面向对象的编程接口
 > 3. DataFrame会继承DataSet，DataFrame是面向Spark SQL的接口
-
-```scala
-//DataSet,完全使用scala编程，不要切换到DataFrame
-
-val wordCount = 
-  ds.flatMap(_.split(" "))
-    .filter(_ != "")
-    .groupBy(_.toLowerCase()) // Instead of grouping on a column expression (i.e. $"value") we pass a lambda function
-    .count()
-```
-
-DataFrame
-
-```scala
-// Load a text file and interpret each line as a java.lang.String
-val ds = sqlContext.read.text("/home/spark/1.6/lines").as[String]
-val result = ds
-  .flatMap(_.split(" "))               // Split on whitespace
-  .filter(_ != "")                     // Filter empty words
-  .toDF()                              // Convert to DataFrame to perform aggregation / sorting
-  .groupBy($"value")                   // Count number of occurences of each word
-  .agg(count("*") as "numOccurances")
-  .orderBy($"numOccurances" desc)      // Show most common words first
-```
 
 ## Reference
 

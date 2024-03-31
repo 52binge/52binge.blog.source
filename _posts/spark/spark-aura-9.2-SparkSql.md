@@ -89,24 +89,6 @@ spark-sql 在 hadoop02 和 hadoop03 中启动的时候，都各自初始化了�
 
 {% image "/images/spark/spark-aura-10.3.1.png", width="900px", alt="" %}
 
-### 2.3 SparkSQL 脚本使用
-
-## 3. sparksql和hive的自定义函数
-
-### 3.1 SparkSQL UDF
-
-```sql
-show functions;
-```
-
-### 3.2 SparkSQL UDAF
-
-### 3.3 使用测试
-
-## 4. SparkSQL 常用窗口分析函数
-
-## 5. 综合练习
-
 ## Reference
 
 
