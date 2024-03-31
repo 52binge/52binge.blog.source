@@ -122,100 +122,22 @@ rdd = spark.sparkContext.textFile("path/to/textfile")
 
 {% image "/images/spark/spark-dag-visualization.png", width="500px", alt="" %}
 
-### 3.2 WordCount DAG
+### 3.2 Stage & DAG
 
 WordCount DAG - 2个Stage
 
-{% image "/images/spark/spark-aura-3.2.3.jpg", width="750px", alt="WorCount DAG有向无环图" %}
-
 {% image "/images/spark/spark-wordcount-rdd-trans.jpg", width="600px", alt="" %}
 
+{% image "/images/spark/spark-aura-3.2.3.jpg", width="750px", alt="WorCount DAG有向无环图" %}
 
-**DAG规划和基础理论**
+| 步骤 | DAGScheduler Workflow / 工作流程                                                                                                                                                                      |
+|------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1    | spark-submit submits the application.                                                                                                                                         |
+| 2    | Initializes DAGScheduler and TaskScheduler.                                                                                                                     |
+| 3    | Upon receiving the application, DAGScheduler first abstracts the application into a DAG.                                        |
+| 4    | DAGScheduler splits this DAG (one of its jobs) into stages. <br> DAGScheduler 对这个 DAG (DAG中的一个Job) 进行 stage 的切分。                                                                                |
+| 5    | Each stage is submitted to TaskScheduler.                                                                                                                        |
 
-切分 Stage 是 从后往前找 shuffer类型/宽依赖的算子，遇到一个就断开，形成一个 stage
-
-最后一个 stage： ResultStage
-
-除此之外的stage
-
-> 因此spark划分stage的整体思路是：从后往前推，遇到宽依赖就断开，划分为一个stage；遇到窄赖就将这个RDD加入该stage中。
-> 
-> 在spark中，Task的类型分为2种：ShuffleMapTask和ResultTask；简单来说，DAG的最后一个阶段会为每个结果的partition生成一个ResultTask，即每个Stage里面的Task的数量是由该Stage中最后一个RDD的Partition的数量所决定的！
-> 
-> 而其余所有阶段都会生成ShuffleMapTask；之所以称之为ShuffleMapTask是因为它需要将自己的计算结果通过shuffle到下一个stage中。
-
-
-**切分stage：**
-
-从后往前找 shuffle类型/宽依赖 的算子, 遇到一个就断开, 形成一个 stage
-
-> 最后一个stage: ResultStage   ------>  ResultTask
-> 除此之外的stage：ShffleMapStage   ------>  ShffleTask
-> 
-> 每一个 stage 都会切成多个同种类型的 Task
->
-> 每一个 Stage 中的有可能包含多个不同的 RDD
-> 那么一个 Stage 又有可能会划分多个 task 执行
-> 每个 RDD 又可以指定不同的分区数
-> 默认情况下：每一个分区，就会是一个 Task
-> 
-> 那么现在，如果遇到了一个 stage 中有多个不同分区数的RDD，
-> 那么请问：到底这个stage中有多少个Task执行呢？
-> 
-> 5 4 3 -----> 3个task
-> 
-> 以最后一个RDD的分区数来决定
-
-**切分job：**
-
-从前往后找action算子, 找到一个就形成一个 job.
-
-{% image "/images/spark/spark-aura-3.1.2.jpg", width="750px" %}
-
-3 + 2 = 5 tasks
-
-DAG 的生成
-
-checkpoint linage
-
-检查点  血脉  血统
-
-容错
-
-对于Spark任务中的宽窄依赖，我们只喜欢窄依赖
-
-DAGScheduler：
-
-> 1. spark-submit 提交任务
-> 2. 初始化 DAGScheduler 和 TaskScheduler
-> 3. 接收到 application 之后，DAGScheduler 会首先把 application 抽象成一个 DAG
-> 4. DAGScheduler 对这个 DAG (DAG中的一个Job) 进行 stage 的切分
-> 5. 把每一个 stage 提交给 TaskScheduler
-
-rdd1.collect
-
-client 提交任务的任务节点
-
-> 如果是client模式，那么 driver程序就在 client 节点
-> 如果模式是 cluster, driver 程序在 worker 中.
-> rdd20.countByKey()
-> 
-> countByKey 是作用在 key-value 类型上的一个 action 算法
-> countByValue 一般是用来统计普通类型的RDD
-> map reduce recudeByKey filter, json
-> 
-> 难点：
-> 
->   1. aggregate
->   2. aggregate
-
-count sum max min distinct avg
-
-100G ----> 1G
-20G -----> 30G
-
-### 3.3 Stage 
 
 Spark Stage- An Introduction to Physical Execution plan
 
@@ -232,9 +154,65 @@ Spark Stage- An Introduction to Physical Execution plan
 | **Task** | The smallest unit of work in Spark, executed on the cluster / Spark中执行的最小工作单位 |
 | **Task Types** | Split into `ShuffleMapTask` and `ResultTask`: <br> - **ShuffleMapTask**: Prepares data for a shuffle before the next stage <br> - **ResultTask**: Executes at the final stage for each partition's result <br> 分为`ShuffleMapTask`和`ResultTask`： <br> - **ShuffleMapTask**：在下一个阶段之前准备shuffle的数据 <br> - **ResultTask**：在最后一个阶段为每个分区的结果执行 |
 
+
+**切分stage：**
+
+Job的定义：在Spark中，一个Job通常是由一个action操作触发的一系列计算任务。当你在RDD或Dataset上执行一个action操作（如count(), collect(), saveAsTextFile()等）时，Spark会提交一个Job。
+
+Stage的生成：Job会被DAGScheduler分解成多个Stage，Stage是Job的组成部分。Stage的划分基于RDD的宽依赖（shuffle依赖），每个Stage内部包含的是窄依赖的一组任务，这些任务可以并行执行。
+
+关系：
+
+一个Job包含多个Stage：Job根据数据处理中的宽依赖（即需要shuffle的地方）被分割成多个Stage。
+Stage的顺序执行：虽然一个Stage内的任务可以并行执行，但是多个Stage之间是有先后顺序的，只有当一个Stage中的所有Task执行完成后，下一个Stage才会开始执行。
+Stage的边界是shuffle：当一个操作需要对数据进行重新分布，比如通过key进行分组时，这就引入了宽依赖。Spark会在这些宽依赖的位置切分Stage，因此，Stage的边界就是数据shuffle的地方。
+执行过程：执行过程中，每个Stage被TaskScheduler分解成多个Task，这些Task由Executor并行执行。Stage的执行是顺序的，但Stage内的Task是并行的。Job的完成依赖于所有Stage的顺序执行和完成。
+
+总的来说，Job是由一系列Stage组成的，这些Stage基于RDD的宽依赖被顺序执行。每个Stage是对一组可以并行执行的任务的封装，而Job的完成则是通过顺序执行这些Stage来实现的。这种设计使得Spark能够有效地处理大规模数据集，同时优化计算资源的使用。
+
+
+从后往前找 shuffle类型/宽依赖 的算子, 遇到一个就断开, 形成一个 stage；遇到窄赖就将这个RDD加入该stage中。
+
+> 在spark中，Task的类型分为2种：ShuffleMapTask和ResultTask；简单来说，DAG的最后一个阶段会为每个结果的partition生成一个ResultTask，即每个Stage里面的Task的数量是由该Stage中最后一个RDD的Partition的数量所决定的！
+> 
+> 而其余所有阶段都会生成ShuffleMapTask；之所以称之为ShuffleMapTask是因为它需要将自己的计算结果通过shuffle到下一个stage中。
+> 最后一个stage: ResultStage   ------>  ResultTask
+> 除此之外的stage：ShffleMapStage   ------>  ShffleTask
+> 
+> 每一个 stage 都会切成多个同种类型的 Task
+>
+> 每一个 Stage 中的有可能包含多个不同的 RDD
+> 那么一个 Stage 又有可能会划分多个 task 执行
+> 每个 RDD 又可以指定不同的分区数
+> 默认情况下：每一个分区，就会是一个 Task
+> 
+> 那么现在，如果遇到了一个 stage 中有多个不同分区数的RDD，
+> 那么请问：到底这个stage中有多少个Task执行呢？
+> 
+> 5 4 3 -----> 3个task
+> 
+> 最后一个 stage： ResultStage
+>
+> 以最后一个RDD的分区数来决定
+
+**DAG规划和基础理论**
+
+| 概念     | 描述                                                                 |
+|--------|----------------------------------------------------------------------|
+| **Job** | 由action操作触发的一系列计算任务。每个action操作会提交一个Job。          |
+| **Stage** | Job被分解成多个Stage，Stage是基于RDD的宽依赖（shuffle依赖）来划分的。    |
+| **关系**  | - 一个Job包含多个Stage。<br>- Stage内的任务可以并行执行，但多个Stage之间是有先后顺序的。<br>- Stage的边界是数据shuffle的地方。 |
+| **执行过程** | - 每个Stage被分解成多个Task，由Executor并行执行。<br>- Stage的执行是顺序的，但Stage内的Task是并行的。<br>- Job的完成依赖于所有Stage的顺序执行和完成。 |
+
+
 ## 4. Executor
 
 {% image "/images/spark/spark-aura-2.2.7.png", width="700px", alt="Explain the role of SparkContext as the entry point of any Spark application." %}
+
+| Mode | Client vs. Cluster Submission Mode                                                                                                                                             |
+|------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Client Mode | In client mode, the driver program runs on the client node.                                                                                              |
+| Cluster Mode | In cluster mode, the driver program runs within a worker node.                                                                                              |
 
 Spark application with a simple example.
 
