@@ -1,11 +1,8 @@
 ---
-title: Qunar Training Feelings
-date: 2014-05-07 06:24:16
-tags: health
-categories: lifestyle
+title: Qunar Intern Exp
 ---
 
-training at a good company 
+Qunar Intern Feelings
 
 <!--more-->
 
