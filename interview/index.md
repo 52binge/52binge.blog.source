@@ -25,7 +25,7 @@ Plan | Time | Topic | Level2
 3. | 8:20~8:50 | [2022 leetcode](/2022/06/27/leetcode/2022-leetcode/) |  3.1 binary-search <br> 3.2 dfs + stack <br> 3.3 dynamic programming <br> 3.4 sliding window & hash 
 4. | 9:00~9:50 | spark basic | 4.1 mr vs spark (4) <br> 4.2 rdd / dataframe / dataset <br> 4.3 rdd operations - transformation + action <br> 4.4 cache + persist <br> 4.5 spark join
 
-## 1. Spark & SparkSQL
+## 1. Spark
 
 - [Spark interview](https://www.cnblogs.com/hdc520/p/12588379.html)
 
@@ -57,7 +57,7 @@ Plan | Time | Topic | Level2
 3.4 cache + persist
 3.5 spark join
 
-### 3.1 advanced
+### 1.5 Advanced
 
 <details>
 <summary>SparkSQL</summary>
@@ -65,14 +65,15 @@ Plan | Time | Topic | Level2
 如何搭建 SparkSQL 离线数仓
 
 <center><embed src="/images/sparkSQL/Spark-Dw-如何搭建 SparkSQL 离线数仓？.pdf" width="950" height="600"></center>
-
-**Spark SQL**
-
 <center><embed src="/images/sparkSQL/Class1-Spark SQL 架构体系与执行流程-金澜涛.pdf" width="950" height="600"></center>
 <center><embed src="/images/sparkSQL/Class2-Spark SQL 执行计划和优化逻辑-金澜涛 .pdf" width="950" height="600"></center>
 </details>
 
-## 2. Flink & FlinkSQL
+## 2. Flink
+
+### 2.1 Flink Introduce
+
+### 2.2 FlinkSQL
 
 ## 3. SQL 
 
