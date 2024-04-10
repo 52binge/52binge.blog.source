@@ -100,7 +100,19 @@ Set your mind to it and you can do it !
 - Experience with implementing technical processes to enforce data security, data quality, and data governance.
 - Familiarity with government systems and government's policies relating to `data governance, data management`, data infrastructure, and data security
 
-## 6. Agoda (Bangkok)
+## 6. HoYoverse
+
+{% image "https://upload.wikimedia.org/wikipedia/en/3/32/MiHoYo_Logo.png", width="400px", float="left", alt="" %}
+
+[Data Engineer (SDK)](https://www.linkedin.com/jobs/view/3768185071/?alternateChannel=search&refId=BhRwA5e%2FLFYWUoWVYXBMHw%3D%3D&trackingId=R9vYcCR5EOeUXj6JQIPTtA%3D%3D)
+
+- Master at least one object-oriented programming language,such as `Python`/Java/Scala;
+- Good knowledge of `data structure and algorithm foundation`.
+- At least 3 years or above experience in big data processing projects;
+- In-depth knowledge in distributed `real-time or batch` data processing systems;
+- Proficient in SQL, have good `SQL` tuning experience, understand the basic principles and tuning of big data related components such as `Hadoop/Hive/Spark/Kafka/Flink/Clickhouse`;
+
+## 7. Agoda (Bangkok)
 
 {% image "https://d1eipm3vz40hy0.cloudfront.net/images/Customer%20Stories%20/Agoda/agoda_mainlogo_horizontal_positive_ai_Logo%20without%20circles.png", width="500px", float="left", alt="" %}
 
@@ -120,7 +132,7 @@ Set your mind to it and you can do it !
 - `Python/Shell` scripting skills
 - Working in an agile environment using test driven methodologies
 
-## 7. Bank
+## 8. Bank
 
 - [UOB - AVP/Manager Data Engineer, GMET](https://www.linkedin.com/jobs/view/3703986256/?alternateChannel=search&refId=AeQuBZ5q%2BtLlQgT%2BVr7qKw%3D%3D&trackingId=qrx9RfQFvrcJnNghOpP3fw%3D%3D)
 - [JPM - Senior Lead Data Engineer](https://www.linkedin.com/jobs/view/3839583628/?alternateChannel=search&refId=ZG3SmB7TAZ5HIw1Fg2%2FU6A%3D%3D&trackingId=vnQE80F0M74dT6nhgSUdBg%3D%3D)
