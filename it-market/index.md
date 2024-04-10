@@ -38,7 +38,7 @@ Set your mind to it and you can do it !
 
 ## 2. Airwallex
 
-{% image "https://pages.easyship.com/hubfs/Airwallex%20Logo%20-%20Black%20(1).png", width="400px", float="left", alt="" %}
+{% image "/images/logos/it-airwallex.webp", width="400px", alt="" %}
  
 **Senior Data Engineer** 
  
@@ -51,7 +51,7 @@ Set your mind to it and you can do it !
 
 ## 3. VISA
 
-{% image "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Visa_2021.svg/640px-Visa_2021.svg.png", width="300px", float="left", alt="" %}
+{% image "/images/logos/it-de-visa_2021.svg.png", width="400px", alt="" %}
 
 **Sr. Data Engineer** 
 
@@ -80,7 +80,7 @@ Set your mind to it and you can do it !
 
 ## 5. GovTech
 
-{% image "https://www.tech.gov.sg/images/logo_govtech_hort.gif", width="500px", float="left", alt="" %}
+{% image "/images/logos/it-de-logo_govtech_hort.gif", width="490px", alt="" %}
 
 **Data Engineer(Quantitative Strategy)**
 
@@ -102,7 +102,7 @@ Set your mind to it and you can do it !
 
 ## 6. HoYoverse
 
-{% image "https://upload.wikimedia.org/wikipedia/en/3/32/MiHoYo_Logo.png", width="400px", float="left", alt="" %}
+{% image "/images/logos/it-de-MiHoYo_Logo.png", width="400px", alt="" %}
 
 [Data Engineer (SDK)](https://www.linkedin.com/jobs/view/3768185071/?alternateChannel=search&refId=BhRwA5e%2FLFYWUoWVYXBMHw%3D%3D&trackingId=R9vYcCR5EOeUXj6JQIPTtA%3D%3D)
 
