@@ -30,9 +30,9 @@ Set your mind to it and you can do it !
 - Java and Big Data technologies like `Hive`, `Hadoop`, and `Spark`
 - Understanding and working experience with shell scripting
 - Knowledge and working experience on Git/Stash, Ant, Maven, Jenkins and Jira
-- Experience with database technologies like DB2, Oracle, SQL Server
-- Knowledge of Unix/Linux
-- Strong foundation in computer science, with strong competencies in data structures, algorithms and software design optimized for building highly distributed and parallelized systems
+- Experience with database technologies like DB2, Oracle, `SQL` Server
+- Knowledge of `Unix/Linux`
+- Strong foundation in computer science, with strong competencies in `data structures`, algorithms and software design optimized for building highly distributed and parallelized systems
 
 ## 2. JPMorgan
 
@@ -60,7 +60,7 @@ Set your mind to it and you can do it !
 
 ## 3. GovTech
 
-{% image "/images/logos/it-de-logo_govtech_hort.gif", width="490px", alt="" %}
+{% image "/images/logos/it-de-logo_govtech_hort.gif", width="500px", alt="" %}
 
 **Data Engineer(Quantitative Strategy)**
 
