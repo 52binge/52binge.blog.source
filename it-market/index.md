@@ -21,64 +21,44 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 
 Set your mind to it and you can do it ! 
 
-## 1. Bytedance
-
-{% image "https://savemyleads.com/media/blog/auto/bytedance-brand.png", width="500px", float="left", alt="" %}
-
-[Data Engineer - Global Payments](https://www.linkedin.com/jobs/view/3580128161/?alternateChannel=search&refId=M%2FxV0CJzezA7E9u3uKUsQw%3D%3D&trackingId=nZDynHenNHuEc7TBHvJH6g%3D%3D)
- 
-- Bachelor's degree or above in Computer Science, Statistics, Mathematics or other related majors;
-- At least 3 years of experiences and above;
-- Proficient in at least one programming language such as Python, Java, Scala, Go, etc., with a strong engineering background and interest in data;
-- Prior experience with writing and debugging data pipelines using a distributed framework (`Hadoop/Spark/Flink`);
-- Familiar with OLAP engines (Hive/ES/`Clickhouse`/Druid/Kylin/Doris etc.);
-- Familiar with data warehouse architecture, data modelling methods and data governance; enthusiastic about data mining, strong business understanding and abstraction capabilities;
-- Proficient in databases, strong `SQL/ETL` development ability;
-- Experience in `real-time data warehouse development` is preferred.
-
-## 2. Airwallex
-
-{% image "/images/logos/it-airwallex.webp", width="400px", alt="" %}
- 
-**Senior Data Engineer** 
- 
-- Bachelor's or Master's degree in CS/CE/CIS, (or equivalent experience) with knowledge of Kotlin / Java / Scala / `Python` / `SQL`. Knowledge of Spring Boot, `Spark`, `Flink`, `Hadoop, BigQuery, and Snowflake` is preferred.
-- Ability to take ownership of designing, building, and operating distributed systems and establishing overarching data architecture.
-- Strong working knowledge of `Real-time/Batch processing` systems.
-- Experience performing root cause analysis on internal and external data and processes to answer specific business questions and identify opportunities for improvement.
-- Strong analytic skills related to working with unstructured datasets.
-- Build processes supporting `data transformation, data structures, metadata`, dependency and workload management.
-
-## 3. VISA
+## 1. VISA
 
 {% image "/images/logos/it-de-visa_2021.svg.png", width="400px", alt="" %}
 
 **Sr. Data Engineer** 
 
-- Java and Big Data technologies like Hive, Hadoop, and Spark
+- Java and Big Data technologies like `Hive`, `Hadoop`, and `Spark`
 - Understanding and working experience with shell scripting
 - Knowledge and working experience on Git/Stash, Ant, Maven, Jenkins and Jira
 - Experience with database technologies like DB2, Oracle, SQL Server
 - Knowledge of Unix/Linux
 - Strong foundation in computer science, with strong competencies in data structures, algorithms and software design optimized for building highly distributed and parallelized systems
 
-## 4. Grab
+## 2. JPMorgan
 
-{% image "https://cloudfront-eu-central-1.images.arcpublishing.com/businessoffashion/456XEYIHMBBMJHYB4JO5PNJBMU.jpg", width="500px", float="left", alt="" %}
+{% image "https://www.pymnts.com/wp-content/uploads/2023/05/JPMORGAN.jpg", width="420px", alt="" %} 
 
-**Senior Data Engineer** 
+<!-- {% image "https://media.licdn.com/dms/image/D4E12AQFE3eejqLsKxQ/article-cover_image-shrink_720_1280/0/1691375687496?e=2147483647&v=beta&t=u2sce86m0Db8J3Ldy_Kw2OzYTpdxfOJxhqs4y_iTRnc", width="420px", alt="" %} -->
 
-- Bachelor degree in Analytics, Data Science, Mathematics, Computer Science, Information Systems, Computer Engineering, or a related technical field
-- At least 3-4 years of experience developing `Data warehouse and Business Intelligence` solutions
-- Sound knowledge of data warehousing concepts, data modeling/architecture and `SQL`
-- Knowledge of programming languages such as Java, Scala, `Python`, etc.
-- Understanding of performance, scalability and reliability concepts
-- Experience with Big Data frameworks such as `Hadoop, Spark`, etc.
-- Experience with developing data solutions on AWS
-- Ability to drive initiatives and work independently, while being a team player who can liaison with various stakeholders across the organization
-- Excellent written and verbal communication skills in `English`
+[Senior Lead Data Engineer](https://www.linkedin.com/jobs/view/3839583628/?alternateChannel=search&refId=xknsecKbFEKD5pOuzp86xg%3D%3D&trackingId=EfFTy0MtdeBdoBgmbs1pTw%3D%3D&trk=d_flagship3_search_srp_jobs)
 
-## 5. GovTech
+**Required Qualifications, Capabilities, And Skills**
+- Working experience with both `relational and NoSQL databases` 
+- Advanced understanding of database back-up, recovery, and archiving strategies
+- Advanced knowledge of linear algebra, statistics, and geometrical algorithms
+- Experience presenting and `delivering visual data`
+- Deep understanding of distributed systems and cloud technologies (`AWS`, GP, Azure, etc.) 
+- Experience in the all stages of software development lifecycle (requirements, design, architecture, development, testing, deployment, release and support)
+- Experience with large scale datasets, `data lake` and `data warehouse` technologies on at least TB scale (ideally PB scale of datasets) with at least one of {`BigQuery`, `Redshift`, `Snowflake`}
+- Experience in leading a small team of technologists to manage and resolve technical items within expertise
+**Preferred Qualifications, Capabilities, And Skills**
+- Experience with a scheduling system (`Airflow`, Azkaban, etc.)
+- Understanding of (distributed and non-distributed) data structures, caching concepts, CAP theorem
+- Experience in automating deployment, releases and testing in continuous integration, continuous delivery pipelines
+- Experience with containers and container-based deployment environment (`Docker, Kubernetes`, etc.)
+- A solid approach to writing unit level tests using mocking frameworks, as well as automating component, integration and end-to-end tests
+
+## 3. GovTech
 
 {% image "/images/logos/it-de-logo_govtech_hort.gif", width="490px", alt="" %}
 
@@ -100,7 +80,42 @@ Set your mind to it and you can do it !
 - Experience with implementing technical processes to enforce data security, data quality, and data governance.
 - Familiarity with government systems and government's policies relating to `data governance, data management`, data infrastructure, and data security
 
-## 6. HoYoverse
+## 4. Grab
+
+{% image "https://cloudfront-eu-central-1.images.arcpublishing.com/businessoffashion/456XEYIHMBBMJHYB4JO5PNJBMU.jpg", width="500px", float="left", alt="" %}
+
+**Senior Data Engineer** 
+
+- Bachelor degree in Analytics, Data Science, Mathematics, Computer Science, Information Systems, Computer Engineering, or a related technical field
+- At least 3-4 years of experience developing `Data warehouse and Business Intelligence` solutions
+- Sound knowledge of data warehousing concepts, data modeling/architecture and `SQL`
+- Knowledge of programming languages such as Java, Scala, `Python`, etc.
+- Understanding of performance, scalability and reliability concepts
+- Experience with Big Data frameworks such as `Hadoop, Spark`, etc.
+- Experience with developing data solutions on AWS
+- Ability to drive initiatives and work independently, while being a team player who can liaison with various stakeholders across the organization
+- Excellent written and verbal communication skills in `English`
+
+## 5. Stripe
+
+{% image "https://geip.edu.sg/wp-content/uploads/2022/03/stripelogo.png", width="450px", float="left", alt="" %}
+
+## 6. Bytedance
+
+{% image "https://savemyleads.com/media/blog/auto/bytedance-brand.png", width="500px", float="left", alt="" %}
+
+[Data Engineer - Global Payments](https://www.linkedin.com/jobs/view/3580128161/?alternateChannel=search&refId=M%2FxV0CJzezA7E9u3uKUsQw%3D%3D&trackingId=nZDynHenNHuEc7TBHvJH6g%3D%3D)
+ 
+- Bachelor's degree or above in Computer Science, Statistics, Mathematics or other related majors;
+- At least 3 years of experiences and above;
+- Proficient in at least one programming language such as Python, Java, Scala, Go, etc., with a strong engineering background and interest in data;
+- Prior experience with writing and debugging data pipelines using a distributed framework (`Hadoop/Spark/Flink`);
+- Familiar with OLAP engines (Hive/ES/`Clickhouse`/Druid/Kylin/Doris etc.);
+- Familiar with data warehouse architecture, data modelling methods and data governance; enthusiastic about data mining, strong business understanding and abstraction capabilities;
+- Proficient in databases, strong `SQL/ETL` development ability;
+- Experience in `real-time data warehouse development` is preferred.
+
+## 7. HoYoverse
 
 {% image "/images/logos/it-de-MiHoYo_Logo.png", width="400px", alt="" %}
 
@@ -112,28 +127,27 @@ Set your mind to it and you can do it !
 - In-depth knowledge in distributed `real-time or batch` data processing systems;
 - Proficient in SQL, have good `SQL` tuning experience, understand the basic principles and tuning of big data related components such as `Hadoop/Hive/Spark/Kafka/Flink/Clickhouse`;
 
-## 7. Agoda (Bangkok)
 
-{% image "https://d1eipm3vz40hy0.cloudfront.net/images/Customer%20Stories%20/Agoda/agoda_mainlogo_horizontal_positive_ai_Logo%20without%20circles.png", width="500px", float="left", alt="" %}
+## 8. Airwallex
 
-[Lead/Staff Data Engineer (Fintech team) (Bangkok based, relocation provided)](https://www.linkedin.com/jobs/search/?currentJobId=3886622770&f_C=66719&originToLandingJobPostings=3886622770%2C3886638103%2C3877215182%2C3886626727%2C3839793558%2C3839796369)
+{% image "/images/logos/it-airwallex.webp", width="400px", alt="" %}
+ 
+**Senior Data Engineer** 
+ 
+- Bachelor's or Master's degree in CS/CE/CIS, (or equivalent experience) with knowledge of Kotlin / Java / Scala / `Python` / `SQL`. Knowledge of Spring Boot, `Spark`, `Flink`, `Hadoop, BigQuery, and Snowflake` is preferred.
+- Ability to take ownership of designing, building, and operating distributed systems and establishing overarching data architecture.
+- Strong working knowledge of `Real-time/Batch processing` systems.
+- Experience performing root cause analysis on internal and external data and processes to answer specific business questions and identify opportunities for improvement.
+- Strong analytic skills related to working with unstructured datasets.
+- Build processes supporting `data transformation, data structures, metadata`, dependency and workload management.
 
-- Bachelor’s degree in Computer Science /Information Systems/Engineering/related field
-- 5+ years of experience in Data engineering
-- Good experience in Apache `Spark`
-- Expert level understanding of JVM and either Java or Scala
-- A good understanding of `data architecture` principles preferred
-- Any other experience with Big Data technologies / tools
-- `SQL` experience
-- Systems administration skills in Linux
-**It’s great if you have**
-- Good understanding of `Hadoop ecosystems`
-- Experience working with Open-source products
-- `Python/Shell` scripting skills
-- Working in an agile environment using test driven methodologies
+## 9. Meta
 
-## 8. Bank
+{% image "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg", width="360px", alt="" %}
+ 
+## Other
 
 - [UOB - AVP/Manager Data Engineer, GMET](https://www.linkedin.com/jobs/view/3703986256/?alternateChannel=search&refId=AeQuBZ5q%2BtLlQgT%2BVr7qKw%3D%3D&trackingId=qrx9RfQFvrcJnNghOpP3fw%3D%3D)
 - [JPM - Senior Lead Data Engineer](https://www.linkedin.com/jobs/view/3839583628/?alternateChannel=search&refId=ZG3SmB7TAZ5HIw1Fg2%2FU6A%3D%3D&trackingId=vnQE80F0M74dT6nhgSUdBg%3D%3D)
+- [Agoda (Bangkok) - Lead/Staff Data Engineer (Fintech team) (Bangkok based, relocation provided)](https://www.linkedin.com/jobs/search/?currentJobId=3886622770&f_C=66719&originToLandingJobPostings=3886622770%2C3886638103%2C3877215182%2C3886626727%2C3839793558%2C3839796369)
 
