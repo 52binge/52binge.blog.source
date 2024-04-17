@@ -145,6 +145,21 @@ Set your mind to it and you can do it !
 
 {% image "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg", width="360px", alt="" %}
  
+## 10. GIC
+
+[VP, Data Engineer (Private Market Solutions), Technology Group 15441](https://www.linkedin.com/jobs/search/?currentJobId=3727039076&f_C=163988&originToLandingJobPostings=3766633576%2C3840771423%2C3727039076)
+
+- 4+ years of relevant experience in data engineering or backend development, and hands on experience in solution designing, software testing and production support
+- Experience or knowledge in one / many of the following technologies is advantageous:
+- Database & Big Data Platforms – Oracle, MS SQL, `Snowflake`, `JDBC/ODBC`
+- Programming and Scripting – `Python`, Java, REST API
+- AWS services – S3, `Airflow`, `Glue`, SQS, SNS
+- React.js and other JavaScript framework/libraries 
+- Experience with Agile software development methodologies and practices such as Scrum, Kanban and Test-Driven Development
+- Familiarity with Private Markets data is desirable
+- Keen learner, independent problem solver with strong communication and interpersonal skills
+
+ 
 ## Other
 
 - [UOB - AVP/Manager Data Engineer, GMET](https://www.linkedin.com/jobs/view/3703986256/?alternateChannel=search&refId=AeQuBZ5q%2BtLlQgT%2BVr7qKw%3D%3D&trackingId=qrx9RfQFvrcJnNghOpP3fw%3D%3D)
