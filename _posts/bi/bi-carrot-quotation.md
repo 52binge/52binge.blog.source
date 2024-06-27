@@ -11,6 +11,9 @@ thumbnail: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/heartmate/icon.png
 
 <!-- more -->
 
+{% image "/images/bi/interview_make_rocket.jpg", width="400px", alt="" %}
+
+
 1、业务上，多看业务侧的okr是啥，多看核心指标，然后把这些值记住。 这周涨了，为啥涨（这个原因不用自己分析，分析师都有归因的文档，把核心的原因看懂背会） 。  然后，【开组会】或者【在任何可出手】的时候，不显山不露水的，就把这些业务上的专业名词往上怼，我靠，对业务真熟悉   
 
 2、技术上，因为大家都是写sql，都在建表怼需求，所以，只写sql怼需求这些没有亮点。 那你的亮点就是，看看源码，然后，不定时的组织技术分享会议。 不要怕讲错，反正大部分人也听不懂。 你多分享之后，大家就觉得，我靠，这人牛。 
@@ -24,3 +27,10 @@ thumbnail: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/heartmate/icon.png
 ## Reference
 
 [🥕🥕🥕](https://www.zhihu.com/people/hongmianao)
+
+
+- [🥕🥕🥕](https://www.zhihu.com/people/hongmianao)
+- [从一个sql任务理解spark内存模型](https://zhuanlan.zhihu.com/p/134135758)
+- [记录一次spark sql的优化过程](https://zhuanlan.zhihu.com/p/77614511)
+- [spark sql多维分析优化——细节是魔鬼](https://zhuanlan.zhihu.com/p/78804934)
+- [KuaiShou - Data Warehouse_Interview Questions](https://blog.csdn.net/weixin_43619485/article/details/107164729)

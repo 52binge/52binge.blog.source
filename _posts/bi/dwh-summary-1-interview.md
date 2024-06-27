@@ -1,6 +1,6 @@
 ---
-title: data-warehouse review 1 - 数仓认识
-date: 2020-10-01 09:07:21
+title: data-warehouse 2 - 面经杂乱篇
+date: 2021-01-09 09:07:21
 categories: bi
 tags: [data warehouse]
 ---
@@ -8,6 +8,40 @@ tags: [data warehouse]
 {% image "/images/dataware/sm-data-warehouse-logo-1.jpg", width="500px", alt="" %}
 
 <!-- more -->
+
+No. | [2020年大厂-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688808) | Flag
+:---: | --- | :---:
+1. | [Hive SQL count（distinct）效率问题及优化](https://article.itxueyuan.com/a93Dg) <br>set mapreduce.map.memory.mb=48192;<br>set mapreduce.reduce.memory.mb=48192;<br>set mapred.reduce.tasks=1000；<br><br>select count（distinct account） from...where...<br><br> 加入distinct，map阶段不能用combine消重，数据输出为（k，v）形式然后在reduce阶段进行消重<br>Hive在处理COUNT这种“全聚合(full aggregates)”计算时，忽略指定的Reduce Task数，而强制使用1 <br><br> insert overwrite table temp select id，account，count(1) as num from tablename group by id，account； <br> {% image "/images/hadoop/map-reduce-combine.png", width="780px", alt="" %} <br>[MapReduce流程简单解析](https://blog.csdn.net/yuzhuzhong/article/details/51476353)| ❎
+<br><br>2. | left semi join和left join区别? <br><br>`left semi join` 是 in(keySet) 的关系，遇到右表重复记录，左表会跳过；当右表不存在的时候，左表数据不会显示; 相当于SQL的in语句. <br>`left join`: 当右表不存在的时候，则会显示NULL |　<br><br>❎
+<br><br><br>3. | 维度建模 和 范式建模(3NF模型) 的区别? <br><br> 维度建模是面向分析场景的，主要关注点在于快速、灵活: **星型模型 & 雪花模型 & 星系模型** <br><br> 3NF的最终目的就是为了降低数据冗余，保障数据一致性: <br> (2.1) 原子性 - 数据不可分割 <br> (2.2) 基于第一个条件，实体属性完全依赖于主键 <br> (2.3) 消除传递依赖 - 任何非主属性不依赖于其他非主属性 | <br><br><br>❎
+4. | 采用维度模型方法作为理论基础，更多采用一些`维度退化的手段，将维度退化到事实表中`，减少事实表和维度表之间的关联。同时在汇总层，加强指标的维度退化，采用更多的宽表化手段构建公共指标数据层.  |
+5. | 从原理上说一下mpp和mr的区别 ? <br> 1. MPP跑的是SQL,而Hadoop底层处理是MapReduce程序 <br> 2. 扩展程度：MPP扩展一般是扩展到100左右,因为MPP始终还是DB,一定要考虑到C(Consistency) | ❎
+6. | [Hive窗口函数怎么设置窗口大小？](https://blog.csdn.net/qq_41106844/article/details/108415566), between 1 preceding and 1 following | ✔️
+7. | Hive SQL如何转化MR任务 ? <br> HiveSQL ->AST(抽象语法树) -> QB(查询块) ->OperatorTree（操作树）->优化后的操作树->mapreduce任务树->优化后的mapreduce任务树 |
+8. | join操作底层 MR 是怎么执行的？ 根据join对应的key进行分区shuffle，然后执行mapreduce那套流程. |
+&nbsp; | [2020 BAT大厂数据分析面试经验：“高频面经”之数据分析篇](https://blog.csdn.net/qq_36936730/article/details/104302799) |
+9. | Mysql中索引是什么？建立索引的目的？ |
+10. | 行存储和列存储的区别? <br><br> 行存储：传统数据库的存储方式，同一张表内的数据放在一起，插入更新很快。缺点是每次查询即使只涉及几列，也要把所有数据读取<br>列存储：OLAP等情况下，将数据按照列存储会更高效，每一列都可以成为索引，投影很高效。缺点是查询是选择完成时，需要对选择的列进行重新组装。<br><br>当你的核心业务是 OLTP 时，一个行式数据库，再加上优化操作，可能是个最好的选择。<br>当你的核心业务是 OLAP 时，一个列式数据库，绝对是更好的选择 |
+11. | Hive HDFS HBase区别？ <br> Hbase是Hadoop database，即Hadoop数据库.<br>&nbsp;&nbsp; 它是一个适合于非结构化数据存储的数据库，HBase基于列的而不是基于行的模式. |
+
+
+1. [仙子紫霞  数据仓库与Python大数据  1/1 叮！致2020的一封情书，请查收！文末2019年文章精选](https://mp.weixin.qq.com/s/tJjkaWsZKbsG8klBSn2JGw)
+
+
+> [1. 漫谈系列 - 数仓第一篇NO.1 『基础架构』](https://mp.weixin.qq.com/s/J_PA_qhU44DX0PiCDuVaEA)
+> 
+> [2. 漫谈系列 - 数仓第二篇NO.2 『数据模型』](https://mp.weixin.qq.com/s/oKcCQx2vfnyAYlu7V0uHbg)
+> 
+> [3. 漫谈系列 - 数仓第三篇NO.3 『数据ETL』](https://mp.weixin.qq.com/s/INerSvksPi8sreSVCA2csA)
+> 
+> [4. 漫谈系列 - 数仓第四篇NO.4 『数据应用』](https://mp.weixin.qq.com/s/Y1xWwJ2Jr392eRHQeBRYZQ)
+> 
+> [7. 漫谈系列 - 漫谈数仓第一篇NO.7 『面试真经』](https://mp.weixin.qq.com/s/iZs7zEb-yoiSnlG2q74Fvg)
+
+<center><embed src="/images/dataware/建设企业级数据仓库EDW(内部资料，禁止外传).pdf" width="950" height="600"></center>
+
+- [元数据管理解析以及数据仓库和主数据介绍](https://zhuanlan.zhihu.com/p/36136675)
+
 
 <details>
 <summary>漫谈系列：</summary>
@@ -29,24 +63,6 @@ No. | Question | Flag
 14. | [12. 数据仓库（离线+实时）大厂优秀案例汇总（建议收藏）](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247485223&idx=2&sn=149000071adf5fbdf819fdf6afb1ce7f&chksm=cf34352af843bc3c3f56071447c57f120a3ca7601d4d67c17bb422695d6a4637eec42fad2819&scene=21#wechat_redirect)
 15. | [Good - Hive 拉链表实践](https://mp.weixin.qq.com/s?__biz=Mzg3NjIyNjQwMg==&mid=2247485525&idx=2&sn=595eab33c9b16f5a20cded2bf3c4f8ed&chksm=cf343a58f843b34e20e2fcd4cbb21f8a27451a3b235050b1c91aec1ac756dc4ad4d74216b879&scene=21#wechat_redirect)
 </details>
-
-1. [仙子紫霞  数据仓库与Python大数据  1/1 叮！致2020的一封情书，请查收！文末2019年文章精选](https://mp.weixin.qq.com/s/tJjkaWsZKbsG8klBSn2JGw)
-
-> [1. 漫谈系列 | 数仓第一篇NO.1 『基础架构』](https://mp.weixin.qq.com/s/J_PA_qhU44DX0PiCDuVaEA)
-> [2. 漫谈系列 | 数仓第二篇NO.2 『数据模型』](https://mp.weixin.qq.com/s/oKcCQx2vfnyAYlu7V0uHbg)
-> [3. 漫谈系列 | 数仓第三篇NO.3 『数据ETL』](https://mp.weixin.qq.com/s/INerSvksPi8sreSVCA2csA)
-> [4. 漫谈系列 | 数仓第四篇NO.4 『数据应用』](https://mp.weixin.qq.com/s/Y1xWwJ2Jr392eRHQeBRYZQ)
-> [5. 漫谈系列 | 数仓第五篇NO.5 『调度系统』](https://mp.weixin.qq.com/s/d5g-anyABYAcbYfP-jg4HQ)
-> [6. 漫谈系列 | 数仓第六篇NO.6 『数据治理』][0]
-> [7. 漫谈系列 | 漫谈数仓第一篇NO.7 『面试真经』](https://mp.weixin.qq.com/s/iZs7zEb-yoiSnlG2q74Fvg)
-
-<center><embed src="/images/dataware/建设企业级数据仓库EDW(内部资料，禁止外传).pdf" width="950" height="600"></center>
-
-[0]: /2020/10/01/dataware/summary-dataware/
-
-
-- [元数据管理解析以及数据仓库和主数据介绍](https://zhuanlan.zhihu.com/p/36136675)
-
 
 ## 1. DWH, Concept
 
@@ -265,35 +281,6 @@ JOIN查询仍然可以使用WHERE条件和ORDER BY排序。
 ```
 </details>
 
-<details>
-<summary>4. Sqoop 问题</summary>
-```bash
-function import_data_hdfs() {
-  sqoop import \
-    -Dorg.apache.sqoop.splitter.allow_text_splitter=true --connect ${jdbc_url} --username ${jdbc_username} --password  ${jdbc_passwd} \
-    --query "${exec_sql}" \
-    --split-by ${id} -m 20 \
-    --target-dir ${target_dir} \
-    --fields-terminated-by "\001" --lines-terminated-by "\n" \
-    --hive-drop-import-delims \
-    --null-string '\\N' --null-non-string '\\N'
-  check_success
-  echo_ex "end successful import ${target_dir}. field.delim : \001"
-}
-(1) 导入导出Null存储一致性问题
-        导出数据时采用–input-null-string和–input-null-non-string
-        导入数据时采用–null-string和–null-non-string
-(2). jdbc_url
-         jdbc_url="jdbc:mysql://xxxx:3306/reportpublic?autoReconnect=true"
-(3). Map 阶段, 只有
-          原理是重写了 MR： inputformat 和 outputformat
-```
-</details>
-
-
-<details>
-<summary>数据湖 vs 数据仓库 vs 数据中台</summary>
-
 No. | Title | desc
 :---: | --- | :---:
 0. | [https://delta.io/](https://delta.io/) |
@@ -353,6 +340,6 @@ No. | 主题名称 | 主题描述
 - [操作系统之堆和栈的区别](https://www.cnblogs.com/George1994/p/6399895.html)
 - [漫谈数据仓库之拉链表（原理、设计以及在Hive中的实现）](https://blog.csdn.net/zhaodedong/article/details/54177686)
 - [2020大数据/数仓/数开面试题真题总结(附答案)](https://mp.weixin.qq.com/s/pwyus1xfX7QAz5MtecveZw)
-
-
-
+- [SQL 窗口函数的优化和执行](https://mp.weixin.qq.com/s/zdHHg6MmydiUpTopn_sniA)
+- [【社招】快手_数据仓库_面试题整理](https://blog.csdn.net/weixin_43619485/article/details/107164729)
+- [2020年大厂面试题-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688808) 
