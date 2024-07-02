@@ -115,17 +115,12 @@ No. | 数据建模方式 | type
 
 No. | Title | desc
 --- | --- | ---
-1. | 数仓建模工具哪一个好? | powerDesigner 勉强推一个吧
-2. | DWS 轻度聚合及（汇总 == group by） | 是按照 Topic 划分的
-3. | DWD join 成宽表 by ODS |  事实表基本都在 DWD 层.
-4. | App 层也是在 Hive 中么? | 尽量不要
-5. | 数据仓库的数据质量如何保障? | 需要从源头管控，业务系统进行细致的字段的校验
-6. | 如何保证你的计算的指标结果准确性？ | 1. 有测试人员 2. 我们公司有做小样本数据集的抽取开发
-7. | 数据存储格式 | orc / Parquet
-8. | 数据压缩方式 | snappy / LZO
-9. | 数据存储格式 + 压缩 | 服务器的磁盘空间可以变为原来的 1/3
-10. | | beeline 客户端支持远程连接
-11. | lzo 支持切分么？ | snappy 不支持切分, 给lzo文件建立索引后，则支持切分
+1. | 数据仓库的数据质量如何保障? | 需要从源头管控，业务系统进行细致的字段的校验
+2. | 如何保证你的计算的指标结果准确性？ | 1. 有测试人员 2. 做小样本数据集的抽取开发
+3. | 数据存储格式 | orc / Parquet
+4. | 数据压缩方式 | snappy / LZO
+5. | 数据存储格式 + 压缩 | 服务器的磁盘空间可以变为原来的 1/3
+6. | lzo 支持切分么？ | snappy 不支持切分, 给lzo文件建立索引后，则支持切分
 
 > create_time, update_time, 使用拉链表解决历史数据变更的问题
 
@@ -151,7 +146,7 @@ No. | Tool
 :---: | :---
 1. | Apache_Druid <br>&nbsp;&nbsp; Druid是一个用于大数据实时查询和分析的高容错、高性能开源分布式系统，用于解决如何在大规模数据集下进行快速的、交互式的查询和分析。 
 2. | Apache Kylin™ <br>&nbsp;&nbsp; 一个开源的分布式分析引擎，提供Hadoop/Spark之上的SQL查询接口及多维分析（OLAP）能力以支持超大规模数据，最初由eBay Inc. 开发并贡献至开源社区。它能在亚秒内查询巨大的Hive表。
-3. | Clickhouse是一个用于在线分析处理（OLAP）的列式数据库管理系统（DBMS）
+3. | Clickhouse 是一个用于在线分析处理（OLAP）的列式数据库管理系统（DBMS）
 4. | ADB（AnalyticDB_for_MySQL） <br>&nbsp;&nbsp; 分析型数据库MySQL版（AnalyticDB for MySQL），是阿里巴巴自主研发的海量数据实时高并发在线分析（Realtime OLAP）云计算服务，使得您可以在毫秒级针对千亿级数据进行即时的多维分析透视和业务探索。
 5. | [花未全开*月未圆](https://www.cnblogs.com/tesla-turing/p/13276589.html) <br><br>1.1 presto 是Facebook开源的，完全基于内存的并⾏计算(MPP)，分布式SQL交互式查询引擎<br>1.2 数据治理: 在ETL过程中开发人员会对数据清洗这其实就是治理的一部分<br>1.3 元数据是记录数仓中模型的定义、各层级的映射关系、监控数仓的数据状态及 ETL 的任务运行状态 <br><br> 1.4 DW-DM层是采用Kimball的总线式的数据仓库架构，针对部门（比如财务部门）或者某一主题（比如商户、用户），通过维度建模（推荐星型模型），构建一致性维度，原子粒度的数据是DW层，按照实体或者主题经过一定的汇总，建设数据集市模型。数据集市可以为OLAP提供服务。
 
@@ -188,6 +183,7 @@ No. | Tool
 <details>
 <summary>(3). SQL查询</summary>
 ```sql
+
 3.1 基础查询
 
 SELECT * FROM students WHERE score >= 80;
@@ -200,20 +196,7 @@ SELECT COUNT(*) boys FROM students WHERE gender = 'M';
 SELECT COUNT(*) num FROM students GROUP BY class_id;
 SELECT class_id, gender, COUNT(*) num FROM students GROUP BY class_id, gender;
 
-3.3 多表查询:
-
-SELECT
-    s.id sid,
-    s.name,
-    s.gender,
-    s.score,
-    c.id cid,
-    c.name cname
-FROM students s, classes c
-WHERE s.gender = 'M' AND c.id = 1;
-
 使用多表查询可以获取M x N行记录；
-多表查询的结果集可能非常巨大，要小心使用。
 
 3.4 连接查询:
 
@@ -274,10 +257,11 @@ JOIN查询仍然可以使用WHERE条件和ORDER BY排序。
 <details>
 <summary>2. hadoop处理数据的过程，有几个显著的特征</summary>
 ```
-1.不怕数据多，就怕数据倾斜。
-2．对jobs数比较多的作业运行效率相对比较低，比如即使有几百行的表，如果多次关联多次汇总，产生十几个jobs，没半小时是跑不完的。map reduce作业初始化的时间是比较长的。
-3.对sum，count来说，不存在数据倾斜问题。
-4.对count(distinct ),效率较低，数据量一多，准出问题，如果是多count(distinct )效率更低
+1. 不怕数据多，就怕数据倾斜 (Not Afraid of Large Data, Only Data Skew)
+2. Even with tables having hundreds of rows, multiple joins and aggregations can produce numerous jobs, taking over half an hour to complete.
+MapReduce job initialization time is relatively long.
+3. No Data Skew Issues with SUM and COUNT
+  对 SUM、COUNT 来说，不存在数据倾斜问题。 Multiple COUNT(DISTINCT) 效率较低
 ```
 </details>
 
