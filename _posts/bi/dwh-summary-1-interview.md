@@ -27,6 +27,7 @@ No. | [2020年大厂-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688
 
 1. [仙子紫霞  数据仓库与Python大数据  1/1 叮！致2020的一封情书，请查收！文末2019年文章精选](https://mp.weixin.qq.com/s/tJjkaWsZKbsG8klBSn2JGw)
 
+[大数据文章合集-数据仓库与Python大数据](https://mp.weixin.qq.com/s?src=11&timestamp=1720014881&ver=5360&signature=q0R-NquwLDjOZELYXAmLABAzAm-olWaBfdWMM8SSiIW4xboKnjUhtrdAjn3Y-9a84O3XpVGoyushRw40-V2lPFJzuJc8Zf8DbP1WCUAMdkxV3qYGoss2GjtPdknqMGIk&new=1)
 
 > [1. 漫谈系列 - 数仓第一篇NO.1 『基础架构』](https://mp.weixin.qq.com/s/J_PA_qhU44DX0PiCDuVaEA)
 > 
@@ -35,6 +36,8 @@ No. | [2020年大厂-数据仓库篇](https://my.oschina.net/u/4631230/blog/4688
 > [3. 漫谈系列 - 数仓第三篇NO.3 『数据ETL』](https://mp.weixin.qq.com/s/INerSvksPi8sreSVCA2csA)
 > 
 > [4. 漫谈系列 - 数仓第四篇NO.4 『数据应用』](https://mp.weixin.qq.com/s/Y1xWwJ2Jr392eRHQeBRYZQ)
+>
+> [5. 系列 | 漫谈数仓第五篇NO.5 『OLAP』](https://mp.weixin.qq.com/s?src=11&timestamp=1720014642&ver=5360&signature=3wYrPB00zeUdpVYyETn7y6OCJGW480z3h9nsH2ft46uUQBwQd3xKDQN1ynJICC0ZQ2E5gFzZu4u8TGRfqk6oZMFkNU1A4tBqQBNMg89tz6jd5-Eaq7oNMZtnHoZdVwdX&new=1)
 > 
 > [7. 漫谈系列 - 漫谈数仓第一篇NO.7 『面试真经』](https://mp.weixin.qq.com/s/iZs7zEb-yoiSnlG2q74Fvg)
 
