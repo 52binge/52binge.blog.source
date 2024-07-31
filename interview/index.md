@@ -71,10 +71,6 @@ Plan | Time | Topic | Level2
 
 ## 2. Flink
 
-### 2.1 Flink Introduce
-
-### 2.2 FlinkSQL
-
 ## 3. SQL 
 
 No. | Question | Answer
