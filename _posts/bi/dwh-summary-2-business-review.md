@@ -257,7 +257,6 @@ drawal_companys | loan_usage |
 
 数据来源: ODS, 多数全量
 
-
 ## 5. 建模流程
 
 No. | data warehosue 建模体系 | description
@@ -629,7 +628,6 @@ create table dm/fact_drawal_sum (
 - [TeraData金融数据模型（银行十大主题划分）](https://www.infoq.cn/article/gsmwfqq7kjsg0k9adwqr)
 - [知乎：数据仓库架构及数据模型介绍](https://zhuanlan.zhihu.com/p/138437941)
 
-Wechat:
 
 - [数据分析师成长体系漫谈 - 数仓模型设计](https://mp.weixin.qq.com/s?src=11&timestamp=1614150249&ver=2909&signature=q-8CPXUTMbkBKDNtPxCF0ZXHj**GuKsKmk6dNjX5mIOYdWw9wDV5Vb7ss*H4MSbW-8InolSiOs2xXcVonlrpbTYHm11oTRpWvWUh-owybeoH4pDilHP*07sAZNR3Sit8&new=1)
 - [大白话系列：HIVE中数据倾斜原理及优化方案](https://zhuanlan.zhihu.com/p/334742254)
