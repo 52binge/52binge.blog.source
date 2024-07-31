@@ -328,18 +328,7 @@ Required output:
 
 > `2022.05.29`
 > **1. tell me about yourself**
-> My name is blair. 
->
-> I have 7years work exp related data engineer . Ever since I graduated from university in 2014.  I’ve put my time into programming and data engineer related dev work.
->
-> now I working in Tencent Company Singapore brunch, which is largest tech company in Asia.
->
-> I focused on financial bigdata collection, calculation, analysis and processing related dev work;
->
-> This allowed me to get a deeper understanding of data warehouse modeling and spark knowledge..
->
-> During my time there, I successfully build financial data warehouse projects that won the Company-level Business Breakthrough Award
->
+
 > I believe I have all the knowledge and skills needed to do well in the data engineer field.
 >
 > **2. tech problem**
@@ -351,8 +340,6 @@ Required output:
 >  **4.1 Why are you interested in this job？**
 >
 > After looking at the job description, I found that…
->
-> This is Why I’d love to have the opportunity to …
 >
 > I believe I would be able to…
 >
