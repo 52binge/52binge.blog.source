@@ -1,6 +1,6 @@
 ---
 title: Spark Notes 2 - Core Concepts (SparkContext、RDD、Stage、Executor)
-date: 2024-03-30 21:07:21
+date: 2023-03-30 21:07:21
 categories: [spark]
 tags: [spark]
 ---
