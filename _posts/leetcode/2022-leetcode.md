@@ -76,15 +76,17 @@ class Solution:
 [88. 合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/) - 逆向双指针
 
 ```python
+from typing import List
+
 class Solution:
     def merge(self, A: List[int], m: int, B: List[int], n: int) -> None:
         """
         Do not return anything, modify A in-place instead.
         """
-        pa, pb = m-1, n-1
-        tail = m+n-1
+        pa, pb = m - 1, n - 1
+        tail = m + n - 1
         
-        while not (pa == -1 and pb == -1):
+        while pa >= 0 or pb >= 0:
             if pa == -1:
                 A[tail] = B[pb]
                 pb -= 1
@@ -98,8 +100,8 @@ class Solution:
                 A[tail] = B[pb]
                 pb -= 1
             tail -= 1
-        
-        return A[:]
+
+        return A[:]  # 如果需要返回数组副本，则添加这一行
 ```
 
 [15. 3Sum](https://leetcode-cn.com/problems/3sum/) - for for while , second_ix & third_ix 两边夹
@@ -267,6 +269,148 @@ addition | 链表划分, 描述： 给定一个单链表和数值x，划分链�
 addition | [82. 删除排序链表中的重复元素 II](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/) 链表1->2->3->3->4->4->5 处理后为 1->2->5. | ❎
 addition | 输入：(7 -> 1 -> 6) + (5 -> 9 -> 2)，即617 + 295 <br> 输出：2 -> 1 -> 9，即912 |
 
+```python
+# 定义链表节点类
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class Solution:
+    def reversePrint(self, head: ListNode) -> List[int]:
+        if head is None:
+            return []
+        else:
+            return self.reversePrint(head.next) + [head.val]
+
+# 示例用法
+# 创建链表 1 -> 3 -> 2
+head = ListNode(1)
+head.next = ListNode(3)
+head.next.next = ListNode(2)
+
+# 创建 Solution 对象并调用 reversePrint 方法
+solution = Solution()
+result = solution.reversePrint(head)
+
+# 打印结果
+print(result)  # 输出 [2, 3, 1]
+```
+
+```python
+# 输入: 1->2->3->4->5->NULL
+# 输出: 5->4->3->2->1->NULL
+
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+
+class Solution(object):
+    def reverseList(self, head) -> ListNode:
+        if not head or not head.next:
+            return head
+        
+        pre, cur = head, head.next
+        pre.next = None
+
+        while cur:
+            tmp = cur.next
+            cur.next = pre
+            pre = cur
+            cur = tmp
+
+        return pre
+```
+
+合并2个有序链表
+
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+        if l1 is None:
+            return l2
+        if l2 is None:
+            return l1
+        
+        if l1.val < l2.val:
+            p = ListNode(l1.val)
+            p.next = self.mergeTwoLists(l1.next, l2)
+        else:
+            p = ListNode(l2.val)
+            p.next = self.mergeTwoLists(l1, l2.next)
+        
+        return p
+        
+```
+
+```python
+# 创建一个环：将链表的尾节点指向头节点，形成一个环。
+# 找到断开点：从头节点开始，走 𝑛 − 𝑘 % 𝑛 步，然后在这个点断开环。
+# 形成新的链表：新的链表从断开点开始，前半部分接在断开点后面
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class Solution:
+    def rotateRight(self, head: ListNode, k: int) -> ListNode:
+        if not head or not head.next or k == 0:
+            return head
+        
+        # 计算链表长度，并找到尾节点
+        length = 1
+        tail = head
+        while tail.next:
+            tail = tail.next
+            length += 1
+        
+        # 将尾节点连接到头节点，形成环
+        tail.next = head
+        
+        # 找到新的尾节点位置 (length - k % length - 1)
+        new_tail_pos = length - k % length - 1
+        new_tail = head
+        for _ in range(new_tail_pos):
+            new_tail = new_tail.next
+        
+        # 新的头节点是新的尾节点的下一个节点
+        new_head = new_tail.next
+        
+        # 断开环
+        new_tail.next = None
+        
+        return new_head
+
+# 示例用法
+# 创建链表 1 -> 2 -> 3 -> 4 -> 5 -> 6
+head = ListNode(1)
+head.next = ListNode(2)
+head.next.next = ListNode(3)
+head.next.next.next = ListNode(4)
+head.next.next.next.next = ListNode(5)
+head.next.next.next.next.next = ListNode(6)
+
+# 创建 Solution 对象并调用 rotateRight 方法
+solution = Solution()
+k = 3
+new_head = solution.rotateRight(head, k)
+
+# 打印结果
+current = new_head
+while current:
+    print(current.val, end=" -> " if current.next else " -> NULL")
+    current = current.next
+```
+
 ## 6. stack
 
 No. | Question | Flag
@@ -281,6 +425,22 @@ No. | Question | Flag
 &nbsp; | [66. 矩阵中的路径](https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/) , `经典好题: 深搜+回溯` def dfs(i, j, k): |  ✔️❎ 
 &nbsp; | [61. 机器人的运动范围](https://leetcode-cn.com/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof) `bfs` good <br> &nbsp;&nbsp; `from queue import Queue, q.get() q.pup()` | ✔️❎ 
 
+```python
+from collections import deque
+class Solution:
+    def movingCount(self, m: int, n: int, k: int) -> int:
+        q = deque()
+        q.append((0,0))
+        s = set()
+        s.add((0,0))
+        while q:
+            x, y = q.popleft()
+            for (i, j) in [(x+1, y), (x, y+1)]:
+                if valid(i, j, k, s, m, n):
+                    q.append((i, j))
+                    s.add((i, j))
+        return len(s)
+```
 
 ## 7. string
 
