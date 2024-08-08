@@ -69,7 +69,79 @@ spark 官方宣称： SPark hadoop 0.9:100 迭代计算 做一次 3：1
 
 {% image "/images/spark/Spark-Shuffle-Public/1-Hive-ETL_meitu_1.png", width="950px", alt="Hive ETL 预处理数据" %}
 
+示例数据： 假设我们有一个名为 original_table 的表，其数据如下：
+
+| id | key | value |
+|----|-----|-------|
+| 1  | A   | ...   |
+| 2  | B   | ...   |
+| 3  | A   | ...   |
+| 4  | C   | ...   |
+| 5  | B   | ...   |
+| 6  | A   | ...   |
+| 7  | C   | ...   |
+| 8  | A   | ...   |
+
+创建新表并增加一列 new_key
+使用Hive或Spark SQL进行数据预处理，创建一个新的表 processed_table，并增加一列 new_key：
+
+```sql
+CREATE TABLE processed_table AS
+SELECT 
+    id,
+    key,
+    value,
+    CONCAT(key, '_', CAST(FLOOR(RAND() * 10) AS STRING)) AS new_key
+FROM original_table;
+```
+
+以下是新表 processed_table 的数据示例：
+
+| id | key | value | new_key |
+|----|-----|-------|---------|
+| 1  | A   | ...   | A_3     |
+| 2  | B   | ...   | B_7     |
+| 3  | A   | ...   | A_1     |
+| 4  | C   | ...   | C_5     |
+| 5  | B   | ...   | B_9     |
+| 6  | A   | ...   | A_6     |
+| 7  | C   | ...   | C_2     |
+| 8  | A   | ...   | A_4     |
+
+
 ## 2. 调整shuffle操作的并行度
+
+示例数据: 假设我们有一个名为 transactions 的表，其数据如下：
+
+| id  | key | value |
+|-----|-----|-------|
+| 1   | A   | 100   |
+| 2   | B   | 200   |
+| 3   | A   | 150   |
+| 4   | C   | 300   |
+| 5   | B   | 250   |
+| 6   | A   | 200   |
+| 7   | C   | 350   |
+| 8   | A   | 400   |
+
+设置并行度：
+
+使用 `SET spark.sql.shuffle.partitions = 1000;` 来设置shuffle操作的分区数量，从而增加并行度。根据数据量和集群资源，可以适当调整并行度的大小。
+分组求和操作：
+
+进行分组求和操作，在调整了并行度后，执行SQL查询可以更均匀地分布计算负载，缓解数据倾斜问题。
+
+```sql
+-- 设置Spark SQL的并行度
+SET spark.sql.shuffle.partitions = 1000;
+
+-- 重新进行分组求和操作
+SELECT key, SUM(value) AS total_value
+FROM transactions
+GROUP BY key;
+```
+
+---
 
 > 碰运气做法： 原来的并行度导致了倾斜，调整并行度， 如果是自定义的分区规则决定必须是n个分区，n个Task
 > 
@@ -136,7 +208,7 @@ mapJoin:
 
 {% image "/images/spark/Spark-Shuffle-Public/5-key-few.png", width="px", alt="采样倾斜 key 并分拆 join 操作" %}
 
-## 6. 两阶段聚合(局部聚合+全局聚合)
+## 6. 两阶段聚合(局部+全局)
 
 {% image "/images/spark/Spark-Shuffle-Public/6-Join.png", width="px", alt="两阶段聚合" %}
 
@@ -145,7 +217,7 @@ mapJoin:
 		现在：一次随机shuffle + 一次hash散列
 		
 
-## 7. 使用随机前缀和扩容 RDD 进行 join
+## 7. 随机前缀和扩容 RDD 进行 join
 
 方案七： 增加随机字段/链接字段 +  扩容RDD
 	表A  表B 
@@ -160,18 +232,13 @@ mapJoin:
 	1、笛卡尔积
 	2、导致倾斜的key的数据；量特别大。 不能使用单个task解决
 
-## 8. 任务横切，一分为二，单独处理
 
+**用随机前缀与后缀的对比**
 
-
-## 9. 多种方案组合使用
-
-## 10. 自定义 Partitioner
-
-## 11. bitmap 求 Join
-
-{% image "/images/spark/Spark-Shuffle-Public/bitmap位图求join.png", width="990px", alt="两阶段聚合" %}
-
+| 比较项   | 随机前缀                         | 随机后缀                         |
+|----------|----------------------------------|----------------------------------|
+| **优点** | 可以更早地打散数据，减少单个分区的数据量。 | 保持原始键值的前缀信息，便于后续处理。 |
+| **缺点** | 可能会在后续处理（如排序等）时带来额外的复杂性。<br> 相比之下，随机前缀通常能够更早地打散数据，减少单个分区的数据量。然而，随机前缀可能在后续处理（如排序等）时带来额外的复杂性。 | 在某些情况下，可能不能有效地打散数据。 虽然使用随机后缀可以在一定程度上打散数据，但在键值高度倾斜或后缀范围不足的情况下，可能无法达到预期效果。 |
 
 ## Reference
 
