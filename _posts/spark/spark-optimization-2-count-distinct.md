@@ -62,6 +62,13 @@ SELECT
 FROM table_a;
 ```
 
+
+expand 操作是 SparkSQL 用来处理多个 count(distinct) 聚合时的一种常见优化策略。特别是在查询中有多个 count(distinct) 的情况下，SparkSQL 可能会使用 expand 操作来将数据扩展到多个副本，这样每个副本可以独立地计算一个 count(distinct)。
+
+在 count(distinct) 中的作用：
+如果你有多个 count(distinct) 操作，例如 count(distinct id) 和 count(distinct name)，SparkSQL 可能会使用 expand 操作将数据集扩展为两个（或多个）副本，这样 id 和 name 可以在各自的副本中单独计算。
+expand 操作的结果是数据量会增加（数据膨胀），但这允许 SparkSQL 更好地并行计算多个 count(distinct) 操作。
+
 ## 4. Internal Optimization
 
 ### 4.1: Partial Aggregation
