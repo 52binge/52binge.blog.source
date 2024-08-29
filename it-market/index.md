@@ -67,12 +67,12 @@ Set your mind to it and you can do it !
 - A Bachelor’s Degree, preferably in Computer Science, Software Engineering, Information Technology, or related disciplines. 
 - Deep understanding of system design, `data structure and algorithms`, `data modelling`, data access, and data storage.
 - Proficiency in writing SQL for databases such as Postgres, MSSQL.
-- Demonstrated ability in using cloud technologies such as AWS, Azure, and Google Cloud.
+- Demonstrated ability in using cloud technologies such as `AWS, Azure, and Google Cloud`.
 - Experience with orchestration frameworks such as Airflow, Azure Data Factory.
 - Experience with distributed data technologies such as `Spark, Hadoop`.
 - Proficiency in programming languages such as `Python`, Java, or Scala.
-- Familiarity with building and using CI/CD pipelines.
-- Familiarity with DevOps tools such as Docker, Git, Terraform.
+- Familiarity with building and using `CI/CD pipelines`.
+- Familiarity with DevOps tools such as `Docker`, `Git`, Terraform.
 **Preferred requirements**
 - Experience in architecting data and IT systems.
 - Experience in designing, building, and maintaining `batch and real-time` data pipelines. 
@@ -96,13 +96,41 @@ Set your mind to it and you can do it !
 - Ability to drive initiatives and work independently, while being a team player who can liaison with various stakeholders across the organization
 - Excellent written and verbal communication skills in `English`
 
-## 5. Stripe
+## 5. MicroSoft
 
-{% image "https://geip.edu.sg/wp-content/uploads/2022/03/stripelogo.png", width="450px", float="left", alt="" %}
+{% image "/images/logos/Microsoft_logo.jpg", width="500px", float="left", alt="" %}
 
-## 6. Bytedance
+[Digital Solution Area Specialist - Data & AI MNC](https://www.linkedin.com/jobs/view/3920685517/?alternateChannel=search&refId=dcUIyXhzaSuHaN1e%2FPEIkw%3D%3D&trackingId=tNUvVGfhkkX7ful90gvmsg%3D%3D)
+
+Subject matter expertise in any of the following is preferred:
+
+- SQL including OSS (postgres, MySQL etc), Azure SQL
+- NoSQL Databases including OSS (Maria, Mongo etc), Cosmos DB
+- Big Data including SQL DW, Snowflake, Big Query, Redshift
+- Advanced Analytics including Azure Data Bricks, visualization tools as PowerBI, Tableau
+- Data Governance
+- Data Engineering
+- Data Science
+- Machine Learning including Azure ML, ML Server
+- Artificial Intelligence including BOT framework, Cognitive Services, Cognitive Search
+- Expertise in data estate workloads like HDInsight, Hadoop, Cloudera, Spark, Python
+- Competitive Landscape - Knowledge of cloud development platforms.
+- Partners - Understanding of partner ecosystems and the ability to leverage partner solutions to solve customer needs.
+
+## 6. Bytedance & Tiktok
 
 {% image "https://savemyleads.com/media/blog/auto/bytedance-brand.png", width="500px", float="left", alt="" %}
+
+[Tiktok - Data Engineer - Growth](https://www.linkedin.com/jobs/view/3618090104/?alternateChannel=search&refId=dHmAU9b7G806sSIZ20y25Q%3D%3D&trackingId=srE2ORWue7s3cn61YwEBKw%3D%3D)
+
+- SQL and additional object-oriented programming language
+
+[Tiktok - Data Engineer - Applied AI](https://www.linkedin.com/jobs/search/?currentJobId=3891599309&distance=25&geoId=102454443&keywords=tiktok&origin=JOB_SEARCH_PAGE_SEARCH_BUTTON&refresh=true)
+
+- Experience with big data tools: Hadoop, Spark, Kafka, etc.(Hadoop, M/R, Hive, Spark, Metastore, Presto, Flume, Kafka, ClickHouse, Flink etc.); + ETL
+- Experience with schema design and data modeling, performing data analysis, data ingestion and data integration;
+- `Advanced English` with excellent communications skills; 
+- Preferred: Experience in `CI/CD` such as git and cloud services such as `AWS/GCP/Azure` desirable;
 
 [Data Engineer - Global Payments](https://www.linkedin.com/jobs/view/3580128161/?alternateChannel=search&refId=M%2FxV0CJzezA7E9u3uKUsQw%3D%3D&trackingId=nZDynHenNHuEc7TBHvJH6g%3D%3D)
  
@@ -141,11 +169,26 @@ Set your mind to it and you can do it !
 - Strong analytic skills related to working with unstructured datasets.
 - Build processes supporting `data transformation, data structures, metadata`, dependency and workload management.
 
-## 9. Meta
+## 9. Mastercard
+
+{% image "/images/logos/Mastercard_new_logo.webp", width="450px", alt="" %}
+
+Senior Machine Learning Engineer-R-221507
+
+Technical Skills:
+
+- Big Data Technologies: Hands-on experience with big data frameworks and tools like `Hadoop`, `Spark`, and `Hive`.
+- Programming Skills: Proficiency in `Python` and `SQL`.
+- `Data Visualization`: Experience with tools such as Tableau and Power BI.
+- Cloud Computing: Understanding of cloud services like `AWS, Azure, and GCP` for data processing and storage.
+- Advanced Analytics: Knowledge in statistical techniques, predictive modeling, `machine learning algorithms`, and `deep learning frameworks` (e.g., TensorFlow, PyTorch).
+- GenAI & AI Platforms: Familiarity with `AI and machine learning platforms`.
+
+## 10. Meta
 
 {% image "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg", width="360px", alt="" %}
  
-## 10. GIC
+## 11. GIC
 
 [VP, Data Engineer (Private Market Solutions), Technology Group 15441](https://www.linkedin.com/jobs/search/?currentJobId=3727039076&f_C=163988&originToLandingJobPostings=3766633576%2C3840771423%2C3727039076)
 
@@ -158,6 +201,10 @@ Set your mind to it and you can do it !
 - Experience with Agile software development methodologies and practices such as Scrum, Kanban and Test-Driven Development
 - Familiarity with Private Markets data is desirable
 - Keen learner, independent problem solver with strong communication and interpersonal skills
+
+## 12. Stripe
+
+{% image "https://geip.edu.sg/wp-content/uploads/2022/03/stripelogo.png", width="450px", float="left", alt="" %}
 
  
 ## Other
