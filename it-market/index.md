@@ -62,6 +62,11 @@ Set your mind to it and you can do it !
 
 {% image "/images/logos/it-de-logo_govtech_hort.gif", width="500px", alt="" %}
 
+
+**Data Engineer, Digital Government Blueprint (DGB 2.0)**
+
+{% image "/images/logos/GovTech-DE.jpg", width="700px", alt="" %}
+
 **Data Engineer(Quantitative Strategy)**
 
 - A Bachelor’s Degree, preferably in Computer Science, Software Engineering, Information Technology, or related disciplines. 
