@@ -92,21 +92,63 @@ Volantis & hexo {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/
 
 ## Codeblock
 
-{% codeblock hello.py lang:python line_number:true mark:3,5,8 %}
-n=eval(input())
-if n==0:
-   print("Hello World")
-elif n>0:
-   print("He\nll\no \nWo\nrl\nd")
-else:
-   for c in "Hello World":
-   print(c)
+{% codeblock hello_sql_consecutive_days.sql lang:sql line_number:true mark:3,5,8 %}
+-- SQL1：user who has logged in for more than 3 consecutive days
+grouped_data AS (
+    SELECT 
+        user_id, 
+        COUNT(*) AS consecutive_days,
+        MIN(login_date) AS start_date,
+        MAX(login_date) AS end_date
+    FROM 
+        (
+	    SELECT 
+             user_id, 
+             login_date, 
+             DATEDIFF(login_date, '1970-01-01') AS date_diff,
+             ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY login_date) AS rn1,
+             DATEDIFF(login_date, '1970-01-01') - ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY login_date) AS rn2
+         FROM 
+             user_info
+		) login_data -- 
+    GROUP BY 
+        user_id, rn2  # Map consecutive dates to the same rn2 value
+    HAVING 
+        COUNT(*) >= 3
+)
+
+
+SELECT 
+    DISTINCT user_id
+FROM 
+    grouped_data;
 {% endcodeblock %}
 
-{% codeblock code snippet 1 lang:js %}
-var allp=$("div p");
-allp.attr("class",function(i,n){
-           return Number(n)+1;
-      });
-{% endcodeblock %}     
+```python
+import heapq
+from typing import List
+
+def smallest_k_numbers(arr: List[int], k: int) -> List[int]:
+    if k == 0 or not arr:
+        return []
+
+    # Build a max heap using negative numbers from the first k elements
+    heap = [-x for x in arr[:k]]
+    heapq.heapify(heap)
+
+    # Traverse the remaining elements; if the current element is smaller than the heap's top element, replace the heap's top
+    for num in arr[k:]:
+        if -num > heap[0]:
+            heapq.heappop(heap)
+            heapq.heappush(heap, -num)
+
+    # Convert the elements in the heap back to positive numbers and return them
+    return [-x for x in heap]
+
+# Example usage
+arr = [4, 5, 1, 6, 2, 7, 3, 8]
+k = 4
+output = smallest_k_numbers(arr, k)
+print(output)  # Output: [1, 2, 3, 4] in any order
+```
 
