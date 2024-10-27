@@ -27,7 +27,7 @@ Youtuber Bloger {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/
 
 {% cell Arman @TikTok, https://www.youtube.com/watch?v=vwoFf4Frh_w, /images/logos/bloger3-Arman-Khondker@TT.jpg %}
 
-{% cell Apurva Singh @Meta, https://www.youtube.com/watch?v=f9sH5SgCYbY, /images/logos/bloger4-Apurva-Singh-meta.jpeg %}
+{% cell Apurva @Meta, https://www.youtube.com/watch?v=f9sH5SgCYbY, /images/logos/bloger4-Apurva-Singh-meta.jpeg %}
 
 {% cell Vivian @Sydney, https://www.youtube.com/watch?v=26b7i-yCiEQ, /images/logos/bloger5-vivian-profile.jpg %}
 
