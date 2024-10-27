@@ -33,8 +33,7 @@ Plan | Time | Topic | Level2
 
 2. Why Spark is faster than Map Reduced
 
-5. Spark 数据倾斜的原理和不同场景下的解决方案是什么，MPP架构数据下的数据倾斜解决方案是什么
- What are the principles of **Spark data skew** and solutions in different scenarios, and what are the solutions for data skew under MPP architecture data
+3. What are the principles of **Spark data skew** and solutions in different scenarios
 
 ### 1.1 Spark Basic
 
@@ -47,22 +46,22 @@ Plan | Time | Topic | Level2
 
 ### 1.2 SparkSQL
 
-### 1.3 SparkInterview
-
-### 1.4 SparkSQL 源码解读
-
 3.1 mr vs spark (4)
 3.2 rdd / dataframe / dataset
 3.3 rdd operations - transformation + action
 3.4 cache + persist
 3.5 spark join
 
-### 1.5 Advanced
+### 1.3 SparkInterview
+
+
+
+### 1.5 SparkSQL Offline DWH
 
 <details>
-<summary>SparkSQL</summary>
+<summary>SparkSQL offline DWH</summary>
 
-如何搭建 SparkSQL 离线数仓
+SparkSQL offline DWH
 
 <center><embed src="/images/sparkSQL/Spark-Dw-如何搭建 SparkSQL 离线数仓？.pdf" width="950" height="600"></center>
 <center><embed src="/images/sparkSQL/Class1-Spark SQL 架构体系与执行流程-金澜涛.pdf" width="950" height="600"></center>

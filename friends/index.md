@@ -17,6 +17,41 @@ valine:
 {% p center logo large,  %}
 {% p center small, the dalao I know during the learning process. %}
 
+Youtuber Bloger {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
+
+{% btns circle wide centre %}
+
+{% cell Susie Woo English, https://www.youtube.com/watch?v=rzMXy1-K_nI&t=138s, /images/logos/bloger1-SusieWoo.jpg %}
+
+{% cell Lillian @Spotify, https://www.youtube.com/@LillianChiu101/videos, /images/logos/bloger2-Lillian-Chiu.jpg %}
+
+{% cell Arman @TikTok, https://www.youtube.com/watch?v=vwoFf4Frh_w, /images/logos/bloger3-Arman-Khondker@TT.jpg %}
+
+{% cell Apurva Singh @Meta, https://www.youtube.com/watch?v=f9sH5SgCYbY, /images/logos/bloger4-Apurva-Singh-meta.jpeg %}
+
+{% cell Vivian @Sydney, https://www.youtube.com/watch?v=26b7i-yCiEQ, /images/logos/bloger5-vivian-profile.jpg %}
+
+{% endbtns %}
+
+
+Friends Bloger enthusiast {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
+
+{% btns circle wide centre %}
+
+{% cell Blair`s Blog, https://52binge.github.io/, /images/logos/logo_me1.jpg %}
+
+{% cell 七海の参考書, https://shiraha.cn, https://cdn.jsdelivr.net/gh/45921/cdn-images@main/me/avatar.jpg %}
+
+{% cell 廖雪峰, https://www.liaoxuefeng.com/, https://avatars.githubusercontent.com/u/7370123?v=4 %}
+
+{% cell 阮一峰, http://www.ruanyifeng.com/blog/, https://www.ruanyifeng.com/blog/images/person2_s.jpg %}
+
+{% cell 陈皓, https://coolshell.cn/, https://coolshell.cn/wp-content/uploads/2011/03/me.jpg %}
+
+{% cell qinxs, https://7bxing.com/, https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/img/avatar.png %}
+
+{% endbtns %}
+
 Business Intelligence {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
 
 {% btns circle wide centre %}
@@ -26,32 +61,6 @@ Business Intelligence {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-
 {% cell 花木兰, https://www.zhihu.com/people/may-25-73/columns/, https://pic2.zhimg.com/v2-cb4445a1aeb51a52aca4b48a0abc4a0b_xll.jpg %}
 
 {% cell 小Lin@知乎, https://www.zhihu.com/people/lindsayzou/, https://pic1.zhimg.com/v2-12dc0416370b598604d6480c1e9f6d85_xl.jpg %}
-
-{% endbtns %}
-
-Friends 博客爱好者 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
-
-{% btns circle wide centre %}
-
-{% cell Blair`s Blog, https://52binge.github.io/, /images/logos/logo_me1.jpg %}
-
-{% cell 七海の参考書, https://shiraha.cn, https://cdn.jsdelivr.net/gh/45921/cdn-images@main/me/avatar.jpg %}
-
-{% cell joye, https://joyenjoye.com/, https://avatars.githubusercontent.com/u/29893343?v=4 %}
-
-{% cell qinxs, https://7bxing.com/, https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/img/avatar.png %}
-
-{% endbtns %}
-
-IndustryVeteran 业界大佬 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %}
-
-{% btns circle wide centre %}
-
-{% cell 廖雪峰, https://www.liaoxuefeng.com/, https://avatars.githubusercontent.com/u/7370123?v=4 %}
-
-{% cell 阮一峰, http://www.ruanyifeng.com/blog/, https://www.ruanyifeng.com/blog/images/person2_s.jpg %}
-
-{% cell 陈皓, https://coolshell.cn/, https://coolshell.cn/wp-content/uploads/2011/03/me.jpg %}
 
 {% endbtns %}
 

@@ -18,7 +18,7 @@ What's your daily personal growth secret？
 
 1. reading • writing daily 📚
 2. thinking • coding daily 👩🏻‍💻
-3. english • drama  👁
+3. english • ielts • drama 👁
 4. yoga hot • meditation 🧘
 
 <!-- 

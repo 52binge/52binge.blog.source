@@ -1,5 +1,5 @@
 ---
-title: Spark Notes 3 - RDD (Resilient Distributed Dataset) 【待完善】
+title: Spark Notes 3 - RDD (Resilient Distributed Dataset) 
 date: 2023-03-31 10:00:21
 categories: [spark]
 tags: [spark]
