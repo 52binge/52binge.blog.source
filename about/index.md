@@ -12,14 +12,22 @@ valine:
   placeholder: 有什么想对我说的呢？
 ---
 
-👨🏻‍🎓 𝗺𝗲, ~~18 years old,~~ ‍シンガポールに住🇸🇬
+👨🏻‍🎓 データエンジニアの私、シンガポールに住んでいます 🇸🇬, Contact Me <a href="mailto:blair.value@gmail.com" class="social fas fa-envelope flat-btn"> blair.value@gmail.com</a>
+
+### ⭐ Who am I
+
+
+<a href="/about"> Blair Chen</a> a data developer, GTD practitioner, live in Singapore, Singapore.
+
+<a href="/about"> Blair Chen</a> focus on data warehouse, data engineering, data science, computer science.
+
+{% image "/images/logos/logo11.jpg", width="400px", alt="" %}
+
+### 🔑 Personal Growth
 
 What's your daily personal growth secret？
 
-1. reading • writing daily 📚
-2. thinking • coding daily 👩🏻‍💻
-3. english • ielts • drama 👁
-4. yoga hot • meditation 🧘
+reading • writing daily 📚 thinking • coding daily 👩🏻‍💻 english • meditation 🧘
 
 <!-- 
 If you are dissatisfied with your current state, you must know that the present is the accumulation of the past. If you want to live well in the future, you must start to accumulate slowly from now on.
@@ -29,15 +37,6 @@ If you are dissatisfied with your current state, you must know that the present 
 >
 > Diligence is not a race against time, but continuous, dripping water wears through the rock. We have time to accumulate slowly, no need to worry.
 
-<!--  image "/images/tw/blairme2.jpg", width="400px", alt=""
-
-### ⭐ Who am I
-
-<a href="/about"> Blair Chen</a> a data developer, GTD practitioner, live in Singapore, Singapore.
-
-<a href="/about"> Blair Chen</a> focus on BI, python/SQL, data engineering, data modeling, computer science.
-
--->
 
 ### 🔑 Classic
 
