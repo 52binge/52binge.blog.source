@@ -1,5 +1,5 @@
 ---
-title: data-warehouse review 5 - window function
+title: data-warehouse 3 - window function
 date: 2021-02-20 09:07:21
 categories: bi
 tags: [data warehouse, SQL]

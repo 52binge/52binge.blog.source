@@ -1,6 +1,6 @@
 ---
-title: bank business - 信贷业务举例 1
-date: 2021-01-22 09:07:21
+title: data-warehouse 1 - bank credit business
+date: 2021-01-09 09:07:21
 categories: bi
 tags: [data warehouse]
 ---

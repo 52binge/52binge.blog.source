@@ -1,6 +1,6 @@
 ---
-title: data-warehouse 2 - 面经杂乱篇
-date: 2021-01-09 09:07:21
+title: data-warehouse 2 - interview notes
+date: 2021-01-22 09:07:21
 categories: bi
 tags: [data warehouse]
 ---
