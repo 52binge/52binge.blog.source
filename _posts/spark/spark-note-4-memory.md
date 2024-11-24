@@ -119,19 +119,46 @@ tags: [spark]
 ---
 
 ## 2. Spark 中 Shuffle 的工作原理是什么？
-- **考察点**: 对 Shuffle 的理解及其在 Spark 中的实现。
-- **回答**:
-  - **Shuffle 写**:
-    - Map 阶段根据分区规则对数据进行分组，并将数据写入磁盘。
-  - **Shuffle 读**:
-    - Reduce 阶段从其他节点读取 Shuffle 数据，加载到内存中处理。
-  - **关键点**:
-    - Shuffle 涉及网络传输和磁盘 I/O，是 Spark 性能的关键瓶颈。
-    - 容易引发性能问题，如内存不足或数据倾斜。
 
----
+- 对 Shuffle 的理解及其在 Spark 中的实现。
+- 能否分析 Shuffle 的性能瓶颈，并提出优化方案。
+
+Shuffle 分为两个阶段：**Shuffle 写** 和 **Shuffle 读**。
+
+- **Shuffle 写**：
+  1. 在 Map 阶段（Task），根据分区规则（例如 `HashPartitioner`）对数据进行分组。
+  2. 将分组后的数据写入磁盘的临时文件中，按目标分区保存。
+  3. 每个 Map Task 生成若干临时文件，分别对应目标分区。
+  4. **特点**：涉及磁盘 I/O，可能产生大量中间文件。
+
+- **Shuffle 读**：
+  1. 在 Reduce 阶段（Task），Reduce Task 从其他节点读取属于自身分区的数据。
+  2. 将读取到的数据加载到内存中进行处理。
+  3. **特点**：涉及网络传输和内存分配，数据量大时可能导致内存溢出。
+
+- **Data Skew**：
+  - **定义**：Shuffle 是 Spark 中用于分区重新分配的操作。数据倾斜指的是某些分区的数据量过大（如特定 Key 数据量过多），会导致性能不均衡，甚至任务失败。
+  - **触发场景**：主要出现在宽依赖操作中。
+  - **瓶颈**：网络传输、磁盘 I/O 和内存消耗。
+  - **优化策略**：包括减少 Shuffle 的触发、调整分区数量、启用 AQE 和处理数据倾斜。
+  - `Spark 3.x 的 AQE 可以自动优化分区和 Join 策略，减少 Shuffle 的影响`
+
+**处理数据倾斜**
+
+- 在 Join 或 Aggregation 操作中，如果 AQE 发现某些分区的数据量远超其他分区（即数据倾斜），会对这些分区进行处理。
+- 拆分倾斜分区：将数据量大的分区拆分为更小的子分区。
+- 单独处理热点数据：对倾斜的 Key 单独处理，避免拖累整体任务。
+
+
+```bash
+spark.conf.set("spark.sql.adaptive.enabled", "true")  # 启用 AQE
+spark.conf.set("spark.sql.adaptive.shuffle.targetPostShuffleInputSize", "64MB")
+
+spark.conf.set("spark.sql.adaptive.skewJoin.enabled", "true")  # 启用数据倾斜优化
+```
 
 ## 3. Hash Shuffle 和 Sort Shuffle 的区别？为什么 Spark 默认使用 Sort Shuffle？
+
 - **考察点**: 对 Shuffle 策略的理解。
 - **回答**:
   - **Hash Shuffle**:
@@ -144,13 +171,19 @@ tags: [spark]
     - 文件数少，磁盘 I/O 更高效。
     - 支持需要排序的操作（如 `sortByKey`）。
 
+**如何优化 Shuffle Hash Join？**
+
+1. **调整分区数量**：通过 `spark.sql.shuffle.partitions` 设置分区数量，避免单个分区过大。
+2. **减少数据倾斜**：通过对 Join 键进行散列或预分区操作，均匀分布数据。
+3. **启用 AQE（自适应查询执行）**：Spark 3.x 引入 AQE，能够动态调整分区大小，优化数据倾斜；
+
 ---
 
 ## 4. 如何优化 Spark 作业中的 Shuffle？
 - **考察点**: 对 Shuffle 优化策略的理解。
 - **回答**:
   - **减少 Shuffle 的触发**:
-    - 避免宽依赖操作，例如用 `reduceByKey` 替代 `groupByKey`。
+    - 缓解宽依赖操作，例如用 `reduceByKey` 替代 `groupByKey`。
   - **优化分区**:
     - 调整分区数，使用 `spark.sql.shuffle.partitions` 或 `RDD.repartition()`。
   - **启用压缩**:
@@ -161,24 +194,42 @@ tags: [spark]
 ---
 
 ## 5. 什么场景会触发 Shuffle？
+
 - **考察点**: 了解 Shuffle 的触发条件。
 - **回答**:
-  - 需要重新分区的操作：`repartition`、`coalesce`。
-  - 键值聚合操作：`reduceByKey`、`groupByKey`。
-  - Join 操作：`join`。
-  - 去重操作：`distinct`。
+  - 需要重新分区的操作：`repartition`、`coalesce`
+  - 键值聚合操作：`reduceByKey` (Global) 、`groupByKey`
+  - Join 操作：`join`
+  - 去重操作：`distinct`
 
+**reduceByKey 的两阶段依赖**
+
+1. **Local Aggregation**: Each partition performs a local reduce first, which is a **narrow dependency**.
+2. **Global Aggregation**: Data with the same key across partitions is shuffled and aggregated, which is a **wide dependency**.
+
+
+| **Phase**          | **Type**               | **Dependency Relationship**      | **Triggers Shuffle** |
+|---------------------|------------------------|-----------------------------------|-----------------------|
+| Local Aggregation   | Narrow Dependency      | One partition depends on one parent partition | No                    |
+| Global Aggregation  | Wide Dependency        | One partition depends on multiple parent partitions | Yes                   |
 ---
 
 ## 6. 如何解决数据倾斜问题？
+
 - **考察点**: 数据倾斜问题的处理方法。
-- **回答**:
-  - **常见原因**:
-    - 数据分布不均，某些分区的数据量远大于其他分区。
-  - **解决方法**:
-    - 使用自定义分区器（Partitioner）。
-    - 数据预处理，例如添加随机前缀后再去重。
-    - 合理设置分区数量，避免单个分区过大。
+
+1. **分析问题**：
+数据倾斜通常由 Join 键或 Group By 键的分布不均引起。常见原因包括热点 Key、分区数过少或小表过大等。
+2. **解决方案**：
+根据具体场景选择：
+    - 调整分区数：增加 `spark.sql.shuffle.partitions`。
+    - 使用 Salting：为热点 Key 添加随机前缀打散数据。
+    - 广播小表：对小表使用 Broadcast Join 避免 Shuffle。
+    - 过滤倾斜数据：将倾斜 Key 单独处理。
+    - 启用 AQE：让 Spark 自动优化分区和 Join 策略。
+3. **实际经验**：
+    - 举例说明如何通过 Salting 或 Broadcast Join 解决过某次倾斜问题。
+    - 强调启用 AQE 后能动态优化数据倾斜，非常适合现代大规模数据处理场景。
 
 
 
