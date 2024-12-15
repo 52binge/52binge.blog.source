@@ -1,5 +1,5 @@
 ---
-title: Data Engineer, Market Industry
+title: Data Engineer, Exploring Jobs Market Industry
 date: 2016-07-16 16:59:48
 music:
   server: netease   # netease, tencent, kugou, xiami, baidu
@@ -21,9 +21,61 @@ Diligence is not a race against time, but **continuous**, dripping water wears t
 
 Set your mind to it and you can do it ! 
 
-## 1. VISA
+## 1. Mastercard
+
+{% image "/images/logos/Mastercard_new_logo.webp", width="450px", alt="" %}
+
+Senior Machine Learning Engineer-R-221507
+
+Technical Skills:
+
+- Big Data Technologies: Hands-on experience with big data frameworks and tools like `Hadoop`, `Spark`, and `Hive`.
+- Programming Skills: Proficiency in `Python` and `SQL`.
+- `Data Visualization`: Experience with tools such as Tableau and Power BI.
+- Cloud Computing: Understanding of cloud services like `AWS, Azure, and GCP` for data processing and storage.
+- Advanced Analytics: Knowledge in statistical techniques, predictive modeling, `machine learning algorithms`, and `deep learning frameworks` (e.g., TensorFlow, PyTorch).
+- GenAI & AI Platforms: Familiarity with `AI and machine learning platforms`.
+
+## 2. Paypal
+
+{% image "/images/logos/PayPal-logo.png", width="450px", alt="" %}
+
+Sr. Software Engineer - Data Engineering
+
+## 3. GovTech
+
+{% image "/images/logos/it-de-logo_govtech_hort.gif", width="500px", alt="" %}
+
+
+**Data Engineer, Digital Government Blueprint (DGB 2.0)**
+
+{% image "/images/logos/GovTech-DE.jpg", width="700px", alt="" %}
+
+
+## 4. Grab
+
+{% image "https://cloudfront-eu-central-1.images.arcpublishing.com/businessoffashion/456XEYIHMBBMJHYB4JO5PNJBMU.jpg", width="500px", float="left", alt="" %}
+
+**Senior Data Engineer** 
+
+- Bachelor degree in Analytics, Data Science, Mathematics, Computer Science, Information Systems, Computer Engineering, or a related technical field
+- At least 3-4 years of experience developing `Data warehouse and Business Intelligence` solutions
+- Sound knowledge of data warehousing concepts, data modeling/architecture and `SQL`
+- Knowledge of programming languages such as Java, Scala, `Python`, etc.
+- Understanding of performance, scalability and reliability concepts
+- Experience with Big Data frameworks such as `Hadoop, Spark`, etc.
+- Experience with developing data solutions on AWS
+- Ability to drive initiatives and work independently, while being a team player who can liaison with various stakeholders across the organization
+- Excellent written and verbal communication skills in `English`
+
+## 5. VISA
 
 {% image "/images/logos/it-de-visa_2021.svg.png", width="400px", alt="" %}
+
+## 6. Meta
+
+{% image "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg", width="360px", alt="" %}
+
 
 **Sr. Data Engineer** 
 
@@ -34,7 +86,48 @@ Set your mind to it and you can do it !
 - Knowledge of `Unix/Linux`
 - Strong foundation in computer science, with strong competencies in `data structures`, algorithms and software design optimized for building highly distributed and parallelized systems
 
-## 2. JPMorgan
+## 7. Google
+
+{% image "/images/logos/googles-new-logo.gif", width="450px", alt="" %}
+
+## 8. MicroSoft
+
+{% image "/images/logos/Microsoft_logo.jpg", width="500px", float="left", alt="" %}
+
+[Digital Solution Area Specialist - Data & AI MNC](https://www.linkedin.com/jobs/view/3920685517/?alternateChannel=search&refId=dcUIyXhzaSuHaN1e%2FPEIkw%3D%3D&trackingId=tNUvVGfhkkX7ful90gvmsg%3D%3D)
+
+Subject matter expertise in any of the following is preferred:
+
+- SQL including OSS (postgres, MySQL etc), Azure SQL
+- NoSQL Databases including OSS (Maria, Mongo etc), Cosmos DB
+- Big Data including SQL DW, Snowflake, Big Query, Redshift
+- Advanced Analytics including Azure Data Bricks, visualization tools as PowerBI, Tableau
+- Data Governance
+- Data Engineering
+- Data Science
+- Machine Learning including Azure ML, ML Server
+- Artificial Intelligence including BOT framework, Cognitive Services, Cognitive Search
+- Expertise in data estate workloads like HDInsight, Hadoop, Cloudera, Spark, Python
+- Competitive Landscape - Knowledge of cloud development platforms.
+- Partners - Understanding of partner ecosystems and the ability to leverage partner solutions to solve customer needs.
+
+## 9. HoYoverse
+
+{% image "/images/logos/it-de-MiHoYo_Logo.png", width="400px", alt="" %}
+
+[Data Engineer (SDK)](https://www.linkedin.com/jobs/view/3768185071/?alternateChannel=search&refId=BhRwA5e%2FLFYWUoWVYXBMHw%3D%3D&trackingId=R9vYcCR5EOeUXj6JQIPTtA%3D%3D)
+
+- Master at least one object-oriented programming language,such as `Python`/Java/Scala;
+- Good knowledge of `data structure and algorithm foundation`.
+- At least 3 years or above experience in big data processing projects;
+- In-depth knowledge in distributed `real-time or batch` data processing systems;
+- Proficient in SQL, have good `SQL` tuning experience, understand the basic principles and tuning of big data related components such as `Hadoop/Hive/Spark/Kafka/Flink/Clickhouse`;
+
+## 10. Stripe
+
+{% image "/images/logos/Stripe-logo.png", width="450px", alt="" %}
+
+## 11. JPMorgan
 
 {% image "https://www.pymnts.com/wp-content/uploads/2023/05/JPMORGAN.jpg", width="420px", alt="" %} 
 
@@ -58,71 +151,8 @@ Set your mind to it and you can do it !
 - Experience with containers and container-based deployment environment (`Docker, Kubernetes`, etc.)
 - A solid approach to writing unit level tests using mocking frameworks, as well as automating component, integration and end-to-end tests
 
-## 3. GovTech
-
-{% image "/images/logos/it-de-logo_govtech_hort.gif", width="500px", alt="" %}
-
-
-**Data Engineer, Digital Government Blueprint (DGB 2.0)**
-
-{% image "/images/logos/GovTech-DE.jpg", width="700px", alt="" %}
-
-**Data Engineer(Quantitative Strategy)**
-
-- A Bachelor’s Degree, preferably in Computer Science, Software Engineering, Information Technology, or related disciplines. 
-- Deep understanding of system design, `data structure and algorithms`, `data modelling`, data access, and data storage.
-- Proficiency in writing SQL for databases such as Postgres, MSSQL.
-- Demonstrated ability in using cloud technologies such as `AWS, Azure, and Google Cloud`.
-- Experience with orchestration frameworks such as Airflow, Azure Data Factory.
-- Experience with distributed data technologies such as `Spark, Hadoop`.
-- Proficiency in programming languages such as `Python`, Java, or Scala.
-- Familiarity with building and using `CI/CD pipelines`.
-- Familiarity with DevOps tools such as `Docker`, `Git`, Terraform.
-**Preferred requirements**
-- Experience in architecting data and IT systems.
-- Experience in designing, building, and maintaining `batch and real-time` data pipelines. 
-- Experience with `Databricks`.
-- Experience with implementing technical processes to enforce data security, data quality, and data governance.
-- Familiarity with government systems and government's policies relating to `data governance, data management`, data infrastructure, and data security
-
-## 4. Grab
-
-{% image "https://cloudfront-eu-central-1.images.arcpublishing.com/businessoffashion/456XEYIHMBBMJHYB4JO5PNJBMU.jpg", width="500px", float="left", alt="" %}
-
-**Senior Data Engineer** 
-
-- Bachelor degree in Analytics, Data Science, Mathematics, Computer Science, Information Systems, Computer Engineering, or a related technical field
-- At least 3-4 years of experience developing `Data warehouse and Business Intelligence` solutions
-- Sound knowledge of data warehousing concepts, data modeling/architecture and `SQL`
-- Knowledge of programming languages such as Java, Scala, `Python`, etc.
-- Understanding of performance, scalability and reliability concepts
-- Experience with Big Data frameworks such as `Hadoop, Spark`, etc.
-- Experience with developing data solutions on AWS
-- Ability to drive initiatives and work independently, while being a team player who can liaison with various stakeholders across the organization
-- Excellent written and verbal communication skills in `English`
-
-## 5. MicroSoft
-
-{% image "/images/logos/Microsoft_logo.jpg", width="500px", float="left", alt="" %}
-
-[Digital Solution Area Specialist - Data & AI MNC](https://www.linkedin.com/jobs/view/3920685517/?alternateChannel=search&refId=dcUIyXhzaSuHaN1e%2FPEIkw%3D%3D&trackingId=tNUvVGfhkkX7ful90gvmsg%3D%3D)
-
-Subject matter expertise in any of the following is preferred:
-
-- SQL including OSS (postgres, MySQL etc), Azure SQL
-- NoSQL Databases including OSS (Maria, Mongo etc), Cosmos DB
-- Big Data including SQL DW, Snowflake, Big Query, Redshift
-- Advanced Analytics including Azure Data Bricks, visualization tools as PowerBI, Tableau
-- Data Governance
-- Data Engineering
-- Data Science
-- Machine Learning including Azure ML, ML Server
-- Artificial Intelligence including BOT framework, Cognitive Services, Cognitive Search
-- Expertise in data estate workloads like HDInsight, Hadoop, Cloudera, Spark, Python
-- Competitive Landscape - Knowledge of cloud development platforms.
-- Partners - Understanding of partner ecosystems and the ability to leverage partner solutions to solve customer needs.
-
-## 6. Bytedance & Tiktok
+ 
+## 12. Bytedance & Tiktok
 
 {% image "https://savemyleads.com/media/blog/auto/bytedance-brand.png", width="500px", float="left", alt="" %}
 
@@ -148,20 +178,8 @@ Subject matter expertise in any of the following is preferred:
 - Proficient in databases, strong `SQL/ETL` development ability;
 - Experience in `real-time data warehouse development` is preferred.
 
-## 7. HoYoverse
 
-{% image "/images/logos/it-de-MiHoYo_Logo.png", width="400px", alt="" %}
-
-[Data Engineer (SDK)](https://www.linkedin.com/jobs/view/3768185071/?alternateChannel=search&refId=BhRwA5e%2FLFYWUoWVYXBMHw%3D%3D&trackingId=R9vYcCR5EOeUXj6JQIPTtA%3D%3D)
-
-- Master at least one object-oriented programming language,such as `Python`/Java/Scala;
-- Good knowledge of `data structure and algorithm foundation`.
-- At least 3 years or above experience in big data processing projects;
-- In-depth knowledge in distributed `real-time or batch` data processing systems;
-- Proficient in SQL, have good `SQL` tuning experience, understand the basic principles and tuning of big data related components such as `Hadoop/Hive/Spark/Kafka/Flink/Clickhouse`;
-
-
-## 8. Airwallex
+## 13. Airwallex
 
 {% image "/images/logos/it-airwallex.webp", width="400px", alt="" %}
  
@@ -174,26 +192,8 @@ Subject matter expertise in any of the following is preferred:
 - Strong analytic skills related to working with unstructured datasets.
 - Build processes supporting `data transformation, data structures, metadata`, dependency and workload management.
 
-## 9. Mastercard
 
-{% image "/images/logos/Mastercard_new_logo.webp", width="450px", alt="" %}
-
-Senior Machine Learning Engineer-R-221507
-
-Technical Skills:
-
-- Big Data Technologies: Hands-on experience with big data frameworks and tools like `Hadoop`, `Spark`, and `Hive`.
-- Programming Skills: Proficiency in `Python` and `SQL`.
-- `Data Visualization`: Experience with tools such as Tableau and Power BI.
-- Cloud Computing: Understanding of cloud services like `AWS, Azure, and GCP` for data processing and storage.
-- Advanced Analytics: Knowledge in statistical techniques, predictive modeling, `machine learning algorithms`, and `deep learning frameworks` (e.g., TensorFlow, PyTorch).
-- GenAI & AI Platforms: Familiarity with `AI and machine learning platforms`.
-
-## 10. Meta
-
-{% image "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg", width="360px", alt="" %}
- 
-## 11. GIC
+## 14. GIC
 
 [VP, Data Engineer (Private Market Solutions), Technology Group 15441](https://www.linkedin.com/jobs/search/?currentJobId=3727039076&f_C=163988&originToLandingJobPostings=3766633576%2C3840771423%2C3727039076)
 
@@ -207,11 +207,7 @@ Technical Skills:
 - Familiarity with Private Markets data is desirable
 - Keen learner, independent problem solver with strong communication and interpersonal skills
 
-## 12. Stripe
 
-{% image "https://geip.edu.sg/wp-content/uploads/2022/03/stripelogo.png", width="450px", float="left", alt="" %}
-
- 
 ## Other
 
 - [UOB - AVP/Manager Data Engineer, GMET](https://www.linkedin.com/jobs/view/3703986256/?alternateChannel=search&refId=AeQuBZ5q%2BtLlQgT%2BVr7qKw%3D%3D&trackingId=qrx9RfQFvrcJnNghOpP3fw%3D%3D)
